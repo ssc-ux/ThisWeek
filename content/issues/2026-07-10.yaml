@@ -1,0 +1,148 @@
+# Numéro réel rédigé à partir des abstracts PubMed (brouillon, non relu).
+numero: 3
+semaine: "4 au 10 juillet 2026"
+date: 2026-07-10
+brouillon: true
+edito: >-
+  Une avancée dans la fibrose pulmonaire idiopathique, une bithérapie
+  incrétine qui pousse plus loin le contrôle du diabète, une extension du
+  bénéfice des anti-PCSK9, une maladie rare de l'adulte, et une stratégie de
+  bon usage des antibiotiques dans la pneumonie.
+
+items:
+  - type: essai
+    titre: "Tréprostinil inhalé dans la fibrose pulmonaire idiopathique (TETON-1 et analyse combinée)"
+    source: "New England Journal of Medicine · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42149993/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 en double insu chez 598 patients atteints de fibrose
+      pulmonaire idiopathique (âge moyen 73 ans, 77,6 % sous antifibrosant de
+      fond), randomisés entre tréprostinil inhalé (12 bouffées 4 fois/j) et
+      placebo. À 52 semaines, la variation médiane de CVF était de −43,3 mL
+      (tréprostinil) contre −196,2 mL (placebo) — différence 130,1 mL
+      (IC95 % 82,2–178,1 ; p < 0,001). Aggravation clinique : 31,8 % vs 44,5 %
+      (HR 0,67 ; IC95 % 0,52–0,88). Effet indésirable le plus fréquent : toux
+      (54,8 % vs 33,1 %) ; arrêts de traitement plus fréquents sous tréprostinil.
+    ce_qui_change:
+      reference: "options limitées dans la FPI"
+      points:
+        - "Nouveau mécanisme (prostacycline inhalée) ralentissant le déclin de
+          la CVF, en ajout aux antifibrosants existants."
+    message_cle: >-
+      Le tréprostinil inhalé ralentit le déclin de la CVF et réduit les
+      aggravations cliniques dans la FPI sur 52 semaines — au prix d'une toux
+      fréquente et d'arrêts de traitement non négligeables.
+    contexte: >-
+      Niveau de preuve élevé (phase 3, résultats confirmés en analyse combinée
+      avec TETON-2). Tolérance à intégrer dans la décision ; place et
+      remboursement dans la stratégie antifibrosante à préciser.
+
+  - type: essai
+    titre: "Cagrilintide-sémaglutide (CagriSema) en ajout à l'insuline basale dans le diabète de type 2 (REIMAGINE 3)"
+    source: "The Lancet · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42251856/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3, double insu, chez 274 adultes diabétiques de type 2
+      (HbA1c 7,0–10,5 %) sous insuline basale ± metformine, randomisés entre
+      CagriSema (cagrilintide + sémaglutide, une injection SC hebdomadaire, deux
+      doses) et placebo pendant 40 semaines. Baisse d'HbA1c : −2,33 % (2,4 mg) et
+      −2,10 % (1,0 mg) contre −0,66 % sous placebo. Perte de poids de 10–12 %.
+      Aucune hypoglycémie sévère ; effets indésirables surtout digestifs, légers
+      à modérés.
+    message_cle: >-
+      En ajout à l'insuline basale, la bithérapie cagrilintide-sémaglutide
+      améliore fortement l'HbA1c et le poids sans excès d'hypoglycémie sévère.
+    contexte: >-
+      Niveau de preuve élevé mais effectif modéré et durée de 40 semaines ; pas
+      de donnée de morbimortalité cardiovasculaire. Financement industriel.
+      Molécule non encore disponible ; positionnement à préciser face aux
+      incrétines existantes.
+
+  - type: essai
+    titre: "Évolocumab chez les patients avec antécédent d'angioplastie coronaire sans infarctus (VESALIUS-CV)"
+    source: "Circulation · analyse de sous-groupe préspécifiée"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42153665/"
+    base_texte: abstract_seul
+    resume: >-
+      Analyse préspécifiée de VESALIUS-CV chez 3 627 patients (sur 12 257) ayant
+      un antécédent d'angioplastie coronaire mais sans infarctus ni AVC, avec
+      LDL-C ≥ 90 mg/dL, randomisés entre évolocumab et placebo (suivi médian
+      4,6 ans). L'évolocumab a réduit le MACE à 3 composantes de 30 % (7,0 % vs
+      9,5 % ; HR 0,70 ; IC95 % 0,56–0,89), l'infarctus de 50 % et la
+      revascularisation coronaire urgente de 39 %, avec des taux nominalement
+      plus bas de mortalité cardiovasculaire et totale.
+    ce_qui_change:
+      reference: "indication centrée sur le post-infarctus"
+      points:
+        - "Bénéfice de l'abaissement intensif du LDL-C étendu aux patients
+          coronariens revascularisés sans antécédent d'infarctus."
+    message_cle: >-
+      Chez les patients avec antécédent d'angioplastie coronaire mais sans
+      infarctus, l'abaissement intensif du LDL-C par évolocumab réduit les
+      événements cardiovasculaires — argument pour ne pas réserver ces
+      traitements au post-infarctus.
+    contexte: >-
+      Analyse de sous-groupe (à interpréter comme génératrice d'hypothèses,
+      même si préspécifiée). LDL-C d'inclusion élevé (≥ 90 mg/dL) ; financement
+      industriel. Renforce la logique « LDL le plus bas possible » chez le
+      coronarien à haut risque.
+
+  - type: essai
+    titre: "Setmélanotide dans l'obésité hypothalamique acquise (TRANSCEND)"
+    source: "New England Journal of Medicine · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42418774/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 chez 120 patients (4 à 66 ans) avec obésité hypothalamique
+      acquise (antécédent de tumeur, lésion ou traumatisme hypothalamique),
+      randomisés 2:1 entre setmélanotide (agoniste du récepteur MC4) et placebo
+      pendant 52 semaines. Variation de l'IMC : −16,5 % (setmélanotide) contre
+      +3,3 % (placebo ; p < 0,001), avec baisse du score de faim. Effets
+      indésirables chez 100 % des patients traités (hyperpigmentation cutanée,
+      nausées, vomissements, céphalées) ; effets graves chez 28 % vs 8 %.
+    message_cle: >-
+      Le setmélanotide réduit nettement l'IMC et la faim dans l'obésité
+      hypothalamique acquise, une situation jusqu'ici sans traitement efficace —
+      au prix d'effets indésirables fréquents.
+    contexte: >-
+      Niveau de preuve élevé pour une maladie rare (population mixte enfant/
+      adulte). Indication de niche mais utile à connaître pour l'interniste
+      confronté aux séquelles de tumeurs de la région hypothalamo-hypophysaire.
+      Financement industriel.
+
+  - type: essai
+    titre: "Interprétation guidée de la probabilité de pneumonie pour ajuster l'antibiothérapie des patients hospitalisés"
+    source: "Clinical Infectious Diseases · essai pragmatique randomisé"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41823187/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai pragmatique randomisé chez 107 adultes hospitalisés sous
+      antibiotiques pour suspicion d'infection respiratoire, avec procalcitonine
+      basse ou test viral respiratoire positif, dans 2 hôpitaux. Une note type
+      dans le dossier interprétait les tests en termes de probabilité de
+      pneumonie bactérienne, recommandant l'arrêt des antibiotiques quand elle
+      était faible. L'intervention a réduit l'antibiothérapie de 4,1 jours en
+      moyenne (7,5 vs 11,6 ; p = 0,006), sans différence significative de durée
+      de séjour ni de réadmission.
+    message_cle: >-
+      Interpréter la procalcitonine et les tests viraux via une aide structurée
+      (probabilité de pneumonie bactérienne) réduit la durée d'antibiothérapie
+      chez l'adulte hospitalisé, sans signal de surrisque.
+    contexte: >-
+      Petit effectif (n = 107), preuve de concept sur 2 centres. C'est
+      l'interprétation guidée — et non le test seul — qui modifie les
+      prescriptions, en cohérence avec l'essai négatif de tests rapides en soins
+      primaires (numéro précédent).
+
+aussi_parus:
+  - titre: "Recommandations sur l'usage et la sécurité des injections de corticoïdes dans les articulations et tissus mous"
+    source: "Regional Anesthesia & Pain Medicine"
+    url: "https://pubmed.ncbi.nlm.nih.gov/40015722/"
+  - titre: "Recommandations consensuelles sur la prise en charge de H. pylori en Égypte : rapport 2026"
+    source: "Digestive Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42412729/"
+  - titre: "Coût-efficacité du test immunochimique fécal seul vs couplé au test H. pylori"
+    source: "JAMA"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42223961/"

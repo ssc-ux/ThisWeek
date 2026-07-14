@@ -19,6 +19,13 @@
     entièrement fictif : il illustre le format du digest en attendant le premier numéro réel.</p>
     {% endif %}
 
+    {% if issue.brouillon %}
+    <p class="demo-banner"><strong>Brouillon — en attente de relecture médicale.</strong> Les
+    publications sont réelles et les synthèses sont rédigées à partir de leurs résumés (abstracts)
+    publiés ; elles n'ont pas encore été validées par un médecin relecteur. À vérifier sur les
+    sources avant tout usage clinique.</p>
+    {% endif %}
+
     {% if issue.edito %}
     <p class="edito">{{ issue.edito }}</p>
     {% endif %}
