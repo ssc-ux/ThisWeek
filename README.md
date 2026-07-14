@@ -78,13 +78,20 @@ Arborescence :
    (compléter avec la veille HAS/PNDS/sociétés savantes).
 2. Rédiger les synthèses avec `prompts/synthese.md`, **faire relire par un
    médecin**.
-3. Créer `content/issues/AAAA-MM-JJ.yaml` (copier la structure du numéro 0,
-   retirer `demo: true`).
+3. Créer `content/issues/AAAA-MM-JJ.yaml` (copier la structure d'un numéro
+   existant). Retirer `brouillon: true` une fois la relecture médicale faite.
 4. `python3 site/build.py` pour vérifier, puis pousser : le site se déploie
    tout seul.
 
+Chaque numéro YAML peut porter deux drapeaux facultatifs : `demo: true`
+(contenu fictif d'illustration) et `brouillon: true` (publications réelles,
+synthèses rédigées à partir des abstracts mais pas encore relues par un
+médecin). Chacun affiche une bannière dédiée.
+
 ## Statut
 
-Site fonctionnel avec un numéro 0 de démonstration (contenu fictif). Les
-documents de conception ci-dessus restent la référence pour les phases
-suivantes (automatisation du scoring et des synthèses).
+Site fonctionnel avec trois numéros rétrospectifs (n° 1 à 3, semaines de fin
+juin à début juillet 2026), rédigés à partir de vraies publications PubMed et
+signalés comme brouillons en attente de relecture médicale. Les documents de
+conception ci-dessus restent la référence pour les phases suivantes
+(automatisation du scoring et des synthèses).
