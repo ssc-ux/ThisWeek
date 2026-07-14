@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}N° {{ issue.numero }} — semaine du {{ issue.semaine }} · ThisWeek Médecine interne{% endblock %}
+{% block description %}{{ issue["items"] | length }} items sélectionnés pour les internistes — semaine du {{ issue.semaine }}.{% endblock %}
+
+{% block content %}
+<article>
+  <header class="issue-head">
+    <p class="eyebrow">Numéro {{ issue.numero }}</p>
+    <h1>La semaine du {{ issue.semaine }}</h1>
+    <p class="issue-meta">
+      {{ issue["items"] | length }} item{{ 's' if issue["items"] | length > 1 }} sélectionné{{ 's' if issue["items"] | length > 1 }}
+      · publié le {{ issue.date_fr }}
+      {%- if issue.relecteur %} · relu par {{ issue.relecteur }}{% endif %}
+    </p>
+
+    {% if issue.demo %}
+    <p class="demo-banner"><strong>Numéro de démonstration.</strong> Le contenu ci-dessous est
+    entièrement fictif : il illustre le format du digest en attendant le premier numéro réel.</p>
+    {% endif %}
+
+    {% if issue.edito %}
+    <p class="edito">{{ issue.edito }}</p>
+    {% endif %}
+  </header>
+
+  <nav class="toc" aria-label="Sommaire du numéro">
+    <h2>Au sommaire</h2>
+    <ol>
+      {% for item in issue["items"] %}
+      <li><a href="#item-{{ loop.index }}">{{ item.titre }}</a>
+          <span class="toc-type">— {{ type_labels[item.type] }}</span></li>
+      {% endfor %}
+    </ol>
+  </nav>
+
+  {% for item in issue["items"] %}
+  <section class="item" id="item-{{ loop.index }}">
+    <p class="item-kicker">
+      <span class="badge badge-{{ item.type }}">{{ type_labels[item.type] }}</span>
+      <span class="item-source">{{ item.source }}</span>
+    </p>
+    <h2>{% if item.url %}<a href="{{ item.url }}">{{ item.titre }}</a>{% else %}{{ item.titre }}{% endif %}</h2>
+    {% if item.base_texte == 'abstract_seul' %}
+    <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+    {% endif %}
+
+    <h3>Résumé</h3>
+    <p>{{ item.resume }}</p>
+
+    {% if item.ce_qui_change %}
+    <h3>Ce qui change <span class="change-ref">(vs {{ item.ce_qui_change.reference }})</span></h3>
+    <ul>
+      {% for point in item.ce_qui_change.points %}
+      <li>{{ point }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="key-message">
+      <h3>Message à retenir</h3>
+      <p>{{ item.message_cle }}</p>
+    </div>
+
+    {% if item.contexte %}
+    <h3>Mise en contexte</h3>
+    <p>{{ item.contexte }}</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+
+  {% if issue.aussi_parus %}
+  <section class="also">
+    <h2>Aussi parus cette semaine</h2>
+    <p class="also-note">Items pertinents mais non retenus pour synthèse — liens vers les sources.</p>
+    <ul>
+      {% for ref in issue.aussi_parus %}
+      <li>{% if ref.url %}<a href="{{ ref.url }}">{{ ref.titre }}</a>{% else %}{{ ref.titre }}{% endif %}
+          <span class="also-source">— {{ ref.source }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}
