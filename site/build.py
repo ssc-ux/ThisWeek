@@ -25,7 +25,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 DIST = ROOT / "dist"
-SITE_URL = "https://example.github.io/ThisWeek"  # à ajuster au déploiement
+SITE_URL = "https://ssc-ux.github.io/thisweek"
 
 TYPE_LABELS = {
     "reco": "Recommandation",
@@ -62,6 +62,34 @@ def load_issues() -> list[dict]:
         issues.append(issue)
     issues.sort(key=lambda i: i["date"], reverse=True)
     return issues
+
+
+VEILLE_SECTIONS = {
+    "reco": "Recommandations, guidelines et consensus",
+    "essai": "Essais randomisés — grandes revues",
+}
+
+
+def load_veille() -> dict | None:
+    """Dernier brouillon PubMed (content/drafts/), pour la page veille."""
+    drafts = sorted((CONTENT / "drafts").glob("*-brouillon.yaml"))
+    if not drafts:
+        return None
+    draft = yaml.safe_load(drafts[-1].read_text(encoding="utf-8"))
+    sections = [
+        {"titre": titre, "docs": draft["candidats"].get(cle, [])}
+        for cle, titre in VEILLE_SECTIONS.items()
+        if draft["candidats"].get(cle)
+    ]
+    if not sections:
+        return None
+    d = datetime.strptime(str(draft["genere_le"]), "%Y-%m-%d").date()
+    return {
+        "date_fr": date_fr(d),
+        "periode_jours": draft.get("periode_jours", 7),
+        "total": sum(len(s["docs"]) for s in sections),
+        "sections": sections,
+    }
 
 
 def build_rss(issues: list[dict]) -> str:
@@ -124,6 +152,11 @@ def main() -> None:
         issues=issues, css=css, root="", active="archives"
     )
     (DIST / "archives.html").write_text(archives, encoding="utf-8")
+
+    veille = env.get_template("veille.html").render(
+        veille=load_veille(), css=css, root="", active="veille"
+    )
+    (DIST / "veille.html").write_text(veille, encoding="utf-8")
 
     methode_md = (CONTENT / "methode.md").read_text(encoding="utf-8")
     methode = env.get_template("page.html").render(
