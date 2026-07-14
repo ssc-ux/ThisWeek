@@ -2,8 +2,30 @@
 
 **ThisWeek · Médecine interne** publie chaque semaine une sélection des
 nouvelles recommandations, PNDS et publications majeures utiles aux médecins
-internistes, avec pour chaque item un résumé, ce qui change, un message à
-retenir et une mise en contexte.
+internistes exerçant en France, avec pour chaque item un résumé, ce qui change,
+un message à retenir et une mise en contexte.
+
+## Périmètre : la médecine interne telle qu'elle se pratique en France
+
+Ne sont retenus que les sujets qui intéressent réellement un service de
+médecine interne français :
+
+- **Maladies auto-immunes et systémiques** : lupus, syndrome de Gougerot-
+  Sjögren, sclérodermie, myosites et connectivites.
+- **Vascularites** : Horton, Takayasu, vascularites à ANCA, périartérite
+  noueuse, maladie de Behçet.
+- **Maladies auto-inflammatoires**, sarcoïdose, amylose, maladies liées aux
+  IgG4, granulomatoses.
+- **Hématologie non maligne** : PTI, PTT et microangiopathies, anémies
+  hémolytiques auto-immunes, cytopénies.
+- **Maladie thromboembolique veineuse**, syndrome des antiphospholipides.
+- **Infectiologie complexe, fièvre prolongée inexpliquée**, prise en charge du
+  patient immunodéprimé, polypathologie et démarche diagnostique.
+
+Les sujets qui relèvent d'une autre spécialité d'organe (cardiologie
+interventionnelle, diabétologie, pneumologie, gastro-entérologie, oncologie…)
+ne sont **pas** retenus, sauf lorsqu'ils concernent directement la pratique
+interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
 
 ## Comment les items sont sélectionnés
 
@@ -11,16 +33,19 @@ Les sources surveillées chaque semaine :
 
 - **Recommandations françaises** : HAS, PNDS des filières maladies rares,
   SNFMI et sociétés savantes des spécialités frontières, alertes ANSM.
-- **Recommandations internationales** : sociétés savantes européennes et
-  américaines du champ de la médecine interne (EULAR, ESC, ACP, IDSA, KDIGO…).
-- **Grandes revues** : NEJM, The Lancet, JAMA, Annals of Internal Medicine,
-  BMJ et revues de spécialité, avec PubMed en filet de sécurité (requêtes sur
-  les types de publication « guideline » et « essai randomisé »).
+- **Recommandations internationales** du champ des maladies systémiques et
+  auto-immunes (EULAR, ACR, sociétés savantes de médecine interne et
+  d'hématologie).
+- **Grandes revues** : NEJM, The Lancet (et Lancet Rheumatology / Haematology),
+  JAMA, Annals of Internal Medicine, Annals of the Rheumatic Diseases, Blood,
+  Kidney International… avec PubMed en filet de sécurité (requêtes ciblées sur
+  les pathologies du périmètre ci-dessus).
 
-La sélection est volontairement restrictive : 4 à 8 items synthétisés par
-numéro, choisis pour leur impact sur la pratique de l'interniste. Les items
-pertinents mais non retenus figurent en liste brute dans la rubrique « Aussi
-parus cette semaine ».
+La sélection est volontairement restrictive : 3 à 8 items synthétisés par
+numéro, choisis pour leur impact sur la pratique de l'interniste — quitte à ce
+qu'un numéro soit court une semaine calme. Les items pertinents mais non retenus
+figurent en liste brute dans la rubrique « Aussi parus cette semaine ». Les
+essais **négatifs** sont retenus lorsqu'ils recadrent utilement les attentes.
 
 ## Comment les synthèses sont rédigées
 

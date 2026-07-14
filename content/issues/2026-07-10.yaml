@@ -1,148 +1,87 @@
 # Numéro réel rédigé à partir des abstracts PubMed (brouillon, non relu).
+# Périmètre : médecine interne (amylose, sarcoïdose, lupus).
 numero: 3
 semaine: "4 au 10 juillet 2026"
 date: 2026-07-10
 brouillon: true
 edito: >-
-  Une avancée dans la fibrose pulmonaire idiopathique, une bithérapie
-  incrétine qui pousse plus loin le contrôle du diabète, une extension du
-  bénéfice des anti-PCSK9, une maladie rare de l'adulte, et une stratégie de
-  bon usage des antibiotiques dans la pneumonie.
+  Trois maladies systémiques de l'adulte cette semaine : un anticorps
+  antifibrilles dans l'amylose AL (résultat nuancé), un essai négatif dans la
+  sarcoïdose pulmonaire, et une synthèse au long cours de l'anifrolumab dans
+  le lupus.
 
 items:
   - type: essai
-    titre: "Tréprostinil inhalé dans la fibrose pulmonaire idiopathique (TETON-1 et analyse combinée)"
-    source: "New England Journal of Medicine · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42149993/"
+    titre: "Anselamimab dans l'amylose à chaînes légères (AL) : essais CARES"
+    source: "Journal of Clinical Oncology · essais randomisés de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42212672/"
     base_texte: abstract_seul
     resume: >-
-      Essai de phase 3 en double insu chez 598 patients atteints de fibrose
-      pulmonaire idiopathique (âge moyen 73 ans, 77,6 % sous antifibrosant de
-      fond), randomisés entre tréprostinil inhalé (12 bouffées 4 fois/j) et
-      placebo. À 52 semaines, la variation médiane de CVF était de −43,3 mL
-      (tréprostinil) contre −196,2 mL (placebo) — différence 130,1 mL
-      (IC95 % 82,2–178,1 ; p < 0,001). Aggravation clinique : 31,8 % vs 44,5 %
-      (HR 0,67 ; IC95 % 0,52–0,88). Effet indésirable le plus fréquent : toux
-      (54,8 % vs 33,1 %) ; arrêts de traitement plus fréquents sous tréprostinil.
-    ce_qui_change:
-      reference: "options limitées dans la FPI"
-      points:
-        - "Nouveau mécanisme (prostacycline inhalée) ralentissant le déclin de
-          la CVF, en ajout aux antifibrosants existants."
+      Chez 406 patients avec amylose AL de stade IIIa/IIIb nouvellement
+      diagnostiquée, l'anselamimab (anticorps se liant aux fibrilles amyloïdes)
+      a été ajouté au traitement standard (cyclophosphamide-bortézomib-
+      dexaméthasone ± daratumumab). Le critère principal hiérarchique (mortalité
+      toutes causes et hospitalisations cardiovasculaires) n'était pas atteint
+      (win ratio 1,11 ; p = 0,332). Dans le sous-groupe à chaînes légères kappa
+      (n = 72), signal favorable : réduction de 62 % de la mortalité (HR 0,38)
+      et de 71 % des hospitalisations cardiovasculaires. Aucun bénéfice dans les
+      formes lambda.
     message_cle: >-
-      Le tréprostinil inhalé ralentit le déclin de la CVF et réduit les
-      aggravations cliniques dans la FPI sur 52 semaines — au prix d'une toux
-      fréquente et d'arrêts de traitement non négligeables.
+      L'anselamimab ne fait pas la preuve d'un bénéfice global dans l'amylose AL,
+      mais un signal fort dans le sous-groupe kappa mérite confirmation ; ne
+      modifie pas la prise en charge actuelle.
     contexte: >-
-      Niveau de preuve élevé (phase 3, résultats confirmés en analyse combinée
-      avec TETON-2). Tolérance à intégrer dans la décision ; place et
-      remboursement dans la stratégie antifibrosante à préciser.
+      Essai principal négatif ; le bénéfice kappa provient d'une analyse de
+      sous-groupe (génératrice d'hypothèses). La prise en charge de l'amylose AL
+      reste centrée sur le traitement de la dyscrasie plasmocytaire ; en France,
+      elle s'organise autour du Centre de référence (amylose AL et autres
+      dépôts d'immunoglobulines).
 
   - type: essai
-    titre: "Cagrilintide-sémaglutide (CagriSema) en ajout à l'insuline basale dans le diabète de type 2 (REIMAGINE 3)"
-    source: "The Lancet · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42251856/"
+    titre: "Namilumab dans la sarcoïdose pulmonaire chronique : essai négatif (RESOLVE-Lung)"
+    source: "European Respiratory Journal · essai de phase 2"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41819539/"
     base_texte: abstract_seul
     resume: >-
-      Essai de phase 3, double insu, chez 274 adultes diabétiques de type 2
-      (HbA1c 7,0–10,5 %) sous insuline basale ± metformine, randomisés entre
-      CagriSema (cagrilintide + sémaglutide, une injection SC hebdomadaire, deux
-      doses) et placebo pendant 40 semaines. Baisse d'HbA1c : −2,33 % (2,4 mg) et
-      −2,10 % (1,0 mg) contre −0,66 % sous placebo. Perte de poids de 10–12 %.
-      Aucune hypoglycémie sévère ; effets indésirables surtout digestifs, légers
-      à modérés.
+      Essai de phase 2 randomisé contre placebo chez 107 patients atteints de
+      sarcoïdose pulmonaire chronique active sous corticoïdes et/ou
+      immunosuppresseurs, avec sevrage imposé. Le namilumab (anti-GM-CSF, 150 mg
+      SC/4 semaines) n'a pas réduit les événements de recours thérapeutique
+      (37,5 % vs 23,5 % sous placebo ; p = 0,12), sans bénéfice sur la CVF ni sur
+      l'épargne cortisonique (sevrage réussi chez 53,3 % vs 76,9 % sous placebo).
     message_cle: >-
-      En ajout à l'insuline basale, la bithérapie cagrilintide-sémaglutide
-      améliore fortement l'HbA1c et le poids sans excès d'hypoglycémie sévère.
+      Le namilumab n'apporte pas de bénéfice dans la sarcoïdose pulmonaire
+      chronique — les options d'épargne cortisonique restent limitées
+      (méthotrexate, azathioprine, anti-TNF en recours).
     contexte: >-
-      Niveau de preuve élevé mais effectif modéré et durée de 40 semaines ; pas
-      de donnée de morbimortalité cardiovasculaire. Financement industriel.
-      Molécule non encore disponible ; positionnement à préciser face aux
-      incrétines existantes.
+      Essai négatif sur un besoin réel : les traitements de la sarcoïdose
+      réfractaire manquent d'efficacité et de tolérance. Résultat utile pour
+      réorienter la recherche et tempérer les attentes autour de l'anti-GM-CSF.
 
-  - type: essai
-    titre: "Évolocumab chez les patients avec antécédent d'angioplastie coronaire sans infarctus (VESALIUS-CV)"
-    source: "Circulation · analyse de sous-groupe préspécifiée"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42153665/"
+  - type: meta
+    titre: "Anifrolumab au long cours dans le lupus systémique : méta-analyse (essais, extensions, vie réelle)"
+    source: "Pharmacology · méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42406697/"
     base_texte: abstract_seul
     resume: >-
-      Analyse préspécifiée de VESALIUS-CV chez 3 627 patients (sur 12 257) ayant
-      un antécédent d'angioplastie coronaire mais sans infarctus ni AVC, avec
-      LDL-C ≥ 90 mg/dL, randomisés entre évolocumab et placebo (suivi médian
-      4,6 ans). L'évolocumab a réduit le MACE à 3 composantes de 30 % (7,0 % vs
-      9,5 % ; HR 0,70 ; IC95 % 0,56–0,89), l'infarctus de 50 % et la
-      revascularisation coronaire urgente de 39 %, avec des taux nominalement
-      plus bas de mortalité cardiovasculaire et totale.
-    ce_qui_change:
-      reference: "indication centrée sur le post-infarctus"
-      points:
-        - "Bénéfice de l'abaissement intensif du LDL-C étendu aux patients
-          coronariens revascularisés sans antécédent d'infarctus."
+      Méta-analyse de 10 études (essais de phase 2/3, extensions TULIP/MUSE et
+      quatre cohortes européennes de vie réelle) sur l'anifrolumab (antagoniste
+      du récepteur de l'interféron de type I) dans le lupus modéré à sévère.
+      Dans les essais (N = 1 093) : meilleure réponse BICLA (OR 1,85) et
+      meilleure épargne cortisonique ≤ 7,5 mg/j (OR 2,24). En vie réelle
+      (N = 294), 75,8 % atteignaient un état de faible activité (LLDAS) à
+      6–12 mois. Surrisque de zona (OR 3,45), le plus souvent modéré et gérable.
     message_cle: >-
-      Chez les patients avec antécédent d'angioplastie coronaire mais sans
-      infarctus, l'abaissement intensif du LDL-C par évolocumab réduit les
-      événements cardiovasculaires — argument pour ne pas réserver ces
-      traitements au post-infarctus.
+      L'anifrolumab confirme au long cours un contrôle rapide et durable du
+      lupus et un effet d'épargne cortisonique, au prix d'un surrisque de zona
+      justifiant la vaccination préventive.
     contexte: >-
-      Analyse de sous-groupe (à interpréter comme génératrice d'hypothèses,
-      même si préspécifiée). LDL-C d'inclusion élevé (≥ 90 mg/dL) ; financement
-      industriel. Renforce la logique « LDL le plus bas possible » chez le
-      coronarien à haut risque.
-
-  - type: essai
-    titre: "Setmélanotide dans l'obésité hypothalamique acquise (TRANSCEND)"
-    source: "New England Journal of Medicine · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42418774/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai de phase 3 chez 120 patients (4 à 66 ans) avec obésité hypothalamique
-      acquise (antécédent de tumeur, lésion ou traumatisme hypothalamique),
-      randomisés 2:1 entre setmélanotide (agoniste du récepteur MC4) et placebo
-      pendant 52 semaines. Variation de l'IMC : −16,5 % (setmélanotide) contre
-      +3,3 % (placebo ; p < 0,001), avec baisse du score de faim. Effets
-      indésirables chez 100 % des patients traités (hyperpigmentation cutanée,
-      nausées, vomissements, céphalées) ; effets graves chez 28 % vs 8 %.
-    message_cle: >-
-      Le setmélanotide réduit nettement l'IMC et la faim dans l'obésité
-      hypothalamique acquise, une situation jusqu'ici sans traitement efficace —
-      au prix d'effets indésirables fréquents.
-    contexte: >-
-      Niveau de preuve élevé pour une maladie rare (population mixte enfant/
-      adulte). Indication de niche mais utile à connaître pour l'interniste
-      confronté aux séquelles de tumeurs de la région hypothalamo-hypophysaire.
-      Financement industriel.
-
-  - type: essai
-    titre: "Interprétation guidée de la probabilité de pneumonie pour ajuster l'antibiothérapie des patients hospitalisés"
-    source: "Clinical Infectious Diseases · essai pragmatique randomisé"
-    url: "https://pubmed.ncbi.nlm.nih.gov/41823187/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai pragmatique randomisé chez 107 adultes hospitalisés sous
-      antibiotiques pour suspicion d'infection respiratoire, avec procalcitonine
-      basse ou test viral respiratoire positif, dans 2 hôpitaux. Une note type
-      dans le dossier interprétait les tests en termes de probabilité de
-      pneumonie bactérienne, recommandant l'arrêt des antibiotiques quand elle
-      était faible. L'intervention a réduit l'antibiothérapie de 4,1 jours en
-      moyenne (7,5 vs 11,6 ; p = 0,006), sans différence significative de durée
-      de séjour ni de réadmission.
-    message_cle: >-
-      Interpréter la procalcitonine et les tests viraux via une aide structurée
-      (probabilité de pneumonie bactérienne) réduit la durée d'antibiothérapie
-      chez l'adulte hospitalisé, sans signal de surrisque.
-    contexte: >-
-      Petit effectif (n = 107), preuve de concept sur 2 centres. C'est
-      l'interprétation guidée — et non le test seul — qui modifie les
-      prescriptions, en cohérence avec l'essai négatif de tests rapides en soins
-      primaires (numéro précédent).
+      Méta-analyse combinant essais et vie réelle (hétérogénéité de conception).
+      Renforce la place de l'anifrolumab dans le lupus cutanéo-articulaire/
+      systémique réfractaire et rappelle l'intérêt de la vaccination zona avant
+      immunosuppression.
 
 aussi_parus:
-  - titre: "Recommandations sur l'usage et la sécurité des injections de corticoïdes dans les articulations et tissus mous"
-    source: "Regional Anesthesia & Pain Medicine"
-    url: "https://pubmed.ncbi.nlm.nih.gov/40015722/"
-  - titre: "Recommandations consensuelles sur la prise en charge de H. pylori en Égypte : rapport 2026"
-    source: "Digestive Diseases"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42412729/"
-  - titre: "Coût-efficacité du test immunochimique fécal seul vs couplé au test H. pylori"
-    source: "JAMA"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42223961/"
+  - titre: "Risque infectieux des biothérapies et traitements ciblés dans la polyarthrite rhumatoïde : revue systématique"
+    source: "European Journal of Clinical Pharmacology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42426413/"

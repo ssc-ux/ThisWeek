@@ -92,6 +92,9 @@ médecin). Chacun affiche une bannière dédiée.
 
 Site fonctionnel avec trois numéros rétrospectifs (n° 1 à 3, semaines de fin
 juin à début juillet 2026), rédigés à partir de vraies publications PubMed et
-signalés comme brouillons en attente de relecture médicale. Les documents de
-conception ci-dessus restent la référence pour les phases suivantes
-(automatisation du scoring et des synthèses).
+signalés comme brouillons en attente de relecture médicale. Le périmètre est
+strictement celui de la **médecine interne telle qu'elle se pratique en France**
+(maladies auto-immunes et systémiques, vascularites, hématologie non maligne,
+MTEV, sarcoïdose, amylose…) — voir la page Méthode. Les documents de conception
+ci-dessus restent la référence pour les phases suivantes (automatisation du
+scoring et des synthèses).

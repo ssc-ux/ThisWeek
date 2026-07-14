@@ -1,167 +1,145 @@
 # Numéro réel rédigé à partir des abstracts PubMed (brouillon, non relu).
+# Périmètre : médecine interne (maladies auto-immunes et systémiques, vascularites,
+# hématologie non maligne).
 numero: 2
 semaine: "27 juin au 3 juillet 2026"
 date: 2026-07-03
 brouillon: true
 edito: >-
-  Semaine riche en recommandations : deux mises au point nord-américaines qui
-  déprescrivent (diverticulite, Clostridioides difficile), un premier
-  face-à-face rituximab/ocrélizumab dans la SEP, une stratégie de switch dans
-  la polyarthrite, et un essai négatif utile sur les tests rapides en soins
-  primaires.
+  Semaine dense et très « médecine interne » : une recommandation majeure sur
+  le traitement du lupus, deux essais négatifs utiles (Horton, PTI) qui
+  recadrent les attentes, un signal positif dans la maladie de Behçet, et un
+  consensus sur le purpura thrombotique thrombocytopénique.
 
 items:
   - type: reco
-    titre: "Recommandation ACG — diverticulite colique"
-    source: "American Journal of Gastroenterology · American College of Gastroenterology"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42390126/"
+    titre: "Recommandation ACR 2025 pour le traitement du lupus systémique (hors atteinte rénale)"
+    source: "Arthritis & Rheumatology · American College of Rheumatology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41187097/"
     base_texte: abstract_seul
     resume: >-
-      Recommandation de l'ACG sur la prise en charge ambulatoire de la
-      diverticulite. Le scanner est essentiel au diagnostic, surtout au premier
-      épisode et dans les formes sévères. Une coloscopie est recommandée après
-      une diverticulite compliquée, et suggérée dans les formes non compliquées
-      en cas de signe d'alarme ou de dépistage colorectal non à jour. Les
-      mesures d'hygiène de vie (alimentation saine sans éviction des fruits à
-      coque/graines/maïs/pop-corn, activité physique, poids, arrêt du tabac,
-      limitation de l'alcool et des AINS) réduisent le risque de récidive.
+      Recommandation de l'ACR (méthodologie GRADE, accord ≥ 70 % du panel) sur
+      le traitement du lupus non rénal, applicable à l'adulte et à l'enfant (la
+      néphrite lupique fait l'objet d'un texte séparé). Trois axes forts :
+      hydroxychloroquine pour tous, limitation de la durée de la corticothérapie,
+      et introduction précoce des immunosuppresseurs conventionnels et/ou des
+      biothérapies pour obtenir et maintenir un contrôle de l'inflammation
+      (rémission ou faible activité), réduire la morbimortalité et les toxicités
+      médicamenteuses.
     ce_qui_change:
-      reference: "pratiques plus anciennes"
+      reference: "pratiques centrées sur la corticothérapie"
       points:
-        - "Pas d'antibiotiques en routine dans la diverticulite aiguë non
-          compliquée à bas risque (bénéfice nul ou minime dans les essais)."
-        - "Antibiotiques réservés aux formes à haut risque, immunodépression,
-          fragilité ou impossibilité d'un suivi ambulatoire sûr."
-        - "Fin de l'éviction des fruits à coque, graines, maïs et pop-corn."
+        - "Hydroxychloroquine posée comme traitement de fond universel."
+        - "Corticothérapie à limiter dans le temps, au profit d'une introduction
+          plus précoce des immunosuppresseurs et biothérapies."
     message_cle: >-
-      Diverticulite non compliquée à bas risque : traitement sans antibiotiques,
-      pas d'éviction alimentaire des graines/fruits à coque, coloscopie ciblée
-      selon le contexte.
+      Dans le lupus : hydroxychloroquine pour tous, épargne cortisonique, et
+      immunosuppression/biothérapie précoce pour viser la rémission ou une
+      faible activité.
     contexte: >-
-      Recommandation fondée sur des essais randomisés pour l'abstention
-      antibiotique. Cadre nord-américain ; transposition en France à confronter
-      aux recommandations locales, mais la tendance déprescriptive est
-      convergente.
+      Recommandation nord-américaine de niveau de preuve élevé. Cohérente avec
+      les recommandations EULAR ; à confronter aux pratiques françaises et à la
+      disponibilité/AMM des biothérapies. Ne couvre pas la néphrite lupique.
+
+  - type: essai
+    titre: "Sécukinumab dans l'artérite à cellules géantes (Horton) : essai négatif (GCAptAIN)"
+    source: "NEJM Evidence · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42234457/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 randomisé contre placebo chez des patients atteints
+      d'artérite à cellules géantes (nouvelle ou en rechute). Le sécukinumab
+      300 mg (avec décroissance des corticoïdes sur 26 semaines) n'a pas
+      significativement amélioré la rémission soutenue à 52 semaines : 25,6 % vs
+      16,9 % sous placebo (différence 8,7 points ; IC95 % −1,3 à 18,8 ;
+      p = 0,09). Pas de bénéfice non plus à 150 mg. Effets indésirables graves
+      un peu moins fréquents sous sécukinumab.
+    message_cle: >-
+      Le sécukinumab n'a pas fait la preuve de son efficacité dans l'artérite à
+      cellules géantes — le tocilizumab reste la biothérapie d'épargne
+      cortisonique de référence.
+    contexte: >-
+      Essai négatif de bonne qualité, utile pour ne pas transposer aux
+      vascularites tout succès de l'anti-IL-17A dans le psoriasis/SpA. Ne
+      modifie pas la stratégie actuelle (corticoïdes ± tocilizumab).
+
+  - type: essai
+    titre: "Mufemilast dans la maladie de Behçet : essai de phase 2"
+    source: "Annals of the Rheumatic Diseases · essai de phase 2"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41748391/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 2 randomisé contre placebo chez 90 patients atteints de
+      maladie de Behçet avec aphtose buccale active. Le mufemilast (inhibiteur
+      oral sélectif de la PDE4, 45 ou 60 mg × 2/j, 12 semaines) a réduit l'aire
+      sous la courbe du nombre d'ulcères buccaux (différence −104,8 à −142,5 vs
+      placebo ; p < 0,001), avec amélioration de la douleur et du délai de
+      rémission. Effets indésirables liés à la PDE4 transitoires, arrêts rares,
+      aucun effet grave lié au traitement.
+    message_cle: >-
+      Un inhibiteur oral de la PDE4 réduit l'aphtose buccale du Behçet en
+      phase 2 — piste intéressante dans l'atteinte muqueuse, à confirmer en
+      phase 3.
+    contexte: >-
+      Preuve de phase 2, critère centré sur l'aphtose buccale (pas sur les
+      atteintes graves — oculaire, vasculaire, neurologique). À situer à côté de
+      l'aprémilast (même classe) déjà évalué dans le Behçet.
+
+  - type: essai
+    titre: "Efgartigimod sous-cutané dans le purpura thrombopénique immunologique : essai négatif (ADVANCE SC)"
+    source: "American Journal of Hematology · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41943179/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 chez 207 adultes atteints de PTI primaire (plaquettes
+      < 30 G/L, ≥ 1 traitement antérieur), randomisés 2:1 entre efgartigimod
+      PH20 sous-cutané et placebo. La supériorité n'a pas été démontrée : réponse
+      plaquettaire soutenue (≥ 50 G/L sur au moins 4 des 6 visites S19–24) chez
+      13,7 % (efgartigimod) contre 16,2 % (placebo ; p = 0,51). Tolérance bonne
+      et comparable. Réponses placebo plus élevées et réponses efgartigimod plus
+      basses qu'attendu.
+    message_cle: >-
+      La forme sous-cutanée d'efgartigimod n'a pas confirmé son efficacité dans
+      le PTI dans cet essai — résultat discordant avec la forme IV (ADVANCE IV),
+      à interpréter avec prudence.
+    contexte: >-
+      Essai négatif contrastant avec le succès antérieur de l'efgartigimod IV :
+      taux de réponse placebo inhabituellement élevé, ce qui complique
+      l'interprétation. Rappelle la prudence avant d'extrapoler d'une voie
+      d'administration à l'autre.
 
   - type: reco
-    titre: "Mise au point AGA — prise en charge de l'infection à Clostridioides difficile chez l'adulte"
-    source: "Clinical Gastroenterology and Hepatology · American Gastroenterological Association"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42383946/"
+    titre: "Consensus d'experts sur la prise en charge du purpura thrombotique thrombocytopénique (PTT)"
+    source: "Korean Journal of Internal Medicine · consensus d'experts"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42438901/"
     base_texte: abstract_seul
     resume: >-
-      Mise au point d'experts (14 conseils de bonne pratique). Le diagnostic est
-      clinique (diarrhée aiguë, souvent post-antibiotique) associé à un test
-      biologique, en privilégiant un test multi-étapes. La classification en
-      forme non sévère / sévère (GB > 15 000/µL et/ou créatinine > 1,5 × base) /
-      fulminante (choc, iléus, mégacôlon) oriente la prise en charge. La
-      fidaxomicine (200 mg × 2/j, 10 j) est privilégiée en première ligne pour
-      son moindre taux de récidive, la vancomycine orale restant acceptable. Le
-      métronidazole est réservé aux formes fulminantes. Les thérapies de
-      restauration du microbiote (dont la transplantation fécale) sont proposées
-      après la deuxième récidive, plus tôt chez les patients à haut risque.
-    ce_qui_change:
-      reference: "recommandations antérieures"
-      points:
-        - "Fidaxomicine en première ligne (récidives moindres) ; vancomycine
-          orale en alternative."
-        - "Métronidazole cantonné aux formes fulminantes (en association)."
-        - "Pas de test de guérison systématique après traitement."
+      Consensus d'experts sur le diagnostic et la prise en charge du PTT,
+      microangiopathie thrombotique liée à un déficit sévère en ADAMTS13. Il
+      couvre les approches diagnostiques, les traitements initiaux (échanges
+      plasmatiques, immunosuppression par rituximab, caplacizumab) et adjuvants,
+      la prise en charge des formes réfractaires, le suivi de l'ADAMTS13 et le
+      suivi au long cours, en adaptant les données internationales aux
+      contraintes locales (accès au dosage ADAMTS13, remboursement).
     message_cle: >-
-      Fidaxomicine de préférence en première ligne, métronidazole réservé aux
-      formes fulminantes, transplantation de microbiote fécal dès la deuxième
-      récidive (plus tôt si haut risque).
+      Le trépied échanges plasmatiques + rituximab + caplacizumab structure la
+      prise en charge du PTT, guidée par l'ADAMTS13 ; l'accès au dosage et aux
+      molécules reste un enjeu organisationnel.
     contexte: >-
-      Avis d'experts (pas de gradation formelle du niveau de preuve). Le coût et
-      la disponibilité de la fidaxomicine et des thérapies du microbiote peuvent
-      moduler l'application en pratique française.
-
-  - type: essai
-    titre: "Rituximab versus ocrélizumab dans la sclérose en plaques récurrente nouvellement diagnostiquée (OVERLORD-MS)"
-    source: "New England Journal of Medicine · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42384870/"
-    base_texte: abstract_seul
-    resume: >-
-      Premier essai de non-infériorité en face-à-face de deux anti-CD20 dans la
-      SEP. 216 adultes avec SEP récurrente récemment diagnostiquée et active ont
-      reçu rituximab ou ocrélizumab tous les 6 mois pendant 24 mois. Absence de
-      lésion nouvelle/agrandie en IRM entre M6 et M24 : 92,2 % (rituximab) vs
-      94,8 % (ocrélizumab) — différence −2,6 points (IC95 % −9,4 à 4,3),
-      non-infériorité atteinte. Rechutes, handicap et cognition comparables.
-      Infections plus fréquentes sous rituximab (82 % vs 69 %), effets
-      indésirables graves similaires (8 % vs 7 %).
-    ce_qui_change:
-      reference: "absence de comparaison directe antérieure"
-      points:
-        - "Premières données randomisées en face-à-face : le rituximab
-          (hors AMM dans la SEP mais bien moins coûteux) est non inférieur à
-          l'ocrélizumab sur l'activité IRM."
-    message_cle: >-
-      Dans la SEP récurrente active, le rituximab est non inférieur à
-      l'ocrélizumab sur l'activité IRM à 2 ans — argument médico-économique fort,
-      à mettre en regard d'un surcroît d'infections.
-    contexte: >-
-      Niveau de preuve élevé mais effectif modéré et critère principal
-      d'imagerie (pas un critère clinique dur). Le rituximab reste hors AMM dans
-      cette indication en France ; implications surtout médico-économiques.
-
-  - type: essai
-    titre: "Upadacitinib vs adalimumab après échec d'un anti-TNF dans la polyarthrite rhumatoïde (SELECT-SWITCH)"
-    source: "Annals of the Rheumatic Diseases · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/41991443/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai randomisé en double insu chez 492 patients atteints de polyarthrite
-      rhumatoïde active après réponse inadéquate ou intolérance à un premier
-      anti-TNF (non-adalimumab), sous méthotrexate stable. À 12 semaines,
-      l'upadacitinib (15 mg/j) était supérieur à l'adalimumab pour l'objectif
-      DAS28-CRP ≤ 3,2 (43,3 % vs 22,4 % ; différence 21 points), ainsi que pour
-      l'ACR50 et la rémission DAS28-CRP < 2,6. Tolérance comparable entre les
-      deux traitements.
-    ce_qui_change:
-      reference: "cycler vers un second anti-TNF"
-      points:
-        - "Changer de mécanisme d'action (inhibiteur de JAK) fait mieux que
-          cycler vers un second anti-TNF après un premier échec."
-    message_cle: >-
-      Après échec d'un premier anti-TNF dans la PR, passer à un inhibiteur de JAK
-      donne de meilleures réponses à 12 semaines que d'enchaîner sur un second
-      anti-TNF.
-    contexte: >-
-      Niveau de preuve élevé mais critère à court terme (12 semaines) et
-      financement industriel. À intégrer dans la balance bénéfice/risque des
-      inhibiteurs de JAK (sécurité cardiovasculaire et néoplasique) selon le
-      profil du patient.
-
-  - type: essai
-    titre: "Tests microbiologiques respiratoires rapides au point de soins et antibiothérapie en soins primaires"
-    source: "JAMA Internal Medicine · essai randomisé"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42149561/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai randomisé dans 16 cabinets de médecine générale du sud-ouest de
-      l'Angleterre, chez 552 patients (≥ 12 mois) avec infection respiratoire
-      aiguë et antibiothérapie jugée possiblement nécessaire. Un test rapide
-      multiplex (19 virus, 4 bactéries atypiques, ~45 min) n'a pas réduit la
-      prescription d'antibiotiques le jour même (45 % dans chaque groupe ;
-      OR 1,00) ni aggravé les symptômes. Réduction observée seulement dans le
-      sous-groupe où un virus était détecté.
-    message_cle: >-
-      Un test respiratoire rapide au point de soins ne réduit pas, à lui seul,
-      la prescription d'antibiotiques en soins primaires — le test sans aide à
-      l'interprétation ne suffit pas.
-    contexte: >-
-      Essai négatif de bonne qualité, utile pour ne pas surinvestir dans ces
-      dispositifs isolément. À rapprocher des stratégies de stewardship où c'est
-      l'interprétation guidée du test, plus que le test seul, qui change les
-      prescriptions.
+      Consensus adapté au contexte coréen ; en France, le diagnostic et le suivi
+      s'appuient sur le Centre de référence des microangiopathies thrombotiques
+      (CNR-MAT), avec un accès généralement plus large au caplacizumab.
 
 aussi_parus:
-  - titre: "Recommandations fondées sur les preuves pour le diagnostic et le traitement de l'infection à H. pylori"
-    source: "Helicobacter"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42439470/"
-  - titre: "FFR dérivée de l'angiographie pour guider l'angioplastie coronaire"
-    source: "New England Journal of Medicine"
-    url: "https://pubmed.ncbi.nlm.nih.gov/41910384/"
-  - titre: "Traitement par testostérone chez les survivants d'un cancer de prostate avec hypogonadisme"
-    source: "JAMA Internal Medicine"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42113507/"
+  - titre: "Repositionnement du léflunomide + hydroxychloroquine dans la maladie de Sjögren (RepurpSS-II)"
+    source: "The Lancet Rheumatology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42161318/"
+  - titre: "Prévalence des rechutes dans la sarcoïdose pulmonaire : revue systématique et méta-analyse"
+    source: "Respiratory Medicine"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42144146/"
+  - titre: "Facteurs prédictifs de pneumopathie interstitielle rapidement progressive dans la dermatomyosite anti-MDA5"
+    source: "Rheumatology (Oxford)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42334960/"
+  - titre: "Biomarqueurs et réponse rénale dans la néphrite lupique (étude BLISS-LN)"
+    source: "Kidney International"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42055319/"

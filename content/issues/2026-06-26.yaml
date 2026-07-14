@@ -1,154 +1,88 @@
 # Numéro réel rédigé à partir des abstracts PubMed (brouillon, non relu).
+# Périmètre : médecine interne (maladies auto-immunes et systémiques, vascularites,
+# hématologie non maligne, MTEV…).
 numero: 1
 semaine: "20 au 26 juin 2026"
 date: 2026-06-26
 brouillon: true
 edito: >-
-  Rattrapage rétrospectif : cinq publications marquantes de la semaine pour
-  l'interniste — un schéma court dans la tuberculose résistante, une politique
-  transfusionnelle simple en chirurgie, une piste de guérison fonctionnelle
-  dans l'hépatite B, un anti-GLP-1 oral et un signal dans l'insuffisance
-  cardiaque à FEVG préservée.
+  Semaine calme pour la médecine interne : les données marquantes sont
+  surtout observationnelles — survie et causes de décès dans le lupus,
+  tolérance au long cours des inhibiteurs de JAK, et une synthèse d'une
+  vascularite cutanée rare.
 
 items:
-  - type: essai
-    titre: "Schéma de 6 mois dans la tuberculose résistante à la rifampicine (BEAT Tuberculosis)"
-    source: "New England Journal of Medicine · essai de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42341301/"
+  - type: meta
+    titre: "Mortalité et survie dans le lupus systémique : méta-analyse de cohortes (région MENA)"
+    source: "Rheumatology International · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42329420/"
     base_texte: abstract_seul
     resume: >-
-      Essai pragmatique de non-infériorité, ouvert, mené en Afrique du Sud chez
-      403 patients (≥ 6 ans) atteints de tuberculose pulmonaire résistante à la
-      rifampicine, y compris femmes enceintes et formes résistantes aux
-      fluoroquinolones. Un schéma tout-oral de 6 mois (bédaquiline, linézolide,
-      délamanide, lévofloxacine et/ou clofazimine) a été comparé au schéma
-      standard de 9 mois. Succès thérapeutique : 86,1 % contre 86,0 %
-      (différence ajustée −0,2 point ; IC95 % −6,9 à 6,5 ; non-infériorité
-      confirmée). Effets indésirables de grade ≥ 3 : 31,2 % contre 37,0 % ;
-      10 décès dans chaque groupe.
-    ce_qui_change:
-      reference: "schéma standard de 9 mois"
-      points:
-        - "Un schéma tout-oral de 6 mois fait aussi bien que 9 mois, avec une
-          tolérance au moins équivalente."
-        - "Population large et pragmatique (grossesse, résistance aux
-          fluoroquinolones incluses), ce qui renforce l'applicabilité."
+      Méta-analyse de 12 cohortes (3 478 adultes lupiques de cinq pays de la
+      région Moyen-Orient / Afrique du Nord). Mortalité toutes causes globale de
+      9,9 % ; survie de 93,9 % à 5 ans, 90,0 % à 10 ans, puis 85,5 % à 15 ans et
+      71,7 % à 20 ans. Principaux facteurs de mortalité : atteinte rénale,
+      maladie cardiovasculaire, infections, HTA, diabète, anomalies
+      hématologiques et sexe masculin. L'infection était la première cause de
+      décès. Une exposition cumulée élevée aux corticoïdes et au
+      cyclophosphamide était associée à une surmortalité, l'hydroxychloroquine
+      et l'azathioprine apparaissant protectrices.
     message_cle: >-
-      Dans la tuberculose résistante à la rifampicine, un schéma tout-oral de
-      6 mois est non inférieur au standard de 9 mois — argument fort pour
-      raccourcir le traitement.
+      Le pronostic à long terme du lupus reste dominé par les complications
+      rénales, cardiovasculaires et infectieuses ; l'hydroxychloroquine reste un
+      pilier, et l'épargne cortisonique un objectif de survie.
     contexte: >-
-      Niveau de preuve élevé (essai randomisé de phase 3). Étude conduite dans
-      un seul pays à forte prévalence ; l'extrapolation demande de tenir compte
-      de la disponibilité des molécules et du profil de résistance local.
+      Preuve observationnelle, hétérogénéité forte (I² ≈ 90 %) et estimations à
+      long terme sensibles à une seule étude. Données régionales non directement
+      transposables à la France, mais les déterminants pronostiques (infection,
+      néphrite, corticoïdes) sont cohérents avec la littérature internationale.
 
   - type: essai
-    titre: "Politique hospitalière d'acide tranexamique pour réduire les transfusions en chirurgie non cardiaque majeure (TRACTION)"
-    source: "New England Journal of Medicine · essai randomisé en grappes"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42267805/"
+    titre: "Upadacitinib vs adalimumab dans la polyarthrite rhumatoïde : données à 7 ans (SELECT-COMPARE)"
+    source: "RMD Open · extension à long terme d'un essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42342288/"
     base_texte: abstract_seul
     resume: >-
-      Essai en grappes, en double insu, dans 10 hôpitaux canadiens, chez 8 273
-      patients à haut risque transfusionnel opérés d'une chirurgie non cardiaque
-      majeure (60,5 % de chirurgie oncologique). Une politique d'administration
-      systématique d'acide tranexamique peropératoire a réduit le taux de
-      transfusion de culots (7,4 % contre 9,8 % ; risque relatif 0,73 ;
-      IC95 % 0,61–0,86). La maladie thromboembolique veineuse à 90 jours était
-      identique (2,1 % dans les deux groupes ; non-infériorité atteinte).
-    ce_qui_change:
-      reference: "pratique sans protocole systématique"
-      points:
-        - "Une politique hospitalière « par défaut » (et non une décision au cas
-          par cas) réduit les transfusions sans excès de MTEV."
+      Suivi à 7 ans de l'essai SELECT-COMPARE (upadacitinib 15 mg/j vs
+      adalimumab, sur méthotrexate). L'efficacité (rémission CDAI, DAS28-CRP)
+      est maintenue jusqu'à 372 semaines dans les deux bras, y compris après
+      switch des non-répondeurs. La tolérance de l'upadacitinib reste conforme
+      aux analyses antérieures, mais avec des taux numériquement plus élevés de
+      zona, d'élévation des CPK, de cancers cutanés non mélaniques, de
+      lymphopénie et d'atteintes hépatiques.
     message_cle: >-
-      Une politique systématique d'acide tranexamique peropératoire en chirurgie
-      non cardiaque majeure réduit les transfusions sans surrisque
-      thromboembolique documenté à 90 jours.
+      Au long cours, le signal de tolérance des inhibiteurs de JAK (zona,
+      cancers cutanés, cytopénies) se confirme — à intégrer dans la surveillance
+      chez tout patient traité par JAKi, au-delà de la seule polyarthrite.
     contexte: >-
-      Niveau de preuve élevé. La sécurité thromboembolique est jugée sur une
-      marge de non-infériorité préspécifiée ; la prudence reste de mise chez les
-      patients à très haut risque thrombotique, peu représentés.
+      Extension d'essai (population sélectionnée, biais d'attrition). La
+      polyarthrite rhumatoïde relève surtout du rhumatologue, mais l'interniste
+      prescrit des inhibiteurs de JAK dans plusieurs maladies auto-immunes : le
+      profil de sécurité au long cours le concerne directement.
 
-  - type: essai
-    titre: "Bépirovirsen dans l'hépatite B chronique : résultats de phase 3 (B-Well 1 et 2)"
-    source: "New England Journal of Medicine · deux essais de phase 3"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42206582/"
+  - type: meta
+    titre: "Vascularite éosinophilique cutanée récidivante : revue systématique"
+    source: "Acta Dermato-Venereologica · revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42343578/"
     base_texte: abstract_seul
     resume: >-
-      Deux essais répliqués, en double insu, chez des adultes avec hépatite B
-      chronique non cirrhotique sous analogue nucléos(t)idique stable et AgHBs
-      entre 100 et 3000 UI/mL. Le bépirovirsen (oligonucléotide antisens, 300 mg
-      SC/semaine pendant 24 semaines) a été comparé au placebo, avec arrêt de
-      l'analogue à 48 semaines. Guérison fonctionnelle à 72 semaines : 20 % vs
-      0 % (B-Well 1) et 19 % vs 0 % (B-Well 2). Effets indésirables de grade ≥ 3
-      chez 16 % (bépirovirsen) contre 3 % (placebo), surtout élévations des
-      transaminases.
-    ce_qui_change:
-      reference: "prise en charge actuelle (contrôle virologique sans guérison)"
-      points:
-        - "Premier signal de phase 3 d'une guérison fonctionnelle
-          (perte d'AgHBs durable) après traitement de durée fixe."
+      Synthèse de 20 rapports (24 cas) d'une vascularite cutanée rare. Tableau
+      typique : purpura prurigineux récidivant des membres inférieurs,
+      éosinophilie périphérique fréquente, ANCA négatifs dans tous les cas
+      rapportés, histologie de vascularite riche en éosinophiles. Les
+      corticoïdes systémiques induisent souvent une amélioration, mais les
+      rechutes à la décroissance ou à l'arrêt sont fréquentes.
     message_cle: >-
-      Le bépirovirsen obtient une guérison fonctionnelle chez ~1 patient sur 5,
-      là où le placebo n'en obtient aucune — étape importante, mais réponse
-      encore minoritaire et surveillance hépatique nécessaire.
+      Devant un purpura prurigineux récidivant avec éosinophilie et ANCA
+      négatifs, évoquer cette entité — et rechercher systématiquement une
+      atteinte extracutanée avant de conclure à une forme purement cutanée.
     contexte: >-
-      Niveau de preuve élevé, deux essais concordants. Taux de guérison encore
-      modeste (~20 %) ; poussées de transaminases à surveiller. Place exacte
-      dans la stratégie (sélection des patients, durée) à préciser.
-
-  - type: essai
-    titre: "Élécoglipron, agoniste oral du récepteur du GLP-1, dans le diabète de type 2 (SOLSTICE)"
-    source: "The Lancet · essai de phase 2b"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42259343/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai de phase 2b, randomisé contre placebo, chez 404 adultes diabétiques
-      de type 2 (HbA1c 7,0–10,5 %) traités par régime, metformine ou inhibiteur
-      du SGLT2. L'élécoglipron, petite molécule orale une fois par jour sans
-      contrainte alimentaire, a réduit l'HbA1c de −0,91 % (5 mg) à −1,88 %
-      (75 mg) contre −0,15 % sous placebo à 26 semaines. Effets indésirables
-      surtout digestifs (nausées, constipation, diarrhée, vomissements),
-      cohérents avec la classe.
-    message_cle: >-
-      Un agoniste du GLP-1 par voie orale « petite molécule » montre une
-      efficacité prometteuse sur l'HbA1c en phase 2b ; à confirmer en phase 3.
-    contexte: >-
-      Preuve de phase 2b (recherche de dose) : encourageant mais préliminaire,
-      pas de donnée de morbimortalité ni de recul long. Financement industriel.
-      Intérêt potentiel d'une administration orale sans contrainte de prise.
-
-  - type: essai
-    titre: "Sacubitril/valsartan dans l'insuffisance cardiaque à FEVG préservée avec insuffisance mitrale fonctionnelle (PRAISE-MR)"
-    source: "Circulation · essai randomisé"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42104906/"
-    base_texte: abstract_seul
-    resume: >-
-      Essai multicentrique, ouvert avec évaluation en insu du critère principal,
-      chez 84 patients avec ICFEVGp symptomatique et insuffisance mitrale
-      fonctionnelle atriale au moins modérée, randomisés entre sacubitril/
-      valsartan et traitement standard. À 6 mois, le sacubitril/valsartan a
-      amélioré la pente mPAP/CO à l'effort (différence −0,93 mm Hg/L/min ;
-      IC95 % −1,80 à −0,07), le pic de VO2 et le score KCCQ, avec baisse du
-      NT-proBNP et du volume de l'oreillette gauche. Dose cible atteinte chez
-      60 % (hypotension symptomatique limitante).
-    message_cle: >-
-      Signal favorable du sacubitril/valsartan sur l'hémodynamique d'effort et
-      les symptômes dans un phénotype précis d'ICFEVGp avec fuite mitrale
-      atriale — à confirmer avant toute généralisation.
-    contexte: >-
-      Petit effectif (n = 84), critère intermédiaire (hémodynamique, pas
-      d'événements cliniques), ouvert. Les auteurs eux-mêmes appellent à des
-      essais contrôlés contre placebo de plus grande taille. Ne modifie pas la
-      pratique à ce stade.
+      Niveau de preuve faible (cas rapportés hétérogènes, suivi incomplet).
+      Intérêt surtout diagnostique : élargir le raisonnement devant une
+      vascularite cutanée à éosinophiles, diagnostic différentiel classique en
+      médecine interne.
 
 aussi_parus:
-  - titre: "Ablation par champ pulsé vs sham dans la fibrillation atriale (PFA-SHAM)"
-    source: "Circulation"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42186803/"
-  - titre: "Lipoprotéine(a), risque cardiovasculaire et bénéfice de l'évolocumab"
-    source: "Circulation"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42183757/"
-  - titre: "Résultats à 10 ans après CAR-T dans les lymphomes B"
-    source: "New England Journal of Medicine"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42341302/"
+  - titre: "Recommandations ASH/ISTH 2026 sur la thromboprophylaxie anticoagulante en pédiatrie"
+    source: "Blood Advances"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41949461/"
