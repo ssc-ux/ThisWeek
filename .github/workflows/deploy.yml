@@ -3,6 +3,9 @@ name: Construire et déployer le site
 on:
   push:
     branches: [main]
+  schedule:
+    # Chaque vendredi 05:00 UTC : rafraîchit la page « Veille » et redéploie.
+    - cron: "0 5 * * 5"
   workflow_dispatch:
 
 permissions:
@@ -23,7 +26,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml jinja2 markdown
+      - name: Collecter la veille PubMed (7 derniers jours)
+        run: python3 pipeline/fetch_pubmed.py || echo "PubMed indisponible — le site sera construit sans la page veille à jour"
       - run: python3 site/build.py
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

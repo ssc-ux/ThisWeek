@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Veille de la semaine · ThisWeek Médecine interne{% endblock %}
+{% block description %}Liste brute des recommandations et essais randomisés repérés sur PubMed ces 7 derniers jours.{% endblock %}
+
+{% block content %}
+<div class="issue-head">
+  <p class="eyebrow">Veille automatique</p>
+  <h1>Repéré sur PubMed cette semaine</h1>
+  {% if veille %}
+  <p class="issue-meta">Généré le {{ veille.date_fr }} · {{ veille.total }} publications sur les {{ veille.periode_jours }} derniers jours</p>
+  {% endif %}
+  <p class="demo-banner"><strong>Liste brute, non triée et non relue.</strong> Cette page est
+  générée automatiquement à partir des types de publication « recommandation » et « essai
+  randomisé — grandes revues » sur PubMed. Elle alimente la sélection éditoriale des numéros ;
+  elle ne la remplace pas.</p>
+</div>
+
+{% if veille %}
+  {% for section in veille.sections %}
+  <section class="also veille-section">
+    <h2>{{ section.titre }} <span class="count">· {{ section.docs | length }}</span></h2>
+    <ul>
+      {% for doc in section.docs %}
+      <li>
+        <a href="{{ doc.url }}">{{ doc.titre }}</a>
+        <span class="also-source">— {{ doc.revue }}{% if doc.date_publication %} · {{ doc.date_publication }}{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+{% else %}
+  <p>Aucune donnée de veille disponible pour le moment — la liste est régénérée
+  automatiquement chaque semaine.</p>
+{% endif %}
+{% endblock %}
