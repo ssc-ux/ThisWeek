@@ -1,0 +1,167 @@
+# Numéro réel rédigé à partir des abstracts PubMed (brouillon, non relu).
+numero: 2
+semaine: "27 juin au 3 juillet 2026"
+date: 2026-07-03
+brouillon: true
+edito: >-
+  Semaine riche en recommandations : deux mises au point nord-américaines qui
+  déprescrivent (diverticulite, Clostridioides difficile), un premier
+  face-à-face rituximab/ocrélizumab dans la SEP, une stratégie de switch dans
+  la polyarthrite, et un essai négatif utile sur les tests rapides en soins
+  primaires.
+
+items:
+  - type: reco
+    titre: "Recommandation ACG — diverticulite colique"
+    source: "American Journal of Gastroenterology · American College of Gastroenterology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42390126/"
+    base_texte: abstract_seul
+    resume: >-
+      Recommandation de l'ACG sur la prise en charge ambulatoire de la
+      diverticulite. Le scanner est essentiel au diagnostic, surtout au premier
+      épisode et dans les formes sévères. Une coloscopie est recommandée après
+      une diverticulite compliquée, et suggérée dans les formes non compliquées
+      en cas de signe d'alarme ou de dépistage colorectal non à jour. Les
+      mesures d'hygiène de vie (alimentation saine sans éviction des fruits à
+      coque/graines/maïs/pop-corn, activité physique, poids, arrêt du tabac,
+      limitation de l'alcool et des AINS) réduisent le risque de récidive.
+    ce_qui_change:
+      reference: "pratiques plus anciennes"
+      points:
+        - "Pas d'antibiotiques en routine dans la diverticulite aiguë non
+          compliquée à bas risque (bénéfice nul ou minime dans les essais)."
+        - "Antibiotiques réservés aux formes à haut risque, immunodépression,
+          fragilité ou impossibilité d'un suivi ambulatoire sûr."
+        - "Fin de l'éviction des fruits à coque, graines, maïs et pop-corn."
+    message_cle: >-
+      Diverticulite non compliquée à bas risque : traitement sans antibiotiques,
+      pas d'éviction alimentaire des graines/fruits à coque, coloscopie ciblée
+      selon le contexte.
+    contexte: >-
+      Recommandation fondée sur des essais randomisés pour l'abstention
+      antibiotique. Cadre nord-américain ; transposition en France à confronter
+      aux recommandations locales, mais la tendance déprescriptive est
+      convergente.
+
+  - type: reco
+    titre: "Mise au point AGA — prise en charge de l'infection à Clostridioides difficile chez l'adulte"
+    source: "Clinical Gastroenterology and Hepatology · American Gastroenterological Association"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42383946/"
+    base_texte: abstract_seul
+    resume: >-
+      Mise au point d'experts (14 conseils de bonne pratique). Le diagnostic est
+      clinique (diarrhée aiguë, souvent post-antibiotique) associé à un test
+      biologique, en privilégiant un test multi-étapes. La classification en
+      forme non sévère / sévère (GB > 15 000/µL et/ou créatinine > 1,5 × base) /
+      fulminante (choc, iléus, mégacôlon) oriente la prise en charge. La
+      fidaxomicine (200 mg × 2/j, 10 j) est privilégiée en première ligne pour
+      son moindre taux de récidive, la vancomycine orale restant acceptable. Le
+      métronidazole est réservé aux formes fulminantes. Les thérapies de
+      restauration du microbiote (dont la transplantation fécale) sont proposées
+      après la deuxième récidive, plus tôt chez les patients à haut risque.
+    ce_qui_change:
+      reference: "recommandations antérieures"
+      points:
+        - "Fidaxomicine en première ligne (récidives moindres) ; vancomycine
+          orale en alternative."
+        - "Métronidazole cantonné aux formes fulminantes (en association)."
+        - "Pas de test de guérison systématique après traitement."
+    message_cle: >-
+      Fidaxomicine de préférence en première ligne, métronidazole réservé aux
+      formes fulminantes, transplantation de microbiote fécal dès la deuxième
+      récidive (plus tôt si haut risque).
+    contexte: >-
+      Avis d'experts (pas de gradation formelle du niveau de preuve). Le coût et
+      la disponibilité de la fidaxomicine et des thérapies du microbiote peuvent
+      moduler l'application en pratique française.
+
+  - type: essai
+    titre: "Rituximab versus ocrélizumab dans la sclérose en plaques récurrente nouvellement diagnostiquée (OVERLORD-MS)"
+    source: "New England Journal of Medicine · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42384870/"
+    base_texte: abstract_seul
+    resume: >-
+      Premier essai de non-infériorité en face-à-face de deux anti-CD20 dans la
+      SEP. 216 adultes avec SEP récurrente récemment diagnostiquée et active ont
+      reçu rituximab ou ocrélizumab tous les 6 mois pendant 24 mois. Absence de
+      lésion nouvelle/agrandie en IRM entre M6 et M24 : 92,2 % (rituximab) vs
+      94,8 % (ocrélizumab) — différence −2,6 points (IC95 % −9,4 à 4,3),
+      non-infériorité atteinte. Rechutes, handicap et cognition comparables.
+      Infections plus fréquentes sous rituximab (82 % vs 69 %), effets
+      indésirables graves similaires (8 % vs 7 %).
+    ce_qui_change:
+      reference: "absence de comparaison directe antérieure"
+      points:
+        - "Premières données randomisées en face-à-face : le rituximab
+          (hors AMM dans la SEP mais bien moins coûteux) est non inférieur à
+          l'ocrélizumab sur l'activité IRM."
+    message_cle: >-
+      Dans la SEP récurrente active, le rituximab est non inférieur à
+      l'ocrélizumab sur l'activité IRM à 2 ans — argument médico-économique fort,
+      à mettre en regard d'un surcroît d'infections.
+    contexte: >-
+      Niveau de preuve élevé mais effectif modéré et critère principal
+      d'imagerie (pas un critère clinique dur). Le rituximab reste hors AMM dans
+      cette indication en France ; implications surtout médico-économiques.
+
+  - type: essai
+    titre: "Upadacitinib vs adalimumab après échec d'un anti-TNF dans la polyarthrite rhumatoïde (SELECT-SWITCH)"
+    source: "Annals of the Rheumatic Diseases · essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41991443/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai randomisé en double insu chez 492 patients atteints de polyarthrite
+      rhumatoïde active après réponse inadéquate ou intolérance à un premier
+      anti-TNF (non-adalimumab), sous méthotrexate stable. À 12 semaines,
+      l'upadacitinib (15 mg/j) était supérieur à l'adalimumab pour l'objectif
+      DAS28-CRP ≤ 3,2 (43,3 % vs 22,4 % ; différence 21 points), ainsi que pour
+      l'ACR50 et la rémission DAS28-CRP < 2,6. Tolérance comparable entre les
+      deux traitements.
+    ce_qui_change:
+      reference: "cycler vers un second anti-TNF"
+      points:
+        - "Changer de mécanisme d'action (inhibiteur de JAK) fait mieux que
+          cycler vers un second anti-TNF après un premier échec."
+    message_cle: >-
+      Après échec d'un premier anti-TNF dans la PR, passer à un inhibiteur de JAK
+      donne de meilleures réponses à 12 semaines que d'enchaîner sur un second
+      anti-TNF.
+    contexte: >-
+      Niveau de preuve élevé mais critère à court terme (12 semaines) et
+      financement industriel. À intégrer dans la balance bénéfice/risque des
+      inhibiteurs de JAK (sécurité cardiovasculaire et néoplasique) selon le
+      profil du patient.
+
+  - type: essai
+    titre: "Tests microbiologiques respiratoires rapides au point de soins et antibiothérapie en soins primaires"
+    source: "JAMA Internal Medicine · essai randomisé"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42149561/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai randomisé dans 16 cabinets de médecine générale du sud-ouest de
+      l'Angleterre, chez 552 patients (≥ 12 mois) avec infection respiratoire
+      aiguë et antibiothérapie jugée possiblement nécessaire. Un test rapide
+      multiplex (19 virus, 4 bactéries atypiques, ~45 min) n'a pas réduit la
+      prescription d'antibiotiques le jour même (45 % dans chaque groupe ;
+      OR 1,00) ni aggravé les symptômes. Réduction observée seulement dans le
+      sous-groupe où un virus était détecté.
+    message_cle: >-
+      Un test respiratoire rapide au point de soins ne réduit pas, à lui seul,
+      la prescription d'antibiotiques en soins primaires — le test sans aide à
+      l'interprétation ne suffit pas.
+    contexte: >-
+      Essai négatif de bonne qualité, utile pour ne pas surinvestir dans ces
+      dispositifs isolément. À rapprocher des stratégies de stewardship où c'est
+      l'interprétation guidée du test, plus que le test seul, qui change les
+      prescriptions.
+
+aussi_parus:
+  - titre: "Recommandations fondées sur les preuves pour le diagnostic et le traitement de l'infection à H. pylori"
+    source: "Helicobacter"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42439470/"
+  - titre: "FFR dérivée de l'angiographie pour guider l'angioplastie coronaire"
+    source: "New England Journal of Medicine"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41910384/"
+  - titre: "Traitement par testostérone chez les survivants d'un cancer de prostate avec hypogonadisme"
+    source: "JAMA Internal Medicine"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42113507/"
