@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Archives · ThisWeek Médecine interne{% endblock %}
+
+{% block content %}
+<div class="issue-head">
+  <p class="eyebrow">Archives</p>
+  <h1>Tous les numéros</h1>
+</div>
+<ul class="archive-list">
+  {% for issue in issues %}
+  <li>
+    <span class="num">N° {{ issue.numero }}</span>
+    <a href="{{ root }}numeros/{{ issue.slug }}.html">Semaine du {{ issue.semaine }}</a>
+    <span class="count">{{ issue["items"] | length }} items{% if issue.demo %} · démonstration{% endif %}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

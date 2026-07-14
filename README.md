@@ -46,8 +46,45 @@ flowchart LR
     B --> C --> D --> E --> F
 ```
 
+## Le site
+
+Le dépôt contient un site statique complet qui publie les numéros hebdomadaires.
+
+```bash
+pip install pyyaml jinja2 markdown
+
+# Générer le site dans dist/ (dernier numéro, archives, méthode, RSS)
+python3 site/build.py
+
+# Préparer le brouillon de la semaine : candidats PubMed des 7 derniers jours
+python3 pipeline/fetch_pubmed.py
+```
+
+Arborescence :
+
+| Dossier | Rôle |
+|---|---|
+| `content/issues/*.yaml` | Un fichier par numéro publié (schéma illustré par le numéro 0 de démonstration) |
+| `content/methode.md` | Page « Méthode » (sélection, transparence IA, limites) |
+| `content/drafts/` | Brouillons hebdomadaires générés depuis PubMed (non versionnés) |
+| `site/` | Générateur (`build.py`), templates Jinja2, feuille de style |
+| `pipeline/` | Collecte des candidats (PubMed E-utilities) |
+| `prompts/` | Prompts de scoring et de synthèse pour préparer les numéros |
+| `.github/workflows/deploy.yml` | Construction et déploiement GitHub Pages à chaque push sur `main` |
+
+### Publier un nouveau numéro
+
+1. `python3 pipeline/fetch_pubmed.py` → trier les candidats du brouillon
+   (compléter avec la veille HAS/PNDS/sociétés savantes).
+2. Rédiger les synthèses avec `prompts/synthese.md`, **faire relire par un
+   médecin**.
+3. Créer `content/issues/AAAA-MM-JJ.yaml` (copier la structure du numéro 0,
+   retirer `demo: true`).
+4. `python3 site/build.py` pour vérifier, puis pousser : le site se déploie
+   tout seul.
+
 ## Statut
 
-Phase de conception. Aucun code encore — les documents ci-dessus servent de
-base de travail pour valider le concept, choisir le périmètre du MVP et
-démarrer le développement.
+Site fonctionnel avec un numéro 0 de démonstration (contenu fictif). Les
+documents de conception ci-dessus restent la référence pour les phases
+suivantes (automatisation du scoring et des synthèses).

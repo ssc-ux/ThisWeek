@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}ThisWeek · Médecine interne{% endblock %}</title>
+<meta name="description" content="{% block description %}Chaque semaine, l'essentiel des nouvelles recommandations, PNDS et articles majeurs pour les médecins internistes.{% endblock %}">
+<link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="{{ root }}rss.xml">
+<style>
+{{ css }}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <a class="brand" href="{{ root }}index.html">This<span class="week">Week</span> · Médecine interne</a>
+    <nav aria-label="Navigation principale">
+      <a href="{{ root }}index.html"{% if active == 'dernier' %} aria-current="page"{% endif %}>Dernier numéro</a>
+      <a href="{{ root }}archives.html"{% if active == 'archives' %} aria-current="page"{% endif %}>Archives</a>
+      <a href="{{ root }}methode.html"{% if active == 'methode' %} aria-current="page"{% endif %}>Méthode</a>
+      <a href="{{ root }}rss.xml">RSS</a>
+    </nav>
+  </header>
+
+  <main>
+  {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Ce digest s'adresse exclusivement aux professionnels de santé. Il ne remplace ni la
+    lecture des documents sources ni le jugement clinique.</p>
+    <p>Les synthèses sont préparées avec l'aide d'une IA puis relues par un médecin avant
+    publication. Les critères de sélection sont décrits sur la page
+    <a href="{{ root }}methode.html">Méthode</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
