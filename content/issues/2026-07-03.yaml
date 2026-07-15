@@ -15,6 +15,7 @@ items:
   - type: reco
     titre: "Recommandation ACR 2025 pour le traitement du lupus systémique (hors atteinte rénale)"
     source: "Arthritis & Rheumatology · American College of Rheumatology"
+    impact_factor: 12
     url: "https://pubmed.ncbi.nlm.nih.gov/41187097/"
     base_texte: abstract_seul
     resume: >-
@@ -109,6 +110,7 @@ items:
   - type: essai
     titre: "Mufemilast dans la maladie de Behçet : essai de phase 2"
     source: "Annals of the Rheumatic Diseases · essai de phase 2"
+    impact_factor: 20
     url: "https://pubmed.ncbi.nlm.nih.gov/41748391/"
     base_texte: abstract_seul
     resume: >-
@@ -150,6 +152,7 @@ items:
   - type: essai
     titre: "Efgartigimod sous-cutané dans le purpura thrombopénique immunologique : essai négatif (ADVANCE SC)"
     source: "American Journal of Hematology · essai de phase 3"
+    impact_factor: 12
     url: "https://pubmed.ncbi.nlm.nih.gov/41943179/"
     base_texte: abstract_seul
     resume: >-
