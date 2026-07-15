@@ -104,11 +104,17 @@
   {% if issue.aussi_parus %}
   <section class="also">
     <h2>Aussi parus cette semaine</h2>
-    <p class="also-note">Items pertinents mais non retenus pour synthèse — liens vers les sources.</p>
-    <ul>
+    <p class="also-note">Publications pertinentes retenues avec un résumé court, sans synthèse détaillée.</p>
+    <ul class="also-list">
       {% for ref in issue.aussi_parus %}
-      <li>{% if ref.url %}<a href="{{ ref.url }}">{{ ref.titre }}</a>{% else %}{{ ref.titre }}{% endif %}
-          <span class="also-source">— {{ ref.source }}</span></li>
+      <li>
+        <p class="also-head">
+          {% if ref.url %}<a href="{{ ref.url }}">{{ ref.titre }}</a>{% else %}{{ ref.titre }}{% endif %}
+          <span class="also-source">— {{ ref.source }}</span>
+          {% if ref.impact_factor %}<span class="if-chip" title="Impact factor approximatif de la revue">IF ≈ {{ ref.impact_factor }}</span>{% endif %}
+        </p>
+        {% if ref.resume %}<p class="also-resume">{{ ref.resume }}</p>{% endif %}
+      </li>
       {% endfor %}
     </ul>
   </section>

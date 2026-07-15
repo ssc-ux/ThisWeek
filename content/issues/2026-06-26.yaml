@@ -145,9 +145,3 @@ items:
         Niveau de preuve faible par construction : cas rapportés hétérogènes,
         suivi incomplet, biais de publication. À utiliser comme aide à la
         reconnaissance du tableau, pas comme référentiel thérapeutique.
-
-aussi_parus:
-  - titre: "Recommandations ASH/ISTH 2026 sur la thromboprophylaxie anticoagulante en pédiatrie"
-    source: "Blood Advances"
-    impact_factor: 8
-    url: "https://pubmed.ncbi.nlm.nih.gov/41949461/"
