@@ -147,7 +147,7 @@ def main() -> None:
         (DIST / "numeros" / f"{issue['slug']}.html").write_text(page, encoding="utf-8")
 
     home = env.get_template("accueil.html").render(
-        latest=issues[0], css=css, root="", active="accueil"
+        latest=issues[0], css=css, root="", active="accueil", page_class="page-wide"
     )
     (DIST / "index.html").write_text(home, encoding="utf-8")
 
