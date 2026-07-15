@@ -1,9 +1,16 @@
 # Méthode
 
-**ThisWeek · Médecine interne** publie chaque semaine une sélection des
+**ThisWeek · Médecine interne** publie chaque lundi une sélection des
 nouvelles recommandations, PNDS et publications majeures utiles aux médecins
 internistes exerçant en France, avec pour chaque item un résumé, ce qui change,
 un message à retenir et une mise en contexte.
+
+> **Parti pris assumé : ce digest est entièrement généré par une intelligence
+> artificielle, de façon automatique et sans relecture par un médecin.** La
+> sélection des articles comme la rédaction des synthèses sont produites par IA.
+> C'est un choix revendiqué, et cette page en explique le fonctionnement et les
+> limites en toute transparence. Chaque item renvoie à sa source : l'information
+> doit être vérifiée sur la publication d'origine avant tout usage clinique.
 
 ## Périmètre : la médecine interne telle qu'elle se pratique en France
 
@@ -44,10 +51,10 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
   <div class="flow-step">
     <div class="flow-badge">2</div>
     <div class="flow-body">
-      <h3>Filtrage sur le périmètre interniste</h3>
-      <p>On écarte le bruit et les sujets d'autres spécialités d'organe. Ne
-      restent que les publications qui intéressent réellement un service de
-      médecine interne français.</p>
+      <h3>Tri par IA sur le périmètre interniste</h3>
+      <p>Une intelligence artificielle écarte le bruit et les sujets d'autres
+      spécialités d'organe. Ne restent que les publications qui intéressent
+      réellement un service de médecine interne français.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
@@ -64,28 +71,19 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
   <div class="flow-step">
     <div class="flow-badge">4</div>
     <div class="flow-body">
-      <h3>Synthèse assistée par IA</h3>
-      <p>Rédaction du résumé, de « ce qui change », du message à retenir et du
-      contexte détaillé. Aucun chiffre absent de la source, aucun diff inventé :
-      la synthèse cite ce qu'elle affirme.</p>
+      <h3>Synthèse par IA</h3>
+      <p>Rédaction par l'IA du résumé, de « ce qui change », du message à retenir
+      et du contexte détaillé. Consigne stricte : aucun chiffre absent de la
+      source, aucun diff inventé — la synthèse s'appuie sur ce qu'elle affirme.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
   <div class="flow-step">
     <div class="flow-badge">5</div>
     <div class="flow-body">
-      <h3>Relecture médicale</h3>
-      <p>Un médecin relit et valide chaque numéro avant diffusion. Tant que la
-      relecture n'a pas eu lieu, le numéro porte la mention « brouillon ».</p>
-    </div>
-  </div>
-  <div class="flow-connector"></div>
-  <div class="flow-step">
-    <div class="flow-badge">6</div>
-    <div class="flow-body">
-      <h3>Diffusion</h3>
-      <p>Publication du numéro sur le site (dernier numéro, archives consultables)
-      et flux RSS. Chaque item renvoie à sa source d'origine.</p>
+      <h3>Publication automatique</h3>
+      <p>Mise en ligne du numéro chaque lundi (dernier numéro, archives, flux
+      RSS), sans relecture humaine. Chaque item renvoie à sa source d'origine.</p>
     </div>
   </div>
 </div>
@@ -112,31 +110,52 @@ essais **négatifs** sont retenus lorsqu'ils recadrent utilement les attentes.
 
 ## Comment les synthèses sont rédigées
 
-1. Les synthèses sont préparées avec l'aide d'une intelligence artificielle,
-   à partir du texte intégral lorsqu'il est librement accessible, sinon de
-   l'abstract — la base utilisée est indiquée sous le titre de l'item.
-2. La section « ce qui change » n'est rédigée que lorsque la version
-   antérieure du document a réellement été comparée ; aucun « diff » n'est
-   déduit ou supposé.
-3. **Chaque numéro est relu et validé par un médecin avant publication.** Le
-   nom du relecteur figure en tête de numéro.
+1. Les synthèses sont **générées par une intelligence artificielle** (modèle
+   Claude d'Anthropic), à partir du texte intégral lorsqu'il est librement
+   accessible, sinon de l'abstract — la base utilisée est indiquée sous le titre
+   de l'item.
+2. L'IA reçoit une consigne stricte : n'énoncer aucun chiffre (posologie, seuil,
+   HR, effectif) absent du texte source, et ne rédiger la section « ce qui
+   change » que lorsque le document décrit lui-même un changement — jamais de
+   diff déduit ou supposé.
+3. **Aucune relecture humaine n'a lieu avant publication.** C'est un parti pris
+   assumé, au service de la fraîcheur et de la régularité. La contrepartie est
+   que des erreurs d'interprétation restent possibles : l'IA peut mal résumer,
+   sur-interpréter une nuance ou manquer une limite méthodologique.
+
+## Pourquoi ce choix, et comment l'utiliser
+
+Automatiser entièrement permet un digest **régulier, à l'heure, sans dépendre
+d'un relecteur** — mais transfère la vérification au lecteur. En pratique :
+utilisez ThisWeek comme un **radar** (qu'est-il paru cette semaine ?) et une
+**porte d'entrée** vers les sources, pas comme une référence opposable. Avant
+d'agir sur une information, ouvrez l'article d'origine (lien fourni pour chaque
+item).
 
 ## Limites et responsabilité
 
 - Ce digest s'adresse **exclusivement aux professionnels de santé**.
-- Il constitue une veille documentaire : il ne remplace ni la lecture des
-  documents sources (toujours liés), ni les recommandations opposables, ni le
-  jugement clinique.
+- **Contenu généré par IA sans validation médicale** : il peut contenir des
+  erreurs. Il constitue une veille documentaire et ne remplace ni la lecture
+  des documents sources (toujours liés), ni les recommandations opposables, ni
+  le jugement clinique.
 - Aucune synthèse ne constitue un avis sur la prise en charge d'un patient
   donné.
 
+## Accès aux articles
+
+La lecture du texte intégral par l'IA se limite aux articles en **accès ouvert**
+(PubMed Central, Europe PMC, Unpaywall). Pour les articles sous abonnement, la
+synthèse est faite à partir de l'abstract seul — c'est alors indiqué sous le
+titre. Le lien renvoie systématiquement à la source, que vous pouvez consulter
+via votre propre accès institutionnel.
+
 ## Errata
 
-Une erreur repérée dans un numéro est corrigée dans l'archive web et signalée
-en tête du numéro suivant. Vous pouvez signaler une erreur en répondant
-directement à l'email du digest.
+Une erreur repérée dans un numéro est corrigée dans l'archive web. Comme le
+processus est automatisé, la meilleure protection reste la vérification sur la
+source, systématiquement liée.
 
 ## Indépendance
 
-ThisWeek ne reçoit aucun financement de l'industrie pharmaceutique. Les liens
-d'intérêts des relecteurs sont déclarés sur cette page.
+ThisWeek ne reçoit aucun financement de l'industrie pharmaceutique.

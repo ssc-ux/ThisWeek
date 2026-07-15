@@ -14,16 +14,14 @@
       {%- if issue.relecteur %} · relu par {{ issue.relecteur }}{% endif %}
     </p>
 
+    <p class="ia-banner"><span class="ia-badge">IA</span> <strong>Numéro généré automatiquement
+    par une intelligence artificielle, sans relecture par un médecin.</strong> Les publications
+    citées sont réelles ; la sélection et les synthèses sont produites par IA à partir des sources.
+    À vérifier sur la source avant tout usage clinique.</p>
+
     {% if issue.demo %}
     <p class="demo-banner"><strong>Numéro de démonstration.</strong> Le contenu ci-dessous est
-    entièrement fictif : il illustre le format du digest en attendant le premier numéro réel.</p>
-    {% endif %}
-
-    {% if issue.brouillon %}
-    <p class="demo-banner"><strong>Brouillon — en attente de relecture médicale.</strong> Les
-    publications sont réelles et les synthèses sont rédigées à partir de leurs résumés (abstracts)
-    publiés ; elles n'ont pas encore été validées par un médecin relecteur. À vérifier sur les
-    sources avant tout usage clinique.</p>
+    entièrement fictif : il illustre le format du digest.</p>
     {% endif %}
 
     {% if issue.edito %}

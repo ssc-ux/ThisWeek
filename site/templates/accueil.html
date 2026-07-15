@@ -7,9 +7,10 @@
 <section class="hero">
   <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
   <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
-  <p class="lede">Chaque semaine, une sélection courte des nouvelles recommandations,
+  <p class="lede">Chaque lundi, une sélection courte des nouvelles recommandations,
   PNDS et publications qui comptent vraiment pour un service de médecine interne français —
-  avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.</p>
+  avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.
+  <strong>Entièrement généré par IA, sans relecture humaine</strong> — assumé et transparent.</p>
   <div class="hero-actions">
     <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
     <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
@@ -61,11 +62,53 @@
 </section>
 
 <section class="home-section">
-  <h2>Comment ça marche</h2>
-  <p>Les sources françaises et internationales du champ interniste sont surveillées en continu,
-  triées pour ne garder que l'essentiel, résumées avec l'aide d'une IA à partir du texte des
-  publications, puis <strong>relues par un médecin</strong> avant diffusion. Le détail — et le
-  schéma du recueil — est sur la page <a href="{{ root }}methode.html">Méthode</a>.</p>
+  <h2>Comment c'est fabriqué</h2>
+  <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
+    <div class="pipeline-node" role="listitem">
+      <span class="step">01</span>
+      <span class="icon" aria-hidden="true">🔎</span>
+      <div class="body">
+        <h3>Collecte</h3>
+        <p>Publications de médecine interne repérées sur PubMed, chaque semaine.</p>
+      </div>
+    </div>
+    <div class="pipeline-node is-ai" role="listitem">
+      <span class="step">02</span>
+      <span class="icon" aria-hidden="true">🧠</span>
+      <div class="body">
+        <h3>Tri <span class="tag-ai">IA</span></h3>
+        <p>L'IA sélectionne ce qui compte pour un service français.</p>
+      </div>
+    </div>
+    <div class="pipeline-node" role="listitem">
+      <span class="step">03</span>
+      <span class="icon" aria-hidden="true">📄</span>
+      <div class="body">
+        <h3>Lecture</h3>
+        <p>Résumés, et texte intégral quand il est en accès libre.</p>
+      </div>
+    </div>
+    <div class="pipeline-node is-ai" role="listitem">
+      <span class="step">04</span>
+      <span class="icon" aria-hidden="true">✍️</span>
+      <div class="body">
+        <h3>Synthèse <span class="tag-ai">IA</span></h3>
+        <p>Résumé, ce qui change, message clé, contexte — ancrés sur la source.</p>
+      </div>
+    </div>
+    <div class="pipeline-node" role="listitem">
+      <span class="step">05</span>
+      <span class="icon" aria-hidden="true">📬</span>
+      <div class="body">
+        <h3>Publication</h3>
+        <p>Mise en ligne automatique, chaque lundi.</p>
+      </div>
+    </div>
+  </div>
+  <p class="pipeline-caption"><strong>Entièrement automatisé et généré par IA, sans relecture
+  par un médecin</strong> — c'est un parti pris assumé et transparent. Chaque item renvoie à sa
+  source ; l'information est à vérifier avant tout usage clinique. Détail sur la page
+  <a href="{{ root }}methode.html">Méthode</a>.</p>
   <div class="hero-actions">
     <a class="btn btn-secondary" href="{{ root }}archives.html">Parcourir les archives</a>
     <a class="btn btn-secondary" href="{{ root }}veille.html">Voir la veille PubMed brute</a>
