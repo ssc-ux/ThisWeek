@@ -199,6 +199,8 @@ a:focus-visible, button:focus-visible {
   border-radius: 4px;
 }
 
+.ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
+
 .edito {
   margin: 1.6rem 0 0;
   font-size: 1.0625rem;
@@ -750,10 +752,22 @@ a:focus-visible, button:focus-visible {
 
 .footer p { margin: .4rem 0; }
 
+@media (max-width: 560px) {
+  /* Boutons pleine largeur, empilés, plus faciles à toucher. */
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; text-align: center; padding: .8rem 1rem; }
+  /* Un peu d'air sur les bords et entre les blocs. */
+  .page { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .latest-card { padding: 1.25rem 1.2rem; }
+  .pipeline-node { padding: .9rem 1rem; }
+}
+
 @media (max-width: 480px) {
   body { font-size: 1rem; }
   .issue-head h1 { font-size: 1.6rem; }
   .item h2 { font-size: 1.25rem; }
+  .masthead { padding-top: 1.6rem; }
+  .masthead .brand { font-size: 1.3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
