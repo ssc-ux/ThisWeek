@@ -132,6 +132,9 @@ def main() -> None:
     if not issues:
         raise SystemExit("Aucun numéro dans content/issues/ — rien à construire.")
 
+    latest_slug = issues[0]["slug"]
+    env.globals["latest_slug"] = latest_slug
+
     if DIST.exists():
         shutil.rmtree(DIST)
     (DIST / "numeros").mkdir(parents=True)
@@ -143,10 +146,10 @@ def main() -> None:
         )
         (DIST / "numeros" / f"{issue['slug']}.html").write_text(page, encoding="utf-8")
 
-    latest = issue_tpl.render(
-        issue=issues[0], type_labels=TYPE_LABELS, css=css, root="", active="dernier"
+    home = env.get_template("accueil.html").render(
+        latest=issues[0], css=css, root="", active="accueil"
     )
-    (DIST / "index.html").write_text(latest, encoding="utf-8")
+    (DIST / "index.html").write_text(home, encoding="utf-8")
 
     archives = env.get_template("archives.html").render(
         issues=issues, css=css, root="", active="archives"

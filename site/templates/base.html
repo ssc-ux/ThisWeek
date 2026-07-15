@@ -16,7 +16,8 @@
   <header class="masthead">
     <a class="brand" href="{{ root }}index.html">This<span class="week">Week</span> · Médecine interne</a>
     <nav aria-label="Navigation principale">
-      <a href="{{ root }}index.html"{% if active == 'dernier' %} aria-current="page"{% endif %}>Dernier numéro</a>
+      <a href="{{ root }}index.html"{% if active == 'accueil' %} aria-current="page"{% endif %}>Accueil</a>
+      <a href="{{ root }}numeros/{{ latest_slug }}.html"{% if active == 'dernier' %} aria-current="page"{% endif %}>Dernier numéro</a>
       <a href="{{ root }}archives.html"{% if active == 'archives' %} aria-current="page"{% endif %}>Archives</a>
       <a href="{{ root }}veille.html"{% if active == 'veille' %} aria-current="page"{% endif %}>Veille</a>
       <a href="{{ root }}methode.html"{% if active == 'methode' %} aria-current="page"{% endif %}>Méthode</a>
