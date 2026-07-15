@@ -1,0 +1,62 @@
+name: Numéro hebdomadaire automatique
+
+on:
+  schedule:
+    # Chaque lundi 06:00 UTC : génère le brouillon de la semaine et publie.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  generer-publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml jinja2 markdown anthropic
+
+      - name: Générer le numéro (sélection + synthèses par IA)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 pipeline/generate_issue.py --days 7
+
+      - name: Committer le brouillon sur main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain content/issues)" ]; then
+            git add content/issues
+            git commit -m "Numéro hebdomadaire automatique ($(date -u +%Y-%m-%d)) — brouillon en attente de relecture"
+            git push
+          else
+            echo "Aucun nouveau numéro à committer."
+          fi
+
+      - name: Rafraîchir la veille PubMed brute
+        run: python3 pipeline/fetch_pubmed.py || echo "PubMed indisponible — build sans rafraîchir la veille"
+
+      - name: Construire le site
+        run: python3 site/build.py
+
+      - name: Déployer sur gh-pages
+        run: |
+          cd dist
+          touch .nojekyll
+          git init -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Déploiement automatique ($(date -u +%Y-%m-%d))"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

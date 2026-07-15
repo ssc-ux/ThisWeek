@@ -3,10 +3,10 @@ name: Construire et déployer le site
 on:
   push:
     branches: [main]
-  schedule:
-    # Chaque vendredi 05:00 UTC : rafraîchit la page « Veille » et redéploie.
-    - cron: "0 5 * * 5"
   workflow_dispatch:
+# Le rafraîchissement hebdomadaire (veille + nouveau numéro) est piloté par
+# .github/workflows/weekly-issue.yml (chaque lundi). Ce workflow-ci ne fait que
+# (re)déployer à chaque push sur main.
 
 permissions:
   contents: write
