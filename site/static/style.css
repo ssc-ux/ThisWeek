@@ -171,6 +171,33 @@ a:focus-visible, button:focus-visible {
   line-height: 1.5;
 }
 
+.ia-banner {
+  margin: 1.4rem 0 0;
+  padding: .75rem 1rem;
+  background: var(--key-bg);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--sans);
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+}
+
+.ia-badge {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: .12rem .45rem;
+  border-radius: 4px;
+}
+
 .edito {
   margin: 1.6rem 0 0;
   font-size: 1.0625rem;
@@ -474,6 +501,116 @@ a:focus-visible, button:focus-visible {
 .latest-card a.more { font-family: var(--sans); font-size: .9rem; font-weight: 600; text-decoration: none; }
 
 .scope-list { font-family: var(--sans); font-size: .95rem; line-height: 1.7; }
+
+/* ---- Schéma graphique (page d'accueil) ---- */
+
+.pipeline {
+  margin: 1.4rem 0 .5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .5rem;
+  align-items: stretch;
+}
+
+.pipeline-node {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1rem .8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .45rem;
+}
+
+.pipeline-node .icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--key-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.pipeline-node.is-ai .icon { background: var(--accent); }
+
+.pipeline-node .step {
+  font-family: var(--sans);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.pipeline-node h3 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: .92rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.pipeline-node p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: .78rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.pipeline-node .tag-ai {
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: .05rem .35rem;
+}
+
+/* connecteurs entre les nœuds (desktop) */
+.pipeline-node:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  right: -.42rem;
+  top: 2.1rem;
+  transform: translateX(50%);
+  color: var(--accent);
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.pipeline-caption {
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--ink-soft);
+  margin: .3rem 0 0;
+}
+
+.pipeline-caption strong { color: var(--ink); }
+
+@media (max-width: 640px) {
+  .pipeline { grid-template-columns: 1fr; gap: .9rem; }
+  .pipeline-node { flex-direction: row; text-align: left; gap: .8rem; }
+  .pipeline-node .icon { flex: 0 0 auto; }
+  .pipeline-node .body { display: flex; flex-direction: column; gap: .3rem; }
+  .pipeline-node:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 1.3rem;
+    top: auto;
+    bottom: -.75rem;
+    transform: none;
+  }
+}
 
 /* ---- Schéma de méthode ---- */
 

@@ -11,10 +11,11 @@ Chaîne complète, sans intervention humaine :
      Europe PMC) ;
   4. demande à Claude de rédiger, pour chaque item, une synthèse structurée
      ancrée sur la source (résumé, ce qui change, message clé, contexte) ;
-  5. écrit content/issues/AAAA-MM-JJ.yaml avec `brouillon: true`.
+  5. écrit content/issues/AAAA-MM-JJ.yaml.
 
-Le numéro produit reste un BROUILLON : il n'est pas relu par un médecin. La
-relecture reste une étape humaine (retirer `brouillon: true` après validation).
+Le numéro est publié tel quel : entièrement généré par IA, SANS relecture par un
+médecin. C'est un parti pris assumé, affiché sur chaque numéro et sur la page
+Méthode. Chaque item renvoie à sa source, à vérifier avant tout usage clinique.
 
 Prérequis : variable d'environnement ANTHROPIC_API_KEY. NCBI_API_KEY optionnelle
 (augmente la limite de débit PubMed).
@@ -325,21 +326,18 @@ def main() -> None:
         "numero": next_numero(),
         "semaine": semaine,
         "date": today.isoformat(),
-        "brouillon": True,
-        "edito": ("Numéro généré automatiquement à partir des publications de "
-                  "médecine interne de la semaine (PubMed). Sélection et synthèses "
-                  "produites par IA, en attente de relecture médicale."
+        "edito": ("Sélection et synthèses des publications de médecine interne de "
+                  "la semaine, générées automatiquement par IA sans relecture "
+                  "humaine. Chaque item renvoie à sa source."
                   if items else
                   "Semaine calme : aucune publication majeure de médecine interne "
-                  "retenue cette semaine. Numéro généré automatiquement, en "
-                  "attente de relecture."),
+                  "retenue cette semaine par la sélection automatique."),
         "items": items,
     }
 
     ISSUES.mkdir(parents=True, exist_ok=True)
     out_path = ISSUES / f"{today.isoformat()}.yaml"
-    header = ("# Numéro généré automatiquement (brouillon, non relu).\n"
-              "# Retirer `brouillon: true` après relecture médicale.\n")
+    header = ("# Numéro généré automatiquement par IA, sans relecture humaine.\n")
     out_path.write_text(
         header + yaml.safe_dump(issue, allow_unicode=True, sort_keys=False, width=100),
         encoding="utf-8")
