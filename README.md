@@ -74,11 +74,14 @@ Chaque **lundi 06:00 UTC**, le workflow `.github/workflows/weekly-issue.yml` :
 3. récupère les abstracts (et le texte intégral libre quand il existe) ;
 4. fait rédiger par Claude, pour chaque item, la synthèse structurée (résumé,
    ce qui change, message clé, contexte) ;
-5. écrit `content/issues/AAAA-MM-JJ.yaml` avec `brouillon: true`, le committe,
-   reconstruit et redéploie le site.
+5. écrit `content/issues/AAAA-MM-JJ.yaml`, le committe, reconstruit et redéploie
+   le site.
 
-Le numéro publié reste un **brouillon** tant qu'un médecin ne l'a pas relu :
-la relecture est une étape humaine (retirer `brouillon: true` après validation).
+Le numéro est publié **tel quel** : entièrement généré par IA, **sans relecture
+par un médecin**. C'est un parti pris assumé, affiché sur chaque numéro et sur
+la page Méthode. La lecture du texte intégral par l'IA se limite aux articles en
+**accès ouvert** (PubMed Central, Europe PMC) ; les articles sous abonnement
+sont résumés à partir de l'abstract, ce qui est signalé.
 
 **Activation** : ajouter le secret `ANTHROPIC_API_KEY` dans les réglages du
 dépôt (*Settings → Secrets and variables → Actions*). On peut ensuite lancer
