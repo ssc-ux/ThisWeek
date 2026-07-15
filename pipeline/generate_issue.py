@@ -69,6 +69,49 @@ PUB_TYPES = (
     'OR Meta-Analysis[pt] OR "Systematic Review"[pt] OR Consensus Development Conference[pt])'
 )
 
+# Impact factor APPROXIMATIF des revues, uniquement pour départager des articles
+# de pertinence comparable. Valeurs indicatives (ordre de grandeur), pas des
+# chiffres officiels. Motifs testés sur le nom complet de la revue en minuscules,
+# du plus spécifique au plus générique (un sous-journal du Lancet doit primer sur
+# « lancet »).
+JOURNAL_IF = [
+    ("lancet rheumatol", 42), ("lancet haematol", 25), ("lancet infect", 37),
+    ("lancet respir", 38), ("lancet diabetes", 44), ("lancet public health", 25),
+    ("lancet regional", 10), ("lancet", 98),
+    ("new england journal of medicine", 96),
+    ("nature reviews rheumatol", 40), ("nature reviews immunol", 100),
+    ("nature reviews nephrol", 41), ("nature reviews disease primers", 76),
+    ("nature medicine", 58), ("nature communications", 15),
+    ("jama internal medicine", 25), ("jama network open", 11), ("jama", 63),
+    ("bmj open", 3), ("bmj (clinical", 93), ("the bmj", 93),
+    ("annals of internal medicine", 40),
+    ("annals of the rheumatic diseases", 20),
+    ("annals of rheumatic diseases", 20),
+    ("blood advances", 8), ("blood cancer", 12), ("blood", 21),
+    ("immunity", 32), ("circulation", 37),
+    ("arthritis & rheumatol", 12), ("arthritis and rheumatol", 12),
+    ("arthritis care", 4), ("arthritis research", 5),
+    ("rheumatology (oxford", 5), ("rheumatology (oxf", 5),
+    ("journal of thrombosis and haemostasis", 11),
+    ("journal of autoimmunity", 12), ("autoimmunity reviews", 13),
+    ("clinical infectious diseases", 11), ("journal of infection", 14),
+    ("haematologica", 10), ("american journal of hematology", 12),
+    ("kidney international", 15), ("journal of internal medicine", 9),
+    ("chest", 9), ("thorax", 9), ("european respiratory journal", 24),
+    ("seminars in arthritis and rheumatism", 5), ("rmd open", 5),
+    ("clinical rheumatology", 3), ("lupus", 3),
+    ("journal of clinical immunology", 8),
+    ("frontiers in immunology", 6), ("plos one", 3),
+]
+
+
+def journal_if(name: str) -> int | None:
+    low = (name or "").lower()
+    for motif, val in JOURNAL_IF:
+        if motif in low:
+            return val
+    return None
+
 
 def eutils(endpoint: str, params: dict) -> dict:
     params = {**params, "retmode": "json"}
@@ -94,14 +137,16 @@ def search_candidates(days: int) -> list[dict]:
                 continue
             doi = next((i["value"] for i in doc.get("articleids", [])
                         if i.get("idtype") == "doi"), None)
+            revue = doc.get("fulljournalname") or doc.get("source", "")
             out.append({
                 "pmid": pmid,
                 "titre": doc.get("title", "").rstrip("."),
-                "revue": doc.get("fulljournalname") or doc.get("source", ""),
+                "revue": revue,
                 "date_publication": doc.get("pubdate", ""),
                 "doi": doi,
                 "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
                 "pubtypes": doc.get("pubtype", []),
+                "if_approx": journal_if(revue),
             })
         time.sleep(0.4)
     return out
@@ -201,7 +246,8 @@ ITEM_SCHEMA = {
 
 def select_items(client, candidates: list[dict], max_items: int) -> list[dict]:
     listing = "\n".join(
-        f'{c["pmid"]} | {c["revue"]} | {"/".join(c["pubtypes"])} | {c["titre"]}'
+        f'{c["pmid"]} | {c["revue"]} | IF≈{c["if_approx"] if c["if_approx"] is not None else "?"}'
+        f' | {"/".join(c["pubtypes"])} | {c["titre"]}'
         for c in candidates)
     prompt = (
         "Tu es documentaliste pour une veille destinée aux MÉDECINS INTERNISTES "
@@ -217,8 +263,18 @@ def select_items(client, candidates: list[dict], max_items: int) -> list[dict]:
         "si cela concerne directement la pratique interniste (ex. tolérance au long "
         "cours d'un immunosuppresseur). Inclure les essais négatifs s'ils recadrent "
         "la pratique.\n\n"
+        "CRITÈRES DE SÉLECTION, par ordre de priorité :\n"
+        "1. la PERTINENCE pour un service de médecine interne français (périmètre "
+        "ci-dessus) — critère absolu, un article hors périmètre n'est jamais retenu, "
+        "même publié dans une revue prestigieuse ;\n"
+        "2. la PORTÉE pratique (reco/PNDS, essai de phase 3, méta-analyse "
+        "structurante, alerte de sécurité) ;\n"
+        "3. à pertinence comparable, l'IMPACT FACTOR de la revue (indiqué « IF≈ » "
+        "dans la liste, valeur approximative ; « IF≈? » = revue non répertoriée, "
+        "à juger sur le fond) : privilégie la revue au facteur d'impact le plus "
+        "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence.\n\n"
         f"Sélectionne au maximum {max_items} items VRAIMENT pertinents parmi la "
-        "liste ci-dessous (format : PMID | revue | types | titre). Donne pour "
+        "liste ci-dessous (format : PMID | revue | IF≈ | types | titre). Donne pour "
         "chacun le PMID, un type (reco, pnds, essai, meta, alerte, autre) et un "
         "titre reformulé en français, clair et fidèle. S'il n'y a rien de "
         "pertinent, renvoie une liste vide.\n\n" + listing)
@@ -267,6 +323,8 @@ def synthesize(client, item: dict, source_text: str) -> dict:
         "message_cle": d["message_cle"],
         "contexte": d["contexte"],
     }
+    if item.get("if_approx") is not None:
+        out["impact_factor"] = item["if_approx"]
     if d.get("a_ce_qui_change") and d.get("ce_qui_change_points"):
         out["ce_qui_change"] = {
             "reference": d.get("ce_qui_change_reference") or "pratique antérieure",

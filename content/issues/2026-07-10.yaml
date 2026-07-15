@@ -60,6 +60,7 @@ items:
   - type: essai
     titre: "Namilumab dans la sarcoïdose pulmonaire chronique : essai négatif (RESOLVE-Lung)"
     source: "European Respiratory Journal · essai de phase 2"
+    impact_factor: 24
     url: "https://pubmed.ncbi.nlm.nih.gov/41819539/"
     base_texte: abstract_seul
     resume: >-

@@ -4,24 +4,26 @@
 {% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
 
 {% block content %}
-<section class="hero hero-split">
-  <div class="hero-text">
-    <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-    <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
-    <p class="lede">Chaque lundi, une sélection courte des nouvelles recommandations,
-    PNDS et publications qui comptent vraiment pour un service de médecine interne français —
-    avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.</p>
-    <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
-    artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
-      <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
-    </div>
+<section class="hero">
+  <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
+  <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
+  <p class="lede">Chaque lundi, une sélection courte des recommandations, PNDS et
+  publications qui comptent vraiment pour un service de médecine interne français —
+  à lire en 5 minutes ou en 20, selon le temps que vous avez.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
+    <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
   </div>
+  <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
+  artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
+</section>
+
+<section class="latest-panel">
   <aside class="latest-card" aria-label="Dernier numéro">
     <span class="kicker">Dernier numéro · N° {{ latest.numero }}</span>
     <h3>Semaine du {{ latest.semaine }}</h3>
-    <p class="latest-meta">{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}</p>
+    <p class="latest-meta">{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}
+      · lecture ~{{ latest.lecture_min }} min (ou ~{{ latest.express_min }} min en express)</p>
     <ol>
       {% for item in latest["items"] %}
       <li>{{ item.titre }}</li>
@@ -32,37 +34,9 @@
 </section>
 
 <section class="home-section">
-  <h2>Ce qu'on couvre</h2>
-  <div class="pillars">
-    <div class="pillar">
-      <h3>Maladies systémiques</h3>
-      <p>Lupus, Gougerot-Sjögren, sclérodermie, myosites et connectivites.</p>
-    </div>
-    <div class="pillar">
-      <h3>Vascularites</h3>
-      <p>Horton, Takayasu, vascularites à ANCA, périartérite noueuse, maladie de Behçet.</p>
-    </div>
-    <div class="pillar">
-      <h3>Auto-inflammatoire &amp; granulomatoses</h3>
-      <p>Maladies auto-inflammatoires, sarcoïdose, amylose, maladies liées aux IgG4.</p>
-    </div>
-    <div class="pillar">
-      <h3>Hématologie non maligne</h3>
-      <p>PTI, PTT et microangiopathies, anémies hémolytiques auto-immunes, cytopénies.</p>
-    </div>
-    <div class="pillar">
-      <h3>Thrombose &amp; APL</h3>
-      <p>Maladie thromboembolique veineuse, syndrome des antiphospholipides.</p>
-    </div>
-    <div class="pillar">
-      <h3>Infection complexe &amp; diagnostic</h3>
-      <p>Fièvre prolongée inexpliquée, patient immunodéprimé, polypathologie, démarche diagnostique.</p>
-    </div>
-  </div>
-</section>
-
-<section class="home-section">
-  <h2>Comment c'est fabriqué</h2>
+  <h2>Comment ça marche</h2>
+  <p class="section-lede">Une chaîne entièrement automatisée, de la recherche PubMed
+  à la mise en ligne — deux étapes clés confiées à l'IA.</p>
   <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
     <div class="pipeline-node" role="listitem">
       <span class="step">01</span>
@@ -77,7 +51,7 @@
       <span class="icon" aria-hidden="true">🧠</span>
       <div class="body">
         <h3>Tri <span class="tag-ai">IA</span></h3>
-        <p>L'IA sélectionne ce qui compte pour un service français.</p>
+        <p>L'IA sélectionne selon la pertinence et l'impact factor de la revue.</p>
       </div>
     </div>
     <div class="pipeline-node" role="listitem">

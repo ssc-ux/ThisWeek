@@ -4,7 +4,7 @@
 {% block description %}{{ issue["items"] | length }} items sélectionnés pour les internistes — semaine du {{ issue.semaine }}.{% endblock %}
 
 {% block content %}
-<article>
+<article data-reading>
   <header class="issue-head">
     <p class="eyebrow">Numéro {{ issue.numero }}</p>
     <h1>La semaine du {{ issue.semaine }}</h1>
@@ -27,7 +27,26 @@
     {% if issue.edito %}
     <p class="edito">{{ issue.edito }}</p>
     {% endif %}
+
+    <div class="reading-bar">
+      <span class="reading-est">⏱ Combien de temps avez-vous ?</span>
+      <div class="read-toggle" role="group" aria-label="Mode de lecture">
+        <button type="button" data-mode="express">Express · ~{{ issue.express_min }} min</button>
+        <button type="button" data-mode="complet" aria-pressed="true">Complet · ~{{ issue.lecture_min }} min</button>
+      </div>
+    </div>
   </header>
+
+  {% if issue["items"] %}
+  <section class="tldr" aria-label="L'essentiel à retenir">
+    <h2>L'essentiel <span class="tldr-sub">— tout retenir en ~{{ issue.express_min }} min</span></h2>
+    <ol>
+      {% for item in issue["items"] %}
+      <li><a href="#item-{{ loop.index }}">{{ item.titre }}</a><span class="tldr-msg"> — {{ item.message_cle }}</span></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
 
   <nav class="toc" aria-label="Sommaire du numéro">
     <h2>Au sommaire</h2>
@@ -44,23 +63,27 @@
     <p class="item-kicker">
       <span class="badge badge-{{ item.type }}">{{ type_labels[item.type] }}</span>
       <span class="item-source">{{ item.source }}</span>
+      {% if item.impact_factor %}<span class="if-chip" title="Impact factor approximatif de la revue">IF ≈ {{ item.impact_factor }}</span>{% endif %}
     </p>
     <h2>{% if item.url %}<a href="{{ item.url }}">{{ item.titre }}</a>{% else %}{{ item.titre }}{% endif %}</h2>
-    {% if item.base_texte == 'abstract_seul' %}
-    <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
-    {% endif %}
 
-    <h3>Résumé</h3>
-    <p>{{ item.resume }}</p>
+    <div class="item-detail">
+      {% if item.base_texte == 'abstract_seul' %}
+      <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+      {% endif %}
 
-    {% if item.ce_qui_change %}
-    <h3>Ce qui change <span class="change-ref">(vs {{ item.ce_qui_change.reference }})</span></h3>
-    <ul>
-      {% for point in item.ce_qui_change.points %}
-      <li>{{ point }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+      <h3>Résumé</h3>
+      <p>{{ item.resume }}</p>
+
+      {% if item.ce_qui_change %}
+      <h3>Ce qui change <span class="change-ref">(vs {{ item.ce_qui_change.reference }})</span></h3>
+      <ul>
+        {% for point in item.ce_qui_change.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
 
     <div class="key-message">
       <h3>Message à retenir</h3>
@@ -91,4 +114,21 @@
   </section>
   {% endif %}
 </article>
+
+<script>
+(function () {
+  var art = document.querySelector('article[data-reading]');
+  if (!art) return;
+  var btns = art.querySelectorAll('.read-toggle button');
+  function set(mode) {
+    art.setAttribute('data-mode', mode);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+    try { localStorage.setItem('tw-mode', mode); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.mode); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('tw-mode'); } catch (e) {}
+  set(saved === 'express' ? 'express' : 'complet');
+})();
+</script>
 {% endblock %}

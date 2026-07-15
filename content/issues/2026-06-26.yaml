@@ -63,6 +63,7 @@ items:
   - type: essai
     titre: "Upadacitinib vs adalimumab dans la polyarthrite rhumatoïde : données à 7 ans (SELECT-COMPARE)"
     source: "RMD Open · extension à long terme d'un essai de phase 3"
+    impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42342288/"
     base_texte: abstract_seul
     resume: >-
@@ -148,4 +149,5 @@ items:
 aussi_parus:
   - titre: "Recommandations ASH/ISTH 2026 sur la thromboprophylaxie anticoagulante en pédiatrie"
     source: "Blood Advances"
+    impact_factor: 8
     url: "https://pubmed.ncbi.nlm.nih.gov/41949461/"
