@@ -36,10 +36,32 @@ items:
       Dans le lupus : hydroxychloroquine pour tous, épargne cortisonique, et
       immunosuppression/biothérapie précoce pour viser la rémission ou une
       faible activité.
-    contexte: >-
-      Recommandation nord-américaine de niveau de preuve élevé. Cohérente avec
-      les recommandations EULAR ; à confronter aux pratiques françaises et à la
-      disponibilité/AMM des biothérapies. Ne couvre pas la néphrite lupique.
+    contexte:
+      - >-
+        Le lupus systémique est une maladie prototypique de la médecine interne.
+        Sa prise en charge a longtemps reposé sur les corticoïdes, dont la
+        toxicité cumulée (os, métabolisme, infections, cardiovasculaire) est
+        aujourd'hui reconnue comme un déterminant majeur des dommages à long
+        terme — d'où un changement de paradigme vers l'épargne cortisonique.
+      - >-
+        L'ACR (American College of Rheumatology) actualise ici ses
+        recommandations de traitement du lupus non rénal, avec une méthodologie
+        GRADE et un vote d'experts. Le texte couvre l'adulte et l'enfant ; la
+        néphrite lupique, prise en charge souvent conjointement avec le
+        néphrologue, fait l'objet d'un document séparé.
+      - >-
+        Les trois messages structurants — hydroxychloroquine pour tous,
+        limitation de la durée des corticoïdes, introduction précoce des
+        immunosuppresseurs et biothérapies pour viser la rémission ou une faible
+        activité (logique « treat-to-target ») — convergent avec les
+        recommandations EULAR et l'arrivée de nouvelles biothérapies
+        (bélimumab, anifrolumab) qui rendent l'épargne cortisonique plus
+        atteignable.
+      - >-
+        Pour la pratique française : recommandation nord-américaine, à
+        confronter aux référentiels EULAR/filière FAI²R et à la disponibilité,
+        l'AMM et le remboursement des biothérapies. Elle ne traite pas la
+        néphrite lupique.
 
   - type: essai
     titre: "Sécukinumab dans l'artérite à cellules géantes (Horton) : essai négatif (GCAptAIN)"
@@ -58,10 +80,31 @@ items:
       Le sécukinumab n'a pas fait la preuve de son efficacité dans l'artérite à
       cellules géantes — le tocilizumab reste la biothérapie d'épargne
       cortisonique de référence.
-    contexte: >-
-      Essai négatif de bonne qualité, utile pour ne pas transposer aux
-      vascularites tout succès de l'anti-IL-17A dans le psoriasis/SpA. Ne
-      modifie pas la stratégie actuelle (corticoïdes ± tocilizumab).
+    contexte:
+      - >-
+        L'artérite à cellules géantes (maladie de Horton) est la vascularite la
+        plus fréquente après 50 ans, urgence diagnostique en raison du risque de
+        cécité. Son traitement repose sur des corticoïdes prolongés, mais les
+        rechutes et la toxicité cortisonique sont fréquentes chez des patients
+        souvent âgés et polypathologiques — d'où la recherche de traitements
+        d'épargne.
+      - >-
+        Le tocilizumab (anti-IL-6) a démontré son efficacité (essai GiACTA) et
+        est devenu le traitement d'épargne cortisonique de référence. La
+        question posée par GCAptAIN était de savoir si le blocage d'une autre
+        voie inflammatoire, l'IL-17A (sécukinumab, déjà utilisé dans le
+        psoriasis et les spondyloarthrites), pouvait aussi être efficace.
+      - >-
+        Le résultat est négatif : pas de différence significative sur la
+        rémission soutenue à 52 semaines. C'est un enseignement utile — il
+        n'était pas acquis qu'un succès de l'anti-IL-17A dans le psoriasis se
+        transpose à une vascularite des gros vaisseaux. Cela ne modifie pas la
+        stratégie (corticoïdes ± tocilizumab).
+      - >-
+        À noter : les effets indésirables graves étaient un peu moins fréquents
+        sous sécukinumab, en partie parce que le bras placebo recevait une
+        décroissance cortisonique plus lente (52 semaines vs 26), rappelant que
+        la toxicité des corticoïdes est elle-même un comparateur.
 
   - type: essai
     titre: "Mufemilast dans la maladie de Behçet : essai de phase 2"
@@ -80,10 +123,29 @@ items:
       Un inhibiteur oral de la PDE4 réduit l'aphtose buccale du Behçet en
       phase 2 — piste intéressante dans l'atteinte muqueuse, à confirmer en
       phase 3.
-    contexte: >-
-      Preuve de phase 2, critère centré sur l'aphtose buccale (pas sur les
-      atteintes graves — oculaire, vasculaire, neurologique). À situer à côté de
-      l'aprémilast (même classe) déjà évalué dans le Behçet.
+    contexte:
+      - >-
+        La maladie de Behçet est une vascularite systémique à la croisée de
+        l'auto-immunité et de l'auto-inflammation, suivie en médecine interne.
+        L'aphtose buccale récidivante en est la manifestation la plus fréquente
+        et la plus altérante pour la qualité de vie, mais la maladie peut aussi
+        toucher l'œil, les vaisseaux et le système nerveux — atteintes graves
+        qui dominent le pronostic.
+      - >-
+        Les inhibiteurs de la phosphodiestérase-4 (PDE4) agissent sur
+        l'inflammation par voie orale ; l'aprémilast, de la même classe, a déjà
+        montré un bénéfice sur l'aphtose du Behçet (essai RELIEF) et dispose
+        d'une AMM dans cette indication. Le mufemilast est un nouvel inhibiteur
+        de PDE4 évalué ici en phase 2.
+      - >-
+        Le résultat est positif sur le critère choisi — la charge en ulcères
+        buccaux — avec une bonne tolérance. Mais le critère ne concerne que
+        l'atteinte muqueuse : rien n'est démontré sur les atteintes sévères
+        (oculaire, vasculaire, neurologique) qui font la gravité de la maladie.
+      - >-
+        Preuve de phase 2 à confirmer en phase 3. L'intérêt pratique serait une
+        option orale supplémentaire dans l'aphtose réfractaire, à situer à côté
+        de la colchicine, de l'aprémilast et des biothérapies.
 
   - type: essai
     titre: "Efgartigimod sous-cutané dans le purpura thrombopénique immunologique : essai négatif (ADVANCE SC)"
@@ -102,11 +164,28 @@ items:
       La forme sous-cutanée d'efgartigimod n'a pas confirmé son efficacité dans
       le PTI dans cet essai — résultat discordant avec la forme IV (ADVANCE IV),
       à interpréter avec prudence.
-    contexte: >-
-      Essai négatif contrastant avec le succès antérieur de l'efgartigimod IV :
-      taux de réponse placebo inhabituellement élevé, ce qui complique
-      l'interprétation. Rappelle la prudence avant d'extrapoler d'une voie
-      d'administration à l'autre.
+    contexte:
+      - >-
+        Le purpura thrombopénique immunologique (PTI) est une cytopénie
+        auto-immune fréquente en médecine interne, liée à la destruction et à la
+        production insuffisante de plaquettes. Après la corticothérapie de
+        première ligne, les options des formes chroniques incluent les agonistes
+        du récepteur de la thrombopoïétine, le rituximab et la splénectomie.
+      - >-
+        L'efgartigimod bloque le récepteur néonatal FcRn, accélérant la
+        dégradation des IgG — donc des auto-anticorps antiplaquettes. Sa forme
+        intraveineuse avait montré un bénéfice dans le PTI chronique (essai
+        ADVANCE IV). ADVANCE SC testait la forme sous-cutanée, plus pratique.
+      - >-
+        Résultat négatif : pas de supériorité sur le placebo. Fait notable, le
+        taux de réponse sous placebo était inhabituellement élevé et celui sous
+        efgartigimod plus bas qu'attendu, ce qui brouille l'interprétation et
+        illustre la difficulté des essais dans le PTI (fluctuation spontanée des
+        plaquettes, hétérogénéité des patients).
+      - >-
+        La leçon est méthodologique autant que clinique : un succès démontré par
+        voie IV ne se transpose pas automatiquement à la voie sous-cutanée. En
+        pratique, cela ne modifie pas la place actuelle des traitements du PTI.
 
   - type: reco
     titre: "Consensus d'experts sur la prise en charge du purpura thrombotique thrombocytopénique (PTT)"
@@ -125,10 +204,32 @@ items:
       Le trépied échanges plasmatiques + rituximab + caplacizumab structure la
       prise en charge du PTT, guidée par l'ADAMTS13 ; l'accès au dosage et aux
       molécules reste un enjeu organisationnel.
-    contexte: >-
-      Consensus adapté au contexte coréen ; en France, le diagnostic et le suivi
-      s'appuient sur le Centre de référence des microangiopathies thrombotiques
-      (CNR-MAT), avec un accès généralement plus large au caplacizumab.
+    contexte:
+      - >-
+        Le purpura thrombotique thrombocytopénique (PTT) est une microangiopathie
+        thrombotique rare mais engageant le pronostic vital, liée à un déficit
+        sévère (< 10 %) en ADAMTS13 — la protéase qui clive le facteur von
+        Willebrand. Il associe thrombopénie, anémie hémolytique mécanique et
+        atteintes d'organe (neurologique, cardiaque, rénale), et constitue une
+        urgence diagnostique et thérapeutique.
+      - >-
+        La prise en charge a été transformée par les échanges plasmatiques
+        (traitement historique salvateur), le rituximab (immunosuppression
+        ciblant les auto-anticorps anti-ADAMTS13) puis le caplacizumab (anti-vWF)
+        qui accélère la remontée plaquettaire et réduit les rechutes précoces.
+        Le suivi de l'activité ADAMTS13 guide désormais la prévention des
+        rechutes.
+      - >-
+        Ce consensus émane d'experts coréens et adapte les recommandations
+        internationales aux contraintes locales (accès limité au dosage
+        ADAMTS13, remboursement du rituximab, indisponibilité du caplacizumab) —
+        un rappel que la disponibilité des outils conditionne la stratégie.
+      - >-
+        En France, le diagnostic et le suivi s'organisent autour du Centre
+        national de référence des microangiopathies thrombotiques (CNR-MAT),
+        avec un accès au dosage ADAMTS13 en urgence et au caplacizumab
+        généralement plus large ; le document coréen reste utile pour sa
+        synthèse pédagogique de la démarche.
 
 aussi_parus:
   - titre: "Repositionnement du léflunomide + hydroxychloroquine dans la maladie de Sjögren (RepurpSS-II)"

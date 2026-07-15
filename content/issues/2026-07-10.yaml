@@ -30,12 +30,32 @@ items:
       L'anselamimab ne fait pas la preuve d'un bénéfice global dans l'amylose AL,
       mais un signal fort dans le sous-groupe kappa mérite confirmation ; ne
       modifie pas la prise en charge actuelle.
-    contexte: >-
-      Essai principal négatif ; le bénéfice kappa provient d'une analyse de
-      sous-groupe (génératrice d'hypothèses). La prise en charge de l'amylose AL
-      reste centrée sur le traitement de la dyscrasie plasmocytaire ; en France,
-      elle s'organise autour du Centre de référence (amylose AL et autres
-      dépôts d'immunoglobulines).
+    contexte:
+      - >-
+        L'amylose à chaînes légères (AL) résulte du dépôt tissulaire de fibrilles
+        d'immunoglobulines produites par un clone plasmocytaire. C'est une
+        maladie systémique rare, souvent diagnostiquée tardivement, dont le
+        pronostic dépend surtout de l'atteinte cardiaque (stades de Mayo). Elle
+        se situe au carrefour de la médecine interne, de l'hématologie et de la
+        cardiologie.
+      - >-
+        Le traitement actuel vise le clone plasmocytaire sous-jacent
+        (association cyclophosphamide-bortézomib-dexaméthasone, désormais
+        renforcée par le daratumumab) pour tarir la production de chaînes
+        légères. Mais réduire la source ne dissout pas les dépôts déjà présents :
+        d'où l'idée d'anticorps « antifibrilles » (comme l'anselamimab) capables
+        d'accélérer la clairance de l'amyloïde déjà déposée dans les organes.
+      - >-
+        Les essais CARES sont négatifs sur leur critère principal (mortalité et
+        hospitalisations cardiovasculaires) dans la population globale. Un signal
+        fort apparaît toutefois dans le sous-groupe des chaînes légères kappa —
+        mais il s'agit d'une analyse de sous-groupe, génératrice d'hypothèses,
+        qui ne peut pas à elle seule changer la pratique.
+      - >-
+        En France, l'amylose AL est prise en charge en lien avec le Centre de
+        référence (amylose AL et autres maladies de dépôt d'immunoglobulines) ;
+        ce résultat conforte l'attente d'essais dédiés avant d'intégrer un
+        anticorps antifibrilles à la stratégie.
 
   - type: essai
     titre: "Namilumab dans la sarcoïdose pulmonaire chronique : essai négatif (RESOLVE-Lung)"
@@ -53,10 +73,29 @@ items:
       Le namilumab n'apporte pas de bénéfice dans la sarcoïdose pulmonaire
       chronique — les options d'épargne cortisonique restent limitées
       (méthotrexate, azathioprine, anti-TNF en recours).
-    contexte: >-
-      Essai négatif sur un besoin réel : les traitements de la sarcoïdose
-      réfractaire manquent d'efficacité et de tolérance. Résultat utile pour
-      réorienter la recherche et tempérer les attentes autour de l'anti-GM-CSF.
+    contexte:
+      - >-
+        La sarcoïdose est une granulomatose systémique de cause inconnue, suivie
+        en grande partie en médecine interne. L'atteinte pulmonaire est la plus
+        fréquente ; beaucoup de formes régressent, mais une minorité évolue vers
+        une maladie chronique, fibrosante, source de handicap respiratoire.
+      - >-
+        Le traitement de première ligne reste la corticothérapie, avec en
+        deuxième ligne le méthotrexate ou l'azathioprine, et les anti-TNF
+        (infliximab) en recours. Toutes ces options ont une efficacité et une
+        tolérance imparfaites, et l'épargne cortisonique est un besoin non
+        couvert — d'où l'intérêt de cibler des voies impliquées dans la formation
+        du granulome, comme le GM-CSF (namilumab).
+      - >-
+        L'essai est négatif : pas de réduction des recours thérapeutiques, pas de
+        bénéfice sur la fonction respiratoire, et une épargne cortisonique
+        paradoxalement moins bonne que sous placebo. Le protocole imposait un
+        sevrage des immunosuppresseurs, ce qui a pu déstabiliser des patients par
+        ailleurs contrôlés.
+      - >-
+        Résultat utile pour tempérer les attentes autour de l'anti-GM-CSF et
+        réorienter la recherche. En pratique, la stratégie de la sarcoïdose
+        réfractaire ne change pas.
 
   - type: meta
     titre: "Anifrolumab au long cours dans le lupus systémique : méta-analyse (essais, extensions, vie réelle)"
@@ -75,11 +114,30 @@ items:
       L'anifrolumab confirme au long cours un contrôle rapide et durable du
       lupus et un effet d'épargne cortisonique, au prix d'un surrisque de zona
       justifiant la vaccination préventive.
-    contexte: >-
-      Méta-analyse combinant essais et vie réelle (hétérogénéité de conception).
-      Renforce la place de l'anifrolumab dans le lupus cutanéo-articulaire/
-      systémique réfractaire et rappelle l'intérêt de la vaccination zona avant
-      immunosuppression.
+    contexte:
+      - >-
+        Dans le lupus systémique, la voie de l'interféron de type I joue un rôle
+        physiopathologique central, en particulier dans les atteintes cutanées
+        et articulaires. L'anifrolumab, anticorps bloquant le récepteur de
+        l'interféron de type I, a obtenu une AMM dans le lupus modéré à sévère
+        après les essais TULIP.
+      - >-
+        Les essais pivots ont une durée limitée ; or le lupus est une maladie
+        chronique. Cette méta-analyse combine les données d'essais, leurs
+        extensions à long terme (TULIP-LTE, MUSE-LTE) et des cohortes
+        européennes de vie réelle, pour approcher l'efficacité et la tolérance
+        « en conditions réelles » et sur plusieurs années.
+      - >-
+        Les résultats sont cohérents et rassurants : réponse clinique (BICLA),
+        atteinte fréquente d'un état de faible activité (LLDAS) et surtout
+        épargne cortisonique — objectif majeur pour limiter les dommages à long
+        terme. Le principal signal de tolérance est un surrisque de zona,
+        d'où la recommandation de vacciner avant l'immunosuppression.
+      - >-
+        Limite : méta-analyse mêlant des designs hétérogènes (essais et vie
+        réelle), avec le risque de biais propre aux cohortes observationnelles.
+        Le résultat conforte néanmoins la place de l'anifrolumab dans le lupus
+        cutanéo-articulaire réfractaire.
 
 aussi_parus:
   - titre: "Risque infectieux des biothérapies et traitements ciblés dans la polyarthrite rhumatoïde : revue systématique"

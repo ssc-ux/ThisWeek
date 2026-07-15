@@ -70,8 +70,12 @@
     </div>
 
     {% if item.contexte %}
-    <h3>Mise en contexte</h3>
-    <p>{{ item.contexte }}</p>
+    <details class="contexte">
+      <summary>Contexte — pourquoi cette étude, où elle s'inscrit</summary>
+      <div class="contexte-body">
+        {% for para in item.contexte %}<p>{{ para }}</p>{% endfor %}
+      </div>
+    </details>
     {% endif %}
   </section>
   {% endfor %}

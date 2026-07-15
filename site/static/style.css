@@ -291,6 +291,45 @@ a:focus-visible, button:focus-visible {
   letter-spacing: normal;
 }
 
+/* ---- Contexte déroulable ---- */
+
+.contexte {
+  margin: 1.5rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+
+.contexte > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.contexte > summary::-webkit-details-marker { display: none; }
+
+.contexte > summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .15s ease;
+  transform: rotate(0deg);
+}
+
+.contexte[open] > summary::before { transform: rotate(90deg); }
+
+.contexte > summary:hover { color: var(--ink); }
+
+.contexte .contexte-body { margin-top: .7rem; }
+.contexte .contexte-body p { margin: .5rem 0; }
+
 /* ---- Aussi parus ---- */
 
 .also {
@@ -337,6 +376,159 @@ a:focus-visible, button:focus-visible {
 .archive-list a { font-size: 1.1rem; text-decoration: none; color: var(--ink); }
 .archive-list a:hover { color: var(--accent); }
 .archive-list .count { font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); }
+
+/* ---- Page d'accueil ---- */
+
+.hero {
+  padding: 3rem 0 2.4rem;
+  border-bottom: 3px double var(--rule);
+}
+
+.hero .eyebrow {
+  font-family: var(--sans);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--accent);
+  margin: 0 0 .8rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0 0 1rem;
+}
+
+.hero .lede {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 34rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  font-family: var(--sans);
+  font-size: .9rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { text-decoration: none; opacity: .92; }
+.btn-secondary { border: 1px solid var(--rule); color: var(--ink); }
+.btn-secondary:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+
+.home-section { padding: 2.4rem 0 0; }
+.home-section > h2 {
+  font-family: var(--sans);
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+.pillar {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+}
+.pillar h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+.pillar p { margin: 0; font-size: .95rem; color: var(--ink-soft); line-height: 1.55; }
+
+.latest-card {
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+  background: var(--surface);
+}
+.latest-card .kicker {
+  font-family: var(--sans);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+}
+.latest-card h3 { margin: .4rem 0 .5rem; font-size: 1.3rem; letter-spacing: -0.01em; }
+.latest-card ol { margin: .5rem 0 1rem; padding-left: 1.2rem; }
+.latest-card li { margin: .3rem 0; }
+.latest-card a.more { font-family: var(--sans); font-size: .9rem; font-weight: 600; text-decoration: none; }
+
+.scope-list { font-family: var(--sans); font-size: .95rem; line-height: 1.7; }
+
+/* ---- Schéma de méthode ---- */
+
+.flow {
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.flow-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.flow-badge {
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.flow-body {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: .85rem 1.1rem;
+  background: var(--surface);
+  flex: 1;
+  margin-bottom: .3rem;
+}
+.flow-body h3 {
+  margin: 0 0 .3rem;
+  font-family: var(--sans);
+  font-size: .95rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+.flow-body p { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
+.flow-connector {
+  flex: 0 0 2.2rem;
+  display: flex;
+  justify-content: center;
+  color: var(--rule);
+  height: 1.1rem;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.flow-connector::before { content: "↓"; color: var(--accent); }
 
 /* ---- Prose (page méthode) ---- */
 
