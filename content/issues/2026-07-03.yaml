@@ -7,9 +7,10 @@ date: 2026-07-03
 brouillon: true
 edito: >-
   Semaine dense et très « médecine interne » : une recommandation majeure sur
-  le traitement du lupus, deux essais négatifs utiles (Horton, PTI) qui
-  recadrent les attentes, un signal positif dans la maladie de Behçet, et un
-  consensus sur le purpura thrombotique thrombocytopénique.
+  le traitement du lupus, un essai positif dans le Sjögren, deux essais négatifs
+  utiles (Horton, PTI) qui recadrent les attentes, un signal positif dans la
+  maladie de Behçet, et un consensus sur le purpura thrombotique
+  thrombocytopénique.
 
 items:
   - type: reco
@@ -63,6 +64,65 @@ items:
         confronter aux référentiels EULAR/filière FAI²R et à la disponibilité,
         l'AMM et le remboursement des biothérapies. Elle ne traite pas la
         néphrite lupique.
+
+  - type: essai
+    titre: "Léflunomide + hydroxychloroquine dans la maladie de Sjögren : essai positif (RepurpSS-II)"
+    source: "The Lancet Rheumatology · essai de phase 2b"
+    impact_factor: 42
+    url: "https://pubmed.ncbi.nlm.nih.gov/42161318/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 2b randomisé, en double aveugle contre placebo, monocentrique
+      (UMC Utrecht), chez 46 adultes atteints de maladie de Sjögren systémiquement
+      active (ESSDAI ≥ 5). Association léflunomide 20 mg + hydroxychloroquine
+      400 mg en une prise/jour vs placebo pendant 24 semaines. Le critère principal
+      — différence de variation de l'ESSDAI entre l'inclusion et 24 semaines — est
+      atteint : différence moyenne de −4,135 en faveur du traitement (IC95 %
+      −6,558 à −1,709 ; p = 0,0012). Tolérance globalement bonne : inconfort
+      digestif le plus fréquent (29 % vs 16 %), un seul événement indésirable grave
+      (infarctus jugé probablement non lié), aucun décès. Ces résultats répliquent
+      ceux de l'essai RepurpSS-I.
+    ce_qui_change:
+      reference: "absence de traitement de fond systémique validé dans le Sjögren"
+      points:
+        - "Second essai randomisé (après RepurpSS-I) confirmant l'efficacité, sur
+          l'activité systémique du Sjögren, d'une association de traitements
+          conventionnels peu coûteux et largement disponibles."
+        - "Ouvre une piste thérapeutique abordable dans une maladie qui ne dispose
+          d'aucun traitement de fond systémique approuvé."
+    message_cle: >-
+      Dans la maladie de Sjögren systémiquement active, l'association léflunomide
+      + hydroxychloroquine améliore l'ESSDAI à 24 semaines — une option orale
+      abordable, à confirmer par des essais plus larges et multicentriques.
+    contexte:
+      - >-
+        La maladie de Sjögren est une maladie auto-immune systémique prototypique
+        de la médecine interne : au-delà du syndrome sec, elle peut donner des
+        atteintes articulaires, cutanées, neurologiques, pulmonaires ou
+        hématologiques. Elle n'a, à ce jour, aucun traitement de fond systémique
+        approuvé ; la prise en charge reste largement symptomatique, l'hydroxy-
+        chloroquine étant utilisée malgré un niveau de preuve limité.
+      - >-
+        Faute de molécules innovantes disponibles, une stratégie consiste à
+        « repositionner » des traitements conventionnels anciens, peu coûteux et
+        accessibles. L'essai RepurpSS-I (2020) avait suggéré un bénéfice de
+        l'association léflunomide + hydroxychloroquine ; RepurpSS-II a été conçu
+        pour répliquer ce résultat dans un essai randomisé dédié.
+      - >-
+        L'essai est positif sur son critère principal (ESSDAI, qui mesure
+        l'activité systémique évaluée par le clinicien) et la tolérance est
+        acceptable. Ses limites tiennent à sa taille modeste (46 patients),
+        à son caractère monocentrique et à une durée de 24 semaines ; l'ESSDAI ne
+        capture pas les symptômes rapportés par le patient (sécheresse, fatigue,
+        douleur), et les auteurs invitent à évaluer l'association chez les patients
+        peu actifs mais très symptomatiques.
+      - >-
+        Pour la pratique française : le Sjögren est suivi en médecine interne et
+        dans la filière de référence FAI²R ; le léflunomide et l'hydroxychloroquine
+        sont d'un accès aisé et peu coûteux, mais leur usage dans cette indication
+        resterait hors AMM. Un signal encourageant et abordable, à confirmer par
+        des essais multicentriques de plus grande ampleur avant de modifier les
+        pratiques.
 
   - type: essai
     titre: "Sécukinumab dans l'artérite à cellules géantes (Horton) : essai négatif (GCAptAIN)"
@@ -235,9 +295,6 @@ items:
         synthèse pédagogique de la démarche.
 
 aussi_parus:
-  - titre: "Repositionnement du léflunomide + hydroxychloroquine dans la maladie de Sjögren (RepurpSS-II)"
-    source: "The Lancet Rheumatology"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42161318/"
   - titre: "Prévalence des rechutes dans la sarcoïdose pulmonaire : revue systématique et méta-analyse"
     source: "Respiratory Medicine"
     url: "https://pubmed.ncbi.nlm.nih.gov/42144146/"

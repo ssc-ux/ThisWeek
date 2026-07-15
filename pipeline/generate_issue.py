@@ -223,8 +223,22 @@ SELECT_SCHEMA = {
                 "required": ["pmid", "type", "titre_fr"],
             },
         },
+        # Publications pertinentes pour un interniste mais non retenues pour une
+        # synthèse complète : elles alimentent la rubrique « Aussi parus ».
+        "aussi_parus": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "pmid": {"type": "string"},
+                    "titre_fr": {"type": "string"},
+                },
+                "required": ["pmid", "titre_fr"],
+            },
+        },
     },
-    "required": ["items"],
+    "required": ["items", "aussi_parus"],
 }
 
 ITEM_SCHEMA = {
@@ -244,7 +258,7 @@ ITEM_SCHEMA = {
 }
 
 
-def select_items(client, candidates: list[dict], max_items: int) -> list[dict]:
+def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[dict], list[dict]]:
     listing = "\n".join(
         f'{c["pmid"]} | {c["revue"]} | IF≈{c["if_approx"] if c["if_approx"] is not None else "?"}'
         f' | {"/".join(c["pubtypes"])} | {c["titre"]}'
@@ -273,19 +287,33 @@ def select_items(client, candidates: list[dict], max_items: int) -> list[dict]:
         "dans la liste, valeur approximative ; « IF≈? » = revue non répertoriée, "
         "à juger sur le fond) : privilégie la revue au facteur d'impact le plus "
         "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence.\n\n"
-        f"Sélectionne au maximum {max_items} items VRAIMENT pertinents parmi la "
-        "liste ci-dessous (format : PMID | revue | IF≈ | types | titre). Donne pour "
-        "chacun le PMID, un type (reco, pnds, essai, meta, alerte, autre) et un "
-        "titre reformulé en français, clair et fidèle. S'il n'y a rien de "
-        "pertinent, renvoie une liste vide.\n\n" + listing)
-    data = claude_json(client, prompt, SELECT_SCHEMA, max_tokens=2000)
-    picked = []
+        "Rends DEUX listes (format des candidats : PMID | revue | IF≈ | types | titre) :\n"
+        f"- « items » : au maximum {max_items} publications VRAIMENT marquantes, à "
+        "synthétiser en détail. Pour chacune : PMID, type (reco, pnds, essai, meta, "
+        "alerte, autre) et un titre reformulé en français, clair et fidèle. Ne force "
+        "pas le nombre : mieux vaut 3 items solides que 8 tièdes.\n"
+        "- « aussi_parus » : jusqu'à 8 autres publications pertinentes pour un "
+        "interniste mais moins prioritaires (PMID + titre français). Elles seront "
+        "listées avec un lien, sans synthèse, pour donner un aperçu plus large de la "
+        "semaine.\n"
+        "Une même publication ne doit jamais figurer dans les deux listes. S'il n'y "
+        "a rien de pertinent, renvoie deux listes vides.\n\n" + listing)
+    data = claude_json(client, prompt, SELECT_SCHEMA, max_tokens=2500)
     by_pmid = {c["pmid"]: c for c in candidates}
+    picked = []
+    seen = set()
     for it in data.get("items", [])[:max_items]:
         c = by_pmid.get(it["pmid"])
-        if c:
+        if c and it["pmid"] not in seen:
+            seen.add(it["pmid"])
             picked.append({**c, "type": it["type"], "titre_fr": it["titre_fr"]})
-    return picked
+    aussi = []
+    for it in data.get("aussi_parus", [])[:8]:
+        c = by_pmid.get(it["pmid"])
+        if c and it["pmid"] not in seen:
+            seen.add(it["pmid"])
+            aussi.append({"titre": it["titre_fr"], "source": c["revue"], "url": c["url"]})
+    return picked, aussi
 
 
 def synthesize(client, item: dict, source_text: str) -> dict:
@@ -347,7 +375,7 @@ def next_numero() -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days", type=int, default=7)
-    parser.add_argument("--max-items", type=int, default=6)
+    parser.add_argument("--max-items", type=int, default=8)
     args = parser.parse_args()
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -365,8 +393,9 @@ def main() -> None:
     if not candidates:
         candidates = []
 
-    selected = select_items(client, candidates, args.max_items) if candidates else []
-    print(f"  {len(selected)} items retenus par Claude")
+    selected, aussi_parus = (select_items(client, candidates, args.max_items)
+                             if candidates else ([], []))
+    print(f"  {len(selected)} items retenus, {len(aussi_parus)} en « aussi parus »")
 
     items = []
     for it in selected:
@@ -392,6 +421,8 @@ def main() -> None:
                   "retenue cette semaine par la sélection automatique."),
         "items": items,
     }
+    if aussi_parus:
+        issue["aussi_parus"] = aussi_parus
 
     ISSUES.mkdir(parents=True, exist_ok=True)
     out_path = ISSUES / f"{today.isoformat()}.yaml"
