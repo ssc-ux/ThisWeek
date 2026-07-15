@@ -258,6 +258,60 @@ ITEM_SCHEMA = {
 }
 
 
+BRIEF_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {
+        "resumes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "pmid": {"type": "string"},
+                    "resume": {"type": "string"},
+                },
+                "required": ["pmid", "resume"],
+            },
+        },
+    },
+    "required": ["resumes"],
+}
+
+
+def synthesize_brief(client, refs: list[dict]) -> list[dict]:
+    """Résumé court (2-3 phrases) pour chaque « aussi paru », ancré sur l'abstract.
+
+    Une seule requête Claude pour tout le lot (économe), à partir des abstracts
+    réels. Aucun chiffre inventé.
+    """
+    if not refs:
+        return []
+    blocks = []
+    for r in refs:
+        abstract = fetch_abstract(r["pmid"])[:2500]
+        blocks.append(f'PMID {r["pmid"]} — {r["titre_fr"]} ({r["revue"]})\n{abstract}')
+        time.sleep(0.3)
+    prompt = (
+        "Pour chaque publication ci-dessous (séparées par « --- »), rédige un "
+        "résumé COURT de 2 à 3 phrases, factuel et en français, à partir "
+        "UNIQUEMENT de son abstract. N'invente aucun chiffre absent du texte ; "
+        "si les résultats chiffrés manquent, décris l'objectif et la portée. "
+        "Renvoie un objet {pmid, resume} par publication.\n\n"
+        + "\n\n---\n\n".join(blocks))
+    data = claude_json(client, prompt, BRIEF_SCHEMA, max_tokens=3000)
+    by = {d["pmid"]: d["resume"] for d in data.get("resumes", [])}
+    out = []
+    for r in refs:
+        entry = {"titre": r["titre_fr"], "source": r["revue"], "url": r["url"]}
+        if r["pmid"] in by:
+            entry["resume"] = by[r["pmid"]]
+        if r.get("if_approx") is not None:
+            entry["impact_factor"] = r["if_approx"]
+        out.append(entry)
+    return out
+
+
 def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[dict], list[dict]]:
     listing = "\n".join(
         f'{c["pmid"]} | {c["revue"]} | IF≈{c["if_approx"] if c["if_approx"] is not None else "?"}'
@@ -288,31 +342,35 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
         "à juger sur le fond) : privilégie la revue au facteur d'impact le plus "
         "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence.\n\n"
         "Rends DEUX listes (format des candidats : PMID | revue | IF≈ | types | titre) :\n"
-        f"- « items » : au maximum {max_items} publications VRAIMENT marquantes, à "
-        "synthétiser en détail. Pour chacune : PMID, type (reco, pnds, essai, meta, "
-        "alerte, autre) et un titre reformulé en français, clair et fidèle. Ne force "
-        "pas le nombre : mieux vaut 3 items solides que 8 tièdes.\n"
-        "- « aussi_parus » : jusqu'à 8 autres publications pertinentes pour un "
-        "interniste mais moins prioritaires (PMID + titre français). Elles seront "
-        "listées avec un lien, sans synthèse, pour donner un aperçu plus large de la "
-        "semaine.\n"
-        "Une même publication ne doit jamais figurer dans les deux listes. S'il n'y "
-        "a rien de pertinent, renvoie deux listes vides.\n\n" + listing)
-    data = claude_json(client, prompt, SELECT_SCHEMA, max_tokens=2500)
+        "- « items » : les publications VRAIMENT marquantes, à synthétiser en "
+        "détail. Pour chacune : PMID, type (reco, pnds, essai, meta, alerte, autre) "
+        "et un titre reformulé en français, clair et fidèle. PAS DE NOMBRE IMPOSÉ : "
+        "le nombre dépend de ce qui a réellement été publié — souvent 3 à 8, parfois "
+        "plus une semaine riche, parfois moins une semaine calme. N'inclus jamais un "
+        "item tiède pour « faire du volume ».\n"
+        "- « aussi_parus » : les AUTRES publications pertinentes pour un interniste "
+        "mais moins prioritaires (PMID + titre français), sans limite fixe non plus. "
+        "Elles recevront un résumé court, sans synthèse détaillée.\n"
+        "Une même publication ne doit jamais figurer dans les deux listes. Écarte "
+        "franchement ce qui est hors périmètre. S'il n'y a rien de pertinent, "
+        "renvoie deux listes vides.\n\n" + listing)
+    data = claude_json(client, prompt, SELECT_SCHEMA, max_tokens=3000)
     by_pmid = {c["pmid"]: c for c in candidates}
     picked = []
     seen = set()
+    # Plafond de sécurité (coût/temps CI), pas un objectif : très au-dessus d'une
+    # semaine normale, donc sans effet en pratique.
     for it in data.get("items", [])[:max_items]:
         c = by_pmid.get(it["pmid"])
         if c and it["pmid"] not in seen:
             seen.add(it["pmid"])
             picked.append({**c, "type": it["type"], "titre_fr": it["titre_fr"]})
     aussi = []
-    for it in data.get("aussi_parus", [])[:8]:
+    for it in data.get("aussi_parus", [])[:max_items * 2]:
         c = by_pmid.get(it["pmid"])
         if c and it["pmid"] not in seen:
             seen.add(it["pmid"])
-            aussi.append({"titre": it["titre_fr"], "source": c["revue"], "url": c["url"]})
+            aussi.append({**c, "titre_fr": it["titre_fr"]})
     return picked, aussi
 
 
@@ -375,7 +433,9 @@ def next_numero() -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days", type=int, default=7)
-    parser.add_argument("--max-items", type=int, default=8)
+    # Plafond de sécurité (coût/temps CI), pas un objectif de volume : le nombre
+    # réel d'items dépend de ce qui a été publié dans la semaine.
+    parser.add_argument("--max-items", type=int, default=15)
     args = parser.parse_args()
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -393,9 +453,9 @@ def main() -> None:
     if not candidates:
         candidates = []
 
-    selected, aussi_parus = (select_items(client, candidates, args.max_items)
-                             if candidates else ([], []))
-    print(f"  {len(selected)} items retenus, {len(aussi_parus)} en « aussi parus »")
+    selected, aussi_refs = (select_items(client, candidates, args.max_items)
+                            if candidates else ([], []))
+    print(f"  {len(selected)} items retenus, {len(aussi_refs)} en « aussi parus »")
 
     items = []
     for it in selected:
@@ -408,6 +468,8 @@ def main() -> None:
         except Exception as e:  # pragma: no cover
             print(f"  ! synthèse échouée pour {it['pmid']}: {e}")
         time.sleep(0.4)
+
+    aussi_parus = synthesize_brief(client, aussi_refs)
 
     issue = {
         "numero": next_numero(),

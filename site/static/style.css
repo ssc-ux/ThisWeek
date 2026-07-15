@@ -440,10 +440,26 @@ article[data-mode="express"] .toc { display: none; }
   font-weight: 600;
   margin: 0 0 .3rem;
 }
-.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 .8rem; }
+.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1.2rem; }
 .also ul { margin: 0; padding-left: 1.3rem; }
 .also li { margin: .45rem 0; font-size: .95rem; }
 .also .also-source { font-size: .8rem; color: var(--ink-soft); }
+
+/* Liste « Aussi parus » avec résumé court */
+.also-list { list-style: none; padding-left: 0 !important; }
+.also-list li {
+  margin: 0;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.also-list li:first-child { border-top: 0; padding-top: 0; }
+.also-head { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.also-head a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.also-head a:hover { color: var(--accent); }
+.also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
+.also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
+/* En mode Express, on garde juste les titres. */
+article[data-mode="express"] .also-resume { display: none; }
 
 /* ---- Archives ---- */
 

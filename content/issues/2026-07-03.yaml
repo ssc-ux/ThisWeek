@@ -298,9 +298,32 @@ aussi_parus:
   - titre: "Prévalence des rechutes dans la sarcoïdose pulmonaire : revue systématique et méta-analyse"
     source: "Respiratory Medicine"
     url: "https://pubmed.ncbi.nlm.nih.gov/42144146/"
+    resume: >-
+      Méta-analyse de 51 études (6093 patients) : la rechute après réduction ou
+      arrêt du traitement de la sarcoïdose pulmonaire est fréquente, avec une
+      prévalence globale estimée à environ 39 % (IC95 % 33–45 %), mais une forte
+      hétérogénéité et des définitions de rechute variables. Un stade
+      radiographique avancé et l'origine afro-américaine sont associés à un
+      risque de rechute plus élevé.
   - titre: "Facteurs prédictifs de pneumopathie interstitielle rapidement progressive dans la dermatomyosite anti-MDA5"
     source: "Rheumatology (Oxford)"
+    impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42334960/"
+    resume: >-
+      Méta-analyse de 27 cohortes (2579 patients) des facteurs prédictifs de
+      pneumopathie interstitielle rapidement progressive dans la dermatomyosite
+      anti-MDA5 : âge avancé, sexe masculin, fièvre, ulcérations cutanées et
+      arthrite, avec élévation de la CRP, des LDH, de la ferritine, du KL-6, des
+      anti-Ro52 et des titres élevés d'anti-MDA5 ; à l'inverse lymphopénie,
+      hypoalbuminémie et rapport PaO₂/FiO₂ abaissé. De quoi repérer plus tôt une
+      complication qui fait le pronostic de cette myosite.
   - titre: "Biomarqueurs et réponse rénale dans la néphrite lupique (étude BLISS-LN)"
     source: "Kidney International"
+    impact_factor: 15
     url: "https://pubmed.ncbi.nlm.nih.gov/42055319/"
+    resume: >-
+      Analyse biomarqueurs de l'essai de phase 3 BLISS-LN (446 patients) : elle
+      évalue quels marqueurs (anti-dsDNA, anti-C1q, C3/C4, sous-populations de
+      lymphocytes B) et leurs variations précoces s'associent à la réponse rénale
+      au bélimumab dans la néphrite lupique, jusqu'à la semaine 104 — une piste
+      pour prédire et suivre la réponse au traitement.
