@@ -25,7 +25,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 DIST = ROOT / "dist"
-SITE_URL = "https://ssc-ux.github.io/thisweek"
+SITE_URL = "https://ssc-ux.github.io/ThisWeek"
 
 TYPE_LABELS = {
     "reco": "Recommandation",
