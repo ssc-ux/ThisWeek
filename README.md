@@ -51,14 +51,39 @@ flowchart LR
 Le dépôt contient un site statique complet qui publie les numéros hebdomadaires.
 
 ```bash
-pip install pyyaml jinja2 markdown
+pip install pyyaml jinja2 markdown anthropic
 
-# Générer le site dans dist/ (dernier numéro, archives, méthode, RSS)
+# Générer le site dans dist/ (accueil, dernier numéro, archives, méthode, RSS)
 python3 site/build.py
 
 # Préparer le brouillon de la semaine : candidats PubMed des 7 derniers jours
 python3 pipeline/fetch_pubmed.py
+
+# Générer AUTOMATIQUEMENT le numéro de la semaine (sélection + synthèses par IA)
+#   nécessite la variable d'environnement ANTHROPIC_API_KEY
+python3 pipeline/generate_issue.py
 ```
+
+## Automatisation hebdomadaire
+
+Chaque **lundi 06:00 UTC**, le workflow `.github/workflows/weekly-issue.yml` :
+
+1. interroge PubMed (périmètre médecine interne) sur les 7 derniers jours ;
+2. demande à **Claude** de sélectionner les items pertinents pour un service de
+   médecine interne français ;
+3. récupère les abstracts (et le texte intégral libre quand il existe) ;
+4. fait rédiger par Claude, pour chaque item, la synthèse structurée (résumé,
+   ce qui change, message clé, contexte) ;
+5. écrit `content/issues/AAAA-MM-JJ.yaml` avec `brouillon: true`, le committe,
+   reconstruit et redéploie le site.
+
+Le numéro publié reste un **brouillon** tant qu'un médecin ne l'a pas relu :
+la relecture est une étape humaine (retirer `brouillon: true` après validation).
+
+**Activation** : ajouter le secret `ANTHROPIC_API_KEY` dans les réglages du
+dépôt (*Settings → Secrets and variables → Actions*). On peut ensuite lancer
+le workflow à la demande via *Actions → Numéro hebdomadaire automatique → Run
+workflow*.
 
 Arborescence :
 
