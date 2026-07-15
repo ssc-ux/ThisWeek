@@ -4,31 +4,31 @@
 {% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-  <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
-  <p class="lede">Chaque lundi, une sélection courte des nouvelles recommandations,
-  PNDS et publications qui comptent vraiment pour un service de médecine interne français —
-  avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.
-  <strong>Entièrement généré par IA, sans relecture humaine</strong> — assumé et transparent.</p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
-    <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
+<section class="hero hero-split">
+  <div class="hero-text">
+    <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
+    <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
+    <p class="lede">Chaque lundi, une sélection courte des nouvelles recommandations,
+    PNDS et publications qui comptent vraiment pour un service de médecine interne français —
+    avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.</p>
+    <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
+    artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
+      <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
+    </div>
   </div>
-</section>
-
-<section class="home-section">
-  <h2>Le dernier numéro</h2>
-  <div class="latest-card">
-    <span class="kicker">N° {{ latest.numero }} · semaine du {{ latest.semaine }}</span>
-    <h3>{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}</h3>
+  <aside class="latest-card" aria-label="Dernier numéro">
+    <span class="kicker">Dernier numéro · N° {{ latest.numero }}</span>
+    <h3>Semaine du {{ latest.semaine }}</h3>
+    <p class="latest-meta">{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}</p>
     <ol>
       {% for item in latest["items"] %}
       <li>{{ item.titre }}</li>
       {% endfor %}
     </ol>
     <a class="more" href="{{ root }}numeros/{{ latest_slug }}.html">Ouvrir le numéro →</a>
-  </div>
+  </aside>
 </section>
 
 <section class="home-section">
