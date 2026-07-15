@@ -31,11 +31,34 @@ items:
       Le pronostic à long terme du lupus reste dominé par les complications
       rénales, cardiovasculaires et infectieuses ; l'hydroxychloroquine reste un
       pilier, et l'épargne cortisonique un objectif de survie.
-    contexte: >-
-      Preuve observationnelle, hétérogénéité forte (I² ≈ 90 %) et estimations à
-      long terme sensibles à une seule étude. Données régionales non directement
-      transposables à la France, mais les déterminants pronostiques (infection,
-      néphrite, corticoïdes) sont cohérents avec la littérature internationale.
+    contexte:
+      - >-
+        Le lupus systémique est une maladie auto-immune emblématique de la
+        médecine interne, à forte prédominance féminine et à présentation très
+        variable (cutanée, articulaire, rénale, hématologique, neurologique).
+        Son pronostic s'est nettement amélioré en un demi-siècle, mais persiste
+        une surmortalité par rapport à la population générale, avec une
+        « double peine » : décès précoces liés à l'activité de la maladie et aux
+        infections, décès plus tardifs de cause cardiovasculaire.
+      - >-
+        Cette méta-analyse agrège des cohortes de la région Moyen-Orient /
+        Afrique du Nord, zone jusqu'ici peu représentée dans la littérature, où
+        l'ethnie et l'accès aux soins peuvent moduler le pronostic. Elle ne
+        teste pas un traitement : c'est une photographie de la survie et des
+        causes de décès, utile pour hiérarchiser la surveillance.
+      - >-
+        Les enseignements rejoignent la littérature internationale et les
+        recommandations récentes : l'atteinte rénale et cardiovasculaire pèse
+        lourd, l'infection est une cause majeure de décès (d'où l'importance de
+        la vaccination et de la prudence sur l'immunosuppression), et la
+        toxicité cumulée des corticoïdes est un facteur de risque modifiable —
+        argument de plus pour l'épargne cortisonique et le maintien de
+        l'hydroxychloroquine, deux axes forts des recommandations actuelles.
+      - >-
+        Limites : preuve observationnelle, forte hétérogénéité (I² ≈ 90 %) et
+        estimations à long terme sensibles à l'exclusion d'une seule étude. Les
+        chiffres absolus ne sont pas directement transposables à la France, mais
+        les déterminants pronostiques le sont.
 
   - type: essai
     titre: "Upadacitinib vs adalimumab dans la polyarthrite rhumatoïde : données à 7 ans (SELECT-COMPARE)"
@@ -54,11 +77,33 @@ items:
       Au long cours, le signal de tolérance des inhibiteurs de JAK (zona,
       cancers cutanés, cytopénies) se confirme — à intégrer dans la surveillance
       chez tout patient traité par JAKi, au-delà de la seule polyarthrite.
-    contexte: >-
-      Extension d'essai (population sélectionnée, biais d'attrition). La
-      polyarthrite rhumatoïde relève surtout du rhumatologue, mais l'interniste
-      prescrit des inhibiteurs de JAK dans plusieurs maladies auto-immunes : le
-      profil de sécurité au long cours le concerne directement.
+    contexte:
+      - >-
+        Les inhibiteurs de JAK (JAKi) sont des traitements de fond synthétiques
+        ciblés, oraux, utilisés dans plusieurs maladies auto-immunes que
+        l'interniste prend en charge ou co-gère. Depuis l'essai de sécurité
+        ORAL Surveillance (tofacitinib), un signal de risque — événements
+        cardiovasculaires, thromboses, cancers, zona — pèse sur toute la classe
+        et impose une sélection prudente des patients (âge, tabac, antécédents
+        cardiovasculaires ou néoplasiques).
+      - >-
+        SELECT-COMPARE compare, dans la polyarthrite rhumatoïde en échec de
+        méthotrexate, l'upadacitinib à l'adalimumab (un anti-TNF de référence).
+        L'intérêt d'un suivi à 7 ans n'est pas l'efficacité — attendue et
+        maintenue — mais la tolérance au long cours, seule à même de capter des
+        événements rares et cumulatifs.
+      - >-
+        Le texte intégral rappelle que les recommandations ACR et EULAR placent
+        le méthotrexate en première ligne, les biothérapies en deuxième, les
+        JAKi étant une alternative après échec, sous réserve d'un dépistage et
+        d'une surveillance des facteurs de risque (infection, événements
+        cardiovasculaires, thrombose, cancers).
+      - >-
+        Pour l'interniste, la polyarthrite rhumatoïde relève surtout du
+        rhumatologue, mais ce signal de tolérance concerne directement l'usage
+        des JAKi dans d'autres indications d'auto-immunité. Limites : extension
+        d'essai sur population sélectionnée, avec biais d'attrition ; les taux
+        « numériquement plus élevés » ne sont pas nécessairement significatifs.
 
   - type: meta
     titre: "Vascularite éosinophilique cutanée récidivante : revue systématique"
@@ -76,11 +121,29 @@ items:
       Devant un purpura prurigineux récidivant avec éosinophilie et ANCA
       négatifs, évoquer cette entité — et rechercher systématiquement une
       atteinte extracutanée avant de conclure à une forme purement cutanée.
-    contexte: >-
-      Niveau de preuve faible (cas rapportés hétérogènes, suivi incomplet).
-      Intérêt surtout diagnostique : élargir le raisonnement devant une
-      vascularite cutanée à éosinophiles, diagnostic différentiel classique en
-      médecine interne.
+    contexte:
+      - >-
+        Les vascularites cutanées à éosinophiles sont un champ de diagnostic
+        différentiel classiquement interniste : il faut distinguer une atteinte
+        purement cutanée d'une vascularite systémique (notamment la
+        granulomatose éosinophilique avec polyangéite, ex-Churg-Strauss), d'une
+        cause médicamenteuse, parasitaire ou d'un syndrome hyperéosinophilique.
+      - >-
+        La vascularite éosinophilique cutanée récidivante est une entité rare,
+        décrite jusqu'ici par cas isolés, ce qui explique l'absence de critères
+        diagnostiques consensuels et de stratégie thérapeutique établie. Cette
+        revue systématique agrège les cas publiés pour dégager un profil
+        reconnaissable et affiner un cadre diagnostique provisoire.
+      - >-
+        Le message pratique est diagnostique : devant un purpura prurigineux
+        récidivant des membres inférieurs avec éosinophilie et ANCA négatifs,
+        penser à cette entité, mais surtout éliminer une atteinte extracutanée
+        (poumon, nerf, cœur, rein) avant de conclure à une forme bénigne
+        purement cutanée.
+      - >-
+        Niveau de preuve faible par construction : cas rapportés hétérogènes,
+        suivi incomplet, biais de publication. À utiliser comme aide à la
+        reconnaissance du tableau, pas comme référentiel thérapeutique.
 
 aussi_parus:
   - titre: "Recommandations ASH/ISTH 2026 sur la thromboprophylaxie anticoagulante en pédiatrie"

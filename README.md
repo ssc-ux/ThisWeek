@@ -64,7 +64,7 @@ Arborescence :
 
 | Dossier | Rôle |
 |---|---|
-| `content/issues/*.yaml` | Un fichier par numéro publié (schéma illustré par le numéro 0 de démonstration) |
+| `content/issues/*.yaml` | Un fichier par numéro publié ; `contexte` est une **liste de paragraphes** (bloc déroulable) |
 | `content/methode.md` | Page « Méthode » (sélection, transparence IA, limites) |
 | `content/drafts/` | Brouillons hebdomadaires générés depuis PubMed (non versionnés) |
 | `site/` | Générateur (`build.py`), templates Jinja2, feuille de style |

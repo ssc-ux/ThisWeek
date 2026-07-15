@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}ThisWeek · La veille hebdomadaire de médecine interne{% endblock %}
+{% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
+  <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
+  <p class="lede">Chaque semaine, une sélection courte des nouvelles recommandations,
+  PNDS et publications qui comptent vraiment pour un service de médecine interne français —
+  avec, pour chaque item, un résumé, ce qui change, le message à retenir et un contexte détaillé.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
+    <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Le dernier numéro</h2>
+  <div class="latest-card">
+    <span class="kicker">N° {{ latest.numero }} · semaine du {{ latest.semaine }}</span>
+    <h3>{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}</h3>
+    <ol>
+      {% for item in latest["items"] %}
+      <li>{{ item.titre }}</li>
+      {% endfor %}
+    </ol>
+    <a class="more" href="{{ root }}numeros/{{ latest_slug }}.html">Ouvrir le numéro →</a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Ce qu'on couvre</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <h3>Maladies systémiques</h3>
+      <p>Lupus, Gougerot-Sjögren, sclérodermie, myosites et connectivites.</p>
+    </div>
+    <div class="pillar">
+      <h3>Vascularites</h3>
+      <p>Horton, Takayasu, vascularites à ANCA, périartérite noueuse, maladie de Behçet.</p>
+    </div>
+    <div class="pillar">
+      <h3>Auto-inflammatoire &amp; granulomatoses</h3>
+      <p>Maladies auto-inflammatoires, sarcoïdose, amylose, maladies liées aux IgG4.</p>
+    </div>
+    <div class="pillar">
+      <h3>Hématologie non maligne</h3>
+      <p>PTI, PTT et microangiopathies, anémies hémolytiques auto-immunes, cytopénies.</p>
+    </div>
+    <div class="pillar">
+      <h3>Thrombose &amp; APL</h3>
+      <p>Maladie thromboembolique veineuse, syndrome des antiphospholipides.</p>
+    </div>
+    <div class="pillar">
+      <h3>Infection complexe &amp; diagnostic</h3>
+      <p>Fièvre prolongée inexpliquée, patient immunodéprimé, polypathologie, démarche diagnostique.</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Comment ça marche</h2>
+  <p>Les sources françaises et internationales du champ interniste sont surveillées en continu,
+  triées pour ne garder que l'essentiel, résumées avec l'aide d'une IA à partir du texte des
+  publications, puis <strong>relues par un médecin</strong> avant diffusion. Le détail — et le
+  schéma du recueil — est sur la page <a href="{{ root }}methode.html">Méthode</a>.</p>
+  <div class="hero-actions">
+    <a class="btn btn-secondary" href="{{ root }}archives.html">Parcourir les archives</a>
+    <a class="btn btn-secondary" href="{{ root }}veille.html">Voir la veille PubMed brute</a>
+  </div>
+</section>
+{% endblock %}

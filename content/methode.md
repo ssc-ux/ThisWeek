@@ -27,6 +27,69 @@ interventionnelle, diabétologie, pneumologie, gastro-entérologie, oncologie…
 ne sont **pas** retenus, sauf lorsqu'ils concernent directement la pratique
 interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
 
+## Le recueil, étape par étape
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="flow-badge">1</div>
+    <div class="flow-body">
+      <h3>Surveillance des sources</h3>
+      <p>Recommandations françaises (HAS, PNDS, sociétés savantes, ANSM),
+      recommandations internationales du champ des maladies systémiques, et
+      grandes revues — avec PubMed en filet de sécurité, par requêtes ciblées
+      sur les pathologies de médecine interne.</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">2</div>
+    <div class="flow-body">
+      <h3>Filtrage sur le périmètre interniste</h3>
+      <p>On écarte le bruit et les sujets d'autres spécialités d'organe. Ne
+      restent que les publications qui intéressent réellement un service de
+      médecine interne français.</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">3</div>
+    <div class="flow-body">
+      <h3>Lecture des sources</h3>
+      <p>Lecture du résumé, et du <strong>texte intégral chaque fois qu'il est
+      accessible librement</strong> (PubMed Central, Europe PMC), pour ancrer la
+      synthèse sur les données réelles et le contexte de l'étude.</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">4</div>
+    <div class="flow-body">
+      <h3>Synthèse assistée par IA</h3>
+      <p>Rédaction du résumé, de « ce qui change », du message à retenir et du
+      contexte détaillé. Aucun chiffre absent de la source, aucun diff inventé :
+      la synthèse cite ce qu'elle affirme.</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">5</div>
+    <div class="flow-body">
+      <h3>Relecture médicale</h3>
+      <p>Un médecin relit et valide chaque numéro avant diffusion. Tant que la
+      relecture n'a pas eu lieu, le numéro porte la mention « brouillon ».</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">6</div>
+    <div class="flow-body">
+      <h3>Diffusion</h3>
+      <p>Publication du numéro sur le site (dernier numéro, archives consultables)
+      et flux RSS. Chaque item renvoie à sa source d'origine.</p>
+    </div>
+  </div>
+</div>
+
 ## Comment les items sont sélectionnés
 
 Les sources surveillées chaque semaine :
