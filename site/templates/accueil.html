@@ -36,7 +36,7 @@
 <section class="home-section">
   <h2>Comment ça marche</h2>
   <p class="section-lede">Une chaîne entièrement automatisée, de la recherche PubMed
-  à la mise en ligne — deux étapes clés confiées à l'IA.</p>
+  à la mise en ligne — tri, synthèse et vérification confiés à l'IA.</p>
   <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
     <div class="pipeline-node" role="listitem">
       <span class="step">01</span>
@@ -70,8 +70,16 @@
         <p>Résumé, ce qui change, message clé, contexte — ancrés sur la source.</p>
       </div>
     </div>
-    <div class="pipeline-node" role="listitem">
+    <div class="pipeline-node is-ai" role="listitem">
       <span class="step">05</span>
+      <span class="icon" aria-hidden="true">✅</span>
+      <div class="body">
+        <h3>Vérification <span class="tag-ai">IA</span></h3>
+        <p>Relecture des chiffres face à la source ; sinon rétrogradé en « Aussi paru ».</p>
+      </div>
+    </div>
+    <div class="pipeline-node" role="listitem">
+      <span class="step">06</span>
       <span class="icon" aria-hidden="true">📬</span>
       <div class="body">
         <h3>Publication</h3>

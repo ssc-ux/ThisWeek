@@ -20,16 +20,18 @@ items:
       Chez 406 patients avec amylose AL de stade IIIa/IIIb nouvellement
       diagnostiquée, l'anselamimab (anticorps se liant aux fibrilles amyloïdes)
       a été ajouté au traitement standard (cyclophosphamide-bortézomib-
-      dexaméthasone ± daratumumab). Le critère principal hiérarchique (mortalité
-      toutes causes et hospitalisations cardiovasculaires) n'était pas atteint
-      (win ratio 1,11 ; p = 0,332). Dans le sous-groupe à chaînes légères kappa
-      (n = 72), signal favorable : réduction de 62 % de la mortalité (HR 0,38)
-      et de 71 % des hospitalisations cardiovasculaires. Aucun bénéfice dans les
-      formes lambda.
+      dexaméthasone ± daratumumab). Le critère de jugement PRINCIPAL hiérarchique
+      (mortalité toutes causes et hospitalisations cardiovasculaires) n'est PAS
+      atteint (win ratio 1,11 ; p = 0,332) : l'essai est négatif dans la
+      population globale. Une analyse de sous-groupe exploratoire (chaînes légères
+      kappa, n = 72), génératrice d'hypothèses, suggère un signal favorable
+      sur la mortalité et les hospitalisations cardiovasculaires, sans signal dans
+      les formes lambda — un résultat secondaire qui ne constitue pas une preuve
+      d'efficacité.
     message_cle: >-
-      L'anselamimab ne fait pas la preuve d'un bénéfice global dans l'amylose AL,
-      mais un signal fort dans le sous-groupe kappa mérite confirmation ; ne
-      modifie pas la prise en charge actuelle.
+      Essai négatif : l'anselamimab ne démontre pas de bénéfice dans l'amylose AL.
+      Le signal du sous-groupe kappa n'est qu'exploratoire et ne modifie pas la
+      prise en charge actuelle ; à confirmer par un essai dédié.
     contexte:
       - >-
         L'amylose à chaînes légères (AL) résulte du dépôt tissulaire de fibrilles

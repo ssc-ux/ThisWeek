@@ -99,6 +99,10 @@
         <p class="compare-caveat">Comparaisons établies par l'IA à partir des sources et de connaissances générales — <strong>à vérifier sur les textes originaux</strong> (versions, autres recommandations, PNDS).</p>
       </div>
       {% endif %}
+
+      {% if item.points_a_verifier %}
+      <p class="verif-note"><strong>À vérifier en priorité :</strong> {{ item.points_a_verifier | join(' · ') }}</p>
+      {% endif %}
     </div>
 
     <div class="key-message">

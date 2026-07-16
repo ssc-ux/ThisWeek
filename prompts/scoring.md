@@ -1,49 +1,31 @@
-# Prompt v1 — Scoring de pertinence
+# Prompt — Sélection (tri des candidats)
 
-Usage : un appel par item (titre + abstract/description + source), modèle
-léger. En phase 0, utilisable tel quel en collant une liste d'items.
+> Source de vérité : `pipeline/generate_issue.py`, fonction `select_items`
+> (schéma `SELECT_SCHEMA`). Ce fichier documente le prompt réellement utilisé ;
+> il est tenu à jour avec le code. Le tri tourne sur un modèle léger
+> (`MODEL_SELECT`).
 
----
+L'IA reçoit la liste des candidats PubMed de la semaine (format
+`PMID | revue | IF≈ | types | titre`) et rend **deux listes** :
 
-Tu es documentaliste médical pour une veille destinée aux **médecins
-internistes exerçant en France**. Le périmètre est strict : maladies
-auto-immunes et systémiques (lupus, Sjögren, sclérodermie, myosites,
-connectivites), vascularites (Horton, Takayasu, ANCA, PAN, Behçet), maladies
-auto-inflammatoires, sarcoïdose, amylose, maladies liées aux IgG4,
-hématologie non maligne (PTI, PTT/microangiopathies, anémies hémolytiques
-auto-immunes, cytopénies), MTEV et syndrome des antiphospholipides,
-infectiologie complexe, fièvre prolongée inexpliquée, patient immunodéprimé,
-polypathologie et démarche diagnostique.
+- **`items`** — les publications vraiment marquantes, à synthétiser en détail
+  (PMID, `type` ∈ {reco, pnds, essai, meta, alerte, autre}, titre reformulé en
+  français). **Pas de nombre imposé** : le volume suit ce qui a été publié.
+- **`aussi_parus`** — les autres publications pertinentes, qui recevront un
+  résumé court (PMID + titre).
 
-Les sujets relevant d'une autre spécialité d'organe (cardiologie, diabétologie,
-pneumologie, gastro-entérologie, néphrologie de dialyse, oncologie, neurologie,
-chirurgie…) sont **hors périmètre** et doivent être notés bas, sauf s'ils
-concernent directement la pratique interniste (ex. tolérance au long cours d'un
-immunosuppresseur utilisé en médecine interne).
+Critères de sélection, par ordre de priorité :
 
-Pour chaque item fourni (titre, résumé, source, type de publication),
-retourne un JSON :
+1. **Pertinence** pour un service de médecine interne français (périmètre
+   strict : maladies systémiques et auto-immunes, vascularites, auto-inflammatoire,
+   sarcoïdose, amylose, IgG4, hématologie non maligne, MTEV/SAPL, infectiologie
+   complexe, fièvre inexpliquée, immunodéprimé, polypathologie). Un article hors
+   périmètre n'est jamais retenu, même prestigieux.
+2. **Portée pratique** (reco/PNDS, essai de phase 3, méta-analyse structurante,
+   alerte de sécurité). Les essais négatifs sont retenus s'ils recadrent la
+   pratique.
+3. À pertinence comparable, **impact factor** de la revue (indicatif) — sans
+   jamais primer sur la pertinence, ni pénaliser une recommandation française
+   (souvent sans IF).
 
-```json
-{
-  "score": 0-10,
-  "themes": ["..."],
-  "change_la_pratique": true/false,
-  "justification": "1-2 phrases"
-}
-```
-
-Barème :
-- **9-10** : recommandation/PNDS/consensus concernant directement l'interniste,
-  ou essai susceptible de changer la pratique dans son champ.
-- **6-8** : pertinent mais spécialisé ou confirmatoire ; candidat pour la
-  rubrique « aussi parus ».
-- **3-5** : intérêt marginal (spécialité frontière, résultat préliminaire).
-- **0-2** : hors champ (pédiatrie exclusive, chirurgie, science fondamentale,
-  étude animale, cas clinique isolé).
-
-Règles :
-- Une recommandation HAS, un PNDS ou une reco de grande société savante dans
-  le champ de l'interniste ne descend jamais sous 8.
-- Ne te fonde que sur le texte fourni ; en cas de doute sur le champ, score
-  médian (5) et dis-le dans la justification.
+Les publications rétractées sont exclues en amont (requête PubMed + filtre).
