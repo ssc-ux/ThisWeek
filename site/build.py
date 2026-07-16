@@ -67,10 +67,33 @@ def add_reading_times(issue: dict) -> None:
     issue["express_min"] = max(2, round(express / 90))
 
 
+REQUIRED_ISSUE_KEYS = ("numero", "semaine", "date", "items")
+REQUIRED_ITEM_KEYS = ("type", "titre", "resume", "message_cle")
+
+
+def validate_issue(issue: dict, path: Path) -> None:
+    """Refuse un numéro malformé avant de construire le site (échec explicite
+    plutôt que page cassée)."""
+    if not isinstance(issue, dict):
+        raise SystemExit(f"{path.name} : contenu YAML invalide (pas un mapping).")
+    missing = [k for k in REQUIRED_ISSUE_KEYS if k not in issue]
+    if missing:
+        raise SystemExit(f"{path.name} : clés de numéro manquantes {missing}.")
+    if not isinstance(issue["items"], list):
+        raise SystemExit(f"{path.name} : 'items' doit être une liste.")
+    for i, item in enumerate(issue["items"], 1):
+        if not isinstance(item, dict):
+            raise SystemExit(f"{path.name} item {i} : n'est pas un mapping.")
+        empty = [k for k in REQUIRED_ITEM_KEYS if not item.get(k)]
+        if empty:
+            raise SystemExit(f"{path.name} item {i} : champs requis manquants/vides {empty}.")
+
+
 def load_issues() -> list[dict]:
     issues = []
     for path in sorted((CONTENT / "issues").glob("*.yaml")):
         issue = yaml.safe_load(path.read_text(encoding="utf-8"))
+        validate_issue(issue, path)
         d = issue["date"]
         if not isinstance(d, date):
             d = datetime.strptime(str(d), "%Y-%m-%d").date()

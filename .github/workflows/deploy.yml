@@ -11,9 +11,13 @@ on:
 permissions:
   contents: write
 
+# Même groupe que weekly-issue.yml, en NON-annulation : les déploiements se
+# sérialisent (ils ne s'annulent pas). Ainsi un push manuel sur main ne peut pas
+# interrompre la génération hebdomadaire du lundi, et deux gh-pages --force ne
+# s'exécutent jamais en parallèle.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-deploy:
