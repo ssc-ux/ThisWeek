@@ -1,0 +1,107 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 3
+semaine: "16 au 22 mai 2026"
+date: 2026-05-22
+edito: >-
+  Trois façons de traiter des maladies systémiques difficiles : les anti-IL-5 dans
+  l'EGPA, le nintedanib associé à l'immunosuppression dans les pneumopathies
+  interstitielles, et les premières cellules CAR-T dans les myosites réfractaires.
+
+items:
+  - type: meta
+    titre: "Biothérapies dans la granulomatose éosinophilique avec polyangéite (EGPA) : anti-IL-5 en tête"
+    source: "Postgraduate Medicine · méta-analyse en réseau"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42157367/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse en réseau (17 études, 1150 patients) des biothérapies dans la
+      granulomatose éosinophilique avec polyangéite (EGPA), vascularite
+      nécrosante des petits et moyens vaisseaux : mépolizumab, benralizumab,
+      rituximab et omalizumab. Par rapport au traitement conventionnel/placebo,
+      le benralizumab (OR 6,18 ; IC95 1,98-19,31) et le mépolizumab (300 mg :
+      OR 5,83 ; IC95 2,00-17,02 ; 100 mg : OR 3,70 ; 1,26-10,92) sont associés à
+      la rémission (définition de l'essai MIRRA). Benralizumab et mépolizumab
+      300 mg réduisent aussi la dose de corticoïdes et les rechutes (asthme,
+      vascularite), avec une tolérance comparable au comparateur.
+    message_cle: >-
+      Dans l'EGPA, les anti-IL-5/IL-5R (mépolizumab, benralizumab) favorisent la
+      rémission et l'épargne cortisonique — confortant leur place dans les formes
+      sans facteur de mauvais pronostic ou réfractaires.
+    contexte:
+      - >-
+        L'EGPA est une vascularite systémique à forte composante éosinophilique,
+        suivie en médecine interne, où l'asthme et la corticodépendance dominent
+        souvent le tableau au long cours.
+      - >-
+        Le mépolizumab (essai MIRRA) puis le benralizumab (essai MANDARA) ont
+        établi l'intérêt du blocage de l'IL-5 ; cette méta-analyse en réseau les
+        hiérarchise indirectement. Le rituximab garde sa place dans les formes avec
+        atteinte d'organe menaçante / ANCA-positives.
+      - >-
+        À interpréter avec prudence (comparaisons indirectes, hétérogénéité des
+        définitions de rémission). En France, mépolizumab et benralizumab
+        disposent d'une place croissante dans la stratégie d'épargne cortisonique
+        de l'EGPA.
+
+  - type: meta
+    titre: "Nintedanib associé à une double immunosuppression dans les PID sclérodermiques : stabilisation en vie réelle"
+    source: "Autoimmunity Reviews · revue systématique et cohorte multicentrique"
+    impact_factor: 13
+    url: "https://pubmed.ncbi.nlm.nih.gov/42162630/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et cohorte multicentrique « vie réelle » poolée (64
+      patients : 36 pneumopathies interstitielles sclérodermiques [PID-ScS], 28
+      liées à la polyarthrite rhumatoïde) évaluant la trithérapie nintedanib
+      (antifibrosant) + deux immunosuppresseurs. Dans la PID-ScS (35 patients
+      analysables), la CVF et la DLCO restent globalement stables à 6 et 12 mois,
+      et le score cutané (mRSS) diminue à 12 mois (−2,1 points ; IC95 −3,5 à
+      −0,7 ; p = 0,002). Tolérance acceptable : événements graves 4,7 % (dont 1
+      décès), infections 7,8 %, poursuite du traitement chez 75 % (après réduction
+      de dose du nintedanib).
+    message_cle: >-
+      Associer le nintedanib à une double immunosuppression semble stabiliser la
+      fonction respiratoire de la PID sclérodermique en vie réelle — donnée
+      observationnelle encourageante, à confirmer par des essais dédiés.
+    contexte:
+      - >-
+        Les pneumopathies interstitielles des connectivites (sclérodermie,
+        polyarthrite) sont une cause majeure de mortalité, à la frontière de la
+        médecine interne et de la pneumologie. Le nintedanib a montré (essai
+        SENSCIS) un ralentissement du déclin de la CVF dans la PID-ScS.
+      - >-
+        La question pratique est celle de l'association antifibrosant +
+        immunosuppression : cette cohorte suggère une stabilisation sans signal de
+        toxicité inattendu. Mais il s'agit de données rétrospectives, sans bras
+        comparateur — à confirmer.
+
+  - type: meta
+    titre: "Cellules CAR-T dans les myosites réfractaires : premières données, prometteuses mais très limitées"
+    source: "Journal of Translational Medicine · revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42152066/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique de l'ensemble de l'expérience clinique publiée du
+      traitement par cellules CAR-T dans les myopathies inflammatoires
+      idiopathiques (myosites) réfractaires : 10 publications, 12 patients
+      (adultes et pédiatriques). La CAR-T (« reset » immunitaire ciblant les
+      lymphocytes B) a été associée à une amélioration rapide des enzymes
+      musculaires et de la force, à une désescalade thérapeutique et à de
+      fréquentes rémissions sans traitement. Tolérance globalement gérable :
+      syndrome de relargage cytokinique surtout de grade 1-2, neurotoxicité
+      (ICANS) rare, infections traitables.
+    message_cle: >-
+      La thérapie CAR-T ouvre une piste dans les myosites réfractaires, avec des
+      rémissions sans traitement — mais l'expérience est minime (12 patients, court
+      recul) : approche expérimentale, réservée à des centres spécialisés.
+    contexte:
+      - >-
+        Les myosites réfractaires épuisent vite l'arsenal immunosuppresseur
+        classique. La CAR-T, issue de l'onco-hématologie, est explorée comme
+        « remise à zéro » du compartiment B dans plusieurs maladies auto-immunes
+        (lupus, sclérodermie, myosites).
+      - >-
+        La prudence s'impose : effectifs minuscules, critères hétérogènes, recul
+        court, et une logistique lourde (aphérèse, lymphodéplétion, gestion du CRS
+        et de l'ICANS). C'est un signal d'espoir à évaluer dans des études
+        prospectives, pas une option de pratique courante.

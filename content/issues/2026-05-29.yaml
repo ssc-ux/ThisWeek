@@ -1,0 +1,100 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 4
+semaine: "23 au 29 mai 2026"
+date: 2026-05-29
+edito: >-
+  Le risque infectieux des myosites chiffré, un phénotype rare et sévère de
+  vascularite à IgA décrit par le groupe français, et un rappel sur la faible
+  diversité des essais du lupus.
+
+items:
+  - type: meta
+    titre: "Infection au cours des myosites : prévalence de 24 %, le profil anti-MDA5 en première ligne de risque"
+    source: "Autoimmunity Reviews · revue systématique et méta-analyse (14 548 patients)"
+    impact_factor: 13
+    url: "https://pubmed.ncbi.nlm.nih.gov/42208667/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (31 études, 14 548 patients) sur
+      l'infection au cours des myopathies inflammatoires idiopathiques (myosites),
+      cause majeure de mortalité. Prévalence globale des infections 24 % (IC95
+      18-31 %) ; site respiratoire prédominant ; pneumocystose (PJP), aspergillose
+      et zona parmi les agents les plus fréquents. Facteurs de risque : âge
+      avancé, sexe masculin, diabète, HTA ; et surtout positivité des anti-MDA5
+      (OR 3,41 ; IC95 2,39-4,87) et pneumopathie interstitielle rapidement
+      progressive (OR 1,91 ; 1,35-2,71).
+    message_cle: >-
+      Dans les myosites, l'infection (notamment pneumocystose) est fréquente et
+      grave ; le profil anti-MDA5 et la PID rapidement progressive désignent les
+      patients chez qui discuter en priorité une prophylaxie anti-infectieuse.
+    contexte:
+      - >-
+        Les myosites relèvent de la médecine interne, et leur pronostic tient
+        autant à la maladie qu'aux complications de l'immunosuppression.
+        Quantifier le risque infectieux aide à calibrer la prévention.
+      - >-
+        Le signal anti-MDA5 est cohérent avec la gravité connue de ce
+        sous-groupe (PID rapidement progressive) : c'est là que la prophylaxie de
+        la pneumocystose et la vigilance fongique se discutent le plus. Données de
+        méta-analyse observationnelle, à individualiser.
+
+  - type: autre
+    titre: "Vascularite à IgA avec artérite nécrosante : un phénotype rare et sévère (Groupe Français d'Étude des Vascularites)"
+    source: "Autoimmunity · étude rétrospective multicentrique française + revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42192510/"
+    base_texte: abstract_seul
+    resume: >-
+      Étude rétrospective multicentrique du Groupe Français d'Étude des
+      Vascularites, couplée à une revue systématique (1990-2025) : 30 patients
+      avec vascularite à IgA compliquée d'une artérite nécrosante des petits ou
+      moyens vaisseaux, ANCA-négatifs (âge médian 54,5 ans). Le tableau est
+      sévère (hémorragie ou perforation digestive, abdomen chirurgical,
+      neuropathie, pancréatite, livedo), avec davantage d'atteintes
+      multi-organiques et une mortalité plus élevée que la vascularite à IgA
+      classique. Malgré l'atteinte artérielle, les patients ne remplissent pas les
+      critères de périartérite noueuse : il s'agit d'un phénotype grave de
+      vascularite à IgA, non d'un chevauchement avec la PAN.
+    message_cle: >-
+      Devant une vascularite à IgA sévère ou atypique (hémorragie digestive,
+      neuropathie, livedo), rechercher une artérite nécrosante par imagerie
+      vasculaire et intensifier l'immunosuppression — un phénotype rare mais
+      menaçant le pronostic vital.
+    contexte:
+      - >-
+        La vascularite à IgA de l'adulte est suivie en médecine interne ; son
+        association à une artérite nécrosante est exceptionnelle et soulève la
+        question du diagnostic différentiel avec la périartérite noueuse.
+      - >-
+        L'intérêt de ce travail est double : il caractérise un phénotype rare à
+        partir d'une cohorte française (transposable à notre pratique) et tranche
+        la question nosologique — un continuum de gravité de la vascularite à IgA,
+        pas une entité de chevauchement.
+
+  - type: meta
+    titre: "Essais du lupus : les minorités, en particulier les patients noirs, restent sous-représentées"
+    source: "Autoimmunity Reviews · revue systématique et méta-analyse"
+    impact_factor: 13
+    url: "https://pubmed.ncbi.nlm.nih.gov/42190855/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique de la composition raciale et ethnique de 63 essais
+      randomisés de médicaments dans le lupus (2014-2024). Les femmes représentent
+      91 % des participants. Parmi les essais rapportant l'origine : 61 % de
+      participants blancs, 14 % noirs, 14 % asiatiques, 8 % indigènes, moins de
+      1 % originaires du Pacifique ; ethnicité hispanique/latino rapportée chez
+      37 % (de façon hétérogène). Les minorités, en particulier les patients
+      noirs, sont sous-représentées alors que le lupus les touche davantage.
+    message_cle: >-
+      Les essais du lupus sur-représentent les patients blancs et sous-représentent
+      les patients noirs, pourtant plus atteints — une limite de validité externe
+      à garder en tête avant d'extrapoler les résultats à nos patients.
+    contexte:
+      - >-
+        Le lupus est plus fréquent et souvent plus sévère chez les patients d'origine
+        africaine. Si les essais ne reflètent pas cette population, l'efficacité et
+        la tolérance observées peuvent mal se transposer.
+      - >-
+        Enjeu concret pour la pratique française, dont les files actives sont
+        diverses : lire les résultats d'essais en gardant à l'esprit qui y était
+        (ou non) représenté. Interprétation limitée par le rapportage hétérogène de
+        l'ethnicité.

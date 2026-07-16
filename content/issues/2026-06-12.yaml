@@ -1,0 +1,115 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 6
+semaine: "6 au 12 juin 2026"
+date: 2026-06-12
+edito: >-
+  Une recommandation nationale sur le traitement de la sclérodermie, la
+  vaccination contre le zona chez les patients immunodéprimés, et comment
+  désescalader une biothérapie sans rallumer la maladie.
+
+items:
+  - type: reco
+    titre: "Traitement pharmacologique de la sclérodermie systémique : recommandation du Colegio Mexicano de Reumatología"
+    source: "Reumatología Clínica · recommandation nationale (méthodologie GRADE)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42270533/"
+    base_texte: abstract_seul
+    resume: >-
+      Première recommandation nationale (Colegio Mexicano de Reumatología) sur le
+      traitement pharmacologique de la sclérodermie systémique — Partie 1 :
+      atteinte cutanée, pneumopathie interstitielle (PID) et hypertension
+      artérielle pulmonaire (HTAP), les deux dernières étant les principales
+      causes de décès. Méthodologie GRADE, algorithme thérapeutique par paliers,
+      élaborée par un panel multidisciplinaire à partir de 114 études (sur 594
+      identifiées). Le texte assume explicitement une adaptation aux ressources et
+      à l'accès aux traitements locaux, plutôt qu'un décalque des recommandations
+      internationales.
+    message_cle: >-
+      Une nouvelle recommandation nationale structure le traitement de la
+      sclérodermie (peau, PID, HTAP) selon un algorithme par paliers — utile comme
+      point de comparaison, la référence opposable en France restant le PNDS.
+    comparaisons:
+      - titre: "Par rapport aux recommandations internationales"
+        reference: "recommandations EULAR / EUSTAR sur la sclérodermie"
+        points:
+          - "La recommandation mexicaine revendique de prioriser l'applicabilité
+            clinique et l'adaptation aux ressources, là où les textes EULAR/EUSTAR
+            visent un standard international."
+          - "Les piliers restent convergents : immunosuppression (mycophénolate,
+            voire tocilizumab ou nintedanib) pour la peau et la PID, vasodilatateurs
+            spécifiques pour l'HTAP — à vérifier sur le texte pour le détail des paliers."
+      - titre: "Par rapport aux recommandations françaises"
+        reference: "PNDS « Sclérodermie systémique » (filière FAI²R)"
+        points:
+          - "En France, le PNDS sclérodermie reste le document de référence pour le
+            parcours de soins et le remboursement ; cette recommandation étrangère
+            n'a pas vocation à s'y substituer."
+          - "Intérêt : comparer les seuils d'introduction du nintedanib et des
+            immunosuppresseurs dans la PID entre les deux textes."
+    contexte:
+      - >-
+        La sclérodermie systémique est une connectivite grave (fibrose,
+        vasculopathie) suivie en médecine interne, dont le pronostic est dominé
+        par la PID et l'HTAP.
+      - >-
+        L'intérêt d'une recommandation « adaptée aux ressources » est de rappeler
+        que les stratégies optimales dépendent de l'accès aux molécules — une
+        problématique parlante au-delà du seul contexte mexicain.
+
+  - type: essai
+    titre: "Vaccin recombinant contre le zona chez les patients sclérodermiques immunodéprimés : immunogène et bien toléré"
+    source: "Rheumatology (Oxford) · sous-analyse d'essai randomisé contrôlé"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42261247/"
+    base_texte: abstract_seul
+    resume: >-
+      Sous-analyse d'un essai randomisé contrôlé : réponse au vaccin recombinant
+      contre le zona (RZV) chez 76 patients atteints de sclérodermie systémique
+      sous immunosuppresseurs, comparés à 304 témoins sains. Séroconversion élevée
+      mais significativement plus faible chez les patients (92,6 % vs 99,7 % ;
+      p = 0,001), avec des titres d'anticorps (GMC 5,81 vs 12,6) et un facteur
+      d'augmentation moindres ; immunité cellulaire comparable. Bonne tolérance
+      (réactions locales même moins fréquentes), activité de la maladie stable.
+    message_cle: >-
+      Le vaccin recombinant contre le zona est immunogène et bien toléré chez les
+      patients sclérodermiques immunodéprimés, malgré une réponse humorale un peu
+      moindre — un argument concret pour vacciner cette population à risque.
+    contexte:
+      - >-
+        Le zona est plus fréquent et plus grave sous immunosuppression, situation
+        quotidienne en médecine interne. Le RZV, vaccin recombinant (non vivant),
+        est utilisable chez l'immunodéprimé, contrairement au vaccin vivant atténué.
+      - >-
+        Cette étude conforte l'intérêt de la vaccination anti-zona dans les
+        connectivites traitées, en cohérence avec les recommandations vaccinales
+        françaises pour les patients immunodéprimés.
+
+  - type: meta
+    titre: "Désescalade des biothérapies dans la polyarthrite rhumatoïde : réduire la dose plutôt qu'arrêter"
+    source: "Seminars in Arthritis and Rheumatism · revue systématique et méta-analyse"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42269230/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (11 études, 2861 patients) comparant
+      l'ARRÊT complet vs la RÉDUCTION de dose des biothérapies (bDMARD) chez des
+      patients en rémission stable de polyarthrite rhumatoïde. L'arrêt complet
+      multiplie par ~2 le risque de poussée (RR 2,13 ; IC95 1,74-2,61) par rapport
+      à la réduction/maintien ; le risque est moindre dans la PR précoce (< 2 ans,
+      RR 1,62) que dans la PR établie (RR 2,31). En cas de poussée, la reprise du
+      traitement est efficace dans 87,5 % des cas, avec récupération en ~12
+      semaines ; progression radiographique minime.
+    message_cle: >-
+      Chez un patient en rémission stable, réduire la dose de biothérapie expose à
+      moins de poussées que l'arrêt complet ; l'arrêt reste envisageable (surtout
+      PR précoce) mais avec un risque de rechute plus élevé, généralement
+      réversible à la reprise.
+    contexte:
+      - >-
+        La désescalade d'un traitement immunosuppresseur en rémission est une
+        question transversale (maladies systémiques, rhumatismes), avec un double
+        objectif : limiter la toxicité et le coût sans rallumer la maladie.
+      - >-
+        Le message est pratique : préférer une réduction de dose progressive à
+        l'arrêt sec, informer le patient du risque de poussée et de sa
+        réversibilité. Données issues d'essais hétérogènes, à individualiser selon
+        l'ancienneté et la profondeur de la rémission.

@@ -1,0 +1,101 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 7
+semaine: "13 au 19 juin 2026"
+date: 2026-06-19
+edito: >-
+  Comment choisir entre bélimumab et anifrolumab dans le lupus, quels patients
+  hospitalisés sont vraiment à risque de thrombose, et un réflexe diagnostique :
+  penser au SAPL devant une insuffisance surrénale aiguë.
+
+items:
+  - type: meta
+    titre: "Bélimumab ou anifrolumab dans le lupus : efficacité proche, profils un peu différents"
+    source: "Seminars in Arthritis and Rheumatism · méta-analyse en réseau"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42308962/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse en réseau (11 essais, 8607 patients) comparant bélimumab et
+      anifrolumab dans le lupus systémique de l'adulte. Les deux améliorent la
+      réponse SRI-4 vs placebo (anifrolumab OR 1,78 ; IC95 1,41-2,24 ; bélimumab
+      OR 1,62 ; 1,38-1,90), sans différence significative entre eux. Sur le BICLA,
+      l'anifrolumab ressort supérieur au bélimumab (OR 1,56 ; IC95 1,10-2,21),
+      mais via une comparaison indirecte de certitude modérée. Le zona est plus
+      fréquent sous anifrolumab (OR 4,74 ; IC95 2,00-11,21).
+    message_cle: >-
+      Bélimumab et anifrolumab ont une efficacité proche sur le SRI-4 ;
+      l'anifrolumab pourrait faire mieux sur le BICLA (preuve indirecte, prudence),
+      au prix d'un surrisque de zona — le choix reste individualisé et plaide pour
+      vacciner contre le zona.
+    contexte:
+      - >-
+        Le lupus dispose désormais de deux biothérapies remboursées de mécanismes
+        distincts (anti-BAFF pour le bélimumab, anti-récepteur de l'interféron de
+        type I pour l'anifrolumab), sans essai comparatif direct : d'où l'intérêt,
+        et les limites, d'une comparaison indirecte.
+      - >-
+        En pratique, le choix se fait sur le phénotype (atteinte cutanée
+        volontiers mise en avant pour l'anifrolumab, données rénales et de recul
+        pour le bélimumab), le profil de tolérance et le terrain infectieux — la
+        supériorité BICLA doit être interprétée avec prudence.
+      - >-
+        Le surrisque de zona sous anifrolumab conforte l'intérêt du vaccin
+        recombinant avant/en cours de traitement.
+
+  - type: meta
+    titre: "Facteurs de risque de thrombose veineuse chez le patient hospitalisé en médecine"
+    source: "Research and Practice in Thrombosis and Haemostasis · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42318434/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (18 études) des facteurs de risque de
+      maladie thromboembolique veineuse (MTEV) chez l'adulte hospitalisé pour une
+      affection médicale aiguë. Les facteurs les plus constamment associés :
+      cancer (antécédent ou actif), antécédent de MTEV, infection aiguë, et
+      comorbidités (diabète, fibrillation atriale, AVC ischémique, HTA). Toutes les
+      études présentaient un risque de biais modéré à élevé, et la certitude des
+      preuves reste limitée.
+    message_cle: >-
+      Cancer, antécédent de MTEV et infection aiguë sont les facteurs de risque
+      thrombotique les plus robustes chez le patient hospitalisé en médecine —
+      utiles pour cibler la thromboprophylaxie, malgré des preuves de qualité
+      modérée.
+    contexte:
+      - >-
+        Décider d'une thromboprophylaxie est un geste quotidien en médecine
+        interne. Les modèles d'évaluation du risque (Padua, IMPROVE) restent
+        imparfaits ; mieux hiérarchiser les facteurs aide à éviter le sur- comme
+        le sous-traitement.
+      - >-
+        À rapprocher des méta-analyses sur l'efficacité des molécules (bénéfice
+        absolu modeste, sur-risque hémorragique des AOD/HNF) : l'enjeu est de
+        réserver la prophylaxie aux patients réellement à risque.
+
+  - type: meta
+    titre: "Insuffisance surrénale aiguë inexpliquée : penser au syndrome des antiphospholipides"
+    source: "Frontiers in Immunology · revue systématique avec analyse individuelle poolée"
+    impact_factor: 6
+    url: "https://pubmed.ncbi.nlm.nih.gov/42317308/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique avec analyse individuelle poolée (103 études, 155
+      patients) de l'atteinte surrénalienne au cours du syndrome des
+      antiphospholipides (SAPL) et du lupus. Cette atteinte, à mécanisme
+      immunothrombotique, est le plus souvent hémorragique (66,9 %) et bilatérale
+      (86,3 %) ; l'insuffisance surrénale en est la première manifestation dans
+      73,6 % des cas, et une véritable crise surrénalienne survient dans ~52 %.
+      Elle révèle souvent un SAPL primaire (67 %).
+    message_cle: >-
+      Devant une insuffisance surrénale aiguë inexpliquée, évoquer le SAPL :
+      l'hémorragie/thrombose surrénalienne bilatérale peut en être la première
+      manifestation et engager le pronostic vital.
+    contexte:
+      - >-
+        Le SAPL est une thrombophilie auto-immune prise en charge en médecine
+        interne. L'atteinte surrénalienne, rare, est un piège diagnostique : elle
+        peut inaugurer la maladie, parfois dans un contexte de SAPL catastrophique.
+      - >-
+        L'intérêt est le réflexe clinique : devant une insuffisance surrénale
+        aiguë sans cause évidente (surtout si hémorragie bilatérale à l'imagerie),
+        rechercher des anticorps antiphospholipides et une thrombose. Données
+        issues de cas publiés (biais de publication), à confirmer.
