@@ -35,65 +35,68 @@
 
 <section class="home-section">
   <h2>Comment ça marche</h2>
-  <p class="section-lede">Une chaîne entièrement automatisée, de la recherche PubMed
-  à la mise en ligne — tri, synthèse et vérification confiés à l'IA.</p>
+  <p class="section-lede">De la recherche des études jusqu'à la mise en ligne, tout est
+  automatique — et trois étapes sont confiées à une intelligence artificielle (IA).</p>
   <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
     <div class="pipeline-node" role="listitem">
       <span class="step">01</span>
       <span class="icon" aria-hidden="true">🔎</span>
       <div class="body">
-        <h3>Collecte</h3>
-        <p>Publications de médecine interne repérées sur PubMed, chaque semaine.</p>
+        <h3>On rassemble</h3>
+        <p>Chaque semaine, on réunit les nouvelles études médicales parues dans le monde.</p>
       </div>
     </div>
     <div class="pipeline-node is-ai" role="listitem">
       <span class="step">02</span>
       <span class="icon" aria-hidden="true">🧠</span>
       <div class="body">
-        <h3>Tri <span class="tag-ai">IA</span></h3>
-        <p>L'IA sélectionne selon la pertinence et l'impact factor de la revue.</p>
+        <h3>L'IA fait le tri <span class="tag-ai">IA</span></h3>
+        <p>Elle ne garde que ce qui compte vraiment pour un médecin interniste,
+        en privilégiant les revues les plus sérieuses.</p>
       </div>
     </div>
     <div class="pipeline-node" role="listitem">
       <span class="step">03</span>
       <span class="icon" aria-hidden="true">📄</span>
       <div class="body">
-        <h3>Lecture</h3>
-        <p>Résumés, et texte intégral quand il est en accès libre.</p>
+        <h3>L'IA lit</h3>
+        <p>Elle lit le résumé de chaque étude retenue — et l'article complet
+        quand il est disponible gratuitement.</p>
       </div>
     </div>
     <div class="pipeline-node is-ai" role="listitem">
       <span class="step">04</span>
       <span class="icon" aria-hidden="true">✍️</span>
       <div class="body">
-        <h3>Synthèse <span class="tag-ai">IA</span></h3>
-        <p>Résumé, ce qui change, message clé, contexte — ancrés sur la source.</p>
+        <h3>L'IA résume <span class="tag-ai">IA</span></h3>
+        <p>Pour chaque étude : ce qu'elle montre, ce qui change, et le message à retenir.</p>
       </div>
     </div>
     <div class="pipeline-node is-ai" role="listitem">
       <span class="step">05</span>
       <span class="icon" aria-hidden="true">✅</span>
       <div class="body">
-        <h3>Vérification <span class="tag-ai">IA</span></h3>
-        <p>Relecture des chiffres face à la source ; sinon rétrogradé en « Aussi paru ».</p>
+        <h3>L'IA se relit <span class="tag-ai">IA</span></h3>
+        <p>Une seconde IA vérifie que chaque chiffre annoncé figure bien dans l'étude
+        d'origine. Au moindre doute, l'étude est simplement signalée, sans résumé détaillé.</p>
       </div>
     </div>
     <div class="pipeline-node" role="listitem">
       <span class="step">06</span>
       <span class="icon" aria-hidden="true">📬</span>
       <div class="body">
-        <h3>Publication</h3>
-        <p>Mise en ligne automatique, chaque lundi.</p>
+        <h3>Mise en ligne</h3>
+        <p>Le nouveau numéro paraît tout seul sur le site, chaque lundi.</p>
       </div>
     </div>
   </div>
-  <p class="pipeline-caption"><strong>Entièrement automatisé et généré par IA, sans relecture
-  par un médecin</strong> — c'est un parti pris assumé et transparent. Chaque item renvoie à sa
-  source ; l'information est à vérifier avant tout usage clinique. Détail sur la page
-  <a href="{{ root }}methode.html">Méthode</a>.</p>
+  <p class="pipeline-caption"><strong>Tout est automatique et rédigé par une IA, sans
+  relecture par un médecin</strong> — c'est un choix assumé et transparent. Chaque article
+  renvoie à l'étude d'origine, à vérifier avant tout usage médical. Plus de détails sur la
+  page <a href="{{ root }}methode.html">Méthode</a>.</p>
   <div class="hero-actions">
     <a class="btn btn-secondary" href="{{ root }}archives.html">Parcourir les archives</a>
-    <a class="btn btn-secondary" href="{{ root }}veille.html">Voir la veille PubMed brute</a>
+    <a class="btn btn-secondary" href="{{ root }}veille.html">Voir toutes les études repérées</a>
   </div>
 </section>
 {% endblock %}
