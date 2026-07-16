@@ -1,0 +1,119 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 1
+semaine: "2 au 8 mai 2026"
+date: 2026-05-08
+edito: >-
+  Une recommandation britannique pour diagnostiquer plus tôt l'amylose AL, deux
+  signaux sur les inhibiteurs de BTK et la corticothérapie faible dose dans la
+  polyarthrite rhumatoïde.
+
+items:
+  - type: reco
+    titre: "Diagnostiquer plus tôt l'amylose AL : recommandation de la British Society for Haematology"
+    source: "British Journal of Haematology · recommandation de la BSH"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42099096/"
+    base_texte: abstract_seul
+    resume: >-
+      Recommandation de la British Society for Haematology dédiée à la
+      reconnaissance précoce de l'amylose à chaînes légères (AL), maladie liée au
+      dépôt tissulaire de chaînes légères produites par un clone plasmocytaire.
+      Le pronostic dépend étroitement du stade : environ 80 % de survie à 5 ans
+      dans les formes précoces avec les traitements actuels, contre moins de 30 %
+      dans les formes avancées. Le texte insiste sur le fait que l'amylose peut se
+      révéler dans n'importe quelle consultation (hématologie, cardiologie,
+      neurologie, néphrologie, mais aussi médecine générale et gériatrie) et vise
+      à abaisser le seuil de suspicion.
+    message_cle: >-
+      Y penser tôt change le pronostic : devant une protéinurie, une insuffisance
+      cardiaque à cœur épaissi, une neuropathie ou une atteinte multi-systémique
+      inexpliquée, évoquer l'amylose AL et adresser sans délai.
+    comparaisons:
+      - titre: "Par rapport à l'organisation française"
+        reference: "Centre national de référence Amylose AL et autres maladies de dépôt d'immunoglobulines"
+        points:
+          - "En France, le diagnostic et la prise en charge s'organisent autour du
+            centre de référence amylose AL et de ses centres de compétence ; le
+            message « y penser dans toute spécialité » y est directement transposable."
+          - "L'enjeu commun est le délai diagnostique : le dosage des chaînes légères
+            libres sériques et la biopsie (graisse, organe atteint) doivent être
+            demandés tôt."
+    contexte:
+      - >-
+        L'amylose AL est une maladie systémique rare, au carrefour de la médecine
+        interne, de l'hématologie et de la cardiologie. Son pronostic est dominé
+        par l'atteinte cardiaque, et le retard diagnostique reste l'un des
+        principaux déterminants de la mortalité.
+      - >-
+        L'intérêt de cette recommandation n'est pas un nouveau traitement mais une
+        démarche : structurer la suspicion clinique pour raccourcir l'errance
+        diagnostique. C'est typiquement le rôle de l'interniste, souvent en
+        première ligne devant des tableaux multi-systémiques inexpliqués.
+      - >-
+        À noter : recommandation britannique, centrée sur la reconnaissance et non
+        sur le protocole thérapeutique (traité par ailleurs). À confronter aux
+        parcours organisés par le centre de référence français.
+
+  - type: essai
+    titre: "Branebrutinib dans la polyarthrite rhumatoïde : essai de phase 2a négatif"
+    source: "The Lancet Rheumatology · essai de phase 2a"
+    impact_factor: 42
+    url: "https://pubmed.ncbi.nlm.nih.gov/42081904/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 2a randomisé, en double aveugle contre placebo, chez 85
+      patients atteints de polyarthrite rhumatoïde en réponse insuffisante au
+      méthotrexate (branebrutinib, inhibiteur oral irréversible de la BTK, 9 mg/j
+      vs placebo 3:1, 12 semaines). Le critère principal (réponse ACR50 à S12)
+      n'est PAS atteint : 19 % (12/64) sous branebrutinib vs 33 % (7/21) sous
+      placebo (p = 0,16). Tolérance comparable, sans événement indésirable grave
+      ni décès.
+    message_cle: >-
+      Essai négatif : le branebrutinib ne démontre pas d'efficacité dans la
+      polyarthrite rhumatoïde à cette dose. La bonne tolérance des inhibiteurs de
+      BTK reste à confirmer sur d'autres indications auto-immunes.
+    contexte:
+      - >-
+        La tyrosine kinase de Bruton (BTK) intervient dans l'activation des
+        lymphocytes B, la production d'auto-anticorps et la libération de
+        cytokines pro-inflammatoires — d'où l'intérêt de l'inhiber dans les
+        maladies auto-immunes explorées en médecine interne (lupus, Sjögren) comme
+        en rhumatologie.
+      - >-
+        Ce résultat négatif dans la polyarthrite rhumatoïde recadre les attentes :
+        un mécanisme séduisant ne suffit pas. Il n'était pas acquis que
+        l'inhibition de la BTK, prometteuse dans certaines hémopathies, se
+        transpose à l'auto-immunité articulaire.
+      - >-
+        L'étude comportait aussi des sous-études lupus et Sjögren (non rapportées
+        ici) : la place des anti-BTK en médecine interne reste à préciser.
+
+  - type: meta
+    titre: "Corticothérapie faible dose et os dans la polyarthrite rhumatoïde : perte osseuse lombaire sans surrisque fracturaire à 2 ans"
+    source: "RMD Open · méta-analyse sur données individuelles"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42097691/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse sur données individuelles (5 essais
+      randomisés, 1112 patients) des effets de 2 ans de corticothérapie à faible
+      dose (≤ 7,5 mg/j d'équivalent prednisone) sur la densité osseuse et le
+      risque fracturaire dans la polyarthrite rhumatoïde. On observe une perte
+      osseuse au rachis lombaire (−0,021 g/cm² ; IC95 −0,037 à −0,005 ; p = 0,034)
+      mais pas au fémur ; 35 patients ont eu au moins une fracture, sans
+      différence de risque fracturaire entre corticoïdes et contrôle.
+    message_cle: >-
+      À faible dose et sur 2 ans, la corticothérapie de la polyarthrite entraîne
+      une perte osseuse lombaire mesurable mais pas de surrisque fracturaire
+      démontré — sans dispenser des mesures de protection osseuse habituelles.
+    contexte:
+      - >-
+        La corticothérapie prolongée, même à faible dose, est une préoccupation
+        transversale en médecine interne (maladies systémiques, vascularites).
+        L'os est l'une de ses cibles classiques, et la question du seuil de dose
+        « sûr » revient constamment.
+      - >-
+        Cette méta-analyse nuance : la perte de densité lombaire est réelle mais
+        modeste, et le signal fracturaire n'atteint pas la significativité sur 2
+        ans — étude toutefois limitée par la durée et le nombre d'événements. Elle
+        ne remplace pas l'évaluation individuelle du risque fracturaire ni les
+        mesures de prévention (calcium/vitamine D, bisphosphonates selon le risque).

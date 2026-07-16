@@ -1,0 +1,96 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 5
+semaine: "30 mai au 5 juin 2026"
+date: 2026-06-05
+edito: >-
+  Deux nouvelles cibles dans le lupus (anti-CD40L en phase 3 positive, anti-BTK
+  oral en phase précoce) et une synthèse sur le neuro-Behçet en Afrique du Nord,
+  population bien représentée dans nos files actives.
+
+items:
+  - type: essai
+    titre: "Dapirolizumab pegol (anti-CD40L) dans le lupus systémique : essai de phase 3 positif (PHOENYCS GO)"
+    source: "The Lancet · essai de phase 3"
+    impact_factor: 98
+    url: "https://pubmed.ncbi.nlm.nih.gov/42214397/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 (PHOENYCS GO), randomisé, en double aveugle contre placebo,
+      chez 321 patients atteints de lupus systémique modéré à sévère actif malgré
+      le traitement standard (177 centres, 25 pays). Ajout du dapirolizumab pegol
+      (inhibiteur du ligand de CD40) 24 mg/kg IV toutes les 4 semaines vs placebo.
+      Critère principal atteint : réponse BICLA à 48 semaines chez 50 % (103/208)
+      vs 35 % (37/107) sous placebo (p = 0,011 ; différence 14,6 points ; IC95
+      3,3-25,8).
+    message_cle: >-
+      Dans le lupus systémique actif, le dapirolizumab pegol améliore la réponse
+      BICLA à 48 semaines dans un essai de phase 3 positif — une nouvelle voie
+      thérapeutique (blocage de la costimulation CD40-CD40L) à suivre.
+    contexte:
+      - >-
+        L'axe de costimulation CD40-CD40L est central dans l'activation des
+        lymphocytes B et T et la production d'auto-anticorps ; le cibler est une
+        vieille idée dans le lupus, longtemps freinée par des problèmes de
+        tolérance (thromboses) des premiers anti-CD40L.
+      - >-
+        Un essai de phase 3 positif est notable dans une maladie où beaucoup de
+        molécules échouent. Il vient étoffer un arsenal en expansion (bélimumab,
+        anifrolumab), sans qu'on sache encore où positionner exactement cette
+        nouvelle option.
+      - >-
+        Pour la pratique française : il ne s'agit pour l'instant que de données
+        d'essai ; AMM, disponibilité et place dans la stratégie restent à définir.
+
+  - type: essai
+    titre: "Orelabrutinib (anti-BTK oral) dans le lupus : signal d'efficacité dose-dépendant en phase précoce"
+    source: "Journal of Autoimmunity · essai de phase Ib/IIa"
+    impact_factor: 12
+    url: "https://pubmed.ncbi.nlm.nih.gov/42214214/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase Ib/IIa, randomisé en double aveugle contre placebo, chez 60
+      patients (11 centres, Chine) atteints de lupus systémique. Orelabrutinib
+      (inhibiteur oral sélectif et irréversible de la BTK) 50, 80 ou 100 mg/j vs
+      placebo, 12 semaines. Réponse SRI-4 à S12 dose-dépendante : 50 %, 62 % et
+      64 % vs 36 % sous placebo, avec des réponses plus marquées chez les patients
+      à forte activité (SLEDAI-2K > 8). Baisse de la protéinurie, des anti-dsDNA et
+      des IgG/IgM, hausse du C4. Tolérance surtout légère à modérée.
+    message_cle: >-
+      L'orelabrutinib montre un signal d'efficacité dose-dépendant et une bonne
+      tolérance dans le lupus, mais en phase très précoce (60 patients) — à
+      confirmer par des essais de phase avancée avant toute conclusion.
+    contexte:
+      - >-
+        La BTK relie l'activation des lymphocytes B, la production
+        d'auto-anticorps et l'inflammation — une cible logique dans le lupus, où
+        les anti-BTK oraux pourraient compléter les biothérapies injectables.
+      - >-
+        Prudence : effectif faible, étude monopays, critères intermédiaires. Le
+        signal biologique (baisse anti-dsDNA, hausse C4) est cohérent, mais ne vaut
+        pas preuve d'efficacité clinique robuste.
+
+  - type: meta
+    titre: "Neuro-Behçet en Afrique du Nord : synthèse de la fréquence et du tableau clinique"
+    source: "Clinical Reviews in Allergy & Immunology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42223561/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (13 études, 4262 patients atteints de
+      maladie de Behçet) estimant la fréquence de l'atteinte neurologique
+      (neuro-Behçet) en Afrique du Nord et décrivant ses caractéristiques
+      cliniques, du liquide céphalorachidien et d'imagerie. Travail conduit
+      notamment par des internistes exerçant en France, dans une population
+      maghrébine fortement représentée dans les files actives françaises.
+    message_cle: >-
+      Le neuro-Behçet est une atteinte grave à connaître, en particulier chez les
+      patients d'origine nord-africaine ; cette synthèse précise sa fréquence et
+      son tableau clinico-radiologique.
+    contexte:
+      - >-
+        La maladie de Behçet, vascularite systémique à la frontière de
+        l'auto-immunité et de l'auto-inflammation, est suivie en médecine interne.
+        L'atteinte neurologique conditionne une part importante du pronostic.
+      - >-
+        L'intérêt pour la pratique française tient à l'épidémiologie : une part
+        des patients suivis en France sont originaires du Maghreb, où la maladie
+        est fréquente. Synthèse limitée par l'hétérogénéité des études incluses.
