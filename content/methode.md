@@ -102,11 +102,15 @@ Les sources surveillées chaque semaine :
   Kidney International… avec PubMed en filet de sécurité (requêtes ciblées sur
   les pathologies du périmètre ci-dessus).
 
-La sélection est volontairement restrictive : 3 à 8 items synthétisés par
-numéro, choisis pour leur impact sur la pratique de l'interniste — quitte à ce
-qu'un numéro soit court une semaine calme. Les items pertinents mais non retenus
-figurent en liste brute dans la rubrique « Aussi parus cette semaine ». Les
-essais **négatifs** sont retenus lorsqu'ils recadrent utilement les attentes.
+La sélection est volontairement exigeante, mais **sans nombre imposé** : le
+volume d'un numéro suit ce qui a réellement été publié — souvent 3 à 8 items
+synthétisés, davantage une semaine riche, moins une semaine calme. Aucun item
+tiède n'est ajouté pour « faire du volume ». À pertinence comparable, l'**impact
+factor** de la revue départage (indiqué par une pastille « IF ≈ » sur l'item),
+sans jamais primer sur la pertinence clinique. Les publications pertinentes mais
+non retenues pour une synthèse complète figurent, **avec un résumé court**, dans
+la rubrique « Aussi parus cette semaine ». Les essais **négatifs** sont retenus
+lorsqu'ils recadrent utilement les attentes.
 
 ## Comment les synthèses sont rédigées
 
@@ -122,6 +126,36 @@ essais **négatifs** sont retenus lorsqu'ils recadrent utilement les attentes.
    assumé, au service de la fraîcheur et de la régularité. La contrepartie est
    que des erreurs d'interprétation restent possibles : l'IA peut mal résumer,
    sur-interpréter une nuance ou manquer une limite méthodologique.
+
+## Recommandations : ce qui change, en détail
+
+Pour une **recommandation** ou un **PNDS**, un simple résumé ne suffit pas : ce
+qui compte, c'est de situer le texte. Chaque reco reçoit donc, quand c'est
+possible, une comparaison sur trois axes :
+
+1. **par rapport à la version précédente** du même texte ;
+2. **par rapport aux autres grandes recommandations** internationales sur le
+   sujet (EULAR, ACR, KDIGO…) ;
+3. **par rapport aux recommandations françaises** (PNDS de la HAS, filières de
+   santé maladies rares).
+
+Ces comparaisons s'appuient sur la source **et sur des connaissances générales**
+du modèle : elles sont donc explicitement signalées comme **à vérifier sur les
+textes originaux**. C'est une aide au repérage, pas une référence opposable.
+
+## Veille des PNDS
+
+Les **PNDS** (Protocoles Nationaux de Diagnostic et de Soins de la HAS) sont
+suivis à part : dès qu'un PNDS de médecine interne paraît ou est actualisé, il
+ouvre le numéro de la semaine, avec — si une version antérieure existe — un
+**avant / après**.
+
+Limite technique assumée : la HAS ne publie **aucun flux (RSS/API) exploitable**
+pour les PNDS et sa liste officielle est rendue en JavaScript. Une détection
+100 % automatique et fiable est donc impossible sans un procédé fragile. Les
+PNDS sont donc consignés dans un petit **registre** tenu à la main
+(`content/pnds.yaml`) — ils sont peu nombreux — et leur intégration au numéro,
+leur mise en forme et leur avant/après sont, eux, automatiques.
 
 ## Pourquoi ce choix, et comment l'utiliser
 

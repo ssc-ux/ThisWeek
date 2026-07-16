@@ -391,6 +391,48 @@ a:focus-visible, button:focus-visible {
   letter-spacing: normal;
 }
 
+/* ---- Comparaisons (reco / PNDS) ---- */
+
+.compare {
+  margin: 1.6rem 0 0;
+  padding: 1.3rem 1.4rem;
+  background: var(--paper-alt);
+  border-radius: var(--r-card);
+}
+.compare > h3 { margin: 0 0 .3rem; color: var(--accent); }
+.compare-axis { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.compare-axis:first-of-type { margin-top: .6rem; padding-top: 0; border-top: 0; }
+.compare-head {
+  margin: 0 0 .3rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.compare-ref { font-weight: 400; color: var(--ink-soft); font-size: .88rem; }
+.compare-axis ul { margin: .3rem 0 0; padding-left: 1.3rem; }
+.compare-axis li { margin: .3rem 0; }
+.compare-caveat {
+  margin: 1.1rem 0 0;
+  padding-top: .9rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.compare-caveat strong { color: var(--ink); }
+
+.pnds-statut {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
+
 /* ---- Contexte déroulable ---- */
 
 .contexte {

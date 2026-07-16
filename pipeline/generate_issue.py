@@ -252,9 +252,26 @@ ITEM_SCHEMA = {
         "a_ce_qui_change": {"type": "boolean"},
         "ce_qui_change_reference": {"type": "string"},
         "ce_qui_change_points": {"type": "array", "items": {"type": "string"}},
+        # Comparaisons détaillées, remplies pour les recommandations et PNDS :
+        # axes « version précédente », « autres grandes recommandations » et
+        # « recommandations françaises / PNDS ». Vide pour les autres types.
+        "comparaisons": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "titre": {"type": "string"},
+                    "reference": {"type": "string"},
+                    "points": {"type": "array", "items": {"type": "string"}},
+                },
+                "required": ["titre", "reference", "points"],
+            },
+        },
     },
     "required": ["resume", "message_cle", "contexte", "base_texte",
-                 "a_ce_qui_change", "ce_qui_change_reference", "ce_qui_change_points"],
+                 "a_ce_qui_change", "ce_qui_change_reference", "ce_qui_change_points",
+                 "comparaisons"],
 }
 
 
@@ -375,11 +392,31 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
 
 
 def synthesize(client, item: dict, source_text: str) -> dict:
+    is_reco = item["type"] in ("reco", "pnds")
+    comp_instr = (
+        "- comparaisons : "
+        + (
+            "COMME IL S'AGIT D'UNE RECOMMANDATION OU D'UN PNDS, remplis jusqu'à "
+            "trois axes, chacun {titre, reference, points} : (1) par rapport à la "
+            "VERSION PRÉCÉDENTE du même texte ; (2) par rapport aux AUTRES GRANDES "
+            "RECOMMANDATIONS internationales sur le sujet (ex. EULAR, KDIGO, ACR/"
+            "EULAR selon le thème) ; (3) par rapport aux RECOMMANDATIONS FRANÇAISES "
+            "(PNDS de la HAS, filières de santé maladies rares). Fonde-toi sur la "
+            "source et sur des connaissances GÉNÉRALES bien établies ; reste à un "
+            "niveau dont tu es sûr, n'invente aucun contenu précis (pas de fausse "
+            "date, pas de recommandation imaginaire) ; en cas de doute, formule "
+            "prudemment (« à confronter à… »). Laisse un axe de côté si tu n'as rien "
+            "de fiable à en dire.\n"
+            if is_reco else
+            "laisse la liste VIDE (ce n'est pas une recommandation ni un PNDS).\n"
+        )
+    )
     prompt = (
         "Tu rédiges pour un digest hebdomadaire destiné aux MÉDECINS INTERNISTES "
         "francophones, en français, ton factuel et sobre.\n\n"
-        f"Titre : {item['titre_fr']}\nSource : {item['revue']}\n\n"
-        "À partir UNIQUEMENT du texte source ci-dessous, produis :\n"
+        f"Type d'item : {item['type']}\nTitre : {item['titre_fr']}\n"
+        f"Source : {item['revue']}\n\n"
+        "À partir du texte source ci-dessous, produis :\n"
         "- resume : 5 à 10 lignes factuelles (chiffres/HR/effectifs uniquement "
         "s'ils figurent dans le texte) ;\n"
         "- a_ce_qui_change : true seulement si le texte décrit explicitement un "
@@ -388,6 +425,7 @@ def synthesize(client, item: dict, source_text: str) -> dict:
         "- ce_qui_change_reference : la référence du diff (ex. 'version 2021', "
         "'pratique antérieure') si a_ce_qui_change, sinon chaîne vide ;\n"
         "- ce_qui_change_points : liste de points (vide si a_ce_qui_change=false) ;\n"
+        + comp_instr +
         "- message_cle : 1 à 3 phrases actionnables ;\n"
         "- contexte : liste de 3 à 4 paragraphes détaillés expliquant la maladie "
         "et sa place en médecine interne, le standard de prise en charge actuel, "
@@ -396,9 +434,11 @@ def synthesize(client, item: dict, source_text: str) -> dict:
         "les limites ;\n"
         "- base_texte : 'texte_integral' si le texte fourni dépasse l'abstract, "
         "sinon 'abstract_seul'.\n"
-        "N'invente aucun chiffre ni aucun diff absent du texte.\n\n"
+        "Le resume et les chiffres ne doivent venir QUE du texte source. Les "
+        "comparaisons peuvent s'appuyer sur des connaissances générales, mais sans "
+        "rien inventer de précis.\n\n"
         "=== TEXTE SOURCE ===\n" + source_text[:14000])
-    d = claude_json(client, prompt, ITEM_SCHEMA, max_tokens=4000)
+    d = claude_json(client, prompt, ITEM_SCHEMA, max_tokens=4500)
     out = {
         "type": item["type"],
         "titre": item["titre_fr"],
@@ -411,11 +451,60 @@ def synthesize(client, item: dict, source_text: str) -> dict:
     }
     if item.get("if_approx") is not None:
         out["impact_factor"] = item["if_approx"]
+    if item.get("pnds_statut"):
+        out["pnds_statut"] = item["pnds_statut"]
+    comparaisons = [c for c in d.get("comparaisons", []) if c.get("points")]
+    if comparaisons:
+        out["comparaisons"] = comparaisons
     if d.get("a_ce_qui_change") and d.get("ce_qui_change_points"):
         out["ce_qui_change"] = {
             "reference": d.get("ce_qui_change_reference") or "pratique antérieure",
             "points": d["ce_qui_change_points"],
         }
+    return out
+
+
+PNDS_REGISTRY = ROOT / "content" / "pnds.yaml"
+
+
+def load_pnds_for_week(start: dt.date, end: dt.date) -> list[dict]:
+    """PNDS (HAS) parus dans la fenêtre de la semaine, depuis le registre suivi.
+
+    La HAS ne publiant pas de flux exploitable, on tient un petit registre
+    (content/pnds.yaml). Chaque entrée entièrement rédigée dont la date tombe
+    dans la semaine devient un item « pnds » du numéro, avec son avant/après.
+    """
+    if not PNDS_REGISTRY.exists():
+        return []
+    data = yaml.safe_load(PNDS_REGISTRY.read_text(encoding="utf-8")) or {}
+    out = []
+    for e in data.get("pnds", []) or []:
+        d = e.get("date")
+        if not isinstance(d, dt.date):
+            try:
+                d = dt.datetime.strptime(str(d), "%Y-%m-%d").date()
+            except Exception:
+                continue
+        if not (start <= d <= end):
+            continue
+        if not e.get("resume"):
+            print(f"  ! PNDS « {e.get('titre', '?')} » sans résumé rédigé — ignoré")
+            continue
+        item = {
+            "type": "pnds",
+            "titre": e["titre"],
+            "source": e.get("source", "HAS · Protocole National de Diagnostic et de Soins"),
+            "url": e.get("url"),
+            "base_texte": e.get("base_texte", "abstract_seul"),
+            "resume": e["resume"],
+            "message_cle": e.get("message_cle", ""),
+            "contexte": e.get("contexte", []),
+        }
+        if e.get("statut"):
+            item["pnds_statut"] = e["statut"]
+        if e.get("comparaisons"):
+            item["comparaisons"] = e["comparaisons"]
+        out.append(item)
     return out
 
 
@@ -470,6 +559,12 @@ def main() -> None:
         time.sleep(0.4)
 
     aussi_parus = synthesize_brief(client, aussi_refs)
+
+    pnds_items = load_pnds_for_week(start, today)
+    if pnds_items:
+        print(f"  {len(pnds_items)} PNDS de la semaine ajouté(s) depuis le registre")
+    # Les PNDS ouvrent le numéro (documents de référence pour la pratique française).
+    items = pnds_items + items
 
     issue = {
         "numero": next_numero(),

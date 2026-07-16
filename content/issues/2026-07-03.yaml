@@ -34,6 +34,33 @@ items:
         - "Hydroxychloroquine posée comme traitement de fond universel."
         - "Corticothérapie à limiter dans le temps, au profit d'une introduction
           plus précoce des immunosuppresseurs et biothérapies."
+    comparaisons:
+      - titre: "Par rapport à la précédente position de l'ACR"
+        reference: "recommandations ACR antérieures, surtout centrées sur la néphrite lupique (2012)"
+        points:
+          - "L'ACR ne disposait pas de recommandation récente et complète dédiée
+            au traitement du lupus NON rénal ; ce texte 2025 comble ce manque et
+            couvre adulte et enfant."
+          - "Adoption explicite d'une logique « treat-to-target » (viser rémission
+            ou faible activité) et de l'épargne cortisonique, absentes des textes
+            plus anciens."
+      - titre: "Par rapport aux autres grandes recommandations internationales"
+        reference: "mise à jour EULAR 2023 du lupus"
+        points:
+          - "Convergence large avec l'EULAR 2023 : hydroxychloroquine pour tous,
+            objectif de prednisone ≤ 5 mg/j (voire arrêt), recours précoce aux
+            immunosuppresseurs et biothérapies, cible de rémission (DORIS) ou de
+            faible activité (LLDAS)."
+          - "Les deux textes intègrent la place croissante du bélimumab et de
+            l'anifrolumab dans la stratégie d'épargne cortisonique."
+      - titre: "Par rapport aux recommandations françaises"
+        reference: "PNDS « Lupus systémique » (filière FAI²R / CEREMAIA)"
+        points:
+          - "Le PNDS français reste le document opposable pour le parcours de soins,
+            le diagnostic et le remboursement en France ; il est plus ancien que ce
+            guide ACR."
+          - "À confronter au PNDS sur deux points en particulier : la rigueur de
+            l'épargne cortisonique et l'introduction plus précoce des biothérapies."
     message_cle: >-
       Dans le lupus : hydroxychloroquine pour tous, épargne cortisonique, et
       immunosuppression/biothérapie précoce pour viser la rémission ou une
