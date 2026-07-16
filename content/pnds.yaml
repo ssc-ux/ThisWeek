@@ -1,0 +1,43 @@
+# Registre de veille des PNDS (Protocoles Nationaux de Diagnostic et de Soins, HAS)
+# ---------------------------------------------------------------------------------
+# Pourquoi un registre plutôt qu'une veille 100 % automatique ?
+# La HAS ne publie AUCUN flux exploitable pour les PNDS : la liste officielle
+# (has-sante.fr) est rendue entièrement en JavaScript et n'expose ni RSS ni API.
+# Une détection automatique fiable est donc impossible sans un scraping fragile.
+# On tient donc ce petit registre à la main (les PNDS de médecine interne sont
+# peu nombreux, quelques-uns par an). Toute entrée dont la `date` tombe dans la
+# semaine d'un numéro est AUTOMATIQUEMENT intégrée en tête de ce numéro, avec son
+# avant/après — le rendu, lui, est entièrement automatisé.
+#
+# Pour ajouter un PNDS, copier le modèle ci-dessous dans la liste `pnds:`.
+# Champs :
+#   titre        : intitulé du PNDS
+#   date         : date de publication/actualisation (AAAA-MM-JJ) — sert au tri
+#   url          : lien HAS
+#   statut       : "nouveau" ou "actualise"
+#   source       : facultatif (défaut : « HAS · Protocole National… »)
+#   resume       : synthèse (obligatoire pour que l'entrée soit publiée)
+#   message_cle  : 1–3 phrases actionnables
+#   contexte     : liste de paragraphes (facultatif)
+#   comparaisons : pour un PNDS actualisé, l'avant/après ; liste de blocs
+#                  {titre, reference, points[]}
+#
+# Modèle (à dupliquer, dé-commenter et compléter avec une source vérifiée) :
+#
+#   - titre: "PNDS — <maladie>"
+#     date: 2026-01-15
+#     url: "https://www.has-sante.fr/jcms/<id>/fr/<slug>"
+#     statut: actualise            # ou "nouveau"
+#     resume: >-
+#       <ce que dit le PNDS, à partir de sa source>
+#     message_cle: >-
+#       <à retenir pour la pratique>
+#     contexte:
+#       - "<contexte de la maladie et du parcours de soins en France>"
+#     comparaisons:
+#       - titre: "Avant / après le PNDS précédent"
+#         reference: "PNDS <maladie> <année précédente>"
+#         points:
+#           - "<ce qui change>"
+
+pnds: []
