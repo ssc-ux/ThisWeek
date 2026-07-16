@@ -3,57 +3,47 @@ numero: 6
 semaine: "6 au 12 juin 2026"
 date: 2026-06-12
 edito: >-
-  Une recommandation nationale sur le traitement de la sclérodermie, la
-  vaccination contre le zona chez les patients immunodéprimés, et comment
-  désescalader une biothérapie sans rallumer la maladie.
+  La thrombose associée au cancer (rivaroxaban vs HBPM), la vaccination contre le
+  zona chez les patients immunodéprimés, et comment désescalader une biothérapie
+  sans rallumer la maladie.
 
 items:
-  - type: reco
-    titre: "Traitement pharmacologique de la sclérodermie systémique : recommandation du Colegio Mexicano de Reumatología"
-    source: "Reumatología Clínica · recommandation nationale (méthodologie GRADE)"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42270533/"
+  - type: meta
+    titre: "Thrombose associée au cancer : rivaroxaban vs HBPM, méta-analyse de 19 153 patients"
+    source: "Clinical and Applied Thrombosis/Hemostasis · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42273726/"
     base_texte: abstract_seul
     resume: >-
-      Première recommandation nationale (Colegio Mexicano de Reumatología) sur le
-      traitement pharmacologique de la sclérodermie systémique — Partie 1 :
-      atteinte cutanée, pneumopathie interstitielle (PID) et hypertension
-      artérielle pulmonaire (HTAP), les deux dernières étant les principales
-      causes de décès. Méthodologie GRADE, algorithme thérapeutique par paliers,
-      élaborée par un panel multidisciplinaire à partir de 114 études (sur 594
-      identifiées). Le texte assume explicitement une adaptation aux ressources et
-      à l'accès aux traitements locaux, plutôt qu'un décalque des recommandations
-      internationales.
+      Revue systématique et méta-analyse (25 études, 19 153 patients) comparant le
+      rivaroxaban (anticoagulant oral direct) à l'héparine de bas poids
+      moléculaire (HBPM) dans le traitement de la maladie thromboembolique veineuse
+      associée au cancer. Le rivaroxaban réduit le risque de récidive de MTEV
+      (RR 0,88 ; IC95 0,78-0,99 ; p = 0,03) et la mortalité toutes causes (RR 0,83 ;
+      IC95 0,69-0,99 ; p = 0,04), sans différence significative sur les autres
+      critères (dont les hémorragies). La certitude des preuves (GRADE) va d'élevée
+      à très faible selon les critères.
     message_cle: >-
-      Une nouvelle recommandation nationale structure le traitement de la
-      sclérodermie (peau, PID, HTAP) selon un algorithme par paliers — utile comme
-      point de comparaison, la référence opposable en France restant le PNDS.
-    comparaisons:
-      - titre: "Par rapport aux recommandations internationales"
-        reference: "recommandations EULAR / EUSTAR sur la sclérodermie"
-        points:
-          - "La recommandation mexicaine revendique de prioriser l'applicabilité
-            clinique et l'adaptation aux ressources, là où les textes EULAR/EUSTAR
-            visent un standard international."
-          - "Les piliers restent convergents : immunosuppression (mycophénolate,
-            voire tocilizumab ou nintedanib) pour la peau et la PID, vasodilatateurs
-            spécifiques pour l'HTAP — à vérifier sur le texte pour le détail des paliers."
-      - titre: "Par rapport aux recommandations françaises"
-        reference: "PNDS « Sclérodermie systémique » (filière FAI²R)"
-        points:
-          - "En France, le PNDS sclérodermie reste le document de référence pour le
-            parcours de soins et le remboursement ; cette recommandation étrangère
-            n'a pas vocation à s'y substituer."
-          - "Intérêt : comparer les seuils d'introduction du nintedanib et des
-            immunosuppresseurs dans la PID entre les deux textes."
+      Dans la thrombose associée au cancer, le rivaroxaban fait au moins aussi bien
+      que l'HBPM sur les récidives, avec un signal de moindre mortalité — une
+      option orale à considérer, en tenant compte du site tumoral et du risque
+      hémorragique.
     contexte:
       - >-
-        La sclérodermie systémique est une connectivite grave (fibrose,
-        vasculopathie) suivie en médecine interne, dont le pronostic est dominé
-        par la PID et l'HTAP.
+        La thrombose associée au cancer est fréquente et grave, et sa prise en
+        charge revient souvent à l'interniste. L'HBPM a longtemps été le standard
+        (essai CLOT), avant que les anticoagulants oraux directs (rivaroxaban,
+        apixaban, édoxaban) ne s'imposent comme alternatives dans les essais
+        récents (SELECT-D, Caravaggio…).
       - >-
-        L'intérêt d'une recommandation « adaptée aux ressources » est de rappeler
-        que les stratégies optimales dépendent de l'accès aux molécules — une
-        problématique parlante au-delà du seul contexte mexicain.
+        Cette méta-analyse conforte la non-infériorité (voire un avantage) du
+        rivaroxaban sur les récidives et un signal de mortalité, sans surcroît
+        hémorragique démontré ici. La prudence reste toutefois de mise pour les
+        cancers digestifs et urothéliaux, où les AOD majorent le risque de
+        saignement — d'où une décision à individualiser.
+      - >-
+        Limites : hétérogénéité des études incluses, certitude GRADE variable, et
+        besoin d'essais randomisés de plus grande ampleur pour confirmer le profil
+        de sécurité.
 
   - type: essai
     titre: "Vaccin recombinant contre le zona chez les patients sclérodermiques immunodéprimés : immunogène et bien toléré"

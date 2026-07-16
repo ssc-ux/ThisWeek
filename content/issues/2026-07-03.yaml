@@ -8,9 +8,8 @@ brouillon: true
 edito: >-
   Semaine dense et très « médecine interne » : une recommandation majeure sur
   le traitement du lupus, un essai positif dans le Sjögren, deux essais négatifs
-  utiles (Horton, PTI) qui recadrent les attentes, un signal positif dans la
-  maladie de Behçet, et un consensus sur le purpura thrombotique
-  thrombocytopénique.
+  utiles (Horton, PTI) qui recadrent les attentes, et un signal positif dans la
+  maladie de Behçet.
 
 items:
   - type: reco
@@ -276,50 +275,6 @@ items:
         La leçon est méthodologique autant que clinique : un succès démontré par
         voie IV ne se transpose pas automatiquement à la voie sous-cutanée. En
         pratique, cela ne modifie pas la place actuelle des traitements du PTI.
-
-  - type: reco
-    titre: "Consensus d'experts sur la prise en charge du purpura thrombotique thrombocytopénique (PTT)"
-    source: "Korean Journal of Internal Medicine · consensus d'experts"
-    url: "https://pubmed.ncbi.nlm.nih.gov/42438901/"
-    base_texte: abstract_seul
-    resume: >-
-      Consensus d'experts sur le diagnostic et la prise en charge du PTT,
-      microangiopathie thrombotique liée à un déficit sévère en ADAMTS13. Il
-      couvre les approches diagnostiques, les traitements initiaux (échanges
-      plasmatiques, immunosuppression par rituximab, caplacizumab) et adjuvants,
-      la prise en charge des formes réfractaires, le suivi de l'ADAMTS13 et le
-      suivi au long cours, en adaptant les données internationales aux
-      contraintes locales (accès au dosage ADAMTS13, remboursement).
-    message_cle: >-
-      Le trépied échanges plasmatiques + rituximab + caplacizumab structure la
-      prise en charge du PTT, guidée par l'ADAMTS13 ; l'accès au dosage et aux
-      molécules reste un enjeu organisationnel.
-    contexte:
-      - >-
-        Le purpura thrombotique thrombocytopénique (PTT) est une microangiopathie
-        thrombotique rare mais engageant le pronostic vital, liée à un déficit
-        sévère (< 10 %) en ADAMTS13 — la protéase qui clive le facteur von
-        Willebrand. Il associe thrombopénie, anémie hémolytique mécanique et
-        atteintes d'organe (neurologique, cardiaque, rénale), et constitue une
-        urgence diagnostique et thérapeutique.
-      - >-
-        La prise en charge a été transformée par les échanges plasmatiques
-        (traitement historique salvateur), le rituximab (immunosuppression
-        ciblant les auto-anticorps anti-ADAMTS13) puis le caplacizumab (anti-vWF)
-        qui accélère la remontée plaquettaire et réduit les rechutes précoces.
-        Le suivi de l'activité ADAMTS13 guide désormais la prévention des
-        rechutes.
-      - >-
-        Ce consensus émane d'experts coréens et adapte les recommandations
-        internationales aux contraintes locales (accès limité au dosage
-        ADAMTS13, remboursement du rituximab, indisponibilité du caplacizumab) —
-        un rappel que la disponibilité des outils conditionne la stratégie.
-      - >-
-        En France, le diagnostic et le suivi s'organisent autour du Centre
-        national de référence des microangiopathies thrombotiques (CNR-MAT),
-        avec un accès au dosage ADAMTS13 en urgence et au caplacizumab
-        généralement plus large ; le document coréen reste utile pour sa
-        synthèse pédagogique de la démarche.
 
 aussi_parus:
   - titre: "Prévalence des rechutes dans la sarcoïdose pulmonaire : revue systématique et méta-analyse"
