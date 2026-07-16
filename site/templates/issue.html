@@ -62,6 +62,7 @@
   <section class="item" id="item-{{ loop.index }}">
     <p class="item-kicker">
       <span class="badge badge-{{ item.type }}">{{ type_labels[item.type] }}</span>
+      {% if item.pnds_statut %}<span class="pnds-statut pnds-{{ item.pnds_statut }}">{{ 'Nouveau PNDS' if item.pnds_statut == 'nouveau' else 'PNDS actualisé' }}</span>{% endif %}
       <span class="item-source">{{ item.source }}</span>
       {% if item.impact_factor %}<span class="if-chip" title="Impact factor approximatif de la revue">IF ≈ {{ item.impact_factor }}</span>{% endif %}
     </p>
@@ -82,6 +83,21 @@
         <li>{{ point }}</li>
         {% endfor %}
       </ul>
+      {% endif %}
+
+      {% if item.comparaisons %}
+      <div class="compare">
+        <h3>{{ 'Avant / après' if item.type == 'pnds' else 'Ce qui change — en détail' }}</h3>
+        {% for c in item.comparaisons %}
+        <div class="compare-axis">
+          <p class="compare-head">{{ c.titre }}{% if c.reference %} <span class="compare-ref">— {{ c.reference }}</span>{% endif %}</p>
+          <ul>
+            {% for point in c.points %}<li>{{ point }}</li>{% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+        <p class="compare-caveat">Comparaisons établies par l'IA à partir des sources et de connaissances générales — <strong>à vérifier sur les textes originaux</strong> (versions, autres recommandations, PNDS).</p>
+      </div>
       {% endif %}
     </div>
 
