@@ -433,6 +433,17 @@ a:focus-visible, button:focus-visible {
 }
 .pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
 
+.verif-note {
+  margin: 1.2rem 0 0;
+  padding: .7rem 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border-radius: 10px;
+}
+.verif-note strong { color: var(--ink); }
+
 /* ---- Contexte déroulable ---- */
 
 .contexte {
@@ -638,10 +649,10 @@ article[data-mode="express"] .also-resume { display: none; }
 
 .pipeline {
   margin: 0 auto;
-  max-width: 62rem;
+  max-width: 72rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .8rem;
   align-items: stretch;
 }
 .pipeline-node {

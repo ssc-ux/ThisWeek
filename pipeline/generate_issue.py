@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
-"""Génère automatiquement le numéro hebdomadaire (brouillon) via l'API Claude.
+"""Génère automatiquement le numéro hebdomadaire via l'API Claude.
 
-Chaîne complète, sans intervention humaine :
-  1. interroge PubMed (E-utilities) sur les 7 derniers jours, périmètre médecine
-     interne (maladies auto-immunes/systémiques, vascularites, hématologie non
-     maligne, MTEV…) ;
-  2. demande à Claude de sélectionner les items réellement pertinents pour un
-     service de médecine interne français ;
-  3. récupère les abstracts (et le texte intégral libre si disponible via
-     Europe PMC) ;
-  4. demande à Claude de rédiger, pour chaque item, une synthèse structurée
-     ancrée sur la source (résumé, ce qui change, message clé, contexte) ;
-  5. écrit content/issues/AAAA-MM-JJ.yaml.
+Chaîne, sans intervention humaine :
+  1. interroge PubMed (recherche partagée `pubmed_query`) sur les N derniers
+     jours, périmètre médecine interne, publications rétractées exclues ;
+  2. sélection des items pertinents (modèle léger) ;
+  3. récupère abstracts (+ texte intégral libre Europe PMC si dispo) ;
+  4. synthèse structurée par item (modèle de haut niveau), avec un niveau de
+     confiance auto-déclaré ;
+  5. PASSE DE VÉRIFICATION : un second appel relit chaque synthèse face à la
+     source ; tout item dont un chiffre/une affirmation n'est pas retrouvé, ou
+     de confiance « faible », est RÉTROGRADÉ en « Aussi paru » (résumé court)
+     au lieu d'être publié en synthèse détaillée ;
+  6. écrit content/issues/AAAA-MM-JJ.yaml.
 
-Le numéro est publié tel quel : entièrement généré par IA, SANS relecture par un
-médecin. C'est un parti pris assumé, affiché sur chaque numéro et sur la page
-Méthode. Chaque item renvoie à sa source, à vérifier avant tout usage clinique.
+Publié tel quel : généré par IA, SANS relecture humaine — parti pris assumé et
+affiché. Chaque item renvoie à sa source, à vérifier avant tout usage clinique.
 
-Prérequis : variable d'environnement ANTHROPIC_API_KEY. NCBI_API_KEY optionnelle
-(augmente la limite de débit PubMed).
+Prérequis : ANTHROPIC_API_KEY. NCBI_API_KEY optionnelle (débit PubMed).
 
-Usage : python3 pipeline/generate_issue.py [--days 7] [--max-items 6]
+Usage : python3 pipeline/generate_issue.py [--days 7] [--max-items 15] [--force]
 """
 
 from __future__ import annotations
@@ -38,6 +37,13 @@ from pathlib import Path
 
 import yaml
 
+from pubmed_query import (
+    EUTILS,
+    eutils_get,
+    is_retracted,
+    search_internal_medicine,
+)
+
 try:
     import anthropic
 except ImportError:  # pragma: no cover
@@ -45,34 +51,20 @@ except ImportError:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parent.parent
 ISSUES = ROOT / "content" / "issues"
-EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
-MODEL = "claude-opus-4-8"
+PNDS_REGISTRY = ROOT / "content" / "pnds.yaml"
 
-TYPE_LABELS = {"reco", "pnds", "essai", "meta", "alerte", "autre"}
+# Modèle léger pour le tri d'un grand nombre de candidats, modèle de haut niveau
+# pour la synthèse et la vérification.
+MODEL_SELECT = "claude-sonnet-5"
+MODEL_SYNTH = "claude-opus-4-8"
 
 MOIS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
            "août", "septembre", "octobre", "novembre", "décembre"]
 
-# Périmètre médecine interne (termes MeSH), croisé avec des types de publication.
-MI_MESH = (
-    '("lupus erythematosus, systemic"[mh] OR vasculitis[mh] OR "Sjogren\'s syndrome"[mh] '
-    'OR "Behcet syndrome"[mh] OR sarcoidosis[mh] OR amyloidosis[mh] OR myositis[mh] '
-    'OR "scleroderma, systemic"[mh] OR "giant cell arteritis"[mh] OR "antiphospholipid syndrome"[mh] '
-    'OR "hereditary autoinflammatory diseases"[mh] OR "fever of unknown origin"[mh] '
-    'OR "purpura, thrombotic thrombocytopenic"[mh] OR "purpura, thrombocytopenic, idiopathic"[mh] '
-    'OR "anemia, hemolytic, autoimmune"[mh] OR "venous thromboembolism"[mh] '
-    'OR "immunoglobulin g4-related disease"[mh] OR "still\'s disease, adult-onset"[mh] '
-    'OR "arthritis, rheumatoid"[mh] OR "polymyalgia rheumatica"[mh] OR "granulomatosis with polyangiitis"[mh])'
-)
-PUB_TYPES = (
-    '(Guideline[pt] OR Practice Guideline[pt] OR "Randomized Controlled Trial"[pt] '
-    'OR Meta-Analysis[pt] OR "Systematic Review"[pt] OR Consensus Development Conference[pt])'
-)
-
 # Impact factor APPROXIMATIF des revues, uniquement pour départager des articles
 # de pertinence comparable. Valeurs indicatives (ordre de grandeur), pas des
 # chiffres officiels. Motifs testés sur le nom complet de la revue en minuscules,
-# du plus spécifique au plus générique (un sous-journal du Lancet doit primer sur
+# du plus spécifique au plus générique (un sous-journal du Lancet prime sur
 # « lancet »).
 JOURNAL_IF = [
     ("lancet rheumatol", 42), ("lancet haematol", 25), ("lancet infect", 37),
@@ -113,64 +105,44 @@ def journal_if(name: str) -> int | None:
     return None
 
 
-def eutils(endpoint: str, params: dict) -> dict:
-    params = {**params, "retmode": "json"}
-    if os.environ.get("NCBI_API_KEY"):
-        params["api_key"] = os.environ["NCBI_API_KEY"]
-    url = f"{EUTILS}/{endpoint}?{urllib.parse.urlencode(params)}"
-    with urllib.request.urlopen(url, timeout=40) as resp:
-        return json.load(resp)
+def _http_text(url: str, retries: int = 3) -> str:
+    last = None
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(url, timeout=40) as resp:
+                return resp.read().decode("utf-8", "replace")
+        except Exception as e:
+            last = e
+            if attempt < retries - 1:
+                time.sleep(2 ** (attempt + 1))
+    print(f"  ! récupération échouée ({last}) : {url[:70]}")
+    return ""
 
 
 def search_candidates(days: int) -> list[dict]:
-    ids = eutils("esearch.fcgi", {
-        "db": "pubmed", "term": f"{MI_MESH} AND {PUB_TYPES}",
-        "reldate": days, "datetype": "pdat", "retmax": 120,
-    })["esearchresult"]["idlist"]
-    out: list[dict] = []
-    for start in range(0, len(ids), 50):
-        chunk = ids[start:start + 50]
-        data = eutils("esummary.fcgi", {"db": "pubmed", "id": ",".join(chunk)})
-        for pmid in chunk:
-            doc = data["result"].get(pmid)
-            if not doc:
-                continue
-            doi = next((i["value"] for i in doc.get("articleids", [])
-                        if i.get("idtype") == "doi"), None)
-            revue = doc.get("fulljournalname") or doc.get("source", "")
-            out.append({
-                "pmid": pmid,
-                "titre": doc.get("title", "").rstrip("."),
-                "revue": revue,
-                "date_publication": doc.get("pubdate", ""),
-                "doi": doi,
-                "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
-                "pubtypes": doc.get("pubtype", []),
-                "if_approx": journal_if(revue),
-            })
-        time.sleep(0.4)
+    docs = search_internal_medicine(days, retmax=150)
+    out = []
+    for d in docs:
+        if is_retracted(d):  # filet en plus de l'exclusion dans la requête
+            print(f"  ⦸ écarté (rétracté) : {d['pmid']}")
+            continue
+        out.append({**d, "if_approx": journal_if(d["revue"])})
     return out
 
 
 def fetch_abstract(pmid: str) -> str:
     url = f"{EUTILS}/efetch.fcgi?" + urllib.parse.urlencode(
         {"db": "pubmed", "id": pmid, "rettype": "abstract", "retmode": "text"})
-    try:
-        with urllib.request.urlopen(url, timeout=40) as resp:
-            return resp.read().decode("utf-8", "replace")
-    except Exception:
-        return ""
+    return _http_text(url)
 
 
 def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
     """Texte intégral libre via Europe PMC (introduction/discussion), si dispo."""
     if not doc_pmcid:
         return ""
-    try:
-        url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/PMC{doc_pmcid}/fullTextXML"
-        with urllib.request.urlopen(url, timeout=40) as resp:
-            xml = resp.read().decode("utf-8", "replace")
-    except Exception:
+    xml = _http_text(
+        f"https://www.ebi.ac.uk/europepmc/webservices/rest/PMC{doc_pmcid}/fullTextXML")
+    if not xml:
         return ""
     chunks = []
     for sec in re.findall(r"<sec[^>]*>.*?</sec>", xml, re.S):
@@ -184,7 +156,7 @@ def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
 
 def get_pmcid(pmid: str) -> str | None:
     try:
-        data = eutils("elink.fcgi", {"dbfrom": "pubmed", "db": "pmc", "id": pmid})
+        data = eutils_get("elink.fcgi", {"dbfrom": "pubmed", "db": "pmc", "id": pmid})
         for ls in data.get("linksets", []):
             for db in ls.get("linksetdbs", []):
                 if db.get("dbto") == "pmc" and db.get("links"):
@@ -194,15 +166,24 @@ def get_pmcid(pmid: str) -> str | None:
     return None
 
 
-def claude_json(client, prompt: str, schema: dict, max_tokens: int = 4000) -> dict:
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=max_tokens,
-        output_config={"format": {"type": "json_schema", "schema": schema}},
-        messages=[{"role": "user", "content": prompt}],
-    )
-    text = next((b.text for b in resp.content if b.type == "text"), "{}")
-    return json.loads(text)
+def claude_json(client, prompt: str, schema: dict, model: str = MODEL_SYNTH,
+                max_tokens: int = 4000, retries: int = 3) -> dict:
+    last = None
+    for attempt in range(retries):
+        try:
+            resp = client.messages.create(
+                model=model,
+                max_tokens=max_tokens,
+                output_config={"format": {"type": "json_schema", "schema": schema}},
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text = next((b.text for b in resp.content if b.type == "text"), "{}")
+            return json.loads(text)
+        except Exception as e:  # réseau, 429, JSON tronqué (max_tokens)…
+            last = e
+            if attempt < retries - 1:
+                time.sleep(2 ** (attempt + 1))
+    raise RuntimeError(f"appel Claude échoué ({model}): {last}")
 
 
 SELECT_SCHEMA = {
@@ -223,8 +204,6 @@ SELECT_SCHEMA = {
                 "required": ["pmid", "type", "titre_fr"],
             },
         },
-        # Publications pertinentes pour un interniste mais non retenues pour une
-        # synthèse complète : elles alimentent la rubrique « Aussi parus ».
         "aussi_parus": {
             "type": "array",
             "items": {
@@ -252,9 +231,7 @@ ITEM_SCHEMA = {
         "a_ce_qui_change": {"type": "boolean"},
         "ce_qui_change_reference": {"type": "string"},
         "ce_qui_change_points": {"type": "array", "items": {"type": "string"}},
-        # Comparaisons détaillées, remplies pour les recommandations et PNDS :
-        # axes « version précédente », « autres grandes recommandations » et
-        # « recommandations françaises / PNDS ». Vide pour les autres types.
+        # Comparaisons détaillées, remplies pour les recommandations et PNDS.
         "comparaisons": {
             "type": "array",
             "items": {
@@ -268,12 +245,14 @@ ITEM_SCHEMA = {
                 "required": ["titre", "reference", "points"],
             },
         },
+        # Auto-évaluation, exploitée par la passe de vérification.
+        "confiance": {"type": "string", "enum": ["elevee", "moyenne", "faible"]},
+        "points_a_verifier": {"type": "array", "items": {"type": "string"}},
     },
     "required": ["resume", "message_cle", "contexte", "base_texte",
                  "a_ce_qui_change", "ce_qui_change_reference", "ce_qui_change_points",
-                 "comparaisons"],
+                 "comparaisons", "confiance", "points_a_verifier"],
 }
-
 
 BRIEF_SCHEMA = {
     "type": "object",
@@ -295,13 +274,19 @@ BRIEF_SCHEMA = {
     "required": ["resumes"],
 }
 
+VERIFY_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {
+        "valide": {"type": "boolean"},
+        "problemes": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["valide", "problemes"],
+}
+
 
 def synthesize_brief(client, refs: list[dict]) -> list[dict]:
-    """Résumé court (2-3 phrases) pour chaque « aussi paru », ancré sur l'abstract.
-
-    Une seule requête Claude pour tout le lot (économe), à partir des abstracts
-    réels. Aucun chiffre inventé.
-    """
+    """Résumé court (2-3 phrases) pour chaque « aussi paru », ancré sur l'abstract."""
     if not refs:
         return []
     blocks = []
@@ -316,10 +301,14 @@ def synthesize_brief(client, refs: list[dict]) -> list[dict]:
         "si les résultats chiffrés manquent, décris l'objectif et la portée. "
         "Renvoie un objet {pmid, resume} par publication.\n\n"
         + "\n\n---\n\n".join(blocks))
-    data = claude_json(client, prompt, BRIEF_SCHEMA, max_tokens=3000)
+    data = claude_json(client, prompt, BRIEF_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
     by = {d["pmid"]: d["resume"] for d in data.get("resumes", [])}
     out = []
+    seen = set()
     for r in refs:
+        if r["pmid"] in seen:
+            continue
+        seen.add(r["pmid"])
         entry = {"titre": r["titre_fr"], "source": r["revue"], "url": r["url"]}
         if r["pmid"] in by:
             entry["resume"] = by[r["pmid"]]
@@ -357,7 +346,8 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
         "3. à pertinence comparable, l'IMPACT FACTOR de la revue (indiqué « IF≈ » "
         "dans la liste, valeur approximative ; « IF≈? » = revue non répertoriée, "
         "à juger sur le fond) : privilégie la revue au facteur d'impact le plus "
-        "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence.\n\n"
+        "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence, "
+        "et sans jamais pénaliser une recommandation française (souvent sans IF).\n\n"
         "Rends DEUX listes (format des candidats : PMID | revue | IF≈ | types | titre) :\n"
         "- « items » : les publications VRAIMENT marquantes, à synthétiser en "
         "détail. Pour chacune : PMID, type (reco, pnds, essai, meta, alerte, autre) "
@@ -371,12 +361,10 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
         "Une même publication ne doit jamais figurer dans les deux listes. Écarte "
         "franchement ce qui est hors périmètre. S'il n'y a rien de pertinent, "
         "renvoie deux listes vides.\n\n" + listing)
-    data = claude_json(client, prompt, SELECT_SCHEMA, max_tokens=3000)
+    data = claude_json(client, prompt, SELECT_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
     by_pmid = {c["pmid"]: c for c in candidates}
     picked = []
     seen = set()
-    # Plafond de sécurité (coût/temps CI), pas un objectif : très au-dessus d'une
-    # semaine normale, donc sans effet en pratique.
     for it in data.get("items", [])[:max_items]:
         c = by_pmid.get(it["pmid"])
         if c and it["pmid"] not in seen:
@@ -391,7 +379,7 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
     return picked, aussi
 
 
-def synthesize(client, item: dict, source_text: str) -> dict:
+def synthesize(client, item: dict, source_text: str) -> tuple[dict, str]:
     is_reco = item["type"] in ("reco", "pnds")
     comp_instr = (
         "- comparaisons : "
@@ -418,12 +406,16 @@ def synthesize(client, item: dict, source_text: str) -> dict:
         f"Source : {item['revue']}\n\n"
         "À partir du texte source ci-dessous, produis :\n"
         "- resume : 5 à 10 lignes factuelles (chiffres/HR/effectifs uniquement "
-        "s'ils figurent dans le texte) ;\n"
+        "s'ils figurent dans le texte). RÈGLE ANTI-SOUS-GROUPE : si le critère de "
+        "jugement PRINCIPAL est négatif ou non atteint, énonce D'ABORD ce résultat "
+        "principal ; ne présente jamais un résultat de sous-groupe ou secondaire "
+        "comme s'il était le résultat principal, et qualifie-le explicitement "
+        "d'« analyse de sous-groupe exploratoire, génératrice d'hypothèses » ;\n"
         "- a_ce_qui_change : true seulement si le texte décrit explicitement un "
         "changement par rapport à une version antérieure ou à la pratique "
         "standard ; sinon false ;\n"
-        "- ce_qui_change_reference : la référence du diff (ex. 'version 2021', "
-        "'pratique antérieure') si a_ce_qui_change, sinon chaîne vide ;\n"
+        "- ce_qui_change_reference : la référence du diff si a_ce_qui_change, sinon "
+        "chaîne vide ;\n"
         "- ce_qui_change_points : liste de points (vide si a_ce_qui_change=false) ;\n"
         + comp_instr +
         "- message_cle : 1 à 3 phrases actionnables ;\n"
@@ -433,12 +425,16 @@ def synthesize(client, item: dict, source_text: str) -> dict:
         "pratique française (centres de référence, AMM, remboursement) ainsi que "
         "les limites ;\n"
         "- base_texte : 'texte_integral' si le texte fourni dépasse l'abstract, "
-        "sinon 'abstract_seul'.\n"
+        "sinon 'abstract_seul' ;\n"
+        "- confiance : 'elevee', 'moyenne' ou 'faible' — abaisse-la dès que le "
+        "texte est ambigu, partiel, ou que tu extrapoles ;\n"
+        "- points_a_verifier : liste (éventuellement vide) des points qu'un "
+        "relecteur devrait contrôler en priorité.\n"
         "Le resume et les chiffres ne doivent venir QUE du texte source. Les "
         "comparaisons peuvent s'appuyer sur des connaissances générales, mais sans "
         "rien inventer de précis.\n\n"
         "=== TEXTE SOURCE ===\n" + source_text[:14000])
-    d = claude_json(client, prompt, ITEM_SCHEMA, max_tokens=4500)
+    d = claude_json(client, prompt, ITEM_SCHEMA, model=MODEL_SYNTH, max_tokens=4500)
     out = {
         "type": item["type"],
         "titre": item["titre_fr"],
@@ -451,8 +447,6 @@ def synthesize(client, item: dict, source_text: str) -> dict:
     }
     if item.get("if_approx") is not None:
         out["impact_factor"] = item["if_approx"]
-    if item.get("pnds_statut"):
-        out["pnds_statut"] = item["pnds_statut"]
     comparaisons = [c for c in d.get("comparaisons", []) if c.get("points")]
     if comparaisons:
         out["comparaisons"] = comparaisons
@@ -461,14 +455,33 @@ def synthesize(client, item: dict, source_text: str) -> dict:
             "reference": d.get("ce_qui_change_reference") or "pratique antérieure",
             "points": d["ce_qui_change_points"],
         }
-    return out
+    pav = [p for p in d.get("points_a_verifier", []) if p]
+    if pav:
+        out["points_a_verifier"] = pav
+    return out, d.get("confiance", "moyenne")
 
 
-PNDS_REGISTRY = ROOT / "content" / "pnds.yaml"
+def verify_synthesis(client, out: dict, source_text: str) -> tuple[bool, list[str]]:
+    """Second appel : chaque chiffre/affirmation du résumé + message figure-t-il
+    bien dans la source ? Renvoie (valide, problèmes)."""
+    a_verifier = f"RÉSUMÉ :\n{out['resume']}\n\nMESSAGE CLÉ :\n{out['message_cle']}"
+    prompt = (
+        "Tu es vérificateur factuel d'un digest médical. On te donne un TEXTE "
+        "SOURCE (abstract ou texte intégral) et une SYNTHÈSE rédigée à partir de "
+        "lui. Vérifie que CHAQUE chiffre (effectif, %, HR/RR/OR, p, IC, posologie, "
+        "seuil) et CHAQUE affirmation factuelle de la synthèse figure bien dans le "
+        "texte source, sans déformation. Signale en particulier : un chiffre "
+        "absent ou modifié ; un résultat de sous-groupe présenté comme résultat "
+        "principal ; une conclusion plus forte que ce que dit la source. Ne juge "
+        "pas le style ni les mises en contexte générales. Réponds valide=false s'il "
+        "existe au moins un problème factuel, et liste les problèmes.\n\n"
+        f"=== TEXTE SOURCE ===\n{source_text[:14000]}\n\n=== SYNTHÈSE ===\n{a_verifier}")
+    d = claude_json(client, prompt, VERIFY_SCHEMA, model=MODEL_SYNTH, max_tokens=1200)
+    return bool(d.get("valide")), [p for p in d.get("problemes", []) if p]
 
 
 def load_pnds_for_week(start: dt.date, end: dt.date) -> list[dict]:
-    """PNDS (HAS) parus dans la fenêtre de la semaine, depuis le registre suivi.
+    """PNDS (HAS) parus dans la semaine, depuis le registre suivi.
 
     La HAS ne publiant pas de flux exploitable, on tient un petit registre
     (content/pnds.yaml). Chaque entrée entièrement rédigée dont la date tombe
@@ -508,9 +521,11 @@ def load_pnds_for_week(start: dt.date, end: dt.date) -> list[dict]:
     return out
 
 
-def next_numero() -> int:
+def next_numero(exclude: Path | None = None) -> int:
     n = 0
     for path in ISSUES.glob("*.yaml"):
+        if exclude and path == exclude:
+            continue
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
             n = max(n, int(data.get("numero", 0)))
@@ -522,16 +537,23 @@ def next_numero() -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days", type=int, default=7)
-    # Plafond de sécurité (coût/temps CI), pas un objectif de volume : le nombre
-    # réel d'items dépend de ce qui a été publié dans la semaine.
+    # Plafond de sécurité (coût/temps CI), pas un objectif de volume.
     parser.add_argument("--max-items", type=int, default=15)
+    parser.add_argument("--force", action="store_true",
+                        help="régénère même si un numéro existe déjà pour aujourd'hui")
     args = parser.parse_args()
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY manquante.")
 
-    client = anthropic.Anthropic()
     today = dt.date.today()
+    out_path = ISSUES / f"{today.isoformat()}.yaml"
+    if out_path.exists() and not args.force:
+        print(f"Un numéro existe déjà pour {today.isoformat()} — rien à faire "
+              f"(--force pour régénérer).")
+        return
+
+    client = anthropic.Anthropic()
     start = today - dt.timedelta(days=args.days - 1)
     semaine = (f"{start.day} {MOIS_FR[start.month - 1]} au "
                f"{today.day} {MOIS_FR[today.month - 1]} {today.year}")
@@ -539,26 +561,42 @@ def main() -> None:
     print(f"Recherche PubMed médecine interne ({args.days} j)…")
     candidates = search_candidates(args.days)
     print(f"  {len(candidates)} candidats bruts")
-    if not candidates:
-        candidates = []
 
-    selected, aussi_refs = (select_items(client, candidates, args.max_items)
-                            if candidates else ([], []))
+    try:
+        selected, aussi_refs = (select_items(client, candidates, args.max_items)
+                                if candidates else ([], []))
+    except Exception as e:
+        print(f"  ! sélection échouée : {e}")
+        selected, aussi_refs = [], []
     print(f"  {len(selected)} items retenus, {len(aussi_refs)} en « aussi parus »")
 
     items = []
+    downgraded = []
     for it in selected:
         pmcid = get_pmcid(it["pmid"])
         abstract = fetch_abstract(it["pmid"])
         fulltext = fetch_fulltext(it["pmid"], pmcid)
         source_text = (abstract + "\n\n" + fulltext).strip() or it["titre"]
         try:
-            items.append(synthesize(client, it, source_text))
-        except Exception as e:  # pragma: no cover
-            print(f"  ! synthèse échouée pour {it['pmid']}: {e}")
+            out, confiance = synthesize(client, it, source_text)
+        except Exception as e:
+            print(f"  ! synthèse échouée pour {it['pmid']} ({e}) — passe en aussi paru")
+            downgraded.append(it)
+            continue
+        try:
+            valide, problemes = verify_synthesis(client, out, source_text)
+        except Exception as e:
+            valide, problemes = False, [f"vérification impossible: {e}"]
+        if confiance == "faible" or not valide:
+            raison = "confiance faible" if confiance == "faible" else "; ".join(problemes)[:140]
+            print(f"  ↓ rétrogradé {it['pmid']} → aussi paru ({raison})")
+            downgraded.append(it)
+        else:
+            items.append(out)
         time.sleep(0.4)
 
-    aussi_parus = synthesize_brief(client, aussi_refs)
+    # Les items rétrogradés rejoignent les « aussi parus » (résumé court).
+    aussi_parus = synthesize_brief(client, aussi_refs + downgraded)
 
     pnds_items = load_pnds_for_week(start, today)
     if pnds_items:
@@ -567,12 +605,13 @@ def main() -> None:
     items = pnds_items + items
 
     issue = {
-        "numero": next_numero(),
+        "numero": next_numero(exclude=out_path),
         "semaine": semaine,
         "date": today.isoformat(),
         "edito": ("Sélection et synthèses des publications de médecine interne de "
                   "la semaine, générées automatiquement par IA sans relecture "
-                  "humaine. Chaque item renvoie à sa source."
+                  "humaine, puis vérifiées automatiquement face à leur source. "
+                  "Chaque item renvoie à sa source."
                   if items else
                   "Semaine calme : aucune publication majeure de médecine interne "
                   "retenue cette semaine par la sélection automatique."),
@@ -582,12 +621,12 @@ def main() -> None:
         issue["aussi_parus"] = aussi_parus
 
     ISSUES.mkdir(parents=True, exist_ok=True)
-    out_path = ISSUES / f"{today.isoformat()}.yaml"
-    header = ("# Numéro généré automatiquement par IA, sans relecture humaine.\n")
+    header = "# Numéro généré automatiquement par IA, sans relecture humaine.\n"
     out_path.write_text(
         header + yaml.safe_dump(issue, allow_unicode=True, sort_keys=False, width=100),
         encoding="utf-8")
-    print(f"✓ écrit {out_path.relative_to(ROOT)} ({len(items)} items)")
+    print(f"✓ écrit {out_path.relative_to(ROOT)} "
+          f"({len(items)} items, {len(aussi_parus)} aussi parus, {len(downgraded)} rétrogradés)")
 
 
 if __name__ == "__main__":

@@ -40,11 +40,12 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
   <div class="flow-step">
     <div class="flow-badge">1</div>
     <div class="flow-body">
-      <h3>Surveillance des sources</h3>
-      <p>Recommandations françaises (HAS, PNDS, sociétés savantes, ANSM),
-      recommandations internationales du champ des maladies systémiques, et
-      grandes revues — avec PubMed en filet de sécurité, par requêtes ciblées
-      sur les pathologies de médecine interne.</p>
+      <h3>Collecte PubMed</h3>
+      <p>Recherche PubMed (E-utilities NCBI) ciblée sur les pathologies du
+      périmètre (termes MeSH), croisée avec les types de publication à fort
+      intérêt (recommandations, essais randomisés, méta-analyses, consensus).
+      Les publications rétractées sont exclues. S'y ajoute la <strong>veille des
+      PNDS</strong> de la HAS, tenue via un registre dédié.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
@@ -62,9 +63,9 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
     <div class="flow-badge">3</div>
     <div class="flow-body">
       <h3>Lecture des sources</h3>
-      <p>Lecture du résumé, et du <strong>texte intégral chaque fois qu'il est
-      accessible librement</strong> (PubMed Central, Europe PMC), pour ancrer la
-      synthèse sur les données réelles et le contexte de l'étude.</p>
+      <p>Lecture de l'abstract, et du texte intégral libre (Europe PMC)
+      <strong>lorsqu'il est disponible</strong> — souvent l'abstract seul ; la
+      base réellement utilisée est indiquée sous chaque item.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
@@ -74,12 +75,25 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
       <h3>Synthèse par IA</h3>
       <p>Rédaction par l'IA du résumé, de « ce qui change », du message à retenir
       et du contexte détaillé. Consigne stricte : aucun chiffre absent de la
-      source, aucun diff inventé — la synthèse s'appuie sur ce qu'elle affirme.</p>
+      source, aucun diff inventé, et pas d'amplification d'un sous-groupe quand le
+      critère principal est négatif.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
   <div class="flow-step">
     <div class="flow-badge">5</div>
+    <div class="flow-body">
+      <h3>Vérification automatique par IA</h3>
+      <p>Un second passage d'IA relit chaque synthèse face à sa source et signale
+      tout chiffre ou affirmation non retrouvé. En cas d'échec, ou de confiance
+      faible, l'item est <strong>rétrogradé en « Aussi paru »</strong> (résumé
+      court) plutôt que publié en synthèse détaillée. Ce n'est pas une relecture
+      médicale — c'est un garde-fou automatique.</p>
+    </div>
+  </div>
+  <div class="flow-connector"></div>
+  <div class="flow-step">
+    <div class="flow-badge">6</div>
     <div class="flow-body">
       <h3>Publication automatique</h3>
       <p>Mise en ligne du numéro chaque lundi (dernier numéro, archives, flux
@@ -90,17 +104,23 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
 
 ## Comment les items sont sélectionnés
 
-Les sources surveillées chaque semaine :
+La collecte repose sur **une seule source technique : PubMed** (E-utilities
+NCBI), interrogé chaque semaine par une requête ciblée sur les pathologies du
+périmètre ci-dessus (termes MeSH), croisée avec les types de publication à fort
+intérêt (recommandations, essais randomisés, méta-analyses, systematic reviews,
+consensus). Concrètement :
 
-- **Recommandations françaises** : HAS, PNDS des filières maladies rares,
-  SNFMI et sociétés savantes des spécialités frontières, alertes ANSM.
-- **Recommandations internationales** du champ des maladies systémiques et
-  auto-immunes (EULAR, ACR, sociétés savantes de médecine interne et
-  d'hématologie).
-- **Grandes revues** : NEJM, The Lancet (et Lancet Rheumatology / Haematology),
-  JAMA, Annals of Internal Medicine, Annals of the Rheumatic Diseases, Blood,
-  Kidney International… avec PubMed en filet de sécurité (requêtes ciblées sur
-  les pathologies du périmètre ci-dessus).
+- les **recommandations internationales** (EULAR, ACR…) et les publications des
+  **grandes revues** (NEJM, The Lancet et ses déclinaisons, JAMA, Annals of
+  Internal Medicine, Annals of the Rheumatic Diseases, Blood…) sont captées
+  **lorsqu'elles sont indexées dans PubMed** ;
+- les **PNDS de la HAS** sont suivis à part, via un registre dédié (voir plus
+  bas), la HAS n'exposant aucun flux exploitable.
+
+Pour être transparent : il n'y a pas, à ce jour, d'ingestion automatique
+directe des portails HAS, SNFMI ou ANSM — la veille passe par PubMed et par le
+registre PNDS. C'est une veille internationale filtrée pour l'interniste, pas un
+agrégateur de toutes les sources françaises.
 
 La sélection est volontairement exigeante, mais **sans nombre imposé** : le
 volume d'un numéro suit ce qui a réellement été publié — souvent 3 à 8 items
@@ -119,13 +139,21 @@ lorsqu'ils recadrent utilement les attentes.
    accessible, sinon de l'abstract — la base utilisée est indiquée sous le titre
    de l'item.
 2. L'IA reçoit une consigne stricte : n'énoncer aucun chiffre (posologie, seuil,
-   HR, effectif) absent du texte source, et ne rédiger la section « ce qui
-   change » que lorsque le document décrit lui-même un changement — jamais de
-   diff déduit ou supposé.
-3. **Aucune relecture humaine n'a lieu avant publication.** C'est un parti pris
+   HR, effectif) absent du texte source, ne rédiger la section « ce qui change »
+   que lorsque le document décrit lui-même un changement (jamais de diff déduit),
+   et ne jamais mettre en avant un résultat de sous-groupe comme s'il était le
+   résultat principal quand le critère de jugement principal est négatif.
+3. **Une passe de vérification automatique** suit la rédaction : un second appel
+   d'IA relit la synthèse face à sa source et signale tout chiffre ou affirmation
+   non retrouvé. Si la vérification échoue, ou si l'IA elle-même déclare une
+   confiance faible, l'item est **rétrogradé en « Aussi paru »** (résumé court)
+   au lieu d'être publié en synthèse détaillée. Ce garde-fou est automatique : ce
+   **n'est pas une relecture médicale**.
+4. **Aucune relecture humaine n'a lieu avant publication.** C'est un parti pris
    assumé, au service de la fraîcheur et de la régularité. La contrepartie est
    que des erreurs d'interprétation restent possibles : l'IA peut mal résumer,
-   sur-interpréter une nuance ou manquer une limite méthodologique.
+   sur-interpréter une nuance ou manquer une limite méthodologique — la passe de
+   vérification réduit ce risque sur les chiffres, elle ne le supprime pas.
 
 ## Recommandations : ce qui change, en détail
 
