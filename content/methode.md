@@ -117,6 +117,12 @@ consensus). Concrètement :
 - les **PNDS de la HAS** sont suivis à part, via un registre dédié (voir plus
   bas), la HAS n'exposant aucun flux exploitable.
 
+Côté recommandations, **seules comptent celles qui font autorité pour un
+interniste français** : les guidelines **internationales** des grandes sociétés
+savantes et les **références françaises** (HAS, PNDS). Les recommandations ou
+consensus **nationaux d'un autre pays** (mexicain, coréen, chinois…) sont
+**écartés** — ils n'ont pas vocation à orienter la pratique en France.
+
 Pour être transparent : il n'y a pas, à ce jour, d'ingestion automatique
 directe des portails HAS, SNFMI ou ANSM — la veille passe par PubMed et par le
 registre PNDS. C'est une veille internationale filtrée pour l'interniste, pas un
