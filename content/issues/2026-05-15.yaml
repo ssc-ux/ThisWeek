@@ -1,0 +1,107 @@
+# Numéro réel rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 2
+semaine: "9 au 15 mai 2026"
+date: 2026-05-15
+edito: >-
+  Une semaine « thrombose » pour l'interniste : quelle thromboprophylaxie chez le
+  patient hospitalisé en médecine, quel surrisque veineux sous corticoïdes — et un
+  essai de phase 2 négatif d'un inhibiteur de TLR7/8 dans le lupus.
+
+items:
+  - type: essai
+    titre: "Enpatoran dans le lupus systémique : essai de phase 2 (WILLOW) négatif sur son critère principal"
+    source: "The Lancet · essai de phase 2 (cohorte B de WILLOW)"
+    impact_factor: 98
+    url: "https://pubmed.ncbi.nlm.nih.gov/42107374/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 2 randomisé, en double aveugle contre placebo (132 centres,
+      22 pays), évaluant la relation dose-réponse de l'enpatoran (inhibiteur oral
+      de TLR7/8) dans le lupus systémique modéré à sévère ; 353 patients analysés,
+      corticoïdes réduits à ≤ 5 mg/j. Le critère PRINCIPAL n'est pas atteint :
+      aucune relation dose-réponse statistiquement significative sur la réponse
+      BICLA à 24 semaines (p = 0,14). Les taux de réponse BICLA étaient plus
+      élevés à toutes les doses que sous placebo (39 %), le signal le plus net
+      étant à 25 mg (58 % ; OR 2,2 ; IC95 1,1-4,0), sans dose-réponse cohérente aux
+      doses supérieures. Tolérance globalement comparable au placebo.
+    message_cle: >-
+      Essai de phase 2 négatif sur son critère principal (pas de dose-réponse) :
+      l'enpatoran ne peut pas, en l'état, être considéré comme efficace dans le
+      lupus. Le signal à 25 mg est exploratoire et ne modifie pas la pratique.
+    contexte:
+      - >-
+        Les récepteurs Toll-like 7 et 8 activent l'immunité innée et adaptative et
+        participent à la physiopathologie du lupus ; les inhiber par voie orale est
+        une stratégie séduisante, alternative aux biothérapies injectables
+        (bélimumab, anifrolumab).
+      - >-
+        Le résultat rappelle la difficulté des essais de phase 2 « dose-finding »
+        dans le lupus : réponses placebo élevées, hétérogénéité des patients, et
+        critères composites exigeants. Un signal à une dose isolée, sans
+        dose-réponse, ne suffit pas à conclure.
+      - >-
+        Pour la pratique française : aucune conséquence immédiate ; à suivre selon
+        d'éventuelles études de confirmation. La stratégie du lupus reste inchangée
+        (hydroxychloroquine, épargne cortisonique, immunosuppresseurs/biothérapies).
+
+  - type: meta
+    titre: "Thromboprophylaxie médicamenteuse chez le patient hospitalisé en médecine : méta-analyse en réseau"
+    source: "JAMA Network Open · revue systématique et méta-analyse en réseau"
+    impact_factor: 11
+    url: "https://pubmed.ncbi.nlm.nih.gov/42138924/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse en réseau (22 essais randomisés, 43 840 patients) des schémas de
+      thromboprophylaxie chez l'adulte hospitalisé pour une affection médicale
+      aiguë. Le risque de MTEV symptomatique à 90 jours sans traitement est faible
+      (1,7 % ; IC95 0,6-4,4 %). L'HBPM réduit la MTEV symptomatique (RR 0,68 ;
+      IC95 0,49-0,94) ; HBPM, AOD et HNF réduisent la MTEV cliniquement pertinente.
+      Mais les AOD (RR 2,62 ; IC95 1,25-5,49) et l'HNF (RR 2,33 ; 1,13-4,79)
+      augmentent le risque d'hémorragie majeure par rapport à l'absence de
+      traitement, alors que l'HBPM non (RR 1,23 ; 0,81-1,85). Mortalité inchangée.
+    message_cle: >-
+      Chez le patient hospitalisé en médecine, l'HBPM offre le meilleur compromis
+      efficacité/saignement ; les AOD et l'HNF saignent davantage. Le risque
+      absolu de MTEV étant faible, bien sélectionner les patients à traiter est
+      essentiel.
+    contexte:
+      - >-
+        La prescription (ou non) d'une thromboprophylaxie est une décision
+        quotidienne en médecine interne. Les scores de risque (Padua, IMPROVE)
+        manquent de précision, d'où l'intérêt de quantifier le rapport
+        bénéfice/risque des molécules.
+      - >-
+        Message central : le bénéfice absolu est modeste chez la plupart des
+        patients médicaux, et le sur-risque hémorragique des AOD/HNF invite à
+        réserver la prophylaxie aux patients réellement à risque — cohérent avec
+        une pratique française prudente et individualisée.
+
+  - type: meta
+    titre: "Corticoïdes et risque de thrombose veineuse : surrisque d'environ 2,6 fois, maximal à l'initiation"
+    source: "Expert Opinion on Pharmacotherapy · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42138686/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (8 études de bonne qualité, ~460 000
+      participants) du risque de MTEV sous corticoïdes systémiques ou inhalés
+      (estimations ajustées uniquement, populations chirurgicales exclues). La
+      corticothérapie est associée à un risque de MTEV multiplié par ~2,6 (RR
+      poolé 2,60 ; IC95 1,89-3,58 ; hétérogénéité I² = 93 %). Le risque est
+      maximal à l'initiation du traitement et aux fortes doses, et plus élevé avec
+      les corticoïdes systémiques qu'inhalés.
+    message_cle: >-
+      Les corticoïdes s'accompagnent d'un surrisque veineux (~×2,6), surtout tôt
+      et à forte dose : à intégrer dans l'évaluation thrombotique d'un patient
+      qu'on met sous corticothérapie, sans qu'une prophylaxie systématique soit
+      pour l'instant recommandée.
+    contexte:
+      - >-
+        Les corticoïdes sont omniprésents en médecine interne (maladies
+        systémiques, vascularites, poussées inflammatoires). Leur effet
+        procoagulant est biologiquement plausible mais restait mal quantifié.
+      - >-
+        Limites importantes : études observationnelles, confusion résiduelle
+        probable (la maladie inflammatoire sous-jacente est elle-même
+        prothrombotique), forte hétérogénéité. Les auteurs appellent à des études
+        prospectives avant toute recommandation de thromboprophylaxie ciblée — le
+        signal justifie la vigilance, pas encore un changement de pratique.
