@@ -1,0 +1,114 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 11
+semaine: "21 au 27 juillet 2026"
+date: 2026-07-27
+edito: >-
+  Une semaine centrée sur le lupus : où en est la thérapie CAR-T dans les formes
+  réfractaires, quels facteurs de risque d'ostéonécrose — et un rappel sur la
+  thromboprophylaxie quand une infection aiguë s'en mêle.
+
+items:
+  - type: meta
+    titre: "Cellules CAR-T dans le lupus réfractaire : synthèse de 114 patients"
+    source: "Frontiers in Immunology · revue systématique (contrôle des doublons)"
+    impact_factor: 6
+    url: "https://pubmed.ncbi.nlm.nih.gov/42459686/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique (janvier 2020 – mars 2026) de la thérapie cellulaire à
+      base de CAR (CAR-T, CAR-NK) dans le lupus systémique en rechute, réfractaire
+      ou menaçant un organe, avec dédoublonnage rigoureux des publications qui se
+      recoupent : 21 unités d'étude indépendantes, 114 patients (87,7 % de femmes,
+      âge médian 32 ans, atteinte rénale chez 78,1 %), lourdement prétraités.
+      Plateformes surtout CAR-T CD19 autologues et ciblant BCMA. Parmi les cas
+      exactement évaluables : réponse clinique 45/45, rémission DORIS 13/15,
+      réponse SRI-4 20/20, amélioration rénale 5/5, et rémission sans traitement
+      28/58. Les auteurs soulignent qu'il s'agit d'une cartographie descriptive,
+      non de taux de réponse poolés (données génératrices d'hypothèses).
+    message_cle: >-
+      La CAR-T confirme un signal fort dans le lupus réfractaire, y compris rénal,
+      avec des rémissions sans traitement — mais les données restent descriptives,
+      sur des effectifs limités : approche experte et expérimentale, à confirmer
+      par des essais prospectifs.
+    contexte:
+      - >-
+        Le lupus systémique réfractaire, notamment rénal, épuise vite l'arsenal
+        immunosuppresseur. La thérapie CAR-T, issue de l'onco-hématologie, y est
+        explorée comme « remise à zéro » du compartiment lymphocytaire B — la même
+        logique que dans d'autres maladies auto-immunes (myosites, sclérodermie).
+      - >-
+        Ce travail a le mérite de dédoublonner des séries qui se recoupent
+        largement dans la littérature (mêmes patients rapportés plusieurs fois),
+        ce qui donne une image plus honnête du niveau de preuve réel : prometteur,
+        mais fondé sur ~114 patients décrits, sans comparateur.
+      - >-
+        Pour la pratique française : la CAR-T dans le lupus relève de protocoles de
+        recherche en centres experts, avec une logistique lourde (aphérèse,
+        lymphodéplétion, gestion du syndrome de relargage cytokinique). Ce n'est
+        pas une option de pratique courante, mais un champ à suivre de près.
+
+  - type: meta
+    titre: "Ostéonécrose au cours du lupus : facteurs de risque (méta-analyse de 64 études)"
+    source: "Frontiers in Immunology · méta-analyse"
+    impact_factor: 6
+    url: "https://pubmed.ncbi.nlm.nih.gov/42465773/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse (64 études) des facteurs associés à l'ostéonécrose (ON) au
+      cours du lupus systémique. Parmi les facteurs cliniques positivement
+      associés : vascularite (OR 2,64), pleurésie (OR 2,23), thrombophlébite
+      (OR 1,86), lupus neuropsychiatrique (OR 1,65) et phénomène de Raynaud
+      (OR 1,60). Côté biologie : anticorps anticardiolipine (OR 1,66), protéinurie
+      (OR 1,64), VS élevée (OR 1,62), anticorps antiphospholipides (OR 1,45).
+      Côté traitement, les bolus de corticoïdes (OR 1,83) et le cyclophosphamide
+      (OR 1,87) étaient associés au risque, tandis que les anticorps anti-SSA
+      (OR 0,81) et anti-SSB (OR 0,76) apparaissaient protecteurs.
+    message_cle: >-
+      L'ostéonécrose du lupus s'associe à la sévérité de la maladie (vascularite,
+      pleurésie, SAPL) et à l'exposition aux corticoïdes en bolus et au
+      cyclophosphamide — un argument de plus pour l'épargne cortisonique et pour y
+      penser devant toute douleur articulaire persistante.
+    contexte:
+      - >-
+        L'ostéonécrose (souvent de la tête fémorale) est une complication
+        fréquente et invalidante du lupus, à la croisée de la maladie elle-même et
+        de son traitement. Sa reconnaissance précoce (IRM) conditionne le pronostic
+        articulaire.
+      - >-
+        L'association aux bolus de corticoïdes et au cyclophosphamide n'est pas
+        une découverte, mais la hiérarchisation des facteurs aide à repérer les
+        patients à surveiller. Étude observationnelle : ces associations ne
+        prouvent pas de causalité, et l'exposition cortisonique reste le principal
+        facteur modifiable.
+
+  - type: meta
+    titre: "Thromboprophylaxie chez le patient hospitalisé pour une infection aiguë : bénéfice net sur les thromboses"
+    source: "European Journal of Clinical Pharmacology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42479201/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (7 études — 4 essais randomisés, 3
+      observationnelles — 16 994 patients) de la thromboprophylaxie médicamenteuse
+      (héparine non fractionnée, HBPM, fondaparinux) chez des patients hospitalisés
+      pour une infection aiguë, hors COVID-19. La prophylaxie réduit d'environ
+      moitié les événements thromboemboliques veineux (OR poolé 0,50 ; IC95
+      0,37-0,69). Les données hémorragiques étaient discordantes (surcroît dans
+      une étude observationnelle, pas de différence significative dans les essais),
+      et la mortalité n'était pas modifiée. Deux études à risque de biais élevé à
+      critique.
+    message_cle: >-
+      Chez le patient hospitalisé pour une infection aiguë, la thromboprophylaxie
+      réduit d'environ moitié le risque thromboembolique veineux : l'infection
+      aiguë est bien un facteur de risque à intégrer dans la décision de
+      prophylaxie.
+    contexte:
+      - >-
+        L'infection aiguë ressort régulièrement comme facteur de risque
+        thrombotique chez le patient hospitalisé en médecine (cf. la méta-analyse
+        des facteurs de risque parue quelques semaines plus tôt). Cette synthèse
+        quantifie le bénéfice d'une prophylaxie dans cette situation précise.
+      - >-
+        À mettre en balance avec le risque hémorragique, ici incertain (études
+        peu nombreuses, hétérogènes, certaines à haut risque de biais). Le message
+        n'est pas de traiter tout patient infecté, mais de compter l'infection
+        aiguë parmi les éléments qui font pencher vers la prophylaxie.
