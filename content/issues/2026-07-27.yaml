@@ -3,9 +3,10 @@ numero: 11
 semaine: "21 au 27 juillet 2026"
 date: 2026-07-27
 edito: >-
-  Une semaine centrée sur le lupus : où en est la thérapie CAR-T dans les formes
-  réfractaires, quels facteurs de risque d'ostéonécrose — et un rappel sur la
-  thromboprophylaxie quand une infection aiguë s'en mêle.
+  Une semaine centrée sur le lupus (thérapie CAR-T dans les formes réfractaires,
+  facteurs de risque d'ostéonécrose) et sur la sécurité des traitements :
+  thromboprophylaxie quand une infection aiguë s'en mêle, et risque
+  cardiovasculaire des corticoïdes au long cours.
 
 items:
   - type: meta
@@ -112,3 +113,42 @@ items:
         peu nombreuses, hétérogènes, certaines à haut risque de biais). Le message
         n'est pas de traiter tout patient infecté, mais de compter l'infection
         aiguë parmi les éléments qui font pencher vers la prophylaxie.
+
+  - type: meta
+    titre: "Corticothérapie faible dose au long cours dans la polyarthrite rhumatoïde : léger surrisque cardiovasculaire"
+    source: "Clinical and Experimental Rheumatology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42454469/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse des effets cardiovasculaires d'une
+      corticothérapie à faible dose (< 7,5 mg/j d'équivalent prednisone) prise au
+      long cours (≥ 12 mois) dans la polyarthrite rhumatoïde. Dix études retenues,
+      dont cinq fournissant des hazard ratios ajustés pour la méta-analyse :
+      l'exposition prolongée, même à faible dose, est associée à un surrisque
+      d'événements cardiovasculaires (HR poolé 1,37 ; IC95 1,03-1,81 ; p = 0,01),
+      avec une hétérogénéité importante et sans biais de publication significatif
+      (test d'Egger). Les auteurs concluent qu'une corticothérapie faible dose de
+      courte durée reste relativement sûre chez des patients sélectionnés, mais que
+      la durée prolongée et la dose cumulée élevée majorent le risque, surtout en
+      présence de facteurs de risque ou de comorbidités.
+    message_cle: >-
+      Même à faible dose, une corticothérapie prolongée s'accompagne d'un léger
+      surrisque cardiovasculaire (HR ~1,4) : un argument de plus pour limiter la
+      durée et la dose cumulée, et pour contrôler les facteurs de risque
+      cardiovasculaire des patients concernés.
+    contexte:
+      - >-
+        Les corticoïdes, rapides et efficaces, sont omniprésents en médecine
+        interne comme en rhumatologie. On a longtemps considéré les faibles doses
+        au long cours comme « globalement sûres » ; leur impact cardiovasculaire
+        restait débattu.
+      - >-
+        Cette méta-analyse chiffre un signal modeste mais significatif (HR ~1,4)
+        dès les faibles doses, dès lors qu'elles sont prolongées. Elle renforce la
+        logique d'épargne cortisonique portée par les recommandations récentes
+        (ACR, EULAR), au-delà de la seule polyarthrite.
+      - >-
+        Limites : preuve surtout observationnelle, forte hétérogénéité, et
+        confusion possible par l'indication (la maladie inflammatoire active est
+        elle-même un facteur de risque cardiovasculaire). Le signal justifie la
+        prudence sur la dose cumulée, pas une conclusion causale définitive.
