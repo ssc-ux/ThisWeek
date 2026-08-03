@@ -73,7 +73,7 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 1.0625rem;
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -87,16 +87,15 @@ a:focus-visible, button:focus-visible {
 }
 
 .page {
-  max-width: 48rem;
+  max-width: 60rem;
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 1.5rem 3rem;
 }
 
 /* Pages de numéro : plus larges à partir du seuil où le sommaire passe en
    colonne latérale (voir .issue-layout). */
-@media (min-width: 1150px) {
-  .page-article { max-width: 70rem; }
-}
+@media (min-width: 1150px) { .page-article { max-width: 84rem; } }
+@media (min-width: 1700px) { .page-article { max-width: 92rem; } }
 
 /* ---- Masthead : barre fine translucide, collante ---- */
 
@@ -105,7 +104,7 @@ a:focus-visible, button:focus-visible {
   top: 0;
   z-index: 50;
   margin: 0 -1.5rem 0;
-  padding: .85rem 1.5rem;
+  padding: .65rem 1.5rem;
   background: var(--nav-bg);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
@@ -167,7 +166,7 @@ a:focus-visible, button:focus-visible {
 
 /* ---- En-tête de numéro ---- */
 
-.issue-head { padding: 2.6rem 0 .4rem; }
+.issue-head { padding: 1.7rem 0 .3rem; }
 
 .eyebrow, .issue-head .eyebrow {
   font-size: .8rem;
@@ -179,9 +178,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .issue-head h1 {
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  line-height: 1.08;
-  margin: 0 0 .8rem;
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  margin: 0 0 .55rem;
   text-wrap: balance;
   letter-spacing: -0.025em;
   font-weight: 700;
@@ -204,8 +203,8 @@ a:focus-visible, button:focus-visible {
 }
 
 .ia-banner {
-  margin: 1.5rem 0 0;
-  padding: .85rem 1.1rem;
+  margin: 1.1rem 0 0;
+  padding: .7rem 1rem;
   background: var(--accent-soft);
   border-radius: 14px;
   font-size: .85rem;
@@ -228,16 +227,16 @@ a:focus-visible, button:focus-visible {
 .ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
 
 .edito {
-  margin: 1.6rem 0 0;
-  font-size: 1.15rem;
-  line-height: 1.5;
+  margin: 1.1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
   color: var(--ink-soft);
 }
 
 /* ---- Barre de lecture (5 min / 20 min) ---- */
 
 .reading-bar {
-  margin: 1.8rem 0 0;
+  margin: 1.3rem 0 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -279,13 +278,13 @@ a:focus-visible, button:focus-visible {
 /* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
 
 .tldr {
-  margin: 1.8rem 0 0;
-  padding: 1.4rem 1.5rem;
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 1.25rem;
   background: var(--paper-alt);
   border-radius: var(--r-card);
 }
 .tldr h2 {
-  margin: 0 0 .8rem;
+  margin: 0 0 .6rem;
   font-size: .8rem;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -294,7 +293,7 @@ a:focus-visible, button:focus-visible {
 }
 .tldr h2 .tldr-sub { color: var(--ink-soft); font-weight: 500; letter-spacing: 0; text-transform: none; }
 .tldr ol { margin: 0; padding-left: 1.2rem; }
-.tldr li { margin: .55rem 0; line-height: 1.5; }
+.tldr li { margin: .42rem 0; line-height: 1.45; }
 .tldr li a { font-weight: 600; text-decoration: none; }
 .tldr li a:hover { text-decoration: underline; }
 .tldr .tldr-msg { color: var(--ink-soft); }
@@ -311,8 +310,8 @@ a:focus-visible, button:focus-visible {
 @media (min-width: 1150px) {
   .issue-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 16rem;
-    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 3.5rem;
     align-items: start;
   }
   .issue-aside {
@@ -330,8 +329,8 @@ a:focus-visible, button:focus-visible {
 /* ---- Sommaire ---- */
 
 .toc {
-  margin: 1.8rem 0 0;
-  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0 0;
+  padding: .95rem 1.15rem;
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: var(--r-card);
@@ -353,8 +352,8 @@ a:focus-visible, button:focus-visible {
 /* ---- Items ---- */
 
 .item {
-  margin-top: 3rem;
-  padding-top: 2.6rem;
+  margin-top: 2.1rem;
+  padding-top: 1.7rem;
   border-top: 1px solid var(--rule);
 }
 
@@ -395,9 +394,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .item h2 {
-  font-size: 1.5rem;
-  line-height: 1.22;
-  margin: .7rem 0 .4rem;
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: .5rem 0 .35rem;
   text-wrap: balance;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -417,21 +416,21 @@ a:focus-visible, button:focus-visible {
   letter-spacing: .1em;
   color: var(--ink-soft);
   font-weight: 600;
-  margin: 1.5rem 0 .4rem;
+  margin: 1.1rem 0 .3rem;
 }
 
-.item p { margin: .4rem 0; }
+.item p { margin: .35rem 0; }
 .item ul { margin: .4rem 0; padding-left: 1.3rem; }
 .item li { margin: .35rem 0; }
 
 .key-message {
-  margin: 1.5rem 0 0;
-  padding: 1.1rem 1.3rem;
+  margin: 1.1rem 0 0;
+  padding: .85rem 1.1rem;
   background: var(--key-bg);
   border-radius: var(--r-card);
 }
 .key-message h3 { margin: 0 0 .35rem; color: var(--accent); }
-.key-message p { margin: 0; font-weight: 500; font-size: 1.05rem; }
+.key-message p { margin: 0; font-weight: 500; font-size: 1.02rem; }
 
 .change-ref {
   font-size: .8rem;
@@ -444,8 +443,8 @@ a:focus-visible, button:focus-visible {
 /* ---- Comparaisons (reco / PNDS) ---- */
 
 .compare {
-  margin: 1.6rem 0 0;
-  padding: 1.3rem 1.4rem;
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.15rem;
   background: var(--paper-alt);
   border-radius: var(--r-card);
 }
@@ -497,7 +496,7 @@ a:focus-visible, button:focus-visible {
 /* ---- Contexte déroulable ---- */
 
 .contexte {
-  margin: 1.5rem 0 0;
+  margin: 1.1rem 0 0;
   border-top: 1px solid var(--rule);
   padding-top: 1rem;
 }
@@ -534,7 +533,7 @@ article[data-mode="express"] .base-note { display: none; }
 
 /* ---- Aussi parus ---- */
 
-.also { margin-top: 3.5rem; padding-top: 2.2rem; border-top: 1px solid var(--rule); }
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
 .also h2 {
   font-size: .85rem;
   text-transform: uppercase;
@@ -552,7 +551,7 @@ article[data-mode="express"] .base-note { display: none; }
 .also-list { list-style: none; padding-left: 0 !important; }
 .also-list li {
   margin: 0;
-  padding: 1.1rem 0;
+  padding: .85rem 0;
   border-top: 1px solid var(--rule);
 }
 .also-list li:first-child { border-top: 0; padding-top: 0; }
@@ -572,7 +571,7 @@ article[data-mode="express"] .also-resume { display: none; }
   flex-wrap: wrap;
   align-items: baseline;
   gap: .3rem 1rem;
-  padding: 1.1rem 0;
+  padding: .8rem 0;
   border-bottom: 1px solid var(--rule);
 }
 .archive-list .num {
@@ -589,49 +588,56 @@ article[data-mode="express"] .also-resume { display: none; }
    Page d'accueil
    ===================================================================== */
 
-.page-wide { max-width: 68rem; }
+/* L'accueil est fait de cartes et de grilles : il peut occuper presque toute la
+   largeur sans nuire à la lecture. */
+.page-wide { max-width: 88rem; }
+@media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
+@media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
 
+/* Hero en deux colonnes : accroche à gauche, dernier numéro à droite. Aligné à
+   gauche et resserré — plus proche d'un outil de travail que d'une page vitrine. */
 .hero {
-  text-align: center;
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 4.5rem 0 2.5rem;
+  padding: 2rem 0 1.6rem;
+  display: grid;
+  gap: 1.6rem 2.5rem;
+  align-items: center;
 }
+@media (min-width: 1000px) {
+  .hero { grid-template-columns: 1.05fr .95fr; padding: 2.4rem 0 2rem; }
+}
+.hero-text { min-width: 0; }
 .hero h1 {
-  font-size: clamp(2.4rem, 6.5vw, 3.7rem);
-  line-height: 1.03;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   text-wrap: balance;
-  margin: .6rem 0 0;
+  margin: .35rem 0 0;
   font-weight: 700;
 }
 .hero .lede {
-  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
   line-height: 1.45;
   color: var(--ink-soft);
-  max-width: 36rem;
-  margin: 1.3rem auto 0;
+  max-width: 34rem;
+  margin: .8rem 0 0;
   text-wrap: pretty;
 }
 .hero-actions {
-  margin-top: 2rem;
+  margin-top: 1.2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: .8rem;
-  justify-content: center;
-  font-size: 1rem;
+  gap: .7rem;
+  font-size: .95rem;
 }
 .hero-ia {
-  margin: 1.6rem auto 0;
+  margin: 1rem 0 0;
   max-width: 34rem;
-  font-size: .88rem;
-  line-height: 1.5;
+  font-size: .85rem;
+  line-height: 1.45;
   color: var(--ink-soft);
   display: flex;
-  gap: .55rem;
+  gap: .5rem;
   align-items: baseline;
-  justify-content: center;
-  text-align: left;
 }
 
 .btn {
@@ -649,13 +655,10 @@ article[data-mode="express"] .also-resume { display: none; }
 .btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
 
 /* Panneau « dernier numéro » mis en avant */
-.latest-panel { padding: 1rem 0 0; }
 .latest-card {
-  max-width: 46rem;
-  margin: 0 auto;
   border: 1px solid var(--rule);
   border-radius: var(--r-card);
-  padding: 1.8rem 2rem;
+  padding: 1.25rem 1.4rem;
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -666,33 +669,33 @@ article[data-mode="express"] .also-resume { display: none; }
   color: var(--accent);
   font-weight: 700;
 }
-.latest-card h3 { margin: .5rem 0 .2rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+.latest-card h3 { margin: .35rem 0 .15rem; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
 .latest-card .latest-meta { margin: 0 0 .6rem; font-size: .85rem; color: var(--ink-soft); }
 .latest-card ol {
-  margin: .8rem 0 1.2rem;
+  margin: .6rem 0 .9rem;
   padding-left: 1.2rem;
   border-top: 1px solid var(--rule);
-  padding-top: 1rem;
+  padding-top: .75rem;
 }
-.latest-card li { margin: .45rem 0; line-height: 1.4; }
+.latest-card li { margin: .32rem 0; line-height: 1.35; }
 .latest-card a.more { font-size: .95rem; font-weight: 600; text-decoration: none; color: var(--accent); }
 .latest-card a.more:hover { text-decoration: underline; }
 
-.home-section { padding: 4rem 0 0; }
+.home-section { padding: 2.6rem 0 0; }
 .home-section > h2 {
   text-align: center;
-  font-size: clamp(1.6rem, 4vw, 2.1rem);
-  letter-spacing: -0.025em;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  letter-spacing: -0.02em;
   color: var(--ink);
   font-weight: 700;
-  margin: 0 0 .5rem;
+  margin: 0 0 .4rem;
 }
 .home-section > .section-lede {
   text-align: center;
   max-width: 34rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.5rem;
   color: var(--ink-soft);
-  font-size: 1.1rem;
+  font-size: 1.02rem;
 }
 
 /* ---- Schéma « Comment ça marche » (plus visuel) ---- */
@@ -729,7 +732,7 @@ article[data-mode="express"] .also-resume { display: none; }
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: var(--r-card);
-  padding: 1.8rem 1rem 1.4rem;
+  padding: 1.4rem .9rem 1.1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -789,6 +792,21 @@ article[data-mode="express"] .also-resume { display: none; }
 }
 .pipeline-node.is-ai .tag-ai { background: var(--accent-ink); color: var(--accent); }
 
+/* Étapes purement mécaniques (un programme, ni IA ni humain). */
+.pipeline-node .tag-auto {
+  display: inline-block;
+  margin-left: .3rem;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  padding: .08rem .4rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
 /* Connecteurs fléchés entre les nœuds (desktop) */
 .pipeline-node:not(:last-child)::after {
   content: "";
@@ -805,15 +823,15 @@ article[data-mode="express"] .also-resume { display: none; }
 
 .pipeline-caption {
   max-width: 40rem;
-  margin: 1.8rem auto 0;
+  margin: 1.3rem auto 0;
   text-align: center;
-  font-size: .9rem;
+  font-size: .88rem;
   color: var(--ink-soft);
   line-height: 1.55;
 }
 .pipeline-caption strong { color: var(--ink); }
 
-.home-section .hero-actions { margin-top: 2rem; }
+.home-section .hero-actions { margin-top: 1.4rem; }
 
 @media (max-width: 720px) {
   .pipeline { grid-template-columns: 1fr; gap: 1rem; max-width: 24rem; }
@@ -877,8 +895,8 @@ article[data-mode="express"] .also-resume { display: none; }
 /* ---- Pied de page ---- */
 
 .footer {
-  margin-top: 5rem;
-  padding-top: 1.4rem;
+  margin-top: 3rem;
+  padding-top: 1.1rem;
   border-top: 1px solid var(--rule);
   font-size: .8rem;
   color: var(--ink-soft);

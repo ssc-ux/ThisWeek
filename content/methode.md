@@ -62,8 +62,8 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
   <div class="flow-step">
     <div class="flow-badge">3</div>
     <div class="flow-body">
-      <h3>Lecture des sources</h3>
-      <p>Lecture de l'abstract, et du texte intégral libre (Europe PMC)
+      <h3>Lecture par l'IA</h3>
+      <p>L'IA lit l'abstract, et le texte intégral libre (Europe PMC)
       <strong>lorsqu'il est disponible</strong> — souvent l'abstract seul ; la
       base réellement utilisée est indiquée sous chaque item.</p>
     </div>
