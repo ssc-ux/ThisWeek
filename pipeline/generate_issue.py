@@ -98,9 +98,13 @@ JOURNAL_IF = [
 
 
 def journal_if(name: str) -> int | None:
-    low = (name or "").lower()
+    # PubMed nomme les déclinaisons « The Lancet. Rheumatology » (avec un point) :
+    # sans normaliser la ponctuation, le motif « lancet rheumatol » ne matche pas
+    # et l'article hériterait de l'IF du Lancet parent. On remplace donc la
+    # ponctuation par des espaces avant de tester les motifs.
+    low = re.sub(r"[^\w&]+", " ", (name or "").lower()).strip()
     for motif, val in JOURNAL_IF:
-        if motif in low:
+        if re.sub(r"[^\w&]+", " ", motif) in low:
             return val
     return None
 

@@ -1,0 +1,226 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 12
+semaine: "28 juillet au 3 août 2026"
+date: 2026-08-03
+edito: >-
+  Une recommandation internationale sur le diagnostic de l'amylose AL, un essai
+  randomisé positif dans le purpura thrombopénique immunologique réfractaire, et
+  comment repérer les patients à risque d'atteinte pulmonaire dans les
+  vascularites à ANCA.
+
+items:
+  - type: reco
+    titre: "Diagnostic de l'amylose AL : recommandations ASH 2026"
+    source: "Blood Advances · American Society of Hematology (méthodologie GRADE)"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/41592868/"
+    base_texte: abstract_seul
+    resume: >-
+      Recommandations de l'American Society of Hematology (ASH) consacrées au
+      diagnostic — et non au traitement — de l'amylose à chaînes légères (AL),
+      maladie rare liée au dépôt tissulaire de chaînes légères mal repliées
+      produites par une dyscrasie plasmocytaire. Panel multidisciplinaire de 22
+      personnes (hématologie hospitalière et de ville, néphrologie, neurologie,
+      cardiologie, médecine interne, anatomopathologie) plus un représentant de
+      patients, méthodologie GRADE avec cadres « evidence-to-decision » et
+      consultation publique ; 12 recommandations. Messages de conclusion :
+      l'immunofixation sérique, l'immunofixation urinaire et le dosage des chaînes
+      légères libres sériques renforcent la suspicion clinique ; le diagnostic peut
+      être établi efficacement par des biopsies de substitution, qui requièrent à
+      la fois une biopsie ostéomédullaire ET un prélèvement de graisse
+      sous-cutanée — la biopsie de l'organe atteint restant préférable dans
+      certaines situations.
+    message_cle: >-
+      Devant une suspicion d'amylose AL : associer immunofixation sérique,
+      immunofixation urinaire et chaînes légères libres sériques, puis confirmer
+      par biopsie — la voie « de substitution » combinant biopsie ostéomédullaire
+      et graisse sous-cutanée, sans négliger la biopsie d'organe quand elle
+      s'impose.
+    comparaisons:
+      - titre: "Par rapport aux autres recommandations récentes"
+        reference: "recommandation de la British Society for Haematology (BSH) sur le diagnostic précoce de l'amylose AL"
+        points:
+          - "Les deux textes partagent le même objectif — raccourcir le délai
+            diagnostique — mais avec des angles complémentaires : la BSH insiste
+            sur la reconnaissance clinique (« y penser dans toute consultation »),
+            l'ASH sur la stratégie biologique et histologique de confirmation."
+          - "La combinaison immunofixation sérique + urinaire + chaînes légères
+            libres comme trépied de dépistage fait consensus entre les deux."
+      - titre: "Par rapport à l'organisation française"
+        reference: "Centre national de référence Amylose AL et autres maladies de dépôt d'immunoglobulines"
+        points:
+          - "En France, le diagnostic et le typage s'organisent autour du centre de
+            référence et de ses centres de compétence ; le typage précis de
+            l'amylose (immunohistochimie, spectrométrie de masse) y est un enjeu
+            central, à confronter aux modalités décrites par l'ASH."
+          - "L'accès à la biopsie de graisse sous-cutanée et à la biopsie
+            ostéomédullaire est aisé en France : la stratégie « biopsies de
+            substitution » d'abord est directement transposable."
+    contexte:
+      - >-
+        L'amylose AL est une maladie systémique rare mais grave, qui peut toucher
+        le cœur, les reins, le foie et les nerfs. Elle se situe au carrefour de la
+        médecine interne, de l'hématologie et de la cardiologie, et l'interniste
+        est souvent en première ligne devant un tableau multi-systémique
+        inexpliqué.
+      - >-
+        Le pronostic dépend étroitement de la précocité du diagnostic : c'est
+        l'étendue des dégâts d'organe au moment du diagnostic qui conditionne la
+        survie. D'où l'importance de recommandations dédiées à la démarche
+        diagnostique elle-même, et non au seul traitement.
+      - >-
+        L'apport pratique de ce texte est de clarifier deux étapes : le trépied
+        biologique de dépistage (immunofixations sérique et urinaire, chaînes
+        légères libres) et la stratégie de confirmation histologique, où les
+        biopsies « de substitution » (graisse + moelle) évitent souvent une
+        biopsie d'organe plus invasive.
+      - >-
+        Limites : recommandation nord-américaine, dont la revue systématique
+        sous-jacente est arrêtée à mars 2023 ; elle ne traite pas du typage
+        détaillé ni du traitement. À confronter aux pratiques du centre de
+        référence français.
+
+  - type: essai
+    titre: "ATRA + eltrombopag dans le purpura thrombopénique immunologique réfractaire : essai randomisé positif"
+    source: "NEJM Evidence · essai randomisé multicentrique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42517709/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai randomisé multicentrique, en ouvert, chez 96 adultes atteints de PTI
+      corticorésistant ou en rechute (plaquettes < 30 × 10⁹/l), comparant l'acide
+      tout-trans rétinoïque (ATRA, 12 semaines) associé à l'eltrombopag versus
+      l'eltrombopag seul (48 patients par groupe). Le critère principal — réponse
+      soutenue à 18 mois (plaquettes ≥ 30 × 10⁹/l sans saignement cliniquement
+      significatif ni traitement de secours) — est atteint : 60 % (29/48) sous
+      association contre 35 % (17/48) en monothérapie (odds ratio 2,78 ; IC95
+      1,22-6,37 ; p = 0,014). Réponse complète plus fréquente (79 % vs 58 %) et
+      durée médiane de réponse plus longue (75 vs 37 semaines ; HR de rechute
+      0,45 ; IC95 0,23-0,86). Effets indésirables comparables, sans événement de
+      grade 3-4 ni décès lié au traitement. À noter un déséquilibre à l'inclusion :
+      21 % de saignements OMS grade 2-3 dans le bras association contre 10 % en
+      monothérapie.
+    message_cle: >-
+      Dans le PTI corticorésistant ou en rechute, ajouter l'ATRA à l'eltrombopag
+      augmente la réponse soutenue à 18 mois (60 % vs 35 %) et allonge la durée de
+      réponse, avec une tolérance comparable — une option orale intéressante,
+      à confirmer hors essai ouvert.
+    contexte:
+      - >-
+        Le purpura thrombopénique immunologique est une cytopénie auto-immune
+        fréquente en médecine interne. Après les corticoïdes de première ligne,
+        les options des formes chroniques reposent sur les agonistes du récepteur
+        de la thrombopoïétine (eltrombopag, romiplostim), le rituximab et, plus
+        rarement aujourd'hui, la splénectomie.
+      - >-
+        La limite reconnue des agonistes du récepteur de la thrombopoïétine est
+        la dépendance au traitement : ils stimulent la production plaquettaire
+        sans corriger le mécanisme auto-immun, et les réponses s'estompent souvent
+        à l'arrêt. L'ATRA, immunomodulateur, vise précisément cette composante —
+        d'où l'idée d'une association agissant sur les deux versants.
+      - >-
+        Le résultat est cohérent et cliniquement parlant (réponse soutenue,
+        durée de réponse), mais l'essai est en ouvert (pas de double aveugle),
+        de taille modeste (96 patients), conduit dans un seul pays, avec un
+        déséquilibre hémorragique à l'inclusion : autant de réserves avant
+        généralisation.
+      - >-
+        Pour la pratique française : l'ATRA est disponible (indication historique
+        en hématologie), mais son usage dans le PTI serait hors AMM. À suivre,
+        notamment dans les formes multiréfractaires où les options manquent.
+
+  - type: meta
+    titre: "Atteinte pulmonaire des vascularites à ANCA : des profils de risque distincts pour la PID et l'hémorragie alvéolaire"
+    source: "Clinical Reviews in Allergy & Immunology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42536106/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (19 études observationnelles, 2 944
+      patients) des facteurs de risque d'atteinte pulmonaire au cours des
+      vascularites à ANCA, en distinguant pour la première fois deux phénotypes :
+      pneumopathie interstitielle diffuse (PID) et hémorragie alvéolaire. Pour la
+      PID, les facteurs de risque indépendants robustes sont l'âge > 65 ans
+      (OR 3,60) et le sexe masculin (OR 2,57), avec une positivité MPO-ANCA plus
+      fréquente (OR 2,29) ; à l'inverse, le sous-type granulomatose avec
+      polyangéite, la positivité PR3-ANCA, les c-ANCA, l'atteinte ORL et un BVAS
+      plus élevé sont associés à une moindre fréquence de PID. Pour l'hémorragie
+      alvéolaire, la positivité PR3-ANCA et l'hémoptysie étaient plus fréquentes,
+      avec comme facteurs associés possibles la protéinurie, un BVAS élevé, la
+      créatinine, l'anémie et un C3 abaissé. Pour l'atteinte pulmonaire globale :
+      âge > 65 ans (OR 4,20), sexe masculin (OR 3,08) et BVAS élevé (OR 3,03),
+      profil largement superposable à celui de la PID.
+    message_cle: >-
+      Dans les vascularites à ANCA, PID et hémorragie alvéolaire ont des profils
+      distincts : la PID concerne surtout l'homme de plus de 65 ans MPO-ANCA
+      positif, l'hémorragie alvéolaire plutôt les formes PR3-ANCA avec hémoptysie
+      — de quoi cibler le dépistage scanographique et la surveillance.
+    contexte:
+      - >-
+        Les vascularites à ANCA (granulomatose avec polyangéite, polyangéite
+        microscopique) sont des vascularites nécrosantes des petits vaisseaux
+        prises en charge en médecine interne. L'atteinte pulmonaire conditionne
+        largement le pronostic, qu'il s'agisse d'une hémorragie alvéolaire aiguë,
+        menaçant le pronostic vital, ou d'une PID d'évolution fibrosante.
+      - >-
+        L'intérêt de ce travail est de séparer deux entités souvent confondues
+        sous le terme d'« atteinte pulmonaire ». Le profil de la PID (homme âgé,
+        MPO-ANCA, souvent polyangéite microscopique) correspond à ce qui est
+        décrit dans les cohortes : une fibrose parfois inaugurale, précédant la
+        vascularite. Celui de l'hémorragie alvéolaire s'en distingue nettement.
+      - >-
+        Utilité pratique : chez un patient MPO-ANCA positif, homme et de plus de
+        65 ans, un dépistage scanographique de PID et une surveillance
+        fonctionnelle respiratoire se discutent, la PID étant un déterminant
+        pronostique majeur.
+      - >-
+        Limites : méta-analyse d'études observationnelles, hétérogénéité
+        attendue, et associations qui ne préjugent pas de causalité. La plupart
+        des cohortes disponibles sont asiatiques, où les formes MPO-ANCA avec PID
+        sont plus fréquentes qu'en Europe — prudence dans la transposition.
+
+aussi_parus:
+  - titre: "Cancers au cours de la sclérodermie systémique : risque augmenté d'environ 70 %"
+    source: "Seminars in Arthritis and Rheumatism"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42322931/"
+    resume: >-
+      Méta-analyse de 31 cohortes (au moins 32 134 patients) : le risque global de
+      cancer est augmenté au cours de la sclérodermie systémique (ratio
+      d'incidence standardisé 1,66 ; IC95 1,32-2,08), avec les risques les plus
+      élevés pour les cancers de l'œsophage, du foie, du col de l'utérus, du
+      poumon et les hémopathies (SIR 3,35 à 13,95). L'intervalle moyen entre le
+      diagnostic de sclérodermie et celui du cancer est de 7,4 ans — un argument
+      pour réfléchir à des stratégies de dépistage ciblées.
+  - titre: "Anticoagulants oraux directs dans la thrombose veineuse superficielle"
+    source: "Thrombosis and Haemostasis"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41539326/"
+    resume: >-
+      Revue systématique et méta-analyse (6 études, 2 040 patients dont 602 traités
+      par AOD) : comparés au fondaparinux, les AOD ont une efficacité comparable à
+      court terme sur la prévention de la MTEV (RR 0,93 ; IC95 0,44-1,99) et sur
+      la récidive de thrombose superficielle, avec une réduction de 65 % des
+      hémorragies majeures ou cliniquement pertinentes (RR 0,35 ; IC95 0,15-0,83 ;
+      I² = 0 %). Données encore limitées, mais rassurantes sur la tolérance.
+  - titre: "TREAT EARLIER à 5 ans : bénéfice du méthotrexate limité aux arthralgies sans anticorps anti-CCP"
+    source: "The Lancet Rheumatology"
+    impact_factor: 42
+    url: "https://pubmed.ncbi.nlm.nih.gov/42392130/"
+    resume: >-
+      Suivi à 5 ans de l'essai randomisé TREAT EARLIER (méthotrexate 12 mois vs
+      placebo chez des patients ayant des arthralgies à risque de polyarthrite
+      rhumatoïde), initialement négatif sur la prévention de la polyarthrite à
+      2 ans. Cette analyse par sous-type — donc exploratoire — suggère un bénéfice
+      durable chez les patients anti-CCP NÉGATIFS (3/35 ont développé une
+      polyarthrite sous traitement contre 10/31 sous placebo ; HR 0,24 ; IC95
+      0,07-0,87), sans bénéfice chez les anti-CCP positifs (HR 0,75 ; IC95
+      0,38-1,49). À considérer comme génératrice d'hypothèses.
+  - titre: "Diagnostic de l'artérite à cellules géantes : de la biopsie à l'imagerie multimodale"
+    source: "The Journal of Rheumatology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41922001/"
+    resume: >-
+      Revue systématique (36 études) sur l'évolution du paradigme diagnostique de
+      la maladie de Horton. La biopsie d'artère temporale, longtemps référence,
+      a une sensibilité limitée (40-70 %) du fait du caractère segmentaire des
+      lésions ; l'échographie-Doppler couleur avec signe du halo atteint une
+      sensibilité poolée de 88-93 %, ce qui lui vaut dans les critères de
+      classification ACR/EULAR 2022 un poids diagnostique équivalent. La revue
+      évalue aussi les filières d'accès rapide (« fast-track clinics »).
