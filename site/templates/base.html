@@ -2,7 +2,18 @@
 <html lang="fr" class="no-js">
 <head>
 <meta charset="utf-8">
-<script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+<script>
+// Exécuté avant le rendu : évite tout clignotement au chargement.
+// Thème CLAIR par défaut ; le mode sombre s'active uniquement si l'utilisateur
+// l'a choisi via le bouton (le réglage du système n'est pas suivi).
+(function () {
+  var r = document.documentElement;
+  r.className = r.className.replace('no-js', 'js');
+  var t = 'light';
+  try { if (localStorage.getItem('tw-theme') === 'dark') t = 'dark'; } catch (e) {}
+  r.setAttribute('data-theme', t);
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}ThisWeek · Médecine interne{% endblock %}</title>
 <meta name="description" content="{% block description %}Chaque semaine, l'essentiel des nouvelles recommandations, PNDS et articles majeurs pour les médecins internistes.{% endblock %}">
@@ -23,6 +34,10 @@
       <a href="{{ root }}veille.html"{% if active == 'veille' %} aria-current="page"{% endif %}>Veille</a>
       <a href="{{ root }}methode.html"{% if active == 'methode' %} aria-current="page"{% endif %}>Méthode</a>
       <a href="{{ root }}rss.xml">RSS</a>
+      <button type="button" class="theme-toggle" id="theme-toggle"
+              aria-label="Passer en thème sombre" title="Thème clair / sombre">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
     </nav>
   </header>
 
@@ -38,5 +53,23 @@
     tout usage clinique. Voir la page <a href="{{ root }}methode.html">Méthode</a>.</p>
   </footer>
 </div>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function label() {
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tw-theme', next); } catch (e) {}
+    label();
+  });
+})();
+</script>
 </body>
 </html>
