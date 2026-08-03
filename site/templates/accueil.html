@@ -5,20 +5,20 @@
 
 {% block content %}
 <section class="hero">
-  <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-  <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
-  <p class="lede">Chaque lundi, une sélection courte des recommandations, PNDS et
-  publications qui comptent vraiment pour un service de médecine interne français —
-  à lire en 5 minutes ou en 20, selon le temps que vous avez.</p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
-    <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
+  <div class="hero-text">
+    <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
+    <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
+    <p class="lede">Chaque lundi, une sélection courte des recommandations, PNDS et
+    publications qui comptent vraiment pour un service de médecine interne français —
+    à lire en 5 minutes ou en 20, selon le temps que vous avez.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
+      <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
+    </div>
+    <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
+    artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
   </div>
-  <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
-  artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
-</section>
 
-<section class="latest-panel">
   <aside class="latest-card" aria-label="Dernier numéro">
     <span class="kicker">Dernier numéro · N° {{ latest.numero }}</span>
     <h3>Semaine du {{ latest.semaine }}</h3>
@@ -35,15 +35,17 @@
 
 <section class="home-section">
   <h2>Comment ça marche</h2>
-  <p class="section-lede">De la recherche des études jusqu'à la mise en ligne, tout est
-  automatique — et trois étapes sont confiées à une intelligence artificielle (IA).</p>
+  <p class="section-lede"><strong>Aucun humain n'intervient.</strong> Deux programmes
+  s'occupent seulement d'aller chercher les études et de publier la page ; tout le travail
+  éditorial — choisir, lire, résumer, vérifier — est fait par l'intelligence artificielle (IA).</p>
   <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
     <div class="pipeline-node" role="listitem">
       <span class="step">01</span>
       <span class="icon" aria-hidden="true">🔎</span>
       <div class="body">
-        <h3>On rassemble</h3>
-        <p>Chaque semaine, on réunit les nouvelles études médicales parues dans le monde.</p>
+        <h3>Collecte <span class="tag-auto">auto</span></h3>
+        <p>Chaque semaine, un programme réunit les nouvelles études médicales
+        parues dans le monde.</p>
       </div>
     </div>
     <div class="pipeline-node is-ai" role="listitem">
@@ -55,11 +57,11 @@
         en privilégiant les revues les plus sérieuses.</p>
       </div>
     </div>
-    <div class="pipeline-node" role="listitem">
+    <div class="pipeline-node is-ai" role="listitem">
       <span class="step">03</span>
       <span class="icon" aria-hidden="true">📄</span>
       <div class="body">
-        <h3>L'IA lit</h3>
+        <h3>L'IA lit <span class="tag-ai">IA</span></h3>
         <p>Elle lit le résumé de chaque étude retenue — et l'article complet
         quand il est disponible gratuitement.</p>
       </div>
@@ -85,8 +87,8 @@
       <span class="step">06</span>
       <span class="icon" aria-hidden="true">📬</span>
       <div class="body">
-        <h3>Mise en ligne</h3>
-        <p>Le nouveau numéro paraît tout seul sur le site, chaque lundi.</p>
+        <h3>Mise en ligne <span class="tag-auto">auto</span></h3>
+        <p>Un programme publie le nouveau numéro sur le site, chaque lundi.</p>
       </div>
     </div>
   </div>
