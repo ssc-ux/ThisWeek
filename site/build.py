@@ -187,7 +187,8 @@ def main() -> None:
     issue_tpl = env.get_template("issue.html")
     for issue in issues:
         page = issue_tpl.render(
-            issue=issue, type_labels=TYPE_LABELS, css=css, root="../", active="dernier"
+            issue=issue, type_labels=TYPE_LABELS, css=css, root="../",
+            active="dernier", page_class="page-article"
         )
         (DIST / "numeros" / f"{issue['slug']}.html").write_text(page, encoding="utf-8")
 
