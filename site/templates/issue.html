@@ -37,6 +37,9 @@
     </div>
   </header>
 
+  <div class="issue-layout">
+  <div class="issue-main">
+
   {% if issue["items"] %}
   <section class="tldr" aria-label="L'essentiel à retenir">
     <h2>L'essentiel <span class="tldr-sub">— tout retenir en ~{{ issue.express_min }} min</span></h2>
@@ -47,16 +50,6 @@
     </ol>
   </section>
   {% endif %}
-
-  <nav class="toc" aria-label="Sommaire du numéro">
-    <h2>Au sommaire</h2>
-    <ol>
-      {% for item in issue["items"] %}
-      <li><a href="#item-{{ loop.index }}">{{ item.titre }}</a>
-          <span class="toc-type">— {{ type_labels[item.type] }}</span></li>
-      {% endfor %}
-    </ol>
-  </nav>
 
   {% for item in issue["items"] %}
   <section class="item" id="item-{{ loop.index }}">
@@ -139,6 +132,21 @@
     </ul>
   </section>
   {% endif %}
+
+  </div><!-- /.issue-main -->
+
+  <aside class="issue-aside">
+    <nav class="toc" aria-label="Sommaire du numéro">
+      <h2>Au sommaire</h2>
+      <ol>
+        {% for item in issue["items"] %}
+        <li><a href="#item-{{ loop.index }}">{{ item.titre }}</a>
+            <span class="toc-type">— {{ type_labels[item.type] }}</span></li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </aside>
+  </div><!-- /.issue-layout -->
 </article>
 
 <script>
