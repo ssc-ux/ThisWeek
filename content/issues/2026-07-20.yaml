@@ -1,0 +1,103 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 11
+semaine: "13 au 20 juillet 2026"
+date: 2026-07-20
+edito: >-
+  Un essai de phase 3 positif ouvre une nouvelle voie dans le lupus actif non
+  rénal, et une synthèse asiatique rappelle le rendement du dépistage des
+  antiphospholipides devant des fausses couches à répétition.
+
+items:
+  - type: essai
+    titre: "Obinutuzumab dans le lupus systémique actif : essai de phase 3 positif (ALLEGORY)"
+    source: "The New England Journal of Medicine · essai de phase 3"
+    impact_factor: 96
+    url: "https://pubmed.ncbi.nlm.nih.gov/41789864/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 multicentrique, en double aveugle contre placebo, chez
+      303 adultes atteints de lupus systémique actif SANS néphropathie lupienne
+      proliférative ou membraneuse, sous traitement standard. Obinutuzumab
+      (anticorps anti-CD20 de type II glyco-optimisé, 1000 mg aux jours 1, S2,
+      S24 et S26) versus placebo. Critère principal atteint : réponse SRI-4 à
+      52 semaines chez 76,7 % des patients sous obinutuzumab contre 53,5 % sous
+      placebo (différence ajustée 23,1 points ; IC95 12,5-33,6 ; p < 0,001).
+      Supériorité également sur TOUS les critères secondaires clés : réponse
+      BICLA, réduction soutenue de la corticothérapie, réponse SRI-4 soutenue,
+      réponse SRI-6, délai avant première poussée BILAG. Événements
+      indésirables 88,7 % vs 81,5 %, événements graves 15,9 % vs 11,9 % ; un
+      décès sous obinutuzumab contre trois sous placebo pendant la phase en
+      aveugle.
+    message_cle: >-
+      Dans le lupus systémique actif non rénal, l'obinutuzumab améliore la
+      réponse SRI-4 à un an (77 % vs 54 %) et permet une épargne cortisonique
+      soutenue, avec supériorité sur tous les critères secondaires clés — une
+      nouvelle option de déplétion B à suivre, déjà approuvée dans la néphropathie
+      lupienne.
+    contexte:
+      - >-
+        Le lupus systémique est la maladie auto-immune prototypique de la
+        médecine interne. Malgré l'arrivée du bélimumab et de l'anifrolumab, une
+        part des patients reste insuffisamment contrôlée ou corticodépendante —
+        d'où la recherche de stratégies de déplétion lymphocytaire B plus
+        profondes.
+      - >-
+        L'obinutuzumab est un anti-CD20 de deuxième génération, glyco-optimisé
+        pour une déplétion B plus complète que le rituximab, dont les essais dans
+        le lupus non rénal avaient historiquement échoué (EXPLORER, LUNAR).
+        L'obinutuzumab a déjà obtenu une approbation dans la néphropathie
+        lupienne active ; cet essai étend la démonstration au lupus actif SANS
+        atteinte rénale proliférative.
+      - >-
+        Le résultat est solide : critère principal atteint avec une différence
+        de 23 points, et supériorité sur l'ensemble des critères secondaires
+        clés, y compris l'épargne cortisonique — objectif majeur pour limiter
+        les dommages à long terme. Le taux de réponse élevé sous placebo (53,5 %)
+        rappelle toutefois la difficulté classique des essais dans le lupus.
+      - >-
+        Pour la pratique française : données d'essai, à confronter à l'AMM et aux
+        conditions de remboursement dans cette indication précise (le lupus non
+        rénal n'est pas la néphropathie lupienne, déjà couverte). La surveillance
+        infectieuse propre aux déplétions B profondes (hypogammaglobulinémie,
+        vaccination préalable) reste de rigueur.
+
+  - type: meta
+    titre: "Antiphospholipides et fausses couches à répétition : synthèse des données asiatiques"
+    source: "Journal of Reproductive Immunology · revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42497671/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique (22 études, 8 pays asiatiques, plus de 40 000
+      personnes : registres nationaux, cohortes de SAPL, groupes à risque).
+      Incidence du SAPL de 0,50 à 0,82 pour 100 000 personnes-années et
+      prévalence de 5 à 7 pour 100 000, avec prédominance féminine. Chez les
+      femmes ayant des fausses couches à répétition, la prévalence du SAPL va
+      de 5 % à 22,9 % ; des études japonaises retrouvent 8,7 % d'anticorps
+      antiphospholipides positifs sur 5 708 femmes. Plus de la moitié des
+      patients SAPL ont présenté un événement thrombotique, veineux et artériel
+      en proportions comparables, l'AVC ischémique étant particulièrement au
+      premier plan dans les SAPL associés au lupus. SAPL catastrophique dans 1 à
+      5 % des cas, récidive thrombotique annuelle de 4 à 10 %.
+    message_cle: >-
+      Devant des fausses couches à répétition inexpliquées, le dépistage
+      systématique des anticorps antiphospholipides est rentable (SAPL retrouvé
+      chez 5 à 23 % de ces femmes) — et un SAPL obstétrical annonce aussi un
+      risque thrombotique élevé qui dépasse la seule problématique de grossesse.
+    contexte:
+      - >-
+        Le syndrome des antiphospholipides est une thrombophilie auto-immune
+        prise en charge en médecine interne, définie par des thromboses
+        vasculaires et/ou une morbidité obstétricale. Sa dimension obstétricale
+        conduit souvent à un suivi partagé avec les obstétriciens.
+      - >-
+        L'intérêt de cette synthèse est double : elle chiffre le rendement du
+        dépistage devant des fausses couches à répétition, et elle rappelle que
+        le SAPL obstétrical n'est pas une entité isolée — plus de la moitié de
+        ces patients feront un événement thrombotique, avec un risque de récidive
+        annuel de 4 à 10 % qui justifie un suivi au long cours.
+      - >-
+        Limites : revue de données observationnelles hétérogènes, centrée sur
+        les populations asiatiques — les chiffres de prévalence ne sont pas
+        directement transposables à la France, contrairement aux enseignements
+        de démarche (dépister, puis suivre le risque thrombotique). L'anticorps
+        anti-β2GPI-HLA-DR mentionné reste du domaine de la recherche.
