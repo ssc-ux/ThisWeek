@@ -43,6 +43,7 @@ from pubmed_query import (
     is_retracted,
     search_internal_medicine,
     search_recommendations,
+    unpaywall_lookup,
 )
 
 try:
@@ -169,6 +170,41 @@ def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
             body = re.sub("<[^>]+>", " ", sec)
             chunks.append(re.sub(r"\s+", " ", body).strip())
     return "\n\n".join(chunks)[:6000]
+
+
+def fetch_fulltext_unpaywall(doi: str | None) -> str:
+    """Repli si Europe PMC n'a rien : Unpaywall repère une version en accès
+    libre légale (dépôt institutionnel, page éditeur en libre accès…).
+
+    Best-effort et honnête sur ses limites : ça ne lit QUE du HTML/XML
+    directement accessible. Un lien vers un PDF, ou un éditeur qui bloque les
+    requêtes automatiques (403 — fréquent, et légitime de leur part), fait
+    échouer silencieusement le repli — pas de lecture de PDF ici (fragile, pas
+    fiable dans cet environnement), et jamais de contournement d'un blocage.
+    """
+    if not doi:
+        return ""
+    loc = unpaywall_lookup(doi)
+    if not loc:
+        return ""
+    try:
+        req = urllib.request.Request(
+            loc["url"], headers={"User-Agent": "Mozilla/5.0 (compatible; ThisWeek-digest/1.0)"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            ctype = resp.headers.get("Content-Type", "")
+            if "html" not in ctype.lower() and "xml" not in ctype.lower():
+                return ""  # PDF ou autre format non géré : on n'insiste pas
+            html = resp.read().decode("utf-8", "replace")
+    except Exception:
+        return ""
+    text = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.S | re.I)
+    text = re.sub(r"<style[^>]*>.*?</style>", " ", text, flags=re.S | re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    # Une simple page d'atterrissage de dépôt (titre + métadonnées) ne contient
+    # pas assez de texte pour être utile : en dessous du seuil, on considère
+    # que ce n'est pas le texte intégral, seulement une page de renvoi.
+    return text[:8000] if len(text) > 2000 else ""
 
 
 def get_pmcid(pmid: str) -> str | None:
@@ -614,6 +650,13 @@ def main() -> None:
         pmcid = get_pmcid(it["pmid"])
         abstract = fetch_abstract(it["pmid"])
         fulltext = fetch_fulltext(it["pmid"], pmcid)
+        if not fulltext:
+            # Europe PMC n'a rien : on tente Unpaywall (accès libre légal),
+            # en dernier recours seulement — abstract déjà disponible dans
+            # tous les cas, ce repli ne fait qu'améliorer ce qu'on a.
+            fulltext = fetch_fulltext_unpaywall(it.get("doi"))
+            if fulltext:
+                print(f"  + texte intégral via Unpaywall : {it['pmid']}")
         source_text = (abstract + "\n\n" + fulltext).strip() or it["titre"]
         try:
             out, confiance = synthesize(client, it, source_text)
