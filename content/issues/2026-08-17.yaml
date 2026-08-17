@@ -1,0 +1,145 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 13
+semaine: "11 au 17 août 2026"
+date: 2026-08-17
+edito: >-
+  Un essai de phase 3 positif change la donne dans la pseudo-polyarthrite
+  rhizomélique, une méta-analyse chiffre enfin la protection réelle du vaccin
+  contre le zona chez l'immunodéprimé, et une revue précise la meilleure
+  stratégie de dépistage biologique de l'amylose AL.
+
+items:
+  - type: essai
+    titre: "Sécukinumab dans la pseudo-polyarthrite rhizomélique : essai de phase 3 positif"
+    source: "The New England Journal of Medicine · essai de phase 3"
+    impact_factor: 96
+    url: "https://pubmed.ncbi.nlm.nih.gov/42234540/"
+    base_texte: abstract_seul
+    resume: >-
+      Essai de phase 3 randomisé, en double aveugle contre placebo, chez 381
+      patients avec pseudo-polyarthrite rhizomélique en rechute récente,
+      répartis 1:1:1 entre sécukinumab 300 mg, sécukinumab 150 mg ou placebo
+      pendant 52 semaines, tous sous décroissance de prednisone sur 24 semaines.
+      Critère principal — rémission soutenue de la semaine 12 à la semaine 52,
+      sans recours à un traitement de secours — atteint : 41,2 % (IC95
+      32,8-49,7) sous 300 mg et 40,6 % (IC95 32,2-49,0) sous 150 mg, contre
+      20,4 % (IC95 13,6-27,2) sous placebo (p < 0,001 pour chaque dose vs
+      placebo). Dose cumulée annuelle de corticoïdes plus faible sous
+      sécukinumab (1604-1683 mg vs 2093 mg sous placebo). Événements
+      indésirables graves comparables entre les groupes (13,5-15,9 %) ;
+      rhinopharyngites, réactions d'hypersensibilité, infections urinaires et
+      fongiques plus fréquentes sous sécukinumab.
+    message_cle: >-
+      Le sécukinumab (anti-IL-17A) double le taux de rémission soutenue à un an
+      par rapport au placebo (41 % vs 20 %) dans la pseudo-polyarthrite
+      rhizomélique en rechute, avec une épargne cortisonique associée — une
+      option à suivre pour les patients corticodépendants ou en rechutes
+      répétées, en l'absence encore d'AMM dans cette indication.
+    contexte:
+      - >-
+        La pseudo-polyarthrite rhizomélique est une maladie inflammatoire
+        fréquente en médecine interne, volontiers associée ou apparentée à la
+        maladie de Horton. Les corticoïdes restent le traitement de première
+        ligne, mais les rechutes à la décroissance et la toxicité cumulée
+        (ostéoporose, diabète, cataracte) sont un problème récurrent chez des
+        patients souvent âgés et polypathologiques.
+      - >-
+        Le tocilizumab (anti-IL-6R) a déjà montré un bénéfice d'épargne
+        cortisonique dans cette indication ; le sécukinumab, qui cible une autre
+        voie (IL-17A), élargit l'arsenal thérapeutique dans une maladie où les
+        alternatives aux corticoïdes restent peu nombreuses.
+      - >-
+        Limites : le critère principal porte sur la rémission « sans rechute »,
+        pas sur un objectif fonctionnel patient ; le sécukinumab n'a pas d'AMM
+        dans la pseudo-polyarthrite rhizomélique à ce jour, et le profil de
+        tolérance (infections) demande la même vigilance qu'avec les autres
+        biothérapies chez le sujet âgé.
+
+  - type: meta
+    titre: "Vaccin recombinant contre le zona : efficacité réelle chiffrée, y compris chez l'immunodéprimé"
+    source: "Vaccine · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42308980/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse d'études observationnelles en vie
+      réelle (cohortes et cas-témoins, 2017-2025) sur l'efficacité du vaccin
+      recombinant contre le zona chez l'adulte. Efficacité de 80,0 % (IC95
+      74,1-84,5) chez les immunocompétents et de 64,3 % (IC95 61,4-67,0) chez
+      les immunodéprimés ; 73,0 % (IC95 68,0-76,0) après 4 ans de suivi.
+      Efficacité de 66,2 % (IC95 62,7-69,5) chez les patients porteurs d'une
+      maladie auto-immune, comparable à celle observée dans le diabète (66,6 %)
+      et les hépatopathies (62,7 %). Sur la névralgie post-zostérienne :
+      efficacité de 84,7 % chez l'immunocompétent contre 38,7 % chez
+      l'immunodéprimé. Hétérogénéité substantielle entre études ; les
+      estimations par sous-groupe reposent sur moins d'études et doivent être
+      lues comme exploratoires.
+    message_cle: >-
+      Le vaccin recombinant contre le zona protège réellement les patients
+      immunodéprimés (efficacité ~64 %, un peu moindre que chez
+      l'immunocompétent), y compris dans les maladies auto-immunes — un
+      argument chiffré de plus pour le proposer systématiquement avant ou
+      pendant un traitement immunosuppresseur.
+    contexte:
+      - >-
+        Le surrisque de zona sous immunosuppresseurs (JAK, anti-interféron,
+        biothérapies) revient régulièrement dans les essais de médecine interne,
+        mais presque toujours comme effet secondaire signalé en passant, jamais
+        comme sujet à part entière avec des chiffres d'efficacité vaccinale
+        propres — cette méta-analyse comble ce manque.
+      - >-
+        Le vaccin recombinant (non vivant) est utilisable chez l'immunodéprimé,
+        contrairement à l'ancien vaccin vivant atténué. Les chiffres présentés
+        ici, issus d'études observationnelles en vie réelle, sont cohérents avec
+        les essais randomisés princeps (ZOE-1/ZOE-2) qui avaient étudié
+        l'immunocompétent.
+      - >-
+        Pour la pratique française : la vaccination anti-zona est déjà
+        recommandée chez les patients immunodéprimés candidats à une
+        biothérapie ; ces données chiffrées renforcent l'argumentaire pour la
+        proposer systématiquement, y compris chez les patients déjà sous
+        traitement (le vaccin non vivant ne nécessite pas d'interrompre
+        l'immunosuppresseur).
+      - >-
+        Limites : données observationnelles (pas d'essai randomisé chez
+        l'immunodéprimé), hétérogénéité substantielle, et estimations par
+        sous-groupe (maladie auto-immune spécifiquement) reposant sur un nombre
+        d'études plus restreint, donc à interpréter avec prudence.
+
+  - type: meta
+    titre: "Diagnostic biologique de l'amylose AL : la combinaison des trois tests atteint 99 % de sensibilité"
+    source: "Blood Advances · revue systématique et méta-analyse"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/41979328/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse (44 études, 18 071 patients après
+      dédoublonnage de 29 237 références) sur la sensibilité diagnostique de
+      l'immunofixation sérique (SIFE), de l'immunofixation urinaire (UIFE) et du
+      rapport des chaînes légères libres sériques (sFLC) pour détecter la
+      dyscrasie plasmocytaire de l'amylose AL. Sensibilités poolées : SIFE 68 %
+      (IC95 62-73 %), UIFE 77 % (IC95 72-81 %), SIFE+UIFE combinés 89 % (IC95
+      84-93 %), rapport sFLC seul 82 % (IC95 78-86 %). En combinant les trois
+      tests (SIFE + UIFE + sFLC), la sensibilité atteint 99 % (IC95 96-100 %).
+    message_cle: >-
+      Aucun des trois tests pris isolément n'est assez sensible pour écarter une
+      amylose AL (68-82 %) : c'est la combinaison systématique des trois
+      (immunofixation sérique, urinaire, et rapport des chaînes légères libres)
+      qui approche 99 % de sensibilité — la stratégie à privilégier en cas de
+      suspicion clinique.
+    contexte:
+      - >-
+        Ce travail complète directement la recommandation ASH 2026 sur le
+        diagnostic de l'amylose AL, publiée le mois dernier dans ce digest
+        (n°12) : elle préconisait déjà le trépied SIFE + UIFE + sFLC, sans
+        détailler les chiffres de sensibilité qui justifient cette combinaison —
+        c'est ce que cette méta-analyse apporte.
+      - >-
+        En pratique, le message est clair : demander UN SEUL de ces trois tests
+        expose à environ 20 à 30 % de faux négatifs. Seule la combinaison
+        systématique des trois, en cas de suspicion clinique d'amylose,
+        rapproche d'une sensibilité quasi complète.
+      - >-
+        Limites : revue de tests diagnostiques (pas d'essai thérapeutique),
+        hétérogénéité attendue entre les 44 études incluses, et sensibilité qui
+        ne dit rien de la spécificité ni de l'étape de confirmation
+        histologique, qui reste nécessaire.

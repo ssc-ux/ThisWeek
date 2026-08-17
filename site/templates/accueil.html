@@ -4,101 +4,30 @@
 {% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <div class="hero-text">
-    <p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-    <h1>L'essentiel de la semaine, trié et mis en contexte pour l'interniste.</h1>
-    <p class="lede">Chaque lundi, une sélection courte des recommandations, PNDS et
-    publications qui comptent vraiment pour un service de médecine interne français —
-    à lire en 5 minutes ou en 20, selon le temps que vous avez.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le dernier numéro →</a>
-      <a class="btn btn-secondary" href="{{ root }}methode.html">Comment c'est fait</a>
-    </div>
-    <p class="hero-ia"><span class="ia-badge">IA</span> Entièrement généré par intelligence
-    artificielle, sans relecture humaine — un parti pris assumé et transparent.</p>
-  </div>
+<p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
+<h1 class="page-h1">L'essentiel de la semaine pour l'interniste.</h1>
 
-  <aside class="latest-card" aria-label="Dernier numéro">
-    <span class="kicker">Dernier numéro · N° {{ latest.numero }}</span>
-    <h3>Semaine du {{ latest.semaine }}</h3>
+<section class="latest-card latest-card--full" aria-label="Dernier numéro">
+  <div class="latest-card-head">
+    <span class="kicker">Dernier numéro · N° {{ latest.numero }} · {{ latest.date_fr }}</span>
+    <h2>Semaine du {{ latest.semaine }}</h2>
     <p class="latest-meta">{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}
       · lecture ~{{ latest.lecture_min }} min (ou ~{{ latest.express_min }} min en express)</p>
-    <ol>
-      {% for item in latest["items"] %}
-      <li>{{ item.titre }}</li>
-      {% endfor %}
-    </ol>
-    <a class="more" href="{{ root }}numeros/{{ latest_slug }}.html">Ouvrir le numéro →</a>
-  </aside>
+  </div>
+  <ol class="latest-list">
+    {% for item in latest["items"] %}
+    <li>
+      <a href="{{ root }}numeros/{{ latest_slug }}.html#item-{{ loop.index }}">{{ item.titre }}</a>
+      <span class="latest-msg">{{ item.message_cle }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+  <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le numéro complet →</a>
 </section>
 
-<section class="home-section">
-  <h2>Comment ça marche</h2>
-  <p class="section-lede"><strong>Aucun humain n'intervient.</strong> Deux programmes
-  s'occupent seulement d'aller chercher les études et de publier la page ; tout le travail
-  éditorial — choisir, lire, résumer, vérifier — est fait par l'intelligence artificielle (IA).</p>
-  <div class="pipeline" role="list" aria-label="Étapes de fabrication du digest">
-    <div class="pipeline-node" role="listitem">
-      <span class="step">01</span>
-      <span class="icon" aria-hidden="true">🔎</span>
-      <div class="body">
-        <h3>Collecte <span class="tag-auto">auto</span></h3>
-        <p>Chaque semaine, un programme réunit les nouvelles études médicales
-        parues dans le monde.</p>
-      </div>
-    </div>
-    <div class="pipeline-node is-ai" role="listitem">
-      <span class="step">02</span>
-      <span class="icon" aria-hidden="true">🧠</span>
-      <div class="body">
-        <h3>L'IA fait le tri <span class="tag-ai">IA</span></h3>
-        <p>Elle ne garde que ce qui compte vraiment pour un médecin interniste,
-        en privilégiant les revues les plus sérieuses.</p>
-      </div>
-    </div>
-    <div class="pipeline-node is-ai" role="listitem">
-      <span class="step">03</span>
-      <span class="icon" aria-hidden="true">📄</span>
-      <div class="body">
-        <h3>L'IA lit <span class="tag-ai">IA</span></h3>
-        <p>Elle lit le résumé de chaque étude retenue — et l'article complet
-        quand il est disponible gratuitement.</p>
-      </div>
-    </div>
-    <div class="pipeline-node is-ai" role="listitem">
-      <span class="step">04</span>
-      <span class="icon" aria-hidden="true">✍️</span>
-      <div class="body">
-        <h3>L'IA résume <span class="tag-ai">IA</span></h3>
-        <p>Pour chaque étude : ce qu'elle montre, ce qui change, et le message à retenir.</p>
-      </div>
-    </div>
-    <div class="pipeline-node is-ai" role="listitem">
-      <span class="step">05</span>
-      <span class="icon" aria-hidden="true">✅</span>
-      <div class="body">
-        <h3>L'IA se relit <span class="tag-ai">IA</span></h3>
-        <p>Une seconde IA vérifie que chaque chiffre annoncé figure bien dans l'étude
-        d'origine. Au moindre doute, l'étude est simplement signalée, sans résumé détaillé.</p>
-      </div>
-    </div>
-    <div class="pipeline-node" role="listitem">
-      <span class="step">06</span>
-      <span class="icon" aria-hidden="true">📬</span>
-      <div class="body">
-        <h3>Mise en ligne <span class="tag-auto">auto</span></h3>
-        <p>Un programme publie le nouveau numéro sur le site, chaque lundi.</p>
-      </div>
-    </div>
-  </div>
-  <p class="pipeline-caption"><strong>Tout est automatique et rédigé par une IA, sans
-  relecture par un médecin</strong> — c'est un choix assumé et transparent. Chaque article
-  renvoie à l'étude d'origine, à vérifier avant tout usage médical. Plus de détails sur la
-  page <a href="{{ root }}methode.html">Méthode</a>.</p>
-  <div class="hero-actions">
-    <a class="btn btn-secondary" href="{{ root }}archives.html">Parcourir les archives</a>
-    <a class="btn btn-secondary" href="{{ root }}veille.html">Voir toutes les études repérées</a>
-  </div>
-</section>
+<p class="home-footline">
+  <span class="ia-badge">IA</span> Généré par intelligence artificielle, sans relecture
+  humaine — <a href="{{ root }}methode.html">comment ça marche</a>.
+  <a href="{{ root }}archives.html">Voir les numéros précédents →</a>
+</p>
 {% endblock %}

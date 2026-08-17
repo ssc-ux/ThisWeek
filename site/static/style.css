@@ -86,6 +86,31 @@ a:focus-visible, button:focus-visible {
   border-radius: 4px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .9rem;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
 .page {
   max-width: 60rem;
   margin: 0 auto;
@@ -134,12 +159,10 @@ a:focus-visible, button:focus-visible {
 .masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
 .masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
 
-/* ---- Bouton thème clair / sombre ---- */
+/* ---- Boutons ronds de la barre (recherche, thème) ---- */
 
-.theme-toggle {
+.icon-btn {
   flex: 0 0 auto;
-  /* quand la barre passe à la ligne (mobile), le bouton reste calé à droite */
-  margin-left: auto;
   width: 2.1rem;
   height: 2.1rem;
   padding: 0;
@@ -148,7 +171,7 @@ a:focus-visible, button:focus-visible {
   background: var(--surface);
   color: var(--ink-soft);
   font-family: inherit;
-  font-size: .95rem;
+  font-size: 1rem;
   line-height: 1;
   cursor: pointer;
   display: inline-flex;
@@ -156,13 +179,81 @@ a:focus-visible, button:focus-visible {
   justify-content: center;
   transition: color .15s ease, border-color .15s ease, transform .15s ease;
 }
-.theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+/* Le premier des deux boutons pousse la paire à droite quand la barre passe à
+   la ligne (mobile) ; le second suit normalement. */
+#search-open { margin-left: auto; }
+
 /* On montre l'icône de la destination : lune en clair, soleil en sombre. */
-.theme-toggle .ico-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .ico-moon { display: none; }
-:root[data-theme="dark"] .theme-toggle .ico-sun { display: inline; }
-/* Sans JavaScript, la bascule ne sert à rien. */
-.no-js .theme-toggle { display: none; }
+#theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-moon { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-sun { display: inline; }
+/* Sans JavaScript, ni la recherche ni la bascule de thème ne fonctionnent. */
+.no-js .icon-btn { display: none; }
+
+/* ---- Recherche (overlay plein écran, style palette de commandes) ---- */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(20, 22, 22, .5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1.2rem 1.2rem;
+}
+/* `display:flex` ci-dessus prime sur la feuille par défaut du navigateur pour
+   [hidden] (même spécificité, mais les styles d'auteur gagnent) : sans cette
+   règle explicite, l'overlay resterait affiché — et cliquable — même masqué. */
+.search-overlay[hidden] { display: none; }
+.search-panel {
+  width: min(38rem, 100%);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.search-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1rem 1.15rem;
+  outline: none;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: .4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.search-results li { border-radius: 10px; }
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+}
+.search-results a:hover, .search-results a:focus-visible { background: var(--paper-alt); }
+.search-type {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.search-title { font-weight: 600; font-size: .98rem; }
+.search-meta { font-size: .8rem; color: var(--ink-soft); }
+.search-empty { padding: 1.4rem 1rem; color: var(--ink-soft); font-size: .9rem; text-align: center; }
 
 /* ---- En-tête de numéro ---- */
 
@@ -365,6 +456,9 @@ a:focus-visible, button:focus-visible {
   font-size: .78rem;
 }
 
+/* Un seul badge coloré, réservé aux types qui méritent l'attention immédiate
+   (recommandation, PNDS, alerte) — tout le reste (essai, méta-analyse, autre)
+   reste en texte gris dans .item-source, sans couleur dédiée. */
 .badge {
   display: inline-block;
   padding: .2rem .6rem;
@@ -373,13 +467,10 @@ a:focus-visible, button:focus-visible {
   font-size: .72rem;
   text-transform: uppercase;
   letter-spacing: .05em;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
 }
-.badge-reco   { background: var(--badge-reco-bg);   color: var(--badge-reco-ink); }
-.badge-pnds   { background: var(--badge-pnds-bg);   color: var(--badge-pnds-ink); }
-.badge-essai  { background: var(--badge-essai-bg);  color: var(--badge-essai-ink); }
-.badge-meta   { background: var(--badge-meta-bg);   color: var(--badge-meta-ink); }
-.badge-alerte { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
-.badge-autre  { background: var(--badge-autre-bg);  color: var(--badge-autre-ink); }
+:root[data-theme="dark"] .badge { color: var(--accent); }
 
 .item-source { color: var(--ink-soft); }
 
@@ -410,60 +501,27 @@ a:focus-visible, button:focus-visible {
   margin: 0 0 .8rem;
 }
 
-.item h3 {
-  font-size: .78rem;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--ink-soft);
+/* Phrase-clé : ce qu'il faut retenir, en tête d'item, sans encadré de couleur —
+   remplace l'ancien duo « résumé + message à retenir » redondant. */
+.item-lead {
+  margin: .6rem 0 0;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin: 1.1rem 0 .3rem;
+  line-height: 1.4;
+  color: var(--ink);
 }
 
 .item p { margin: .35rem 0; }
 .item ul { margin: .4rem 0; padding-left: 1.3rem; }
 .item li { margin: .35rem 0; }
 
-.key-message {
-  margin: 1.1rem 0 0;
-  padding: .85rem 1.1rem;
-  background: var(--key-bg);
-  border-radius: var(--r-card);
-}
-.key-message h3 { margin: 0 0 .35rem; color: var(--accent); }
-.key-message p { margin: 0; font-weight: 500; font-size: 1.02rem; }
-
-.change-ref {
-  font-size: .8rem;
-  color: var(--ink-soft);
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-/* ---- Comparaisons (reco / PNDS) ---- */
-
-.compare {
-  margin: 1.2rem 0 0;
-  padding: 1rem 1.15rem;
-  background: var(--paper-alt);
-  border-radius: var(--r-card);
-}
-.compare > h3 { margin: 0 0 .3rem; color: var(--accent); }
-.compare-axis { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-.compare-axis:first-of-type { margin-top: .6rem; padding-top: 0; border-top: 0; }
-.compare-head {
-  margin: 0 0 .3rem;
-  font-weight: 600;
-  font-size: 1rem;
-}
-.compare-ref { font-weight: 400; color: var(--ink-soft); font-size: .88rem; }
-.compare-axis ul { margin: .3rem 0 0; padding-left: 1.3rem; }
-.compare-axis li { margin: .3rem 0; }
+/* Comparaisons / avant-après : texte simple dans le bloc « Détails », pas de
+   structure séparée à plusieurs niveaux. */
 .compare-caveat {
-  margin: 1.1rem 0 0;
-  padding-top: .9rem;
+  margin: .8rem 0 .2rem;
+  padding-top: .8rem;
   border-top: 1px solid var(--rule);
-  font-size: .8rem;
+  font-size: .85rem;
   color: var(--ink-soft);
   line-height: 1.5;
 }
@@ -525,11 +583,10 @@ a:focus-visible, button:focus-visible {
 .contexte .contexte-body { margin-top: .7rem; }
 .contexte .contexte-body p { margin: .5rem 0; }
 
-/* Mode « Express » : on réduit chaque item à son titre et à son message clé.
+/* Mode « Express » : on réduit chaque item à son titre et sa phrase-clé.
    Le sommaire, devenu navigation latérale, reste affiché. */
-article[data-mode="express"] .item-detail,
 article[data-mode="express"] .contexte,
-article[data-mode="express"] .base-note { display: none; }
+article[data-mode="express"] .verif-note { display: none; }
 
 /* ---- Aussi parus ---- */
 
@@ -567,12 +624,14 @@ article[data-mode="express"] .also-resume { display: none; }
 
 .archive-list { list-style: none; margin: 2rem 0 0; padding: 0; }
 .archive-list li {
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.archive-head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: .3rem 1rem;
-  padding: .8rem 0;
-  border-bottom: 1px solid var(--rule);
 }
 .archive-list .num {
   font-size: .8rem;
@@ -583,6 +642,7 @@ article[data-mode="express"] .also-resume { display: none; }
 .archive-list a { font-size: 1.15rem; text-decoration: none; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
 .archive-list a:hover { color: var(--accent); }
 .archive-list .count { font-size: .8rem; color: var(--ink-soft); }
+.archive-preview { margin: .35rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.4; }
 
 /* =====================================================================
    Page d'accueil
@@ -594,50 +654,17 @@ article[data-mode="express"] .also-resume { display: none; }
 @media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
 @media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
 
-/* Hero en deux colonnes : accroche à gauche, dernier numéro à droite. Aligné à
-   gauche et resserré — plus proche d'un outil de travail que d'une page vitrine. */
-.hero {
-  padding: 2rem 0 1.6rem;
-  display: grid;
-  gap: 1.6rem 2.5rem;
-  align-items: center;
-}
-@media (min-width: 1000px) {
-  .hero { grid-template-columns: 1.05fr .95fr; padding: 2.4rem 0 2rem; }
-}
-.hero-text { min-width: 0; }
-.hero h1 {
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+/* Accueil resserré, centré sur « cette semaine » : un titre court, la carte du
+   numéro en pleine largeur, un lien discret vers le reste. Pas de grand hero
+   ni de pédagogie sur la home — ça vit sur /methode.html. */
+.page-h1 {
+  padding-top: 1.6rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
   text-wrap: balance;
-  margin: .35rem 0 0;
+  margin: .3rem 0 1.4rem;
   font-weight: 700;
-}
-.hero .lede {
-  font-size: clamp(1rem, 1.3vw, 1.12rem);
-  line-height: 1.45;
-  color: var(--ink-soft);
-  max-width: 34rem;
-  margin: .8rem 0 0;
-  text-wrap: pretty;
-}
-.hero-actions {
-  margin-top: 1.2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .7rem;
-  font-size: .95rem;
-}
-.hero-ia {
-  margin: 1rem 0 0;
-  max-width: 34rem;
-  font-size: .85rem;
-  line-height: 1.45;
-  color: var(--ink-soft);
-  display: flex;
-  gap: .5rem;
-  align-items: baseline;
 }
 
 .btn {
@@ -654,7 +681,7 @@ article[data-mode="express"] .also-resume { display: none; }
 .btn-secondary { background: var(--paper-alt); color: var(--ink); }
 .btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
 
-/* Panneau « dernier numéro » mis en avant */
+/* Panneau « dernier numéro » : le centre de gravité de la page d'accueil. */
 .latest-card {
   border: 1px solid var(--rule);
   border-radius: var(--r-card);
@@ -662,6 +689,7 @@ article[data-mode="express"] .also-resume { display: none; }
   background: var(--surface);
   box-shadow: var(--shadow);
 }
+.latest-card--full { padding: 1.8rem 2rem 2rem; }
 .latest-card .kicker {
   font-size: .74rem;
   text-transform: uppercase;
@@ -669,190 +697,33 @@ article[data-mode="express"] .also-resume { display: none; }
   color: var(--accent);
   font-weight: 700;
 }
-.latest-card h3 { margin: .35rem 0 .15rem; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
-.latest-card .latest-meta { margin: 0 0 .6rem; font-size: .85rem; color: var(--ink-soft); }
-.latest-card ol {
-  margin: .6rem 0 .9rem;
-  padding-left: 1.2rem;
+.latest-card h2 { margin: .35rem 0 .15rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+.latest-card .latest-meta { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+
+.latest-list {
+  list-style: none;
+  margin: 1.2rem 0 1.4rem;
+  padding: 1.1rem 0 0;
   border-top: 1px solid var(--rule);
-  padding-top: .75rem;
-}
-.latest-card li { margin: .32rem 0; line-height: 1.35; }
-.latest-card a.more { font-size: .95rem; font-weight: 600; text-decoration: none; color: var(--accent); }
-.latest-card a.more:hover { text-decoration: underline; }
-
-.home-section { padding: 2.6rem 0 0; }
-.home-section > h2 {
-  text-align: center;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  font-weight: 700;
-  margin: 0 0 .4rem;
-}
-.home-section > .section-lede {
-  text-align: center;
-  max-width: 34rem;
-  margin: 0 auto 1.5rem;
-  color: var(--ink-soft);
-  font-size: 1.02rem;
-}
-
-/* ---- Schéma « Comment ça marche » (plus visuel) ---- */
-
-/* Le schéma est une illustration, pas de la prose : on le laisse déborder de la
-   colonne de texte pour que chaque étape ait de la place (sinon le texte se
-   coupe tous les deux mots sur un grand écran). */
-.pipeline {
-  margin: 0 auto;
-  max-width: 76rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  align-items: stretch;
-}
-
-@media (min-width: 1250px) {
-  .pipeline {
-    grid-template-columns: repeat(6, 1fr);
-    gap: .9rem;
-    /* débordement centré sur la fenêtre, au-delà de la colonne de texte */
-    width: min(78rem, calc(100vw - 5rem));
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/* En 3 colonnes, pas de flèche en fin de ligne. */
-@media (min-width: 721px) and (max-width: 1249px) {
-  .pipeline-node:nth-child(3n)::after { display: none; }
-}
-.pipeline-node {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: var(--r-card);
-  padding: 1.4rem .9rem 1.1rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: .7rem;
-  transition: transform .18s ease, box-shadow .18s ease;
+  gap: .9rem;
 }
-.pipeline-node:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.pipeline-node.is-ai {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.pipeline-node .step {
-  position: absolute;
-  top: .7rem;
-  left: .9rem;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .05em;
+.latest-list li { display: flex; flex-direction: column; gap: .15rem; }
+.latest-list a { font-size: 1.08rem; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
+.latest-list a:hover { color: var(--accent); }
+.latest-msg { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+
+.home-footline {
+  margin: 1.4rem 0 0;
+  font-size: .85rem;
   color: var(--ink-soft);
-  font-variant-numeric: tabular-nums;
-}
-.pipeline-node .icon {
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 50%;
-  background: var(--paper-alt);
   display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
   align-items: center;
-  justify-content: center;
-  font-size: 1.7rem;
-  line-height: 1;
-  margin-top: .4rem;
 }
-.pipeline-node.is-ai .icon { background: var(--accent); }
-.pipeline-node .body { display: flex; flex-direction: column; gap: .35rem; }
-.pipeline-node h3 {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  font-weight: 600;
-}
-.pipeline-node p { margin: 0; font-size: .8rem; line-height: 1.4; color: var(--ink-soft); }
-.pipeline-node .tag-ai {
-  display: inline-block;
-  margin-left: .3rem;
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--accent-ink);
-  background: var(--accent);
-  border-radius: var(--r-pill);
-  padding: .08rem .4rem;
-  vertical-align: middle;
-}
-.pipeline-node.is-ai .tag-ai { background: var(--accent-ink); color: var(--accent); }
-
-/* Étapes purement mécaniques (un programme, ni IA ni humain). */
-.pipeline-node .tag-auto {
-  display: inline-block;
-  margin-left: .3rem;
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--ink-soft);
-  border: 1px solid var(--rule);
-  border-radius: var(--r-pill);
-  padding: .08rem .4rem;
-  vertical-align: middle;
-  text-transform: uppercase;
-}
-
-/* Connecteurs fléchés entre les nœuds (desktop) */
-.pipeline-node:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -.62rem;
-  top: 3.1rem;
-  width: .8rem;
-  height: .8rem;
-  border-top: 2px solid var(--accent);
-  border-right: 2px solid var(--accent);
-  transform: rotate(45deg);
-  z-index: 2;
-}
-
-.pipeline-caption {
-  max-width: 40rem;
-  margin: 1.3rem auto 0;
-  text-align: center;
-  font-size: .88rem;
-  color: var(--ink-soft);
-  line-height: 1.55;
-}
-.pipeline-caption strong { color: var(--ink); }
-
-.home-section .hero-actions { margin-top: 1.4rem; }
-
-@media (max-width: 720px) {
-  .pipeline { grid-template-columns: 1fr; gap: 1rem; max-width: 24rem; }
-  .pipeline-node {
-    flex-direction: row;
-    text-align: left;
-    gap: 1rem;
-    padding: 1.1rem 1.2rem 1.1rem 3rem;
-  }
-  .pipeline-node .step { top: auto; left: 1rem; }
-  .pipeline-node .icon { flex: 0 0 auto; width: 3rem; height: 3rem; font-size: 1.4rem; margin-top: 0; }
-  .pipeline-node:not(:last-child)::after {
-    right: auto;
-    left: 2.5rem;
-    top: auto;
-    bottom: -.65rem;
-    transform: rotate(135deg);
-  }
-}
-
-.scope-list { font-size: .95rem; line-height: 1.7; }
+.home-footline a { white-space: nowrap; }
 
 /* ---- Schéma de méthode (page Méthode) ---- */
 
@@ -907,18 +778,16 @@ article[data-mode="express"] .also-resume { display: none; }
 /* ---- Responsive ---- */
 
 @media (max-width: 560px) {
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .hero-actions .btn { width: 100%; text-align: center; padding: .85rem 1rem; }
-  .home-section .hero-actions { align-items: center; }
   .page { padding-left: 1.15rem; padding-right: 1.15rem; }
   .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
-  .latest-card { padding: 1.4rem 1.3rem; }
+  .latest-card, .latest-card--full { padding: 1.4rem 1.3rem; }
+  .latest-card .btn { width: 100%; text-align: center; }
   .reading-bar { justify-content: flex-start; }
+  .search-overlay { padding-top: 4vh; }
 }
 
 @media (max-width: 480px) {
   .item h2 { font-size: 1.3rem; }
-  .hero { padding-top: 3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
