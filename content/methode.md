@@ -63,9 +63,12 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
     <div class="flow-badge">3</div>
     <div class="flow-body">
       <h3>Lecture par l'IA</h3>
-      <p>L'IA lit l'abstract, et le texte intégral libre (Europe PMC)
-      <strong>lorsqu'il est disponible</strong> — souvent l'abstract seul ; la
-      base réellement utilisée est indiquée sous chaque item.</p>
+      <p>L'IA lit l'abstract, et tente le texte intégral en accès libre légal
+      (Europe PMC, puis Unpaywall en repli) <strong>lorsqu'il est
+      accessible</strong> — le plus souvent, seul l'abstract est utilisable :
+      la plupart des éditeurs bloquent la récupération automatique (protection
+      anti-robot), même quand une version libre existe. La base réellement
+      utilisée est indiquée sous chaque item.</p>
     </div>
   </div>
   <div class="flow-connector"></div>
@@ -216,11 +219,20 @@ item).
 
 ## Accès aux articles
 
-La lecture du texte intégral par l'IA se limite aux articles en **accès ouvert**
-(PubMed Central, Europe PMC, Unpaywall). Pour les articles sous abonnement, la
-synthèse est faite à partir de l'abstract seul — c'est alors indiqué sous le
-titre. Le lien renvoie systématiquement à la source, que vous pouvez consulter
-via votre propre accès institutionnel.
+La lecture automatique du texte intégral se limite aux articles en **accès
+ouvert** (PubMed Central, Europe PMC, puis Unpaywall en repli). En pratique,
+même une version en accès libre existante est souvent injoignable
+automatiquement : la plupart des sites d'éditeurs bloquent les requêtes
+automatisées (protection anti-robot). Sur les articles sans PMC, le taux réel
+de texte intégral récupéré automatiquement reste donc faible — la synthèse se
+fait alors à partir de l'abstract seul, ce qui est indiqué sous le titre.
+
+Un ou deux articles majeurs de la semaine sont parfois relus en texte intégral
+« à la main » : quelqu'un ayant un accès institutionnel légitime (par exemple
+via son université) consulte l'article et transmet le texte, qui sert alors de
+base à la synthèse — sans jamais republier ce texte lui-même, ni contourner un
+accès restreint pour les autres articles. Le lien renvoie systématiquement à la
+source d'origine, à consulter via votre propre accès si vous en avez un.
 
 ## Errata
 

@@ -28,6 +28,10 @@ jobs:
       - name: Générer le numéro (sélection + synthèses par IA)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Facultatif : repli Unpaywall pour le texte intégral en accès libre.
+          # Pas un secret (Unpaywall l'exige juste comme contact) — variable de
+          # dépôt (Settings > Secrets and variables > Actions > Variables).
+          UNPAYWALL_EMAIL: ${{ vars.UNPAYWALL_EMAIL }}
         run: python3 pipeline/generate_issue.py --days 7
 
       - name: Committer le brouillon sur main

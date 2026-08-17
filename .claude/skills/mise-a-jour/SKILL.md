@@ -38,6 +38,16 @@ puis **vérifie** chaque synthèse face à sa source — et rétrograde en « Au
 paru » tout item dont un chiffre n'est pas retrouvé ou dont la confiance est
 faible.
 
+Pour le texte intégral : Europe PMC d'abord, puis **Unpaywall** en repli
+(`UNPAYWALL_EMAIL` doit être configuré comme variable de dépôt — voir
+`pipeline/pubmed_query.py:unpaywall_lookup`). À savoir avant de s'en étonner :
+Unpaywall **repère** une version en accès libre de façon fiable (~44 % des
+articles testés en ont une), mais l'**extraction automatique** échoue presque
+toujours — la plupart des sites d'éditeurs bloquent les requêtes automatisées
+(mur anti-robot, JavaScript de vérification, PDF non géré). Ce n'est pas un
+bug : c'est un best-effort silencieux qui dégrade proprement vers l'abstract
+seul. Ne jamais essayer de contourner un blocage (403, CAPTCHA) — s'arrêter là.
+
 **Si la clé est absente** (cas actuel de cet environnement), faire le travail à
 la main, sans jamais rien inventer :
 
@@ -58,6 +68,18 @@ Vérifier qu'aucun PMID n'a déjà été publié :
 ```bash
 grep -rho 'pubmed.ncbi.nlm.nih.gov/[0-9]*' content/issues/*.yaml | grep -o '[0-9]*$' | sort -u
 ```
+
+## 2 bis. Texte intégral manuel pour l'item phare (optionnel)
+
+Pour l'article le plus important de la semaine, si l'automatique n'a rien
+donné : proposer à l'utilisateur d'ouvrir l'article avec son accès
+institutionnel (université) et de coller les sections Méthodes/Résultats. Ne
+JAMAIS demander ses identifiants ni tenter de se connecter à sa place — c'est
+lui qui lit ce qu'il a le droit de lire, l'IA ne fait que rédiger la synthèse
+sur le texte qu'il transmet. Le site ne republie jamais ce texte, seulement la
+synthèse et un lien vers la source. Marquer `base_texte: texte_integral` dans
+ce cas. Ne pas insister si l'utilisateur préfère passer directement à l'étape
+suivante avec l'abstract seul — c'est optionnel, pas un blocage.
 
 ## 3. Règles éditoriales non négociables
 
