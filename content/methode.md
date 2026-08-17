@@ -1,16 +1,19 @@
 # Méthode
 
-**ThisWeek · Médecine interne** publie chaque lundi une sélection des
-nouvelles recommandations, PNDS et publications majeures utiles aux médecins
-internistes exerçant en France, avec pour chaque item un résumé, ce qui change,
-un message à retenir et une mise en contexte.
+**ThisWeek · Médecine interne** publie, en général chaque semaine, une
+sélection des nouvelles recommandations, PNDS et publications majeures utiles
+aux médecins internistes exerçant en France, avec pour chaque item un résumé,
+ce qui change, un message à retenir et une mise en contexte.
 
-> **Parti pris assumé : ce digest est entièrement généré par une intelligence
-> artificielle, de façon automatique et sans relecture par un médecin.** La
-> sélection des articles comme la rédaction des synthèses sont produites par IA.
-> C'est un choix revendiqué, et cette page en explique le fonctionnement et les
-> limites en toute transparence. Chaque item renvoie à sa source : l'information
-> doit être vérifiée sur la publication d'origine avant tout usage clinique.
+> **Parti pris assumé : la sélection des articles et la rédaction des
+> synthèses sont entièrement produites par une intelligence artificielle, sans
+> relecture par un médecin.** Un être humain déclenche chaque numéro (il n'y a
+> pas de tâche planifiée qui publie seule, sans que personne ne s'en occupe),
+> mais n'intervient à aucun moment sur le fond : ni sur le choix des articles,
+> ni sur le contenu des synthèses. C'est un choix revendiqué, et cette page en
+> explique le fonctionnement et les limites en toute transparence. Chaque item
+> renvoie à sa source : l'information doit être vérifiée sur la publication
+> d'origine avant tout usage clinique.
 
 ## Périmètre : la médecine interne telle qu'elle se pratique en France
 
@@ -98,9 +101,10 @@ interniste (par exemple la tolérance au long cours d'un immunosuppresseur).
   <div class="flow-step">
     <div class="flow-badge">6</div>
     <div class="flow-body">
-      <h3>Publication automatique</h3>
-      <p>Mise en ligne du numéro chaque lundi (dernier numéro, archives, flux
-      RSS), sans relecture humaine. Chaque item renvoie à sa source d'origine.</p>
+      <h3>Publication</h3>
+      <p>Mise en ligne du numéro (dernier numéro, archives, flux RSS) dès qu'il
+      est généré, sans relecture humaine du contenu. Chaque item renvoie à sa
+      source d'origine.</p>
     </div>
   </div>
 </div>
@@ -200,8 +204,9 @@ leur mise en forme et leur avant/après sont, eux, automatiques.
 
 ## Pourquoi ce choix, et comment l'utiliser
 
-Automatiser entièrement permet un digest **régulier, à l'heure, sans dépendre
-d'un relecteur** — mais transfère la vérification au lecteur. En pratique :
+Confier la sélection et la rédaction à une IA, sans relecture, permet un digest
+**régulier et rapide à produire, sans dépendre de la disponibilité d'un
+relecteur** — mais transfère la vérification au lecteur. En pratique :
 utilisez ThisWeek comme un **radar** (qu'est-il paru cette semaine ?) et une
 **porte d'entrée** vers les sources, pas comme une référence opposable. Avant
 d'agir sur une information, ouvrez l'article d'origine (lien fourni pour chaque
