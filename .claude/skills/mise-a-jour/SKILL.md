@@ -7,8 +7,13 @@ description: Génère et publie le numéro hebdomadaire de ThisWeek (veille de m
 
 Objectif : produire le numéro de la semaine, le publier, et signaler franchement
 ce qui n'a pas marché. Le produit est une veille de médecine interne pour
-internistes français, générée par IA sans relecture humaine (parti pris assumé
-et affiché sur le site).
+internistes français, générée par IA sans relecture humaine du contenu (parti
+pris assumé et affiché sur le site) — mais **déclenchée à la main** : le
+mainteneur a tranché, `ANTHROPIC_API_KEY` ne sera pas configurée en secret de
+dépôt, donc `pipeline/generate_issue.py` ne tourne jamais tout seul via GitHub
+Actions (son déclenchement planifié est désactivé pour cette raison, voir
+`.github/workflows/weekly-issue.yml`). **C'est cette session Claude Code, avec
+toi, qui fait le travail décrit ci-dessous — pas un cron.**
 
 ## 1. Situer la semaine
 
@@ -17,39 +22,18 @@ date -u +"%Y-%m-%d %A"
 ls content/issues/ | tail -3
 ```
 
-Le numéro se date du **lundi** et couvre les 7 jours écoulés. Vérifier qu'aucun
-numéro n'existe déjà pour cette date, et repérer un éventuel **trou** de semaine
-depuis le dernier numéro (c'est déjà arrivé deux fois) : si un trou existe, le
-signaler à l'utilisateur et proposer de le combler.
+Le numéro se date en général du **lundi** et couvre les 7 jours écoulés, mais
+rien n'oblige à un jour fixe puisque c'est déclenché à la main : générer pour
+la période réellement écoulée depuis le dernier numéro. Vérifier qu'aucun
+numéro n'existe déjà pour cette date, et repérer un éventuel **trou** de
+semaine depuis le dernier numéro (c'est déjà arrivé deux fois) : si un trou
+existe, le signaler à l'utilisateur et proposer de le combler.
 
 ## 2. Générer
 
-**Si `ANTHROPIC_API_KEY` est disponible**, le pipeline fait tout :
-
-```bash
-python3 pipeline/generate_issue.py --days 7
-```
-
-Toute la chaîne éditoriale tourne sur **Opus 5** (`MODEL_SELECT` et
-`MODEL_SYNTH` dans `pipeline/generate_issue.py`). Le pipeline exécute deux
-recherches PubMed (générale + une dédiée aux recommandations, pour qu'elles ne
-soient jamais noyées par le volume des méta-analyses), sélectionne, synthétise,
-puis **vérifie** chaque synthèse face à sa source — et rétrograde en « Aussi
-paru » tout item dont un chiffre n'est pas retrouvé ou dont la confiance est
-faible.
-
-Pour le texte intégral : Europe PMC d'abord, puis **Unpaywall** en repli
-(`UNPAYWALL_EMAIL` doit être configuré comme variable de dépôt — voir
-`pipeline/pubmed_query.py:unpaywall_lookup`). À savoir avant de s'en étonner :
-Unpaywall **repère** une version en accès libre de façon fiable (~44 % des
-articles testés en ont une), mais l'**extraction automatique** échoue presque
-toujours — la plupart des sites d'éditeurs bloquent les requêtes automatisées
-(mur anti-robot, JavaScript de vérification, PDF non géré). Ce n'est pas un
-bug : c'est un best-effort silencieux qui dégrade proprement vers l'abstract
-seul. Ne jamais essayer de contourner un blocage (403, CAPTCHA) — s'arrêter là.
-
-**Si la clé est absente** (cas actuel de cet environnement), faire le travail à
-la main, sans jamais rien inventer :
+Chercher les candidats PubMed réels (deux recherches : générale + une dédiée
+aux recommandations, pour qu'elles ne soient jamais noyées par le volume des
+méta-analyses) :
 
 ```bash
 cd pipeline && python3 -c "
@@ -62,12 +46,30 @@ for lbl, ds in [('RECOS', recos), ('GÉNÉRAL', docs)]:
 ```
 
 Puis récupérer les **abstracts réels** des candidats retenus via E-utilities
-(`efetch`, `rettype=abstract`) et rédiger le YAML dans `content/issues/`.
-Vérifier qu'aucun PMID n'a déjà été publié :
+(`efetch`, `rettype=abstract`) et rédiger le YAML dans `content/issues/`,
+exactement comme pour tous les numéros précédents de ce dépôt — aucun chiffre
+inventé, tout vient de l'abstract lu. Vérifier qu'aucun PMID n'a déjà été
+publié :
 
 ```bash
 grep -rho 'pubmed.ncbi.nlm.nih.gov/[0-9]*' content/issues/*.yaml | grep -o '[0-9]*$' | sort -u
 ```
+
+**Repli Unpaywall pour le texte intégral** : `pipeline/pubmed_query.py:unpaywall_lookup(doi)`
+repère une version en accès libre légale d'un article (Europe PMC en premier,
+Unpaywall ensuite). Utile pour savoir où chercher, mais l'extraction
+automatique du texte échoue la plupart du temps (mur anti-robot des éditeurs,
+~0 % mesuré sur les articles hors PMC) — ne pas s'attendre à ce que ça
+fonctionne systématiquement, et ne jamais tenter de contourner un blocage (403,
+CAPTCHA, mur JavaScript).
+
+**Note pour une éventuelle utilisation future du pipeline complet** (si le choix
+de rester manuel changeait un jour) : `pipeline/generate_issue.py --days 7`
+ferait tout automatiquement — sélection, synthèse, et une passe de
+**vérification** qui rétrograde en « Aussi paru » tout item dont un chiffre
+n'est pas retrouvé ou dont la confiance est faible. Toute la chaîne tourne sur
+**Opus 5** (`MODEL_SELECT`/`MODEL_SYNTH`). Ce code est maintenu et testé
+syntaxiquement, mais n'a jamais tourné en conditions réelles dans ce projet.
 
 ## 2 bis. Texte intégral manuel pour l'item phare (optionnel)
 

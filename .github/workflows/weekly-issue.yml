@@ -1,9 +1,14 @@
-name: Numéro hebdomadaire automatique
+name: Numéro hebdomadaire (génération automatique du pipeline)
 
+# Décision du mainteneur : ANTHROPIC_API_KEY ne sera jamais configurée en
+# secret de dépôt — les numéros sont générés à la main (session Claude Code,
+# skill /mise-a-jour), pas par ce workflow. Le déclenchement planifié est donc
+# désactivé : il échouerait chaque semaine sans jamais réussir (sys.exit dès
+# la vérification de la clé dans generate_issue.py), pour rien de plus qu'une
+# croix rouge hebdomadaire dans l'onglet Actions. Le code et le workflow
+# restent en place, utilisables en manuel (bouton "Run workflow") si ce choix
+# change un jour.
 on:
-  schedule:
-    # Chaque lundi 06:00 UTC : génère le brouillon de la semaine et publie.
-    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 permissions:

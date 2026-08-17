@@ -59,34 +59,29 @@ python3 site/build.py
 # Préparer le brouillon de la semaine : candidats PubMed des 7 derniers jours
 python3 pipeline/fetch_pubmed.py
 
-# Générer AUTOMATIQUEMENT le numéro de la semaine (sélection + synthèses par IA)
-#   nécessite la variable d'environnement ANTHROPIC_API_KEY
+# Pipeline complet (sélection + synthèses par IA) — nécessite ANTHROPIC_API_KEY,
+# jamais configurée en pratique : les numéros sont écrits à la main, voir plus bas
 python3 pipeline/generate_issue.py
 ```
 
-## Automatisation hebdomadaire
+## Génération du numéro : déclenchement manuel, décision permanente
 
-Chaque **lundi 06:00 UTC**, le workflow `.github/workflows/weekly-issue.yml` :
+`ANTHROPIC_API_KEY` **ne sera jamais configurée** comme secret de dépôt. Le
+workflow `.github/workflows/weekly-issue.yml` existe (il ferait tourner
+`pipeline/generate_issue.py` : sélection PubMed, synthèse et vérification par
+Claude, commit, build, déploiement), mais son déclenchement planifié est
+**désactivé** — il ne reste que `workflow_dispatch` (bouton manuel), pour
+éviter un échec rouge chaque semaine sans clé.
 
-1. interroge PubMed (périmètre médecine interne) sur les 7 derniers jours ;
-2. demande à **Claude** de sélectionner les items pertinents pour un service de
-   médecine interne français ;
-3. récupère les abstracts (et le texte intégral libre quand il existe) ;
-4. fait rédiger par Claude, pour chaque item, la synthèse structurée (résumé,
-   ce qui change, message clé, contexte) ;
-5. écrit `content/issues/AAAA-MM-JJ.yaml`, le committe, reconstruit et redéploie
-   le site.
-
-Le numéro est publié **tel quel** : entièrement généré par IA, **sans relecture
-par un médecin**. C'est un parti pris assumé, affiché sur chaque numéro et sur
-la page Méthode. La lecture du texte intégral par l'IA se limite aux articles en
-**accès ouvert** (PubMed Central, Europe PMC) ; les articles sous abonnement
-sont résumés à partir de l'abstract, ce qui est signalé.
-
-**Activation** : ajouter le secret `ANTHROPIC_API_KEY` dans les réglages du
-dépôt (*Settings → Secrets and variables → Actions*). On peut ensuite lancer
-le workflow à la demande via *Actions → Numéro hebdomadaire automatique → Run
-workflow*.
+En pratique, chaque numéro est produit **à la main, dans une session Claude
+Code** (skill `/mise-a-jour`) : recherche PubMed réelle, lecture des abstracts,
+rédaction du YAML, `python3 site/build.py`, puis push. Le contenu (choix des
+articles, synthèses) n'est **jamais relu ni modifié par un humain** — c'est un
+parti pris assumé, affiché sur chaque numéro et sur la page Méthode — seul le
+déclenchement de chaque numéro est manuel. La lecture du texte intégral se
+limite aux articles en accès ouvert (PubMed Central, Europe PMC, Unpaywall en
+repli) ; les articles sous abonnement sont résumés à partir de l'abstract, ce
+qui est signalé.
 
 Arborescence :
 
@@ -102,27 +97,20 @@ Arborescence :
 
 ### Publier un nouveau numéro
 
-1. `python3 pipeline/fetch_pubmed.py` → trier les candidats du brouillon
-   (compléter avec la veille HAS/PNDS/sociétés savantes).
-2. Rédiger les synthèses avec `prompts/synthese.md`, **faire relire par un
-   médecin**.
-3. Créer `content/issues/AAAA-MM-JJ.yaml` (copier la structure d'un numéro
-   existant). Retirer `brouillon: true` une fois la relecture médicale faite.
-4. `python3 site/build.py` pour vérifier, puis pousser : le site se déploie
-   tout seul.
-
-Chaque numéro YAML peut porter deux drapeaux facultatifs : `demo: true`
-(contenu fictif d'illustration) et `brouillon: true` (publications réelles,
-synthèses rédigées à partir des abstracts mais pas encore relues par un
-médecin). Chacun affiche une bannière dédiée.
+La procédure de référence est le skill Claude Code `/mise-a-jour`
+(`.claude/skills/mise-a-jour/SKILL.md`) : recherche PubMed réelle (générale +
+recommandations), lecture des abstracts, rédaction du YAML sans chiffre
+inventé, `python3 site/build.py` pour valider, vérification en HTTP local,
+puis push sur `main`. Aucune relecture médicale n'intervient sur le contenu —
+voir la page Méthode pour ce parti pris.
 
 ## Statut
 
-Site fonctionnel avec trois numéros rétrospectifs (n° 1 à 3, semaines de fin
-juin à début juillet 2026), rédigés à partir de vraies publications PubMed et
-signalés comme brouillons en attente de relecture médicale. Le périmètre est
-strictement celui de la **médecine interne telle qu'elle se pratique en France**
-(maladies auto-immunes et systémiques, vascularites, hématologie non maligne,
-MTEV, sarcoïdose, amylose…) — voir la page Méthode. Les documents de conception
-ci-dessus restent la référence pour les phases suivantes (automatisation du
-scoring et des synthèses).
+Site fonctionnel, 15 numéros publiés (semaines de mai à août 2026), rédigés à
+partir de vraies publications PubMed. Le périmètre est strictement celui de la
+**médecine interne telle qu'elle se pratique en France** (maladies auto-immunes
+et systémiques, vascularites, hématologie non maligne, MTEV, sarcoïdose,
+amylose…) — voir la page Méthode. Les documents de conception ci-dessus
+retracent la vision initiale du projet ; certains détails (calendrier,
+automatisation planifiée) ont depuis évolué vers un déclenchement manuel
+permanent, voir la section précédente.
