@@ -29,7 +29,7 @@
     {% endif %}
 
     <div class="reading-bar">
-      <span class="reading-est">⏱ Combien de temps avez-vous ?</span>
+      <span class="reading-est"><span aria-hidden="true">⏱</span> Combien de temps avez-vous ?</span>
       <div class="read-toggle" role="group" aria-label="Mode de lecture">
         <button type="button" data-mode="express">Express · ~{{ issue.express_min }} min</button>
         <button type="button" data-mode="complet" aria-pressed="true">Complet · ~{{ issue.lecture_min }} min</button>
@@ -54,60 +54,47 @@
   {% for item in issue["items"] %}
   <section class="item" id="item-{{ loop.index }}">
     <p class="item-kicker">
-      <span class="badge badge-{{ item.type }}">{{ type_labels[item.type] }}</span>
-      {% if item.pnds_statut %}<span class="pnds-statut pnds-{{ item.pnds_statut }}">{{ 'Nouveau PNDS' if item.pnds_statut == 'nouveau' else 'PNDS actualisé' }}</span>{% endif %}
-      <span class="item-source">{{ item.source }}</span>
-      {% if item.impact_factor %}<span class="if-chip" title="Impact factor approximatif de la revue">IF ≈ {{ item.impact_factor }}</span>{% endif %}
+      {% if item.type in ('reco', 'pnds', 'alerte') %}<span class="badge badge-{{ item.type }}">{{ type_labels[item.type] }}</span>{% endif %}
+      {%- if item.pnds_statut %} <span class="pnds-statut pnds-{{ item.pnds_statut }}">{{ 'Nouveau PNDS' if item.pnds_statut == 'nouveau' else 'PNDS actualisé' }}</span>{% endif %}
+      <span class="item-source">
+        {%- if item.type not in ('reco', 'pnds', 'alerte') %}{{ type_labels[item.type] }} · {% endif -%}
+        {{ item.source }}{% if item.impact_factor %} · IF ≈ {{ item.impact_factor }}{% endif %}
+      </span>
     </p>
     <h2>{% if item.url %}<a href="{{ item.url }}">{{ item.titre }}</a>{% else %}{{ item.titre }}{% endif %}</h2>
 
-    <div class="item-detail">
-      {% if item.base_texte == 'abstract_seul' %}
-      <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
-      {% endif %}
+    <p class="item-lead">{{ item.message_cle }}</p>
 
-      <h3>Résumé</h3>
-      <p>{{ item.resume }}</p>
+    {% if item.points_a_verifier %}
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> {{ item.points_a_verifier | join(' · ') }}</p>
+    {% endif %}
 
-      {% if item.ce_qui_change %}
-      <h3>Ce qui change <span class="change-ref">(vs {{ item.ce_qui_change.reference }})</span></h3>
-      <ul>
-        {% for point in item.ce_qui_change.points %}
-        <li>{{ point }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
-      {% if item.comparaisons %}
-      <div class="compare">
-        <h3>{{ 'Avant / après' if item.type == 'pnds' else 'Ce qui change — en détail' }}</h3>
-        {% for c in item.comparaisons %}
-        <div class="compare-axis">
-          <p class="compare-head">{{ c.titre }}{% if c.reference %} <span class="compare-ref">— {{ c.reference }}</span>{% endif %}</p>
-          <ul>
-            {% for point in c.points %}<li>{{ point }}</li>{% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-        <p class="compare-caveat">Comparaisons établies par l'IA à partir des sources et de connaissances générales — <strong>à vérifier sur les textes originaux</strong> (versions, autres recommandations, PNDS).</p>
-      </div>
-      {% endif %}
-
-      {% if item.points_a_verifier %}
-      <p class="verif-note"><strong>À vérifier en priorité :</strong> {{ item.points_a_verifier | join(' · ') }}</p>
-      {% endif %}
-    </div>
-
-    <div class="key-message">
-      <h3>Message à retenir</h3>
-      <p>{{ item.message_cle }}</p>
-    </div>
-
-    {% if item.contexte %}
+    {% if item.resume or item.contexte or item.comparaisons or item.ce_qui_change %}
     <details class="contexte">
-      <summary>Contexte — pourquoi cette étude, où elle s'inscrit</summary>
+      <summary>Détails et sources</summary>
       <div class="contexte-body">
-        {% for para in item.contexte %}<p>{{ para }}</p>{% endfor %}
+        {% if item.base_texte == 'abstract_seul' %}
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        {% endif %}
+
+        {% if item.resume %}<p>{{ item.resume }}</p>{% endif %}
+
+        {% if item.ce_qui_change %}
+        <p><strong>Ce qui change</strong> (vs {{ item.ce_qui_change.reference }}) :
+        {{ item.ce_qui_change.points | join(' · ') }}</p>
+        {% endif %}
+
+        {% if item.comparaisons %}
+        <p class="compare-caveat"><strong>{{ 'Avant / après' if item.type == 'pnds' else 'Comparaisons' }}</strong>
+        (établies par l'IA à partir des sources et de connaissances générales — à vérifier sur
+        les textes originaux) :</p>
+        {% for c in item.comparaisons %}
+        <p><em>{{ c.titre }}</em>{% if c.reference %} — {{ c.reference }}{% endif %} :
+        {{ c.points | join(' · ') }}</p>
+        {% endfor %}
+        {% endif %}
+
+        {% for para in (item.contexte or []) %}<p>{{ para }}</p>{% endfor %}
       </div>
     </details>
     {% endif %}

@@ -42,6 +42,7 @@ from pubmed_query import (
     eutils_get,
     is_retracted,
     search_internal_medicine,
+    search_recommendations,
 )
 
 try:
@@ -124,13 +125,23 @@ def _http_text(url: str, retries: int = 3) -> str:
 
 
 def search_candidates(days: int) -> list[dict]:
-    docs = search_internal_medicine(days, retmax=150)
+    """Fusionne la recherche générale (plafonnée, dominée en volume par les
+    méta-analyses/essais) et la recherche dédiée aux recommandations (jamais
+    plafonnée, volume hebdomadaire faible) — pour qu'une recommandation ne soit
+    jamais évincée par le simple nombre de méta-analyses de la semaine."""
+    general = search_internal_medicine(days, retmax=150)
+    recos = search_recommendations(days)
+    seen: set[str] = set()
     out = []
-    for d in docs:
-        if is_retracted(d):  # filet en plus de l'exclusion dans la requête
-            print(f"  ⦸ écarté (rétracté) : {d['pmid']}")
-            continue
-        out.append({**d, "if_approx": journal_if(d["revue"])})
+    for is_reco, docs in ((True, recos), (False, general)):
+        for d in docs:
+            if d["pmid"] in seen:
+                continue
+            seen.add(d["pmid"])
+            if is_retracted(d):  # filet en plus de l'exclusion dans la requête
+                print(f"  ⦸ écarté (rétracté) : {d['pmid']}")
+                continue
+            out.append({**d, "if_approx": journal_if(d["revue"]), "is_reco_search": is_reco})
     return out
 
 
@@ -324,7 +335,8 @@ def synthesize_brief(client, refs: list[dict]) -> list[dict]:
 
 def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[dict], list[dict]]:
     listing = "\n".join(
-        f'{c["pmid"]} | {c["revue"]} | IF≈{c["if_approx"] if c["if_approx"] is not None else "?"}'
+        f'{"[RECO] " if c.get("is_reco_search") else ""}{c["pmid"]} | {c["revue"]} | '
+        f'IF≈{c["if_approx"] if c["if_approx"] is not None else "?"}'
         f' | {"/".join(c["pubtypes"])} | {c["titre"]}'
         for c in candidates)
     prompt = (
@@ -352,6 +364,10 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
         "à juger sur le fond) : privilégie la revue au facteur d'impact le plus "
         "élevé, sans jamais faire de l'IF un critère supérieur à la pertinence, "
         "et sans jamais pénaliser une recommandation française (souvent sans IF).\n\n"
+        "Les candidats préfixés « [RECO] » viennent d'une recherche dédiée aux "
+        "recommandations/consensus : ne les laisse JAMAIS de côté au seul motif "
+        "que la semaine compte beaucoup de méta-analyses — une recommandation "
+        "pertinente prime toujours sur une méta-analyse de portée moindre.\n\n"
         "RÈGLE STRICTE SUR LES RECOMMANDATIONS ET CONSENSUS : ne retiens une "
         "recommandation, une guideline ou un consensus QUE s'il s'agit (a) d'un "
         "texte INTERNATIONAL d'une grande société savante (EULAR, ACR, KDIGO, ASH, "
@@ -422,7 +438,12 @@ def synthesize(client, item: dict, source_text: str) -> tuple[dict, str]:
         "jugement PRINCIPAL est négatif ou non atteint, énonce D'ABORD ce résultat "
         "principal ; ne présente jamais un résultat de sous-groupe ou secondaire "
         "comme s'il était le résultat principal, et qualifie-le explicitement "
-        "d'« analyse de sous-groupe exploratoire, génératrice d'hypothèses » ;\n"
+        "d'« analyse de sous-groupe exploratoire, génératrice d'hypothèses ». "
+        "RÈGLE ANTI-CAUSALITÉ : si la source est une étude OBSERVATIONNELLE "
+        "(cohorte, cas-témoins, registre — pas un essai randomisé), n'emploie "
+        "JAMAIS un langage causal (« provoque », « cause », « le surrisque est dû "
+        "à ») ; utilise « associé à », « corrélé avec » et signale explicitement "
+        "le risque de facteur confondant (ex. la maladie sous-jacente elle-même) ;\n"
         "- a_ce_qui_change : true seulement si le texte décrit explicitement un "
         "changement par rapport à une version antérieure ou à la pratique "
         "standard ; sinon false ;\n"
@@ -484,9 +505,12 @@ def verify_synthesis(client, out: dict, source_text: str) -> tuple[bool, list[st
         "seuil) et CHAQUE affirmation factuelle de la synthèse figure bien dans le "
         "texte source, sans déformation. Signale en particulier : un chiffre "
         "absent ou modifié ; un résultat de sous-groupe présenté comme résultat "
-        "principal ; une conclusion plus forte que ce que dit la source. Ne juge "
-        "pas le style ni les mises en contexte générales. Réponds valide=false s'il "
-        "existe au moins un problème factuel, et liste les problèmes.\n\n"
+        "principal ; une conclusion plus forte que ce que dit la source ; ET un "
+        "langage CAUSAL (« provoque », « cause », « est responsable de ») employé "
+        "pour décrire une association tirée d'une étude OBSERVATIONNELLE (cohorte, "
+        "cas-témoins, registre) plutôt qu'un essai randomisé. Ne juge pas le style "
+        "ni les mises en contexte générales. Réponds valide=false s'il existe au "
+        "moins un problème factuel, et liste les problèmes.\n\n"
         f"=== TEXTE SOURCE ===\n{source_text[:14000]}\n\n=== SYNTHÈSE ===\n{a_verifier}")
     d = claude_json(client, prompt, VERIFY_SCHEMA, model=MODEL_SYNTH, max_tokens=1200)
     return bool(d.get("valide")), [p for p in d.get("problemes", []) if p]

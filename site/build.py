@@ -137,6 +137,35 @@ def load_veille() -> dict | None:
     }
 
 
+def build_search_index(issues: list[dict]) -> str:
+    """Index JSON pour la recherche côté client (aucun serveur) : un objet par
+    item, avec assez de texte pour matcher un nom de pathologie ou de molécule."""
+    import json as _json
+    rows = []
+    for issue in issues:
+        for item in issue.get("items", []):
+            rows.append({
+                "t": item["titre"],
+                "m": item.get("message_cle", ""),
+                "s": item.get("source", ""),
+                "u": f"numeros/{issue['slug']}.html",
+                "n": issue["numero"],
+                "d": issue["date_fr"],
+                "y": TYPE_LABELS.get(item.get("type"), "Autre"),
+            })
+        for ref in issue.get("aussi_parus", []) or []:
+            rows.append({
+                "t": ref["titre"],
+                "m": ref.get("resume", ""),
+                "s": ref.get("source", ""),
+                "u": f"numeros/{issue['slug']}.html",
+                "n": issue["numero"],
+                "d": issue["date_fr"],
+                "y": "Aussi paru",
+            })
+    return _json.dumps(rows, ensure_ascii=False)
+
+
 def build_rss(issues: list[dict]) -> str:
     entries = []
     for issue in issues:
@@ -218,6 +247,7 @@ def main() -> None:
     (DIST / "methode.html").write_text(methode, encoding="utf-8")
 
     (DIST / "rss.xml").write_text(build_rss(issues), encoding="utf-8")
+    (DIST / "search-index.json").write_text(build_search_index(issues), encoding="utf-8")
 
     n_pages = len(list(DIST.rglob("*.html"))) + 1
     print(f"✓ {len(issues)} numéro(s), {n_pages} fichiers générés dans {DIST.relative_to(ROOT)}/")
