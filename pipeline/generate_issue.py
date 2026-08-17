@@ -54,10 +54,12 @@ ROOT = Path(__file__).resolve().parent.parent
 ISSUES = ROOT / "content" / "issues"
 PNDS_REGISTRY = ROOT / "content" / "pnds.yaml"
 
-# Modèle léger pour le tri d'un grand nombre de candidats, modèle de haut niveau
-# pour la synthèse et la vérification.
-MODEL_SELECT = "claude-sonnet-5"
-MODEL_SYNTH = "claude-opus-4-8"
+# Toute la chaîne éditoriale tourne sur Opus 5 : c'est du contenu médical publié
+# sans relecture humaine, la qualité de jugement primait sur le coût. Le tri des
+# candidats peut être repassé sur "claude-sonnet-5" pour réduire la facture — la
+# sélection est la tâche la moins exigeante des trois.
+MODEL_SELECT = "claude-opus-5"
+MODEL_SYNTH = "claude-opus-5"
 
 MOIS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
            "août", "septembre", "octobre", "novembre", "décembre"]
