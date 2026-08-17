@@ -151,10 +151,14 @@ lorsqu'ils recadrent utilement les attentes.
    résultat principal quand le critère de jugement principal est négatif.
 3. **Une passe de vérification automatique** suit la rédaction : un second appel
    d'IA relit la synthèse face à sa source et signale tout chiffre ou affirmation
-   non retrouvé. Si la vérification échoue, ou si l'IA elle-même déclare une
+   non retrouvé — y compris un langage causal employé à tort sur une étude
+   observationnelle. Si la vérification échoue, ou si l'IA elle-même déclare une
    confiance faible, l'item est **rétrogradé en « Aussi paru »** (résumé court)
    au lieu d'être publié en synthèse détaillée. Ce garde-fou est automatique : ce
-   **n'est pas une relecture médicale**.
+   **n'est pas une relecture médicale, et le vérificateur n'est pas indépendant
+   du rédacteur** — c'est un second appel du même modèle, qui attrape les écarts
+   entre le texte source et le résumé, pas les biais d'interprétation que les
+   deux passes pourraient partager.
 4. **Aucune relecture humaine n'a lieu avant publication.** C'est un parti pris
    assumé, au service de la fraîcheur et de la régularité. La contrepartie est
    que des erreurs d'interprétation restent possibles : l'IA peut mal résumer,

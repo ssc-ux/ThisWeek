@@ -10,9 +10,14 @@
 <ul class="archive-list">
   {% for issue in issues %}
   <li>
-    <span class="num">N° {{ issue.numero }}</span>
-    <a href="{{ root }}numeros/{{ issue.slug }}.html">Semaine du {{ issue.semaine }}</a>
-    <span class="count">{{ issue["items"] | length }} items{% if issue.demo %} · démonstration{% endif %}</span>
+    <div class="archive-head">
+      <span class="num">N° {{ issue.numero }}</span>
+      <a href="{{ root }}numeros/{{ issue.slug }}.html">Semaine du {{ issue.semaine }}</a>
+      <span class="count">{{ issue["items"] | length }} items{% if issue.demo %} · démonstration{% endif %}</span>
+    </div>
+    {% if issue["items"] %}
+    <p class="archive-preview">{{ issue["items"] | map(attribute="titre") | join(' · ') }}</p>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

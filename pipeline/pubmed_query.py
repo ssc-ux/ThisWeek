@@ -19,20 +19,33 @@ import urllib.request
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 # Périmètre médecine interne (termes MeSH), croisé avec des types de publication.
+# La polyarthrite rhumatoïde pure a été retirée (relève de la rhumatologie, pas
+# de la médecine interne) ; seules restent les maladies effectivement suivies
+# en médecine interne en France.
 MI_MESH = (
-    '("lupus erythematosus, systemic"[mh] OR vasculitis[mh] OR "Sjogren\'s syndrome"[mh] '
-    'OR "Behcet syndrome"[mh] OR sarcoidosis[mh] OR amyloidosis[mh] OR myositis[mh] '
-    'OR "scleroderma, systemic"[mh] OR "giant cell arteritis"[mh] OR "antiphospholipid syndrome"[mh] '
+    '("lupus erythematosus, systemic"[mh] OR vasculitis[mh] OR "takayasu arteritis"[mh] '
+    'OR "anti-neutrophil cytoplasmic antibody-associated vasculitis"[mh] '
+    'OR "Sjogren\'s syndrome"[mh] OR "Behcet syndrome"[mh] OR sarcoidosis[mh] '
+    'OR amyloidosis[mh] OR myositis[mh] OR "scleroderma, systemic"[mh] '
+    'OR "giant cell arteritis"[mh] OR "antiphospholipid syndrome"[mh] '
     'OR "hereditary autoinflammatory diseases"[mh] OR "fever of unknown origin"[mh] '
     'OR "purpura, thrombotic thrombocytopenic"[mh] OR "purpura, thrombocytopenic, idiopathic"[mh] '
     'OR "anemia, hemolytic, autoimmune"[mh] OR "venous thromboembolism"[mh] '
     'OR "immunoglobulin g4-related disease"[mh] OR "still\'s disease, adult-onset"[mh] '
-    'OR "arthritis, rheumatoid"[mh] OR "polymyalgia rheumatica"[mh] OR "granulomatosis with polyangiitis"[mh])'
+    'OR "polymyalgia rheumatica"[mh] OR "granulomatosis with polyangiitis"[mh] '
+    'OR "microscopic polyangiitis"[mh] OR "opportunistic infections"[mh] '
+    'OR "herpes zoster"[mh] OR "immunocompromised host"[mh] '
+    'OR "pneumocystis infections"[mh] OR "VEXAS syndrome"[tiab])'
 )
 PUB_TYPES = (
     '(Guideline[pt] OR Practice Guideline[pt] OR "Randomized Controlled Trial"[pt] '
     'OR Meta-Analysis[pt] OR "Systematic Review"[pt] OR Consensus Development Conference[pt])'
 )
+# Recommandations et consensus : bien plus rares que les méta-analyses/essais, donc
+# noyés dans la requête générale (à volume constant, retmax les évince rarement mais
+# le tri en aval peut les diluer). Cette petite requête dédiée les récupère TOUS,
+# sans plafond de volume, pour garantir qu'aucune recommandation n'est manquée.
+RECO_PUB_TYPES = '(Guideline[pt] OR Practice Guideline[pt] OR Consensus Development Conference[pt])'
 # On écarte les publications rétractées dès la requête (filet complété par
 # `is_retracted` avant synthèse).
 RETRACTED_EXCLUDE = 'NOT ("Retracted Publication"[pt])'
@@ -94,6 +107,22 @@ def search_internal_medicine(days: int, retmax: int = 150) -> list[dict]:
         data = eutils_get("esearch.fcgi", {
             "db": "pubmed", "term": term,
             "reldate": days, "datetype": "pdat", "retmax": retmax,
+        })
+    except Exception:
+        return []
+    ids = ((data or {}).get("esearchresult", {}) or {}).get("idlist", []) or []
+    return summaries(ids)
+
+
+def search_recommendations(days: int) -> list[dict]:
+    """Recommandations/consensus du périmètre, TOUJOURS récupérées en entier (pas
+    de plafond) : leur volume hebdomadaire est faible, contrairement aux
+    méta-analyses, donc pas de risque de dépasser un retmax."""
+    term = f"{MI_MESH} AND {RECO_PUB_TYPES} {RETRACTED_EXCLUDE}"
+    try:
+        data = eutils_get("esearch.fcgi", {
+            "db": "pubmed", "term": term,
+            "reldate": days, "datetype": "pdat", "retmax": 60,
         })
     except Exception:
         return []

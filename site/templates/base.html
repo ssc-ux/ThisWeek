@@ -24,6 +24,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
 <div class="page{% if page_class %} {{ page_class }}{% endif %}">
   <header class="masthead">
     <a class="brand" href="{{ root }}index.html">This<span class="week">Week</span> · Médecine interne</a>
@@ -31,17 +32,19 @@
       <a href="{{ root }}index.html"{% if active == 'accueil' %} aria-current="page"{% endif %}>Accueil</a>
       <a href="{{ root }}numeros/{{ latest_slug }}.html"{% if active == 'dernier' %} aria-current="page"{% endif %}>Dernier numéro</a>
       <a href="{{ root }}archives.html"{% if active == 'archives' %} aria-current="page"{% endif %}>Archives</a>
-      <a href="{{ root }}veille.html"{% if active == 'veille' %} aria-current="page"{% endif %}>Veille</a>
       <a href="{{ root }}methode.html"{% if active == 'methode' %} aria-current="page"{% endif %}>Méthode</a>
       <a href="{{ root }}rss.xml">RSS</a>
-      <button type="button" class="theme-toggle" id="theme-toggle"
+      <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle"
               aria-label="Passer en thème sombre" title="Thème clair / sombre">
         <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
       </button>
     </nav>
   </header>
 
-  <main>
+  <main id="contenu">
   {% block content %}{% endblock %}
   </main>
 
@@ -53,6 +56,16 @@
     tout usage clinique. Voir la page <a href="{{ root }}methode.html">Méthode</a>.</p>
   </footer>
 </div>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
+    <input type="search" id="search-input" class="search-input"
+           placeholder="Chercher une pathologie, un traitement… (ex. vascularite, amylose)"
+           autocomplete="off" aria-label="Rechercher dans les numéros">
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
 <script>
 (function () {
   var btn = document.getElementById('theme-toggle');
@@ -68,6 +81,74 @@
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('tw-theme', next); } catch (e) {}
     label();
+  });
+})();
+
+(function () {
+  var openBtn = document.getElementById('search-open');
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!openBtn || !overlay) return;
+  var root = {{ root | tojson }};
+  var index = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function render(q) {
+    q = q.trim().toLowerCase();
+    if (!index) { results.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
+    if (!q) {
+      results.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
+        + 'traitement (ex. « lupus », « vascularite », « amylose »).</li>';
+      return;
+    }
+    var hits = index.filter(function (r) {
+      return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 12);
+    if (!hits.length) {
+      results.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
+      return;
+    }
+    results.innerHTML = hits.map(function (r) {
+      return '<li><a href="' + root + esc(r.u) + '">'
+        + '<span class="search-type">' + esc(r.y) + '</span>'
+        + '<span class="search-title">' + esc(r.t) + '</span>'
+        + '<span class="search-meta">' + esc(r.s.split('·')[0].trim()) + ' · N° ' + r.n + '</span>'
+        + '</a></li>';
+    }).join('');
+  }
+
+  function open() {
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (index === null) {
+      fetch(root + 'search-index.json').then(function (r) { return r.json(); })
+        .then(function (data) { index = data; render(input.value); })
+        .catch(function () { index = []; render(input.value); });
+    }
+    render(input.value);
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  input.addEventListener('input', function () { render(input.value); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') { close(); return; }
+    if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
+        && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); open();
+    }
   });
 })();
 </script>
