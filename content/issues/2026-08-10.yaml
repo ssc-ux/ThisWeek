@@ -1,0 +1,91 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 14
+semaine: "4 au 10 août 2026"
+date: 2026-08-10
+edito: >-
+  Semaine creuse d'août : une seule publication justifie une synthèse complète —
+  les inhibiteurs de SGLT2 dans l'amylose cardiaque à transthyrétine. Deux
+  autres publications sont signalées sans synthèse détaillée. Mieux vaut un
+  numéro court qu'un numéro gonflé d'items tièdes.
+
+items:
+  - type: meta
+    titre: "Inhibiteurs de SGLT2 dans l'amylose cardiaque à transthyrétine : signal de survie sur données non randomisées"
+    source: "Current Problems in Cardiology · revue systématique et méta-analyse stratifiée"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42546911/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse stratifiée (18 études, 12 039 patients
+      traités par inhibiteur de SGLT2 contre 12 016 comparateurs) dans l'amylose
+      cardiaque à transthyrétine (ATTR-CM), population exclue ou
+      sous-représentée des grands essais randomisés de SGLT2. Le traitement par
+      SGLT2 est ASSOCIÉ à une mortalité toutes causes plus faible spécifiquement
+      dans l'ATTR (HR 0,65 ; IC95 0,56-0,76 ; I² = 37,5 % ; 8 études). Les
+      événements liés à l'insuffisance cardiaque vont dans le même sens sans
+      atteindre la significativité (HR 0,73 ; IC95 0,50-1,06 ; I² = 73,2 %) ; le
+      critère composite mortalité/insuffisance cardiaque est associé à un risque
+      plus faible (HR 0,69 ; IC95 0,55-0,85). Tolérance apparemment bonne :
+      arrêts définitifs 6,9 %, événements génito-urinaires 4,7 %, atteintes
+      rénales aiguës 2,3 %. Les analyses arythmiques sont exploratoires.
+    message_cle: >-
+      Chez les patients ayant une amylose cardiaque à transthyrétine, les
+      inhibiteurs de SGLT2 sont associés à une mortalité plus faible et semblent
+      bien tolérés — mais ces données ne sont PAS randomisées (risque de biais
+      d'indication) : elles justifient de ne pas priver ces patients d'un
+      traitement d'insuffisance cardiaque standard, pas d'affirmer un bénéfice
+      causal.
+    contexte:
+      - >-
+        L'amylose à transthyrétine est une maladie de dépôt systémique dont
+        l'expression cardiaque domine le pronostic. Longtemps considérée comme
+        rare, elle est de plus en plus diagnostiquée, à l'interface de la
+        médecine interne, de la cardiologie et de la neurologie — et fait l'objet
+        de traitements spécifiques (tafamidis, vutrisiran, acoramidis) déjà
+        évoqués dans ce digest.
+      - >-
+        La question posée ici est différente : au-delà du traitement spécifique
+        de l'amylose, ces patients bénéficient-ils du traitement moderne de
+        l'insuffisance cardiaque ? Ils avaient été exclus ou très
+        sous-représentés dans les grands essais randomisés de SGLT2 (DAPA-HF,
+        EMPEROR), laissant un vide.
+      - >-
+        L'interprétation demande de la prudence : il s'agit d'un regroupement
+        d'études NON randomisées (évaluation du risque de biais par ROBINS-I,
+        certitude GRADE), avec un possible chevauchement de bases de données
+        signalé par les auteurs. Un biais d'indication est très plausible — les
+        patients à qui l'on prescrit un SGLT2 sont probablement moins avancés
+        dans leur maladie que ceux à qui on n'en prescrit pas. Le signal de
+        mortalité ne peut donc pas être lu comme un effet causal démontré.
+      - >-
+        En pratique, ces données invitent surtout à ne pas exclure d'emblée un
+        patient ATTR du traitement d'insuffisance cardiaque recommandé, en
+        coordination avec le cardiologue. Un essai randomisé dédié reste
+        nécessaire pour conclure.
+
+aussi_parus:
+  - titre: "Inhibiteurs de JAK dans le syndrome CANDLE : revue systématique de 46 patients"
+    source: "European Journal of Pediatrics"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42547647/"
+    resume: >-
+      Le syndrome CANDLE est une maladie auto-inflammatoire monogénique
+      autosomique récessive liée à une atteinte du protéasome, sans traitement
+      standard établi. Revue systématique de 16 articles et 46 patients (âge
+      médian 4,5 ans, donc population essentiellement pédiatrique) traités par
+      inhibiteur de JAK, surtout le baricitinib (73,9 %). Manifestations
+      fréquentes : éruption cutanée (tous les patients), fièvre (91,3 %),
+      lipodystrophie (73,9 %), retard de croissance (56,5 %). Signalé ici pour
+      les internistes suivant des patients auto-inflammatoires en transition
+      pédiatrie-adulte ; les données d'efficacité restent descriptives, sur de
+      petits effectifs.
+  - titre: "Remdesivir chez l'insuffisant rénal et le transplanté d'organe : analyses virologiques de REDPINE"
+    source: "Antimicrobial Agents and Chemotherapy"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42429789/"
+    resume: >-
+      Analyses virologiques de l'essai de phase 3 REDPINE chez 243 patients
+      hospitalisés pour COVID-19 avec insuffisance rénale, dont 42 transplantés
+      d'organe solide sous immunosuppresseurs. Le remdesivir réduit
+      significativement plus la charge virale que le placebo aux jours 5 et 7
+      (p ≤ 0,034). Point notable pour l'interniste : chez les patients
+      transplantés, la baisse de charge virale sous remdesivir est
+      significativement MOINDRE que chez les non-transplantés aux jours 5, 7 et
+      14 (p < 0,05) — la clairance virale est plus lente sous immunosuppression.
