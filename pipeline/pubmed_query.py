@@ -17,6 +17,12 @@ import urllib.parse
 import urllib.request
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+UNPAYWALL = "https://api.unpaywall.org/v2"
+# Unpaywall exige un email de contact dans chaque requête (politique d'usage
+# de leur API, pas une clé secrète — voir unpaywall.org/products/api). À
+# fournir via la variable d'environnement UNPAYWALL_EMAIL (secret ou variable
+# de dépôt) ; si absente, les recherches Unpaywall sont simplement sautées.
+UNPAYWALL_EMAIL = os.environ.get("UNPAYWALL_EMAIL")
 
 # Périmètre médecine interne (termes MeSH), croisé avec des types de publication.
 # La polyarthrite rhumatoïde pure a été retirée (relève de la rhumatologie, pas
@@ -128,6 +134,29 @@ def search_recommendations(days: int) -> list[dict]:
         return []
     ids = ((data or {}).get("esearchresult", {}) or {}).get("idlist", []) or []
     return summaries(ids)
+
+
+def unpaywall_lookup(doi: str) -> dict | None:
+    """Cherche une version en accès libre légale du DOI (dépôt institutionnel,
+    page éditeur en libre accès…). Renvoie {url, host_type} ou None.
+
+    Ceci ne fait QUE repérer l'existence d'une version libre — ça ne contourne
+    aucun paywall, ça ne lit rien derrière un accès payant ou institutionnel.
+    Sauté silencieusement si UNPAYWALL_EMAIL n'est pas configuré ou si le DOI
+    est absent.
+    """
+    if not doi or not UNPAYWALL_EMAIL:
+        return None
+    try:
+        url = f"{UNPAYWALL}/{urllib.parse.quote(doi)}?email={urllib.parse.quote(UNPAYWALL_EMAIL)}"
+        with urllib.request.urlopen(url, timeout=15) as resp:
+            data = json.load(resp)
+    except Exception:
+        return None
+    loc = data.get("best_oa_location") if data.get("is_oa") else None
+    if not loc or not loc.get("url"):
+        return None
+    return {"url": loc["url"], "host_type": loc.get("host_type")}
 
 
 def is_retracted(doc: dict) -> bool:
