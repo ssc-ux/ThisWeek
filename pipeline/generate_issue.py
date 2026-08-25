@@ -154,14 +154,8 @@ def fetch_abstract(pmid: str) -> str:
     return _http_text(url)
 
 
-def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
-    """Texte intégral libre via Europe PMC (introduction/discussion), si dispo."""
-    if not doc_pmcid:
-        return ""
-    xml = _http_text(
-        f"https://www.ebi.ac.uk/europepmc/webservices/rest/PMC{doc_pmcid}/fullTextXML")
-    if not xml:
-        return ""
+def _sections_from_jats(xml: str) -> str:
+    """Extrait introduction/contexte/discussion d'un XML JATS (Europe PMC ou PMC)."""
     chunks = []
     for sec in re.findall(r"<sec[^>]*>.*?</sec>", xml, re.S):
         title = re.search(r"<title[^>]*>(.*?)</title>", sec, re.S)
@@ -170,6 +164,30 @@ def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
             body = re.sub("<[^>]+>", " ", sec)
             chunks.append(re.sub(r"\s+", " ", body).strip())
     return "\n\n".join(chunks)[:6000]
+
+
+def fetch_fulltext(pmid: str, doc_pmcid: str | None) -> str:
+    """Texte intégral libre (introduction/discussion) d'un article déposé en PMC.
+
+    Deux sources pour le même dépôt, essayées dans l'ordre :
+      1. Europe PMC — pratique, mais en retard sur les articles très récents,
+         pour lesquels il répond 404 alors que le dépôt PMC existe déjà ;
+      2. efetch db=pmc du NCBI — repli sur la source d'origine.
+
+    Le repli n'est pas cosmétique : sur le numéro du 24 août 2026, Europe PMC
+    répondait 404 sur les cinq articles déposés en PMC, dont un que le NCBI
+    servait sans problème.
+    """
+    if not doc_pmcid:
+        return ""
+    xml = _http_text(
+        f"https://www.ebi.ac.uk/europepmc/webservices/rest/PMC{doc_pmcid}/fullTextXML")
+    text = _sections_from_jats(xml) if xml else ""
+    if text:
+        return text
+    xml = _http_text(f"{EUTILS}/efetch.fcgi?" + urllib.parse.urlencode(
+        {"db": "pmc", "id": doc_pmcid, "retmode": "xml"}))
+    return _sections_from_jats(xml) if xml else ""
 
 
 def fetch_fulltext_unpaywall(doi: str | None) -> str:
@@ -208,11 +226,25 @@ def fetch_fulltext_unpaywall(doi: str | None) -> str:
 
 
 def get_pmcid(pmid: str) -> str | None:
+    """PMCID de l'article LUI-MÊME, jamais celui d'un article qui le cite.
+
+    elink renvoie plusieurs jeux de liens vers PMC et il faut impérativement
+    les distinguer par `linkname` :
+      - `pubmed_pmc`      → le dépôt PMC de cet article (ce qu'on veut) ;
+      - `pubmed_pmc_refs` → les articles PRÉSENTS DANS PMC QUI CITENT celui-ci.
+
+    Filtrer sur `dbto == "pmc"` seul confond les deux. Un article récent sous
+    abonnement n'a souvent aucun `pubmed_pmc` mais déjà des `pubmed_pmc_refs` :
+    on récupérait alors le texte intégral d'un article citant, sans rapport,
+    pour le faire résumer comme s'il s'agissait de la source. Vérifié sur les
+    recommandations IDSA de cette semaine (PMID 41739597), où ce chemin
+    renvoyait un éditorial de transplantation cardio-pulmonaire.
+    """
     try:
         data = eutils_get("elink.fcgi", {"dbfrom": "pubmed", "db": "pmc", "id": pmid})
         for ls in data.get("linksets", []):
             for db in ls.get("linksetdbs", []):
-                if db.get("dbto") == "pmc" and db.get("links"):
+                if db.get("linkname") == "pubmed_pmc" and db.get("links"):
                     return db["links"][0]
     except Exception:
         pass
