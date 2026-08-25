@@ -1,0 +1,277 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 16
+semaine: "18 au 24 août 2026"
+date: 2026-08-24
+edito: >-
+  Semaine dominée par un bloc de recommandations IDSA sur la vaccination
+  respiratoire du patient immunodéprimé — un sujet quotidien en médecine
+  interne, enfin traité avec des chiffres d'efficacité propres à cette
+  population. À côté, deux revues systématiques recadrent l'épidémiologie de
+  deux atteintes d'organe sous-estimées : la pneumopathie interstitielle du
+  lupus et l'hypophysite sarcoïdosique.
+
+items:
+  - type: reco
+    titre: "IDSA 2025 : vaccination contre la grippe, le COVID-19 et le VRS chez l'immunodéprimé"
+    source: "Clinical Infectious Diseases · recommandations IDSA (texte-cadre + 3 textes par virus)"
+    impact_factor: 11
+    url: "https://pubmed.ncbi.nlm.nih.gov/41766454/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "vaccins homologués aux États-Unis : transposition au calendrier vaccinal français à confirmer"
+      - "chiffres d'efficacité issus d'études observationnelles pour le COVID-19 et le VRS"
+    resume: >-
+      Recommandations « rapides » de l'IDSA, élaborées avec le Vaccine
+      Integrity Project pour la saison respiratoire 2025-2026, sur les vaccins
+      homologués aux États-Unis contre la grippe, le COVID-19 et le VRS. Elles
+      s'appliquent aux adultes et enfants immunodéprimés : hémopathie maligne,
+      transplantation d'organe solide ou de cellules souches hématopoïétiques,
+      maladie auto-immune sous immunosuppresseur, VIH avec immunodépression
+      sévère, déficit immunitaire primitif, CAR-T, chimiothérapie de tumeur
+      solide. Méthodologie GRADE, sur des données comparatives d'efficacité et
+      de tolérance uniquement. Les trois vaccins font l'objet d'une
+      recommandation forte, avec un niveau de certitude modéré, et la
+      co-administration est jugée acceptable. Efficacité par virus, telle que
+      rapportée dans chaque texte : grippe — réduction de 32 % des
+      hospitalisations liées à la grippe (données directes chez l'immunodéprimé,
+      peu nombreuses) ; COVID-19 — vaccination associée à une réduction des
+      hospitalisations, efficacité estimée entre 33 % et 56 % sur 7 études
+      observationnelles ; VRS — réduction de 70 % (IC95 66-73) des
+      hospitalisations liées au VRS sur deux études cas-témoins à test négatif
+      chez l'adulte immunodéprimé, et 81 % (IC95 52-92) contre les formes
+      critiques d'après les données indirectes chez le sujet âgé. Tolérance :
+      pas de surrisque de syndrome de Guillain-Barré ni d'événement indésirable
+      grave pour la grippe ; événements graves rares et comparables pour le
+      COVID-19 et le VRS ; pour le VRS, un excès estimé à 11 cas de
+      Guillain-Barré par million de doses. Aucune poussée significative de la
+      maladie auto-immune ou immunodéprimante sous-jacente n'a été mise en
+      évidence dans les études qui l'ont recherchée.
+    message_cle: >-
+      Recommandation forte de vacciner tous les patients immunodéprimés contre
+      la grippe, le COVID-19 et le VRS, les trois vaccins pouvant être
+      co-administrés — avec, pour la première fois, des chiffres d'efficacité
+      propres à cette population (32 % sur les hospitalisations grippales,
+      33-56 % pour le COVID-19, 70 % pour le VRS) et aucun signal de poussée de
+      la maladie auto-immune sous-jacente.
+    comparaisons:
+      - titre: "Par rapport aux références françaises"
+        reference: "calendrier vaccinal et recommandations HAS pour l'immunodéprimé"
+        points:
+          - "Ce texte porte sur des vaccins homologués aux États-Unis : la
+            transposition en France dépend des produits effectivement
+            disponibles et du calendrier vaccinal en vigueur, à vérifier avant
+            toute application directe."
+          - "La logique de fond — vacciner l'immunodéprimé contre les virus
+            respiratoires saisonniers, en tenant compte du moment de
+            l'immunosuppression — converge avec la démarche française ; c'est
+            l'ampleur chiffrée du bénéfice qui est nouvelle, pas le principe."
+    contexte:
+      - >-
+        La vaccination du patient immunodéprimé est une question posée tous les
+        jours en médecine interne, mais elle souffrait d'un manque criant de
+        données propres : la plupart des chiffres d'efficacité disponibles
+        viennent de populations immunocompétentes, chez qui la réponse
+        vaccinale n'est pas comparable. C'est l'apport principal de ce bloc de
+        recommandations : des estimations mesurées chez l'immunodéprimé lui-même.
+      - >-
+        Le point le plus utile en pratique concerne le moment de la
+        vaccination : les textes insistent sur son individualisation en
+        fonction du traitement immunosuppresseur, du statut de transplantation
+        et des cycles de traitement. Les auteurs signalent explicitement que les
+        données restent insuffisantes chez les patients sous traitement
+        déplétant les lymphocytes B et en post-greffe précoce — deux situations
+        très fréquentes en médecine interne, où la question du délai optimal
+        reste donc ouverte.
+      - >-
+        La vaccination de l'entourage est rappelée comme mesure d'appoint dans
+        les textes grippe et VRS, de même que l'accès précoce aux antiviraux
+        pour le COVID-19. Chez l'enfant et l'adolescent immunodéprimé de moins
+        de 18 ans, le texte VRS recommande une décision partagée plutôt qu'une
+        recommandation forte.
+      - >-
+        Limites à garder en tête. Les chiffres d'efficacité pour le COVID-19 et
+        le VRS proviennent d'études observationnelles (études d'efficacité en
+        vie réelle, cas-témoins à test négatif) : ils décrivent une association
+        entre vaccination et réduction des hospitalisations, avec le risque
+        résiduel classique que les patients vaccinés diffèrent des non-vaccinés
+        sur des facteurs non mesurés. Les auteurs relèvent eux-mêmes que le
+        suivi court de la plupart des études COVID-19 conduit probablement à des
+        estimations situées dans le haut de la fourchette. Les données directes
+        chez l'immunodéprimé restent peu nombreuses, en particulier pour la
+        grippe et le VRS, et une partie de l'argumentaire repose sur des données
+        indirectes extrapolées du sujet âgé.
+
+  - type: meta
+    titre: "Pneumopathie interstitielle au cours du lupus : environ 11 % des patients, et jusqu'à 18 % au scanner"
+    source: "Lupus Science & Medicine · revue systématique et méta-analyse"
+    impact_factor: 3
+    url: "https://pubmed.ncbi.nlm.nih.gov/42624533/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse de 98 études totalisant 155 964
+      patients lupiques, sur la prévalence et l'incidence des pneumopathies
+      interstitielles diffuses (PID) au cours du lupus systémique. Prévalence
+      poolée de 11,0 % (IC95 9,0-13,0), avec une hétérogénéité majeure
+      (I² = 99,9 %), et de 18 % lorsque la PID est recherchée par scanner
+      thoracique haute résolution. L'écart selon le type d'étude est
+      considérable : 25,0 % (IC95 19,0-31,0) dans les études cliniques
+      observationnelles contre 7,0 % (IC95 5,0-8,0) dans les études sur
+      registres. L'incidence, estimée à partir de trois études de registre
+      seulement, est de 4,9 pour 1 000 patients-années (IC95 -0,5 à 10,3),
+      également très hétérogène (I² = 99,8 %) ; les auteurs la présentent
+      eux-mêmes comme exploratoire.
+    message_cle: >-
+      La pneumopathie interstitielle est probablement plus fréquente au cours du
+      lupus qu'on ne le pensait — environ 11 % des patients, et près d'un sur
+      cinq quand on la cherche au scanner — ce qui justifie d'y penser devant
+      toute dyspnée ou toux inexpliquée chez un patient lupique.
+    contexte:
+      - >-
+        L'atteinte pulmonaire du lupus est classiquement dominée par la pleurésie
+        et l'atteinte des voies aériennes, la PID étant souvent présentée comme
+        rare — bien plus rare que dans la sclérodermie ou les myosites. Ce
+        travail suggère qu'elle est sous-estimée, et surtout que sa fréquence
+        apparente dépend massivement de la manière dont on la cherche.
+      - >-
+        C'est là le message méthodologique le plus intéressant : 7 % sur
+        registres, 25 % dans les cohortes cliniques, 18 % au scanner haute
+        résolution. Cet écart reflète moins des populations différentes qu'une
+        intensité de dépistage différente — les registres reposent sur des codes
+        diagnostiques, qui manquent les formes infracliniques que le scanner
+        détecte. La question pratique qui en découle, et que cette étude ne
+        tranche pas, est de savoir lesquelles de ces PID infracliniques ont une
+        conséquence clinique.
+      - >-
+        Limites importantes. L'hétérogénéité est extrême (I² = 99,9 %) : la
+        prévalence poolée de 11 % doit se lire comme un ordre de grandeur, pas
+        comme un chiffre applicable à un patient donné, et les auteurs invitent
+        explicitement à la prudence. L'estimation d'incidence est plus fragile
+        encore : elle repose sur trois études de registre et son intervalle de
+        confiance inclut zéro (-0,5 à 10,3), ce qui la rend ininterprétable
+        telle quelle — les auteurs la qualifient d'exploratoire.
+
+  - type: meta
+    titre: "Hypophysite sarcoïdosique : diabète insipide et hypogonadisme en tête, récidive dans 43 % des cas"
+    source: "Pituitary · revue systématique de données individuelles"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42622961/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "revue de cas publiés : biais de publication vers les formes sévères"
+    resume: >-
+      Revue systématique de 166 études rapportant 274 patients adultes avec une
+      hypophysite liée à une sarcoïdose, réévalués selon les critères du
+      Neurosarcoidosis Consortium 2018 (diagnostic certain dans 26,3 % des cas,
+      probable dans 47,8 %, possible dans 25,9 %). Âge médian 37 ans (IQR
+      28-48), 53,5 % d'hommes. Manifestations les plus fréquentes : déficit en
+      vasopressine (53,6 %), dysfonction gonadique (38,3 %), baisse visuelle
+      (36,1 %), céphalées (32,2 %), fatigue (30,5 %). Sur le plan
+      antéhypophysaire : hypogonadisme central (74,1 %), hypothyroïdie centrale
+      (63,6 %), hyperprolactinémie (58,1 %). IRM : épaississement de la tige
+      pituitaire (43,1 %) et masse sellaire ou suprasellaire (36,4 %). LCS :
+      hyperprotéinorachie (68,9 %), pléiocytose (59,5 %). Une atteinte
+      systémique était présente chez 80,3 % des patients, surtout ganglionnaire
+      et pulmonaire. Malgré la corticothérapie, traitement de référence, une
+      récidive est survenue chez 43,1 % des patients, une substitution
+      hormonale au long cours a été nécessaire chez 36,2 % et une dépendance
+      prolongée à la desmopressine chez 30,5 %. Les résultats sont restés
+      stables en se limitant aux cas certains ou probables (n = 203) et selon
+      la période de publication.
+    message_cle: >-
+      Devant un épaississement de tige pituitaire, une lésion sellaire, un
+      déficit en vasopressine ou un hypogonadisme inexpliqué, penser à la
+      sarcoïdose — et chercher l'atteinte systémique, présente dans 80 % des
+      cas, car c'est elle qui permet le diagnostic quand les marqueurs sériques
+      et du LCS manquent de sensibilité.
+    contexte:
+      - >-
+        L'hypophysite est une localisation rare de la neurosarcoïdose, mais son
+        enjeu est disproportionné : les séquelles endocriniennes sont souvent
+        définitives, et le diagnostic différentiel devant une masse sellaire ou
+        un épaississement de tige (hypophysite auto-immune, IgG4, tuberculose,
+        histiocytose, métastase, lymphome) engage des prises en charge
+        radicalement différentes.
+      - >-
+        L'apport pratique le plus concret est la conduite diagnostique : les
+        auteurs soulignent la sensibilité limitée des marqueurs sériques et du
+        LCS, et concluent que c'est le bilan systémique et la biopsie
+        extracrânienne qui font le diagnostic. La présence d'une atteinte
+        systémique chez 80,3 % des patients — surtout ganglionnaire et
+        pulmonaire — donne une cible de recherche accessible, souvent moins
+        risquée qu'une biopsie hypophysaire.
+      - >-
+        Le second message porte sur le suivi : avec 43,1 % de récidives, 36,2 %
+        de substitution hormonale prolongée et 30,5 % de dépendance à la
+        desmopressine, la corticothérapie seule ne suffit manifestement pas à
+        régler durablement le problème chez une proportion importante de
+        patients, d'où l'insistance des auteurs sur un suivi multidisciplinaire
+        au long cours.
+      - >-
+        Limite majeure, à garder à l'esprit avant d'utiliser ces pourcentages :
+        il s'agit d'une revue de cas publiés, pas d'une cohorte. Les
+        observations rapportées dans la littérature sont, par construction, les
+        plus sévères, les plus atypiques ou les plus démonstratives — les formes
+        pauci-symptomatiques ou de bonne évolution sont largement
+        sous-représentées. Les fréquences ci-dessus décrivent donc les cas
+        publiés d'hypophysite sarcoïdosique, et non l'ensemble des patients
+        atteints. Un quart des cas ne remplissaient par ailleurs que les
+        critères de diagnostic « possible ».
+
+aussi_parus:
+  - titre: "IDSA 2025 — texte détaillé : vaccination antigrippale de l'immunodéprimé"
+    source: "Clinical Infectious Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41762115/"
+    resume: >-
+      Le texte par virus dont sont issus les chiffres grippe de l'item
+      principal. Revue systématique des publications d'août 2023 à juillet 2025,
+      limitée aux données comparatives d'efficacité et de tolérance. Les données
+      directes chez l'immunodéprimé, peu nombreuses, montrent une réduction de
+      32 % des hospitalisations liées à la grippe ; les données indirectes chez
+      le sujet âgé montrent des réductions concordantes des hospitalisations,
+      des admissions en réanimation et de la mortalité toutes causes.
+      Recommandation forte de vacciner tout immunodéprimé de 6 mois ou plus. Les
+      vaccins à haute dose ou adjuvantés pourraient améliorer l'immunogénicité.
+
+  - titre: "IDSA 2025 — texte détaillé : vaccination COVID-19 de l'immunodéprimé"
+    source: "Clinical Infectious Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41739597/"
+    resume: >-
+      Le texte par virus dont sont issus les chiffres COVID-19 de l'item
+      principal. Revue systématique de juin 2024 à juillet 2025 : 7 études
+      observationnelles d'efficacité et 4 études de tolérance. La vaccination
+      est associée à une réduction des hospitalisations (efficacité estimée
+      entre 33 % et 56 %), des formes critiques, de la mortalité et des recours
+      ambulatoires ou aux urgences. Recommandation forte à partir de 6 mois,
+      avec un calendrier adapté au traitement immunosuppresseur, à la stabilité
+      clinique et à la circulation virale.
+
+  - titre: "IDSA 2025 — texte détaillé : vaccination anti-VRS de l'immunodéprimé"
+    source: "Clinical Infectious Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41766598/"
+    resume: >-
+      Le texte par virus dont sont issus les chiffres VRS de l'item principal.
+      Deux études cas-témoins à test négatif chez l'adulte immunodéprimé
+      montrent une réduction de 70 % (IC95 66-73) des hospitalisations liées au
+      VRS ; les données indirectes chez le sujet âgé donnent 81 % (IC95 52-92)
+      contre les formes critiques. Sur trois essais randomisés, les événements
+      indésirables graves sont comparables entre vaccinés et non vaccinés, le
+      syndrome de Guillain-Barré restant rare (excès estimé à 11 cas par million
+      de doses). Recommandation forte chez l'adulte et l'adolescent
+      immunodéprimé ; décision partagée avant 18 ans.
+
+  - titre: "Anticoagulants oraux directs et maladie thromboembolique veineuse chez le patient obèse morbide"
+    source: "Medicine (Baltimore) · méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42629703/"
+    resume: >-
+      Méta-analyse de 20 études (44 672 patients obèses morbides traités pour
+      une maladie thromboembolique veineuse, dont 18 433 sous anticoagulant oral
+      direct et 26 239 sous warfarine). Les anticoagulants oraux directs sont
+      associés à moins de récidives thrombotiques (OR 0,74, IC95 0,59-0,92),
+      moins de saignements toutes causes (OR 0,72, IC95 0,66-0,77) et moins de
+      saignements majeurs (OR 0,69, IC95 0,60-0,80) que la warfarine ; les
+      auteurs concluent qu'un ajustement de dose ne paraît pas nécessaire.
+      Signalé sans synthèse complète en raison du niveau de preuve : la
+      comparaison ne porte que sur la warfarine, l'essentiel des études incluses
+      sont observationnelles — les odds ratios décrivent donc une association et
+      non un effet démontré — et la revue paraît dans une revue à faible facteur
+      d'impact. La question posée reste très fréquente en pratique, ce qui
+      justifie de le mentionner.
