@@ -55,13 +55,27 @@ publié :
 grep -rho 'pubmed.ncbi.nlm.nih.gov/[0-9]*' content/issues/*.yaml | grep -o '[0-9]*$' | sort -u
 ```
 
-**Repli Unpaywall pour le texte intégral** : `pipeline/pubmed_query.py:unpaywall_lookup(doi)`
-repère une version en accès libre légale d'un article (Europe PMC en premier,
-Unpaywall ensuite). Utile pour savoir où chercher, mais l'extraction
-automatique du texte échoue la plupart du temps (mur anti-robot des éditeurs,
-~0 % mesuré sur les articles hors PMC) — ne pas s'attendre à ce que ça
-fonctionne systématiquement, et ne jamais tenter de contourner un blocage (403,
-CAPTCHA, mur JavaScript).
+**Texte intégral : ordre des tentatives.** `fetch_fulltext(pmid, pmcid)` essaie
+Europe PMC, puis `efetch db=pmc` du NCBI (Europe PMC est en retard sur les
+articles très récents et répond 404 alors que le dépôt PMC existe). En dernier
+recours seulement, `fetch_fulltext_unpaywall(doi)` cherche une version en accès
+libre légale ailleurs ; l'adresse de contact exigée par Unpaywall est
+configurée en dur dans `pubmed_query.py`.
+
+Deux garde-fous à ne jamais relâcher :
+
+- `get_pmcid()` ne doit accepter que `linkname == "pubmed_pmc"`. Le jeu
+  `pubmed_pmc_refs` liste les articles **qui citent** la publication : s'en
+  servir ferait résumer un article sans rapport sous le titre et le lien de la
+  source. Le bug a existé, il a été corrigé le 25/08/2026.
+- Ne jamais tenter de contourner un blocage (403, CAPTCHA, mur JavaScript).
+
+Rendement réel, mesuré sur les 7 articles du numéro 16 : PMC donne le texte de
+ceux qui y sont déposés ; Unpaywall n'en a ajouté **aucun** (les éditeurs
+bloquent les requêtes automatiques même quand une version libre existe). Ne pas
+compter dessus, et se méfier du texte qu'il renvoie parfois : sur un des
+articles, c'était une page d'atterrissage pleine de menus et de publicités, pas
+l'article. Vérifier que le texte récupéré commence bien par le bon article.
 
 **Note pour une éventuelle utilisation future du pipeline complet** (si le choix
 de rester manuel changeait un jour) : `pipeline/generate_issue.py --days 7`

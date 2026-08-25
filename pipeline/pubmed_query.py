@@ -19,10 +19,14 @@ import urllib.request
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 UNPAYWALL = "https://api.unpaywall.org/v2"
 # Unpaywall exige un email de contact dans chaque requête (politique d'usage
-# de leur API, pas une clé secrète — voir unpaywall.org/products/api). À
-# fournir via la variable d'environnement UNPAYWALL_EMAIL (secret ou variable
-# de dépôt) ; si absente, les recherches Unpaywall sont simplement sautées.
-UNPAYWALL_EMAIL = os.environ.get("UNPAYWALL_EMAIL")
+# de leur API, pas une clé secrète — voir unpaywall.org/products/api).
+#
+# Adresse de contact fournie par le mainteneur pour cet usage. Elle est en
+# clair parce que ce dépôt est public ET que les numéros sont générés à la
+# main dans un conteneur recréé à chaque session : un fichier ignoré par git
+# ne survivrait pas. La variable d'environnement UNPAYWALL_EMAIL reste
+# prioritaire si on veut la surcharger sans modifier le code.
+UNPAYWALL_EMAIL = os.environ.get("UNPAYWALL_EMAIL", "dfgirkf@gmail.com")
 
 # Périmètre médecine interne (termes MeSH), croisé avec des types de publication.
 # La polyarthrite rhumatoïde pure a été retirée (relève de la rhumatologie, pas
