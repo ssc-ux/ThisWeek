@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>
+// Exécuté avant le rendu : évite tout clignotement au chargement.
+// Thème CLAIR par défaut ; le mode sombre s'active uniquement si l'utilisateur
+// l'a choisi via le bouton (le réglage du système n'est pas suivi).
+(function () {
+  var r = document.documentElement;
+  r.className = r.className.replace('no-js', 'js');
+  var t = 'light';
+  try { if (localStorage.getItem('tw-theme') === 'dark') t = 'dark'; } catch (e) {}
+  r.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N° 17 — semaine du 25 au 31 août 2026 · ThisWeek Médecine interne</title>
+<meta name="description" content="4 items sélectionnés pour les internistes — semaine du 25 au 31 août 2026.">
+<link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="../rss.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
+<style>
+/* ThisWeek — feuille de style unique, inlinée au build.
+   Direction visuelle : sobriété « Apple » — sans-serif système, grande
+   typographie, beaucoup de blanc, coins arrondis, boutons pilule, hairlines. */
+
+:root {
+  --paper:      #ffffff;
+  --paper-alt:  #f5f5f7;
+  --surface:    #ffffff;
+  --ink:        #1d1d1f;
+  --ink-soft:   #6e6e73;
+  --rule:       #e5e5ea;
+  --accent:     #0d7d70;
+  --accent-strong: #0a655a;
+  --accent-soft:   #e7f3f1;
+  --accent-ink: #ffffff;
+  --key-bg:     #eef7f4;
+  --nav-bg:     rgba(255, 255, 255, .82);
+  --shadow:     0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+
+  --badge-reco-bg: #f3e3e6;    --badge-reco-ink: #82212f;
+  --badge-pnds-bg: #e4e7f5;    --badge-pnds-ink: #35447f;
+  --badge-essai-bg: #e2efe5;   --badge-essai-ink: #22603a;
+  --badge-meta-bg: #e6eef4;    --badge-meta-ink: #274b66;
+  --badge-alerte-bg: #f6ecda;  --badge-alerte-ink: #7d5310;
+  --badge-autre-bg: #e8ebea;   --badge-autre-ink: #4c5a58;
+
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --r-card: 18px;
+  --r-pill: 980px;
+}
+
+/* Le thème CLAIR est le thème par défaut : le site ne suit volontairement pas le
+   réglage sombre du système. Le passage en sombre se fait uniquement via le
+   bouton de la barre du haut, qui pose data-theme="dark" et mémorise le choix. */
+
+:root[data-theme="light"] {
+  --paper: #ffffff; --paper-alt: #f5f5f7; --surface: #ffffff;
+  --ink: #1d1d1f; --ink-soft: #6e6e73; --rule: #e5e5ea;
+  --accent: #0d7d70; --accent-strong: #0a655a; --accent-soft: #e7f3f1;
+  --accent-ink: #ffffff; --key-bg: #eef7f4; --nav-bg: rgba(255,255,255,.82);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+}
+
+:root[data-theme="dark"] {
+  --paper: #000000; --paper-alt: #0f0f11; --surface: #1c1c1e;
+  --ink: #f5f5f7; --ink-soft: #a1a1a6; --rule: #2a2a2d;
+  --accent: #57c3b3; --accent-strong: #6fd0c1; --accent-soft: #12302b;
+  --accent-ink: #06110f; --key-bg: #14201d; --nav-bg: rgba(0,0,0,.68);
+  --shadow: 0 12px 32px rgba(0,0,0,.5);
+  --badge-reco-bg: #3d222a;   --badge-reco-ink: #e2a3ad;
+  --badge-pnds-bg: #242b47;   --badge-pnds-ink: #aab4e8;
+  --badge-essai-bg: #1f3527;  --badge-essai-ink: #9ed3ac;
+  --badge-meta-bg: #1e2e3a;   --badge-meta-ink: #9cc2dd;
+  --badge-alerte-bg: #3a2f18; --badge-alerte-ink: #e0bc76;
+  --badge-autre-bg: #29322f;  --badge-autre-ink: #aebbb8;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+/* Mise à l'échelle sur grands écrans : toute la mise en page étant exprimée en
+   rem, augmenter la taille de base agrandit texte, colonnes et espacements de
+   façon homogène — le site ne paraît plus minuscule sur un 27 pouces. */
+@media (min-width: 1400px) { html { font-size: 108%; } }
+@media (min-width: 1800px) { html { font-size: 115%; } }
+@media (min-width: 2300px) { html { font-size: 122%; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .9rem;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Pages de numéro : plus larges à partir du seuil où le sommaire passe en
+   colonne latérale (voir .issue-layout). */
+@media (min-width: 1150px) { .page-article { max-width: 84rem; } }
+@media (min-width: 1700px) { .page-article { max-width: 92rem; } }
+
+/* ---- Masthead : barre fine translucide, collante ---- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: 0 -1.5rem 0;
+  padding: .65rem 1.5rem;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+}
+
+.masthead .brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.masthead .brand .week { color: var(--accent); }
+
+.masthead nav {
+  font-size: .85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.15rem;
+}
+.masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
+
+/* ---- Boutons ronds de la barre (recherche, thème) ---- */
+
+.icon-btn {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+/* Le premier des deux boutons pousse la paire à droite quand la barre passe à
+   la ligne (mobile) ; le second suit normalement. */
+#search-open { margin-left: auto; }
+
+/* On montre l'icône de la destination : lune en clair, soleil en sombre. */
+#theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-moon { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-sun { display: inline; }
+/* Sans JavaScript, ni la recherche ni la bascule de thème ne fonctionnent. */
+.no-js .icon-btn { display: none; }
+
+/* ---- Recherche (overlay plein écran, style palette de commandes) ---- */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(20, 22, 22, .5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1.2rem 1.2rem;
+}
+/* `display:flex` ci-dessus prime sur la feuille par défaut du navigateur pour
+   [hidden] (même spécificité, mais les styles d'auteur gagnent) : sans cette
+   règle explicite, l'overlay resterait affiché — et cliquable — même masqué. */
+.search-overlay[hidden] { display: none; }
+.search-panel {
+  width: min(38rem, 100%);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.search-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1rem 1.15rem;
+  outline: none;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: .4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.search-results li { border-radius: 10px; }
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+}
+.search-results a:hover, .search-results a:focus-visible { background: var(--paper-alt); }
+.search-type {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.search-title { font-weight: 600; font-size: .98rem; }
+.search-meta { font-size: .8rem; color: var(--ink-soft); }
+.search-empty { padding: 1.4rem 1rem; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+
+/* ---- En-tête de numéro ---- */
+
+.issue-head { padding: 1.7rem 0 .3rem; }
+
+.eyebrow, .issue-head .eyebrow {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 .7rem;
+}
+
+.issue-head h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  margin: 0 0 .55rem;
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.issue-meta {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-banner {
+  margin: 1.4rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--badge-alerte-bg);
+  color: var(--badge-alerte-ink);
+  border-radius: 12px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.ia-banner {
+  margin: 1.1rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+}
+.ia-badge {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: .14rem .48rem;
+  border-radius: 6px;
+}
+.ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
+
+.edito {
+  margin: 1.1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* ---- Barre de lecture (5 min / 20 min) ---- */
+
+.reading-bar {
+  margin: 1.3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem 1rem;
+}
+.reading-est {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.read-toggle {
+  display: inline-flex;
+  background: var(--paper-alt);
+  border-radius: var(--r-pill);
+  padding: .22rem;
+  gap: .15rem;
+}
+.read-toggle button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .38rem .95rem;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: color .15s;
+}
+.read-toggle button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,.16);
+}
+/* Sans JavaScript, la bascule ne sert à rien : on la masque. */
+.no-js .read-toggle { display: none; }
+
+/* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
+
+.tldr {
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--paper-alt);
+  border-radius: var(--r-card);
+}
+.tldr h2 {
+  margin: 0 0 .6rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.tldr h2 .tldr-sub { color: var(--ink-soft); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.tldr ol { margin: 0; padding-left: 1.2rem; }
+.tldr li { margin: .42rem 0; line-height: 1.45; }
+.tldr li a { font-weight: 600; text-decoration: none; }
+.tldr li a:hover { text-decoration: underline; }
+.tldr .tldr-msg { color: var(--ink-soft); }
+
+/* ---- Mise en page d'un numéro (colonne de lecture + sommaire latéral) ---- */
+
+/* Sous 1150 px : une seule colonne, le sommaire est masqué car « L'essentiel »
+   liste déjà tous les titres avec leurs liens. Au-delà, le sommaire devient une
+   colonne latérale collante : il occupe utilement la largeur disponible et sert
+   de navigation pendant la lecture. */
+.issue-aside { display: none; }
+.issue-main { min-width: 0; }
+
+@media (min-width: 1150px) {
+  .issue-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  .issue-aside {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  .issue-aside .toc { margin-top: 0; padding: 1rem 1.1rem; }
+  .issue-aside .toc li { margin: .55rem 0; font-size: .9rem; line-height: 1.35; }
+  .issue-aside .toc .toc-type { display: block; font-size: .72rem; margin-top: .1rem; }
+}
+
+/* ---- Sommaire ---- */
+
+.toc {
+  margin: 1.4rem 0 0;
+  padding: .95rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+}
+.toc h2 {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.toc ol { margin: 0; padding-left: 1.3rem; }
+.toc li { margin: .3rem 0; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+.toc .toc-type { font-size: .78rem; color: var(--ink-soft); }
+
+/* ---- Items ---- */
+
+.item {
+  margin-top: 2.1rem;
+  padding-top: 1.7rem;
+  border-top: 1px solid var(--rule);
+}
+
+.item-kicker {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+}
+
+/* Un seul badge coloré, réservé aux types qui méritent l'attention immédiate
+   (recommandation, PNDS, alerte) — tout le reste (essai, méta-analyse, autre)
+   reste en texte gris dans .item-source, sans couleur dédiée. */
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+:root[data-theme="dark"] .badge { color: var(--accent); }
+
+.item-source { color: var(--ink-soft); }
+
+.if-chip {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  padding: .08rem .5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.item h2 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: .5rem 0 .35rem;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.item h2 a { color: inherit; text-decoration: none; }
+.item h2 a:hover { color: var(--accent); }
+
+.base-note {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0 0 .8rem;
+}
+
+/* Phrase-clé : ce qu'il faut retenir, en tête d'item, sans encadré de couleur —
+   remplace l'ancien duo « résumé + message à retenir » redondant. */
+.item-lead {
+  margin: .6rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.item p { margin: .35rem 0; }
+.item ul { margin: .4rem 0; padding-left: 1.3rem; }
+.item li { margin: .35rem 0; }
+
+/* Comparaisons / avant-après : texte simple dans le bloc « Détails », pas de
+   structure séparée à plusieurs niveaux. */
+.compare-caveat {
+  margin: .8rem 0 .2rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.compare-caveat strong { color: var(--ink); }
+
+.pnds-statut {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
+
+.verif-note {
+  margin: 1.2rem 0 0;
+  padding: .7rem 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border-radius: 10px;
+}
+.verif-note strong { color: var(--ink); }
+
+/* ---- Contexte déroulable ---- */
+
+.contexte {
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+.contexte > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.contexte > summary::-webkit-details-marker { display: none; }
+.contexte > summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .15s ease;
+}
+.contexte[open] > summary::before { transform: rotate(90deg); }
+.contexte > summary:hover { color: var(--ink); }
+.contexte .contexte-body { margin-top: .7rem; }
+.contexte .contexte-body p { margin: .5rem 0; }
+
+/* Mode « Express » : on réduit chaque item à son titre et sa phrase-clé.
+   Le sommaire, devenu navigation latérale, reste affiché. */
+article[data-mode="express"] .contexte,
+article[data-mode="express"] .verif-note { display: none; }
+
+/* ---- Aussi parus ---- */
+
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
+.also h2 {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 .3rem;
+}
+.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1.2rem; }
+.also ul { margin: 0; padding-left: 1.3rem; }
+.also li { margin: .45rem 0; font-size: .95rem; }
+.also .also-source { font-size: .8rem; color: var(--ink-soft); }
+
+/* Liste « Aussi parus » avec résumé court */
+.also-list { list-style: none; padding-left: 0 !important; }
+.also-list li {
+  margin: 0;
+  padding: .85rem 0;
+  border-top: 1px solid var(--rule);
+}
+.also-list li:first-child { border-top: 0; padding-top: 0; }
+.also-head { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.also-head a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.also-head a:hover { color: var(--accent); }
+.also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
+.also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
+/* En mode Express, on garde juste les titres. */
+article[data-mode="express"] .also-resume { display: none; }
+
+/* ---- Archives ---- */
+
+.archive-list { list-style: none; margin: 2rem 0 0; padding: 0; }
+.archive-list li {
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.archive-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+.archive-list .num {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  min-width: 4.5rem;
+}
+.archive-list a { font-size: 1.15rem; text-decoration: none; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
+.archive-list a:hover { color: var(--accent); }
+.archive-list .count { font-size: .8rem; color: var(--ink-soft); }
+.archive-preview { margin: .35rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* =====================================================================
+   Page d'accueil
+   ===================================================================== */
+
+/* L'accueil est fait de cartes et de grilles : il peut occuper presque toute la
+   largeur sans nuire à la lecture. */
+.page-wide { max-width: 88rem; }
+@media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
+@media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
+
+/* Accueil resserré, centré sur « cette semaine » : un titre court, la carte du
+   numéro en pleine largeur, un lien discret vers le reste. Pas de grand hero
+   ni de pédagogie sur la home — ça vit sur /methode.html. */
+.page-h1 {
+  padding-top: 1.6rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  margin: .3rem 0 1.4rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  padding: .78rem 1.5rem;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
+.btn-secondary { background: var(--paper-alt); color: var(--ink); }
+.btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
+
+/* Panneau « dernier numéro » : le centre de gravité de la page d'accueil. */
+.latest-card {
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.latest-card--full { padding: 1.8rem 2rem 2rem; }
+.latest-card .kicker {
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.latest-card h2 { margin: .35rem 0 .15rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+.latest-card .latest-meta { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+
+.latest-list {
+  list-style: none;
+  margin: 1.2rem 0 1.4rem;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.latest-list li { display: flex; flex-direction: column; gap: .15rem; }
+.latest-list a { font-size: 1.08rem; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
+.latest-list a:hover { color: var(--accent); }
+.latest-msg { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+
+.home-footline {
+  margin: 1.4rem 0 0;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+  align-items: center;
+}
+.home-footline a { white-space: nowrap; }
+
+/* ---- Schéma de méthode (page Méthode) ---- */
+
+.flow { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0; }
+.flow-step { display: flex; gap: 1rem; align-items: flex-start; }
+.flow-badge {
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.flow-body {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: .9rem 1.1rem;
+  background: var(--surface);
+  flex: 1;
+  margin-bottom: .3rem;
+}
+.flow-body h3 { margin: 0 0 .3rem; font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 600; }
+.flow-body p { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
+.flow-connector { flex: 0 0 2.2rem; display: flex; justify-content: center; height: 1.1rem; font-size: 1.1rem; line-height: 1; }
+.flow-connector::before { content: "↓"; color: var(--accent); }
+
+/* ---- Prose (page méthode) ---- */
+
+.prose h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; margin: 2.4rem 0 1rem; font-weight: 700; }
+.prose h2 { font-size: 1.35rem; margin: 2.2rem 0 .5rem; letter-spacing: -0.015em; font-weight: 700; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin: .35rem 0; }
+.prose blockquote { margin: 1rem 0; padding: .8rem 1.1rem; border-radius: 12px; background: var(--paper-alt); color: var(--ink-soft); }
+
+/* ---- Pied de page ---- */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.footer p { margin: .4rem 0; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 560px) {
+  .page { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
+  .latest-card, .latest-card--full { padding: 1.4rem 1.3rem; }
+  .latest-card .btn { width: 100%; text-align: center; }
+  .reading-bar { justify-content: flex-start; }
+  .search-overlay { padding-top: 4vh; }
+}
+
+@media (max-width: 480px) {
+  .item h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="page page-article">
+  <header class="masthead">
+    <a class="brand" href="../index.html">This<span class="week">Week</span> · Médecine interne</a>
+    <nav aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="../numeros/2026-08-31.html" aria-current="page">Dernier numéro</a>
+      <a href="../archives.html">Archives</a>
+      <a href="../veille.html">Veille</a>
+      <a href="../methode.html">Méthode</a>
+      <a href="../rss.xml">RSS</a>
+      <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle"
+              aria-label="Passer en thème sombre" title="Thème clair / sombre">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenu">
+  
+<article data-reading>
+  <header class="issue-head">
+    <p class="eyebrow">Numéro 17</p>
+    <h1>La semaine du 25 au 31 août 2026</h1>
+    <p class="issue-meta">
+      4 items sélectionnés
+      · publié le 31 août 2026
+    </p>
+
+    <p class="ia-banner"><span class="ia-badge">IA</span><span class="ia-text"><strong>Numéro
+    généré automatiquement par une intelligence artificielle, sans relecture par un médecin.</strong>
+    Les publications citées sont réelles ; la sélection et les synthèses sont produites par IA à
+    partir des sources. À vérifier sur la source avant tout usage clinique.</span></p>
+
+    
+
+    
+    <p class="edito">Semaine dense, et une nouvelle qui compte : l&#39;analyse finale d&#39;ANDROMEDA montre un gain de survie globale dans l&#39;amylose AL, ce qui manquait encore. À côté, une conférence KDIGO fait le point sur les traitements ciblant le lymphocyte B dans les glomérulopathies auto-immunes, une méta-analyse mesure ce que valent vraiment les critères SAPL 2023 — et met en évidence leur point aveugle obstétrical — et une revue chiffre le risque rénal à long terme des vascularites à ANCA.</p>
+    
+
+    <div class="reading-bar">
+      <span class="reading-est"><span aria-hidden="true">⏱</span> Combien de temps avez-vous ?</span>
+      <div class="read-toggle" role="group" aria-label="Mode de lecture">
+        <button type="button" data-mode="express">Express · ~3 min</button>
+        <button type="button" data-mode="complet" aria-pressed="true">Complet · ~11 min</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="issue-layout">
+  <div class="issue-main">
+
+  
+  <section class="tldr" aria-label="L'essentiel à retenir">
+    <h2>L'essentiel <span class="tldr-sub">— tout retenir en ~3 min</span></h2>
+    <ol>
+      
+      <li><a href="#item-1">Amylose AL : le daratumumab ajouté au VCd améliore la survie globale (analyse finale d&#39;ANDROMEDA)</a><span class="tldr-msg"> — Dans l&#39;amylose AL nouvellement diagnostiquée, l&#39;ajout du daratumumab au VCd ne fait pas qu&#39;améliorer la réponse hématologique : avec plus de cinq ans de recul, il améliore la survie globale (HR 0,62) et la survie sans détérioration d&#39;organe majeure (HR 0,44) — le premier gain de survie démontré dans cette maladie.</span></li>
+      
+      <li><a href="#item-2">KDIGO : où en sont les traitements ciblant le lymphocyte B dans les glomérulopathies auto-immunes</a><span class="tldr-msg"> — Cibler le lymphocyte B n&#39;est pas une stratégie unique mais un ensemble d&#39;options dont l&#39;efficacité varie radicalement d&#39;une glomérulopathie à l&#39;autre : première ligne dans la néphropathie extramembraneuse, décevante dans la néphropathie à IgA, en pleine évolution dans la néphrite lupique où les CAR-T ouvrent la perspective d&#39;une rémission sans traitement.</span></li>
+      
+      <li><a href="#item-3">Critères SAPL 2023 de l&#39;ACR/EULAR : très spécifiques, mais ils manquent 8 SAPL obstétricaux sur 10</a><span class="tldr-msg"> — Les critères SAPL 2023 sont quasi parfaitement spécifiques (0,99) mais manquent un quart des patients au global et la grande majorité des SAPL obstétricaux (sensibilité 0,20-0,31) : ce sont des critères de classification pour la recherche, en aucun cas un outil diagnostique — ne pas écarter un SAPL obstétrical au motif qu&#39;il ne les remplit pas.</span></li>
+      
+      <li><a href="#item-4">Vascularites à ANCA : un quart des patients en insuffisance rénale terminale à 10 ans</a><span class="tldr-msg"> — Environ un patient sur sept atteint une insuffisance rénale terminale dès la première année d&#39;une vascularite à ANCA, et un sur quatre à dix ans — et la fonction rénale à 6 mois est associée au pronostic rénal à long terme, ce qui donne une valeur particulière à la qualité de la réponse initiale.</span></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section class="item" id="item-1">
+    <p class="item-kicker">
+      
+      <span class="item-source">Essai clinique · Blood · essai de phase 3, analyse finale préplanifiée · IF ≈ 21
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42118698/">Amylose AL : le daratumumab ajouté au VCd améliore la survie globale (analyse finale d&#39;ANDROMEDA)</a></h2>
+
+    <p class="item-lead">Dans l&#39;amylose AL nouvellement diagnostiquée, l&#39;ajout du daratumumab au VCd ne fait pas qu&#39;améliorer la réponse hématologique : avec plus de cinq ans de recul, il améliore la survie globale (HR 0,62) et la survie sans détérioration d&#39;organe majeure (HR 0,44) — le premier gain de survie démontré dans cette maladie.</p>
+
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Analyse finale préplanifiée de l&#39;essai de phase 3 ANDROMEDA (NCT03201965) : 388 patients avec une amylose AL nouvellement diagnostiquée, randomisés entre 6 cycles de VCd (bortézomib, cyclophosphamide, dexaméthasone) seul ou associé au daratumumab sous-cutané (D-VCd), suivi de daratumumab en monothérapie toutes les 4 semaines jusqu&#39;à 24 cycles au total. Critère principal — réponse hématologique complète — atteint et confirmé : 59,5 % sous D-VCd contre 19,2 % sous VCd (odds ratio 6,03 ; IC95 3,80-9,58 ; p &lt; 0,0001), avec un délai médian d&#39;obtention plus court (67,5 jours contre 85,0 jours). Après un suivi médian de 61,4 mois, le bénéfice porte aussi sur les critères durs : survie sans détérioration d&#39;organe majeure ni progression (HR 0,44 ; IC95 0,31-0,63 ; p &lt; 0,0001) et surtout **survie globale** (HR 0,62 ; IC95 0,42-0,90 ; p = 0,0121). Les taux de réponse cardiaque et rénale sont deux à trois fois plus élevés sous D-VCd. Les événements indésirables sont conformes aux profils déjà connus du VCd et du daratumumab.</p>
+
+        
+        <p><strong>Ce qui change</strong> (vs l&#39;analyse principale d&#39;ANDROMEDA, qui reposait sur la réponse hématologique) :
+        L&#39;analyse principale avait établi le D-VCd sur un critère biologique (réponse hématologique complète) ; cette analyse finale apporte le bénéfice de survie globale, qui manquait. · Le suivi médian passe à 61,4 mois, ce qui donne enfin du recul sur des critères durs plutôt que sur la seule réponse hématologique.</p>
+        
+
+        
+
+        <p>L&#39;amylose AL est une maladie de médecine interne par excellence : révélée par une atteinte d&#39;organe (cœur, rein, système nerveux périphérique, tube digestif) dont le diagnostic est souvent tardif, elle relève d&#39;un traitement hématologique visant le clone plasmocytaire sous-jacent. Le pronostic dépend étroitement de l&#39;atteinte cardiaque au diagnostic.</p><p>Le D-VCd était déjà le traitement de référence, mais sur la foi d&#39;un critère de substitution : la réponse hématologique complète, c&#39;est-à-dire la disparition du clone producteur de chaînes légères. C&#39;est un bon marqueur, mais un marqueur tout de même. Démontrer que ce gain se traduit en années de vie gagnées est un résultat d&#39;une autre nature, et c&#39;est ce qu&#39;apporte cette analyse finale.</p><p>Le doublement à triplement des réponses cardiaques et rénales est cliniquement parlant : en pratique, c&#39;est la récupération d&#39;organe qui détermine l&#39;autonomie et la qualité de vie du patient, davantage que la réponse hématologique isolée. Ce numéro rejoint ici la méta-analyse sur le diagnostic biologique de l&#39;amylose AL publiée dans le n°15 : plus le diagnostic est précoce, plus ces réponses d&#39;organe sont accessibles.</p><p>Une nuance de lecture. L&#39;observation selon laquelle « atteindre une réponse complète hématologique ou cardiaque est associé à une meilleure survie » n&#39;est pas une comparaison randomisée : elle compare des répondeurs à des non-répondeurs à l&#39;intérieur de l&#39;essai. Les patients qui répondent diffèrent probablement des autres par la sévérité initiale de leur maladie — c&#39;est une association, pas une preuve que forcer la réponse par tous les moyens prolongerait la vie. Le résultat randomisé, lui, est solide : c&#39;est la comparaison D-VCd contre VCd.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-2">
+    <p class="item-kicker">
+      <span class="badge badge-reco">Recommandation</span>
+      <span class="item-source">Kidney International · rapport de conférence de controverses KDIGO · IF ≈ 15
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42034308/">KDIGO : où en sont les traitements ciblant le lymphocyte B dans les glomérulopathies auto-immunes</a></h2>
+
+    <p class="item-lead">Cibler le lymphocyte B n&#39;est pas une stratégie unique mais un ensemble d&#39;options dont l&#39;efficacité varie radicalement d&#39;une glomérulopathie à l&#39;autre : première ligne dans la néphropathie extramembraneuse, décevante dans la néphropathie à IgA, en pleine évolution dans la néphrite lupique où les CAR-T ouvrent la perspective d&#39;une rémission sans traitement.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> rapport de conférence, pas une recommandation KDIGO graduée</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Compte rendu de la conférence de controverses organisée par KDIGO à Panama en juin 2025, faisant le point maladie par maladie sur les traitements déplétant ou modulant le lymphocyte B. Néphropathie à IgA : le rituximab (anti-CD20) a montré une efficacité limitée, alors que les inhibiteurs des facteurs de survie BAFF et APRIL et les anticorps anti-CD38 peuvent réduire la protéinurie et ralentir le déclin du débit de filtration glomérulaire estimé. Néphropathie extramembraneuse : les anti-CD20 sont devenus le traitement de première ligne, avec au moins une rémission partielle chez la majorité des patients à 18 mois. Syndrome néphrotique corticodépendant : le rituximab prévient efficacement les rechutes, surtout chez l&#39;enfant, mais le bénéfice est transitoire. Néphrite lupique : les approches plus récentes — obinutuzumab et cellules CAR-T — donnent des résultats prometteurs, les CAR-T ouvrant la perspective d&#39;une période prolongée sans activité de la maladie ni traitement. Glomérulonéphrite des vascularites à ANCA : le rituximab a fait la preuve de son efficacité en induction comme en entretien, des essais de CAR-T étant en cours. La tolérance varie avec l&#39;intensité du traitement : profil favorable pour les anti-CD20 conventionnels, sélection prudente des patients pour les CAR-T en raison du risque de syndrome de relargage cytokinique et d&#39;autres événements graves. Les auteurs identifient comme besoin de recherche prioritaire la validation de biomarqueurs de sélection et de suivi, ainsi que l&#39;optimisation des protocoles et de la durée de traitement.</p>
+
+        
+
+        
+        <p class="compare-caveat"><strong>Comparaisons</strong>
+        (établies par l'IA à partir des sources et de connaissances générales — à vérifier sur
+        les textes originaux) :</p>
+        
+        <p><em>Par rapport aux recommandations françaises</em> — PNDS et pratiques des filières de santé maladies rares concernées :
+        Ce texte n&#39;est pas opposable : c&#39;est un état des lieux international, à confronter aux PNDS français correspondants (néphrite lupique, vascularites à ANCA), qui restent la référence pour le parcours de soins et le remboursement en France. · Les CAR-T dans la néphrite lupique relèvent en France de protocoles de recherche et de centres experts, pas de la pratique courante.</p>
+        
+        
+
+        <p>L&#39;intérêt de ce document pour l&#39;interniste tient moins à des consignes qu&#39;à sa mise en perspective : il rassemble en un seul texte ce que la déplétion B apporte, et n&#39;apporte pas, dans des maladies que l&#39;on prend en charge conjointement avec le néphrologue — néphrite lupique et glomérulonéphrite des vascularites à ANCA en tête.</p><p>Le contraste entre néphropathie extramembraneuse (anti-CD20 en première ligne) et néphropathie à IgA (rituximab décevant, mais voies BAFF/APRIL et anti-CD38 prometteuses) illustre un point de fond : cibler « le lymphocyte B » recouvre des mécanismes différents selon la maladie, et l&#39;échec d&#39;une molécule ne condamne pas la cible.</p><p>Le signal le plus fort concerne les CAR-T dans la néphrite lupique, avec cette perspective inédite d&#39;une rémission prolongée sans traitement d&#39;entretien. Les auteurs l&#39;assortissent immédiatement d&#39;une réserve de tolérance — syndrome de relargage cytokinique, événements graves — qui impose une sélection rigoureuse des patients.</p><p>Limite de statut, importante à ne pas escamoter : il s&#39;agit d&#39;un **rapport de conférence de controverses**, pas d&#39;une recommandation KDIGO avec des propositions graduées selon le niveau de preuve. Son objet déclaré est précisément d&#39;identifier les incertitudes et les besoins de recherche. À lire comme une synthèse d&#39;experts faisant autorité, non comme un référentiel à appliquer.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-3">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · Rheumatology (Oxford) · revue systématique et méta-analyse · IF ≈ 5
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42615990/">Critères SAPL 2023 de l&#39;ACR/EULAR : très spécifiques, mais ils manquent 8 SAPL obstétricaux sur 10</a></h2>
+
+    <p class="item-lead">Les critères SAPL 2023 sont quasi parfaitement spécifiques (0,99) mais manquent un quart des patients au global et la grande majorité des SAPL obstétricaux (sensibilité 0,20-0,31) : ce sont des critères de classification pour la recherche, en aucun cas un outil diagnostique — ne pas écarter un SAPL obstétrical au motif qu&#39;il ne les remplit pas.</p>
+
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique et méta-analyse de la performance de classification des critères ACR/EULAR 2023 du syndrome des antiphospholipides, sur la littérature d&#39;août 2023 à mai 2026 : 24 études (25 jeux de données), dont 13 comportaient un groupe témoin sans SAPL, comparant ces critères au diagnostic clinique d&#39;expert et/ou aux critères de Sydney révisés (2006). Sensibilité poolée 0,74 (IC95 0,67-0,81) et spécificité poolée 0,99 (IC95 0,98-1,00). La sensibilité est très hétérogène et dépend fortement du phénotype : 0,82 dans le SAPL thrombotique, mais seulement 0,20 dans les études restreintes au SAPL obstétrical (0,31 en incluant les données de sous-groupes obstétricaux d&#39;autres études). Les patients non classés le sont principalement du fait d&#39;une positivité isolée des anticorps antiphospholipides de type IgM et des phénotypes obstétricaux.</p>
+
+        
+
+        
+
+        <p>La confusion entre critères de classification et critères diagnostiques est une erreur classique et lourde de conséquences. Des critères de classification sont construits pour constituer des populations homogènes dans les essais : ils privilégient délibérément la spécificité, quitte à exclure des malades authentiques. Les appliquer au lit du patient revient à refuser un diagnostic à des patients qui ont bel et bien la maladie.</p><p>Le chiffre à retenir est celui du SAPL obstétrical : une sensibilité de 0,20 à 0,31 signifie que sept à huit femmes sur dix ayant un SAPL obstétrical selon l&#39;expertise clinique ne sont pas classées par ces critères. Pour l&#39;interniste qui suit des grossesses à risque, souvent en lien avec l&#39;obstétricien, la conséquence est directe : la décision thérapeutique ne peut pas se fonder sur ces critères.</p><p>La seconde cause de non-classification, la positivité isolée en IgM, renvoie à un débat ancien sur la valeur pathogène de ces anticorps. Les critères 2023 les pondèrent faiblement, ce qui est défendable sur le plan de la recherche mais laisse le clinicien face à des situations individuelles non tranchées.</p><p>Limites : hétérogénéité substantielle de la sensibilité entre études, et surtout comparaison à un étalon-or imparfait — le diagnostic d&#39;expert ou les critères de Sydney 2006, eux-mêmes discutables. Seules 13 des 25 séries comportaient un groupe témoin sans SAPL, ce qui fragilise l&#39;estimation de spécificité, même si celle-ci est très élevée et cohérente entre études.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-4">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · Autoimmunity Reviews · revue systématique · IF ≈ 13
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42349595/">Vascularites à ANCA : un quart des patients en insuffisance rénale terminale à 10 ans</a></h2>
+
+    <p class="item-lead">Environ un patient sur sept atteint une insuffisance rénale terminale dès la première année d&#39;une vascularite à ANCA, et un sur quatre à dix ans — et la fonction rénale à 6 mois est associée au pronostic rénal à long terme, ce qui donne une valeur particulière à la qualité de la réponse initiale.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> revue financée par un industriel (CSL Vifor), trois auteurs sur quatre liés au financeur</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique des études publiées entre 2019 et 2024, d&#39;au moins 100 patients et 3 ans de suivi, sur l&#39;incidence cumulée de l&#39;insuffisance rénale terminale au cours des vascularites à ANCA : 49 études (19 301 patients) pour l&#39;incidence, 19 études (4 513 patients) pour la relation entre débit de filtration glomérulaire estimé et risque rénal. Les incidences rapportées varient énormément d&#39;une étude à l&#39;autre — de 2,9 à 59,6 % à 1 an, et de 9,4 à 51,4 % à 10 ans. Les estimations combinées s&#39;établissent à 14,2 % à 1 an et 24,8 % à 10 ans. Un débit de filtration glomérulaire estimé supérieur de 1 mL/min/1,73 m² au diagnostic et à 6 mois est associé à une réduction du risque d&#39;insuffisance rénale terminale de respectivement 5-6 % et 7-8 %. Les auteurs appellent explicitement à la prudence dans l&#39;usage de ces estimations combinées, compte tenu de l&#39;hétérogénéité importante des populations entre études.</p>
+
+        
+
+        
+
+        <p>L&#39;atteinte rénale conditionne le pronostic des vascularites à ANCA. Ces chiffres rappellent que, malgré le rituximab et les protocoles d&#39;épargne cortisonique, une proportion importante de patients évolue vers la dialyse ou la greffe — un rappel utile face à l&#39;impression que le pronostic de ces maladies serait désormais réglé.</p><p>Le résultat le plus actionnable concerne le débit de filtration glomérulaire à 6 mois : le fait qu&#39;il soit associé au risque rénal à long terme suggère que la fenêtre thérapeutique utile se joue tôt. Ce travail rejoint la conférence KDIGO de ce même numéro, qui rappelle l&#39;efficacité du rituximab en induction comme en entretien dans cette indication.</p><p>Deux réserves de poids. D&#39;abord la dispersion des résultats bruts (2,9 à 59,6 % à un an) : elle traduit des populations et des définitions très différentes, au point que les auteurs eux-mêmes invitent à ne pas utiliser les moyennes combinées comme des valeurs de référence. Ensuite, la relation entre débit de filtration et risque rénal est observationnelle : un meilleur débit à 6 mois marque probablement une maladie moins sévère au départ autant qu&#39;un effet du traitement.</p><p>Conflit d&#39;intérêts à signaler : cette revue a été financée par CSL Vifor, laboratoire présent sur le marché des maladies rénales, et trois des quatre auteurs déclarent un lien d&#39;emploi ou de consultance avec le financeur. Cela ne disqualifie pas le travail, mais invite à lire les conclusions sur le fardeau rénal avec cette grille de lecture.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="also">
+    <h2>Aussi parus cette semaine</h2>
+    <p class="also-note">Publications pertinentes retenues avec un résumé court, sans synthèse détaillée.</p>
+    <ul class="also-list">
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42301754/">Syndrome des poumons rétractés au cours du lupus : la récupération fonctionnelle complète reste rare</a>
+          <span class="also-source">— Lupus · revue systématique</span>
+          
+        </p>
+        <p class="also-resume">Revue systématique de 40 études (111 patients, dont 30 observations isolées et 10 séries de cas) sur cette manifestation rare du lupus : nette prédominance féminine (91 %), âge moyen 33,5 ± 9,8 ans, syndrome restrictif chez tous les patients (capacité vitale forcée 47-52 %). Les corticoïdes sont le traitement de fond dans 95-96 % des cas, le rituximab s&#39;imposant comme la biothérapie de première intention dans les formes réfractaires ; l&#39;entraînement des muscles inspiratoires et la ventilation non invasive améliorent la force diaphragmatique. La résolution symptomatique survient chez 75-95 % des patients, mais la normalisation des épreuves fonctionnelles respiratoires n&#39;est obtenue que chez 20-23 % d&#39;entre eux — environ 80 % gardent un syndrome restrictif chronique. La mortalité directement attribuable est faible (2-5,5 %). Niveau de preuve limité : il s&#39;agit d&#39;une agrégation d&#39;observations publiées, sujette au biais de publication.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42284687/">Inhibiteurs de la voie des IgG dans le PTI de l&#39;adulte : les anti-SYK devant les anti-FcRn</a>
+          <span class="also-source">— Cytokine · revue systématique et méta-analyse d&#39;essais randomisés</span>
+          
+        </p>
+        <p class="also-resume">Méta-analyse de 10 essais randomisés issus de 8 études, sur les inhibiteurs ciblant la voie des IgG dans le purpura thrombopénique immun de l&#39;adulte. Les inhibiteurs de SYK montrent l&#39;effet estimé le plus important (réponse plaquettaire durable : risque relatif 10,26 ; réponse globale : 4,66), les inhibiteurs de FcRn un bénéfice intermédiaire sur la réponse durable mais des résultats moins constants sur les autres critères. Un seul essai portait sur un inhibiteur de BTK, ce qui laisse cette classe indéterminée. Dans une analyse poolée que les auteurs qualifient eux-mêmes d&#39;exploratoire, ces inhibiteurs sont associés à une augmentation des réponses durables (risque relatif 5,90) et à un moindre recours aux traitements de secours. Tolérance sans signal préoccupant : les anti-SYK augmentent légèrement les effets indésirables globaux, sans excès d&#39;événements graves ni d&#39;arrêts de traitement. À lire avec prudence : comparaison indirecte entre classes, et non essai comparatif direct.</p>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  </div><!-- /.issue-main -->
+
+  <aside class="issue-aside">
+    <nav class="toc" aria-label="Sommaire du numéro">
+      <h2>Au sommaire</h2>
+      <ol>
+        
+        <li><a href="#item-1">Amylose AL : le daratumumab ajouté au VCd améliore la survie globale (analyse finale d&#39;ANDROMEDA)</a>
+            <span class="toc-type">— Essai clinique</span></li>
+        
+        <li><a href="#item-2">KDIGO : où en sont les traitements ciblant le lymphocyte B dans les glomérulopathies auto-immunes</a>
+            <span class="toc-type">— Recommandation</span></li>
+        
+        <li><a href="#item-3">Critères SAPL 2023 de l&#39;ACR/EULAR : très spécifiques, mais ils manquent 8 SAPL obstétricaux sur 10</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+        <li><a href="#item-4">Vascularites à ANCA : un quart des patients en insuffisance rénale terminale à 10 ans</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+      </ol>
+    </nav>
+  </aside>
+  </div><!-- /.issue-layout -->
+</article>
+
+<script>
+(function () {
+  var art = document.querySelector('article[data-reading]');
+  if (!art) return;
+  var btns = art.querySelectorAll('.read-toggle button');
+  function set(mode) {
+    art.setAttribute('data-mode', mode);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+    try { localStorage.setItem('tw-mode', mode); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.mode); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('tw-mode'); } catch (e) {}
+  set(saved === 'express' ? 'express' : 'complet');
+})();
+</script>
+
+  </main>
+
+  <footer class="footer">
+    <p>Ce digest s'adresse exclusivement aux professionnels de santé. Il ne remplace ni la
+    lecture des documents sources ni le jugement clinique.</p>
+    <p><strong>Sélection et synthèses entièrement générées par une intelligence artificielle,
+    sans relecture par un médecin.</strong> Vérifiez toujours l'information sur la source avant
+    tout usage clinique. Voir la page <a href="../methode.html">Méthode</a>.</p>
+  </footer>
+</div>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
+    <input type="search" id="search-input" class="search-input"
+           placeholder="Chercher une pathologie, un traitement… (ex. vascularite, amylose)"
+           autocomplete="off" aria-label="Rechercher dans les numéros">
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function label() {
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tw-theme', next); } catch (e) {}
+    label();
+  });
+})();
+
+(function () {
+  var openBtn = document.getElementById('search-open');
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!openBtn || !overlay) return;
+  var root = "../";
+  var index = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function render(q) {
+    q = q.trim().toLowerCase();
+    if (!index) { results.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
+    if (!q) {
+      results.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
+        + 'traitement (ex. « lupus », « vascularite », « amylose »).</li>';
+      return;
+    }
+    var hits = index.filter(function (r) {
+      return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 12);
+    if (!hits.length) {
+      results.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
+      return;
+    }
+    results.innerHTML = hits.map(function (r) {
+      return '<li><a href="' + root + esc(r.u) + '">'
+        + '<span class="search-type">' + esc(r.y) + '</span>'
+        + '<span class="search-title">' + esc(r.t) + '</span>'
+        + '<span class="search-meta">' + esc(r.s.split('·')[0].trim()) + ' · N° ' + r.n + '</span>'
+        + '</a></li>';
+    }).join('');
+  }
+
+  function open() {
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (index === null) {
+      fetch(root + 'search-index.json').then(function (r) { return r.json(); })
+        .then(function (data) { index = data; render(input.value); })
+        .catch(function () { index = []; render(input.value); });
+    }
+    render(input.value);
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  input.addEventListener('input', function () { render(input.value); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') { close(); return; }
+    if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
+        && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); open();
+    }
+  });
+})();
+</script>
+</body>
+</html>

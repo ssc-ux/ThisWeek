@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>
+// Exécuté avant le rendu : évite tout clignotement au chargement.
+// Thème CLAIR par défaut ; le mode sombre s'active uniquement si l'utilisateur
+// l'a choisi via le bouton (le réglage du système n'est pas suivi).
+(function () {
+  var r = document.documentElement;
+  r.className = r.className.replace('no-js', 'js');
+  var t = 'light';
+  try { if (localStorage.getItem('tw-theme') === 'dark') t = 'dark'; } catch (e) {}
+  r.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N° 16 — semaine du 18 au 24 août 2026 · ThisWeek Médecine interne</title>
+<meta name="description" content="3 items sélectionnés pour les internistes — semaine du 18 au 24 août 2026.">
+<link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="../rss.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
+<style>
+/* ThisWeek — feuille de style unique, inlinée au build.
+   Direction visuelle : sobriété « Apple » — sans-serif système, grande
+   typographie, beaucoup de blanc, coins arrondis, boutons pilule, hairlines. */
+
+:root {
+  --paper:      #ffffff;
+  --paper-alt:  #f5f5f7;
+  --surface:    #ffffff;
+  --ink:        #1d1d1f;
+  --ink-soft:   #6e6e73;
+  --rule:       #e5e5ea;
+  --accent:     #0d7d70;
+  --accent-strong: #0a655a;
+  --accent-soft:   #e7f3f1;
+  --accent-ink: #ffffff;
+  --key-bg:     #eef7f4;
+  --nav-bg:     rgba(255, 255, 255, .82);
+  --shadow:     0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+
+  --badge-reco-bg: #f3e3e6;    --badge-reco-ink: #82212f;
+  --badge-pnds-bg: #e4e7f5;    --badge-pnds-ink: #35447f;
+  --badge-essai-bg: #e2efe5;   --badge-essai-ink: #22603a;
+  --badge-meta-bg: #e6eef4;    --badge-meta-ink: #274b66;
+  --badge-alerte-bg: #f6ecda;  --badge-alerte-ink: #7d5310;
+  --badge-autre-bg: #e8ebea;   --badge-autre-ink: #4c5a58;
+
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --r-card: 18px;
+  --r-pill: 980px;
+}
+
+/* Le thème CLAIR est le thème par défaut : le site ne suit volontairement pas le
+   réglage sombre du système. Le passage en sombre se fait uniquement via le
+   bouton de la barre du haut, qui pose data-theme="dark" et mémorise le choix. */
+
+:root[data-theme="light"] {
+  --paper: #ffffff; --paper-alt: #f5f5f7; --surface: #ffffff;
+  --ink: #1d1d1f; --ink-soft: #6e6e73; --rule: #e5e5ea;
+  --accent: #0d7d70; --accent-strong: #0a655a; --accent-soft: #e7f3f1;
+  --accent-ink: #ffffff; --key-bg: #eef7f4; --nav-bg: rgba(255,255,255,.82);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+}
+
+:root[data-theme="dark"] {
+  --paper: #000000; --paper-alt: #0f0f11; --surface: #1c1c1e;
+  --ink: #f5f5f7; --ink-soft: #a1a1a6; --rule: #2a2a2d;
+  --accent: #57c3b3; --accent-strong: #6fd0c1; --accent-soft: #12302b;
+  --accent-ink: #06110f; --key-bg: #14201d; --nav-bg: rgba(0,0,0,.68);
+  --shadow: 0 12px 32px rgba(0,0,0,.5);
+  --badge-reco-bg: #3d222a;   --badge-reco-ink: #e2a3ad;
+  --badge-pnds-bg: #242b47;   --badge-pnds-ink: #aab4e8;
+  --badge-essai-bg: #1f3527;  --badge-essai-ink: #9ed3ac;
+  --badge-meta-bg: #1e2e3a;   --badge-meta-ink: #9cc2dd;
+  --badge-alerte-bg: #3a2f18; --badge-alerte-ink: #e0bc76;
+  --badge-autre-bg: #29322f;  --badge-autre-ink: #aebbb8;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+/* Mise à l'échelle sur grands écrans : toute la mise en page étant exprimée en
+   rem, augmenter la taille de base agrandit texte, colonnes et espacements de
+   façon homogène — le site ne paraît plus minuscule sur un 27 pouces. */
+@media (min-width: 1400px) { html { font-size: 108%; } }
+@media (min-width: 1800px) { html { font-size: 115%; } }
+@media (min-width: 2300px) { html { font-size: 122%; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .9rem;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Pages de numéro : plus larges à partir du seuil où le sommaire passe en
+   colonne latérale (voir .issue-layout). */
+@media (min-width: 1150px) { .page-article { max-width: 84rem; } }
+@media (min-width: 1700px) { .page-article { max-width: 92rem; } }
+
+/* ---- Masthead : barre fine translucide, collante ---- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: 0 -1.5rem 0;
+  padding: .65rem 1.5rem;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+}
+
+.masthead .brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.masthead .brand .week { color: var(--accent); }
+
+.masthead nav {
+  font-size: .85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.15rem;
+}
+.masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
+
+/* ---- Boutons ronds de la barre (recherche, thème) ---- */
+
+.icon-btn {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+/* Le premier des deux boutons pousse la paire à droite quand la barre passe à
+   la ligne (mobile) ; le second suit normalement. */
+#search-open { margin-left: auto; }
+
+/* On montre l'icône de la destination : lune en clair, soleil en sombre. */
+#theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-moon { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-sun { display: inline; }
+/* Sans JavaScript, ni la recherche ni la bascule de thème ne fonctionnent. */
+.no-js .icon-btn { display: none; }
+
+/* ---- Recherche (overlay plein écran, style palette de commandes) ---- */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(20, 22, 22, .5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1.2rem 1.2rem;
+}
+/* `display:flex` ci-dessus prime sur la feuille par défaut du navigateur pour
+   [hidden] (même spécificité, mais les styles d'auteur gagnent) : sans cette
+   règle explicite, l'overlay resterait affiché — et cliquable — même masqué. */
+.search-overlay[hidden] { display: none; }
+.search-panel {
+  width: min(38rem, 100%);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.search-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1rem 1.15rem;
+  outline: none;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: .4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.search-results li { border-radius: 10px; }
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+}
+.search-results a:hover, .search-results a:focus-visible { background: var(--paper-alt); }
+.search-type {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.search-title { font-weight: 600; font-size: .98rem; }
+.search-meta { font-size: .8rem; color: var(--ink-soft); }
+.search-empty { padding: 1.4rem 1rem; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+
+/* ---- En-tête de numéro ---- */
+
+.issue-head { padding: 1.7rem 0 .3rem; }
+
+.eyebrow, .issue-head .eyebrow {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 .7rem;
+}
+
+.issue-head h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  margin: 0 0 .55rem;
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.issue-meta {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-banner {
+  margin: 1.4rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--badge-alerte-bg);
+  color: var(--badge-alerte-ink);
+  border-radius: 12px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.ia-banner {
+  margin: 1.1rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+}
+.ia-badge {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: .14rem .48rem;
+  border-radius: 6px;
+}
+.ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
+
+.edito {
+  margin: 1.1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* ---- Barre de lecture (5 min / 20 min) ---- */
+
+.reading-bar {
+  margin: 1.3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem 1rem;
+}
+.reading-est {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.read-toggle {
+  display: inline-flex;
+  background: var(--paper-alt);
+  border-radius: var(--r-pill);
+  padding: .22rem;
+  gap: .15rem;
+}
+.read-toggle button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .38rem .95rem;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: color .15s;
+}
+.read-toggle button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,.16);
+}
+/* Sans JavaScript, la bascule ne sert à rien : on la masque. */
+.no-js .read-toggle { display: none; }
+
+/* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
+
+.tldr {
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--paper-alt);
+  border-radius: var(--r-card);
+}
+.tldr h2 {
+  margin: 0 0 .6rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.tldr h2 .tldr-sub { color: var(--ink-soft); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.tldr ol { margin: 0; padding-left: 1.2rem; }
+.tldr li { margin: .42rem 0; line-height: 1.45; }
+.tldr li a { font-weight: 600; text-decoration: none; }
+.tldr li a:hover { text-decoration: underline; }
+.tldr .tldr-msg { color: var(--ink-soft); }
+
+/* ---- Mise en page d'un numéro (colonne de lecture + sommaire latéral) ---- */
+
+/* Sous 1150 px : une seule colonne, le sommaire est masqué car « L'essentiel »
+   liste déjà tous les titres avec leurs liens. Au-delà, le sommaire devient une
+   colonne latérale collante : il occupe utilement la largeur disponible et sert
+   de navigation pendant la lecture. */
+.issue-aside { display: none; }
+.issue-main { min-width: 0; }
+
+@media (min-width: 1150px) {
+  .issue-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  .issue-aside {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  .issue-aside .toc { margin-top: 0; padding: 1rem 1.1rem; }
+  .issue-aside .toc li { margin: .55rem 0; font-size: .9rem; line-height: 1.35; }
+  .issue-aside .toc .toc-type { display: block; font-size: .72rem; margin-top: .1rem; }
+}
+
+/* ---- Sommaire ---- */
+
+.toc {
+  margin: 1.4rem 0 0;
+  padding: .95rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+}
+.toc h2 {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.toc ol { margin: 0; padding-left: 1.3rem; }
+.toc li { margin: .3rem 0; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+.toc .toc-type { font-size: .78rem; color: var(--ink-soft); }
+
+/* ---- Items ---- */
+
+.item {
+  margin-top: 2.1rem;
+  padding-top: 1.7rem;
+  border-top: 1px solid var(--rule);
+}
+
+.item-kicker {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+}
+
+/* Un seul badge coloré, réservé aux types qui méritent l'attention immédiate
+   (recommandation, PNDS, alerte) — tout le reste (essai, méta-analyse, autre)
+   reste en texte gris dans .item-source, sans couleur dédiée. */
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+:root[data-theme="dark"] .badge { color: var(--accent); }
+
+.item-source { color: var(--ink-soft); }
+
+.if-chip {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  padding: .08rem .5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.item h2 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: .5rem 0 .35rem;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.item h2 a { color: inherit; text-decoration: none; }
+.item h2 a:hover { color: var(--accent); }
+
+.base-note {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0 0 .8rem;
+}
+
+/* Phrase-clé : ce qu'il faut retenir, en tête d'item, sans encadré de couleur —
+   remplace l'ancien duo « résumé + message à retenir » redondant. */
+.item-lead {
+  margin: .6rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.item p { margin: .35rem 0; }
+.item ul { margin: .4rem 0; padding-left: 1.3rem; }
+.item li { margin: .35rem 0; }
+
+/* Comparaisons / avant-après : texte simple dans le bloc « Détails », pas de
+   structure séparée à plusieurs niveaux. */
+.compare-caveat {
+  margin: .8rem 0 .2rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.compare-caveat strong { color: var(--ink); }
+
+.pnds-statut {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
+
+.verif-note {
+  margin: 1.2rem 0 0;
+  padding: .7rem 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border-radius: 10px;
+}
+.verif-note strong { color: var(--ink); }
+
+/* ---- Contexte déroulable ---- */
+
+.contexte {
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+.contexte > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.contexte > summary::-webkit-details-marker { display: none; }
+.contexte > summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .15s ease;
+}
+.contexte[open] > summary::before { transform: rotate(90deg); }
+.contexte > summary:hover { color: var(--ink); }
+.contexte .contexte-body { margin-top: .7rem; }
+.contexte .contexte-body p { margin: .5rem 0; }
+
+/* Mode « Express » : on réduit chaque item à son titre et sa phrase-clé.
+   Le sommaire, devenu navigation latérale, reste affiché. */
+article[data-mode="express"] .contexte,
+article[data-mode="express"] .verif-note { display: none; }
+
+/* ---- Aussi parus ---- */
+
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
+.also h2 {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 .3rem;
+}
+.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1.2rem; }
+.also ul { margin: 0; padding-left: 1.3rem; }
+.also li { margin: .45rem 0; font-size: .95rem; }
+.also .also-source { font-size: .8rem; color: var(--ink-soft); }
+
+/* Liste « Aussi parus » avec résumé court */
+.also-list { list-style: none; padding-left: 0 !important; }
+.also-list li {
+  margin: 0;
+  padding: .85rem 0;
+  border-top: 1px solid var(--rule);
+}
+.also-list li:first-child { border-top: 0; padding-top: 0; }
+.also-head { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.also-head a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.also-head a:hover { color: var(--accent); }
+.also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
+.also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
+/* En mode Express, on garde juste les titres. */
+article[data-mode="express"] .also-resume { display: none; }
+
+/* ---- Archives ---- */
+
+.archive-list { list-style: none; margin: 2rem 0 0; padding: 0; }
+.archive-list li {
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.archive-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+.archive-list .num {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  min-width: 4.5rem;
+}
+.archive-list a { font-size: 1.15rem; text-decoration: none; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
+.archive-list a:hover { color: var(--accent); }
+.archive-list .count { font-size: .8rem; color: var(--ink-soft); }
+.archive-preview { margin: .35rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* =====================================================================
+   Page d'accueil
+   ===================================================================== */
+
+/* L'accueil est fait de cartes et de grilles : il peut occuper presque toute la
+   largeur sans nuire à la lecture. */
+.page-wide { max-width: 88rem; }
+@media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
+@media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
+
+/* Accueil resserré, centré sur « cette semaine » : un titre court, la carte du
+   numéro en pleine largeur, un lien discret vers le reste. Pas de grand hero
+   ni de pédagogie sur la home — ça vit sur /methode.html. */
+.page-h1 {
+  padding-top: 1.6rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  margin: .3rem 0 1.4rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  padding: .78rem 1.5rem;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
+.btn-secondary { background: var(--paper-alt); color: var(--ink); }
+.btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
+
+/* Panneau « dernier numéro » : le centre de gravité de la page d'accueil. */
+.latest-card {
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.latest-card--full { padding: 1.8rem 2rem 2rem; }
+.latest-card .kicker {
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.latest-card h2 { margin: .35rem 0 .15rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+.latest-card .latest-meta { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+
+.latest-list {
+  list-style: none;
+  margin: 1.2rem 0 1.4rem;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.latest-list li { display: flex; flex-direction: column; gap: .15rem; }
+.latest-list a { font-size: 1.08rem; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
+.latest-list a:hover { color: var(--accent); }
+.latest-msg { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+
+.home-footline {
+  margin: 1.4rem 0 0;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+  align-items: center;
+}
+.home-footline a { white-space: nowrap; }
+
+/* ---- Schéma de méthode (page Méthode) ---- */
+
+.flow { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0; }
+.flow-step { display: flex; gap: 1rem; align-items: flex-start; }
+.flow-badge {
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.flow-body {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: .9rem 1.1rem;
+  background: var(--surface);
+  flex: 1;
+  margin-bottom: .3rem;
+}
+.flow-body h3 { margin: 0 0 .3rem; font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 600; }
+.flow-body p { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
+.flow-connector { flex: 0 0 2.2rem; display: flex; justify-content: center; height: 1.1rem; font-size: 1.1rem; line-height: 1; }
+.flow-connector::before { content: "↓"; color: var(--accent); }
+
+/* ---- Prose (page méthode) ---- */
+
+.prose h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; margin: 2.4rem 0 1rem; font-weight: 700; }
+.prose h2 { font-size: 1.35rem; margin: 2.2rem 0 .5rem; letter-spacing: -0.015em; font-weight: 700; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin: .35rem 0; }
+.prose blockquote { margin: 1rem 0; padding: .8rem 1.1rem; border-radius: 12px; background: var(--paper-alt); color: var(--ink-soft); }
+
+/* ---- Pied de page ---- */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.footer p { margin: .4rem 0; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 560px) {
+  .page { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
+  .latest-card, .latest-card--full { padding: 1.4rem 1.3rem; }
+  .latest-card .btn { width: 100%; text-align: center; }
+  .reading-bar { justify-content: flex-start; }
+  .search-overlay { padding-top: 4vh; }
+}
+
+@media (max-width: 480px) {
+  .item h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="page page-article">
+  <header class="masthead">
+    <a class="brand" href="../index.html">This<span class="week">Week</span> · Médecine interne</a>
+    <nav aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="../numeros/2026-08-31.html" aria-current="page">Dernier numéro</a>
+      <a href="../archives.html">Archives</a>
+      <a href="../veille.html">Veille</a>
+      <a href="../methode.html">Méthode</a>
+      <a href="../rss.xml">RSS</a>
+      <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle"
+              aria-label="Passer en thème sombre" title="Thème clair / sombre">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenu">
+  
+<article data-reading>
+  <header class="issue-head">
+    <p class="eyebrow">Numéro 16</p>
+    <h1>La semaine du 18 au 24 août 2026</h1>
+    <p class="issue-meta">
+      3 items sélectionnés
+      · publié le 24 août 2026
+    </p>
+
+    <p class="ia-banner"><span class="ia-badge">IA</span><span class="ia-text"><strong>Numéro
+    généré automatiquement par une intelligence artificielle, sans relecture par un médecin.</strong>
+    Les publications citées sont réelles ; la sélection et les synthèses sont produites par IA à
+    partir des sources. À vérifier sur la source avant tout usage clinique.</span></p>
+
+    
+
+    
+    <p class="edito">Semaine dominée par un bloc de recommandations IDSA sur la vaccination respiratoire du patient immunodéprimé — un sujet quotidien en médecine interne, enfin traité avec des chiffres d&#39;efficacité propres à cette population. À côté, deux revues systématiques recadrent l&#39;épidémiologie de deux atteintes d&#39;organe sous-estimées : la pneumopathie interstitielle du lupus et l&#39;hypophysite sarcoïdosique.</p>
+    
+
+    <div class="reading-bar">
+      <span class="reading-est"><span aria-hidden="true">⏱</span> Combien de temps avez-vous ?</span>
+      <div class="read-toggle" role="group" aria-label="Mode de lecture">
+        <button type="button" data-mode="express">Express · ~2 min</button>
+        <button type="button" data-mode="complet" aria-pressed="true">Complet · ~8 min</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="issue-layout">
+  <div class="issue-main">
+
+  
+  <section class="tldr" aria-label="L'essentiel à retenir">
+    <h2>L'essentiel <span class="tldr-sub">— tout retenir en ~2 min</span></h2>
+    <ol>
+      
+      <li><a href="#item-1">IDSA 2025 : vaccination contre la grippe, le COVID-19 et le VRS chez l&#39;immunodéprimé</a><span class="tldr-msg"> — Recommandation forte de vacciner tous les patients immunodéprimés contre la grippe, le COVID-19 et le VRS, les trois vaccins pouvant être co-administrés — avec, pour la première fois, des chiffres d&#39;efficacité propres à cette population (32 % sur les hospitalisations grippales, 33-56 % pour le COVID-19, 70 % pour le VRS) et aucun signal de poussée de la maladie auto-immune sous-jacente.</span></li>
+      
+      <li><a href="#item-2">Pneumopathie interstitielle au cours du lupus : environ 11 % des patients, et jusqu&#39;à 18 % au scanner</a><span class="tldr-msg"> — La pneumopathie interstitielle est probablement plus fréquente au cours du lupus qu&#39;on ne le pensait — environ 11 % des patients, et près d&#39;un sur cinq quand on la cherche au scanner — ce qui justifie d&#39;y penser devant toute dyspnée ou toux inexpliquée chez un patient lupique.</span></li>
+      
+      <li><a href="#item-3">Hypophysite sarcoïdosique : diabète insipide et hypogonadisme en tête, récidive dans 43 % des cas</a><span class="tldr-msg"> — Devant un épaississement de tige pituitaire, une lésion sellaire, un déficit en vasopressine ou un hypogonadisme inexpliqué, penser à la sarcoïdose — et chercher l&#39;atteinte systémique, présente dans 80 % des cas, car c&#39;est elle qui permet le diagnostic quand les marqueurs sériques et du LCS manquent de sensibilité.</span></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section class="item" id="item-1">
+    <p class="item-kicker">
+      <span class="badge badge-reco">Recommandation</span>
+      <span class="item-source">Clinical Infectious Diseases · recommandations IDSA (texte-cadre + 3 textes par virus) · IF ≈ 11
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/41766454/">IDSA 2025 : vaccination contre la grippe, le COVID-19 et le VRS chez l&#39;immunodéprimé</a></h2>
+
+    <p class="item-lead">Recommandation forte de vacciner tous les patients immunodéprimés contre la grippe, le COVID-19 et le VRS, les trois vaccins pouvant être co-administrés — avec, pour la première fois, des chiffres d&#39;efficacité propres à cette population (32 % sur les hospitalisations grippales, 33-56 % pour le COVID-19, 70 % pour le VRS) et aucun signal de poussée de la maladie auto-immune sous-jacente.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> vaccins homologués aux États-Unis : transposition au calendrier vaccinal français à confirmer · chiffres d&#39;efficacité issus d&#39;études observationnelles pour le COVID-19 et le VRS</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Recommandations « rapides » de l&#39;IDSA, élaborées avec le Vaccine Integrity Project pour la saison respiratoire 2025-2026, sur les vaccins homologués aux États-Unis contre la grippe, le COVID-19 et le VRS. Elles s&#39;appliquent aux adultes et enfants immunodéprimés : hémopathie maligne, transplantation d&#39;organe solide ou de cellules souches hématopoïétiques, maladie auto-immune sous immunosuppresseur, VIH avec immunodépression sévère, déficit immunitaire primitif, CAR-T, chimiothérapie de tumeur solide. Méthodologie GRADE, sur des données comparatives d&#39;efficacité et de tolérance uniquement. Les trois vaccins font l&#39;objet d&#39;une recommandation forte, avec un niveau de certitude modéré, et la co-administration est jugée acceptable. Efficacité par virus, telle que rapportée dans chaque texte : grippe — réduction de 32 % des hospitalisations liées à la grippe (données directes chez l&#39;immunodéprimé, peu nombreuses) ; COVID-19 — vaccination associée à une réduction des hospitalisations, efficacité estimée entre 33 % et 56 % sur 7 études observationnelles ; VRS — réduction de 70 % (IC95 66-73) des hospitalisations liées au VRS sur deux études cas-témoins à test négatif chez l&#39;adulte immunodéprimé, et 81 % (IC95 52-92) contre les formes critiques d&#39;après les données indirectes chez le sujet âgé. Tolérance : pas de surrisque de syndrome de Guillain-Barré ni d&#39;événement indésirable grave pour la grippe ; événements graves rares et comparables pour le COVID-19 et le VRS ; pour le VRS, un excès estimé à 11 cas de Guillain-Barré par million de doses. Aucune poussée significative de la maladie auto-immune ou immunodéprimante sous-jacente n&#39;a été mise en évidence dans les études qui l&#39;ont recherchée.</p>
+
+        
+
+        
+        <p class="compare-caveat"><strong>Comparaisons</strong>
+        (établies par l'IA à partir des sources et de connaissances générales — à vérifier sur
+        les textes originaux) :</p>
+        
+        <p><em>Par rapport aux références françaises</em> — calendrier vaccinal et recommandations HAS pour l&#39;immunodéprimé :
+        Ce texte porte sur des vaccins homologués aux États-Unis : la transposition en France dépend des produits effectivement disponibles et du calendrier vaccinal en vigueur, à vérifier avant toute application directe. · La logique de fond — vacciner l&#39;immunodéprimé contre les virus respiratoires saisonniers, en tenant compte du moment de l&#39;immunosuppression — converge avec la démarche française ; c&#39;est l&#39;ampleur chiffrée du bénéfice qui est nouvelle, pas le principe.</p>
+        
+        
+
+        <p>La vaccination du patient immunodéprimé est une question posée tous les jours en médecine interne, mais elle souffrait d&#39;un manque criant de données propres : la plupart des chiffres d&#39;efficacité disponibles viennent de populations immunocompétentes, chez qui la réponse vaccinale n&#39;est pas comparable. C&#39;est l&#39;apport principal de ce bloc de recommandations : des estimations mesurées chez l&#39;immunodéprimé lui-même.</p><p>Le point le plus utile en pratique concerne le moment de la vaccination : les textes insistent sur son individualisation en fonction du traitement immunosuppresseur, du statut de transplantation et des cycles de traitement. Les auteurs signalent explicitement que les données restent insuffisantes chez les patients sous traitement déplétant les lymphocytes B et en post-greffe précoce — deux situations très fréquentes en médecine interne, où la question du délai optimal reste donc ouverte.</p><p>La vaccination de l&#39;entourage est rappelée comme mesure d&#39;appoint dans les textes grippe et VRS, de même que l&#39;accès précoce aux antiviraux pour le COVID-19. Chez l&#39;enfant et l&#39;adolescent immunodéprimé de moins de 18 ans, le texte VRS recommande une décision partagée plutôt qu&#39;une recommandation forte.</p><p>Limites à garder en tête. Les chiffres d&#39;efficacité pour le COVID-19 et le VRS proviennent d&#39;études observationnelles (études d&#39;efficacité en vie réelle, cas-témoins à test négatif) : ils décrivent une association entre vaccination et réduction des hospitalisations, avec le risque résiduel classique que les patients vaccinés diffèrent des non-vaccinés sur des facteurs non mesurés. Les auteurs relèvent eux-mêmes que le suivi court de la plupart des études COVID-19 conduit probablement à des estimations situées dans le haut de la fourchette. Les données directes chez l&#39;immunodéprimé restent peu nombreuses, en particulier pour la grippe et le VRS, et une partie de l&#39;argumentaire repose sur des données indirectes extrapolées du sujet âgé.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-2">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · Lupus Science &amp; Medicine · revue systématique et méta-analyse · IF ≈ 3
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42624533/">Pneumopathie interstitielle au cours du lupus : environ 11 % des patients, et jusqu&#39;à 18 % au scanner</a></h2>
+
+    <p class="item-lead">La pneumopathie interstitielle est probablement plus fréquente au cours du lupus qu&#39;on ne le pensait — environ 11 % des patients, et près d&#39;un sur cinq quand on la cherche au scanner — ce qui justifie d&#39;y penser devant toute dyspnée ou toux inexpliquée chez un patient lupique.</p>
+
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique et méta-analyse de 98 études totalisant 155 964 patients lupiques, sur la prévalence et l&#39;incidence des pneumopathies interstitielles diffuses (PID) au cours du lupus systémique. Prévalence poolée de 11,0 % (IC95 9,0-13,0), avec une hétérogénéité majeure (I² = 99,9 %), et de 18 % lorsque la PID est recherchée par scanner thoracique haute résolution. L&#39;écart selon le type d&#39;étude est considérable : 25,0 % (IC95 19,0-31,0) dans les études cliniques observationnelles contre 7,0 % (IC95 5,0-8,0) dans les études sur registres. L&#39;incidence, estimée à partir de trois études de registre seulement, est de 4,9 pour 1 000 patients-années (IC95 -0,5 à 10,3), également très hétérogène (I² = 99,8 %) ; les auteurs la présentent eux-mêmes comme exploratoire.</p>
+
+        
+
+        
+
+        <p>L&#39;atteinte pulmonaire du lupus est classiquement dominée par la pleurésie et l&#39;atteinte des voies aériennes, la PID étant souvent présentée comme rare — bien plus rare que dans la sclérodermie ou les myosites. Ce travail suggère qu&#39;elle est sous-estimée, et surtout que sa fréquence apparente dépend massivement de la manière dont on la cherche.</p><p>C&#39;est là le message méthodologique le plus intéressant : 7 % sur registres, 25 % dans les cohortes cliniques, 18 % au scanner haute résolution. Cet écart reflète moins des populations différentes qu&#39;une intensité de dépistage différente — les registres reposent sur des codes diagnostiques, qui manquent les formes infracliniques que le scanner détecte. La question pratique qui en découle, et que cette étude ne tranche pas, est de savoir lesquelles de ces PID infracliniques ont une conséquence clinique.</p><p>Limites importantes. L&#39;hétérogénéité est extrême (I² = 99,9 %) : la prévalence poolée de 11 % doit se lire comme un ordre de grandeur, pas comme un chiffre applicable à un patient donné, et les auteurs invitent explicitement à la prudence. L&#39;estimation d&#39;incidence est plus fragile encore : elle repose sur trois études de registre et son intervalle de confiance inclut zéro (-0,5 à 10,3), ce qui la rend ininterprétable telle quelle — les auteurs la qualifient d&#39;exploratoire.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-3">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · Pituitary · revue systématique de données individuelles
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42622961/">Hypophysite sarcoïdosique : diabète insipide et hypogonadisme en tête, récidive dans 43 % des cas</a></h2>
+
+    <p class="item-lead">Devant un épaississement de tige pituitaire, une lésion sellaire, un déficit en vasopressine ou un hypogonadisme inexpliqué, penser à la sarcoïdose — et chercher l&#39;atteinte systémique, présente dans 80 % des cas, car c&#39;est elle qui permet le diagnostic quand les marqueurs sériques et du LCS manquent de sensibilité.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> revue de cas publiés : biais de publication vers les formes sévères</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique de 166 études rapportant 274 patients adultes avec une hypophysite liée à une sarcoïdose, réévalués selon les critères du Neurosarcoidosis Consortium 2018 (diagnostic certain dans 26,3 % des cas, probable dans 47,8 %, possible dans 25,9 %). Âge médian 37 ans (IQR 28-48), 53,5 % d&#39;hommes. Manifestations les plus fréquentes : déficit en vasopressine (53,6 %), dysfonction gonadique (38,3 %), baisse visuelle (36,1 %), céphalées (32,2 %), fatigue (30,5 %). Sur le plan antéhypophysaire : hypogonadisme central (74,1 %), hypothyroïdie centrale (63,6 %), hyperprolactinémie (58,1 %). IRM : épaississement de la tige pituitaire (43,1 %) et masse sellaire ou suprasellaire (36,4 %). LCS : hyperprotéinorachie (68,9 %), pléiocytose (59,5 %). Une atteinte systémique était présente chez 80,3 % des patients, surtout ganglionnaire et pulmonaire. Malgré la corticothérapie, traitement de référence, une récidive est survenue chez 43,1 % des patients, une substitution hormonale au long cours a été nécessaire chez 36,2 % et une dépendance prolongée à la desmopressine chez 30,5 %. Les résultats sont restés stables en se limitant aux cas certains ou probables (n = 203) et selon la période de publication.</p>
+
+        
+
+        
+
+        <p>L&#39;hypophysite est une localisation rare de la neurosarcoïdose, mais son enjeu est disproportionné : les séquelles endocriniennes sont souvent définitives, et le diagnostic différentiel devant une masse sellaire ou un épaississement de tige (hypophysite auto-immune, IgG4, tuberculose, histiocytose, métastase, lymphome) engage des prises en charge radicalement différentes.</p><p>L&#39;apport pratique le plus concret est la conduite diagnostique : les auteurs soulignent la sensibilité limitée des marqueurs sériques et du LCS, et concluent que c&#39;est le bilan systémique et la biopsie extracrânienne qui font le diagnostic. La présence d&#39;une atteinte systémique chez 80,3 % des patients — surtout ganglionnaire et pulmonaire — donne une cible de recherche accessible, souvent moins risquée qu&#39;une biopsie hypophysaire.</p><p>Le second message porte sur le suivi : avec 43,1 % de récidives, 36,2 % de substitution hormonale prolongée et 30,5 % de dépendance à la desmopressine, la corticothérapie seule ne suffit manifestement pas à régler durablement le problème chez une proportion importante de patients, d&#39;où l&#39;insistance des auteurs sur un suivi multidisciplinaire au long cours.</p><p>Limite majeure, à garder à l&#39;esprit avant d&#39;utiliser ces pourcentages : il s&#39;agit d&#39;une revue de cas publiés, pas d&#39;une cohorte. Les observations rapportées dans la littérature sont, par construction, les plus sévères, les plus atypiques ou les plus démonstratives — les formes pauci-symptomatiques ou de bonne évolution sont largement sous-représentées. Les fréquences ci-dessus décrivent donc les cas publiés d&#39;hypophysite sarcoïdosique, et non l&#39;ensemble des patients atteints. Un quart des cas ne remplissaient par ailleurs que les critères de diagnostic « possible ».</p>
+      </div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="also">
+    <h2>Aussi parus cette semaine</h2>
+    <p class="also-note">Publications pertinentes retenues avec un résumé court, sans synthèse détaillée.</p>
+    <ul class="also-list">
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41762115/">IDSA 2025 — texte détaillé : vaccination antigrippale de l&#39;immunodéprimé</a>
+          <span class="also-source">— Clinical Infectious Diseases</span>
+          
+        </p>
+        <p class="also-resume">Le texte par virus dont sont issus les chiffres grippe de l&#39;item principal. Revue systématique des publications d&#39;août 2023 à juillet 2025, limitée aux données comparatives d&#39;efficacité et de tolérance. Les données directes chez l&#39;immunodéprimé, peu nombreuses, montrent une réduction de 32 % des hospitalisations liées à la grippe ; les données indirectes chez le sujet âgé montrent des réductions concordantes des hospitalisations, des admissions en réanimation et de la mortalité toutes causes. Recommandation forte de vacciner tout immunodéprimé de 6 mois ou plus. Les vaccins à haute dose ou adjuvantés pourraient améliorer l&#39;immunogénicité.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41739597/">IDSA 2025 — texte détaillé : vaccination COVID-19 de l&#39;immunodéprimé</a>
+          <span class="also-source">— Clinical Infectious Diseases</span>
+          
+        </p>
+        <p class="also-resume">Le texte par virus dont sont issus les chiffres COVID-19 de l&#39;item principal. Revue systématique de juin 2024 à juillet 2025 : 7 études observationnelles d&#39;efficacité et 4 études de tolérance. La vaccination est associée à une réduction des hospitalisations (efficacité estimée entre 33 % et 56 %), des formes critiques, de la mortalité et des recours ambulatoires ou aux urgences. Recommandation forte à partir de 6 mois, avec un calendrier adapté au traitement immunosuppresseur, à la stabilité clinique et à la circulation virale.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41766598/">IDSA 2025 — texte détaillé : vaccination anti-VRS de l&#39;immunodéprimé</a>
+          <span class="also-source">— Clinical Infectious Diseases</span>
+          
+        </p>
+        <p class="also-resume">Le texte par virus dont sont issus les chiffres VRS de l&#39;item principal. Deux études cas-témoins à test négatif chez l&#39;adulte immunodéprimé montrent une réduction de 70 % (IC95 66-73) des hospitalisations liées au VRS ; les données indirectes chez le sujet âgé donnent 81 % (IC95 52-92) contre les formes critiques. Sur trois essais randomisés, les événements indésirables graves sont comparables entre vaccinés et non vaccinés, le syndrome de Guillain-Barré restant rare (excès estimé à 11 cas par million de doses). Recommandation forte chez l&#39;adulte et l&#39;adolescent immunodéprimé ; décision partagée avant 18 ans.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42629703/">Anticoagulants oraux directs et maladie thromboembolique veineuse chez le patient obèse morbide</a>
+          <span class="also-source">— Medicine (Baltimore) · méta-analyse</span>
+          
+        </p>
+        <p class="also-resume">Méta-analyse de 20 études (44 672 patients obèses morbides traités pour une maladie thromboembolique veineuse, dont 18 433 sous anticoagulant oral direct et 26 239 sous warfarine). Les anticoagulants oraux directs sont associés à moins de récidives thrombotiques (OR 0,74, IC95 0,59-0,92), moins de saignements toutes causes (OR 0,72, IC95 0,66-0,77) et moins de saignements majeurs (OR 0,69, IC95 0,60-0,80) que la warfarine ; les auteurs concluent qu&#39;un ajustement de dose ne paraît pas nécessaire. Signalé sans synthèse complète en raison du niveau de preuve : la comparaison ne porte que sur la warfarine, l&#39;essentiel des études incluses sont observationnelles — les odds ratios décrivent donc une association et non un effet démontré — et la revue paraît dans une revue à faible facteur d&#39;impact. La question posée reste très fréquente en pratique, ce qui justifie de le mentionner.</p>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  </div><!-- /.issue-main -->
+
+  <aside class="issue-aside">
+    <nav class="toc" aria-label="Sommaire du numéro">
+      <h2>Au sommaire</h2>
+      <ol>
+        
+        <li><a href="#item-1">IDSA 2025 : vaccination contre la grippe, le COVID-19 et le VRS chez l&#39;immunodéprimé</a>
+            <span class="toc-type">— Recommandation</span></li>
+        
+        <li><a href="#item-2">Pneumopathie interstitielle au cours du lupus : environ 11 % des patients, et jusqu&#39;à 18 % au scanner</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+        <li><a href="#item-3">Hypophysite sarcoïdosique : diabète insipide et hypogonadisme en tête, récidive dans 43 % des cas</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+      </ol>
+    </nav>
+  </aside>
+  </div><!-- /.issue-layout -->
+</article>
+
+<script>
+(function () {
+  var art = document.querySelector('article[data-reading]');
+  if (!art) return;
+  var btns = art.querySelectorAll('.read-toggle button');
+  function set(mode) {
+    art.setAttribute('data-mode', mode);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+    try { localStorage.setItem('tw-mode', mode); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.mode); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('tw-mode'); } catch (e) {}
+  set(saved === 'express' ? 'express' : 'complet');
+})();
+</script>
+
+  </main>
+
+  <footer class="footer">
+    <p>Ce digest s'adresse exclusivement aux professionnels de santé. Il ne remplace ni la
+    lecture des documents sources ni le jugement clinique.</p>
+    <p><strong>Sélection et synthèses entièrement générées par une intelligence artificielle,
+    sans relecture par un médecin.</strong> Vérifiez toujours l'information sur la source avant
+    tout usage clinique. Voir la page <a href="../methode.html">Méthode</a>.</p>
+  </footer>
+</div>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
+    <input type="search" id="search-input" class="search-input"
+           placeholder="Chercher une pathologie, un traitement… (ex. vascularite, amylose)"
+           autocomplete="off" aria-label="Rechercher dans les numéros">
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function label() {
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tw-theme', next); } catch (e) {}
+    label();
+  });
+})();
+
+(function () {
+  var openBtn = document.getElementById('search-open');
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!openBtn || !overlay) return;
+  var root = "../";
+  var index = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function render(q) {
+    q = q.trim().toLowerCase();
+    if (!index) { results.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
+    if (!q) {
+      results.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
+        + 'traitement (ex. « lupus », « vascularite », « amylose »).</li>';
+      return;
+    }
+    var hits = index.filter(function (r) {
+      return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 12);
+    if (!hits.length) {
+      results.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
+      return;
+    }
+    results.innerHTML = hits.map(function (r) {
+      return '<li><a href="' + root + esc(r.u) + '">'
+        + '<span class="search-type">' + esc(r.y) + '</span>'
+        + '<span class="search-title">' + esc(r.t) + '</span>'
+        + '<span class="search-meta">' + esc(r.s.split('·')[0].trim()) + ' · N° ' + r.n + '</span>'
+        + '</a></li>';
+    }).join('');
+  }
+
+  function open() {
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (index === null) {
+      fetch(root + 'search-index.json').then(function (r) { return r.json(); })
+        .then(function (data) { index = data; render(input.value); })
+        .catch(function () { index = []; render(input.value); });
+    }
+    render(input.value);
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  input.addEventListener('input', function () { render(input.value); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') { close(); return; }
+    if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
+        && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); open();
+    }
+  });
+})();
+</script>
+</body>
+</html>
