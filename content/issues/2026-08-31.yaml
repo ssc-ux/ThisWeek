@@ -1,0 +1,307 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 17
+semaine: "25 au 31 août 2026"
+date: 2026-08-31
+edito: >-
+  Semaine dense, et une nouvelle qui compte : l'analyse finale d'ANDROMEDA
+  montre un gain de survie globale dans l'amylose AL, ce qui manquait encore.
+  À côté, une conférence KDIGO fait le point sur les traitements ciblant le
+  lymphocyte B dans les glomérulopathies auto-immunes, une méta-analyse mesure
+  ce que valent vraiment les critères SAPL 2023 — et met en évidence leur point
+  aveugle obstétrical — et une revue chiffre le risque rénal à long terme des
+  vascularites à ANCA.
+
+items:
+  - type: essai
+    titre: "Amylose AL : le daratumumab ajouté au VCd améliore la survie globale (analyse finale d'ANDROMEDA)"
+    source: "Blood · essai de phase 3, analyse finale préplanifiée"
+    impact_factor: 21
+    url: "https://pubmed.ncbi.nlm.nih.gov/42118698/"
+    base_texte: abstract_seul
+    resume: >-
+      Analyse finale préplanifiée de l'essai de phase 3 ANDROMEDA
+      (NCT03201965) : 388 patients avec une amylose AL nouvellement
+      diagnostiquée, randomisés entre 6 cycles de VCd (bortézomib,
+      cyclophosphamide, dexaméthasone) seul ou associé au daratumumab
+      sous-cutané (D-VCd), suivi de daratumumab en monothérapie toutes les 4
+      semaines jusqu'à 24 cycles au total. Critère principal — réponse
+      hématologique complète — atteint et confirmé : 59,5 % sous D-VCd contre
+      19,2 % sous VCd (odds ratio 6,03 ; IC95 3,80-9,58 ; p < 0,0001), avec un
+      délai médian d'obtention plus court (67,5 jours contre 85,0 jours). Après
+      un suivi médian de 61,4 mois, le bénéfice porte aussi sur les critères
+      durs : survie sans détérioration d'organe majeure ni progression
+      (HR 0,44 ; IC95 0,31-0,63 ; p < 0,0001) et surtout **survie globale**
+      (HR 0,62 ; IC95 0,42-0,90 ; p = 0,0121). Les taux de réponse cardiaque et
+      rénale sont deux à trois fois plus élevés sous D-VCd. Les événements
+      indésirables sont conformes aux profils déjà connus du VCd et du
+      daratumumab.
+    ce_qui_change:
+      reference: "l'analyse principale d'ANDROMEDA, qui reposait sur la réponse hématologique"
+      points:
+        - "L'analyse principale avait établi le D-VCd sur un critère
+          biologique (réponse hématologique complète) ; cette analyse finale
+          apporte le bénéfice de survie globale, qui manquait."
+        - "Le suivi médian passe à 61,4 mois, ce qui donne enfin du recul sur
+          des critères durs plutôt que sur la seule réponse hématologique."
+    message_cle: >-
+      Dans l'amylose AL nouvellement diagnostiquée, l'ajout du daratumumab au
+      VCd ne fait pas qu'améliorer la réponse hématologique : avec plus de cinq
+      ans de recul, il améliore la survie globale (HR 0,62) et la survie sans
+      détérioration d'organe majeure (HR 0,44) — le premier gain de survie
+      démontré dans cette maladie.
+    contexte:
+      - >-
+        L'amylose AL est une maladie de médecine interne par excellence :
+        révélée par une atteinte d'organe (cœur, rein, système nerveux
+        périphérique, tube digestif) dont le diagnostic est souvent tardif, elle
+        relève d'un traitement hématologique visant le clone plasmocytaire
+        sous-jacent. Le pronostic dépend étroitement de l'atteinte cardiaque au
+        diagnostic.
+      - >-
+        Le D-VCd était déjà le traitement de référence, mais sur la foi d'un
+        critère de substitution : la réponse hématologique complète, c'est-à-dire
+        la disparition du clone producteur de chaînes légères. C'est un bon
+        marqueur, mais un marqueur tout de même. Démontrer que ce gain se
+        traduit en années de vie gagnées est un résultat d'une autre nature, et
+        c'est ce qu'apporte cette analyse finale.
+      - >-
+        Le doublement à triplement des réponses cardiaques et rénales est
+        cliniquement parlant : en pratique, c'est la récupération d'organe qui
+        détermine l'autonomie et la qualité de vie du patient, davantage que la
+        réponse hématologique isolée. Ce numéro rejoint ici la méta-analyse sur
+        le diagnostic biologique de l'amylose AL publiée dans le n°15 : plus le
+        diagnostic est précoce, plus ces réponses d'organe sont accessibles.
+      - >-
+        Une nuance de lecture. L'observation selon laquelle « atteindre une
+        réponse complète hématologique ou cardiaque est associé à une meilleure
+        survie » n'est pas une comparaison randomisée : elle compare des
+        répondeurs à des non-répondeurs à l'intérieur de l'essai. Les patients
+        qui répondent diffèrent probablement des autres par la sévérité initiale
+        de leur maladie — c'est une association, pas une preuve que forcer la
+        réponse par tous les moyens prolongerait la vie. Le résultat randomisé,
+        lui, est solide : c'est la comparaison D-VCd contre VCd.
+
+  - type: reco
+    titre: "KDIGO : où en sont les traitements ciblant le lymphocyte B dans les glomérulopathies auto-immunes"
+    source: "Kidney International · rapport de conférence de controverses KDIGO"
+    impact_factor: 15
+    url: "https://pubmed.ncbi.nlm.nih.gov/42034308/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "rapport de conférence, pas une recommandation KDIGO graduée"
+    resume: >-
+      Compte rendu de la conférence de controverses organisée par KDIGO à Panama
+      en juin 2025, faisant le point maladie par maladie sur les traitements
+      déplétant ou modulant le lymphocyte B. Néphropathie à IgA : le rituximab
+      (anti-CD20) a montré une efficacité limitée, alors que les inhibiteurs des
+      facteurs de survie BAFF et APRIL et les anticorps anti-CD38 peuvent
+      réduire la protéinurie et ralentir le déclin du débit de filtration
+      glomérulaire estimé. Néphropathie extramembraneuse : les anti-CD20 sont
+      devenus le traitement de première ligne, avec au moins une rémission
+      partielle chez la majorité des patients à 18 mois. Syndrome néphrotique
+      corticodépendant : le rituximab prévient efficacement les rechutes,
+      surtout chez l'enfant, mais le bénéfice est transitoire. Néphrite lupique :
+      les approches plus récentes — obinutuzumab et cellules CAR-T — donnent des
+      résultats prometteurs, les CAR-T ouvrant la perspective d'une période
+      prolongée sans activité de la maladie ni traitement. Glomérulonéphrite des
+      vascularites à ANCA : le rituximab a fait la preuve de son efficacité en
+      induction comme en entretien, des essais de CAR-T étant en cours. La
+      tolérance varie avec l'intensité du traitement : profil favorable pour les
+      anti-CD20 conventionnels, sélection prudente des patients pour les CAR-T
+      en raison du risque de syndrome de relargage cytokinique et d'autres
+      événements graves. Les auteurs identifient comme besoin de recherche
+      prioritaire la validation de biomarqueurs de sélection et de suivi, ainsi
+      que l'optimisation des protocoles et de la durée de traitement.
+    message_cle: >-
+      Cibler le lymphocyte B n'est pas une stratégie unique mais un ensemble
+      d'options dont l'efficacité varie radicalement d'une glomérulopathie à
+      l'autre : première ligne dans la néphropathie extramembraneuse, décevante
+      dans la néphropathie à IgA, en pleine évolution dans la néphrite lupique
+      où les CAR-T ouvrent la perspective d'une rémission sans traitement.
+    comparaisons:
+      - titre: "Par rapport aux recommandations françaises"
+        reference: "PNDS et pratiques des filières de santé maladies rares concernées"
+        points:
+          - "Ce texte n'est pas opposable : c'est un état des lieux
+            international, à confronter aux PNDS français correspondants
+            (néphrite lupique, vascularites à ANCA), qui restent la référence
+            pour le parcours de soins et le remboursement en France."
+          - "Les CAR-T dans la néphrite lupique relèvent en France de protocoles
+            de recherche et de centres experts, pas de la pratique courante."
+    contexte:
+      - >-
+        L'intérêt de ce document pour l'interniste tient moins à des consignes
+        qu'à sa mise en perspective : il rassemble en un seul texte ce que la
+        déplétion B apporte, et n'apporte pas, dans des maladies que l'on prend
+        en charge conjointement avec le néphrologue — néphrite lupique et
+        glomérulonéphrite des vascularites à ANCA en tête.
+      - >-
+        Le contraste entre néphropathie extramembraneuse (anti-CD20 en première
+        ligne) et néphropathie à IgA (rituximab décevant, mais voies BAFF/APRIL
+        et anti-CD38 prometteuses) illustre un point de fond : cibler « le
+        lymphocyte B » recouvre des mécanismes différents selon la maladie, et
+        l'échec d'une molécule ne condamne pas la cible.
+      - >-
+        Le signal le plus fort concerne les CAR-T dans la néphrite lupique, avec
+        cette perspective inédite d'une rémission prolongée sans traitement
+        d'entretien. Les auteurs l'assortissent immédiatement d'une réserve de
+        tolérance — syndrome de relargage cytokinique, événements graves — qui
+        impose une sélection rigoureuse des patients.
+      - >-
+        Limite de statut, importante à ne pas escamoter : il s'agit d'un
+        **rapport de conférence de controverses**, pas d'une recommandation
+        KDIGO avec des propositions graduées selon le niveau de preuve. Son
+        objet déclaré est précisément d'identifier les incertitudes et les
+        besoins de recherche. À lire comme une synthèse d'experts faisant
+        autorité, non comme un référentiel à appliquer.
+
+  - type: meta
+    titre: "Critères SAPL 2023 de l'ACR/EULAR : très spécifiques, mais ils manquent 8 SAPL obstétricaux sur 10"
+    source: "Rheumatology (Oxford) · revue systématique et méta-analyse"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42615990/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique et méta-analyse de la performance de classification des
+      critères ACR/EULAR 2023 du syndrome des antiphospholipides, sur la
+      littérature d'août 2023 à mai 2026 : 24 études (25 jeux de données), dont
+      13 comportaient un groupe témoin sans SAPL, comparant ces critères au
+      diagnostic clinique d'expert et/ou aux critères de Sydney révisés (2006).
+      Sensibilité poolée 0,74 (IC95 0,67-0,81) et spécificité poolée 0,99 (IC95
+      0,98-1,00). La sensibilité est très hétérogène et dépend fortement du
+      phénotype : 0,82 dans le SAPL thrombotique, mais seulement 0,20 dans les
+      études restreintes au SAPL obstétrical (0,31 en incluant les données de
+      sous-groupes obstétricaux d'autres études). Les patients non classés le
+      sont principalement du fait d'une positivité isolée des anticorps
+      antiphospholipides de type IgM et des phénotypes obstétricaux.
+    message_cle: >-
+      Les critères SAPL 2023 sont quasi parfaitement spécifiques (0,99) mais
+      manquent un quart des patients au global et la grande majorité des SAPL
+      obstétricaux (sensibilité 0,20-0,31) : ce sont des critères de
+      classification pour la recherche, en aucun cas un outil diagnostique — ne
+      pas écarter un SAPL obstétrical au motif qu'il ne les remplit pas.
+    contexte:
+      - >-
+        La confusion entre critères de classification et critères diagnostiques
+        est une erreur classique et lourde de conséquences. Des critères de
+        classification sont construits pour constituer des populations
+        homogènes dans les essais : ils privilégient délibérément la spécificité,
+        quitte à exclure des malades authentiques. Les appliquer au lit du
+        patient revient à refuser un diagnostic à des patients qui ont bel et
+        bien la maladie.
+      - >-
+        Le chiffre à retenir est celui du SAPL obstétrical : une sensibilité de
+        0,20 à 0,31 signifie que sept à huit femmes sur dix ayant un SAPL
+        obstétrical selon l'expertise clinique ne sont pas classées par ces
+        critères. Pour l'interniste qui suit des grossesses à risque, souvent en
+        lien avec l'obstétricien, la conséquence est directe : la décision
+        thérapeutique ne peut pas se fonder sur ces critères.
+      - >-
+        La seconde cause de non-classification, la positivité isolée en IgM,
+        renvoie à un débat ancien sur la valeur pathogène de ces anticorps. Les
+        critères 2023 les pondèrent faiblement, ce qui est défendable sur le
+        plan de la recherche mais laisse le clinicien face à des situations
+        individuelles non tranchées.
+      - >-
+        Limites : hétérogénéité substantielle de la sensibilité entre études, et
+        surtout comparaison à un étalon-or imparfait — le diagnostic d'expert ou
+        les critères de Sydney 2006, eux-mêmes discutables. Seules 13 des 25
+        séries comportaient un groupe témoin sans SAPL, ce qui fragilise
+        l'estimation de spécificité, même si celle-ci est très élevée et
+        cohérente entre études.
+
+  - type: meta
+    titre: "Vascularites à ANCA : un quart des patients en insuffisance rénale terminale à 10 ans"
+    source: "Autoimmunity Reviews · revue systématique"
+    impact_factor: 13
+    url: "https://pubmed.ncbi.nlm.nih.gov/42349595/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "revue financée par un industriel (CSL Vifor), trois auteurs sur quatre liés au financeur"
+    resume: >-
+      Revue systématique des études publiées entre 2019 et 2024, d'au moins 100
+      patients et 3 ans de suivi, sur l'incidence cumulée de l'insuffisance
+      rénale terminale au cours des vascularites à ANCA : 49 études (19 301
+      patients) pour l'incidence, 19 études (4 513 patients) pour la relation
+      entre débit de filtration glomérulaire estimé et risque rénal. Les
+      incidences rapportées varient énormément d'une étude à l'autre — de 2,9 à
+      59,6 % à 1 an, et de 9,4 à 51,4 % à 10 ans. Les estimations combinées
+      s'établissent à 14,2 % à 1 an et 24,8 % à 10 ans. Un débit de filtration
+      glomérulaire estimé supérieur de 1 mL/min/1,73 m² au diagnostic et à 6
+      mois est associé à une réduction du risque d'insuffisance rénale terminale
+      de respectivement 5-6 % et 7-8 %. Les auteurs appellent explicitement à la
+      prudence dans l'usage de ces estimations combinées, compte tenu de
+      l'hétérogénéité importante des populations entre études.
+    message_cle: >-
+      Environ un patient sur sept atteint une insuffisance rénale terminale dès
+      la première année d'une vascularite à ANCA, et un sur quatre à dix ans —
+      et la fonction rénale à 6 mois est associée au pronostic rénal à long
+      terme, ce qui donne une valeur particulière à la qualité de la réponse
+      initiale.
+    contexte:
+      - >-
+        L'atteinte rénale conditionne le pronostic des vascularites à ANCA. Ces
+        chiffres rappellent que, malgré le rituximab et les protocoles
+        d'épargne cortisonique, une proportion importante de patients évolue
+        vers la dialyse ou la greffe — un rappel utile face à l'impression que
+        le pronostic de ces maladies serait désormais réglé.
+      - >-
+        Le résultat le plus actionnable concerne le débit de filtration
+        glomérulaire à 6 mois : le fait qu'il soit associé au risque rénal à
+        long terme suggère que la fenêtre thérapeutique utile se joue tôt. Ce
+        travail rejoint la conférence KDIGO de ce même numéro, qui rappelle
+        l'efficacité du rituximab en induction comme en entretien dans cette
+        indication.
+      - >-
+        Deux réserves de poids. D'abord la dispersion des résultats bruts (2,9 à
+        59,6 % à un an) : elle traduit des populations et des définitions très
+        différentes, au point que les auteurs eux-mêmes invitent à ne pas
+        utiliser les moyennes combinées comme des valeurs de référence. Ensuite,
+        la relation entre débit de filtration et risque rénal est
+        observationnelle : un meilleur débit à 6 mois marque probablement une
+        maladie moins sévère au départ autant qu'un effet du traitement.
+      - >-
+        Conflit d'intérêts à signaler : cette revue a été financée par CSL
+        Vifor, laboratoire présent sur le marché des maladies rénales, et trois
+        des quatre auteurs déclarent un lien d'emploi ou de consultance avec le
+        financeur. Cela ne disqualifie pas le travail, mais invite à lire les
+        conclusions sur le fardeau rénal avec cette grille de lecture.
+
+aussi_parus:
+  - titre: "Syndrome des poumons rétractés au cours du lupus : la récupération fonctionnelle complète reste rare"
+    source: "Lupus · revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42301754/"
+    resume: >-
+      Revue systématique de 40 études (111 patients, dont 30 observations
+      isolées et 10 séries de cas) sur cette manifestation rare du lupus : nette
+      prédominance féminine (91 %), âge moyen 33,5 ± 9,8 ans, syndrome
+      restrictif chez tous les patients (capacité vitale forcée 47-52 %). Les
+      corticoïdes sont le traitement de fond dans 95-96 % des cas, le rituximab
+      s'imposant comme la biothérapie de première intention dans les formes
+      réfractaires ; l'entraînement des muscles inspiratoires et la ventilation
+      non invasive améliorent la force diaphragmatique. La résolution
+      symptomatique survient chez 75-95 % des patients, mais la normalisation
+      des épreuves fonctionnelles respiratoires n'est obtenue que chez 20-23 %
+      d'entre eux — environ 80 % gardent un syndrome restrictif chronique. La
+      mortalité directement attribuable est faible (2-5,5 %). Niveau de preuve
+      limité : il s'agit d'une agrégation d'observations publiées, sujette au
+      biais de publication.
+
+  - titre: "Inhibiteurs de la voie des IgG dans le PTI de l'adulte : les anti-SYK devant les anti-FcRn"
+    source: "Cytokine · revue systématique et méta-analyse d'essais randomisés"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42284687/"
+    resume: >-
+      Méta-analyse de 10 essais randomisés issus de 8 études, sur les
+      inhibiteurs ciblant la voie des IgG dans le purpura thrombopénique immun
+      de l'adulte. Les inhibiteurs de SYK montrent l'effet estimé le plus
+      important (réponse plaquettaire durable : risque relatif 10,26 ; réponse
+      globale : 4,66), les inhibiteurs de FcRn un bénéfice intermédiaire sur la
+      réponse durable mais des résultats moins constants sur les autres
+      critères. Un seul essai portait sur un inhibiteur de BTK, ce qui laisse
+      cette classe indéterminée. Dans une analyse poolée que les auteurs
+      qualifient eux-mêmes d'exploratoire, ces inhibiteurs sont associés à une
+      augmentation des réponses durables (risque relatif 5,90) et à un moindre
+      recours aux traitements de secours. Tolérance sans signal préoccupant :
+      les anti-SYK augmentent légèrement les effets indésirables globaux, sans
+      excès d'événements graves ni d'arrêts de traitement. À lire avec prudence :
+      comparaison indirecte entre classes, et non essai comparatif direct.
