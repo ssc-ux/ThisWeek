@@ -1,0 +1,212 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 20
+semaine: "15 au 21 septembre 2026"
+date: 2026-09-21
+edito: >-
+  Trois textes utiles au quotidien : une prise de position de l'American College
+  of Cardiology qui fait le tour des anticoagulants oraux directs dans les
+  situations difficiles — insuffisance rénale, cancer, obésité, fragilité —, une
+  méta-analyse qui chiffre à 2,6 le surrisque d'accident vasculaire cérébral au
+  cours du lupus, et une revue qui rappelle que les manifestations
+  psychiatriques précèdent souvent le reste dans la neurosarcoïdose.
+
+items:
+  - type: reco
+    titre: "Anticoagulants oraux directs : prise de position 2026 de l'American College of Cardiology"
+    source: "Journal of the American College of Cardiology · Scientific Statement de l'ACC"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42377292/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "prise de position (Scientific Statement), pas une recommandation graduée"
+      - "document américain : molécules, doses et libellés d'AMM à confronter aux références françaises"
+    resume: >-
+      Prise de position de l'American College of Cardiology sur les
+      anticoagulants oraux directs en prévention primaire et secondaire des
+      événements thrombotiques. Le document part d'un double constat : ces
+      molécules sont devenues les anticoagulants oraux de référence dans la
+      majorité des cas de fibrillation atriale et de maladie thromboembolique
+      veineuse, mais elles restent **sous-utilisées et parfois mal dosées**, en
+      particulier chez les patients à risque thrombotique élevé et dans les
+      populations peu représentées dans les essais randomisés. Il couvre
+      l'anticoagulation de la fibrillation atriale, le traitement aigu et
+      prolongé de la maladie thromboembolique veineuse, et surtout la gestion
+      dans les **situations particulières** : insuffisance rénale chronique,
+      insuffisance hépatique, cancer, obésité, fragilité, antécédent
+      hémorragique, valvulopathie. S'y ajoutent l'anticoagulation
+      périprocédurale et les stratégies antithrombotiques après un accident
+      vasculaire cérébral, une fermeture d'auricule ou une ablation par
+      cathéter. Le texte traite également du choix de molécule, des schémas
+      posologiques, de la durée de traitement, de l'évaluation du risque
+      hémorragique, de la prise en charge des saignements sous anticoagulant,
+      des interactions médicamenteuses, de l'observance et des obstacles liés au
+      coût. Les auteurs présentent explicitement ce document comme un
+      **complément** aux recommandations de pratique clinique existantes, dont
+      l'objet est de synthétiser les données en évolution et de clarifier les
+      zones d'incertitude.
+    message_cle: >-
+      Un document de synthèse à garder sous la main pour les situations où les
+      anticoagulants oraux directs sont mal maîtrisés — insuffisance rénale,
+      cancer, obésité, sujet fragile, antécédent hémorragique — et où le
+      sous-dosage par excès de prudence est, selon les auteurs, un problème
+      aussi réel que le surdosage.
+    comparaisons:
+      - titre: "Par rapport aux références françaises"
+        reference: "recommandations HAS et résumés des caractéristiques du produit en vigueur en France"
+        points:
+          - "Document américain : les molécules disponibles, les libellés d'AMM
+            et les schémas posologiques ne se transposent pas automatiquement.
+            Les indications remboursées en France restent la référence
+            opposable."
+          - "Utile comme aide au raisonnement dans les situations peu couvertes
+            par les recommandations françaises (obésité majeure, insuffisance
+            rénale avancée, cancer), à condition de vérifier chaque posologie à
+            la source."
+    contexte:
+      - >-
+        L'intérêt de ce texte pour l'interniste tient à son objet : non pas les
+        indications consensuelles, déjà bien couvertes, mais précisément les
+        situations où l'on hésite. Insuffisance rénale chronique, cancer
+        évolutif, obésité majeure, patient âgé fragile avec antécédent
+        hémorragique : ce sont les patients de médecine interne, et ceux que les
+        essais pivots ont le moins inclus.
+      - >-
+        Le constat de sous-utilisation et de sous-dosage mérite d'être entendu.
+        La crainte hémorragique conduit fréquemment à des doses réduites hors
+        des critères validés, ce qui expose au risque thrombotique sans
+        bénéfice hémorragique démontré — une erreur moins visible qu'un
+        saignement, mais tout aussi réelle.
+      - >-
+        Le rappel sur les interactions médicamenteuses est particulièrement
+        pertinent en médecine interne, où la polymédication est la règle et où
+        les inducteurs et inhibiteurs enzymatiques (antifongiques azolés,
+        antirétroviraux, rifampicine, certains anticonvulsivants) modifient
+        substantiellement les concentrations.
+      - >-
+        Statut du document, à ne pas confondre : il s'agit d'une **prise de
+        position** (Scientific Statement), pas d'une recommandation avec des
+        propositions graduées selon le niveau de preuve. Les auteurs le
+        présentent eux-mêmes comme complémentaire des recommandations
+        existantes. À lire comme une mise au point experte, non comme un
+        référentiel opposable — a fortiori en France, où les textes de la HAS
+        font foi.
+
+  - type: meta
+    titre: "Lupus systémique : risque d'accident vasculaire cérébral multiplié par 2,6"
+    source: "Lupus Science & Medicine · revue systématique et méta-analyse"
+    impact_factor: 3
+    url: "https://pubmed.ncbi.nlm.nih.gov/42744409/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse de 25 études de cohorte publiées entre 2001 et 2026,
+      totalisant 5 220 837 personnes, sur le risque d'accident vasculaire
+      cérébral au cours du lupus systémique. Le risque relatif poolé est de 2,60
+      (IC95 2,21-3,05 ; I² = 97,9 % ; p < 0,001) pour l'accident vasculaire
+      cérébral toutes formes confondues. Par type : 2,83 (IC95 2,25-3,57 ;
+      I² = 98,0 %) pour le critère composite, 2,34 (IC95 1,75-3,12 ;
+      I² = 97,6 %) pour l'accident ischémique et 2,66 (IC95 1,57-4,49 ;
+      I² = 96,2 %) pour l'accident hémorragique. Malgré une hétérogénéité
+      considérable, l'analyse de sensibilité indique des résultats robustes et
+      les auteurs ne retrouvent guère d'argument en faveur d'un biais de
+      publication (entonnoir et test d'Egger).
+    message_cle: >-
+      Le lupus est associé à un risque d'accident vasculaire cérébral environ
+      2,6 fois supérieur à celui de la population générale, et le surrisque
+      concerne autant les formes hémorragiques (2,66) qu'ischémiques (2,34) — un
+      argument de plus pour traiter agressivement les facteurs de risque
+      cardiovasculaire chez ces patients souvent jeunes.
+    contexte:
+      - >-
+        Le risque cardiovasculaire accru du lupus est connu depuis les travaux
+        princeps sur la double distribution de la mortalité — précoce par
+        poussée et infection, tardive par athérosclérose accélérée. Ce travail
+        le quantifie spécifiquement pour l'accident vasculaire cérébral, sur un
+        effectif considérable.
+      - >-
+        Le point le plus instructif est que le surrisque porte aussi sur les
+        accidents **hémorragiques** (risque relatif 2,66), et pas seulement
+        ischémiques. Cela oriente vers des mécanismes qui débordent la seule
+        athérosclérose accélérée : thrombopénie, anticorps antiphospholipides,
+        hypertension artérielle liée à l'atteinte rénale, vascularite cérébrale,
+        effets de la corticothérapie au long cours.
+      - >-
+        Implication pratique immédiate : chez un patient lupique, souvent jeune
+        et féminin, les calculateurs de risque cardiovasculaire standards
+        sous-estiment structurellement le danger, puisqu'ils reposent sur des
+        cohortes de population générale. Le contrôle tensionnel, l'arrêt du
+        tabac, la recherche d'anticorps antiphospholipides et la limitation de
+        l'exposition cortisonique en découlent directement.
+      - >-
+        Limites à ne pas minorer. L'hétérogénéité est extrême (I² proche de
+        98 % sur tous les critères) : le chiffre de 2,6 est un ordre de grandeur,
+        pas une valeur applicable à un patient donné. Surtout, il s'agit
+        d'études de cohorte : elles établissent une **association** entre lupus
+        et accident vasculaire cérébral, sans permettre de démêler la part
+        propre de la maladie, celle des traitements — corticoïdes au premier
+        chef — et celle des facteurs de risque classiques éventuellement plus
+        fréquents dans ces populations.
+
+  - type: meta
+    titre: "Neurosarcoïdose : les symptômes psychiatriques précèdent le reste dans 8 cas sur 10"
+    source: "Rheumatology International · revue systématique de cas publiés"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42762351/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "agrégation de cas publiés : biais de publication vers les formes sévères"
+    resume: >-
+      Revue systématique de 89 publications rapportant 93 patients présentant
+      des manifestations psychiatriques au cours d'une sarcoïdose ou d'une
+      neurosarcoïdose. Âge moyen 45,5 ± 14,5 ans, prédominance masculine
+      (58,1 %). Une sarcoïdose systémique était présente chez 74,2 % des
+      patients, la neurosarcoïdose étant isolée dans 25,8 % des cas ; le
+      diagnostic reposait sur l'histologie chez 84,9 %. Les symptômes
+      psychiatriques ont **précédé les manifestations neurologiques dans 78,5 %
+      des cas**. Les manifestations les plus fréquentes sont les troubles
+      cognitifs (88,2 %) et les modifications de la personnalité (65,6 %).
+      L'IRM montre fréquemment des lésions parenchymateuses (66,7 %) et un
+      rehaussement leptoméningé (57,7 %) ; le liquide cérébrospinal retrouve une
+      hyperprotéinorachie (80 %) et une pléiocytose (71,3 %). Une
+      corticothérapie a été administrée à 93,5 % des patients, avec rémission
+      complète chez 58,1 %. Sont associés à une meilleure rémission un début
+      psychiatrique aigu (48,1 % contre 15,4 % ; p = 0,002) et un tableau de
+      confusion (70,4 % contre 41,0 % ; p = 0,013) ; sont au contraire plus
+      fréquents chez les patients sans rémission complète la neurosarcoïdose
+      isolée (33,3 % contre 16,7 % ; p = 0,040), les lésions parenchymateuses
+      (59,0 % contre 50,0 % ; p = 0,034) et l'atteinte des noyaux gris centraux
+      (30,8 % contre 16,7 % ; p = 0,045).
+    message_cle: >-
+      Devant des troubles cognitifs ou un changement de personnalité
+      d'apparition récente chez un patient sarcoïdosique — ou même sans
+      sarcoïdose connue —, penser neurosarcoïdose : les symptômes psychiatriques
+      précèdent l'atteinte neurologique dans près de huit cas sur dix, et une
+      sarcoïdose systémique cherchable est présente dans trois quarts des cas.
+    contexte:
+      - >-
+        Ce travail prolonge l'item sur l'hypophysite sarcoïdosique publié dans
+        le n°16 et rejoint le même constat pratique : dans les localisations
+        neurologiques de la sarcoïdose, c'est la recherche de l'atteinte
+        systémique qui ouvre la voie du diagnostic, l'histologie cérébrale étant
+        rarement accessible.
+      - >-
+        L'antériorité des symptômes psychiatriques sur les signes neurologiques
+        dans 78,5 % des cas est le message clinique central. Elle explique un
+        piège classique : le patient est d'abord orienté en psychiatrie, et le
+        diagnostic n'est porté qu'au moment où apparaissent des signes
+        neurologiques plus francs — parfois après des mois de traitement
+        symptomatique inefficace.
+      - >-
+        Les facteurs associés au pronostic dessinent une logique cohérente : un
+        début brutal et confusionnel, qui alerte rapidement, s'associe à une
+        meilleure rémission, tandis que l'atteinte parenchymateuse, celle des
+        noyaux gris centraux et la forme isolée — donc plus difficile à
+        rattacher — s'associent à un moins bon résultat. Cela suggère que le
+        délai diagnostique compte, sans le démontrer.
+      - >-
+        Limite décisive avant d'utiliser ces pourcentages : il s'agit d'une
+        agrégation de **cas publiés**, non d'une cohorte. Les observations qui
+        parviennent à la publication sont les plus sévères, les plus atypiques
+        ou les plus démonstratives ; les formes frustes ou de résolution simple
+        sont massivement sous-représentées. Ces chiffres décrivent donc les cas
+        publiés de neurosarcoïdose psychiatrique, et non l'ensemble des patients
+        concernés. Les comparaisons entre répondeurs et non-répondeurs, faites
+        a posteriori sur 93 observations hétérogènes, sont à considérer comme
+        exploratoires et génératrices d'hypothèses.
