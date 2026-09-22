@@ -1,0 +1,292 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 18
+semaine: "1er au 7 septembre 2026"
+date: 2026-09-07
+edito: >-
+  Rentrée chargée. Un essai randomisé à plus d'un million de participants montre
+  qu'un simple courrier électronique augmente la couverture vaccinale
+  antigrippale, et davantage encore chez l'immunodéprimé — suite logique des
+  recommandations IDSA du n°16. Une revue parapluie fait le point sur ce
+  qu'apporte vraiment le PET-FDG dans la fièvre inexpliquée, une méta-analyse
+  propose de stratifier le dépistage des cancers dans la sclérodermie plutôt que
+  de le faire à l'aveugle, et une revue chiffre le risque thrombotique du PTI à
+  haut risque sous traitement de deuxième ligne.
+
+items:
+  - type: essai
+    titre: "Vaccination antigrippale de l'immunodéprimé : un courrier électronique suffit à faire bouger la couverture"
+    source: "Clinical Infectious Diseases · analyse poolée de 2 essais randomisés nationaux"
+    impact_factor: 11
+    url: "https://pubmed.ncbi.nlm.nih.gov/41968745/"
+    base_texte: abstract_seul
+    resume: >-
+      Analyse poolée, au niveau individuel, de deux essais randomisés
+      pragmatiques nationaux danois harmonisés (NUDGE-FLU-2 chez les adultes de
+      65 ans et plus, NUDGE-FLU-CHRONIC chez les 18-64 ans porteurs d'une
+      maladie chronique), pendant la saison grippale 2023-2024 : 1 181 254
+      participants, âge moyen 67 ans, dont 73 830 (6,3 %) immunodéprimés —
+      définis par un diagnostic ou une délivrance de traitement
+      immunosuppresseur. Randomisation entre soins habituels et six variantes de
+      courrier électronique. Critère principal : vaccination antigrippale
+      effective au 1er janvier 2024, relevée dans les registres administratifs
+      nationaux. Au total 66,1 % des participants ont été vaccinés. Recevoir un
+      courrier, quel qu'il soit, augmente la vaccination de 2,79 points de
+      pourcentage (IC95 2,60-2,98 ; p < 0,001) par rapport aux soins habituels,
+      avec un effet **plus marqué chez les immunodéprimés** : +4,12 points
+      contre +2,70 points (p d'interaction = 0,002). Chez les adultes plus
+      jeunes porteurs d'une maladie chronique, l'effet est bien supérieur :
+      +11,7 points au global et +13,3 points chez les immunodéprimés (p
+      d'interaction = 0,007). Parmi les immunodéprimés, l'effet paraît plus
+      important chez ceux dont l'immunodépression tient à la maladie qu'à son
+      traitement.
+    message_cle: >-
+      Un simple courrier électronique augmente la vaccination antigrippale, et
+      le gain est plus important chez les patients immunodéprimés — jusqu'à
+      +13 points chez les moins de 65 ans. Une intervention à coût quasi nul
+      pour une population où la couverture vaccinale reste insuffisante malgré
+      un surrisque documenté.
+    contexte:
+      - >-
+        Ce travail complète directement les recommandations IDSA publiées dans
+        le n°16, qui établissaient le bénéfice de la vaccination chez
+        l'immunodéprimé. Savoir qu'il faut vacciner est une chose ; obtenir que
+        les patients le soient en est une autre, et c'est précisément le
+        problème que traite cet essai.
+      - >-
+        L'intérêt méthodologique est réel : il s'agit d'essais randomisés, non
+        d'une étude observationnelle, avec un critère principal relevé dans des
+        registres administratifs exhaustifs plutôt que déclaré. Le Danemark s'y
+        prête par son identifiant de santé unique, ce qui limite les perdus de
+        vue.
+      - >-
+        Le signal d'interaction est le point saillant : le nudge ne marche pas
+        seulement, il marche *mieux* chez ceux qui en ont le plus besoin. Cela
+        contredit l'intuition courante selon laquelle les patients les plus
+        fragiles seraient déjà les mieux suivis, et suggère qu'il reste une
+        marge de progression importante dans cette population.
+      - >-
+        Transposabilité à surveiller. Le système danois — courrier électronique
+        officiel lu par la quasi-totalité de la population, registres
+        nationaux — n'a pas d'équivalent direct en France, et une couverture de
+        départ de 66 % n'est pas celle observée partout. Le principe (relance
+        ciblée, à faible coût) reste transposable ; l'ampleur du gain, pas
+        nécessairement.
+
+  - type: meta
+    titre: "PET-FDG dans la fièvre inexpliquée : ce que valent vraiment 14 revues systématiques"
+    source: "Quarterly Journal of Nuclear Medicine and Molecular Imaging · revue parapluie"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41873478/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue parapluie — c'est-à-dire une synthèse de revues systématiques — de
+      14 revues systématiques et méta-analyses évaluant le PET-FDG couplé au
+      scanner dans la fièvre ou l'inflammation inexpliquée, la bactériémie et le
+      sepsis. Chez l'adulte en fièvre ou inflammation inexpliquée, la
+      sensibilité est de 81 à 94 % et le rendement diagnostique de 56 à 75 %.
+      Chez l'enfant, la sensibilité est de 83 %, la spécificité de 77,6 % et
+      l'aire sous la courbe de 0,83. Dans la bactériémie et le sepsis, en
+      particulier chez le patient de réanimation, la sensibilité atteint 94 %
+      (moyenne de 94,6 % en réanimation). Dans des populations particulières :
+      détection du foyer dans 79,5 % des fièvres Q chroniques, valeur clinique
+      ajoutée dans 83 % des neutropénies fébriles. La prise en charge est
+      modifiée chez 20 à 48 % des patients à la suite de l'examen. L'analyse
+      coût-efficacité soutient un usage sélectif dans les populations à haut
+      risque, avec un nombre d'examens nécessaires de 3 à 6 dans les
+      bactériémies complexes.
+    message_cle: >-
+      Dans la fièvre prolongée inexpliquée, le PET-FDG a une sensibilité de 81 à
+      94 % et modifie la prise en charge chez un patient sur cinq à un sur
+      deux — mais son intérêt économique repose sur une sélection rigoureuse des
+      patients, pas sur une prescription systématique.
+    contexte:
+      - >-
+        La fièvre prolongée inexpliquée est une situation emblématique de la
+        médecine interne, où l'imagerie métabolique s'est imposée en pratique
+        avant d'être solidement évaluée. Cette revue parapluie a le mérite de
+        rassembler ce que dix ans de revues systématiques ont établi, plutôt que
+        d'ajouter une méta-analyse de plus.
+      - >-
+        Le chiffre le plus utile n'est pas la sensibilité mais la proportion de
+        prises en charge modifiées (20 à 48 %) : c'est le seul qui réponde à la
+        question réellement posée devant un patient, à savoir si l'examen
+        changera quelque chose. Cette fourchette large reflète des populations
+        très différentes.
+      - >-
+        Le nombre d'examens nécessaires de 3 à 6 dans les bactériémies
+        complexes donne un repère concret pour argumenter une demande : environ
+        un examen sur quatre apporte un bénéfice décisionnel dans cette
+        indication précise.
+      - >-
+        Limites structurelles d'une revue parapluie : elle hérite des faiblesses
+        des revues qu'elle agrège, sans pouvoir les corriger. Les auteurs
+        soulignent eux-mêmes l'absence de standardisation des protocoles
+        d'acquisition et le manque d'études comparatives prospectives — on ne
+        sait donc pas si le PET fait mieux qu'une stratégie diagnostique
+        conventionnelle bien conduite, seulement qu'il est performant pris
+        isolément.
+
+  - type: meta
+    titre: "Cancers au cours de la sclérodermie : vers un dépistage ciblé sur le phénotype et les autoanticorps"
+    source: "Rheumatology (Oxford) · revue systématique et méta-analyse"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42391056/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse de 35 études (27 624 patients sclérodermiques) sur les
+      facteurs associés à la survenue d'un cancer, menée par le groupe de
+      travail Cancer du Scleroderma Clinical Trials Consortium. Les patients
+      ayant développé un cancer avaient débuté leur sclérodermie plus tard
+      (différence moyenne +4,01 ans ; IC95 1,24-6,78). Facteurs associés au
+      cancer : sexe masculin (OR 1,36), tabagisme (OR 1,27), hypertension
+      pulmonaire (OR 1,32), pneumopathie interstitielle (OR 1,41), forme
+      cutanée diffuse (OR 1,14), positivité des anticorps anti-ARN polymérase
+      III (OR 1,79), absence d'anticorps antinucléaires (OR 1,39) ; les
+      anticorps anticentromères sont associés à un moindre risque (OR 0,83).
+      Dans les analyses de sensibilité restreintes aux études de bonne qualité,
+      seuls le sexe masculin, le tabagisme, l'hypertension pulmonaire et les
+      anti-ARN polymérase III restent significatifs. Par type de cancer : le
+      cancer du poumon est associé au sexe masculin (OR 2,72), au tabagisme
+      (OR 2,38), aux anti-topo-isomérase I (OR 2,45) et à la pneumopathie
+      interstitielle (OR 2,98), les anticentromères étant inversement associés
+      (OR 0,32). Les anti-ARN polymérase III sont associés au cancer du sein
+      (OR 2,17) et à un cancer précoce ou concomitant du diagnostic (OR 2,85),
+      tandis que l'ulcération digitale est associée à une survenue plus tardive
+      (OR 0,39).
+    message_cle: >-
+      Le risque de cancer au cours de la sclérodermie dépend du phénotype et du
+      profil d'autoanticorps : les anti-ARN polymérase III signalent un cancer
+      souvent précoce ou concomitant du diagnostic, tandis que la pneumopathie
+      interstitielle et le tabagisme orientent vers le poumon — de quoi plaider
+      pour une surveillance stratifiée plutôt qu'un dépistage uniforme.
+    contexte:
+      - >-
+        L'association entre sclérodermie et cancer est connue, notamment la
+        concomitance frappante entre cancer et sclérodermie à anti-ARN
+        polymérase III, qui a nourri l'hypothèse d'une maladie auto-immune
+        déclenchée par la tumeur. Ce travail a le mérite de quantifier ces
+        associations sur un effectif large et d'en tirer une proposition
+        pratique.
+      - >-
+        L'analyse de sensibilité est instructive : sur huit facteurs
+        initialement significatifs, quatre seulement survivent à la restriction
+        aux études de bonne qualité. Les associations robustes — sexe masculin,
+        tabagisme, hypertension pulmonaire, anti-ARN polymérase III — sont donc
+        celles sur lesquelles fonder une stratégie, les autres devant être
+        considérées comme plus fragiles.
+      - >-
+        Le message opérationnel est la stratification : la temporalité diffère
+        selon le profil (cancer précoce ou concomitant avec les anti-ARN
+        polymérase III, plus tardif en cas d'ulcérations digitales), ce qui
+        suggère d'adapter non seulement l'intensité mais aussi le calendrier de
+        la surveillance.
+      - >-
+        Réserves importantes. Ce sont des études cas-témoins et de cohorte :
+        les odds ratios décrivent des associations, pas des relations causales,
+        et plusieurs facteurs sont liés entre eux (tabagisme, sexe masculin et
+        cancer du poumon, par exemple) sans que l'on sache toujours ce qui est
+        ajusté sur quoi. Surtout, aucune de ces données ne démontre qu'un
+        dépistage stratifié améliorerait le pronostic : c'est une hypothèse
+        raisonnable, pas un résultat.
+
+  - type: meta
+    titre: "PTI à haut risque : un patient sur dix fait une thrombose sous traitement de deuxième ligne"
+    source: "Rheumatology (Oxford) · revue systématique"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42644834/"
+    base_texte: abstract_seul
+    resume: >-
+      Revue systématique (Medline et Embase, 2010 à novembre 2025) du risque
+      thrombotique chez les patients atteints de purpura thrombopénique immun
+      dit « à haut risque », défini comme un PTI primaire avec anticorps
+      antiphospholipides ou un PTI secondaire à une maladie auto-immune
+      elle-même thrombogène, et recevant un traitement de deuxième ligne
+      (agonistes du récepteur de la thrombopoïétine, fostamatinib, rituximab,
+      immunosuppresseurs conventionnels, splénectomie). Treize études, 308
+      patients. Une thrombose est survenue chez 40 patients, soit 10 % (IC95
+      5-19), sur un suivi médian allant de 6 à 42 mois selon les études. Par
+      traitement : 30 thromboses sous agonistes du récepteur de la
+      thrombopoïétine (16 % ; IC95 11-22), 3 sous rituximab (14 % ; IC95 3-35),
+      3 sous immunosuppresseurs (11 % ; IC95 2-28) et 6 après splénectomie
+      (12 % ; IC95 4-24).
+    message_cle: >-
+      Chez un patient ayant un PTI associé à des anticorps antiphospholipides ou
+      à une maladie auto-immune thrombogène, environ un sur dix fait une
+      thrombose sous traitement de deuxième ligne — et le risque se retrouve
+      avec toutes les options, ce qui désigne le terrain autant que le
+      traitement.
+    contexte:
+      - >-
+        Le paradoxe du PTI thrombotique est bien connu des internistes : une
+        maladie définie par la thrombopénie et le risque hémorragique, mais qui
+        expose aussi à la thrombose, particulièrement lorsqu'elle s'associe à un
+        syndrome des antiphospholipides ou à un lupus. Ce travail est le premier
+        à agréger systématiquement le risque dans cette population précise.
+      - >-
+        Le résultat le plus important est la constance du signal : les
+        fréquences sont du même ordre sous agonistes du récepteur de la
+        thrombopoïétine, rituximab, immunosuppresseurs et après splénectomie.
+        Cela oriente l'interprétation vers le terrain prothrombotique lui-même
+        plutôt que vers une toxicité propre à une classe — nuance importante,
+        car les agonistes du récepteur de la thrombopoïétine traînent une
+        réputation de risque thrombotique qui pourrait être en partie un effet
+        d'indication.
+      - >-
+        Prudence toutefois sur cette lecture rassurante : avec 3 à 6 événements
+        seulement dans les bras rituximab, immunosuppresseurs et splénectomie,
+        les intervalles de confiance sont très larges (jusqu'à 3-35 %) et ne
+        permettent pas d'exclure des différences réelles entre traitements. Le
+        chiffre de 16 % sous agonistes du récepteur de la thrombopoïétine repose
+        sur 30 événements et reste le plus solide de la série.
+      - >-
+        Limites : données observationnelles agrégées, hétérogénéité des durées
+        de suivi (de 6 à 42 mois), et absence de groupe comparateur de patients
+        à haut risque non traités — on ne peut donc pas isoler la part du
+        traitement de celle de la maladie dans le risque observé.
+
+aussi_parus:
+  - titre: "Diagnostic et suivi du PTT : guide de la British Society for Haematology pour les laboratoires"
+    source: "British Journal of Haematology · recommandation BSH"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42605199/"
+    resume: >-
+      Recommandation de la British Society for Haematology destinée aux
+      laboratoires, portant sur les méthodes de dosage du déficit en ADAMTS13,
+      métalloprotéase dont l'effondrement définit le purpura thrombotique
+      thrombocytopénique. Elle complète les recommandations BSH antérieures sur
+      la prise en charge clinique. Signalé ici sans synthèse détaillée pour une
+      raison simple et assumée : PubMed n'en publie qu'un résumé de deux lignes,
+      sans aucun contenu technique, et le texte intégral n'est pas accessible —
+      il n'y a donc rien à résumer honnêtement. Le document lui-même est à
+      consulter à la source par les équipes concernées par le dosage
+      d'ADAMTS13.
+
+  - titre: "PET-FDG dans les vascularites des gros vaisseaux : revue parapluie de 13 revues systématiques"
+    source: "Quarterly Journal of Nuclear Medicine and Molecular Imaging"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42411928/"
+    resume: >-
+      Revue parapluie de 13 revues systématiques sur le PET-FDG dans les
+      vascularites des gros vaisseaux (maladie de Horton, artérite de Takayasu,
+      pseudo-polyarthrite rhizomélique) : sensibilité de 75,9 à 90 % et
+      spécificité de 71 à 98 % pour détecter une vascularite active,
+      particulièrement dans la maladie de Horton et le Takayasu. L'examen fait
+      mieux que le scanner ou l'IRM pour repérer l'inflammation extracrânienne
+      et paraît utile au suivi sous traitement. Les auteurs soulignent le besoin
+      de protocoles standardisés, et situent les progrès à venir du côté des
+      caméras grand champ, de nouveaux traceurs et de l'IRM pour l'évaluation
+      intracrânienne.
+
+  - titre: "Vutrisiran dans l'amylose héréditaire à transthyrétine avec polyneuropathie : analyse finale de HELIOS-A"
+    source: "Amyloid · extension randomisée d'un essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42290201/"
+    resume: >-
+      Analyse finale de l'extension randomisée de l'essai de phase 3 HELIOS-A
+      (NCT03759379) : 149 patients ayant terminé les 18 mois de l'étude
+      principale ont été re-randomisés entre vutrisiran 25 mg tous les 3 mois
+      (n = 76) et 50 mg tous les 6 mois (n = 73, converti ensuite au schéma
+      trimestriel), pour une durée allant jusqu'à 42 mois. La baisse moyenne de
+      la transthyrétine sérique atteint 84,5 % à 42 mois. L'efficacité reste
+      stable jusqu'au 18e mois de l'extension sur l'ensemble des critères
+      (score de neuropathie mNIS+7, qualité de vie Norfolk, test de marche de 10
+      mètres, échelle d'incapacité R-ODS, indice de masse corporelle modifié),
+      et 67,8 % des patients conservent un score d'incapacité stable. Tolérance
+      sans signal nouveau. À lire comme une confirmation de stabilité à long
+      terme, non comme une comparaison : l'extension n'a pas de bras témoin.
