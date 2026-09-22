@@ -1,0 +1,162 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 19
+semaine: "8 au 14 septembre 2026"
+date: 2026-09-14
+edito: >-
+  Semaine calme : deux items seulement, mais deux résultats qui méritent d'être
+  lus pour ce qu'ils disent vraiment. La première méta-analyse d'essais
+  randomisés dans la sarcoïdose cutanée ne démontre l'efficacité d'aucun
+  traitement — un résultat négatif qu'il vaut mieux connaître avant de promettre
+  à un patient. Et une méta-analyse bayésienne suggère un intérêt à associer
+  statines et anticoagulants après une thrombose veineuse, sans encore l'établir.
+
+items:
+  - type: meta
+    titre: "Sarcoïdose cutanée : aucun traitement n'a fait la preuve de son efficacité dans les essais randomisés"
+    source: "Acta Dermato-Venereologica · méta-analyse d'essais randomisés contre placebo"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42708647/"
+    base_texte: texte_integral
+    points_a_verifier:
+      - "critère principal non significatif : intervalle de confiance incluant l'absence d'effet"
+      - "niveau de preuve GRADE très faible"
+    resume: >-
+      Méta-analyse des essais randomisés en double aveugle contre placebo
+      évaluant un traitement médicamenteux de la sarcoïdose cutanée : sur 181
+      études examinées, 6 essais seulement ont été retenus, totalisant 156
+      patients. Les traitements testés étaient l'infliximab, l'adalimumab, le
+      golimumab, l'ustékinumab, le thalidomide, le sirolimus topique et une
+      association d'antimycobactériens (schéma CLEAR : lévofloxacine,
+      éthambutol, azithromycine, rifampicine) ; tous les essais autorisaient une
+      corticothérapie associée. Sur le critère principal de réponse clinique, le
+      résultat **n'est pas significatif** : 309 répondeurs pour 1 000 patients
+      traités contre 167 pour 1 000 sous placebo, soit un odds ratio de 2,24
+      dont l'intervalle de confiance à 95 % (0,73-6,90) inclut l'absence
+      d'effet. Même constat pour les anti-TNF alpha pris isolément (336 contre
+      233 pour 1 000 ; OR 1,66 ; IC95 0,60-4,62) et pour la qualité de vie (549
+      contre 353 pour 1 000 ; OR 2,23 ; IC95 0,87-5,73). Les événements
+      indésirables graves sont comparables entre groupes (134 contre 137 pour
+      1 000 ; OR 0,97 ; IC95 0,48-1,96). Hétérogénéité modérée sur le critère
+      principal (I² = 35 %), nulle sur les critères secondaires. Quatre des six
+      essais présentaient un risque de biais modéré à élevé, principalement du
+      fait de données manquantes ; la certitude globale des preuves, évaluée par
+      la méthode GRADE, est **très faible**.
+    message_cle: >-
+      Aucun traitement de la sarcoïdose cutanée — anti-TNF, thalidomide,
+      ustékinumab, antimycobactériens — n'a démontré son efficacité contre
+      placebo dans un essai randomisé : les tendances vont dans le bon sens mais
+      aucune n'atteint la significativité, sur 156 patients au total et avec un
+      niveau de preuve très faible. C'est un constat sur l'état de la recherche,
+      pas une preuve d'inefficacité.
+    contexte:
+      - >-
+        L'atteinte cutanée concerne environ un quart des patients ayant une
+        sarcoïdose systémique, et c'est l'une des localisations extrapulmonaires
+        les plus fréquentes. Sa morphologie a une valeur pronostique :
+        l'érythème noueux signe classiquement une forme aiguë de bon pronostic,
+        alors que le lupus pernio prédit fortement une maladie chronique
+        réfractaire. Les lésions défigurantes pèsent lourdement sur la qualité
+        de vie.
+      - >-
+        Il faut lire ce résultat pour ce qu'il est, et surtout pour ce qu'il
+        n'est pas. « Absence de preuve d'efficacité » n'équivaut pas à « preuve
+        d'absence d'efficacité » : avec six essais et 156 patients au total, la
+        puissance statistique est dérisoire, et les estimations ponctuelles
+        (odds ratios de 1,66 à 2,24) vont toutes dans le sens d'un bénéfice. Ce
+        que cette méta-analyse démontre, c'est l'indigence de la recherche
+        clinique dans cette indication, pas l'inutilité des traitements
+        employés.
+      - >-
+        Un facteur complique encore la lecture : tous les essais autorisaient
+        une corticothérapie de fond dans les deux bras. Le bénéfice mesuré est
+        donc celui d'un traitement **ajouté** aux corticoïdes, ce qui rend plus
+        difficile la mise en évidence d'un effet propre et n'évalue pas la
+        question de l'épargne cortisonique, pourtant centrale en pratique.
+      - >-
+        Point utile en pratique : les événements indésirables graves ne sont pas
+        plus fréquents sous traitement actif (13,4 % contre 13,7 %). Les
+        auteurs restent prudents, les effectifs étant faibles et les intervalles
+        larges, mais rien dans ces données ne suggère un surrisque immédiat des
+        stratégies testées.
+      - >-
+        Cette synthèse a pu être rédigée à partir du **texte intégral** de
+        l'article, en accès libre — ce qui reste rare dans ce digest — et non du
+        seul résumé, lequel est d'ailleurs absent de PubMed pour cet article.
+
+  - type: meta
+    titre: "Statines associées aux anticoagulants après une thrombose veineuse : un signal, pas encore une preuve"
+    source: "Med · méta-analyse bayésienne"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42607667/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse bayésienne de 28 études (17 observationnelles et 11 essais
+      randomisés, publiées jusqu'en mai 2026) comparant l'association d'un
+      hypolipémiant et d'un anticoagulant à l'anticoagulant seul, après une
+      maladie thromboembolique veineuse. Sur la récidive thromboembolique, le
+      risque relatif est de 0,73 avec un intervalle de crédibilité à 95 % de
+      0,58 à 1,05 — la probabilité a posteriori d'un bénéfice quelconque est
+      estimée à 0,97, mais l'intervalle inclut l'absence d'effet. Sur le
+      syndrome post-thrombotique, risque relatif 0,83 (IC crédibilité 0,40-1,59 ;
+      probabilité de bénéfice 0,74). Le résultat le plus net concerne la
+      sécurité : le risque de saignement majeur est inférieur de 15 % sous
+      association (risque relatif 0,85 ; IC crédibilité 0,76-0,96 ; probabilité
+      de bénéfice 0,99). L'association réduit également les D-dimères
+      (différence moyenne standardisée logarithmique -0,15 ; IC crédibilité
+      -0,43 à 0,13) et la protéine C-réactive (-0,86 ; IC crédibilité -1,48 à
+      -0,08). Les auteurs concluent à un bénéfice potentiel, en soulignant que
+      des essais randomisés restent nécessaires pour conclure.
+    message_cle: >-
+      Ajouter un hypolipémiant à l'anticoagulation après une thrombose veineuse
+      est associé à moins de récidives et, de façon plus nette, à moins de
+      saignements majeurs — mais les intervalles de crédibilité incluent
+      l'absence d'effet pour l'efficacité, et deux tiers des données sont
+      observationnelles. Pas de quoi modifier une prescription aujourd'hui.
+    contexte:
+      - >-
+        L'hypothèse d'un effet antithrombotique des statines, indépendant de
+        leur action sur le cholestérol, circule depuis l'essai JUPITER et repose
+        sur leurs propriétés anti-inflammatoires. La baisse de protéine
+        C-réactive observée ici, la plus marquée des critères biologiques, va
+        dans ce sens sans l'établir.
+      - >-
+        Le résultat contre-intuitif mérite qu'on s'y arrête : une réduction des
+        saignements majeurs sous association. Deux lectures s'opposent — un
+        effet protecteur vasculaire propre aux statines, ou un biais
+        d'indication, les patients recevant une statine étant probablement
+        mieux suivis et en meilleur état général que ceux qui n'en reçoivent
+        pas. Avec 17 études observationnelles sur 28, la seconde explication ne
+        peut pas être écartée.
+      - >-
+        Le cadre bayésien mérite une note de lecture. Une « probabilité de
+        bénéfice de 0,97 » n'est pas une valeur de p et ne signifie pas que le
+        traitement marche à 97 % : c'est la probabilité, compte tenu des données
+        et du modèle, que l'effet aille dans le sens d'une réduction, si faible
+        soit-elle. L'intervalle de crédibilité (0,58-1,05), qui inclut
+        l'absence d'effet, reste la mesure prudente à retenir.
+      - >-
+        En pratique, rien ne change aujourd'hui : cette analyse ne justifie pas
+        d'introduire une statine dans le seul but de prévenir une récidive
+        thromboembolique. Elle renforce en revanche l'intérêt de ne pas
+        interrompre un hypolipémiant déjà indiqué par ailleurs chez un patient
+        sous anticoagulant, et justifie l'essai randomisé que les auteurs
+        appellent de leurs vœux.
+
+aussi_parus:
+  - titre: "Déficit en DNASE1L3 : un spectre clinique bien plus large que le lupus de l'enfant"
+    source: "Current Rheumatology Reports · série de cas et revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42726335/"
+    resume: >-
+      Le déficit en DNASE1L3 est une cause monogénique rare de lupus, liée à un
+      défaut d'élimination de l'ADN extracellulaire. Cette revue systématique
+      combinée à une série pédiatrique rassemble 49 patients génétiquement
+      confirmés. Le phénotype dominant est un lupus systémique (27 patients sur
+      45, soit 60 %), suivi d'une vascularite urticarienne
+      hypocomplémentémique (10, soit 22,2 %) et de formes de chevauchement (8,
+      soit 17,8 %). L'atteinte rénale est rapportée chez 30 patients sur 45
+      (66,7 %) et la maladie débute avant 3 ans dans 44,4 % des cas, avec une
+      hypocomplémentémie C3 et C4 persistante fréquente. Point notable : des
+      variants identiques (p.Asn191Ser, p.Thr97Ilefs*2) se retrouvent aussi bien
+      dans des formes vasculaires limitées que dans des lupus multiviscéraux
+      graves, ce qui plaide contre une relation simple entre génotype et
+      phénotype. Population essentiellement pédiatrique, signalée ici pour les
+      internistes suivant ces patients en transition ou confrontés à un lupus
+      très précoce avec hypocomplémentémie marquée.
