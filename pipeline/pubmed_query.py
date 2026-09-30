@@ -62,6 +62,33 @@ RETRACTED_EXCLUDE = 'NOT ("Retracted Publication"[pt])'
 
 RECO_PUBTYPES = {"Guideline", "Practice Guideline", "Consensus Development Conference"}
 
+# Recherche complémentaire sur titre/résumé. Les champs [mh] et [pt] ci-dessus
+# n'existent qu'après l'indexation MEDLINE, qui prend des jours à des semaines :
+# un article publié cette semaine mais pas encore indexé est invisible pour
+# MI_MESH/PUB_TYPES, et quand il le devient, sa date de publication est déjà
+# sortie de la fenêtre `reldate`. Il est alors perdu pour toujours. Mesuré le
+# 30/09/2026 sur la semaine du 22 au 28 septembre : 5 candidats par MeSH,
+# 26 par titre/résumé — dont un article des Annals of the Rheumatic Diseases et
+# un de Chest. Cette requête est plus bruitée (tri éditorial indispensable),
+# mais elle voit les articles dès leur mise en ligne.
+MI_TIAB = (
+    '(lupus[tiab] OR vasculitis[tiab] OR arteritis[tiab] OR ANCA[tiab] '
+    'OR Sjogren*[tiab] OR Behcet*[tiab] OR sarcoidosis[tiab] OR amyloidosis[tiab] '
+    'OR myositis[tiab] OR dermatomyositis[tiab] OR scleroderma[tiab] '
+    'OR "systemic sclerosis"[tiab] OR antiphospholipid[tiab] OR autoinflammatory[tiab] '
+    'OR "Still\'s disease"[tiab] OR "thrombotic thrombocytopenic"[tiab] '
+    'OR "immune thrombocytopenia"[tiab] OR "autoimmune hemolytic"[tiab] '
+    'OR "venous thromboembolism"[tiab] OR "pulmonary embolism"[tiab] '
+    'OR "deep vein thrombosis"[tiab] OR IgG4[tiab] OR "polymyalgia rheumatica"[tiab] '
+    'OR VEXAS[tiab] OR "fever of unknown origin"[tiab] OR immunocompromised[tiab] '
+    'OR hemophagocytic[tiab] OR histiocytosis[tiab])'
+)
+DESIGN_TIAB = (
+    '(randomized[ti] OR randomised[ti] OR trial[ti] OR meta-analysis[tiab] '
+    'OR "systematic review"[tiab] OR guideline*[ti] OR recommendation*[ti] '
+    'OR consensus[ti] OR "phase 3"[tiab] OR "phase III"[tiab])'
+)
+
 
 def eutils_get(endpoint: str, params: dict, retries: int = 4) -> dict:
     """Appel E-utilities JSON avec retry/backoff exponentiel (2, 4, 8, 16 s)."""
@@ -113,6 +140,21 @@ def summaries(pmids: list[str]) -> list[dict]:
 def search_internal_medicine(days: int, retmax: int = 150) -> list[dict]:
     """Candidats « médecine interne » des `days` derniers jours, hors rétractés."""
     term = f"{MI_MESH} AND {PUB_TYPES} {RETRACTED_EXCLUDE}"
+    try:
+        data = eutils_get("esearch.fcgi", {
+            "db": "pubmed", "term": term,
+            "reldate": days, "datetype": "pdat", "retmax": retmax,
+        })
+    except Exception:
+        return []
+    ids = ((data or {}).get("esearchresult", {}) or {}).get("idlist", []) or []
+    return summaries(ids)
+
+
+def search_recent_tiab(days: int, retmax: int = 200) -> list[dict]:
+    """Candidats des `days` derniers jours repérés par titre/résumé, donc visibles
+    avant l'indexation MEDLINE (voir MI_TIAB). Plus bruité : à trier."""
+    term = f"{MI_TIAB} AND {DESIGN_TIAB} {RETRACTED_EXCLUDE}"
     try:
         data = eutils_get("esearch.fcgi", {
             "db": "pubmed", "term": term,

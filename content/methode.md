@@ -1,16 +1,16 @@
 # Méthode
 
-**ThisWeek · Médecine interne** publie, en général chaque semaine, une
+**ThisWeek · Médecine interne** publie chaque lundi une
 sélection des nouvelles recommandations, PNDS et publications majeures utiles
 aux médecins internistes exerçant en France, avec pour chaque item un résumé,
 ce qui change, un message à retenir et une mise en contexte.
 
 > **Parti pris assumé : la sélection des articles et la rédaction des
 > synthèses sont entièrement produites par une intelligence artificielle, sans
-> relecture par un médecin.** Un être humain déclenche chaque numéro (il n'y a
-> pas de tâche planifiée qui publie seule, sans que personne ne s'en occupe),
-> mais n'intervient à aucun moment sur le fond : ni sur le choix des articles,
-> ni sur le contenu des synthèses. C'est un choix revendiqué, et cette page en
+> relecture par un médecin.** Chaque numéro est produit par une session d'IA
+> lancée automatiquement le lundi (ou à la main par le mainteneur) ; aucun
+> humain n'intervient sur le fond : ni sur le choix des articles, ni sur le
+> contenu des synthèses. C'est un choix revendiqué, et cette page en
 > explique le fonctionnement et les limites en toute transparence. Chaque item
 > renvoie à sa source : l'information doit être vérifiée sur la publication
 > d'origine avant tout usage clinique.

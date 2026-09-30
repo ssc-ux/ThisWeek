@@ -1,0 +1,279 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 21
+semaine: "22 au 28 septembre 2026"
+date: 2026-09-28
+edito: >-
+  Semaine tournée vers la décision individuelle. Un modèle issu de l'essai
+  PEXIVAS estime le risque de rechute à deux ans d'une vascularite à ANCA, une
+  méta-analyse confirme la sécurité des seuils de D-dimères adaptés dans la
+  suspicion d'embolie pulmonaire, et une cohorte lupique soutient la cible de
+  5 mg/j de prednisone. Côté amylose, deux analyses de HELIOS-B examinent le
+  vutrisiran chez les patients déjà sous tafamidis — sans trancher la question
+  de l'association.
+
+items:
+  - type: autre
+    titre: "Vascularites à ANCA : un modèle pour estimer le risque de rechute à deux ans"
+    source: "Annals of the Rheumatic Diseases · modèle de prédiction (analyse post hoc de l'essai PEXIVAS)"
+    impact_factor: 20
+    url: "https://pubmed.ncbi.nlm.nih.gov/42772989/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "modèle non encore validé sur une population externe"
+      - "construit sur des formes sévères (DFG < 50 ou hémorragie alvéolaire)"
+    resume: >-
+      Analyse post hoc des participants de l'essai PEXIVAS (échanges
+      plasmatiques et corticothérapie à doses réduites) atteints d'une
+      vascularite à ANCA avec débit de filtration glomérulaire estimé
+      inférieur à 50 mL/min/1,73 m² ou hémorragie alvéolaire diffuse, et
+      ayant obtenu une rémission. Les auteurs ont construit un modèle estimant
+      le risque de première rechute dans les deux ans suivant la rémission, à
+      partir de prédicteurs identifiés dans la littérature puis sélectionnés
+      par régression pénalisée (LASSO) et analyse de survie. Sur 649
+      participants, 100 ont rechuté dans les deux ans. Le modèle final retient
+      six variables : le sexe, le recours au cyclophosphamide oral ou au
+      rituximab en induction, le sous-type d'ANCA, une atteinte respiratoire
+      non hémorragique ou une atteinte muqueuse ou oculaire au diagnostic, et
+      le débit de filtration glomérulaire à la rémission. Discrimination
+      modeste : aire sous la courbe de Harrell corrigée de l'optimisme 0,709
+      (IC95 0,707-0,710). Calibration satisfaisante : pente 0,99 (IC95
+      0,65-1,34).
+    message_cle: >-
+      Six variables simples permettent d'estimer le risque individuel de
+      rechute à deux ans après rémission d'une vascularite à ANCA sévère, avec
+      une discrimination modeste (0,71) — un outil d'aide à la réflexion sur
+      l'intensité du suivi et de l'entretien, pas encore un outil de décision,
+      faute de validation externe.
+    contexte:
+      - >-
+        La question de la durée et de l'intensité du traitement d'entretien est
+        l'une des plus débattues dans les vascularites à ANCA : tous les
+        patients ne rechutent pas, et l'exposition prolongée aux
+        immunosuppresseurs a un coût infectieux réel. Un outil qui distingue
+        les patients à haut et à faible risque répond donc à un besoin
+        pratique.
+      - >-
+        Les variables retenues sont cohérentes avec ce que l'on sait : le
+        sous-type d'ANCA (les formes anti-PR3 rechutent classiquement plus que
+        les formes anti-MPO) et le type d'atteinte au diagnostic figurent parmi
+        les facteurs de rechute les plus régulièrement décrits. L'intérêt du
+        modèle est de les combiner en une estimation chiffrée.
+      - >-
+        Une aire sous la courbe de 0,71 signifie que le modèle classe
+        correctement deux patients l'un par rapport à l'autre dans environ sept
+        cas sur dix : mieux que le hasard, mais loin d'une prédiction fiable à
+        l'échelle individuelle. L'intervalle de confiance très étroit de cette
+        valeur reflète la méthode de rééchantillonnage, pas une précision
+        clinique.
+      - >-
+        Deux limites encadrent l'usage. Le modèle est dérivé de patients inclus
+        dans un essai, sélectionnés pour une atteinte rénale sévère ou une
+        hémorragie alvéolaire : il n'est pas transposable tel quel aux formes
+        moins graves. Et les auteurs soulignent eux-mêmes qu'il doit être
+        validé sur une population externe avant tout usage en pratique.
+
+  - type: meta
+    titre: "Suspicion d'embolie pulmonaire : les seuils de D-dimères adaptés restent sûrs, y compris dans la « zone grise »"
+    source: "Chest · revue systématique et méta-analyse d'études de prise en charge diagnostique"
+    impact_factor: 9
+    url: "https://pubmed.ncbi.nlm.nih.gov/42790624/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse des études prospectives de prise en charge diagnostique
+      (au moins 50 patients) dans lesquelles un seuil de D-dimères adapté — à
+      l'âge ou à la probabilité clinique — guidait le recours à l'imagerie
+      thoracique en cas de suspicion d'embolie pulmonaire. L'échec
+      diagnostique était défini par la survenue d'une maladie
+      thromboembolique veineuse, ou d'un décès lié à une embolie ou
+      inexpliqué, dans les trois mois. Six études, 12 194 patients, avec une
+      prévalence d'embolie pulmonaire de 7,0 à 19,2 %. Chez l'ensemble des
+      patients pour lesquels l'embolie a été écartée sans angioscanner, le
+      taux d'échec poolé est de 0,12 % (IC95 0,06-0,26 ; I² = 0 %). Dans la
+      « fenêtre adaptative » — D-dimères supérieurs à 500 ng/mL mais
+      inférieurs au seuil adapté, c'est-à-dire les patients qui auraient eu
+      un scanner avec le seuil fixe classique — le taux d'échec est de 0,50 %
+      (IC95 0,20-1,11 ; I² = 0 %). L'efficience poolée des algorithmes est de
+      60,8 % (IC95 49,2-71,2), avec une hétérogénéité importante sur ce
+      critère (I² = 99,3 %).
+    message_cle: >-
+      Utiliser un seuil de D-dimères adapté à l'âge ou à la probabilité
+      clinique pour écarter une embolie pulmonaire est sûr : 0,12 % d'échec
+      global, et 0,50 % chez les patients qu'un seuil fixe à 500 aurait envoyés
+      au scanner. Un argument solide pour épargner l'imagerie, notamment au
+      patient âgé.
+    contexte:
+      - >-
+        Le seuil fixe de 500 ng/mL perd l'essentiel de son utilité chez le
+        sujet âgé, dont les D-dimères sont physiologiquement plus élevés : la
+        majorité de ces patients finissent au scanner, avec l'irradiation,
+        l'exposition au produit de contraste et les découvertes fortuites que
+        cela implique. C'est une population très représentée en médecine
+        interne.
+      - >-
+        Les stratégies adaptatives avaient été critiquées parce que certaines
+        validations reposaient sur des analyses rétrospectives de cohortes
+        gérées avec le seuil fixe. Cette méta-analyse répond précisément à
+        cette critique en se limitant aux études prospectives où le seuil
+        adapté guidait réellement la décision, et en isolant la zone qui pose
+        question.
+      - >-
+        Le chiffre de 0,50 % dans la fenêtre adaptative est à mettre en regard
+        du seuil de sécurité généralement admis pour une stratégie
+        d'exclusion (un taux d'échec à trois mois inférieur à 2 %, par
+        analogie avec celui observé après angiographie normale). Même la borne
+        haute de l'intervalle (1,11 %) reste en deçà.
+      - >-
+        Limites : six études seulement, et une efficience très hétérogène
+        d'une étude à l'autre — la proportion de scanners évités dépend
+        fortement de la population et de l'algorithme employé. Les femmes
+        enceintes et les enfants étaient exclus : ces résultats ne s'y
+        appliquent pas.
+
+  - type: autre
+    titre: "Lupus : viser 5 mg/j de prednisone dans la faible activité est associé à moins de dommages"
+    source: "RMD Open · étude de cohorte"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42778332/"
+    base_texte: abstract_seul
+    resume: >-
+      Cohorte de 332 patients lupiques, dont 105 cas incidents, comparant deux
+      définitions de l'état de faible activité lupique (LLDAS) : la
+      définition classique, qui tolère jusqu'à 7,5 mg/j d'équivalent
+      prednisone (LLDAS-7,5), et une version modifiée alignée sur les
+      recommandations actuelles, avec un seuil à 5 mg/j (LLDAS-5). Le critère
+      étudié est l'accumulation de dommages mesurée par l'index SLICC/ACR.
+      Au total, 142 patients ont présenté au moins une aggravation de
+      l'index (190 occasions). En analyse brute, le temps passé en LLDAS-5
+      est associé à un rapport de taux de 0,61 (IC95 0,37-1,00 ; p = 0,052) et
+      en LLDAS-7,5 à 0,73 (IC95 0,39-1,37 ; p = 0,332). Après ajustement sur
+      l'âge, le sexe, l'origine ethnique, l'ancienneté de la maladie,
+      l'activité et les dommages initiaux, les deux définitions sont
+      associées à moins de dommages : 0,56 (IC95 0,37-0,86 ; p = 0,007) pour
+      LLDAS-5 et 0,47 (IC95 0,27-0,85 ; p = 0,012) pour LLDAS-7,5, avec un
+      ajustement des modèles comparable. Chez les cas incidents, 29 patients
+      sur 105 ont accumulé des dommages, et les deux définitions restent
+      associées à une réduction : 0,31 (IC95 0,11-0,89) pour LLDAS-5 et 0,29
+      (IC95 0,09-0,93) pour LLDAS-7,5.
+    message_cle: >-
+      Le temps passé en faible activité lupique avec au plus 5 mg/j de
+      prednisone est associé à moins d'accumulation de dommages, ce qui
+      conforte cette cible recommandée — mais cette étude ne montre pas
+      qu'elle fasse mieux que l'ancien seuil de 7,5 mg/j, l'avantage apparent
+      disparaissant après ajustement.
+    contexte:
+      - >-
+        L'état de faible activité lupique est devenu une cible thérapeutique
+        de référence, mais sa définition historique tolère 7,5 mg/j de
+        prednisone, alors que les recommandations récentes (EULAR notamment)
+        visent au plus 5 mg/j, voire l'arrêt. Il manquait des données
+        montrant que la cible plus stricte a bien une valeur pronostique.
+      - >-
+        Le résultat est rassurant sur un point et nuancé sur un autre. Rassurant
+        parce que LLDAS-5 est robustement associé à moins de dommages, y compris
+        chez les patients incidents, ce qui en fait une cible cliniquement
+        pertinente. Nuancé parce que la supériorité de LLDAS-5 sur LLDAS-7,5,
+        suggérée par l'analyse brute, ne résiste pas à l'ajustement : les
+        auteurs le disent explicitement.
+      - >-
+        Ce travail ne permet donc pas de dire qu'il faut descendre à 5 mg/j
+        « parce que » cela réduit les dommages : il s'agit d'une cohorte
+        observationnelle. Les patients qui atteignent la cible la plus stricte
+        ont probablement une maladie moins active, ce qui explique en partie
+        leur meilleur devenir. L'argument pour viser 5 mg/j reste d'abord celui
+        de la toxicité cumulée des corticoïdes, bien établie par ailleurs.
+
+  - type: essai
+    titre: "Amylose cardiaque à transthyrétine : le vutrisiran chez les patients déjà sous tafamidis"
+    source: "Journal of the American College of Cardiology · analyse en sous-groupes de l'essai de phase 3 HELIOS-B"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42669070/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "analyse en sous-groupes : exploratoire, génératrice d'hypothèses"
+      - "chez les patients sous tafamidis, l'intervalle de confiance inclut l'absence d'effet"
+    resume: >-
+      Analyse selon la prise de tafamidis à l'inclusion dans l'essai de phase 3
+      HELIOS-B, où 654 patients atteints d'amylose cardiaque à transthyrétine
+      ont été randomisés entre vutrisiran 25 mg et placebo tous les trois mois
+      pendant 36 mois au plus ; la prise de tafamidis était autorisée et
+      servait de facteur de stratification. À l'inclusion, 259 patients (40 %)
+      recevaient du tafamidis ; ils étaient un peu plus jeunes et avaient un
+      meilleur périmètre de marche et un meilleur score de qualité de vie
+      (KCCQ). Sur le critère principal — mortalité toutes causes et événements
+      cardiovasculaires récidivants —, l'effet du vutrisiran va dans le même
+      sens dans les deux strates : rapport de taux 0,79 (IC95 0,51-1,21) chez
+      les patients sous tafamidis et 0,67 (IC95 0,49-0,93) chez les autres,
+      sans interaction significative (p = 0,55). Même constat pour la
+      mortalité, les événements cardiovasculaires et l'aggravation de
+      l'insuffisance cardiaque en ambulatoire (toutes les p d'interaction
+      supérieures à 0,20), avec des effets numériquement plus faibles sous
+      tafamidis. Le vutrisiran préserve le périmètre de marche de 6 minutes
+      dans les deux strates, mais l'amélioration de la qualité de vie paraît
+      atténuée chez les patients sous tafamidis.
+    message_cle: >-
+      L'effet du vutrisiran dans HELIOS-B va dans le même sens avec ou sans
+      tafamidis associé, sans interaction statistique — mais chez les patients
+      déjà sous tafamidis, le bénéfice est numériquement plus faible et son
+      intervalle de confiance inclut l'absence d'effet. L'intérêt de
+      l'association reste une question ouverte, à trancher par un essai dédié.
+    contexte:
+      - >-
+        HELIOS-B avait montré que le vutrisiran, qui bloque la production
+        hépatique de transthyrétine, réduit la mortalité et les événements
+        cardiovasculaires dans l'amylose cardiaque à transthyrétine. Le
+        tafamidis, qui stabilise la protéine, a lui aussi fait ses preuves.
+        Associer les deux mécanismes est séduisant, et la question se pose en
+        pratique pour les nombreux patients déjà sous tafamidis.
+      - >-
+        Cette analyse ne permet pas d'y répondre, et il faut le dire
+        clairement. L'absence d'interaction significative ne démontre pas que
+        le vutrisiran apporte le même bénéfice sous tafamidis : une analyse en
+        sous-groupes n'a pas la puissance nécessaire pour détecter une
+        différence d'effet modérée. Chez les patients sous tafamidis, le
+        rapport de taux de 0,79 a un intervalle de confiance (0,51-1,21) qui
+        inclut l'absence d'effet. C'est une analyse exploratoire, génératrice
+        d'hypothèses.
+      - >-
+        Les auteurs concluent eux-mêmes à la nécessité d'études prospectives
+        sur l'association. En attendant, la décision d'ajouter le vutrisiran
+        chez un patient déjà stabilisé sous tafamidis relève d'une discussion
+        en centre de référence de l'amylose, en tenant compte du coût et de
+        l'absence de preuve directe d'un bénéfice additionnel.
+
+aussi_parus:
+  - titre: "HELIOS-B : l'effet du vutrisiran ne dépend pas des traitements de l'insuffisance cardiaque associés"
+    source: "Journal of the American College of Cardiology"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42669069/"
+    resume: >-
+      Seconde analyse de HELIOS-B (654 patients), consacrée aux traitements
+      associés : à l'inclusion, 40 % des participants recevaient du tafamidis
+      et 77 % au moins un traitement de l'insuffisance cardiaque. Les
+      antagonistes des récepteurs minéralocorticoïdes et les inhibiteurs de
+      SGLT2 sont les traitements le plus souvent introduits pendant le suivi,
+      avec des taux d'introduction numériquement plus élevés dans le groupe
+      placebo. Aucune interaction significative n'est retrouvée entre l'effet
+      du vutrisiran et l'usage, à l'inclusion ou au cours du suivi, d'aucune
+      classe (p d'interaction : tafamidis 0,95 ; inhibiteurs de SGLT2 0,59 ;
+      antagonistes minéralocorticoïdes 0,92 ; bêtabloquants 0,75 ; bloqueurs
+      du système rénine-angiotensine 0,82). Même réserve que pour l'item
+      principal : une absence d'interaction détectée n'est pas une preuve
+      d'effet identique.
+
+  - titre: "Cancer et thrombose : ce que faisaient les investigateurs d'API-CAT avant de connaître les résultats"
+    source: "European Heart Journal – Cardiovascular Pharmacotherapy · analyse descriptive d'un essai randomisé"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42361291/"
+    resume: >-
+      L'essai API-CAT, coordonné par l'AP-HP, a montré que l'apixaban à dose
+      réduite (2,5 mg deux fois par jour) est non inférieur à la pleine dose
+      pour prévenir la récidive thromboembolique chez les patients atteints
+      de cancer, avec moins de saignements cliniquement pertinents. Cette
+      analyse décrit, chez 1 458 des 1 766 patients randomisés, ce que les
+      investigateurs ont décidé à l'arrêt du traitement de l'étude, avant la
+      levée de l'aveugle : arrêt de l'anticoagulation chez 13,6 %,
+      poursuite chez 86,4 % — dont 62,7 % à pleine dose et 36,9 % à dose
+      réduite. Un anticoagulant oral direct était prescrit dans 89,6 % des cas,
+      une héparine de bas poids moléculaire dans 9,9 %. Les décisions
+      variaient peu selon les caractéristiques du patient ou du cancer, mais
+      beaucoup selon le moment de l'arrêt, la spécialité du médecin et le
+      pays — une véritable « zone grise » thérapeutique, qui sert de point de
+      référence pour mesurer l'adoption de la dose réduite après publication
+      des résultats.
