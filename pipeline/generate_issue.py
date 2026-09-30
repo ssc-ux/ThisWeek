@@ -42,6 +42,7 @@ from pubmed_query import (
     eutils_get,
     is_retracted,
     search_internal_medicine,
+    search_recent_tiab,
     search_recommendations,
     unpaywall_lookup,
 )
@@ -134,9 +135,12 @@ def search_candidates(days: int) -> list[dict]:
     jamais évincée par le simple nombre de méta-analyses de la semaine."""
     general = search_internal_medicine(days, retmax=150)
     recos = search_recommendations(days)
+    # Articles pas encore indexés MEDLINE, invisibles pour les deux requêtes
+    # MeSH ci-dessus (voir MI_TIAB dans pubmed_query.py).
+    recent = search_recent_tiab(days)
     seen: set[str] = set()
     out = []
-    for is_reco, docs in ((True, recos), (False, general)):
+    for is_reco, docs in ((True, recos), (False, general), (False, recent)):
         for d in docs:
             if d["pmid"] in seen:
                 continue
