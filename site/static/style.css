@@ -664,6 +664,21 @@ article[data-mode="express"] .also-resume { display: none; }
    navigation discrète en haut à droite. ---- */
 
 .accueil { max-width: 46rem; }
+/* Sur ordinateur, l'accueil occupe la largeur : les items du numéro passent en
+   grille (2 colonnes, 3 sur très grand écran). */
+@media (min-width: 900px) {
+  .accueil { max-width: 80rem; }
+  .accueil .latest-card--full { padding: 2rem 2.4rem 2.2rem; }
+  .accueil .latest-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem 2.6rem;
+  }
+}
+@media (min-width: 1700px) {
+  .accueil { max-width: 100rem; }
+  .accueil .latest-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .accueil .masthead {
   position: static;
   background: none;
