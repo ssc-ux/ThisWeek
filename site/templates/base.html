@@ -93,9 +93,6 @@
   var overlay = document.getElementById('search-overlay');
   var input = document.getElementById('search-input');
   var results = document.getElementById('search-results');
-  // Champ central de l'accueil (style CorticoPlan) : mêmes résultats, en ligne.
-  var homeInput = document.getElementById('home-search');
-  var homeResults = document.getElementById('home-results');
   if (!openBtn || !overlay) return;
   var root = {{ root | tojson }};
   var index = null;
@@ -106,10 +103,8 @@
     });
   }
 
-  function render(q, list, inline) {
+  function render(q, list) {
     q = q.trim().toLowerCase();
-    if (inline && !q) { list.innerHTML = ''; list.hidden = true; return; }
-    list.hidden = false;
     if (!index) { list.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
     if (!q) {
       list.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
@@ -118,7 +113,7 @@
     }
     var hits = index.filter(function (r) {
       return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
-    }).slice(0, inline ? 6 : 12);
+    }).slice(0, 12);
     if (!hits.length) {
       list.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
       return;
@@ -162,32 +157,10 @@
     if (!overlay.hidden && e.key === 'Escape') { close(); return; }
     if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
         && document.activeElement.tagName !== 'TEXTAREA') {
-      e.preventDefault();
-      if (homeInput) homeInput.focus(); else open();
+      e.preventDefault(); open();
     }
   });
 
-  if (homeInput && homeResults) {
-    var refresh = function () { render(homeInput.value, homeResults, true); };
-    homeInput.addEventListener('focus', function () { load(refresh); });
-    homeInput.addEventListener('input', refresh);
-    homeInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { homeInput.value = ''; refresh(); }
-      if (e.key === 'Enter') {
-        var first = homeResults.querySelector('a');
-        if (first) { e.preventDefault(); location.href = first.href; }
-      }
-    });
-    // Exemples qui défilent dans le champ vide, comme sur CorticoPlan.
-    var ex = ['vascularite à ANCA', 'lupus', 'amylose AL', 'sarcoïdose', 'Sjögren',
-              'syndrome des antiphospholipides', 'myosite', 'Horton'];
-    var i = 0;
-    setInterval(function () {
-      if (homeInput.value || document.activeElement === homeInput) return;
-      i = (i + 1) % ex.length;
-      homeInput.placeholder = 'Ex. : ' + ex[i];
-    }, 3500);
-  }
 })();
 </script>
 </body>
