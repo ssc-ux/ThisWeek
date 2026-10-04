@@ -4,8 +4,24 @@
 {% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
 
 {% block content %}
-<p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-<h1 class="page-h1">L'essentiel de la semaine pour l'interniste.</h1>
+{# Accueil épuré, aligné sur la première page de CorticoPlan : logo centré,
+   champ arrondi façon moteur de recherche, deux boutons discrets. #}
+<section class="hero" aria-label="ThisWeek">
+  <h1 class="logo">{% include "logo.svg" %} <span>ThisWeek</span></h1>
+  <p class="accroche">L'essentiel de la semaine pour l'interniste : recommandations, PNDS et essais majeurs.</p>
+  <div class="home-search">
+    <label for="home-search" class="sr-only">Rechercher une pathologie ou un traitement dans les numéros</label>
+    <input type="search" id="home-search" placeholder="Ex. : vascularite à ANCA"
+           autocomplete="off" spellcheck="false">
+    <ul class="search-results home-results" id="home-results" hidden></ul>
+  </div>
+  <div class="boutons">
+    <a href="{{ root }}numeros/{{ latest_slug }}.html">Lire le n° {{ latest.numero }}</a>
+    <a href="{{ root }}archives.html">Parcourir les archives</a>
+  </div>
+  <p class="astuce">Semaine du {{ latest.semaine }} · {{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }}
+    · ~{{ latest.express_min }} min en express</p>
+</section>
 
 <section class="latest-card latest-card--full" aria-label="Dernier numéro">
   <div class="latest-card-head">
@@ -28,7 +44,6 @@
 <p class="home-footline">
   <span class="ia-badge">IA</span> Généré par intelligence artificielle, sans relecture
   humaine — <a href="{{ root }}methode.html">comment ça marche</a>.
-  <a href="{{ root }}archives.html">Numéros précédents →</a>
   <a href="{{ root }}veille.html">Toutes les études repérées →</a>
 </p>
 {% endblock %}
