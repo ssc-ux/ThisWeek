@@ -24,7 +24,7 @@
   --badge-alerte-bg: #f6ecda;  --badge-alerte-ink: #7d5310;
   --badge-autre-bg: #e8ebea;   --badge-autre-ink: #4c5a58;
 
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
           "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --r-card: 18px;
@@ -39,7 +39,7 @@
   --paper: #ffffff; --paper-alt: #f5f5f7; --surface: #ffffff;
   --ink: #1d1d1f; --ink-soft: #6e6e73; --rule: #e5e5ea;
   --accent: #0d7d70; --accent-strong: #0a655a; --accent-soft: #e7f3f1;
-  --accent-ink: #ffffff; --key-bg: #eef7f4; --nav-bg: rgba(255,255,255,.82);
+  --accent-ink: #ffffff; --key-bg: #eef7f4; --accent-2: #1f5fbf; --nav-bg: rgba(255,255,255,.82);
   --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
 }
 
@@ -47,7 +47,7 @@
   --paper: #000000; --paper-alt: #0f0f11; --surface: #1c1c1e;
   --ink: #f5f5f7; --ink-soft: #a1a1a6; --rule: #2a2a2d;
   --accent: #57c3b3; --accent-strong: #6fd0c1; --accent-soft: #12302b;
-  --accent-ink: #06110f; --key-bg: #14201d; --nav-bg: rgba(0,0,0,.68);
+  --accent-ink: #06110f; --key-bg: #14201d; --accent-2: #7aa7ff; --nav-bg: rgba(0,0,0,.68);
   --shadow: 0 12px 32px rgba(0,0,0,.5);
   --badge-reco-bg: #3d222a;   --badge-reco-ink: #e2a3ad;
   --badge-pnds-bg: #242b47;   --badge-pnds-ink: #aab4e8;
@@ -142,6 +142,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .masthead .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -149,12 +152,14 @@ a:focus-visible, button:focus-visible {
   text-decoration: none;
 }
 .masthead .brand .week { color: var(--accent); }
+.masthead .brand .logo-ico { width: 1.4rem; height: 1.4rem; border-radius: 5px; }
 
 .masthead nav {
   font-size: .85rem;
   display: flex;
   flex-wrap: wrap;
   gap: .3rem 1.15rem;
+  align-items: center;
 }
 .masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
 .masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
@@ -654,18 +659,116 @@ article[data-mode="express"] .also-resume { display: none; }
 @media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
 @media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
 
-/* Accueil resserré, centré sur « cette semaine » : un titre court, la carte du
-   numéro en pleine largeur, un lien discret vers le reste. Pas de grand hero
-   ni de pédagogie sur la home — ça vit sur /methode.html. */
-.page-h1 {
-  padding-top: 1.6rem;
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  text-wrap: balance;
-  margin: .3rem 0 1.4rem;
-  font-weight: 700;
+/* ---- Accueil, aligné sur la première page de CorticoPlan : logo centré au
+   dégradé, champ arrondi façon moteur de recherche, halos colorés en fond,
+   navigation discrète en haut à droite. ---- */
+
+.accueil { max-width: 46rem; }
+.accueil .masthead {
+  position: static;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 0;
+  justify-content: flex-end;
 }
+.accueil .masthead .brand { display: none; }
+.accueil .masthead nav a[aria-current="page"] { display: none; }
+.accueil::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 45% at 20% 18%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    radial-gradient(55% 40% at 85% 30%, color-mix(in srgb, var(--accent-2) 13%, transparent), transparent 70%),
+    radial-gradient(50% 40% at 50% 95%, color-mix(in srgb, #eb6834 9%, transparent), transparent 70%);
+}
+/* Le fond de page doit laisser voir les halos posés derrière. */
+body:has(.accueil) { background: var(--paper-alt); }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 68vh;
+  max-width: 39rem;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.2rem, 9vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.logo span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logo .logo-ico { width: clamp(2.5rem, 10vw, 3.25rem); height: auto; border-radius: 12px; }
+.accroche { margin: 0 0 1rem; text-align: center; color: var(--ink-soft); text-wrap: balance; }
+
+.home-search { position: relative; }
+.home-search input {
+  display: block;
+  width: 100%;
+  min-height: 3.4rem;
+  padding: .9rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  box-shadow: 0 1px 6px rgb(32 33 36 / .12);
+  transition: box-shadow .2s;
+}
+.home-search input::placeholder { color: var(--ink-soft); font-weight: 300; }
+.home-search input:hover, .home-search input:focus { box-shadow: 0 2px 10px rgb(32 33 36 / .22); }
+.home-search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.home-results {
+  position: absolute;
+  top: calc(100% + .4rem);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.home-results[hidden] { display: none; }
+
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 1.25rem;
+}
+.boutons a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: .92rem;
+  text-decoration: none;
+}
+.boutons a:hover { border-color: var(--rule); box-shadow: 0 1px 2px rgb(0 0 0 / .12); }
+.astuce { margin: 1.1rem 0 0; text-align: center; font-size: .82rem; color: var(--ink-soft); }
+.accueil .home-footline { justify-content: center; }
+.accueil .footer { text-align: center; }
 
 .btn {
   display: inline-block;
