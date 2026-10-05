@@ -11,12 +11,12 @@ internistes français, générée par IA sans relecture humaine du contenu (part
 pris assumé et affiché sur le site). `ANTHROPIC_API_KEY` ne sera jamais
 configurée en secret de dépôt : `pipeline/generate_issue.py` ne tourne pas via
 GitHub Actions (déclenchement planifié désactivé, voir
-`.github/workflows/weekly-issue.yml`). **C'est une session Claude Code qui fait
+`.github/workflows/weekly-issue.yml`). **C'est une session d'assistant IA qui fait
 le travail décrit ci-dessous**, lancée de deux façons :
 
 - à la main, quand le mainteneur écrit « mise à jour » ;
-- **automatiquement chaque lundi**, par une Routine Claude Code (tâche
-  planifiée côté claude.ai, pas dans ce dépôt) qui relance la session.
+- **automatiquement chaque lundi**, par une tâche planifiée (gérée hors
+  de ce dépôt) qui relance la session.
 
 **Exécution automatique = personne devant l'écran.** Dans ce cas : ne poser
 aucune question et ne rien attendre de l'utilisateur ; sauter l'étape 2 bis
@@ -29,8 +29,14 @@ build et se resynchroniser avec la branche distante.
 
 ```bash
 pip install -q pyyaml jinja2 markdown
-git pull -q origin claude/medical-guidelines-digest-3w16xl
+git pull -q origin main
+git config user.name "Quentin Astouati"
+git config user.email "233417420+ssc-ux@users.noreply.github.com"
 ```
+
+Choix du mainteneur : **aucune mention de l'assistant dans le dépôt** — ni
+auteur, ni ligne de co-signature ou de lien de session dans les messages de commit,
+ni nom de branche dédié. On travaille et on pousse directement sur `main`.
 
 ## 1. Situer la semaine
 
@@ -113,7 +119,7 @@ de rester manuel changeait un jour) : `pipeline/generate_issue.py --days 7`
 ferait tout automatiquement — sélection, synthèse, et une passe de
 **vérification** qui rétrograde en « Aussi paru » tout item dont un chiffre
 n'est pas retrouvé ou dont la confiance est faible. Toute la chaîne tourne sur
-**Opus 5** (`MODEL_SELECT`/`MODEL_SYNTH`). Ce code est maintenu et testé
+le modèle configuré (`MODEL_SELECT`/`MODEL_SYNTH`). Ce code est maintenu et testé
 syntaxiquement, mais n'a jamais tourné en conditions réelles dans ce projet.
 
 ## 2 bis. Texte intégral manuel pour l'item phare (optionnel)
@@ -175,8 +181,6 @@ d'erreur console et de débordement horizontal.
 ```bash
 git add -A && git commit && git push origin HEAD:main
 ```
-
-Pousser aussi sur la branche de travail `claude/medical-guidelines-digest-3w16xl`.
 
 ## 6. Rendre compte, sans enjoliver
 

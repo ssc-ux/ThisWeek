@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Génère automatiquement le numéro hebdomadaire via l'API Claude.
+"""Génère automatiquement le numéro hebdomadaire via l'API d'un modèle de langage.
 
 Chaîne, sans intervention humaine :
   1. interroge PubMed (recherche partagée `pubmed_query`) sur les N derniers
@@ -56,9 +56,9 @@ ROOT = Path(__file__).resolve().parent.parent
 ISSUES = ROOT / "content" / "issues"
 PNDS_REGISTRY = ROOT / "content" / "pnds.yaml"
 
-# Toute la chaîne éditoriale tourne sur Opus 5 : c'est du contenu médical publié
+# Toute la chaîne éditoriale tourne sur un modèle haut de gamme : c'est du contenu médical publié
 # sans relecture humaine, la qualité de jugement primait sur le coût. Le tri des
-# candidats peut être repassé sur "claude-sonnet-5" pour réduire la facture — la
+# candidats peut être repassé sur un modèle plus léger pour réduire la facture — la
 # sélection est la tâche la moins exigeante des trois.
 MODEL_SELECT = "claude-opus-5"
 MODEL_SYNTH = "claude-opus-5"
@@ -255,7 +255,7 @@ def get_pmcid(pmid: str) -> str | None:
     return None
 
 
-def claude_json(client, prompt: str, schema: dict, model: str = MODEL_SYNTH,
+def llm_json(client, prompt: str, schema: dict, model: str = MODEL_SYNTH,
                 max_tokens: int = 4000, retries: int = 3) -> dict:
     last = None
     for attempt in range(retries):
@@ -272,7 +272,7 @@ def claude_json(client, prompt: str, schema: dict, model: str = MODEL_SYNTH,
             last = e
             if attempt < retries - 1:
                 time.sleep(2 ** (attempt + 1))
-    raise RuntimeError(f"appel Claude échoué ({model}): {last}")
+    raise RuntimeError(f"appel au modèle échoué ({model}): {last}")
 
 
 SELECT_SCHEMA = {
@@ -390,7 +390,7 @@ def synthesize_brief(client, refs: list[dict]) -> list[dict]:
         "si les résultats chiffrés manquent, décris l'objectif et la portée. "
         "Renvoie un objet {pmid, resume} par publication.\n\n"
         + "\n\n---\n\n".join(blocks))
-    data = claude_json(client, prompt, BRIEF_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
+    data = llm_json(client, prompt, BRIEF_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
     by = {d["pmid"]: d["resume"] for d in data.get("resumes", [])}
     out = []
     seen = set()
@@ -463,7 +463,7 @@ def select_items(client, candidates: list[dict], max_items: int) -> tuple[list[d
         "Une même publication ne doit jamais figurer dans les deux listes. Écarte "
         "franchement ce qui est hors périmètre. S'il n'y a rien de pertinent, "
         "renvoie deux listes vides.\n\n" + listing)
-    data = claude_json(client, prompt, SELECT_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
+    data = llm_json(client, prompt, SELECT_SCHEMA, model=MODEL_SELECT, max_tokens=3000)
     by_pmid = {c["pmid"]: c for c in candidates}
     picked = []
     seen = set()
@@ -541,7 +541,7 @@ def synthesize(client, item: dict, source_text: str) -> tuple[dict, str]:
         "comparaisons peuvent s'appuyer sur des connaissances générales, mais sans "
         "rien inventer de précis.\n\n"
         "=== TEXTE SOURCE ===\n" + source_text[:14000])
-    d = claude_json(client, prompt, ITEM_SCHEMA, model=MODEL_SYNTH, max_tokens=4500)
+    d = llm_json(client, prompt, ITEM_SCHEMA, model=MODEL_SYNTH, max_tokens=4500)
     out = {
         "type": item["type"],
         "titre": item["titre_fr"],
@@ -586,7 +586,7 @@ def verify_synthesis(client, out: dict, source_text: str) -> tuple[bool, list[st
         "ni les mises en contexte générales. Réponds valide=false s'il existe au "
         "moins un problème factuel, et liste les problèmes.\n\n"
         f"=== TEXTE SOURCE ===\n{source_text[:14000]}\n\n=== SYNTHÈSE ===\n{a_verifier}")
-    d = claude_json(client, prompt, VERIFY_SCHEMA, model=MODEL_SYNTH, max_tokens=1200)
+    d = llm_json(client, prompt, VERIFY_SCHEMA, model=MODEL_SYNTH, max_tokens=1200)
     return bool(d.get("valide")), [p for p in d.get("problemes", []) if p]
 
 

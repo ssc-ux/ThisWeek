@@ -60,23 +60,22 @@ python3 site/build.py
 python3 pipeline/fetch_pubmed.py
 
 # Pipeline complet (sélection + synthèses par IA) — nécessite ANTHROPIC_API_KEY,
-# jamais configurée en pratique : les numéros sont rédigés en session Claude Code, voir plus bas
+# jamais configurée en pratique : les numéros sont rédigés en session d'assistant IA, voir plus bas
 python3 pipeline/generate_issue.py
 ```
 
-## Génération du numéro : session Claude Code, lancée chaque lundi
+## Génération du numéro : session d'assistant IA, lancée chaque lundi
 
 `ANTHROPIC_API_KEY` **ne sera jamais configurée** comme secret de dépôt. Le
 workflow `.github/workflows/weekly-issue.yml` existe (il ferait tourner
 `pipeline/generate_issue.py` : sélection PubMed, synthèse et vérification par
-Claude, commit, build, déploiement), mais son déclenchement planifié est
+IA, commit, build, déploiement), mais son déclenchement planifié est
 **désactivé** — il ne reste que `workflow_dispatch` (bouton manuel), pour
 éviter un échec rouge chaque semaine sans clé.
 
-En pratique, chaque numéro est produit **dans une session Claude Code**
+En pratique, chaque numéro est produit **dans une session d'assistant IA**
 (skill `/mise-a-jour`), relancée **automatiquement chaque lundi** par une
-Routine Claude Code — une tâche planifiée gérée côté claude.ai, hors de ce
-dépôt — ou à la main quand le mainteneur écrit « mise à jour » : recherche PubMed réelle, lecture des abstracts,
+tâche planifiée gérée hors de ce dépôt — ou à la main quand le mainteneur écrit « mise à jour » : recherche PubMed réelle, lecture des abstracts,
 rédaction du YAML, `python3 site/build.py`, puis push. Le contenu (choix des
 articles, synthèses) n'est **jamais relu ni modifié par un humain** — c'est un
 parti pris assumé, affiché sur chaque numéro et sur la page Méthode. La lecture du texte intégral se
@@ -98,7 +97,7 @@ Arborescence :
 
 ### Publier un nouveau numéro
 
-La procédure de référence est le skill Claude Code `/mise-a-jour`
+La procédure de référence est le skill `/mise-a-jour`
 (`.claude/skills/mise-a-jour/SKILL.md`) : recherche PubMed réelle (générale,
 recommandations, et titre/résumé pour les articles pas encore indexés), lecture des abstracts, rédaction du YAML sans chiffre
 inventé, `python3 site/build.py` pour valider, vérification en HTTP local,
@@ -113,5 +112,5 @@ partir de vraies publications PubMed. Le périmètre est strictement celui de la
 et systémiques, vascularites, hématologie non maligne, MTEV, sarcoïdose,
 amylose…) — voir la page Méthode. Les documents de conception ci-dessus
 retracent la vision initiale du projet ; l'automatisation a depuis pris la
-forme décrite plus haut (session Claude Code planifiée, sans clé API dans le
+forme décrite plus haut (session d'assistant IA planifiée, sans clé API dans le
 dépôt).

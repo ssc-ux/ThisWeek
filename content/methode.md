@@ -147,8 +147,7 @@ lorsqu'ils recadrent utilement les attentes.
 
 ## Comment les synthèses sont rédigées
 
-1. Les synthèses sont **générées par une intelligence artificielle** (modèle
-   Claude d'Anthropic), à partir du texte intégral lorsqu'il est librement
+1. Les synthèses sont **générées par une intelligence artificielle**, à partir du texte intégral lorsqu'il est librement
    accessible, sinon de l'abstract — la base utilisée est indiquée sous le titre
    de l'item.
 2. L'IA reçoit une consigne stricte : n'énoncer aucun chiffre (posologie, seuil,

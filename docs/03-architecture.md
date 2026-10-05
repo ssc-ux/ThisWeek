@@ -150,7 +150,7 @@ du produit.
 | Langage | **Python** | Écosystème parfait pour RSS (feedparser), PubMed (biopython/httpx), LLM, scraping |
 | Base | **PostgreSQL** (SQLite au prototype) | Requêtes riches, full-text search intégré pour l'archive |
 | Orchestration | **cron / GitHub Actions** au début, Prefect/Dagster si besoin | Un digest par semaine ne justifie pas d'infra lourde |
-| LLM | **API Claude** (claude-sonnet-5 pour scoring, claude-opus / fable pour synthèse) | Qualité de synthèse et de suivi de consignes ; sorties structurées |
+| LLM | **API d'un grand modèle de langage** (modèle léger pour le scoring, modèle haut de gamme pour la synthèse) | Qualité de synthèse et de suivi de consignes ; sorties structurées |
 | Interface relecture | Markdown au prototype, puis petite app web (FastAPI + HTMX ou équivalent) | Minimalisme |
 | Email | Brevo / Postmark | Standard, RGPD-compatible (hébergement UE pour Brevo) |
 | Archive web | Site statique généré (Astro/Hugo) ou FastAPI | Chaque numéro est un document — le statique suffit longtemps |

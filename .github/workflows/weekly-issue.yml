@@ -1,7 +1,7 @@
 name: Numéro hebdomadaire (génération automatique du pipeline)
 
 # Décision du mainteneur : ANTHROPIC_API_KEY ne sera jamais configurée en
-# secret de dépôt — les numéros sont générés à la main (session Claude Code,
+# secret de dépôt — les numéros sont générés à la main (session d'assistant IA,
 # skill /mise-a-jour), pas par ce workflow. Le déclenchement planifié est donc
 # désactivé : il échouerait chaque semaine sans jamais réussir (sys.exit dès
 # la vérification de la clé dans generate_issue.py), pour rien de plus qu'une
