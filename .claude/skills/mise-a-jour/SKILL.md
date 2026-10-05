@@ -29,7 +29,7 @@ build et se resynchroniser avec la branche distante.
 
 ```bash
 pip install -q pyyaml jinja2 markdown
-git pull -q origin main
+git fetch -q origin main && git checkout -q -B main origin/main
 git config user.name "Quentin Astouati"
 git config user.email "233417420+ssc-ux@users.noreply.github.com"
 ```
