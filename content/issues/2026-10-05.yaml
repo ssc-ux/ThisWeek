@@ -1,0 +1,428 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 22
+semaine: "29 septembre au 5 octobre 2026"
+date: 2026-10-05
+edito: >-
+  Semaine riche, portée par les numéros d'octobre des grandes revues. En tête,
+  un essai de phase 3 positif dans la maladie liée aux IgG4, et des
+  recommandations européennes consacrées à la vascularite à IgA de l'adulte,
+  rédigées avec une forte participation française. Suivent une relecture
+  bayésienne de PEXIVAS qui nuance la corticothérapie réduite en cas
+  d'hémorragie alvéolaire grave, une méta-analyse sur les anticorps
+  antiphospholipides dans l'AVC ischémique et une autre sur ce que le PET
+  apprend vraiment au cours du suivi de la maladie de Horton.
+
+items:
+  - type: essai
+    titre: "Maladie liée aux IgG4 : l'obexelimab divise par deux le risque de poussée (essai de phase 3 INDIGO)"
+    source: "The New England Journal of Medicine · essai de phase 3"
+    impact_factor: 96
+    url: "https://pubmed.ncbi.nlm.nih.gov/42233621/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "statut réglementaire de l'obexelimab en France à vérifier : molécule évaluée ici en essai"
+      - "article en ligne depuis le 2 juin 2026, repris ici à sa parution dans le numéro d'octobre"
+    resume: >-
+      Essai de phase 3 randomisé, en double aveugle contre placebo (INDIGO,
+      NCT05662241), chez 194 patients atteints de maladie liée aux IgG4 active,
+      répartis à parts égales entre obexelimab sous-cutané 250 mg une fois par
+      semaine et placebo pendant 52 semaines. Dans les deux groupes, la
+      corticothérapie était arrêtée selon un schéma standardisé à la semaine 8.
+      L'obexelimab est un anticorps monoclonal bifonctionnel qui freine
+      l'activité du lymphocyte B en engageant simultanément CD19 et le récepteur
+      FcγRIIb, **sans dépléter les lymphocytes B**. Critère principal — délai
+      jusqu'à la première poussée nécessitant un traitement de secours, validée
+      par l'investigateur et par un comité indépendant — atteint : hazard ratio
+      0,44 (IC95 0,28-0,71 ; p < 0,001), avec des poussées chez 26 patients
+      (26,8 %) sous obexelimab contre 53 (54,6 %) sous placebo. Bénéfice
+      significatif sur tous les critères secondaires principaux : rémission
+      complète à 52 semaines (37,1 % contre 19,6 % ; p = 0,005) et dose cumulée
+      de corticoïdes de secours (329,5 mg contre 929,8 mg ; p = 0,004).
+      Effets indésirables plus fréquents sous obexelimab : arthralgies (19,6 %
+      contre 11,3 %), réactions d'hypersensibilité (16,5 % contre 11,3 %),
+      diarrhée (11,3 % contre 6,2 %). Les événements indésirables graves sont
+      moins fréquents sous obexelimab (10,3 % contre 18,6 %). Essai financé par
+      le laboratoire qui développe la molécule.
+    message_cle: >-
+      Après arrêt des corticoïdes à la semaine 8, l'obexelimab hebdomadaire
+      réduit de plus de moitié le risque de poussée de maladie liée aux IgG4 sur
+      un an (27 % contre 55 % de patients en poussée), double le taux de
+      rémission complète et divise par près de trois les corticoïdes de secours —
+      sans dépléter les lymphocytes B.
+    contexte:
+      - >-
+        La maladie liée aux IgG4 est une maladie fibro-inflammatoire suivie en
+        médecine interne, qui peut toucher presque tous les organes. Les
+        corticoïdes sont efficaces mais les rechutes à l'arrêt sont fréquentes,
+        ce qui expose à une corticothérapie prolongée chez des patients souvent
+        âgés et diabétiques — d'où la recherche d'un traitement d'épargne.
+      - >-
+        L'originalité de l'obexelimab tient à son mécanisme : il module le
+        lymphocyte B sans le détruire, alors que les stratégies jusqu'ici
+        utilisées ou évaluées — rituximab hors AMM, anticorps anti-CD19
+        déplétants — reposent sur la déplétion. L'enjeu théorique est de limiter
+        le risque infectieux et l'hypogammaglobulinémie liés à une déplétion
+        prolongée ; cet essai d'un an ne permet pas encore de le vérifier.
+      - >-
+        Le schéma de l'essai est exigeant et donc convaincant : arrêt complet des
+        corticoïdes dès la semaine 8 dans les deux bras, critère principal validé
+        par un comité indépendant. Le taux de poussée sous placebo (55 % à un an)
+        rappelle au passage à quel point la maladie rechute sans traitement
+        d'entretien.
+      - >-
+        Limites : un an de suivi seulement pour une maladie chronique, une
+        injection hebdomadaire, et des effets indésirables (arthralgies,
+        hypersensibilité) plus fréquents que sous placebo. Le statut
+        réglementaire et la disponibilité de la molécule en France sont à
+        vérifier : à la date de cet essai, il s'agit d'un traitement en
+        développement.
+
+  - type: reco
+    titre: "Vascularite à IgA de l'adulte : recommandations européennes EUVAS pour le diagnostic et la prise en charge"
+    source: "Nature Reviews Rheumatology · recommandations de la European Vasculitis Society"
+    impact_factor: 40
+    url: "https://pubmed.ncbi.nlm.nih.gov/42625065/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "le résumé ne détaille pas le contenu des 14 recommandations : lire le texte source"
+    resume: >-
+      Recommandations multidisciplinaires élaborées par un panel d'experts
+      européens du groupe EUGAVAS, au nom de la European Vasculitis Society
+      (EUVAS), à partir d'une revue systématique de la littérature et d'un avis
+      d'experts. Elles comprennent des principes généraux et 14 recommandations
+      couvrant le diagnostic, le traitement et le suivi de la vascularite à IgA
+      de l'adulte. Le texte rappelle le contraste entre les deux âges de la
+      maladie : fréquente et le plus souvent spontanément résolutive chez
+      l'enfant, elle est beaucoup plus rare chez l'adulte et de moins bon
+      pronostic. Le pronostic à court terme dépend surtout des complications
+      digestives, le pronostic à long terme de l'atteinte rénale et du risque
+      d'évolution vers l'insuffisance rénale chronique. La prise en charge de
+      l'adulte reste difficile faute de critères diagnostiques validés pour
+      l'adulte, de score d'activité standardisé propre à la maladie et d'essais
+      thérapeutiques de qualité.
+    message_cle: >-
+      Un panel européen propose un cadre structuré pour le diagnostic, le
+      traitement et le suivi de la vascularite à IgA de l'adulte — une maladie
+      bien plus rare et de pronostic, notamment rénal, nettement moins
+      favorable que chez l'enfant, et pour laquelle manquent critères
+      diagnostiques validés et essais de qualité.
+    comparaisons:
+      - titre: "Par rapport aux références françaises"
+        reference: "pratiques et référentiels français de la vascularite à IgA"
+        points:
+          - "Plusieurs auteurs du panel appartiennent aux équipes françaises de
+            médecine interne et de néphrologie impliquées dans la vascularite à
+            IgA, ce qui laisse attendre une bonne cohérence avec les pratiques
+            françaises — à vérifier sur le texte intégral."
+          - "Les référentiels français existants restent la référence
+            opposable pour le parcours de soins et le remboursement."
+    contexte:
+      - >-
+        La vascularite à IgA de l'adulte est une maladie de médecine interne
+        typique : rare, hétérogène, à la frontière de la dermatologie, de la
+        gastro-entérologie et de la néphrologie. Le n°4 de ce digest avait
+        présenté un phénotype sévère décrit par le Groupe Français d'Étude des
+        Vascularites, associant vascularite à IgA et artérite nécrosante ; ce
+        texte offre le cadre général dans lequel situer ces formes graves.
+      - >-
+        Le rappel des déterminants pronostiques structure la surveillance : le
+        risque immédiat est digestif (douleurs, hémorragie, perforation), le
+        risque différé est rénal. Cela justifie une évaluation rénale
+        systématique et prolongée même lorsque l'épisode initial paraît
+        résolutif.
+      - >-
+        Limite d'information, à dire franchement : le résumé PubMed annonce 14
+        recommandations sans en donner le contenu, et le texte intégral n'est
+        pas en accès libre. Cette synthèse ne peut donc pas détailler les
+        positions prises sur les points pratiques — indication de la biopsie
+        rénale, place des immunosuppresseurs, traitement de l'atteinte
+        digestive. Le document source est à lire avant toute application.
+
+  - type: autre
+    titre: "PEXIVAS relu par une approche bayésienne : prudence avec les corticoïdes à dose réduite en cas d'hémorragie alvéolaire grave"
+    source: "The Journal of Rheumatology · réanalyse bayésienne d'un essai randomisé"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41985923/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "analyse post hoc en sous-groupes : exploratoire, génératrice d'hypothèses"
+      - "61 patients seulement dans le sous-groupe d'hémorragie alvéolaire grave"
+    resume: >-
+      Réanalyse bayésienne de l'essai PEXIVAS, qui avait randomisé des patients
+      atteints de vascularite à ANCA avec atteinte rénale et/ou hémorragie
+      alvéolaire diffuse entre échanges plasmatiques ou non, et corticothérapie
+      à dose réduite ou standard. Les auteurs se concentrent sur l'hémorragie
+      alvéolaire : 704 participants, dont 191 avec hémorragie alvéolaire et 61
+      avec une forme grave (saturation ≤ 85 % en air ambiant ou ventilation
+      mécanique). Avec des a priori non informatifs, la probabilité d'un
+      bénéfice de survie à un an des échanges plasmatiques est de 93 % en cas
+      d'hémorragie alvéolaire (hazard ratio 0,52 ; intervalle de crédibilité à
+      95 % 0,21-1,26), contre 67 % sans hémorragie (0,86 ; 0,43-1,71). La
+      corticothérapie à dose réduite a une probabilité de 98 % d'améliorer la
+      survie chez les patients sans hémorragie alvéolaire (0,46 ; 0,22-0,95),
+      mais seulement de 12 % en cas d'hémorragie grave (2,02 ; 0,64-6,35). Les
+      échanges plasmatiques augmentent le risque d'infection grave (odds ratio
+      1,25 ; 0,92-1,70 ; probabilité de 92 %), la corticothérapie réduite le
+      diminue (0,85 ; 0,63-1,15 ; probabilité de 85 %). Les résultats sont
+      cohérents quels que soient les a priori retenus.
+    message_cle: >-
+      En cas d'hémorragie alvéolaire grave au cours d'une vascularite à ANCA, la
+      corticothérapie à dose réduite validée par PEXIVAS pourrait être
+      défavorable (12 % de probabilité seulement de bénéfice de survie), alors
+      qu'elle reste nettement bénéfique sans hémorragie alvéolaire ; les échanges
+      plasmatiques, eux, paraissent probablement utiles dans cette situation.
+      Des signaux à intégrer dans la discussion, pas des certitudes.
+    contexte:
+      - >-
+        PEXIVAS a modifié la pratique dans deux directions : échanges
+        plasmatiques non systématiques, et corticothérapie à dose réduite comme
+        nouveau standard. La question restait ouverte pour les patients les plus
+        graves, notamment en hémorragie alvéolaire, peu nombreux et donc mal
+        représentés dans l'analyse principale. Le n°21 présentait un modèle de
+        prédiction de la rechute dérivé de la même cohorte.
+      - >-
+        L'approche bayésienne a l'intérêt d'exprimer le résultat sous une forme
+        directement utile à la décision — « quelle est la probabilité que ce
+        traitement aide ce type de patient ? » — plutôt qu'un seuil de
+        significativité binaire, particulièrement adapté aux petits sous-groupes.
+        Elle ne crée pas d'information là où les effectifs manquent : tous les
+        intervalles de crédibilité de l'hémorragie alvéolaire incluent l'absence
+        d'effet.
+      - >-
+        Le signal le plus important est l'inversion apparente de l'effet de la
+        corticothérapie réduite selon la gravité respiratoire : bénéfique sans
+        hémorragie, possiblement délétère en cas d'hémorragie grave. Il repose sur
+        61 patients et doit être lu comme une hypothèse. Il suffit cependant à
+        justifier de ne pas appliquer mécaniquement le schéma réduit chez un
+        patient intubé pour hémorragie alvéolaire.
+      - >-
+        Limites : analyse post hoc, non prévue par l'essai, en sous-groupes de
+        petite taille. Les résultats d'une réanalyse bayésienne dépendent des a
+        priori ; les auteurs indiquent qu'ils restent cohérents sur l'ensemble des
+        a priori testés, ce qui renforce leur robustesse sans les rendre
+        confirmatoires.
+
+  - type: meta
+    titre: "AVC ischémique : un patient sur cinq a des anticorps antiphospholipides, mais leur valeur pour prédire la récidive reste incertaine"
+    source: "Stroke · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42663055/"
+    base_texte: texte_integral
+    points_a_verifier:
+      - "positivité définie par un dosage unique, sans confirmation à 12 semaines"
+    resume: >-
+      Méta-analyse de 52 études (40 cas-témoins, 12 cohortes) sur les anticorps
+      antiphospholipides dans l'accident vasculaire cérébral ischémique, chez des
+      adultes sans syndrome des antiphospholipides diagnostiqué. La positivité
+      était définie par au moins un dosage positif d'anticoagulant circulant de
+      type lupique, d'anticardiolipine ou d'anti-β2-glycoprotéine I (IgG ou
+      IgM), **sans exigence de confirmation à 12 semaines**. La prévalence poolée
+      d'une positivité chez les patients victimes d'AVC ischémique est de 19,1 %
+      (IC95 15,4-23,0 ; 51 études, 9 438 patients ; I² = 95,8 %). La positivité
+      est associée à un risque accru de premier AVC ischémique (odds ratio 2,93 ;
+      IC95 2,31-3,73 ; 43 études, 19 097 patients ; I² = 68,7 %), surtout pour
+      l'anticoagulant circulant de type lupique (6,69 ; IC95 2,94-15,2) et les
+      anticardiolipines IgG (2,56 ; IC95 1,96-3,35). En revanche, chez les
+      patients ayant déjà fait un AVC, la positivité n'est pas associée de façon
+      significative à la récidive (odds ratio 1,20 ; IC95 0,87-1,67 ; 9 études,
+      2 873 patients ; I² = 11,4 %), y compris en se limitant aux patients jeunes
+      ou aux AVC cryptogéniques. Le risque de biais a été évalué par l'outil
+      ROBINS-I.
+    message_cle: >-
+      Près d'un patient sur cinq victime d'un AVC ischémique a des anticorps
+      antiphospholipides, et l'anticoagulant circulant de type lupique est le
+      plus fortement associé au premier AVC (odds ratio 6,7) — mais un dosage
+      isolé ne prédit pas la récidive. D'où l'importance de la confirmation à 12
+      semaines avant de conclure à un syndrome des antiphospholipides.
+    contexte:
+      - >-
+        La recherche d'anticorps antiphospholipides après un AVC ischémique est
+        une demande fréquente adressée à l'interniste, surtout chez le sujet
+        jeune ou en l'absence de cause évidente. Ce travail donne un ordre de
+        grandeur utile — environ 19 % de positivité — et rappelle la hiérarchie
+        des marqueurs, dominée par l'anticoagulant circulant de type lupique.
+      - >-
+        Le point méthodologique décisif, que les auteurs discutent eux-mêmes dans
+        le texte intégral : la positivité reposait sur un dosage unique. Or la
+        phase aiguë d'un AVC et l'inflammation systémique peuvent faire apparaître
+        des anticorps transitoires, sans signification pathogène ; les auteurs
+        évoquent aussi la variabilité des techniques et des seuils. Une partie des
+        « positifs » ne l'aurait plus été à 12 semaines, ce qui peut diluer une
+        association réelle avec la récidive.
+      - >-
+        Pour cette raison, les auteurs refusent explicitement de conclure à
+        l'absence de valeur pronostique des anticorps antiphospholipides pour la
+        récidive, et a fortiori chez les patients ayant un syndrome des
+        antiphospholipides avéré — exclus de cette analyse. Le message pratique
+        est donc l'inverse d'une banalisation : confirmer la positivité à 12
+        semaines avant de décider d'une anticoagulation au long cours.
+      - >-
+        Limites : 40 études sur 52 sont cas-témoins, ce qui expose aux biais de
+        sélection et ne permet de parler que d'association ; hétérogénéité très
+        importante sur la prévalence. Ce numéro rejoint la méta-analyse sur les
+        critères SAPL 2023 publiée dans le n°17. Synthèse rédigée à partir du
+        texte intégral, en accès libre.
+
+  - type: meta
+    titre: "Maladie de Horton : sous traitement, le PET ne se normalise que chez la moitié des patients en rémission"
+    source: "The Journal of Rheumatology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42140639/"
+    base_texte: abstract_seul
+    resume: >-
+      Méta-analyse de 25 études portant sur des patients atteints de maladie de
+      Horton avec atteinte des gros vaisseaux, active au PET-FDG initial, ayant
+      eu un PET de contrôle et une évaluation clinique après intensification du
+      traitement immunosuppresseur. Chez les patients cliniquement améliorés,
+      la fixation vasculaire diminue au PET de contrôle dans 95 % des cas
+      (sensibilité poolée 0,95 ; IC95 0,82-1,00). En revanche, chez les patients
+      en rémission clinique, la fixation ne se **normalise** que dans 53 % des
+      cas (0,53 ; IC95 0,34-0,72). Chez les patients traités par tocilizumab, ces
+      proportions atteignent respectivement 100 % (IC95 0,99-1,00) et 78 %
+      (IC95 0,50-0,97).
+    message_cle: >-
+      Au cours du suivi d'une maladie de Horton avec atteinte des gros vaisseaux,
+      un PET qui s'améliore accompagne presque toujours l'amélioration clinique,
+      mais un PET encore fixant n'est pas synonyme de maladie active : la moitié
+      des patients en rémission clinique gardent une fixation résiduelle.
+    contexte:
+      - >-
+        Le suivi de l'atteinte des gros vaisseaux de la maladie de Horton manque
+        de marqueurs fiables : la CRP est faussée sous tocilizumab, et les
+        symptômes sont peu spécifiques. Le PET-FDG est souvent répété pour juger
+        de l'activité, avec une question récurrente — que faire d'une fixation
+        persistante chez un patient qui va bien ?
+      - >-
+        Ce travail apporte une réponse chiffrée prudente : une fixation
+        résiduelle est la règle chez près d'un patient en rémission sur deux. Elle
+        ne doit donc pas, à elle seule, motiver une escalade thérapeutique. Son
+        interprétation — inflammation résiduelle ou remodelage de la paroi
+        artérielle — dépasse ce que les données permettent de trancher.
+      - >-
+        La meilleure normalisation sous tocilizumab est cohérente avec son
+        efficacité connue, mais elle provient de comparaisons entre études et non
+        d'une comparaison randomisée : d'autres facteurs (sévérité initiale, délai
+        du contrôle) peuvent l'expliquer. Le n°18 présentait une revue parapluie
+        sur la performance du PET au diagnostic des vascularites des gros
+        vaisseaux ; celle-ci porte sur le suivi, question distincte.
+      - >-
+        Limites : études hétérogènes par leurs délais de contrôle et leurs
+        critères de lecture du PET, et estimations de sensibilité seulement — la
+        méta-analyse ne dit pas combien de patients en rechute gardent un PET
+        normal.
+
+aussi_parus:
+  - titre: "Lupus : consensus international sur 22 manifestations rares supplémentaires"
+    source: "The Lancet Rheumatology · consensus ERN ReCONNET – SLICC – SLEuro"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42648304/"
+    resume: >-
+      Deuxième volet d'un consensus international porté par trois groupes
+      d'experts du lupus (réseau européen de référence ReCONNET, SLICC et
+      European Lupus Society), sous direction française. Après 24 manifestations
+      rares traitées dans un premier volet, 77 participants proposent des
+      stratégies thérapeutiques pour 22 autres : hémorragie alvéolaire diffuse ;
+      atteintes cutanées rares (lupus bulleux, engelures lupiques, lupus tumidus,
+      érythème polymorphe, lupus de type nécrolyse épidermique toxique) ;
+      néphrite interstitielle et podocytopathie lupique ; chorée, neuropathie des
+      petites fibres, catatonie, hypertension intracrânienne ; entéropathie
+      exsudative, hépatite lupique, pseudo-obstruction intestinale et
+      péritonite ; myosite et arthropathie de Jaccoud ; uvéite, angio-œdème par
+      anticorps anti-C1 inhibiteur, cystite interstitielle et mastite lupique.
+      Il s'agit de stratégies d'experts, faute de preuves suffisantes. Signalé
+      sans synthèse détaillée : le résumé liste les manifestations sans les
+      stratégies retenues, et le texte intégral n'est pas en accès libre — c'est
+      un document de référence à consulter à la source devant l'une de ces
+      situations.
+
+  - titre: "PTI : le rilzabrutinib maintient ses réponses en phase ouverte de l'essai LUNA3"
+    source: "The Lancet Haematology · période ouverte d'un essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42753771/"
+    resume: >-
+      Période ouverte de 28 semaines de l'essai de phase 3 LUNA3, chez des
+      adultes atteints de purpura thrombopénique immun persistant ou chronique
+      ayant déjà répondu aux immunoglobulines ou aux corticoïdes : 180 patients y
+      sont entrés, tous sous rilzabrutinib 400 mg deux fois par jour. Sur 198
+      patients exposés au rilzabrutinib pendant l'essai, 46 (23 %) ont obtenu une
+      réponse plaquettaire stable, proportion identique chez ceux qui avaient
+      reçu le placebo en double aveugle (15 sur 65). Réponse complète chez 42
+      patients sur 180 (23 %). Effets indésirables liés au traitement chez 26 %,
+      surtout diarrhée et nausées de grade 1 ou 2 ; deux événements graves
+      (pneumopathie interstitielle ; aspergillose bronchopulmonaire avec
+      virémie à CMV). Période sans comparateur et suivi médian court (196
+      jours) : un complément d'information sur la tolérance et la durabilité, pas
+      une nouvelle démonstration d'efficacité.
+
+  - titre: "Néphrite lupique : des indicateurs de qualité tirés des recommandations EULAR 2025"
+    source: "Annals of the Rheumatic Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42431783/"
+    resume: >-
+      Vingt-trois experts ont retenu, selon une méthode de consensus formalisée,
+      17 indicateurs de qualité de la prise en charge de la néphrite lupique,
+      répartis en quatre domaines : diagnostic, traitement, surveillance et
+      grossesse. Appliqués à une cohorte d'un centre tertiaire (130 patients), ils
+      montrent une bonne adhésion pour la biopsie rénale, l'hydroxychloroquine,
+      l'entretien immunosuppresseur, le changement de traitement en cas
+      d'échec, les bloqueurs du système rénine-angiotensine et la grossesse,
+      mais une adhésion très faible (10,7 %) pour l'association
+      immunosuppressive d'emblée, nouveauté des recommandations 2025. Une forte
+      adhésion par patient est associée à moins de dommages (odds ratio 0,29 ;
+      IC95 0,13-0,62). Résultat observationnel, monocentrique, à valider
+      ailleurs ; utile comme grille d'auto-évaluation des pratiques.
+
+  - titre: "Sclérodermie : un variant de DNASE1L3 associé à l'hypertension artérielle pulmonaire"
+    source: "Annals of the Rheumatic Diseases"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42248770/"
+    resume: >-
+      Dans trois cohortes de sclérodermie (Houston, Royal Free à Londres, Johns
+      Hopkins), le variant perte de fonction R206C de DNASE1L3, déjà connu comme
+      facteur de susceptibilité à la sclérodermie, est associé à une mortalité
+      plus élevée (hazard ratio ajusté 1,16 ; IC95 1,02-1,32 ; 2 366 patients) et
+      surtout à un risque accru d'hypertension pulmonaire précapillaire (1,69 ;
+      IC95 1,31-2,19 ; 1 170 patients), le plus souvent sans pneumopathie
+      interstitielle, donc d'hypertension artérielle pulmonaire. Résultat
+      d'association génétique, d'intérêt surtout physiopathologique à ce stade ;
+      il fait écho au déficit en DNASE1L3 présenté dans le n°19.
+
+  - titre: "Maladie de Behçet réfractaire : revue des inhibiteurs de JAK"
+    source: "Seminars in Arthritis and Rheumatism · revue systématique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42364375/"
+    resume: >-
+      Revue systématique de 92 patients traités par inhibiteur de JAK
+      (tofacitinib 46, baricitinib 31, upadacitinib 15), presque tous en échec
+      d'immunosuppresseurs conventionnels et 57,6 % en échec d'au moins un
+      anti-TNF ; les inhibiteurs de JAK étaient associés à des
+      immunosuppresseurs ou des corticoïdes dans 90,6 % des cas. Indications :
+      atteinte digestive (50 %), vasculaire (23,9 %), oculaire (20,6 %). Taux de
+      rémission rapportés : 85,9 % au global, 82,6 % digestif, 90,9 % vasculaire,
+      84,2 % oculaire ; événements graves chez 5,4 %, aucune thrombose rapportée.
+      Ces taux élevés proviennent de cas publiés et d'associations
+      thérapeutiques : ils sont exposés au biais de publication et ne mesurent
+      pas l'effet propre des inhibiteurs de JAK.
+
+  - titre: "Après une embolie pulmonaire, une alerte informatique double le dépistage de l'hypertension pulmonaire"
+    source: "The American Journal of Medicine · essai randomisé en grappes (CTEPH-DETECT)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42815753/"
+    resume: >-
+      Essai quasi randomisé en grappes : 73 médecins suivant 400 patients ayant
+      eu une embolie pulmonaire depuis au moins 6 mois, avec des symptômes ou des
+      examens évocateurs d'hypertension pulmonaire et sans échocardiographie
+      récente, ont reçu ou non une alerte informatique suggérant une
+      échocardiographie. Celle-ci a été prescrite chez 32,5 % des patients du
+      groupe alerte contre 17,5 % (odds ratio ajusté 2,23 ; IC95 1,58-3,15), et une
+      hypertension pulmonaire a été détectée chez 10,5 % contre 5,0 %. Aucun
+      nouveau diagnostic formel d'hypertension pulmonaire thromboembolique
+      chronique dans les deux groupes : l'impact clinique reste à démontrer par un
+      essai plus large, comme le soulignent les auteurs.
+
+  - titre: "Myopathies inflammatoires : surrisque de complications de la grossesse"
+    source: "Arthritis Care & Research · méta-analyse de cohortes"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41869994/"
+    resume: >-
+      Méta-analyse de cinq cohortes rétrospectives populationnelles,
+      essentiellement de dermatomyosites et polymyosites. Par rapport aux
+      grossesses sans myopathie, la myopathie inflammatoire est associée à plus
+      de troubles hypertensifs de la grossesse (odds ratio 2,73 ; IC95
+      1,76-4,23), de césariennes (2,03 ; IC95 1,37-3,00), de naissances
+      prématurées (3,71 ; IC95 2,35-5,85) et de petits poids pour l'âge
+      gestationnel ou de retards de croissance (1,90 ; IC95 1,03-3,51).
+      Associations observationnelles avec hétérogénéité notable ; les auteurs
+      signalent qu'un effet de l'activité de la maladie et des traitements peut
+      expliquer une partie du surrisque. Argument pour un suivi obstétrical
+      renforcé.
