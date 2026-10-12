@@ -1,0 +1,323 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 23
+semaine: "6 au 12 octobre 2026"
+date: 2026-10-12
+edito: >-
+  Semaine sans grand essai ni recommandation majeure dans notre périmètre, mais
+  plusieurs études utiles au quotidien. En tête, une série européenne à forte
+  participation française sur le passage du mépolizumab au benralizumab dans
+  la granulomatose éosinophilique avec polyangéite. La maladie liée aux IgG4
+  occupe deux places : pas d'excès de cancers dans une grande cohorte
+  américaine, et une méta-analyse sur la prévention et le traitement des
+  rechutes de pancréatite auto-immune de type 1. Complètent le numéro une
+  méta-analyse apixaban contre rivaroxaban dans la MTEV, à lire avec ses
+  limites, et l'extension ouverte de HELIOS-B dans l'amylose à transthyrétine.
+
+items:
+  - type: autre
+    titre: "EGPA : le benralizumab après échec du mépolizumab, une option surtout pour l'atteinte respiratoire persistante"
+    source: "Chest · étude rétrospective multicentrique européenne (groupe EESG et Groupe français d'étude des vascularites)"
+    impact_factor: 9
+    url: "https://pubmed.ncbi.nlm.nih.gov/42855125/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "statut de remboursement du benralizumab dans l'EGPA en France à vérifier"
+      - "étude rétrospective sans groupe contrôle : pas de comparaison possible avec une autre stratégie"
+    resume: >-
+      Étude rétrospective européenne, menée par le Groupe français d'étude des
+      vascularites et le groupe européen EESG, chez 68 adultes atteints de
+      granulomatose éosinophilique avec polyangéite (EGPA) ayant reçu du
+      benralizumab (anti-récepteur de l'IL-5, qui déplète plus profondément les
+      éosinophiles) après échec du mépolizumab (anti-IL-5). La réponse complète
+      était définie par un BVAS à 0 avec une prednisone ≤ 4 mg/j, la réponse
+      partielle par un BVAS à 0 avec une prednisone > 4 mg/j. Avec un suivi
+      médian de 28 mois (20-39), une réponse complète est obtenue chez 32 % des
+      patients et une réponse partielle chez 25 %, **maintenues au dernier suivi
+      chez 19 % et 16 % seulement**. Le délai médian de réponse complète est de
+      6 mois (4-12). Le VEMS passe de 73 % à 79 % et 38 % des patients arrêtent
+      les corticoïdes. Six patients font une poussée de vascularite. L'échec
+      primaire du mépolizumab est associé à un taux plus faible de réponse
+      complète (OR 0,19 ; IC95 0,06-0,60). Le benralizumab est arrêté chez 18 %
+      des patients pour persistance des symptômes respiratoires ; cinq patients
+      présentent un effet indésirable, dont deux infections sévères à
+      SARS-CoV-2.
+    message_cle: >-
+      Après échec du mépolizumab dans l'EGPA, le benralizumab obtient une
+      réponse complète chez environ un patient sur trois, améliore un peu la
+      fonction respiratoire et permet à 38 % des patients d'arrêter les
+      corticoïdes — mais la réponse s'érode avec le temps et elle est nettement
+      moins bonne après un échec primaire du mépolizumab.
+    contexte:
+      - >-
+        Le mépolizumab et le benralizumab sont désormais des options de première
+        ligne de l'EGPA non sévère, en particulier quand l'asthme et l'atteinte
+        ORL dominent. La question pratique est celle de la suite en cas d'échec
+        du premier anti-IL-5 : changer de molécule de la même famille a-t-il un
+        intérêt ? Cette série, la plus large à ce jour sur ce passage, apporte
+        une première réponse de terrain.
+      - >-
+        Ce qu'on peut en retenir : le changement peut valoir la peine chez un
+        patient qui a d'abord répondu au mépolizumab puis s'est dégradé, surtout
+        sur le plan respiratoire ; il est moins prometteur après un échec
+        primaire. L'absence de groupe contrôle et le caractère rétrospectif
+        imposent la prudence, et une atteinte vasculitique sévère relève
+        toujours d'un traitement d'induction classique.
+
+  - type: autre
+    titre: "Maladie liée aux IgG4 : pas d'excès de cancers dans une cohorte de 348 patients suivis 8 ans"
+    source: "Annals of the Rheumatic Diseases · cohorte rétrospective monocentrique (Massachusetts General Hospital)"
+    impact_factor: 20
+    url: "https://pubmed.ncbi.nlm.nih.gov/42850159/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "cohorte monocentrique d'un centre expert américain : population peut-être différente des patients suivis en France"
+    resume: >-
+      Cohorte rétrospective monocentrique de 348 patients remplissant les
+      critères de classification ACR/EULAR de la maladie liée aux IgG4, suivis au
+      Massachusetts General Hospital. Les antécédents de cancer étaient recueillis
+      par questionnaire et revue des dossiers, et l'incidence comparée à celle de
+      la population générale américaine, par âge et par sexe. Sur un suivi médian
+      de 8,04 ans (IQR 1,35-14,72), 34 patients (10 %) développent un cancer
+      après le début de la maladie : lymphomes (6 cas), cancers de la prostate
+      (6) et du poumon (5) sont les plus fréquents. **Pas d'excès de cancers par
+      rapport à la population générale** (rapport d'incidence standardisé 0,88 ;
+      IC95 0,61-1,23). Au sein de la cohorte, le tabagisme (HR ajusté 2,46 ;
+      IC95 1,16-5,24) et l'âge (HR 1,35 par décennie ; IC95 1,00-1,83) sont
+      associés à un risque plus élevé ; le sexe féminin (HR 0,37 ; IC95
+      0,14-0,96) et l'atteinte des glandes sous-mandibulaires (HR 0,25 ; IC95
+      0,10-0,61) à un risque plus faible.
+    message_cle: >-
+      Une fois la maladie liée aux IgG4 déclarée, le risque de cancer n'apparaît
+      pas plus élevé que dans la population générale ; ce sont les facteurs
+      habituels — tabac, âge — qui pèsent, ce qui plaide pour un dépistage
+      adapté à l'âge plutôt que pour une recherche systématique élargie.
+    contexte:
+      - >-
+        Le lien entre maladie liée aux IgG4 et cancer est débattu depuis
+        longtemps : des cancers sont parfois découverts au diagnostic, et
+        certaines lésions (pancréas, voies biliaires) imitent une tumeur. Cette
+        étude porte sur les cancers survenus **après** le début de la maladie,
+        ce qui ne répond pas à la question du cancer révélé au moment du
+        diagnostic, où l'exclusion d'une tumeur reste indispensable.
+      - >-
+        L'effectif reste modeste pour un événement rare (34 cancers) : un sur-risque
+        limité pour un type de cancer précis, notamment les lymphomes, ne peut
+        pas être exclu. Les associations relevées dans la cohorte sont
+        observationnelles et ne prouvent pas de lien de cause à effet.
+
+  - type: meta
+    titre: "Pancréatite auto-immune de type 1 : le traitement d'entretien est associé à moins de rechutes"
+    source: "The American Journal of Gastroenterology · revue systématique et méta-analyse en réseau"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/42847193/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "doses et durées précises d'entretien non détaillées dans le résumé"
+      - "rituximab hors AMM en France dans cette indication"
+    resume: >-
+      Revue systématique et méta-analyses (simple bras, comparaisons directes et
+      méta-analyse bayésienne en réseau) de 37 études regroupant 5 742 patients
+      atteints de pancréatite auto-immune de type 1 — forme pancréatique de la
+      maladie liée aux IgG4 —, dont **2 essais randomisés seulement** et 35
+      cohortes. Le traitement d'entretien est associé à une réduction du risque
+      de rechute (RR 0,58 ; IC95 0,46-0,72). Dans les cohortes asiatiques, une
+      corticothérapie plus prolongée est associée à moins de rechutes qu'une
+      corticothérapie courte (RR 0,46 ; IC95 0,23-0,89). Une dose d'entretien de
+      corticoïdes ≥ 5 mg/j ne montre qu'une tendance non significative face à une
+      dose < 5 mg/j (RR 0,61 ; IC95 0,36-1,04). Le risque de rechute s'accumule
+      avec le temps et la rechute touche surtout le pancréas (71 %). Sont
+      associés à un risque accru : sexe masculin, ictère, diabète, IgG4 sériques
+      supérieures à la normale, atteinte biliaire et atteinte d'autres organes.
+      Pour traiter la rechute, le rituximab obtient les estimations les plus
+      favorables, devant l'association corticoïdes-immunomodulateurs, mais la
+      plupart des comparaisons reposent sur un niveau de preuve faible ou très
+      faible.
+    message_cle: >-
+      Dans la pancréatite auto-immune de type 1, un traitement d'entretien est
+      associé à 42 % de rechutes en moins, et les profils à risque (homme,
+      ictère, atteinte biliaire ou multi-organes, IgG4 élevées) sont identifiés ;
+      le rituximab paraît le meilleur traitement de la rechute, sans preuve
+      solide de sa supériorité.
+    contexte:
+      - >-
+        Les rechutes sont la principale difficulté de la maladie liée aux IgG4,
+        et la durée de la corticothérapie d'entretien fait débat entre écoles
+        asiatique (entretien prolongé à faible dose) et occidentale (arrêt plus
+        précoce). Ce travail confirme l'intérêt d'un entretien chez les patients
+        à risque, sans trancher la dose ni la durée optimales.
+      - >-
+        Les résultats viennent presque exclusivement d'études observationnelles :
+        il s'agit d'associations, avec un risque de biais d'indication (les
+        patients jugés plus graves sont souvent ceux qui reçoivent un entretien).
+        À rapprocher de l'essai INDIGO présenté la semaine dernière, qui ouvre la
+        voie à une épargne cortisonique par biothérapie.
+
+  - type: meta
+    titre: "MTEV : l'apixaban associé à moins de récidives et de saignements majeurs que le rivaroxaban, surtout en vie réelle"
+    source: "Internal and Emergency Medicine · revue systématique et méta-analyse"
+    impact_factor: 3
+    url: "https://pubmed.ncbi.nlm.nih.gov/42855613/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "nombre d'essais randomisés parmi les 13 études non précisé dans le résumé ; la majorité des données est observationnelle"
+    resume: >-
+      Revue systématique et méta-analyse (modèle à effets aléatoires) de
+      13 études comparant directement l'apixaban et le rivaroxaban chez l'adulte
+      traité pour une maladie thromboembolique veineuse, soit plus de 220 000
+      patients, avec une recherche bibliographique arrêtée en mars 2026.
+      L'apixaban est associé à moins de récidives thromboemboliques (RR 0,85 ;
+      IC95 0,74-0,98 ; hétérogénéité modérée) et à **28 % de saignements majeurs
+      en moins** (RR 0,72 ; IC95 0,65-0,81 ; hétérogénéité faible), soit un
+      risque moindre sur le critère combiné de « préjudice clinique net »
+      (RR 0,76 ; IC95 0,68-0,86). Pas de différence de mortalité toutes causes
+      (RR 0,95 ; IC95 0,80-1,12), avec une forte hétérogénéité. Les analyses de
+      sensibilité ne modifient pas les résultats. Les auteurs soulignent
+      eux-mêmes la prédominance des données observationnelles.
+    message_cle: >-
+      Dans la MTEV, l'apixaban est associé à moins de saignements majeurs (−28 %)
+      et un peu moins de récidives que le rivaroxaban, sans différence de
+      mortalité — un signal cohérent, mais tiré surtout d'études
+      observationnelles, donc exposé aux biais de prescription.
+    contexte:
+      - >-
+        Faute de grand essai comparant directement les deux molécules, le choix
+        entre apixaban et rivaroxaban repose souvent sur les habitudes et la
+        posologie (deux prises par jour pour l'apixaban, une prise après la phase
+        initiale pour le rivaroxaban). Les données observationnelles vont depuis
+        plusieurs années dans le même sens en faveur de l'apixaban sur le risque
+        hémorragique, ce que confirme cette synthèse.
+      - >-
+        Prudence d'interprétation : dans les études de vie réelle, les patients
+        sous apixaban peuvent différer de ceux sous rivaroxaban (âge, fonction
+        rénale, risque hémorragique perçu), et un ajustement imparfait peut
+        expliquer une partie de l'écart. Un article genevois tiré d'une
+        comparaison randomisée des deux molécules dans la MTEV aiguë paraît la
+        même semaine (European Heart Journal – Cardiovascular Pharmacotherapy),
+        sans résumé disponible à ce jour.
+
+  - type: essai
+    titre: "Amylose cardiaque à transthyrétine : le vutrisiran poursuivi réduit les hospitalisations à 4 ans (extension de HELIOS-B)"
+    source: "Journal of Cardiac Failure · extension ouverte d'un essai de phase 3"
+    impact_factor: 6
+    url: "https://pubmed.ncbi.nlm.nih.gov/42860179/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "analyse cosignée par des salariés du laboratoire qui commercialise le vutrisiran"
+      - "effectifs et taux d'événements par groupe non détaillés dans le résumé"
+    resume: >-
+      Extension ouverte de l'essai de phase 3 HELIOS-B (NCT04153149) dans
+      l'amylose à transthyrétine avec cardiomyopathie : après 33 à 36 mois en
+      double aveugle (vutrisiran 25 mg tous les 3 mois ou placebo), les patients
+      poursuivent ou débutent le vutrisiran pendant 24 mois. Les comparaisons
+      opposent le traitement continu au traitement différé (patients initialement
+      sous placebo), à 48 mois soit 12 mois d'extension. Sur 654 participants,
+      466 sont entrés dans l'extension. Le vutrisiran continu réduit le risque
+      d'hospitalisation toutes causes face au traitement différé, dans la
+      population globale (rapport de taux 0,71 ; IC95 0,62-0,82 ; p < 0,001) et
+      chez les patients sans tafamidis à l'inclusion (0,60 ; IC95 0,50-0,72 ;
+      p < 0,001). Les hospitalisations cardiovasculaires, pour insuffisance
+      cardiaque et non cardiovasculaires sont aussi réduites dans ces deux
+      populations, ainsi que les consultations urgentes pour insuffisance
+      cardiaque dans la population globale et le sous-groupe sous tafamidis.
+      Selon les auteurs, plusieurs effets sont plus marqués à 48 qu'à 36 mois.
+    message_cle: >-
+      Dans l'amylose cardiaque à transthyrétine, les patients traités par
+      vutrisiran dès le départ restent moins hospitalisés que ceux qui l'ont
+      débuté avec trois ans de retard (−29 % d'hospitalisations, −40 % sans
+      tafamidis associé) — un argument en faveur d'un diagnostic et d'un
+      traitement précoces.
+    contexte:
+      - >-
+        L'amylose à transthyrétine est souvent diagnostiquée ou suivie en
+        médecine interne, en lien avec les centres de référence. HELIOS-B avait
+        montré un bénéfice du vutrisiran sur la mortalité et les événements
+        cardiovasculaires ; cette extension suggère que le retard au traitement
+        n'est pas entièrement rattrapé.
+      - >-
+        Les groupes comparés sont ceux de la randomisation initiale, ce qui
+        limite les biais, mais seuls les patients entrés dans l'extension sont
+        analysés (466 sur 654), et l'analyse est cosignée par le promoteur. À lire avec
+        l'analyse de sous-groupe sous tafamidis présentée dans le numéro 21.
+
+aussi_parus:
+  - titre: "Transplantés rénaux : le vaccin antigrippal haute dose plus immunogène qu'une double dose standard"
+    source: "The Lancet Regional Health – Southeast Asia · essai randomisé ouvert"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42831180/"
+    resume: >-
+      Essai randomisé ouvert thaïlandais chez 88 transplantés rénaux adultes
+      (84 analysés), comparant le vaccin antigrippal quadrivalent haute dose
+      (60 µg par souche) à une double dose de vaccin standard (30 µg par
+      souche), saison 2023 de l'hémisphère Sud. Séroconversion pour au
+      moins une souche à 4 semaines : 95,2 % sous haute dose contre 69 % sous
+      double dose (p = 0,002 ; différence absolue 0,26, IC95 0,12-0,40), avec
+      moins de douleurs au point d'injection et de myalgies sous haute dose.
+      Critère immunologique seulement, pas de critère clinique (grippe évitée).
+
+  - titre: "Vaccins VRS et zona adjuvantés : la co-administration ne réduit pas la réponse immunitaire"
+    source: "Clinical Infectious Diseases · essai de phase 3 randomisé ouvert"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42054374/"
+    resume: >-
+      Essai de phase 3 chez 530 adultes de 50 ans et plus, comparant
+      l'administration simultanée du vaccin VRS adjuvanté (RSVPreF3) et du vaccin
+      recombinant adjuvanté contre le zona à leur administration à un mois
+      d'intervalle. La non-infériorité des réponses humorales est démontrée pour
+      les deux vaccins (rapports de titres 1,1 et 1,0 pour le VRS A et B, 1,2
+      pour les anticorps anti-gE du zona). Les réactions locales et générales
+      sont plus fréquentes après co-administration (événements systémiques
+      sollicités 73,6 % contre 60,4 %), sans effet indésirable grave lié.
+      Participants non immunodéprimés : utile pour simplifier un rattrapage
+      vaccinal avant immunosuppression, sans données chez l'immunodéprimé.
+      Essai cosigné par des salariés du fabricant.
+
+  - titre: "Amylose à transthyrétine : NT-proBNP et transthyrétine sérique, deux marqueurs pronostiques complémentaires (ATTRibute-CM)"
+    source: "Journal of the American Heart Association · analyse post hoc d'un essai de phase 3"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42669902/"
+    resume: >-
+      Analyse post hoc des 632 patients de l'essai ATTRibute-CM (acoramidis
+      contre placebo). Un NT-proBNP élevé et une transthyrétine sérique basse à
+      l'inclusion sont chacun associés, de façon indépendante, au risque de décès
+      ou de première hospitalisation cardiovasculaire, et leur combinaison
+      identifie les patients au risque le plus élevé. Le bénéfice de l'acoramidis
+      est retrouvé quel que soit le niveau de ces marqueurs ou le stade du
+      National Amyloidosis Centre. Analyse cosignée par des salariés du
+      promoteur.
+
+  - titre: "Néphrite lupique : l'exposition aux antipaludéens n'est pas associée à des lésions histologiques différentes"
+    source: "Rheumatology (Oxford) · cohorte de Toronto"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42853650/"
+    resume: >-
+      Dans la cohorte lupique de Toronto, 165 patients biopsiés pour une
+      néphrite lupique au moins trois mois après leur entrée dans la cohorte,
+      dont 50,3 % sous antipaludéens. Après ajustement, l'exposition aux
+      antipaludéens n'est associée à aucune différence détectable sur la classe
+      proliférative, les index d'activité et de chronicité NIH ou la fibrose
+      interstitielle, y compris pour une exposition continue de 6 mois ou un an.
+      Effectif limité : une absence de différence détectable n'est pas une
+      preuve d'absence d'effet, et l'intérêt global de l'hydroxychloroquine dans
+      le lupus n'est pas remis en cause.
+
+  - titre: "Lupus monogénique : un tiers des patients échappe aux critères de classification"
+    source: "Rheumatology (Oxford) · cohorte nationale multicentrique pédiatrique (Turquie)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42834437/"
+    resume: >-
+      Chez 88 patients de rhumatologie pédiatrique atteints de lupus monogénique confirmé génétiquement,
+      74 % remplissent les critères ACR 1997, 70,5 % les critères SLICC 2012 et
+      EULAR/ACR 2019, et 17 % aucun des trois. Les déficits en complément
+      donnent le phénotype le plus classique ; les défauts de la voie de
+      l'interféron de type I et du métabolisme des acides nucléiques sont les
+      plus souvent non classés. Un rappel utile chez l'adulte jeune suivi pour un
+      lupus atypique ou très précoce : des critères non remplis n'excluent pas
+      une forme monogénique.
+
+  - titre: "Lupus : le télitacicept augmente la réponse SRI-4 dans deux essais chinois"
+    source: "Frontiers in Medicine · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42856831/"
+    resume: >-
+      Méta-analyse de 39 publications, toutes chinoises, sur le télitacicept,
+      protéine de fusion qui bloque BAFF et APRIL. Dans les deux essais
+      randomisés contre placebo, la dose de 160 mg ajoutée au traitement
+      standard double la réponse SRI-4 à 48-52 semaines (RR 2,04 ; IC95
+      1,66-2,50), au prix d'un peu plus d'effets indésirables (RR 1,09 ; IC95
+      1,02-1,17), sans différence nette d'effets indésirables graves. Les autres
+      critères sont de très faible niveau de preuve. Molécule sans autorisation en
+      France.
