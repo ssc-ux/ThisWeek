@@ -1,0 +1,322 @@
+# Numéro rédigé à partir des abstracts PubMed (et du texte intégral libre quand
+# il existe), sans relecture humaine.
+numero: 24
+semaine: "13 au 19 octobre 2026"
+date: 2026-10-19
+edito: >-
+  Semaine dense. La British Society for Rheumatology publie la première mise à
+  jour de ses recommandations sur la pseudo-polyarthrite rhizomélique depuis
+  2009, avec une place nouvelle pour le méthotrexate précoce et les anti-IL-6.
+  Dans l'amylose AL au stade cardiaque le plus grave, un essai de phase 2
+  appuie le daratumumab seul en première ligne. La plus grande cohorte jamais
+  publiée de maladie d'Erdheim-Chester, portée notamment par le centre de
+  référence français des histiocytoses (Pitié-Salpêtrière), précise les facteurs pronostiques. Complètent le numéro une méta-analyse sur
+  les thrombophilies et la récidive après arrêt des anticoagulants, et un essai
+  de phase 2 positif du litifilimab dans le lupus cutané.
+
+items:
+  - type: reco
+    titre: "Pseudo-polyarthrite rhizomélique : la BSR met à jour ses recommandations, avec méthotrexate précoce et anti-IL-6"
+    source: "Rheumatology (Oxford) · recommandations de la British Society for Rheumatology (BSR) 2026"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42869454/"
+    base_texte: texte_integral
+    points_a_verifier:
+      - "recommandations britanniques : parcours de soins (rôle du médecin généraliste, accès aux biothérapies) propres au NHS"
+      - "sarilumab : AMM européenne dans la PPR selon le texte ; conditions de remboursement en France à vérifier"
+    resume: >-
+      Mise à jour, selon la méthode GRADE, des recommandations britanniques de
+      2009 sur le traitement de la pseudo-polyarthrite rhizomélique (PPR).
+      Principales recommandations, lues sur le texte intégral : débuter la
+      prednisolone à **12,5-15 mg/j**, en augmentant si besoin jusqu'à 25 mg/j au
+      maximum, puis commencer la décroissance après 2 à 4 semaines de contrôle
+      des symptômes ; décroître de 2,5 mg toutes les 2 à 4 semaines jusqu'à
+      10 mg/j, puis de 1 mg toutes les 4 à 8 semaines ; chez les patients à haut
+      risque de toxicité cortisonique, envisager une décroissance plus rapide
+      (par exemple 1 mg toutes les 2 à 3 semaines, avec un objectif d'arrêt dans
+      les 6 mois) ; en cas de rechute, revenir à la dernière dose efficace pendant
+      2 à 4 semaines. **Bisphosphonate pour tout patient débutant une
+      corticothérapie**, sauf contre-indication (grade 1B). Discuter dès le
+      diagnostic l'ajout de **méthotrexate**, et l'envisager en cas de rechute ou
+      de risque cortisonique élevé (grades 2B et 2C). Envisager un **antagoniste
+      du récepteur de l'IL-6** en cas de réponse insuffisante aux corticoïdes ou
+      d'impossibilité de les diminuer (grade 2B), en s'appuyant sur trois essais
+      randomisés (PMR-SPARE et SEMAPHORE pour le tocilizumab, SAPHYR pour le
+      sarilumab). Le texte rappelle que le sarilumab, et non le tocilizumab, est
+      approuvé dans la PPR par la FDA et l'EMA. Avis spécialisé recommandé après
+      deux rechutes et pour tout patient encore sous corticoïdes après 18 mois ;
+      risque d'insuffisance surrénalienne à envisager chez tout patient ayant
+      reçu ≥ 5 mg/j pendant au moins quatre semaines.
+    message_cle: >-
+      PPR selon la BSR 2026 : prednisolone 12,5-15 mg/j (25 mg/j au plus),
+      décroissance codifiée et plus rapide chez les patients fragiles,
+      bisphosphonate d'emblée, méthotrexate à discuter dès le diagnostic, et
+      anti-IL-6 en cas de corticodépendance ou de réponse insuffisante.
+    contexte:
+      - >-
+        La PPR est l'une des maladies inflammatoires les plus fréquentes du sujet
+        âgé, et la corticothérapie prolongée y est la règle chez beaucoup de
+        patients, avec son cortège de complications. Ces recommandations vont dans
+        le même sens que celles de l'EULAR/ACR de 2015 sur les doses initiales,
+        mais intègrent les essais récents sur les anti-IL-6 et insistent davantage
+        sur l'épargne cortisonique précoce.
+      - >-
+        Pour la pratique française, deux points se transposent directement : la
+        prévention osseuse systématique dès le début de la corticothérapie, et la
+        décroissance plus rapide chez les patients diabétiques ou ostéoporotiques.
+        L'accès au sarilumab et au tocilizumab dans cette indication dépend des
+        conditions de remboursement françaises, à vérifier.
+
+  - type: essai
+    titre: "Amylose AL au stade cardiaque IIIb : le daratumumab seul obtient 75 % de réponses hématologiques (essai EMN22)"
+    source: "Blood · essai de phase 2 (European Myeloma Network)"
+    impact_factor: 21
+    url: "https://pubmed.ncbi.nlm.nih.gov/42296025/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "essai de phase 2 sans bras contrôle : comparaison seulement avec des cohortes historiques"
+      - "daratumumab en monothérapie dans cette situation : statut hors AMM en France à vérifier"
+    resume: >-
+      Essai prospectif de phase 2 du European Myeloma Network (EMN22,
+      NCT04131309) chez 40 patients atteints d'amylose AL non traitée, avec
+      maladie hématologique mesurable et atteinte cardiaque de stade IIIb
+      (Mayo 2004 / européen), c'est-à-dire le stade de plus mauvais pronostic. Les
+      patients recevaient du daratumumab seul, à la dose et au rythme standard,
+      jusqu'à 2 ans ; en cas de réponse insuffisante après 3 cycles, bortézomib et
+      dexaméthasone pouvaient être ajoutés (10 patients, 25 %). Critère principal
+      — survie globale à 6 mois — de **65 %** (IC95 48,2-77,6), avec une survie
+      médiane de 10,4 mois. Meilleure réponse hématologique à 6 mois (au moins
+      partielle) : 75 %, dont 47,5 % de très bonnes réponses partielles ou mieux
+      et 12,5 % de réponses complètes ; délai médian de première réponse
+      1 semaine, de meilleure réponse 2,3 mois. Réponse cardiaque à 6 mois : 30 %.
+      Événements indésirables graves les plus fréquents : insuffisance cardiaque
+      (25 %), mort subite (10 %), insuffisance rénale aiguë (7,5 %). Qualité de vie
+      stable pendant l'essai.
+    message_cle: >-
+      Au stade cardiaque le plus grave de l'amylose AL, le daratumumab seul donne
+      des réponses hématologiques rapides (une semaine en médiane) chez 75 % des
+      patients et deux tiers sont en vie à 6 mois — un pronostic qui reste sombre,
+      mais meilleur que dans les séries historiques selon les auteurs.
+    contexte:
+      - >-
+        Les patients au stade IIIb sont exclus de la plupart des essais, en
+        particulier de l'essai ANDROMEDA qui a établi l'association
+        daratumumab-bortézomib-cyclophosphamide-dexaméthasone en première ligne.
+        Leur prise en charge repose sur des données faibles, et la crainte de la
+        toxicité cardiaque du bortézomib et de la dexaméthasone à forte dose
+        complique le choix.
+      - >-
+        Cet essai soutient le daratumumab comme socle du traitement chez ces
+        patients fragiles, avec ajout secondaire d'autres molécules selon la
+        réponse. La mortalité précoce reste élevée, rappelant l'enjeu du
+        diagnostic avant le stade cardiaque avancé.
+
+  - type: autre
+    titre: "Maladie d'Erdheim-Chester : 1 174 patients, 22 % de décès, et cinq facteurs pronostiques à repérer"
+    source: "The Lancet Haematology · cohorte internationale rétrospective"
+    impact_factor: 15
+    url: "https://pubmed.ncbi.nlm.nih.gov/42880331/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "cohorte rétrospective couvrant 40 ans : les traitements et la prise en charge ont beaucoup évolué sur la période"
+    resume: >-
+      Cohorte internationale rétrospective de 1 174 patients atteints de maladie
+      d'Erdheim-Chester prouvée histologiquement, diagnostiqués entre 1985 et 2024
+      dans dix pays, avec une large contribution du centre de référence français
+      des histiocytoses (Pitié-Salpêtrière).
+      Âge médian au diagnostic 58 ans, 68 % d'hommes. Maladie multisystémique
+      (au moins quatre organes) chez 62 % des patients ; atteintes les plus
+      fréquentes : os longs (80 %), rétropéritoine (63 %), gros vaisseaux (46 %),
+      système nerveux central (38 %) et cœur (35 %). Mutation BRAF V600E chez 62 %
+      des patients testés, hématopoïèse clonale chez 36 % ; chevauchement avec une
+      autre histiocytose chez 14 % et second cancer chez 27 %. En première ligne,
+      interféron α (34 %) ou thérapies ciblées (anti-BRAF/MEK, 33 %), ces
+      dernières obtenant les meilleurs taux de réponse objective (74 % sous
+      anti-BRAF, 71 % sous anti-MEK). Après un suivi médian de 49 mois, 22 % des
+      patients sont décédés. Facteurs indépendants de mortalité : âge, atteinte
+      neurodégénérative (HR 4,2 ; IC95 2,4-7,1), CRP élevée (HR 3,8 ; IC95
+      1,6-9,1), second cancer hématologique (HR 3,0 ; IC95 1,5-6,0) et absence de
+      réponse au traitement (HR 2,8 ; IC95 1,6-5,1).
+    message_cle: >-
+      Dans la maladie d'Erdheim-Chester, un patient sur cinq décède en quatre ans
+      environ ; l'atteinte neurodégénérative, une CRP élevée, un second cancer
+      hématologique et l'absence de réponse au traitement signalent les formes
+      les plus graves, qui justifient un suivi rapproché et un traitement adapté
+      au risque.
+    contexte:
+      - >-
+        La maladie d'Erdheim-Chester est une histiocytose rare, liée à des
+        mutations de la voie MAPK, pour laquelle la France dispose d'un centre de
+        référence très actif. Cette cohorte, de loin la plus large publiée, fournit
+        des repères de fréquence utiles au bilan initial (os longs, rétropéritoine,
+        aorte, cœur, système nerveux central).
+      - >-
+        Deux messages pratiques : rechercher systématiquement une hémopathie
+        associée (hématopoïèse clonale chez plus d'un tiers des patients), et
+        surveiller l'atteinte neurologique, premier facteur de mortalité. Les
+        taux de réponse plus élevés des thérapies ciblées sont observationnels et
+        ne valent pas comparaison randomisée avec l'interféron.
+
+  - type: meta
+    titre: "Thrombophilies et MTEV : un risque de récidive doublé à triplé après arrêt des anticoagulants pour les formes majeures"
+    source: "Blood Advances · revue systématique et méta-analyse"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/42448302/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "estimations chiffrées par thrombophilie (taux et rapports) non détaillées dans le résumé"
+    resume: >-
+      Revue systématique et méta-analyse de 51 études (essais randomisés et
+      cohortes ; 34 623 patients, 42,3 % de femmes, 33,5 % de MTEV initiale non
+      provoquée) évaluant la récidive thromboembolique **après l'arrêt** du
+      traitement anticoagulant d'un premier épisode, selon la présence ou non
+      d'une thrombophilie : mutation du facteur V Leiden, mutation G20210A de la
+      prothrombine, déficits en antithrombine, protéine C ou protéine S, et
+      syndrome des antiphospholipides. Le syndrome des antiphospholipides, le
+      déficit en antithrombine, la mutation homozygote du facteur V Leiden et la
+      double hétérozygotie facteur V Leiden / prothrombine sont associés à un
+      risque de récidive **environ deux à trois fois plus élevé** ; les mutations
+      hétérozygotes isolées du facteur V Leiden ou de la prothrombine à un risque
+      environ 1,5 fois plus élevé. Hétérogénéité et niveau de preuve
+      majoritairement modérés. Les données sur les déficits en protéines C et S
+      ne permettent pas de conclure.
+    message_cle: >-
+      Après arrêt des anticoagulants, le risque de récidive est multiplié par
+      deux à trois en cas de SAPL, de déficit en antithrombine ou de facteur V
+      Leiden homozygote ou associé à la mutation de la prothrombine, mais
+      seulement par 1,5 pour une mutation hétérozygote isolée.
+    contexte:
+      - >-
+        La recherche de thrombophilie après une MTEV est souvent prescrite sans
+        modifier la conduite à tenir. Ce travail hiérarchise les anomalies : les
+        thrombophilies dites majeures pèsent nettement plus que les mutations
+        hétérozygotes courantes, ce qui aide à décider de la durée du traitement
+        lorsque le bilan a été fait.
+      - >-
+        Le SAPL reste à part : il relève d'une anticoagulation prolongée par
+        antivitamine K, et sa recherche garde toute sa place en médecine interne.
+        Les données sont pour l'essentiel observationnelles : il s'agit
+        d'associations, à intégrer avec le caractère provoqué ou non de l'épisode
+        et le risque hémorragique.
+
+  - type: essai
+    titre: "Lupus cutané : le litifilimab, anti-BDCA2, supérieur au placebo dans l'essai de phase 2 AMETHYST"
+    source: "Journal of the American Academy of Dermatology · essai randomisé de phase 2"
+    impact_factor: 12
+    url: "https://pubmed.ncbi.nlm.nih.gov/42892381/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "molécule expérimentale, sans autorisation en France"
+      - "effectifs par groupe et détails de tolérance non donnés dans le résumé"
+    resume: >-
+      Partie A (phase 2) de l'essai randomisé en double aveugle AMETHYST, chez des
+      patients atteints de lupus érythémateux cutané, comparant le litifilimab
+      225 mg toutes les 4 semaines au placebo pendant 24 semaines. Le
+      litifilimab est un anticorps dirigé contre BDCA2, récepteur des cellules
+      dendritiques plasmacytoïdes, principales productrices d'interféron de
+      type I. Critère principal atteint : peau blanchie ou presque (score
+      d'érythème CLA-IGA-R à 0-1) à la semaine 16 chez **14,7 % des patients sous
+      litifilimab contre 2,9 % sous placebo** (p = 0,0263). Réponse CLASI-70 à la
+      semaine 24 : 21,7 % contre 5,8 % (p = 0,0195), sur un critère secondaire pour
+      lequel l'essai n'avait pas la puissance nécessaire. Tolérance jugée bonne et
+      conforme aux études antérieures.
+    message_cle: >-
+      Dans le lupus cutané, le litifilimab mensuel blanchit la peau chez environ
+      un patient sur sept contre un sur trente-cinq sous placebo à 16 semaines —
+      un effet net mais modeste en valeur absolue, qui reste à confirmer en
+      phase 3.
+    contexte:
+      - >-
+        Le lupus cutané résistant aux antipaludéens est une situation fréquente en
+        médecine interne et en dermatologie, sans traitement ciblé autorisé. Cibler
+        les cellules dendritiques plasmacytoïdes et la voie de l'interféron est
+        une piste solide, déjà validée indirectement par l'anifrolumab.
+      - >-
+        La partie de phase 3 d'AMETHYST doit confirmer ces résultats. D'ici là,
+        le litifilimab n'est accessible que dans le cadre d'essais cliniques.
+
+aussi_parus:
+  - titre: "Maladies auto-inflammatoires monogéniques : une personne sur 4 000 porteuse d'une variante pathogène, presque jamais diagnostiquée"
+    source: "The Lancet Rheumatology · cohorte rétrospective dans deux biobanques (Geisinger, UK Biobank)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42869051/"
+    resume: >-
+      Approche « génome d'abord » chez 640 092 participants séquencés : 159 portent
+      une variante pathogène ou probablement pathogène dans l'un des 28 gènes de
+      maladies auto-inflammatoires étudiés (dont UBA1 somatique, gène du
+      syndrome VEXAS), soit une prévalence estimée à une personne sur 4 026. Un
+      seul avait un diagnostic de maladie auto-inflammatoire documenté. La moitié
+      des porteurs (51 %) présentent pourtant des manifestations inflammatoires,
+      notamment pulmonaires et cutanées, avec davantage de vascularites et de
+      traitements immunosuppresseurs que les témoins. Un argument pour évoquer
+      plus souvent une cause génétique devant une inflammation systémique
+      inexpliquée.
+
+  - titre: "Lupus : rituximab et bélimumab associés à des taux comparables de faible activité à long terme"
+    source: "Rheumatology (Oxford) · cohorte prospective monocentrique (registre BILAG-BR, Cambridge)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42873589/"
+    resume: >-
+      Chez 176 patients lupiques (175 cures de rituximab, 58 traitements par
+      bélimumab), pas de différence d'obtention d'une faible activité de la
+      maladie (SLEDAI-2K ≤ 4 et prednisolone ≤ 5 mg/j) entre les deux
+      biothérapies, après ajustement (HR 0,92 ; IC95 0,57-1,48) comme après
+      pondération sur le score de propension (HR 0,86 ; IC95 0,54-1,37). Maintien
+      thérapeutique comparable en première ligne biologique, meilleur sous
+      bélimumab en deuxième ligne (HR 1,34 ; IC95 1,03-1,77). Étude
+      observationnelle : pas de conclusion causale.
+
+  - titre: "Covid long : risque augmenté de 56 % chez les patients atteints de maladie auto-immune systémique"
+    source: "Arthritis & Rheumatology · cohorte rétrospective nationale américaine (N3C)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42870675/"
+    resume: >-
+      Sur 187 106 patients appariés infectés par le SARS-CoV-2 entre 2021 et 2023,
+      un covid long est codé chez 2,8 % des patients atteints de maladie
+      rhumatismale auto-immune contre 1,5 % des témoins (HR ajusté 1,56 ; IC95
+      1,45-1,67). Chez ces patients, gravité de l'infection aiguë, atteinte
+      pulmonaire, obésité et exposition au rituximab ou aux corticoïdes sont
+      associées à un risque plus élevé, ainsi que le syndrome de Sjögren.
+      Définition par codage diagnostique : sous-estimation et biais de recours
+      probables.
+
+  - titre: "SAPL obstétrical : les critères de Sydney plus sensibles que les critères ACR/EULAR 2023"
+    source: "Rheumatology (Oxford) · cohorte ambispective monocentrique (Chine)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42886525/"
+    resume: >-
+      Chez 1 741 femmes en âge de procréer, comparées au diagnostic d'experts,
+      les critères de Sydney 2006 identifient le SAPL obstétrical avec une
+      sensibilité de 0,806 et une spécificité de 0,991 ; les critères ACR/EULAR
+      2023 ont une spécificité quasi parfaite (0,999) mais une sensibilité de
+      0,267 seulement. Les patientes remplissant les critères 2023 ont les
+      issues de grossesse les moins bonnes. Rappel : les critères 2023 sont des
+      critères de classification pour la recherche, pas de diagnostic.
+
+  - titre: "HTAP de la sclérodermie : un traitement initial maintenu est associé à une mortalité plus faible (EUSTAR)"
+    source: "Arthritis & Rheumatology · analyse de la cohorte EUSTAR"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42876376/"
+    resume: >-
+      Chez 301 patients atteints d'hypertension artérielle pulmonaire associée à
+      la sclérodermie, jamais traités, 66 % débutent un traitement spécifique
+      dans les 4 mois suivant le cathétérisme, mais seulement 31 % de ceux ayant
+      une atteinte hémodynamique légère (définition de 2022). En analyse « selon
+      le traitement reçu », la monothérapie et la bithérapie maintenues sont
+      associées à une mortalité plus faible (HR 0,50 et 0,40) ; l'analyse en
+      intention de traiter ne retrouve pas d'association, ce qui illustre les
+      limites des comparaisons observationnelles.
+
+  - titre: "Lipoprotéine(a) et MTEV : une association qui disparaît dans les études de cohorte"
+    source: "Atherosclerosis · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42892134/"
+    resume: >-
+      Onze études (63 325 participants) : association limite entre Lp(a) élevée
+      et MTEV (OR/HR 1,34 ; IC95 1,00-1,80), portée par les études cas-témoins
+      (OR 1,88) et absente des cohortes prospectives (HR 0,99 ; IC95 0,85-1,15).
+      Pas d'argument pour doser la Lp(a) dans le bilan d'une MTEV.
+
+  - titre: "Lupus : l'anifrolumab améliore l'atteinte cutanée et l'épargne cortisonique (méta-analyse des essais)"
+    source: "Frontiers in Immunology · méta-analyse d'essais randomisés"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42877191/"
+    resume: >-
+      Cinq essais : l'anifrolumab intraveineux améliore la réponse CLASI-A50 à
+      52 semaines chez les patients avec atteinte cutanée marquée (RR 1,52, sur
+      deux essais et 165 patients) et la diminution durable des corticoïdes chez
+      ceux recevant au moins 10 mg/j (RR 1,56). Risque de zona augmenté dans une
+      analyse complémentaire (RR 3,88 ; IC95 1,70-8,89), sur peu d'événements.
