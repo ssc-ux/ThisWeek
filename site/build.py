@@ -26,10 +26,6 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 DIST = ROOT / "dist"
 SITE_URL = "https://ssc-ux.github.io/ThisWeek"
-# Proxy documentaire de l'Université de Lille : doi.org y est réécrit en
-# doi-org.ressources-electroniques.univ-lille.fr, qui ouvre l'article chez
-# l'éditeur avec l'abonnement de l'université (identification ENT au besoin).
-PROXY_DOI = "https://doi-org.ressources-electroniques.univ-lille.fr/"
 
 TYPE_LABELS = {
     "reco": "Recommandation",
@@ -107,9 +103,6 @@ def load_issues() -> list[dict]:
         for item in issue.get("items", []):
             if item.get("type") not in TYPE_LABELS:
                 item["type"] = "autre"
-        for item in issue.get("items", []) + (issue.get("aussi_parus") or []):
-            if item.get("doi"):
-                item["url_lille"] = PROXY_DOI + item["doi"]
         add_reading_times(issue)
         issues.append(issue)
     issues.sort(key=lambda i: i["date"], reverse=True)

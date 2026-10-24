@@ -18,7 +18,6 @@ items:
     source: "The New England Journal of Medicine · essai de phase 3"
     impact_factor: 96
     url: "https://pubmed.ncbi.nlm.nih.gov/42233621/"
-    doi: "10.1056/NEJMoa2601337"
     base_texte: abstract_seul
     points_a_verifier:
       - "statut réglementaire de l'obexelimab en France à vérifier : molécule évaluée ici en essai"
@@ -83,7 +82,6 @@ items:
     source: "Nature Reviews Rheumatology · recommandations de la European Vasculitis Society"
     impact_factor: 40
     url: "https://pubmed.ncbi.nlm.nih.gov/42625065/"
-    doi: "10.1038/s41584-026-01420-3"
     base_texte: abstract_seul
     points_a_verifier:
       - "le résumé ne détaille pas le contenu des 14 recommandations : lire le texte source"
@@ -144,7 +142,6 @@ items:
     titre: "PEXIVAS relu par une approche bayésienne : prudence avec les corticoïdes à dose réduite en cas d'hémorragie alvéolaire grave"
     source: "The Journal of Rheumatology · réanalyse bayésienne d'un essai randomisé"
     url: "https://pubmed.ncbi.nlm.nih.gov/41985923/"
-    doi: "10.3899/jrheum.2025-0796"
     base_texte: abstract_seul
     points_a_verifier:
       - "analyse post hoc en sous-groupes : exploratoire, génératrice d'hypothèses"
@@ -208,7 +205,6 @@ items:
     titre: "AVC ischémique : un patient sur cinq a des anticorps antiphospholipides, mais leur valeur pour prédire la récidive reste incertaine"
     source: "Stroke · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42663055/"
-    doi: "10.1161/STROKEAHA.126.055247"
     base_texte: texte_integral
     points_a_verifier:
       - "positivité définie par un dosage unique, sans confirmation à 12 semaines"
@@ -269,7 +265,6 @@ items:
     titre: "Maladie de Horton : sous traitement, le PET ne se normalise que chez la moitié des patients en rémission"
     source: "The Journal of Rheumatology · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42140639/"
-    doi: "10.3899/jrheum.2026-0050"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse de 25 études portant sur des patients atteints de maladie de
@@ -317,7 +312,6 @@ aussi_parus:
   - titre: "Lupus : consensus international sur 22 manifestations rares supplémentaires"
     source: "The Lancet Rheumatology · consensus ERN ReCONNET – SLICC – SLEuro"
     url: "https://pubmed.ncbi.nlm.nih.gov/42648304/"
-    doi: "10.1016/S2665-9913(26)00141-4"
     resume: >-
       Deuxième volet d'un consensus international porté par trois groupes
       d'experts du lupus (réseau européen de référence ReCONNET, SLICC et
@@ -340,7 +334,6 @@ aussi_parus:
   - titre: "PTI : le rilzabrutinib maintient ses réponses en phase ouverte de l'essai LUNA3"
     source: "The Lancet Haematology · période ouverte d'un essai de phase 3"
     url: "https://pubmed.ncbi.nlm.nih.gov/42753771/"
-    doi: "10.1016/S2352-3026(26)00193-6"
     resume: >-
       Période ouverte de 28 semaines de l'essai de phase 3 LUNA3, chez des
       adultes atteints de purpura thrombopénique immun persistant ou chronique
@@ -359,7 +352,6 @@ aussi_parus:
   - titre: "Néphrite lupique : des indicateurs de qualité tirés des recommandations EULAR 2025"
     source: "Annals of the Rheumatic Diseases"
     url: "https://pubmed.ncbi.nlm.nih.gov/42431783/"
-    doi: "10.1016/j.ard.2026.05.030"
     resume: >-
       Vingt-trois experts ont retenu, selon une méthode de consensus formalisée,
       17 indicateurs de qualité de la prise en charge de la néphrite lupique,
@@ -377,7 +369,6 @@ aussi_parus:
   - titre: "Sclérodermie : un variant de DNASE1L3 associé à l'hypertension artérielle pulmonaire"
     source: "Annals of the Rheumatic Diseases"
     url: "https://pubmed.ncbi.nlm.nih.gov/42248770/"
-    doi: "10.1016/j.ard.2026.05.009"
     resume: >-
       Dans trois cohortes de sclérodermie (Houston, Royal Free à Londres, Johns
       Hopkins), le variant perte de fonction R206C de DNASE1L3, déjà connu comme
@@ -392,7 +383,6 @@ aussi_parus:
   - titre: "Maladie de Behçet réfractaire : revue des inhibiteurs de JAK"
     source: "Seminars in Arthritis and Rheumatism · revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42364375/"
-    doi: "10.1016/j.semarthrit.2026.153025"
     resume: >-
       Revue systématique de 92 patients traités par inhibiteur de JAK
       (tofacitinib 46, baricitinib 31, upadacitinib 15), presque tous en échec
@@ -409,7 +399,6 @@ aussi_parus:
   - titre: "Après une embolie pulmonaire, une alerte informatique double le dépistage de l'hypertension pulmonaire"
     source: "The American Journal of Medicine · essai randomisé en grappes (CTEPH-DETECT)"
     url: "https://pubmed.ncbi.nlm.nih.gov/42815753/"
-    doi: "10.1016/j.amjmed.2026.09.034"
     resume: >-
       Essai quasi randomisé en grappes : 73 médecins suivant 400 patients ayant
       eu une embolie pulmonaire depuis au moins 6 mois, avec des symptômes ou des
@@ -425,7 +414,6 @@ aussi_parus:
   - titre: "Myopathies inflammatoires : surrisque de complications de la grossesse"
     source: "Arthritis Care & Research · méta-analyse de cohortes"
     url: "https://pubmed.ncbi.nlm.nih.gov/41869994/"
-    doi: "10.1002/acr.80048"
     resume: >-
       Méta-analyse de cinq cohortes rétrospectives populationnelles,
       essentiellement de dermatomyosites et polymyosites. Par rapport aux

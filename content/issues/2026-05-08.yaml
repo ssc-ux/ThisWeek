@@ -12,7 +12,6 @@ items:
     titre: "Diagnostiquer plus tôt l'amylose AL : recommandation de la British Society for Haematology"
     source: "British Journal of Haematology · recommandation de la BSH"
     url: "https://pubmed.ncbi.nlm.nih.gov/42099096/"
-    doi: "10.1111/bjh.70472"
     base_texte: abstract_seul
     resume: >-
       Recommandation de la British Society for Haematology dédiée à la
@@ -59,7 +58,6 @@ items:
     source: "The Lancet Rheumatology · essai de phase 2a"
     impact_factor: 42
     url: "https://pubmed.ncbi.nlm.nih.gov/42081904/"
-    doi: "10.1016/S2665-9913(25)00374-1"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 2a randomisé, en double aveugle contre placebo, chez 85
@@ -94,7 +92,6 @@ items:
     source: "RMD Open · méta-analyse sur données individuelles"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42097691/"
-    doi: "10.1136/rmdopen-2025-006615"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse sur données individuelles (5 essais

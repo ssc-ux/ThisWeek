@@ -13,7 +13,6 @@ items:
     source: "The Lancet · essai de phase 2 (cohorte B de WILLOW)"
     impact_factor: 98
     url: "https://pubmed.ncbi.nlm.nih.gov/42107374/"
-    doi: "10.1016/S0140-6736(26)00463-0"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 2 randomisé, en double aveugle contre placebo (132 centres,
@@ -50,7 +49,6 @@ items:
     source: "JAMA Network Open · revue systématique et méta-analyse en réseau"
     impact_factor: 11
     url: "https://pubmed.ncbi.nlm.nih.gov/42138924/"
-    doi: "10.1001/jamanetworkopen.2026.11449"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse en réseau (22 essais randomisés, 43 840 patients) des schémas de
@@ -82,7 +80,6 @@ items:
     titre: "Corticoïdes et risque de thrombose veineuse : surrisque d'environ 2,6 fois, maximal à l'initiation"
     source: "Expert Opinion on Pharmacotherapy · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42138686/"
-    doi: "10.1080/14656566.2026.2675500"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (8 études de bonne qualité, ~460 000

@@ -16,7 +16,6 @@ items:
     titre: "Mortalité et survie dans le lupus systémique : méta-analyse de cohortes (région MENA)"
     source: "Rheumatology International · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42329420/"
-    doi: "10.1007/s00296-026-06181-6"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse de 12 cohortes (3 478 adultes lupiques de cinq pays de la
@@ -66,7 +65,6 @@ items:
     source: "RMD Open · extension à long terme d'un essai de phase 3"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42342288/"
-    doi: "10.1136/rmdopen-2025-006657"
     base_texte: abstract_seul
     resume: >-
       Suivi à 7 ans de l'essai SELECT-COMPARE (upadacitinib 15 mg/j vs
@@ -112,7 +110,6 @@ items:
     titre: "Vascularite éosinophilique cutanée récidivante : revue systématique"
     source: "Acta Dermato-Venereologica · revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42343578/"
-    doi: "10.2340/actadv.v106.adv-2026-0612"
     base_texte: abstract_seul
     resume: >-
       Synthèse de 20 rapports (24 cas) d'une vascularite cutanée rare. Tableau

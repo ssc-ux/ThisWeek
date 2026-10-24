@@ -17,7 +17,6 @@ items:
     source: "Blood · essai de phase 3, analyse finale préplanifiée"
     impact_factor: 21
     url: "https://pubmed.ncbi.nlm.nih.gov/42118698/"
-    doi: "10.1182/blood.2025032099"
     base_texte: abstract_seul
     resume: >-
       Analyse finale préplanifiée de l'essai de phase 3 ANDROMEDA
@@ -87,7 +86,6 @@ items:
     source: "Kidney International · rapport de conférence de controverses KDIGO"
     impact_factor: 15
     url: "https://pubmed.ncbi.nlm.nih.gov/42034308/"
-    doi: "10.1016/j.kint.2026.02.029"
     base_texte: abstract_seul
     points_a_verifier:
       - "rapport de conférence, pas une recommandation KDIGO graduée"
@@ -162,7 +160,6 @@ items:
     source: "Rheumatology (Oxford) · revue systématique et méta-analyse"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42615990/"
-    doi: "10.1093/rheumatology/keag434"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse de la performance de classification des
@@ -218,7 +215,6 @@ items:
     source: "Autoimmunity Reviews · revue systématique"
     impact_factor: 13
     url: "https://pubmed.ncbi.nlm.nih.gov/42349595/"
-    doi: "10.1016/j.autrev.2026.104125"
     base_texte: abstract_seul
     points_a_verifier:
       - "revue financée par un industriel (CSL Vifor), trois auteurs sur quatre liés au financeur"
@@ -275,7 +271,6 @@ aussi_parus:
   - titre: "Syndrome des poumons rétractés au cours du lupus : la récupération fonctionnelle complète reste rare"
     source: "Lupus · revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42301754/"
-    doi: "10.1177/09612033261461973"
     resume: >-
       Revue systématique de 40 études (111 patients, dont 30 observations
       isolées et 10 séries de cas) sur cette manifestation rare du lupus : nette
@@ -295,7 +290,6 @@ aussi_parus:
   - titre: "Inhibiteurs de la voie des IgG dans le PTI de l'adulte : les anti-SYK devant les anti-FcRn"
     source: "Cytokine · revue systématique et méta-analyse d'essais randomisés"
     url: "https://pubmed.ncbi.nlm.nih.gov/42284687/"
-    doi: "10.1016/j.cyto.2026.157179"
     resume: >-
       Méta-analyse de 10 essais randomisés issus de 8 études, sur les
       inhibiteurs ciblant la voie des IgG dans le purpura thrombopénique immun

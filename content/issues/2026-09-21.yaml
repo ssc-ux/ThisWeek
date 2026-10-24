@@ -15,7 +15,6 @@ items:
     titre: "Anticoagulants oraux directs : prise de position 2026 de l'American College of Cardiology"
     source: "Journal of the American College of Cardiology · Scientific Statement de l'ACC"
     url: "https://pubmed.ncbi.nlm.nih.gov/42377292/"
-    doi: "10.1016/j.jacc.2026.05.033"
     base_texte: abstract_seul
     points_a_verifier:
       - "prise de position (Scientific Statement), pas une recommandation graduée"
@@ -96,7 +95,6 @@ items:
     source: "Lupus Science & Medicine · revue systématique et méta-analyse"
     impact_factor: 3
     url: "https://pubmed.ncbi.nlm.nih.gov/42744409/"
-    doi: "10.1136/lupus-2026-002161"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse de 25 études de cohorte publiées entre 2001 et 2026,
@@ -151,7 +149,6 @@ items:
     titre: "Neurosarcoïdose : les symptômes psychiatriques précèdent le reste dans 8 cas sur 10"
     source: "Rheumatology International · revue systématique de cas publiés"
     url: "https://pubmed.ncbi.nlm.nih.gov/42762351/"
-    doi: "10.1007/s00296-026-06294-y"
     base_texte: abstract_seul
     points_a_verifier:
       - "agrégation de cas publiés : biais de publication vers les formes sévères"

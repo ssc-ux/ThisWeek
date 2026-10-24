@@ -12,7 +12,6 @@ items:
     titre: "Biothérapies dans la granulomatose éosinophilique avec polyangéite (EGPA) : anti-IL-5 en tête"
     source: "Postgraduate Medicine · méta-analyse en réseau"
     url: "https://pubmed.ncbi.nlm.nih.gov/42157367/"
-    doi: "10.1080/00325481.2026.2675084"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse en réseau (17 études, 1150 patients) des biothérapies dans la
@@ -49,7 +48,6 @@ items:
     source: "Autoimmunity Reviews · revue systématique et cohorte multicentrique"
     impact_factor: 13
     url: "https://pubmed.ncbi.nlm.nih.gov/42162630/"
-    doi: "10.1016/j.autrev.2026.104081"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et cohorte multicentrique « vie réelle » poolée (64
@@ -81,7 +79,6 @@ items:
     titre: "Cellules CAR-T dans les myosites réfractaires : premières données, prometteuses mais très limitées"
     source: "Journal of Translational Medicine · revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42152066/"
-    doi: "10.1186/s12967-026-08262-3"
     base_texte: abstract_seul
     resume: >-
       Revue systématique de l'ensemble de l'expérience clinique publiée du

@@ -13,7 +13,6 @@ items:
     source: "Autoimmunity Reviews · revue systématique et méta-analyse (14 548 patients)"
     impact_factor: 13
     url: "https://pubmed.ncbi.nlm.nih.gov/42208667/"
-    doi: "10.1016/j.autrev.2026.104088"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (31 études, 14 548 patients) sur
@@ -43,7 +42,6 @@ items:
     titre: "Vascularite à IgA avec artérite nécrosante : un phénotype rare et sévère (Groupe Français d'Étude des Vascularites)"
     source: "Autoimmunity · étude rétrospective multicentrique française + revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42192510/"
-    doi: "10.1080/08916934.2026.2677546"
     base_texte: abstract_seul
     resume: >-
       Étude rétrospective multicentrique du Groupe Français d'Étude des
@@ -77,7 +75,6 @@ items:
     source: "Autoimmunity Reviews · revue systématique et méta-analyse"
     impact_factor: 13
     url: "https://pubmed.ncbi.nlm.nih.gov/42190855/"
-    doi: "10.1016/j.autrev.2026.104096"
     base_texte: abstract_seul
     resume: >-
       Revue systématique de la composition raciale et ethnique de 63 essais

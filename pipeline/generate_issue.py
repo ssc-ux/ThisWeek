@@ -399,8 +399,6 @@ def synthesize_brief(client, refs: list[dict]) -> list[dict]:
             continue
         seen.add(r["pmid"])
         entry = {"titre": r["titre_fr"], "source": r["revue"], "url": r["url"]}
-        if r.get("doi"):
-            entry["doi"] = r["doi"]
         if r["pmid"] in by:
             entry["resume"] = by[r["pmid"]]
         if r.get("if_approx") is not None:
@@ -554,8 +552,6 @@ def synthesize(client, item: dict, source_text: str) -> tuple[dict, str]:
         "message_cle": d["message_cle"],
         "contexte": d["contexte"],
     }
-    if item.get("doi"):
-        out["doi"] = item["doi"]
     if item.get("if_approx") is not None:
         out["impact_factor"] = item["if_approx"]
     comparaisons = [c for c in d.get("comparaisons", []) if c.get("points")]

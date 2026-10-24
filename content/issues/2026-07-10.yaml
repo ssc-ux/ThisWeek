@@ -15,7 +15,6 @@ items:
     titre: "Anselamimab dans l'amylose à chaînes légères (AL) : essais CARES"
     source: "Journal of Clinical Oncology · essais randomisés de phase 3"
     url: "https://pubmed.ncbi.nlm.nih.gov/42212672/"
-    doi: "10.1200/JCO-26-00755"
     base_texte: abstract_seul
     resume: >-
       Chez 406 patients avec amylose AL de stade IIIa/IIIb nouvellement
@@ -65,7 +64,6 @@ items:
     source: "European Respiratory Journal · essai de phase 2"
     impact_factor: 24
     url: "https://pubmed.ncbi.nlm.nih.gov/41819539/"
-    doi: "10.1183/13993003.01874-2025"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 2 randomisé contre placebo chez 107 patients atteints de
@@ -106,7 +104,6 @@ items:
     titre: "Anifrolumab au long cours dans le lupus systémique : méta-analyse (essais, extensions, vie réelle)"
     source: "Pharmacology · méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42406697/"
-    doi: "10.1159/000553444"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse de 10 études (essais de phase 2/3, extensions TULIP/MUSE et
@@ -149,7 +146,6 @@ aussi_parus:
   - titre: "Risque infectieux des biothérapies et traitements ciblés dans la polyarthrite rhumatoïde : revue systématique"
     source: "European Journal of Clinical Pharmacology"
     url: "https://pubmed.ncbi.nlm.nih.gov/42426413/"
-    doi: "10.1007/s00228-026-04130-7"
     resume: >-
       Revue systématique et méta-analyse en réseau du risque infectieux des
       biothérapies et traitements ciblés (b/tsDMARDs) dans la polyarthrite

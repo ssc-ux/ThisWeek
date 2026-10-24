@@ -14,7 +14,6 @@ items:
     source: "Frontiers in Immunology · revue systématique (contrôle des doublons)"
     impact_factor: 6
     url: "https://pubmed.ncbi.nlm.nih.gov/42459686/"
-    doi: "10.3389/fimmu.2026.1879668"
     base_texte: abstract_seul
     resume: >-
       Revue systématique (janvier 2020 – mars 2026) de la thérapie cellulaire à
@@ -54,7 +53,6 @@ items:
     source: "Frontiers in Immunology · méta-analyse"
     impact_factor: 6
     url: "https://pubmed.ncbi.nlm.nih.gov/42465773/"
-    doi: "10.3389/fimmu.2026.1679237"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse (64 études) des facteurs associés à l'ostéonécrose (ON) au
@@ -88,7 +86,6 @@ items:
     titre: "Thromboprophylaxie chez le patient hospitalisé pour une infection aiguë : bénéfice net sur les thromboses"
     source: "European Journal of Clinical Pharmacology · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42479201/"
-    doi: "10.1007/s00228-026-04140-5"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (7 études — 4 essais randomisés, 3
@@ -121,7 +118,6 @@ items:
     titre: "Corticothérapie faible dose au long cours dans la polyarthrite rhumatoïde : léger surrisque cardiovasculaire"
     source: "Clinical and Experimental Rheumatology · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42454469/"
-    doi: "10.55563/clinexprheumatol/omk0if"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse des effets cardiovasculaires d'une

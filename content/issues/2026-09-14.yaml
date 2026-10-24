@@ -15,7 +15,6 @@ items:
     titre: "Sarcoïdose cutanée : aucun traitement n'a fait la preuve de son efficacité dans les essais randomisés"
     source: "Acta Dermato-Venereologica · méta-analyse d'essais randomisés contre placebo"
     url: "https://pubmed.ncbi.nlm.nih.gov/42708647/"
-    doi: "10.2340/actadv.v106.adv-2026-0490"
     base_texte: texte_integral
     points_a_verifier:
       - "critère principal non significatif : intervalle de confiance incluant l'absence d'effet"
@@ -87,7 +86,6 @@ items:
     titre: "Statines associées aux anticoagulants après une thrombose veineuse : un signal, pas encore une preuve"
     source: "Med · méta-analyse bayésienne"
     url: "https://pubmed.ncbi.nlm.nih.gov/42607667/"
-    doi: "10.1016/j.medj.2026.101262"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse bayésienne de 28 études (17 observationnelles et 11 essais
@@ -146,7 +144,6 @@ aussi_parus:
   - titre: "Déficit en DNASE1L3 : un spectre clinique bien plus large que le lupus de l'enfant"
     source: "Current Rheumatology Reports · série de cas et revue systématique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42726335/"
-    doi: "10.1007/s11926-026-01233-z"
     resume: >-
       Le déficit en DNASE1L3 est une cause monogénique rare de lupus, liée à un
       défaut d'élimination de l'ADN extracellulaire. Cette revue systématique

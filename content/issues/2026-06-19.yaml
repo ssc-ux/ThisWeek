@@ -13,7 +13,6 @@ items:
     source: "Seminars in Arthritis and Rheumatism · méta-analyse en réseau"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42308962/"
-    doi: "10.1016/j.semarthrit.2026.153022"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse en réseau (11 essais, 8607 patients) comparant bélimumab et
@@ -47,7 +46,6 @@ items:
     titre: "Facteurs de risque de thrombose veineuse chez le patient hospitalisé en médecine"
     source: "Research and Practice in Thrombosis and Haemostasis · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42318434/"
-    doi: "10.1016/j.rpth.2026.106625"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (18 études) des facteurs de risque de
@@ -78,7 +76,6 @@ items:
     source: "Frontiers in Immunology · revue systématique avec analyse individuelle poolée"
     impact_factor: 6
     url: "https://pubmed.ncbi.nlm.nih.gov/42317308/"
-    doi: "10.3389/fimmu.2026.1851029"
     base_texte: abstract_seul
     resume: >-
       Revue systématique avec analyse individuelle poolée (103 études, 155

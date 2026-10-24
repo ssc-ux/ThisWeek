@@ -13,7 +13,6 @@ items:
     source: "The Lancet · essai de phase 3"
     impact_factor: 98
     url: "https://pubmed.ncbi.nlm.nih.gov/42214397/"
-    doi: "10.1016/S0140-6736(26)00691-4"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 3 (PHOENYCS GO), randomisé, en double aveugle contre placebo,
@@ -47,7 +46,6 @@ items:
     source: "Journal of Autoimmunity · essai de phase Ib/IIa"
     impact_factor: 12
     url: "https://pubmed.ncbi.nlm.nih.gov/42214214/"
-    doi: "10.1016/j.jaut.2026.103578"
     base_texte: abstract_seul
     resume: >-
       Essai de phase Ib/IIa, randomisé en double aveugle contre placebo, chez 60
@@ -75,7 +73,6 @@ items:
     titre: "Neuro-Behçet en Afrique du Nord : synthèse de la fréquence et du tableau clinique"
     source: "Clinical Reviews in Allergy & Immunology · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42223561/"
-    doi: "10.1007/s12016-026-09173-3"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (13 études, 4262 patients atteints de

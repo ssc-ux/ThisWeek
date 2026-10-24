@@ -13,7 +13,6 @@ items:
     titre: "Inhibiteurs de SGLT2 dans l'amylose cardiaque à transthyrétine : signal de survie sur données non randomisées"
     source: "Current Problems in Cardiology · revue systématique et méta-analyse stratifiée"
     url: "https://pubmed.ncbi.nlm.nih.gov/42546911/"
-    doi: "10.1016/j.cpcardiol.2026.103409"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse stratifiée (18 études, 12 039 patients
@@ -67,7 +66,6 @@ aussi_parus:
   - titre: "Inhibiteurs de JAK dans le syndrome CANDLE : revue systématique de 46 patients"
     source: "European Journal of Pediatrics"
     url: "https://pubmed.ncbi.nlm.nih.gov/42547647/"
-    doi: "10.1007/s00431-026-07293-8"
     resume: >-
       Le syndrome CANDLE est une maladie auto-inflammatoire monogénique
       autosomique récessive liée à une atteinte du protéasome, sans traitement
@@ -82,7 +80,6 @@ aussi_parus:
   - titre: "Remdesivir chez l'insuffisant rénal et le transplanté d'organe : analyses virologiques de REDPINE"
     source: "Antimicrobial Agents and Chemotherapy"
     url: "https://pubmed.ncbi.nlm.nih.gov/42429789/"
-    doi: "10.1128/aac.01912-25"
     resume: >-
       Analyses virologiques de l'essai de phase 3 REDPINE chez 243 patients
       hospitalisés pour COVID-19 avec insuffisance rénale, dont 42 transplantés
