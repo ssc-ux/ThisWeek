@@ -17,6 +17,7 @@ items:
     source: "Arthritis & Rheumatology · American College of Rheumatology"
     impact_factor: 12
     url: "https://pubmed.ncbi.nlm.nih.gov/41187097/"
+    doi: "10.1002/art.43452"
     base_texte: abstract_seul
     resume: >-
       Recommandation de l'ACR (méthodologie GRADE, accord ≥ 70 % du panel) sur
@@ -96,6 +97,7 @@ items:
     source: "The Lancet Rheumatology · essai de phase 2b"
     impact_factor: 42
     url: "https://pubmed.ncbi.nlm.nih.gov/42161318/"
+    doi: "10.1016/S2665-9913(26)00075-5"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 2b randomisé, en double aveugle contre placebo, monocentrique
@@ -154,6 +156,7 @@ items:
     titre: "Sécukinumab dans l'artérite à cellules géantes (Horton) : essai négatif (GCAptAIN)"
     source: "NEJM Evidence · essai de phase 3"
     url: "https://pubmed.ncbi.nlm.nih.gov/42234457/"
+    doi: "10.1056/EVIDoa2600112"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 3 randomisé contre placebo chez des patients atteints
@@ -198,6 +201,7 @@ items:
     source: "Annals of the Rheumatic Diseases · essai de phase 2"
     impact_factor: 20
     url: "https://pubmed.ncbi.nlm.nih.gov/41748391/"
+    doi: "10.1016/j.ard.2026.01.014"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 2 randomisé contre placebo chez 90 patients atteints de
@@ -240,6 +244,7 @@ items:
     source: "American Journal of Hematology · essai de phase 3"
     impact_factor: 12
     url: "https://pubmed.ncbi.nlm.nih.gov/41943179/"
+    doi: "10.1002/ajh.70303"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 3 chez 207 adultes atteints de PTI primaire (plaquettes
@@ -280,6 +285,7 @@ aussi_parus:
   - titre: "Prévalence des rechutes dans la sarcoïdose pulmonaire : revue systématique et méta-analyse"
     source: "Respiratory Medicine"
     url: "https://pubmed.ncbi.nlm.nih.gov/42144146/"
+    doi: "10.1016/j.rmed.2026.108894"
     resume: >-
       Méta-analyse de 51 études (6093 patients) : la rechute après réduction ou
       arrêt du traitement de la sarcoïdose pulmonaire est fréquente, avec une
@@ -291,6 +297,7 @@ aussi_parus:
     source: "Rheumatology (Oxford)"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42334960/"
+    doi: "10.1093/rheumatology/keag311"
     resume: >-
       Méta-analyse de 27 cohortes (2579 patients) des facteurs prédictifs de
       pneumopathie interstitielle rapidement progressive dans la dermatomyosite
@@ -303,6 +310,7 @@ aussi_parus:
     source: "Kidney International"
     impact_factor: 15
     url: "https://pubmed.ncbi.nlm.nih.gov/42055319/"
+    doi: "10.1016/j.kint.2026.03.017"
     resume: >-
       Analyse biomarqueurs de l'essai de phase 3 BLISS-LN (446 patients) : elle
       évalue quels marqueurs (anti-dsDNA, anti-C1q, C3/C4, sous-populations de

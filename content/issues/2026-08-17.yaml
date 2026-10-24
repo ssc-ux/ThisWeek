@@ -14,6 +14,7 @@ items:
     source: "The New England Journal of Medicine · essai de phase 3"
     impact_factor: 96
     url: "https://pubmed.ncbi.nlm.nih.gov/42234540/"
+    doi: "10.1056/NEJMoa2602567"
     base_texte: abstract_seul
     resume: >-
       Essai de phase 3 randomisé, en double aveugle contre placebo, chez 381
@@ -59,6 +60,7 @@ items:
     titre: "Vaccin recombinant contre le zona : efficacité réelle chiffrée, y compris chez l'immunodéprimé"
     source: "Vaccine · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42308980/"
+    doi: "10.1016/j.vaccine.2026.128842"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse d'études observationnelles en vie
@@ -110,6 +112,7 @@ items:
     source: "Blood Advances · revue systématique et méta-analyse"
     impact_factor: 8
     url: "https://pubmed.ncbi.nlm.nih.gov/41979328/"
+    doi: "10.1182/bloodadvances.2025019530"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (44 études, 18 071 patients après

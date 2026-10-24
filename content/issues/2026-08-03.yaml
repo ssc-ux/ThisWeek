@@ -14,6 +14,7 @@ items:
     source: "Blood Advances · American Society of Hematology (méthodologie GRADE)"
     impact_factor: 8
     url: "https://pubmed.ncbi.nlm.nih.gov/41592868/"
+    doi: "10.1182/bloodadvances.2025017073"
     base_texte: abstract_seul
     resume: >-
       Recommandations de l'American Society of Hematology (ASH) consacrées au
@@ -84,6 +85,7 @@ items:
     titre: "ATRA + eltrombopag dans le purpura thrombopénique immunologique réfractaire : essai randomisé positif"
     source: "NEJM Evidence · essai randomisé multicentrique"
     url: "https://pubmed.ncbi.nlm.nih.gov/42517709/"
+    doi: "10.1056/EVIDoa2500333"
     base_texte: abstract_seul
     resume: >-
       Essai randomisé multicentrique, en ouvert, chez 96 adultes atteints de PTI
@@ -132,6 +134,7 @@ items:
     titre: "Atteinte pulmonaire des vascularites à ANCA : des profils de risque distincts pour la PID et l'hémorragie alvéolaire"
     source: "Clinical Reviews in Allergy & Immunology · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42536106/"
+    doi: "10.1007/s12016-026-09186-y"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (19 études observationnelles, 2 944
@@ -182,6 +185,7 @@ aussi_parus:
     source: "Seminars in Arthritis and Rheumatism"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42322931/"
+    doi: "10.1016/j.semarthrit.2026.153006"
     resume: >-
       Méta-analyse de 31 cohortes (au moins 32 134 patients) : le risque global de
       cancer est augmenté au cours de la sclérodermie systémique (ratio
@@ -193,6 +197,7 @@ aussi_parus:
   - titre: "Anticoagulants oraux directs dans la thrombose veineuse superficielle"
     source: "Thrombosis and Haemostasis"
     url: "https://pubmed.ncbi.nlm.nih.gov/41539326/"
+    doi: "10.1055/a-2788-3034"
     resume: >-
       Revue systématique et méta-analyse (6 études, 2 040 patients dont 602 traités
       par AOD) : comparés au fondaparinux, les AOD ont une efficacité comparable à
@@ -204,6 +209,7 @@ aussi_parus:
     source: "The Lancet Rheumatology"
     impact_factor: 42
     url: "https://pubmed.ncbi.nlm.nih.gov/42392130/"
+    doi: "10.1016/S2665-9913(26)00109-8"
     resume: >-
       Suivi à 5 ans de l'essai randomisé TREAT EARLIER (méthotrexate 12 mois vs
       placebo chez des patients ayant des arthralgies à risque de polyarthrite
@@ -216,6 +222,7 @@ aussi_parus:
   - titre: "Diagnostic de l'artérite à cellules géantes : de la biopsie à l'imagerie multimodale"
     source: "The Journal of Rheumatology"
     url: "https://pubmed.ncbi.nlm.nih.gov/41922001/"
+    doi: "10.3899/jrheum.2025-1205"
     resume: >-
       Revue systématique (36 études) sur l'évolution du paradigme diagnostique de
       la maladie de Horton. La biopsie d'artère temporale, longtemps référence,

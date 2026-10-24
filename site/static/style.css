@@ -495,6 +495,10 @@ a:focus-visible, button:focus-visible {
 .item h2 a { color: inherit; text-decoration: none; }
 .item h2 a:hover { color: var(--accent); }
 
+.item .fulltext-link { margin: 0 0 .35rem; font-size: .8rem; }
+.fulltext-link, .fulltext-link a { color: var(--accent); }
+.also-head .fulltext-link { font-size: .8rem; }
+
 .base-note {
   font-size: .8rem;
   color: var(--ink-soft);

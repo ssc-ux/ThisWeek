@@ -17,6 +17,7 @@ items:
     source: "Annals of the Rheumatic Diseases · modèle de prédiction (analyse post hoc de l'essai PEXIVAS)"
     impact_factor: 20
     url: "https://pubmed.ncbi.nlm.nih.gov/42772989/"
+    doi: "10.1016/j.ard.2026.08.020"
     base_texte: abstract_seul
     points_a_verifier:
       - "modèle non encore validé sur une population externe"
@@ -77,6 +78,7 @@ items:
     source: "Chest · revue systématique et méta-analyse d'études de prise en charge diagnostique"
     impact_factor: 9
     url: "https://pubmed.ncbi.nlm.nih.gov/42790624/"
+    doi: "10.1016/j.chest.2026.09.030"
     base_texte: abstract_seul
     resume: >-
       Méta-analyse des études prospectives de prise en charge diagnostique
@@ -134,6 +136,7 @@ items:
     source: "RMD Open · étude de cohorte"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42778332/"
+    doi: "10.1136/rmdopen-2026-007162"
     base_texte: abstract_seul
     resume: >-
       Cohorte de 332 patients lupiques, dont 105 cas incidents, comparant deux
@@ -186,6 +189,7 @@ items:
     titre: "Amylose cardiaque à transthyrétine : le vutrisiran chez les patients déjà sous tafamidis"
     source: "Journal of the American College of Cardiology · analyse en sous-groupes de l'essai de phase 3 HELIOS-B"
     url: "https://pubmed.ncbi.nlm.nih.gov/42669070/"
+    doi: "10.1016/j.jacc.2026.07.022"
     base_texte: abstract_seul
     points_a_verifier:
       - "analyse en sous-groupes : exploratoire, génératrice d'hypothèses"
@@ -243,6 +247,7 @@ aussi_parus:
   - titre: "HELIOS-B : l'effet du vutrisiran ne dépend pas des traitements de l'insuffisance cardiaque associés"
     source: "Journal of the American College of Cardiology"
     url: "https://pubmed.ncbi.nlm.nih.gov/42669069/"
+    doi: "10.1016/j.jacc.2026.07.023"
     resume: >-
       Seconde analyse de HELIOS-B (654 patients), consacrée aux traitements
       associés : à l'inclusion, 40 % des participants recevaient du tafamidis
@@ -261,6 +266,7 @@ aussi_parus:
   - titre: "Cancer et thrombose : ce que faisaient les investigateurs d'API-CAT avant de connaître les résultats"
     source: "European Heart Journal – Cardiovascular Pharmacotherapy · analyse descriptive d'un essai randomisé"
     url: "https://pubmed.ncbi.nlm.nih.gov/42361291/"
+    doi: "10.1093/ehjcvp/pvag046"
     resume: >-
       L'essai API-CAT, coordonné par l'AP-HP, a montré que l'apixaban à dose
       réduite (2,5 mg deux fois par jour) est non inférieur à la pleine dose

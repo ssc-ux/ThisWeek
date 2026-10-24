@@ -62,6 +62,7 @@
       </span>
     </p>
     <h2>{% if item.url %}<a href="{{ item.url }}">{{ item.titre }}</a>{% else %}{{ item.titre }}{% endif %}</h2>
+    {% if item.url_lille %}<p class="fulltext-link"><a href="{{ item.url_lille }}">Texte intégral via l'Université de Lille</a></p>{% endif %}
 
     <p class="item-lead">{{ item.message_cle }}</p>
 
@@ -111,6 +112,7 @@
         <p class="also-head">
           {% if ref.url %}<a href="{{ ref.url }}">{{ ref.titre }}</a>{% else %}{{ ref.titre }}{% endif %}
           <span class="also-source">— {{ ref.source }}</span>
+          {% if ref.url_lille %}<a class="fulltext-link" href="{{ ref.url_lille }}">texte intégral (Lille)</a>{% endif %}
           {% if ref.impact_factor %}<span class="if-chip" title="Impact factor approximatif de la revue">IF ≈ {{ ref.impact_factor }}</span>{% endif %}
         </p>
         {% if ref.resume %}<p class="also-resume">{{ ref.resume }}</p>{% endif %}

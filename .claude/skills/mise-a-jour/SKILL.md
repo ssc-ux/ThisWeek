@@ -79,7 +79,10 @@ date tombe après la fin de la semaine visée appartient au numéro suivant.
 Puis récupérer les **abstracts réels** des candidats retenus via E-utilities
 (`efetch`, `rettype=abstract`) et rédiger le YAML dans `content/issues/`,
 exactement comme pour tous les numéros précédents de ce dépôt — aucun chiffre
-inventé, tout vient de l'abstract lu. Vérifier qu'aucun PMID n'a déjà été
+inventé, tout vient de l'abstract lu. Chaque item PubMed porte, sous son
+`url`, un champ `doi` (pris dans les `articleids` d'esummary) : le site en tire
+le lien « Texte intégral via l'Université de Lille » (proxy `doi-org.ressources-
+electroniques.univ-lille.fr`). Vérifier qu'aucun PMID n'a déjà été
 publié :
 
 ```bash

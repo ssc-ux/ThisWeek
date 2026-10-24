@@ -12,6 +12,7 @@ items:
     titre: "Thrombose associée au cancer : rivaroxaban vs HBPM, méta-analyse de 19 153 patients"
     source: "Clinical and Applied Thrombosis/Hemostasis · revue systématique et méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42273726/"
+    doi: "10.1177/10760296261459711"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (25 études, 19 153 patients) comparant le
@@ -50,6 +51,7 @@ items:
     source: "Rheumatology (Oxford) · sous-analyse d'essai randomisé contrôlé"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42261247/"
+    doi: "10.1093/rheumatology/keag294"
     base_texte: abstract_seul
     resume: >-
       Sous-analyse d'un essai randomisé contrôlé : réponse au vaccin recombinant
@@ -78,6 +80,7 @@ items:
     source: "Seminars in Arthritis and Rheumatism · revue systématique et méta-analyse"
     impact_factor: 5
     url: "https://pubmed.ncbi.nlm.nih.gov/42269230/"
+    doi: "10.1016/j.semarthrit.2026.153011"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse (11 études, 2861 patients) comparant

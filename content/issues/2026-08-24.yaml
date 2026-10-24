@@ -16,6 +16,7 @@ items:
     source: "Clinical Infectious Diseases · recommandations IDSA (texte-cadre + 3 textes par virus)"
     impact_factor: 11
     url: "https://pubmed.ncbi.nlm.nih.gov/41766454/"
+    doi: "10.1093/cid/ciag114"
     base_texte: abstract_seul
     points_a_verifier:
       - "vaccins homologués aux États-Unis : transposition au calendrier vaccinal français à confirmer"
@@ -106,6 +107,7 @@ items:
     source: "Lupus Science & Medicine · revue systématique et méta-analyse"
     impact_factor: 3
     url: "https://pubmed.ncbi.nlm.nih.gov/42624533/"
+    doi: "10.1136/lupus-2026-002101"
     base_texte: abstract_seul
     resume: >-
       Revue systématique et méta-analyse de 98 études totalisant 155 964
@@ -154,6 +156,7 @@ items:
     titre: "Hypophysite sarcoïdosique : diabète insipide et hypogonadisme en tête, récidive dans 43 % des cas"
     source: "Pituitary · revue systématique de données individuelles"
     url: "https://pubmed.ncbi.nlm.nih.gov/42622961/"
+    doi: "10.1007/s11102-026-01753-y"
     base_texte: abstract_seul
     points_a_verifier:
       - "revue de cas publiés : biais de publication vers les formes sévères"
@@ -220,6 +223,7 @@ aussi_parus:
   - titre: "IDSA 2025 — texte détaillé : vaccination antigrippale de l'immunodéprimé"
     source: "Clinical Infectious Diseases"
     url: "https://pubmed.ncbi.nlm.nih.gov/41762115/"
+    doi: "10.1093/cid/ciag116"
     resume: >-
       Le texte par virus dont sont issus les chiffres grippe de l'item
       principal. Revue systématique des publications d'août 2023 à juillet 2025,
@@ -234,6 +238,7 @@ aussi_parus:
   - titre: "IDSA 2025 — texte détaillé : vaccination COVID-19 de l'immunodéprimé"
     source: "Clinical Infectious Diseases"
     url: "https://pubmed.ncbi.nlm.nih.gov/41739597/"
+    doi: "10.1093/cid/ciag115"
     resume: >-
       Le texte par virus dont sont issus les chiffres COVID-19 de l'item
       principal. Revue systématique de juin 2024 à juillet 2025 : 7 études
@@ -247,6 +252,7 @@ aussi_parus:
   - titre: "IDSA 2025 — texte détaillé : vaccination anti-VRS de l'immunodéprimé"
     source: "Clinical Infectious Diseases"
     url: "https://pubmed.ncbi.nlm.nih.gov/41766598/"
+    doi: "10.1093/cid/ciag117"
     resume: >-
       Le texte par virus dont sont issus les chiffres VRS de l'item principal.
       Deux études cas-témoins à test négatif chez l'adulte immunodéprimé
@@ -261,6 +267,7 @@ aussi_parus:
   - titre: "Anticoagulants oraux directs et maladie thromboembolique veineuse chez le patient obèse morbide"
     source: "Medicine (Baltimore) · méta-analyse"
     url: "https://pubmed.ncbi.nlm.nih.gov/42629703/"
+    doi: "10.1097/MD.0000000000050355"
     resume: >-
       Méta-analyse de 20 études (44 672 patients obèses morbides traités pour
       une maladie thromboembolique veineuse, dont 18 433 sous anticoagulant oral
