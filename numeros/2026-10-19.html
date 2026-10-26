@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>
+// Exécuté avant le rendu : évite tout clignotement au chargement.
+// Thème CLAIR par défaut ; le mode sombre s'active uniquement si l'utilisateur
+// l'a choisi via le bouton (le réglage du système n'est pas suivi).
+(function () {
+  var r = document.documentElement;
+  r.className = r.className.replace('no-js', 'js');
+  var t = 'light';
+  try { if (localStorage.getItem('tw-theme') === 'dark') t = 'dark'; } catch (e) {}
+  r.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N° 24 — semaine du 13 au 19 octobre 2026 · ThisWeek Médecine interne</title>
+<meta name="description" content="5 items sélectionnés pour les internistes — semaine du 13 au 19 octobre 2026.">
+<link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="../rss.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d7d70'/%3E%3Cpath d='M10 34h11l5-12 8 22 5-10h15' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0d7d70">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ThisWeek — feuille de style unique, inlinée au build.
+   Direction visuelle : sobriété « Apple » — sans-serif système, grande
+   typographie, beaucoup de blanc, coins arrondis, boutons pilule, hairlines. */
+
+:root {
+  --paper:      #ffffff;
+  --paper-alt:  #f5f5f7;
+  --surface:    #ffffff;
+  --ink:        #1d1d1f;
+  --ink-soft:   #6e6e73;
+  --rule:       #e5e5ea;
+  --accent:     #0d7d70;
+  --accent-strong: #0a655a;
+  --accent-soft:   #e7f3f1;
+  --accent-ink: #ffffff;
+  --key-bg:     #eef7f4;
+  --nav-bg:     rgba(255, 255, 255, .82);
+  --shadow:     0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+
+  --badge-reco-bg: #f3e3e6;    --badge-reco-ink: #82212f;
+  --badge-pnds-bg: #e4e7f5;    --badge-pnds-ink: #35447f;
+  --badge-essai-bg: #e2efe5;   --badge-essai-ink: #22603a;
+  --badge-meta-bg: #e6eef4;    --badge-meta-ink: #274b66;
+  --badge-alerte-bg: #f6ecda;  --badge-alerte-ink: #7d5310;
+  --badge-autre-bg: #e8ebea;   --badge-autre-ink: #4c5a58;
+
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --r-card: 18px;
+  --r-pill: 980px;
+}
+
+/* Le thème CLAIR est le thème par défaut : le site ne suit volontairement pas le
+   réglage sombre du système. Le passage en sombre se fait uniquement via le
+   bouton de la barre du haut, qui pose data-theme="dark" et mémorise le choix. */
+
+:root[data-theme="light"] {
+  --paper: #ffffff; --paper-alt: #f5f5f7; --surface: #ffffff;
+  --ink: #1d1d1f; --ink-soft: #6e6e73; --rule: #e5e5ea;
+  --accent: #0d7d70; --accent-strong: #0a655a; --accent-soft: #e7f3f1;
+  --accent-ink: #ffffff; --key-bg: #eef7f4; --accent-2: #1f5fbf; --nav-bg: rgba(255,255,255,.82);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+}
+
+:root[data-theme="dark"] {
+  --paper: #000000; --paper-alt: #0f0f11; --surface: #1c1c1e;
+  --ink: #f5f5f7; --ink-soft: #a1a1a6; --rule: #2a2a2d;
+  --accent: #57c3b3; --accent-strong: #6fd0c1; --accent-soft: #12302b;
+  --accent-ink: #06110f; --key-bg: #14201d; --accent-2: #7aa7ff; --nav-bg: rgba(0,0,0,.68);
+  --shadow: 0 12px 32px rgba(0,0,0,.5);
+  --badge-reco-bg: #3d222a;   --badge-reco-ink: #e2a3ad;
+  --badge-pnds-bg: #242b47;   --badge-pnds-ink: #aab4e8;
+  --badge-essai-bg: #1f3527;  --badge-essai-ink: #9ed3ac;
+  --badge-meta-bg: #1e2e3a;   --badge-meta-ink: #9cc2dd;
+  --badge-alerte-bg: #3a2f18; --badge-alerte-ink: #e0bc76;
+  --badge-autre-bg: #29322f;  --badge-autre-ink: #aebbb8;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .9rem;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Pages de numéro : plus larges à partir du seuil où le sommaire passe en
+   colonne latérale (voir .issue-layout). */
+@media (min-width: 1150px) { .page-article { max-width: 84rem; } }
+@media (min-width: 1700px) { .page-article { max-width: 92rem; } }
+
+/* ---- Masthead : barre fine translucide, collante ---- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: 0 -1.5rem 0;
+  padding: .65rem 1.5rem;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+}
+
+.masthead .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.masthead .brand .week { color: var(--accent); }
+.masthead .brand .logo-ico { width: 1.4rem; height: 1.4rem; border-radius: 5px; }
+
+.masthead nav {
+  font-size: .85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.15rem;
+  align-items: center;
+}
+.masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
+
+/* ---- Boutons ronds de la barre (recherche, thème) ---- */
+
+.icon-btn {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+/* Le premier des deux boutons pousse la paire à droite quand la barre passe à
+   la ligne (mobile) ; le second suit normalement. */
+#search-open { margin-left: auto; }
+
+/* On montre l'icône de la destination : lune en clair, soleil en sombre. */
+#theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-moon { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-sun { display: inline; }
+/* Sans JavaScript, ni la recherche ni la bascule de thème ne fonctionnent. */
+.no-js .icon-btn { display: none; }
+
+/* ---- Recherche (overlay plein écran, style palette de commandes) ---- */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(20, 22, 22, .5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1.2rem 1.2rem;
+}
+/* `display:flex` ci-dessus prime sur la feuille par défaut du navigateur pour
+   [hidden] (même spécificité, mais les styles d'auteur gagnent) : sans cette
+   règle explicite, l'overlay resterait affiché — et cliquable — même masqué. */
+.search-overlay[hidden] { display: none; }
+.search-panel {
+  width: min(38rem, 100%);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.search-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1rem 1.15rem;
+  outline: none;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: .4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.search-results li { border-radius: 10px; }
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+}
+.search-results a:hover, .search-results a:focus-visible { background: var(--paper-alt); }
+.search-type {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.search-title { font-weight: 600; font-size: .98rem; }
+.search-meta { font-size: .8rem; color: var(--ink-soft); }
+.search-empty { padding: 1.4rem 1rem; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+
+/* ---- En-tête de numéro ---- */
+
+.issue-head { padding: 1.7rem 0 .3rem; }
+
+.eyebrow, .issue-head .eyebrow {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 .7rem;
+}
+
+.issue-head h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  margin: 0 0 .55rem;
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.issue-meta {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-banner {
+  margin: 1.4rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--badge-alerte-bg);
+  color: var(--badge-alerte-ink);
+  border-radius: 12px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.ia-banner {
+  margin: 1.1rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+}
+.ia-badge {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: .14rem .48rem;
+  border-radius: 6px;
+}
+.ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
+
+.edito {
+  margin: 1.1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* ---- Barre de lecture (5 min / 20 min) ---- */
+
+.reading-bar {
+  margin: 1.3rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem 1rem;
+}
+.reading-est {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.read-toggle {
+  display: inline-flex;
+  background: var(--paper-alt);
+  border-radius: var(--r-pill);
+  padding: .22rem;
+  gap: .15rem;
+}
+.read-toggle button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .38rem .95rem;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: color .15s;
+}
+.read-toggle button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,.16);
+}
+/* Sans JavaScript, la bascule ne sert à rien : on la masque. */
+.no-js .read-toggle { display: none; }
+
+/* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
+
+.tldr {
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--paper-alt);
+  border-radius: var(--r-card);
+}
+.tldr h2 {
+  margin: 0 0 .6rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.tldr h2 .tldr-sub { color: var(--ink-soft); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.tldr ol { margin: 0; padding-left: 1.2rem; }
+.tldr li { margin: .42rem 0; line-height: 1.45; }
+.tldr li a { font-weight: 600; text-decoration: none; }
+.tldr li a:hover { text-decoration: underline; }
+.tldr .tldr-msg { color: var(--ink-soft); }
+
+/* ---- Mise en page d'un numéro (colonne de lecture + sommaire latéral) ---- */
+
+/* Sous 1150 px : une seule colonne, le sommaire est masqué car « L'essentiel »
+   liste déjà tous les titres avec leurs liens. Au-delà, le sommaire devient une
+   colonne latérale collante : il occupe utilement la largeur disponible et sert
+   de navigation pendant la lecture. */
+.issue-aside { display: none; }
+.issue-main { min-width: 0; }
+
+@media (min-width: 1150px) {
+  .issue-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  .issue-aside {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  .issue-aside .toc { margin-top: 0; padding: 1rem 1.1rem; }
+  .issue-aside .toc li { margin: .55rem 0; font-size: .9rem; line-height: 1.35; }
+  .issue-aside .toc .toc-type { display: block; font-size: .72rem; margin-top: .1rem; }
+}
+
+/* ---- Sommaire ---- */
+
+.toc {
+  margin: 1.4rem 0 0;
+  padding: .95rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+}
+.toc h2 {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.toc ol { margin: 0; padding-left: 1.3rem; }
+.toc li { margin: .3rem 0; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+.toc .toc-type { font-size: .78rem; color: var(--ink-soft); }
+
+/* ---- Items ---- */
+
+.item {
+  margin-top: 2.1rem;
+  padding-top: 1.7rem;
+  border-top: 1px solid var(--rule);
+}
+
+.item-kicker {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+}
+
+/* Un seul badge coloré, réservé aux types qui méritent l'attention immédiate
+   (recommandation, PNDS, alerte) — tout le reste (essai, méta-analyse, autre)
+   reste en texte gris dans .item-source, sans couleur dédiée. */
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+:root[data-theme="dark"] .badge { color: var(--accent); }
+
+.item-source { color: var(--ink-soft); }
+
+.if-chip {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  padding: .08rem .5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.item h2 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: .5rem 0 .35rem;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.item h2 a { color: inherit; text-decoration: none; }
+.item h2 a:hover { color: var(--accent); }
+
+.base-note {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0 0 .8rem;
+}
+
+/* Phrase-clé : ce qu'il faut retenir, en tête d'item, sans encadré de couleur —
+   remplace l'ancien duo « résumé + message à retenir » redondant. */
+.item-lead {
+  margin: .6rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.item p { margin: .35rem 0; }
+.item ul { margin: .4rem 0; padding-left: 1.3rem; }
+.item li { margin: .35rem 0; }
+
+/* Comparaisons / avant-après : texte simple dans le bloc « Détails », pas de
+   structure séparée à plusieurs niveaux. */
+.compare-caveat {
+  margin: .8rem 0 .2rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.compare-caveat strong { color: var(--ink); }
+
+.pnds-statut {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
+
+.verif-note {
+  margin: 1.2rem 0 0;
+  padding: .7rem 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border-radius: 10px;
+}
+.verif-note strong { color: var(--ink); }
+
+/* ---- Contexte déroulable ---- */
+
+.contexte {
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+.contexte > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.contexte > summary::-webkit-details-marker { display: none; }
+.contexte > summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .15s ease;
+}
+.contexte[open] > summary::before { transform: rotate(90deg); }
+.contexte > summary:hover { color: var(--ink); }
+.contexte .contexte-body { margin-top: .7rem; }
+.contexte .contexte-body p { margin: .5rem 0; }
+
+/* Mode « Express » : on réduit chaque item à son titre et sa phrase-clé.
+   Le sommaire, devenu navigation latérale, reste affiché. */
+article[data-mode="express"] .contexte,
+article[data-mode="express"] .verif-note { display: none; }
+
+/* ---- Aussi parus ---- */
+
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
+.also h2 {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 .3rem;
+}
+.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1.2rem; }
+.also ul { margin: 0; padding-left: 1.3rem; }
+.also li { margin: .45rem 0; font-size: .95rem; }
+.also .also-source { font-size: .8rem; color: var(--ink-soft); }
+
+/* Liste « Aussi parus » avec résumé court */
+.also-list { list-style: none; padding-left: 0 !important; }
+.also-list li {
+  margin: 0;
+  padding: .85rem 0;
+  border-top: 1px solid var(--rule);
+}
+.also-list li:first-child { border-top: 0; padding-top: 0; }
+.also-head { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.also-head a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.also-head a:hover { color: var(--accent); }
+.also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
+.also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
+/* En mode Express, on garde juste les titres. */
+article[data-mode="express"] .also-resume { display: none; }
+
+/* ---- Archives ---- */
+
+.archive-list { list-style: none; margin: 2rem 0 0; padding: 0; }
+.archive-list li {
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.archive-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+.archive-list .num {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  min-width: 4.5rem;
+}
+.archive-list a { font-size: 1.15rem; text-decoration: none; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
+.archive-list a:hover { color: var(--accent); }
+.archive-list .count { font-size: .8rem; color: var(--ink-soft); }
+.archive-preview { margin: .35rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* =====================================================================
+   Page d'accueil
+   ===================================================================== */
+
+/* L'accueil est fait de cartes et de grilles : il peut occuper presque toute la
+   largeur sans nuire à la lecture. */
+.page-wide { max-width: 88rem; }
+@media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
+@media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
+
+/* ---- Accueil, aligné sur la première page de CorticoPlan : logo centré au
+   dégradé, champ arrondi façon moteur de recherche, halos colorés en fond,
+   navigation discrète en haut à droite. ---- */
+
+.accueil { max-width: 46rem; }
+/* Carte du numéro au gabarit CorticoPlan : fond blanc, filet fin, rayon 8 px,
+   titres de section en petites capitales grises, lignes séparées par des filets.
+   Sur ordinateur, la largeur est occupée par une grille de 2 colonnes. */
+.accueil .latest-card {
+  padding: 1.1rem 1.25rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / .05);
+}
+.accueil .latest-card .kicker {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+}
+.accueil .latest-card h2 { margin: .3rem 0 .1rem; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+.accueil .latest-card .latest-meta { font-size: .85rem; }
+.accueil .latest-list { margin: .9rem 0 1rem; padding: 0; gap: 0; border-top: 0; }
+.accueil .latest-list li { padding: .75rem 0; border-top: 1px solid var(--rule); }
+.accueil .latest-list a { font-size: 1rem; font-weight: 600; }
+.accueil .latest-msg { font-size: .875rem; line-height: 1.45; }
+.accueil .latest-card .btn {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  font-size: .95rem;
+}
+.accueil .latest-card .btn:hover { background: none; transform: none; text-decoration: underline; }
+@media (min-width: 900px) {
+  .accueil { max-width: 64rem; }
+  .accueil .latest-card { padding: 1.25rem 1.6rem 1.4rem; }
+  .accueil .latest-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.2rem;
+  }
+}
+.accueil .masthead {
+  position: static;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 0;
+  justify-content: flex-end;
+}
+.accueil .masthead .brand { display: none; }
+.accueil .masthead nav a[aria-current="page"] { display: none; }
+.accueil::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 45% at 20% 18%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    radial-gradient(55% 40% at 85% 30%, color-mix(in srgb, var(--accent-2) 13%, transparent), transparent 70%),
+    radial-gradient(50% 40% at 50% 95%, color-mix(in srgb, #eb6834 9%, transparent), transparent 70%);
+}
+/* Le fond de page doit laisser voir les halos posés derrière. */
+body:has(.accueil) { background: var(--paper-alt); }
+
+.hero {
+  max-width: 39rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 7vh, 3.5rem) 0 1.6rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.2rem, 9vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.logo span {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logo .logo-ico { width: clamp(2.5rem, 10vw, 3.25rem); height: auto; border-radius: 12px; }
+.accroche { margin: 0; text-align: center; color: var(--ink-soft); text-wrap: balance; }
+
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 1.25rem;
+}
+.boutons a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: .92rem;
+  text-decoration: none;
+}
+.boutons a:hover { border-color: var(--rule); box-shadow: 0 1px 2px rgb(0 0 0 / .12); }
+.accueil .home-footline { justify-content: center; }
+.accueil .footer { text-align: center; }
+
+.btn {
+  display: inline-block;
+  padding: .78rem 1.5rem;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
+.btn-secondary { background: var(--paper-alt); color: var(--ink); }
+.btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
+
+/* Panneau « dernier numéro » : le centre de gravité de la page d'accueil. */
+.latest-card {
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.latest-card--full { padding: 1.8rem 2rem 2rem; }
+.latest-card .kicker {
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.latest-card h2 { margin: .35rem 0 .15rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+.latest-card .latest-meta { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+
+.latest-list {
+  list-style: none;
+  margin: 1.2rem 0 1.4rem;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.latest-list li { display: flex; flex-direction: column; gap: .15rem; }
+.latest-list a { font-size: 1.08rem; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
+.latest-list a:hover { color: var(--accent); }
+.latest-msg { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+
+.home-footline {
+  margin: 1.4rem 0 0;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+  align-items: center;
+}
+.home-footline a { white-space: nowrap; }
+
+/* ---- Schéma de méthode (page Méthode) ---- */
+
+.flow { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0; }
+.flow-step { display: flex; gap: 1rem; align-items: flex-start; }
+.flow-badge {
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.flow-body {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: .9rem 1.1rem;
+  background: var(--surface);
+  flex: 1;
+  margin-bottom: .3rem;
+}
+.flow-body h3 { margin: 0 0 .3rem; font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 600; }
+.flow-body p { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
+.flow-connector { flex: 0 0 2.2rem; display: flex; justify-content: center; height: 1.1rem; font-size: 1.1rem; line-height: 1; }
+.flow-connector::before { content: "↓"; color: var(--accent); }
+
+/* ---- Prose (page méthode) ---- */
+
+.prose h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; margin: 2.4rem 0 1rem; font-weight: 700; }
+.prose h2 { font-size: 1.35rem; margin: 2.2rem 0 .5rem; letter-spacing: -0.015em; font-weight: 700; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin: .35rem 0; }
+.prose blockquote { margin: 1rem 0; padding: .8rem 1.1rem; border-radius: 12px; background: var(--paper-alt); color: var(--ink-soft); }
+
+/* ---- Pied de page ---- */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.footer p { margin: .4rem 0; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 560px) {
+  .page { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
+  .latest-card, .latest-card--full { padding: 1.4rem 1.3rem; }
+  .latest-card .btn { width: 100%; text-align: center; }
+  .reading-bar { justify-content: flex-start; }
+  .search-overlay { padding-top: 4vh; }
+}
+
+@media (max-width: 480px) {
+  .item h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="page page-article">
+  <header class="masthead">
+    <a class="brand" href="../index.html"><svg class="logo-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0d7d70"/><path d="M10 34h11l5-12 8 22 5-10h15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>This<span class="week">Week</span> · Médecine interne</a>
+    <nav aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="../numeros/2026-10-26.html" aria-current="page">Dernier numéro</a>
+      <a href="../archives.html">Archives</a>
+      <a href="../veille.html">Veille</a>
+      <a href="../methode.html">Méthode</a>
+      <a href="../rss.xml">RSS</a>
+      <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle"
+              aria-label="Passer en thème sombre" title="Thème clair / sombre">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenu">
+  
+<article data-reading>
+  <header class="issue-head">
+    <p class="eyebrow">Numéro 24</p>
+    <h1>La semaine du 13 au 19 octobre 2026</h1>
+    <p class="issue-meta">
+      5 items sélectionnés
+      · publié le 19 octobre 2026
+    </p>
+
+    <p class="ia-banner"><span class="ia-badge">IA</span><span class="ia-text"><strong>Numéro
+    généré automatiquement par une intelligence artificielle, sans relecture par un médecin.</strong>
+    Les publications citées sont réelles ; la sélection et les synthèses sont produites par IA à
+    partir des sources. À vérifier sur la source avant tout usage clinique.</span></p>
+
+    
+
+    
+    <p class="edito">Semaine dense. La British Society for Rheumatology publie la première mise à jour de ses recommandations sur la pseudo-polyarthrite rhizomélique depuis 2009, avec une place nouvelle pour le méthotrexate précoce et les anti-IL-6. Dans l&#39;amylose AL au stade cardiaque le plus grave, un essai de phase 2 appuie le daratumumab seul en première ligne. La plus grande cohorte jamais publiée de maladie d&#39;Erdheim-Chester, portée notamment par le centre de référence français des histiocytoses (Pitié-Salpêtrière), précise les facteurs pronostiques. Complètent le numéro une méta-analyse sur les thrombophilies et la récidive après arrêt des anticoagulants, et un essai de phase 2 positif du litifilimab dans le lupus cutané.</p>
+    
+
+    <div class="reading-bar">
+      <span class="reading-est"><span aria-hidden="true">⏱</span> Combien de temps avez-vous ?</span>
+      <div class="read-toggle" role="group" aria-label="Mode de lecture">
+        <button type="button" data-mode="express">Express · ~3 min</button>
+        <button type="button" data-mode="complet" aria-pressed="true">Complet · ~9 min</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="issue-layout">
+  <div class="issue-main">
+
+  
+  <section class="tldr" aria-label="L'essentiel à retenir">
+    <h2>L'essentiel <span class="tldr-sub">— tout retenir en ~3 min</span></h2>
+    <ol>
+      
+      <li><a href="#item-1">Pseudo-polyarthrite rhizomélique : la BSR met à jour ses recommandations, avec méthotrexate précoce et anti-IL-6</a><span class="tldr-msg"> — PPR selon la BSR 2026 : prednisolone 12,5-15 mg/j (25 mg/j au plus), décroissance codifiée et plus rapide chez les patients fragiles, bisphosphonate d&#39;emblée, méthotrexate à discuter dès le diagnostic, et anti-IL-6 en cas de corticodépendance ou de réponse insuffisante.</span></li>
+      
+      <li><a href="#item-2">Amylose AL au stade cardiaque IIIb : le daratumumab seul obtient 75 % de réponses hématologiques (essai EMN22)</a><span class="tldr-msg"> — Au stade cardiaque le plus grave de l&#39;amylose AL, le daratumumab seul donne des réponses hématologiques rapides (une semaine en médiane) chez 75 % des patients et deux tiers sont en vie à 6 mois — un pronostic qui reste sombre, mais meilleur que dans les séries historiques selon les auteurs.</span></li>
+      
+      <li><a href="#item-3">Maladie d&#39;Erdheim-Chester : 1 174 patients, 22 % de décès, et cinq facteurs pronostiques à repérer</a><span class="tldr-msg"> — Dans la maladie d&#39;Erdheim-Chester, un patient sur cinq décède en quatre ans environ ; l&#39;atteinte neurodégénérative, une CRP élevée, un second cancer hématologique et l&#39;absence de réponse au traitement signalent les formes les plus graves, qui justifient un suivi rapproché et un traitement adapté au risque.</span></li>
+      
+      <li><a href="#item-4">Thrombophilies et MTEV : un risque de récidive doublé à triplé après arrêt des anticoagulants pour les formes majeures</a><span class="tldr-msg"> — Après arrêt des anticoagulants, le risque de récidive est multiplié par deux à trois en cas de SAPL, de déficit en antithrombine ou de facteur V Leiden homozygote ou associé à la mutation de la prothrombine, mais seulement par 1,5 pour une mutation hétérozygote isolée.</span></li>
+      
+      <li><a href="#item-5">Lupus cutané : le litifilimab, anti-BDCA2, supérieur au placebo dans l&#39;essai de phase 2 AMETHYST</a><span class="tldr-msg"> — Dans le lupus cutané, le litifilimab mensuel blanchit la peau chez environ un patient sur sept contre un sur trente-cinq sous placebo à 16 semaines — un effet net mais modeste en valeur absolue, qui reste à confirmer en phase 3.</span></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section class="item" id="item-1">
+    <p class="item-kicker">
+      <span class="badge badge-reco">Recommandation</span>
+      <span class="item-source">Rheumatology (Oxford) · recommandations de la British Society for Rheumatology (BSR) 2026 · IF ≈ 5
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42869454/">Pseudo-polyarthrite rhizomélique : la BSR met à jour ses recommandations, avec méthotrexate précoce et anti-IL-6</a></h2>
+
+    <p class="item-lead">PPR selon la BSR 2026 : prednisolone 12,5-15 mg/j (25 mg/j au plus), décroissance codifiée et plus rapide chez les patients fragiles, bisphosphonate d&#39;emblée, méthotrexate à discuter dès le diagnostic, et anti-IL-6 en cas de corticodépendance ou de réponse insuffisante.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> recommandations britanniques : parcours de soins (rôle du médecin généraliste, accès aux biothérapies) propres au NHS · sarilumab : AMM européenne dans la PPR selon le texte ; conditions de remboursement en France à vérifier</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+
+        <p>Mise à jour, selon la méthode GRADE, des recommandations britanniques de 2009 sur le traitement de la pseudo-polyarthrite rhizomélique (PPR). Principales recommandations, lues sur le texte intégral : débuter la prednisolone à **12,5-15 mg/j**, en augmentant si besoin jusqu&#39;à 25 mg/j au maximum, puis commencer la décroissance après 2 à 4 semaines de contrôle des symptômes ; décroître de 2,5 mg toutes les 2 à 4 semaines jusqu&#39;à 10 mg/j, puis de 1 mg toutes les 4 à 8 semaines ; chez les patients à haut risque de toxicité cortisonique, envisager une décroissance plus rapide (par exemple 1 mg toutes les 2 à 3 semaines, avec un objectif d&#39;arrêt dans les 6 mois) ; en cas de rechute, revenir à la dernière dose efficace pendant 2 à 4 semaines. **Bisphosphonate pour tout patient débutant une corticothérapie**, sauf contre-indication (grade 1B). Discuter dès le diagnostic l&#39;ajout de **méthotrexate**, et l&#39;envisager en cas de rechute ou de risque cortisonique élevé (grades 2B et 2C). Envisager un **antagoniste du récepteur de l&#39;IL-6** en cas de réponse insuffisante aux corticoïdes ou d&#39;impossibilité de les diminuer (grade 2B), en s&#39;appuyant sur trois essais randomisés (PMR-SPARE et SEMAPHORE pour le tocilizumab, SAPHYR pour le sarilumab). Le texte rappelle que le sarilumab, et non le tocilizumab, est approuvé dans la PPR par la FDA et l&#39;EMA. Avis spécialisé recommandé après deux rechutes et pour tout patient encore sous corticoïdes après 18 mois ; risque d&#39;insuffisance surrénalienne à envisager chez tout patient ayant reçu ≥ 5 mg/j pendant au moins quatre semaines.</p>
+
+        
+
+        
+
+        <p>La PPR est l&#39;une des maladies inflammatoires les plus fréquentes du sujet âgé, et la corticothérapie prolongée y est la règle chez beaucoup de patients, avec son cortège de complications. Ces recommandations vont dans le même sens que celles de l&#39;EULAR/ACR de 2015 sur les doses initiales, mais intègrent les essais récents sur les anti-IL-6 et insistent davantage sur l&#39;épargne cortisonique précoce.</p><p>Pour la pratique française, deux points se transposent directement : la prévention osseuse systématique dès le début de la corticothérapie, et la décroissance plus rapide chez les patients diabétiques ou ostéoporotiques. L&#39;accès au sarilumab et au tocilizumab dans cette indication dépend des conditions de remboursement françaises, à vérifier.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-2">
+    <p class="item-kicker">
+      
+      <span class="item-source">Essai clinique · Blood · essai de phase 2 (European Myeloma Network) · IF ≈ 21
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42296025/">Amylose AL au stade cardiaque IIIb : le daratumumab seul obtient 75 % de réponses hématologiques (essai EMN22)</a></h2>
+
+    <p class="item-lead">Au stade cardiaque le plus grave de l&#39;amylose AL, le daratumumab seul donne des réponses hématologiques rapides (une semaine en médiane) chez 75 % des patients et deux tiers sont en vie à 6 mois — un pronostic qui reste sombre, mais meilleur que dans les séries historiques selon les auteurs.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> essai de phase 2 sans bras contrôle : comparaison seulement avec des cohortes historiques · daratumumab en monothérapie dans cette situation : statut hors AMM en France à vérifier</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Essai prospectif de phase 2 du European Myeloma Network (EMN22, NCT04131309) chez 40 patients atteints d&#39;amylose AL non traitée, avec maladie hématologique mesurable et atteinte cardiaque de stade IIIb (Mayo 2004 / européen), c&#39;est-à-dire le stade de plus mauvais pronostic. Les patients recevaient du daratumumab seul, à la dose et au rythme standard, jusqu&#39;à 2 ans ; en cas de réponse insuffisante après 3 cycles, bortézomib et dexaméthasone pouvaient être ajoutés (10 patients, 25 %). Critère principal — survie globale à 6 mois — de **65 %** (IC95 48,2-77,6), avec une survie médiane de 10,4 mois. Meilleure réponse hématologique à 6 mois (au moins partielle) : 75 %, dont 47,5 % de très bonnes réponses partielles ou mieux et 12,5 % de réponses complètes ; délai médian de première réponse 1 semaine, de meilleure réponse 2,3 mois. Réponse cardiaque à 6 mois : 30 %. Événements indésirables graves les plus fréquents : insuffisance cardiaque (25 %), mort subite (10 %), insuffisance rénale aiguë (7,5 %). Qualité de vie stable pendant l&#39;essai.</p>
+
+        
+
+        
+
+        <p>Les patients au stade IIIb sont exclus de la plupart des essais, en particulier de l&#39;essai ANDROMEDA qui a établi l&#39;association daratumumab-bortézomib-cyclophosphamide-dexaméthasone en première ligne. Leur prise en charge repose sur des données faibles, et la crainte de la toxicité cardiaque du bortézomib et de la dexaméthasone à forte dose complique le choix.</p><p>Cet essai soutient le daratumumab comme socle du traitement chez ces patients fragiles, avec ajout secondaire d&#39;autres molécules selon la réponse. La mortalité précoce reste élevée, rappelant l&#39;enjeu du diagnostic avant le stade cardiaque avancé.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-3">
+    <p class="item-kicker">
+      
+      <span class="item-source">Autre · The Lancet Haematology · cohorte internationale rétrospective · IF ≈ 15
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42880331/">Maladie d&#39;Erdheim-Chester : 1 174 patients, 22 % de décès, et cinq facteurs pronostiques à repérer</a></h2>
+
+    <p class="item-lead">Dans la maladie d&#39;Erdheim-Chester, un patient sur cinq décède en quatre ans environ ; l&#39;atteinte neurodégénérative, une CRP élevée, un second cancer hématologique et l&#39;absence de réponse au traitement signalent les formes les plus graves, qui justifient un suivi rapproché et un traitement adapté au risque.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> cohorte rétrospective couvrant 40 ans : les traitements et la prise en charge ont beaucoup évolué sur la période</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Cohorte internationale rétrospective de 1 174 patients atteints de maladie d&#39;Erdheim-Chester prouvée histologiquement, diagnostiqués entre 1985 et 2024 dans dix pays, avec une large contribution du centre de référence français des histiocytoses (Pitié-Salpêtrière). Âge médian au diagnostic 58 ans, 68 % d&#39;hommes. Maladie multisystémique (au moins quatre organes) chez 62 % des patients ; atteintes les plus fréquentes : os longs (80 %), rétropéritoine (63 %), gros vaisseaux (46 %), système nerveux central (38 %) et cœur (35 %). Mutation BRAF V600E chez 62 % des patients testés, hématopoïèse clonale chez 36 % ; chevauchement avec une autre histiocytose chez 14 % et second cancer chez 27 %. En première ligne, interféron α (34 %) ou thérapies ciblées (anti-BRAF/MEK, 33 %), ces dernières obtenant les meilleurs taux de réponse objective (74 % sous anti-BRAF, 71 % sous anti-MEK). Après un suivi médian de 49 mois, 22 % des patients sont décédés. Facteurs indépendants de mortalité : âge, atteinte neurodégénérative (HR 4,2 ; IC95 2,4-7,1), CRP élevée (HR 3,8 ; IC95 1,6-9,1), second cancer hématologique (HR 3,0 ; IC95 1,5-6,0) et absence de réponse au traitement (HR 2,8 ; IC95 1,6-5,1).</p>
+
+        
+
+        
+
+        <p>La maladie d&#39;Erdheim-Chester est une histiocytose rare, liée à des mutations de la voie MAPK, pour laquelle la France dispose d&#39;un centre de référence très actif. Cette cohorte, de loin la plus large publiée, fournit des repères de fréquence utiles au bilan initial (os longs, rétropéritoine, aorte, cœur, système nerveux central).</p><p>Deux messages pratiques : rechercher systématiquement une hémopathie associée (hématopoïèse clonale chez plus d&#39;un tiers des patients), et surveiller l&#39;atteinte neurologique, premier facteur de mortalité. Les taux de réponse plus élevés des thérapies ciblées sont observationnels et ne valent pas comparaison randomisée avec l&#39;interféron.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-4">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · Blood Advances · revue systématique et méta-analyse · IF ≈ 8
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42448302/">Thrombophilies et MTEV : un risque de récidive doublé à triplé après arrêt des anticoagulants pour les formes majeures</a></h2>
+
+    <p class="item-lead">Après arrêt des anticoagulants, le risque de récidive est multiplié par deux à trois en cas de SAPL, de déficit en antithrombine ou de facteur V Leiden homozygote ou associé à la mutation de la prothrombine, mais seulement par 1,5 pour une mutation hétérozygote isolée.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> estimations chiffrées par thrombophilie (taux et rapports) non détaillées dans le résumé</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique et méta-analyse de 51 études (essais randomisés et cohortes ; 34 623 patients, 42,3 % de femmes, 33,5 % de MTEV initiale non provoquée) évaluant la récidive thromboembolique **après l&#39;arrêt** du traitement anticoagulant d&#39;un premier épisode, selon la présence ou non d&#39;une thrombophilie : mutation du facteur V Leiden, mutation G20210A de la prothrombine, déficits en antithrombine, protéine C ou protéine S, et syndrome des antiphospholipides. Le syndrome des antiphospholipides, le déficit en antithrombine, la mutation homozygote du facteur V Leiden et la double hétérozygotie facteur V Leiden / prothrombine sont associés à un risque de récidive **environ deux à trois fois plus élevé** ; les mutations hétérozygotes isolées du facteur V Leiden ou de la prothrombine à un risque environ 1,5 fois plus élevé. Hétérogénéité et niveau de preuve majoritairement modérés. Les données sur les déficits en protéines C et S ne permettent pas de conclure.</p>
+
+        
+
+        
+
+        <p>La recherche de thrombophilie après une MTEV est souvent prescrite sans modifier la conduite à tenir. Ce travail hiérarchise les anomalies : les thrombophilies dites majeures pèsent nettement plus que les mutations hétérozygotes courantes, ce qui aide à décider de la durée du traitement lorsque le bilan a été fait.</p><p>Le SAPL reste à part : il relève d&#39;une anticoagulation prolongée par antivitamine K, et sa recherche garde toute sa place en médecine interne. Les données sont pour l&#39;essentiel observationnelles : il s&#39;agit d&#39;associations, à intégrer avec le caractère provoqué ou non de l&#39;épisode et le risque hémorragique.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-5">
+    <p class="item-kicker">
+      
+      <span class="item-source">Essai clinique · Journal of the American Academy of Dermatology · essai randomisé de phase 2 · IF ≈ 12
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42892381/">Lupus cutané : le litifilimab, anti-BDCA2, supérieur au placebo dans l&#39;essai de phase 2 AMETHYST</a></h2>
+
+    <p class="item-lead">Dans le lupus cutané, le litifilimab mensuel blanchit la peau chez environ un patient sur sept contre un sur trente-cinq sous placebo à 16 semaines — un effet net mais modeste en valeur absolue, qui reste à confirmer en phase 3.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> molécule expérimentale, sans autorisation en France · effectifs par groupe et détails de tolérance non donnés dans le résumé</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Partie A (phase 2) de l&#39;essai randomisé en double aveugle AMETHYST, chez des patients atteints de lupus érythémateux cutané, comparant le litifilimab 225 mg toutes les 4 semaines au placebo pendant 24 semaines. Le litifilimab est un anticorps dirigé contre BDCA2, récepteur des cellules dendritiques plasmacytoïdes, principales productrices d&#39;interféron de type I. Critère principal atteint : peau blanchie ou presque (score d&#39;érythème CLA-IGA-R à 0-1) à la semaine 16 chez **14,7 % des patients sous litifilimab contre 2,9 % sous placebo** (p = 0,0263). Réponse CLASI-70 à la semaine 24 : 21,7 % contre 5,8 % (p = 0,0195), sur un critère secondaire pour lequel l&#39;essai n&#39;avait pas la puissance nécessaire. Tolérance jugée bonne et conforme aux études antérieures.</p>
+
+        
+
+        
+
+        <p>Le lupus cutané résistant aux antipaludéens est une situation fréquente en médecine interne et en dermatologie, sans traitement ciblé autorisé. Cibler les cellules dendritiques plasmacytoïdes et la voie de l&#39;interféron est une piste solide, déjà validée indirectement par l&#39;anifrolumab.</p><p>La partie de phase 3 d&#39;AMETHYST doit confirmer ces résultats. D&#39;ici là, le litifilimab n&#39;est accessible que dans le cadre d&#39;essais cliniques.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="also">
+    <h2>Aussi parus cette semaine</h2>
+    <p class="also-note">Publications pertinentes retenues avec un résumé court, sans synthèse détaillée.</p>
+    <ul class="also-list">
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42869051/">Maladies auto-inflammatoires monogéniques : une personne sur 4 000 porteuse d&#39;une variante pathogène, presque jamais diagnostiquée</a>
+          <span class="also-source">— The Lancet Rheumatology · cohorte rétrospective dans deux biobanques (Geisinger, UK Biobank)</span>
+          
+        </p>
+        <p class="also-resume">Approche « génome d&#39;abord » chez 640 092 participants séquencés : 159 portent une variante pathogène ou probablement pathogène dans l&#39;un des 28 gènes de maladies auto-inflammatoires étudiés (dont UBA1 somatique, gène du syndrome VEXAS), soit une prévalence estimée à une personne sur 4 026. Un seul avait un diagnostic de maladie auto-inflammatoire documenté. La moitié des porteurs (51 %) présentent pourtant des manifestations inflammatoires, notamment pulmonaires et cutanées, avec davantage de vascularites et de traitements immunosuppresseurs que les témoins. Un argument pour évoquer plus souvent une cause génétique devant une inflammation systémique inexpliquée.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42873589/">Lupus : rituximab et bélimumab associés à des taux comparables de faible activité à long terme</a>
+          <span class="also-source">— Rheumatology (Oxford) · cohorte prospective monocentrique (registre BILAG-BR, Cambridge)</span>
+          
+        </p>
+        <p class="also-resume">Chez 176 patients lupiques (175 cures de rituximab, 58 traitements par bélimumab), pas de différence d&#39;obtention d&#39;une faible activité de la maladie (SLEDAI-2K ≤ 4 et prednisolone ≤ 5 mg/j) entre les deux biothérapies, après ajustement (HR 0,92 ; IC95 0,57-1,48) comme après pondération sur le score de propension (HR 0,86 ; IC95 0,54-1,37). Maintien thérapeutique comparable en première ligne biologique, meilleur sous bélimumab en deuxième ligne (HR 1,34 ; IC95 1,03-1,77). Étude observationnelle : pas de conclusion causale.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42870675/">Covid long : risque augmenté de 56 % chez les patients atteints de maladie auto-immune systémique</a>
+          <span class="also-source">— Arthritis &amp; Rheumatology · cohorte rétrospective nationale américaine (N3C)</span>
+          
+        </p>
+        <p class="also-resume">Sur 187 106 patients appariés infectés par le SARS-CoV-2 entre 2021 et 2023, un covid long est codé chez 2,8 % des patients atteints de maladie rhumatismale auto-immune contre 1,5 % des témoins (HR ajusté 1,56 ; IC95 1,45-1,67). Chez ces patients, gravité de l&#39;infection aiguë, atteinte pulmonaire, obésité et exposition au rituximab ou aux corticoïdes sont associées à un risque plus élevé, ainsi que le syndrome de Sjögren. Définition par codage diagnostique : sous-estimation et biais de recours probables.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42886525/">SAPL obstétrical : les critères de Sydney plus sensibles que les critères ACR/EULAR 2023</a>
+          <span class="also-source">— Rheumatology (Oxford) · cohorte ambispective monocentrique (Chine)</span>
+          
+        </p>
+        <p class="also-resume">Chez 1 741 femmes en âge de procréer, comparées au diagnostic d&#39;experts, les critères de Sydney 2006 identifient le SAPL obstétrical avec une sensibilité de 0,806 et une spécificité de 0,991 ; les critères ACR/EULAR 2023 ont une spécificité quasi parfaite (0,999) mais une sensibilité de 0,267 seulement. Les patientes remplissant les critères 2023 ont les issues de grossesse les moins bonnes. Rappel : les critères 2023 sont des critères de classification pour la recherche, pas de diagnostic.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42876376/">HTAP de la sclérodermie : un traitement initial maintenu est associé à une mortalité plus faible (EUSTAR)</a>
+          <span class="also-source">— Arthritis &amp; Rheumatology · analyse de la cohorte EUSTAR</span>
+          
+        </p>
+        <p class="also-resume">Chez 301 patients atteints d&#39;hypertension artérielle pulmonaire associée à la sclérodermie, jamais traités, 66 % débutent un traitement spécifique dans les 4 mois suivant le cathétérisme, mais seulement 31 % de ceux ayant une atteinte hémodynamique légère (définition de 2022). En analyse « selon le traitement reçu », la monothérapie et la bithérapie maintenues sont associées à une mortalité plus faible (HR 0,50 et 0,40) ; l&#39;analyse en intention de traiter ne retrouve pas d&#39;association, ce qui illustre les limites des comparaisons observationnelles.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42892134/">Lipoprotéine(a) et MTEV : une association qui disparaît dans les études de cohorte</a>
+          <span class="also-source">— Atherosclerosis · revue systématique et méta-analyse</span>
+          
+        </p>
+        <p class="also-resume">Onze études (63 325 participants) : association limite entre Lp(a) élevée et MTEV (OR/HR 1,34 ; IC95 1,00-1,80), portée par les études cas-témoins (OR 1,88) et absente des cohortes prospectives (HR 0,99 ; IC95 0,85-1,15). Pas d&#39;argument pour doser la Lp(a) dans le bilan d&#39;une MTEV.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42877191/">Lupus : l&#39;anifrolumab améliore l&#39;atteinte cutanée et l&#39;épargne cortisonique (méta-analyse des essais)</a>
+          <span class="also-source">— Frontiers in Immunology · méta-analyse d&#39;essais randomisés</span>
+          
+        </p>
+        <p class="also-resume">Cinq essais : l&#39;anifrolumab intraveineux améliore la réponse CLASI-A50 à 52 semaines chez les patients avec atteinte cutanée marquée (RR 1,52, sur deux essais et 165 patients) et la diminution durable des corticoïdes chez ceux recevant au moins 10 mg/j (RR 1,56). Risque de zona augmenté dans une analyse complémentaire (RR 3,88 ; IC95 1,70-8,89), sur peu d&#39;événements.</p>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  </div><!-- /.issue-main -->
+
+  <aside class="issue-aside">
+    <nav class="toc" aria-label="Sommaire du numéro">
+      <h2>Au sommaire</h2>
+      <ol>
+        
+        <li><a href="#item-1">Pseudo-polyarthrite rhizomélique : la BSR met à jour ses recommandations, avec méthotrexate précoce et anti-IL-6</a>
+            <span class="toc-type">— Recommandation</span></li>
+        
+        <li><a href="#item-2">Amylose AL au stade cardiaque IIIb : le daratumumab seul obtient 75 % de réponses hématologiques (essai EMN22)</a>
+            <span class="toc-type">— Essai clinique</span></li>
+        
+        <li><a href="#item-3">Maladie d&#39;Erdheim-Chester : 1 174 patients, 22 % de décès, et cinq facteurs pronostiques à repérer</a>
+            <span class="toc-type">— Autre</span></li>
+        
+        <li><a href="#item-4">Thrombophilies et MTEV : un risque de récidive doublé à triplé après arrêt des anticoagulants pour les formes majeures</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+        <li><a href="#item-5">Lupus cutané : le litifilimab, anti-BDCA2, supérieur au placebo dans l&#39;essai de phase 2 AMETHYST</a>
+            <span class="toc-type">— Essai clinique</span></li>
+        
+      </ol>
+    </nav>
+  </aside>
+  </div><!-- /.issue-layout -->
+</article>
+
+<script>
+(function () {
+  var art = document.querySelector('article[data-reading]');
+  if (!art) return;
+  var btns = art.querySelectorAll('.read-toggle button');
+  function set(mode) {
+    art.setAttribute('data-mode', mode);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+    try { localStorage.setItem('tw-mode', mode); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.mode); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('tw-mode'); } catch (e) {}
+  set(saved === 'express' ? 'express' : 'complet');
+})();
+</script>
+
+  </main>
+
+  <footer class="footer">
+    <p>Ce digest s'adresse exclusivement aux professionnels de santé. Il ne remplace ni la
+    lecture des documents sources ni le jugement clinique.</p>
+    <p><strong>Sélection et synthèses entièrement générées par une intelligence artificielle,
+    sans relecture par un médecin.</strong> Vérifiez toujours l'information sur la source avant
+    tout usage clinique. Voir la page <a href="../methode.html">Méthode</a>.</p>
+  </footer>
+</div>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
+    <input type="search" id="search-input" class="search-input"
+           placeholder="Chercher une pathologie, un traitement… (ex. vascularite, amylose)"
+           autocomplete="off" aria-label="Rechercher dans les numéros">
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function label() {
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tw-theme', next); } catch (e) {}
+    label();
+  });
+})();
+
+(function () {
+  var openBtn = document.getElementById('search-open');
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!openBtn || !overlay) return;
+  var root = "../";
+  var index = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function render(q, list) {
+    q = q.trim().toLowerCase();
+    if (!index) { list.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
+    if (!q) {
+      list.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
+        + 'traitement (ex. « lupus », « vascularite », « amylose »).</li>';
+      return;
+    }
+    var hits = index.filter(function (r) {
+      return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 12);
+    if (!hits.length) {
+      list.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
+      return;
+    }
+    list.innerHTML = hits.map(function (r) {
+      return '<li><a href="' + root + esc(r.u) + '">'
+        + '<span class="search-type">' + esc(r.y) + '</span>'
+        + '<span class="search-title">' + esc(r.t) + '</span>'
+        + '<span class="search-meta">' + esc(r.s.split('·')[0].trim()) + ' · N° ' + r.n + '</span>'
+        + '</a></li>';
+    }).join('');
+  }
+
+  var waiting = [];
+  function load(then) {
+    if (index) return;
+    waiting.push(then);
+    if (waiting.length > 1) return;
+    var done = function (data) { index = data; waiting.forEach(function (f) { f(); }); };
+    fetch(root + 'search-index.json').then(function (r) { return r.json(); })
+      .then(done).catch(function () { done([]); });
+  }
+
+  function open() {
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    load(function () { render(input.value, results); });
+    render(input.value, results);
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  input.addEventListener('input', function () { render(input.value, results); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') { close(); return; }
+    if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
+        && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); open();
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
