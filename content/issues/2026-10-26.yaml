@@ -1,0 +1,261 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 25
+semaine: "20 au 26 octobre 2026"
+date: 2026-10-26
+edito: >-
+  Deux grands essais cette semaine, tous deux négatifs ou presque sur ce qui
+  compte pour le patient. Dans l'EGPA, l'essai français MAINRITSEG, publié dans
+  le JAMA, ne montre pas de supériorité du rituximab sur l'azathioprine en
+  entretien, avec davantage d'infections graves. Dans le Sjögren, l'ianalumab
+  baisse l'ESSDAI d'environ un point dans deux essais de phase 3 du NEJM, sans
+  effet sur les symptômes. Côté thrombose, les anticoagulants oraux directs se
+  confirment comme une alternative aux AVK dans la thrombose veineuse
+  cérébrale, et l'essai français RENOVE ne retrouve pas d'avantage hémorragique
+  de l'apixaban sur le rivaroxaban en traitement prolongé.
+
+items:
+  - type: essai
+    titre: "EGPA : en entretien, le rituximab ne fait pas mieux que l'azathioprine et expose à plus d'infections graves (essai MAINRITSEG)"
+    source: "JAMA · essai randomisé en double aveugle, investigateur (36 hôpitaux français)"
+    impact_factor: 63
+    url: "https://pubmed.ncbi.nlm.nih.gov/42911562/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "essai mené en grande partie pendant la pandémie de COVID-19 : l'excès d'infections graves sous rituximab est surtout dû au SARS-CoV-2"
+      - "rituximab hors AMM en France dans l'entretien de l'EGPA"
+    resume: >-
+      Essai randomisé de supériorité, en double aveugle et double placebo, à
+      l'initiative des investigateurs, mené dans 36 hôpitaux français
+      (NCT03164473), chez 98 patients atteints de granulomatose éosinophilique avec
+      polyangéite (EGPA) nouvellement diagnostiquée ou en rechute, inclus 30 à
+      360 jours après une rémission (BVAS à 0) obtenue par un traitement
+      d'induction standard. Avec une décroissance standardisée de la prednisone,
+      les patients recevaient soit du rituximab 500 mg IV tous les 6 mois pendant
+      18 mois avec un placebo d'azathioprine (49 patients), soit de
+      l'azathioprine orale quotidienne pendant 24 mois avec un placebo de
+      rituximab (49 patients). Critère principal — durée de rémission totale sur
+      28 mois avec une prednisone ≤ 7,5 mg/j — **non différent** : 91,1 semaines
+      sous rituximab contre 96,0 semaines sous azathioprine (p = 0,38). Patients
+      restés en rémission sur toute la durée : 34,7 % contre 22,4 % (RR 1,51 ;
+      IC95 0,83-2,73 ; p = 0,18). Au moins une rechute de vascularite : 14,3 %
+      contre 18,4 % ; exacerbation d'asthme ou de rhinosinusite : 32,7 % contre
+      38,8 %. **Infections graves plus fréquentes sous rituximab** (46,9 % contre
+      24,5 %), principalement des infections sévères à SARS-CoV-2 ; un décès par
+      COVID-19 sous azathioprine, avant la vaccination.
+    message_cle: >-
+      Après une induction réussie dans l'EGPA, le rituximab semestriel n'allonge
+      pas la rémission par rapport à l'azathioprine sur 28 mois, et double le taux
+      d'infections graves (surtout la COVID-19) : l'azathioprine reste une option
+      d'entretien pleinement valable.
+    contexte:
+      - >-
+        Le rituximab est devenu le traitement d'entretien de référence des
+        vascularites à ANCA (granulomatose avec polyangéite, polyangéite
+        microscopique) depuis MAINRITSAN. Son extrapolation à l'EGPA restait à
+        démontrer : c'est le premier essai randomisé qui compare directement les
+        deux stratégies dans cette vascularite à part, dominée par l'asthme et
+        l'éosinophilie.
+      - >-
+        Le résultat ne plaide pas pour un passage systématique au rituximab en
+        entretien de l'EGPA. Le taux élevé d'infections graves doit être lu dans
+        le contexte pandémique de l'essai (inclusions 2018-2022), qui majore le
+        risque lié à la déplétion lymphocytaire B. Rappelons que les anti-IL-5
+        (mépolizumab, benralizumab) occupent désormais une place importante dans
+        la prise en charge des formes non sévères et des manifestations
+        respiratoires.
+
+  - type: essai
+    titre: "Syndrome de Sjögren : l'ianalumab baisse l'ESSDAI d'un point environ, sans effet sur les symptômes (essais NEPTUNUS-1 et -2)"
+    source: "The New England Journal of Medicine · deux essais de phase 3 randomisés"
+    impact_factor: 96
+    url: "https://pubmed.ncbi.nlm.nih.gov/42906087/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "molécule expérimentale, sans autorisation en France"
+      - "essais financés par le laboratoire qui développe la molécule"
+    resume: >-
+      Deux essais de phase 3 randomisés en double aveugle contre placebo, sur
+      52 semaines, chez des patients atteints de syndrome de Sjögren actif.
+      L'ianalumab est un anticorps monoclonal à double mécanisme : déplétion des
+      lymphocytes B et blocage du récepteur de BAFF. NEPTUNUS-1 (275 patients)
+      comparait l'ianalumab 300 mg sous-cutané mensuel au placebo ; NEPTUNUS-2
+      (504 patients) comparait l'ianalumab mensuel, l'ianalumab tous les 3 mois et
+      le placebo. Critère principal — variation de l'ESSDAI à la semaine 48 —
+      atteint dans les deux essais pour la dose mensuelle, mais **de justesse** :
+      différence de −1,3 point (IC95 −2,6 à 0,0 ; p = 0,0496) dans NEPTUNUS-1 et de
+      −1,0 point (IC95 −2,0 à 0,0 ; p = 0,04) dans NEPTUNUS-2, sur une échelle
+      allant de 0 à 123. **Pas de différence** sur la réponse ESSDAI (baisse d'au
+      moins 5 points) ni sur les symptômes rapportés par les patients (scores SSSD
+      et ESSPRI). Événements indésirables graves comparables ; réactions au point
+      d'injection et liées à l'injection plus fréquentes sous ianalumab.
+    message_cle: >-
+      Premier essai de phase 3 positif dans le Sjögren, mais le gain est minime :
+      environ un point d'ESSDAI de moins qu'avec le placebo, sans plus de
+      répondeurs ni d'amélioration de la sécheresse, de la fatigue ou des
+      douleurs.
+    contexte:
+      - >-
+        Le syndrome de Sjögren n'a aucun traitement ciblé autorisé, et les essais
+        de biothérapies y ont échoué les uns après les autres. Ces deux essais
+        atteignent leur critère principal, ce qui est une première à ce niveau de
+        preuve, mais l'ampleur de l'effet est très en deçà de ce qu'un clinicien
+        peut percevoir.
+      - >-
+        L'absence d'effet sur les symptômes, qui dominent le vécu des patients,
+        limite l'intérêt pratique de la molécule en l'état. Les analyses de
+        sous-groupes (atteintes systémiques sévères notamment) et les données au
+        long cours diront si l'ianalumab trouve une place pour les formes
+        systémiques actives.
+
+  - type: meta
+    titre: "Thrombose veineuse cérébrale : les anticoagulants oraux directs aussi efficaces et sûrs que les AVK"
+    source: "Stroke · revue systématique et méta-analyse (8 essais randomisés et 6 études observationnelles)"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/42910429/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "AOD hors AMM dans la thrombose veineuse cérébrale en France"
+      - "SAPL et autres situations particulières non détaillés dans les résumés"
+    resume: >-
+      Méta-analyse de 14 études (8 essais randomisés et 6 études
+      observationnelles) publiées entre 2007 et 2025, soit 3 698 patients traités
+      par anticoagulant oral direct (AOD, 45,1 %) ou par antivitamine K (AVK,
+      54,9 %) pour une thrombose veineuse cérébrale. Pas de différence de récidive
+      thromboembolique, ni dans les essais randomisés (RR 1,06 ; IC95 0,35-3,24) ni
+      dans l'ensemble des études (RR 0,92 ; IC95 0,55-1,53). Pas de différence de
+      saignements majeurs (RR 0,74 ; IC95 0,44-1,25 ; 4,26 % contre 6,18 %), de
+      saignements non majeurs cliniquement pertinents, d'évolution fonctionnelle
+      favorable (score de Rankin 0-2 : RR 1,02 ; IC95 0,93-1,11) ni de mortalité.
+      Pas de différence entre anti-Xa et anti-thrombine. La même semaine, une
+      émulation d'essai cible sur un registre chinois de 2 476 patients (même
+      revue) conclut à la non-infériorité des AOD sur la récidive à un an
+      (3,74 % contre 5,47 % sous warfarine ; différence −1,73 point, IC95 −3,76 à
+      0,30).
+    message_cle: >-
+      Dans la thrombose veineuse cérébrale, les AOD font jeu égal avec les AVK
+      sur les récidives, les saignements majeurs, la récupération fonctionnelle et
+      la mortalité — deux nouvelles analyses qui confortent leur usage comme
+      alternative.
+    contexte:
+      - >-
+        La thrombose veineuse cérébrale touche surtout l'adulte jeune et la
+        femme, et une cause (thrombophilie, SAPL, maladie inflammatoire comme le
+        Behçet, contraception) est souvent recherchée en médecine interne. Les
+        AVK ont longtemps été la référence ; les AOD sont de plus en plus
+        utilisés.
+      - >-
+        Les effectifs des essais randomisés restent faibles et les intervalles de
+        confiance larges : l'équivalence n'est pas démontrée au sens strict. Comme
+        dans les autres territoires veineux, les AOD restent à éviter dans le SAPL
+        à haut risque (triple positivité), où les AVK gardent leur place.
+
+  - type: essai
+    titre: "MTEV en traitement prolongé : pas d'avantage hémorragique de l'apixaban sur le rivaroxaban (analyse de l'essai RENOVE)"
+    source: "European Respiratory Journal · analyse post hoc non randomisée d'un essai français"
+    impact_factor: 17
+    url: "https://pubmed.ncbi.nlm.nih.gov/42919641/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "choix de la molécule non tiré au sort : groupes différents à l'inclusion (âge, sexe)"
+    resume: >-
+      L'essai randomisé ouvert RENOVE comparait une dose pleine à une dose réduite
+      d'apixaban ou de rivaroxaban chez des patients ayant reçu au moins 6 mois de
+      traitement d'une MTEV et nécessitant une anticoagulation prolongée ; le
+      choix de la molécule n'était pas tiré au sort. Dans cette analyse post hoc,
+      1 513 patients recevaient du rivaroxaban (755 à pleine dose, 758 à dose
+      réduite) et 1 255 de l'apixaban (630 et 625), avec un suivi médian de
+      37 mois. Âge médian 62,6 contre 66,5 ans, femmes 32,1 % contre 38,7 %.
+      Incidence cumulée à 5 ans des saignements cliniquement pertinents (critère
+      principal, adjugé centralement) : 11,7 % sous rivaroxaban contre 13,7 % sous
+      apixaban (HR ajusté 0,90 ; IC95 0,70-1,17 ; analyse pondérée 0,92 ; IC95
+      0,70-1,21). Saignements majeurs, récidives, événements thrombotiques
+      artériels et décès comparables entre les deux molécules.
+    message_cle: >-
+      Une fois passés les six premiers mois, apixaban et rivaroxaban, à pleine
+      dose ou à dose réduite, exposent au même risque de saignement et de
+      récidive — l'avantage hémorragique de l'apixaban décrit en début de
+      traitement ne se retrouve pas en phase prolongée.
+    contexte:
+      - >-
+        La méta-analyse présentée dans le numéro 23 associait l'apixaban à moins
+        de saignements majeurs que le rivaroxaban, surtout sur des données de vie
+        réelle et en début de traitement. Cette analyse française, aux événements
+        adjugés centralement, suggère que la différence s'estompe en phase
+        prolongée.
+      - >-
+        La molécule n'étant pas tirée au sort, des différences entre patients ont
+        pu influencer les résultats malgré l'ajustement. En pratique, le choix
+        en phase prolongée peut reposer sur la posologie, la fonction rénale et
+        les préférences du patient. RENOVE avait par ailleurs montré l'intérêt de
+        la dose réduite pour limiter les saignements.
+
+aussi_parus:
+  - titre: "Amylose AL et dialyse : 40 mois de survie médiane, bien plus en cas de réponse hématologique profonde"
+    source: "American Journal of Hematology · cohorte de trois centres européens"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42905114/"
+    resume: >-
+      Chez 362 patients atteints d'amylose AL ayant débuté une dialyse, la survie
+      médiane après la mise en dialyse est de 40 mois. Atteinte cardiaque,
+      plasmocytose médullaire élevée au diagnostic et chaîne légère lambda sont
+      associées à une survie moindre ; les chaînes légères libres élevées à la
+      mise en dialyse sont pronostiques indépendamment des biomarqueurs
+      cardiaques. Parmi les 151 patients traités après la mise en dialyse, la
+      survie médiane atteint 63,8 mois en cas de réponse complète ou de très bonne
+      réponse partielle, contre 42 mois sinon. Les auteurs évoquent la
+      transplantation rénale chez les meilleurs répondeurs.
+
+  - titre: "Lupus : les inhibiteurs de SGLT2 associés à moins d'évolution vers l'insuffisance rénale terminale"
+    source: "Lupus · revue systématique et méta-analyse (études observationnelles)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42899487/"
+    resume: >-
+      Six études publiées en 2024-2025 : les inhibiteurs de SGLT2 sont associés à
+      un meilleur débit de filtration glomérulaire (+4,02 mL/min ; IC95
+      1,39-6,65) et à moins d'insuffisance rénale terminale (RR 0,37 ; IC95
+      0,25-0,56), d'insuffisance cardiaque (RR 0,65), de néphrite lupique incidente
+      (RR 0,58) et de décès (RR 0,55). Niveau de preuve faible à très faible, avec
+      un risque important de confusion résiduelle : associations à confirmer par
+      des essais randomisés.
+
+  - titre: "Néphrite lupique : sous bélimumab, une réponse rénale « profonde » chez la moitié des patients à 2 ans"
+    source: "Rheumatology (Oxford) · cohorte rétrospective monocentrique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42900520/"
+    resume: >-
+      Chez 43 patients atteints de néphrite lupique non en réponse complète à
+      l'introduction du bélimumab, une réponse rénale « profonde » (protéinurie
+      < 200 mg/g, sans hématurie glomérulaire active, fonction rénale stable) est
+      obtenue chez 38,5 % à 12 mois et 53,8 % à 24 mois, contre 66,7 % et 76,9 %
+      pour la réponse complète classique (< 500 mg/g). Ces réponses profondes
+      s'installent lentement (délai médian 17,7 mois). Petite série sans groupe
+      contrôle.
+
+  - titre: "PTI : rilzabrutinib, sovleplénib et fostamatinib supérieurs au placebo en méta-analyse en réseau"
+    source: "EJHaem · méta-analyse en réseau de 5 essais"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42894830/"
+    resume: >-
+      Cinq essais (660 patients atteints de PTI primaire) : les trois inhibiteurs
+      de kinases (anti-BTK rilzabrutinib, anti-SYK sovleplénib et fostamatinib)
+      augmentent la réponse plaquettaire (≥ 50 G/L) par rapport au placebo, avec
+      des intervalles de confiance très larges ; pas de différence d'effets
+      indésirables globaux. Aucune supériorité nette d'une molécule sur l'autre
+      faute de comparaison directe.
+
+  - titre: "PTI : l'éradication d'Helicobacter pylori réduit le taux de non-réponse"
+    source: "Annals of Hematology · méta-analyse de 8 essais randomisés"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42911235/"
+    resume: >-
+      Huit essais randomisés (297 patients, Asie et Amérique latine) :
+      l'éradication d'H. pylori réduit l'absence de réponse ou la réponse minime
+      (RR 0,65 ; IC95 0,49-0,85) et augmente les plaquettes à 6 mois d'environ
+      62 G/L, sans effet significatif sur la réponse globale ni sur la rechute à un
+      an. Effets de petites études probables.
+
+  - titre: "Sclérodermie : des immunoglobulines IV associées à une amélioration cutanée et digestive, surtout dans les études non randomisées"
+    source: "Frontiers in Immunology · revue systématique et méta-analyse"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42898317/"
+    resume: >-
+      Onze études : amélioration du score de Rodnan (différence standardisée
+      −0,59) et des manifestations digestives (−0,73) sous immunoglobulines IV,
+      ainsi qu'une baisse des CPK dans deux études sur la myopathie associée.
+      Mais le seul essai randomisé contre placebo n'a pas montré d'amélioration
+      cutanée à court terme sur son critère principal. Option d'appoint pour des
+      patients sélectionnés.
