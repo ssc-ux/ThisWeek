@@ -4,31 +4,61 @@
 {% block description %}Chaque semaine, l'essentiel des nouveautés (recommandations, essais, PNDS) pour les médecins internistes exerçant en France.{% endblock %}
 
 {% block content %}
-<p class="eyebrow">Veille hebdomadaire · médecine interne (France)</p>
-<h1 class="page-h1">L'essentiel de la semaine pour l'interniste.</h1>
-
-<section class="latest-card latest-card--full" aria-label="Dernier numéro">
-  <div class="latest-card-head">
-    <span class="kicker">Dernier numéro · N° {{ latest.numero }} · {{ latest.date_fr }}</span>
-    <h2>Semaine du {{ latest.semaine }}</h2>
-    <p class="latest-meta">{{ latest["items"] | length }} item{{ 's' if latest["items"]|length>1 }} sélectionné{{ 's' if latest["items"]|length>1 }}
-      · lecture ~{{ latest.lecture_min }} min (ou ~{{ latest.express_min }} min en express)</p>
+{% set items = latest["items"] %}
+{% set lead = items[0] %}
+<section class="cover" aria-label="Dernier numéro">
+  <div class="cover-mast">
+    <h1 class="cover-logo">This<em>Week</em></h1>
+    <p class="cover-issue">Médecine interne<br>N° {{ latest.numero }} · {{ latest.semaine }}</p>
   </div>
-  <ol class="latest-list">
-    {% for item in latest["items"] %}
-    <li>
-      <a href="{{ root }}numeros/{{ latest_slug }}.html#item-{{ loop.index }}">{{ item.titre }}</a>
-      <span class="latest-msg">{{ item.message_cle }}</span>
-    </li>
-    {% endfor %}
-  </ol>
-  <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le numéro complet →</a>
+
+  <div class="cover-grid">
+    <article class="cover-lead">
+      <span class="cover-kick">{{ type_labels.get(lead.type, "Autre") }}</span>
+      <h2><a href="{{ root }}numeros/{{ latest_slug }}.html#item-1">{{ lead.titre }}</a></h2>
+      <p>{{ lead.message_cle }}</p>
+      <span class="cover-src">{{ lead.source.split('·')[0] | trim }}</span>
+    </article>
+
+    {% if items | length > 1 %}
+    <ul class="cover-side">
+      {% for item in items[1:] %}
+      <li>
+        <span class="cover-kick">{{ type_labels.get(item.type, "Autre") }}</span>
+        <h3><a href="{{ root }}numeros/{{ latest_slug }}.html#item-{{ loop.index + 1 }}">{{ item.titre }}</a></h3>
+        <span class="cover-src">{{ item.source.split('·')[0] | trim }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  {% if latest.edito %}<p class="cover-edito">{{ latest.edito }}</p>{% endif %}
+
+  <div class="cover-foot">
+    <a class="btn btn-primary" href="{{ root }}numeros/{{ latest_slug }}.html">Lire le numéro complet →</a>
+    <span>{{ items | length }} item{{ 's' if items|length > 1 }} · lecture ~{{ latest.lecture_min }} min (~{{ latest.express_min }} min en express)</span>
+    <a href="{{ root }}archives.html">Numéros précédents →</a>
+  </div>
 </section>
 
-<p class="home-footline">
-  <span class="ia-badge">IA</span> Généré par intelligence artificielle, sans relecture
-  humaine — <a href="{{ root }}methode.html">comment ça marche</a>.
-  <a href="{{ root }}archives.html">Numéros précédents →</a>
-  <a href="{{ root }}veille.html">Toutes les études repérées →</a>
-</p>
+<section class="method" aria-labelledby="method-h">
+  <div class="method-head">
+    <h2 id="method-h">Comment chaque numéro est fabriqué</h2>
+    <p><span class="ia-badge">IA</span> Sélection et synthèses entièrement générées par une
+      intelligence artificielle, <strong>sans relecture par un médecin</strong>.
+      Chaque item renvoie à sa source.</p>
+  </div>
+  <ol class="pipe">
+    <li><b>Collecte</b><span>PubMed (MeSH × recommandations, essais, méta-analyses) + registre des PNDS de la HAS</span></li>
+    <li><b>Tri</b><span>L'IA ne garde que ce qui concerne un service de médecine interne français</span></li>
+    <li><b>Lecture</b><span>Abstract, et texte intégral en accès libre quand il est disponible</span></li>
+    <li><b>Synthèse</b><span>Résumé, ce qui change, message clé, contexte. Aucun chiffre absent de la source</span></li>
+    <li class="pipe-check"><b>Vérification</b><span>Un second passage d'IA confronte la synthèse à la source</span>
+      <em class="pipe-fail">Échec ou doute → rétrogradé en « Aussi paru »</em></li>
+    <li><b>Publication</b><span>Chaque lundi, sans intervention humaine sur le fond</span></li>
+  </ol>
+  <p class="method-more"><a href="{{ root }}methode.html">Méthode détaillée et limites →</a>
+    <a href="{{ root }}veille.html">Toutes les études repérées →</a></p>
+</section>
 {% endblock %}
