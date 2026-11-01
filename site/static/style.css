@@ -652,119 +652,6 @@ article[data-mode="express"] .also-resume { display: none; }
 @media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
 @media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
 
-/* ---- Accueil, aligné sur la première page de CorticoPlan : logo centré au
-   dégradé, champ arrondi façon moteur de recherche, halos colorés en fond,
-   navigation discrète en haut à droite. ---- */
-
-.accueil { max-width: 46rem; }
-/* Carte du numéro au gabarit CorticoPlan : fond blanc, filet fin, rayon 8 px,
-   titres de section en petites capitales grises, lignes séparées par des filets.
-   Sur ordinateur, la largeur est occupée par une grille de 2 colonnes. */
-.accueil .latest-card {
-  padding: 1.1rem 1.25rem 1.25rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / .05);
-}
-.accueil .latest-card .kicker {
-  font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .06em;
-  color: var(--ink-soft);
-}
-.accueil .latest-card h2 { margin: .3rem 0 .1rem; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
-.accueil .latest-card .latest-meta { font-size: .85rem; }
-.accueil .latest-list { margin: .9rem 0 1rem; padding: 0; gap: 0; border-top: 0; }
-.accueil .latest-list li { padding: .75rem 0; border-top: 1px solid var(--rule); }
-.accueil .latest-list a { font-size: 1rem; font-weight: 600; }
-.accueil .latest-msg { font-size: .875rem; line-height: 1.45; }
-.accueil .latest-card .btn {
-  padding: 0;
-  border-radius: 0;
-  background: none;
-  color: var(--accent);
-  font-size: .95rem;
-}
-.accueil .latest-card .btn:hover { background: none; transform: none; text-decoration: underline; }
-@media (min-width: 900px) {
-  .accueil { max-width: 64rem; }
-  .accueil .latest-card { padding: 1.25rem 1.6rem 1.4rem; }
-  .accueil .latest-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 2.2rem;
-  }
-}
-.accueil .masthead {
-  position: static;
-  background: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  border-bottom: 0;
-  justify-content: flex-end;
-}
-.accueil .masthead .brand { display: none; }
-.accueil .masthead nav a[aria-current="page"] { display: none; }
-.accueil::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(60% 45% at 20% 18%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
-    radial-gradient(55% 40% at 85% 30%, color-mix(in srgb, var(--accent-2) 13%, transparent), transparent 70%),
-    radial-gradient(50% 40% at 50% 95%, color-mix(in srgb, #eb6834 9%, transparent), transparent 70%);
-}
-/* Le fond de page doit laisser voir les halos posés derrière. */
-body:has(.accueil) { background: var(--paper-alt); }
-
-.hero {
-  max-width: 39rem;
-  margin: 0 auto;
-  padding: clamp(1.5rem, 7vh, 3.5rem) 0 1.6rem;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .75rem;
-  margin: 0 0 1.1rem;
-  font-size: clamp(2.2rem, 9vw, 3.2rem);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-.logo span {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.logo .logo-ico { width: clamp(2.5rem, 10vw, 3.25rem); height: auto; border-radius: 12px; }
-.accroche { margin: 0; text-align: center; color: var(--ink-soft); text-wrap: balance; }
-
-.boutons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .6rem;
-  margin-top: 1.25rem;
-}
-.boutons a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.5rem;
-  padding: 0 1.1rem;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: .92rem;
-  text-decoration: none;
-}
-.boutons a:hover { border-color: var(--rule); box-shadow: 0 1px 2px rgb(0 0 0 / .12); }
-.accueil .home-footline { justify-content: center; }
-.accueil .footer { text-align: center; }
-
 .btn {
   display: inline-block;
   padding: .78rem 1.5rem;
@@ -779,49 +666,113 @@ body:has(.accueil) { background: var(--paper-alt); }
 .btn-secondary { background: var(--paper-alt); color: var(--ink); }
 .btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
 
-/* Panneau « dernier numéro » : le centre de gravité de la page d'accueil. */
-.latest-card {
-  border: 1px solid var(--rule);
+/* Accueil « couverture de revue » : le premier item fait la une, les autres en
+   colonne, l'édito en bandeau ; puis la méthode résumée en un schéma. */
+:root, :root[data-theme="light"] {
+  --cover-bg: #f7f6f2; --cover-ink: #1b1a17; --cover-soft: #5a564d;
+  --cover-rule: #d6d1c4; --cover-red: #a3311f;
+}
+:root[data-theme="dark"] {
+  --cover-bg: #16130f; --cover-ink: #f2efe7; --cover-soft: #b1aa9b;
+  --cover-rule: #3a342a; --cover-red: #e38a72;
+}
+.cover {
+  --serif: ui-serif, "New York", "Iowan Old Style", Charter, Georgia, serif;
+  margin-top: 1.6rem;
+  background: var(--cover-bg);
+  color: var(--cover-ink);
   border-radius: var(--r-card);
-  padding: 1.25rem 1.4rem;
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  padding: clamp(1.3rem, 3vw, 2.4rem);
 }
-.latest-card--full { padding: 1.8rem 2rem 2rem; }
-.latest-card .kicker {
-  font-size: .74rem;
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  color: var(--accent);
-  font-weight: 700;
+.cover a { color: inherit; text-decoration: none; }
+.cover a:hover { color: var(--cover-red); }
+.cover-mast {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: .8rem;
+  border-bottom: 3px solid var(--cover-ink); padding-bottom: .7rem;
 }
-.latest-card h2 { margin: .35rem 0 .15rem; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
-.latest-card .latest-meta { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+.cover-logo {
+  margin: 0; font: 900 clamp(2.4rem, 6vw, 4rem)/.9 var(--serif); letter-spacing: -0.03em;
+}
+.cover-logo em { font-style: italic; font-weight: 400; color: var(--cover-red); }
+.cover-issue {
+  margin: 0; text-align: right; font-size: .75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--cover-soft);
+  font-variant-numeric: tabular-nums;
+}
+.cover-grid {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: 1.6rem;
+}
+.cover-kick {
+  font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--cover-red);
+}
+.cover-lead h2 {
+  font: 700 clamp(1.7rem, 3.4vw, 2.6rem)/1.08 var(--serif);
+  letter-spacing: -0.015em; margin: .4rem 0 .8rem; text-wrap: balance;
+}
+.cover-lead p { margin: 0 0 .8rem; font-size: 1.05rem; line-height: 1.55; color: var(--cover-soft); max-width: 62ch; }
+.cover-src { display: block; font-size: .78rem; color: var(--cover-soft); font-style: italic; }
+.cover-side { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; align-content: start; }
+.cover-side li { border-top: 1px solid var(--cover-rule); padding-top: .75rem; }
+.cover-side h3 { font: 700 1.08rem/1.25 var(--serif); margin: .3rem 0 .25rem; text-wrap: balance; }
+.cover-edito {
+  margin: 1.8rem 0 0; padding: 1.1rem 1.3rem;
+  background: var(--cover-ink); color: var(--cover-bg);
+  font: italic 400 1.08rem/1.55 var(--serif);
+}
+.cover-foot {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem;
+  margin-top: 1.4rem; font-size: .85rem; color: var(--cover-soft);
+}
+.cover-foot .btn-primary { color: var(--accent-ink); }
+.cover-foot .btn-primary:hover { color: var(--accent-ink); }
 
-.latest-list {
-  list-style: none;
-  margin: 1.2rem 0 1.4rem;
-  padding: 1.1rem 0 0;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  gap: .9rem;
+/* Méthode en un schéma : 6 étapes en ligne (en colonne sur mobile). */
+.method { margin-top: 2.4rem; }
+.method-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 2rem; }
+.method-head h2 { margin: 0; font-size: 1.3rem; letter-spacing: -0.015em; font-weight: 700; }
+.method-head p { margin: 0; font-size: .85rem; color: var(--ink-soft); max-width: 60ch; }
+.pipe {
+  list-style: none; margin: 1.2rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.6rem;
+  counter-reset: pipe;
 }
-.latest-list li { display: flex; flex-direction: column; gap: .15rem; }
-.latest-list a { font-size: 1.08rem; font-weight: 600; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
-.latest-list a:hover { color: var(--accent); }
-.latest-msg { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+.pipe li {
+  position: relative; counter-increment: pipe;
+  border: 1px solid var(--rule); border-radius: 14px; background: var(--surface);
+  padding: .9rem .95rem 1rem; display: flex; flex-direction: column; gap: .3rem;
+}
+.pipe li::before {
+  content: counter(pipe); flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: .8rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: .2rem;
+}
+.pipe li:not(:last-child)::after {
+  content: "→"; position: absolute; right: -1.25rem; top: 1.05rem;
+  color: var(--accent); font-weight: 700;
+}
+.pipe b { font-size: .95rem; }
+.pipe span { font-size: .82rem; color: var(--ink-soft); line-height: 1.4; }
+.pipe-check { border-color: var(--accent) !important; }
+.pipe-fail {
+  margin-top: auto; font-style: normal; font-size: .75rem; font-weight: 600;
+  background: var(--badge-alerte-bg); color: var(--badge-alerte-ink);
+  border-radius: 8px; padding: .3rem .5rem;
+}
+.method-more { margin: 1rem 0 0; font-size: .85rem; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
 
-.home-footline {
-  margin: 1.4rem 0 0;
-  font-size: .85rem;
-  color: var(--ink-soft);
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem .9rem;
-  align-items: center;
+@media (max-width: 1100px) {
+  .pipe { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pipe li:nth-child(3)::after { content: none; }
 }
-.home-footline a { white-space: nowrap; }
+@media (max-width: 760px) {
+  .cover-grid { grid-template-columns: 1fr; }
+  .cover-issue { text-align: left; }
+  .pipe { grid-template-columns: 1fr; gap: 1.3rem; }
+  .pipe li:not(:last-child)::after { content: "↓"; right: auto; left: 1.2rem; top: auto; bottom: -1.3rem; }
+}
 
 /* ---- Schéma de méthode (page Méthode) ---- */
 
@@ -878,8 +829,7 @@ body:has(.accueil) { background: var(--paper-alt); }
 @media (max-width: 560px) {
   .page { padding-left: 1.15rem; padding-right: 1.15rem; }
   .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
-  .latest-card, .latest-card--full { padding: 1.4rem 1.3rem; }
-  .latest-card .btn { width: 100%; text-align: center; }
+  .cover-foot .btn { width: 100%; text-align: center; }
   .reading-bar { justify-content: flex-start; }
   .search-overlay { padding-top: 4vh; }
 }
