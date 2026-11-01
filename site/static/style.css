@@ -322,47 +322,15 @@ a:focus-visible, button:focus-visible {
   color: var(--ink-soft);
 }
 
-/* ---- Barre de lecture (5 min / 20 min) ---- */
+/* ---- Durée de lecture ---- */
 
-.reading-bar {
-  margin: 1.3rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: .8rem 1rem;
-}
+.reading-bar { margin: 1.3rem 0 0; }
 .reading-est {
   font-size: .85rem;
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
 }
-.read-toggle {
-  display: inline-flex;
-  background: var(--paper-alt);
-  border-radius: var(--r-pill);
-  padding: .22rem;
-  gap: .15rem;
-}
-.read-toggle button {
-  border: 0;
-  background: transparent;
-  color: var(--ink-soft);
-  font-family: inherit;
-  font-size: .85rem;
-  font-weight: 600;
-  padding: .38rem .95rem;
-  border-radius: var(--r-pill);
-  cursor: pointer;
-  transition: color .15s;
-}
-.read-toggle button[aria-pressed="true"] {
-  background: var(--surface);
-  color: var(--ink);
-  box-shadow: 0 1px 3px rgba(0,0,0,.16);
-}
-/* Sans JavaScript, la bascule ne sert à rien : on la masque. */
-.no-js .read-toggle { display: none; }
+
 
 /* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
 
@@ -581,11 +549,6 @@ a:focus-visible, button:focus-visible {
 .contexte .contexte-body { margin-top: .7rem; }
 .contexte .contexte-body p { margin: .5rem 0; }
 
-/* Mode « Express » : on réduit chaque item à son titre et sa phrase-clé.
-   Le sommaire, devenu navigation latérale, reste affiché. */
-article[data-mode="express"] .contexte,
-article[data-mode="express"] .verif-note { display: none; }
-
 /* ---- Aussi parus ---- */
 
 .also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
@@ -615,8 +578,6 @@ article[data-mode="express"] .verif-note { display: none; }
 .also-head a:hover { color: var(--accent); }
 .also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
 .also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
-/* En mode Express, on garde juste les titres. */
-article[data-mode="express"] .also-resume { display: none; }
 
 /* ---- Archives ---- */
 
@@ -830,7 +791,6 @@ article[data-mode="express"] .also-resume { display: none; }
   .page { padding-left: 1.15rem; padding-right: 1.15rem; }
   .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
   .cover-foot .btn { width: 100%; text-align: center; }
-  .reading-bar { justify-content: flex-start; }
   .search-overlay { padding-top: 4vh; }
 }
 

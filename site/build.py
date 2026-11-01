@@ -51,20 +51,14 @@ def _words(*texts: object) -> int:
 
 
 def add_reading_times(issue: dict) -> None:
-    """Estime deux durées de lecture : complète (tout) et express (l'essentiel).
-
-    ~180 mots/min. La version express ne compte que titres + messages clés,
-    ce qui correspond au parcours « L'essentiel » et au mode Express.
-    """
-    full = express = 0
+    """Estime la durée de lecture complète du numéro (~180 mots/min)."""
+    full = 0
     for item in issue.get("items", []):
-        express += _words(item.get("titre"), item.get("message_cle"))
         full += _words(item.get("titre"), item.get("resume"), item.get("message_cle"))
         full += _words(*(item.get("contexte") or []))
         cc = item.get("ce_qui_change") or {}
         full += _words(*(cc.get("points") or []))
     issue["lecture_min"] = max(4, round(full / 180))
-    issue["express_min"] = max(2, round(express / 90))
 
 
 REQUIRED_ISSUE_KEYS = ("numero", "semaine", "date", "items")
