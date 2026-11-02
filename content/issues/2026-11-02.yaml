@@ -1,0 +1,291 @@
+# Numéro rédigé à partir des abstracts PubMed (et du texte intégral libre quand
+# il existe), sans relecture humaine.
+numero: 26
+semaine: "27 octobre au 2 novembre 2026"
+date: 2026-11-02
+edito: >-
+  Deux recommandations attendues ouvrent ce numéro. L'ASH met à jour ses
+  recommandations sur le PTI de l'adulte et propose d'associer d'emblée
+  rituximab ou agoniste du récepteur de la thrombopoïétine aux corticoïdes.
+  Un groupe international selon la méthode EULAR cadre l'imagerie dans la
+  pseudo-polyarthrite rhizomélique : utile surtout dans les cas douteux. Dans
+  la sarcoïdose, l'efzofitimod échoue en phase 3, mais l'essai montre qu'on
+  peut décroître les corticoïdes bien plus vite qu'on ne le fait souvent.
+  Complètent le numéro dix ans de suivi de l'autogreffe dans la sclérodermie et
+  une méta-analyse rassurante, mais à nuancer, sur l'hydroxychloroquine au
+  premier trimestre de grossesse.
+
+items:
+  - type: reco
+    titre: "PTI de l'adulte : l'ASH 2026 propose rituximab ou agoniste du récepteur de la TPO dès la première ligne, avec les corticoïdes"
+    source: "Blood Advances · recommandations de l'American Society of Hematology (mise à jour ciblée de 2019)"
+    impact_factor: 8
+    url: "https://pubmed.ncbi.nlm.nih.gov/42617047/"
+    base_texte: texte_integral
+    points_a_verifier:
+      - "recommandations américaines : disponibilité et remboursement des molécules (anti-BTK, anti-SYK) différents en France"
+      - "statut en France du rituximab et des agonistes du récepteur de la TPO en première ligne à vérifier (cadre d'AMM et PNDS)"
+    resume: >-
+      Mise à jour ciblée, selon la méthode GRADE, des recommandations ASH 2019 sur
+      le traitement du purpura thrombopénique immunologique (PTI) primaire de
+      l'adulte, avec une revue de la littérature arrêtée en juillet 2025 et deux
+      représentants de patients dans le panel. Lues sur le texte intégral :
+      **en première ligne**, le panel suggère d'associer aux corticoïdes (avec ou
+      sans immunoglobulines IV) soit du rituximab, soit un agent thrombopoïétique,
+      plutôt que les corticoïdes seuls ou associés au mycophénolate mofétil
+      (recommandation conditionnelle, niveau de preuve faible) ; si ni le
+      rituximab ni les agents thrombopoïétiques ne sont disponibles, il suggère
+      les corticoïdes seuls plutôt qu'associés au mycophénolate. **En deuxième
+      ligne**, après échec des corticoïdes, le panel **recommande** un agent
+      thrombopoïétique (recommandation forte, niveau de preuve modéré) ou suggère
+      le rituximab (conditionnelle, faible). Chez les patients qui ne peuvent ou
+      ne veulent recevoir ni l'un ni l'autre, il suggère un inhibiteur de BTK, le
+      mycophénolate ou un inhibiteur de SYK (conditionnelle, très faible). Deux
+      avis de bonne pratique : le changement d'agent thrombopoïétique peut se
+      discuter en cas de réponse insuffisante, d'effets indésirables ou de
+      préférence du patient, sans interruption de traitement ; la splénectomie
+      doit être différée d'au moins un an après le diagnostic quand c'est
+      possible, avec vaccinations au moins deux semaines avant et information sur
+      les risques infectieux et thrombotiques à vie.
+    message_cle: >-
+      ASH 2026 : en première ligne du PTI de l'adulte, associer aux corticoïdes du
+      rituximab ou un agoniste du récepteur de la TPO ; en deuxième ligne,
+      l'agoniste du récepteur de la TPO est la seule recommandation forte ;
+      anti-BTK, mycophénolate et anti-SYK viennent ensuite ; splénectomie pas
+      avant un an.
+    contexte:
+      - >-
+        Le principal changement est l'abandon de la corticothérapie seule en
+        première ligne, au profit d'une association visant à augmenter les
+        rémissions durables. La recommandation reste conditionnelle et le panel
+        reconnaît que beaucoup de cliniciens continueront de prescrire les
+        corticoïdes seuls.
+      - >-
+        En France, le PNDS du PTI de l'adulte reste la référence pour le parcours
+        et les remboursements. L'entrée du rilzabrutinib (anti-BTK) parmi les
+        options de deuxième intention reflète les essais récents, dont l'essai
+        LUNA3 présenté dans un numéro précédent.
+
+  - type: reco
+    titre: "Pseudo-polyarthrite rhizomélique : premières recommandations internationales sur l'imagerie, utile surtout dans les cas douteux"
+    source: "Annals of the Rheumatic Diseases · recommandations d'un groupe de travail international (méthode EULAR)"
+    impact_factor: 20
+    url: "https://pubmed.ncbi.nlm.nih.gov/42946585/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "libellé exact des 7 recommandations et niveaux d'accord non détaillés dans le résumé"
+    resume: >-
+      Un groupe de travail international et multidisciplinaire de 30 membres issus
+      de 12 pays, suivant les procédures de l'EULAR, a formulé 3 principes
+      généraux et 7 recommandations sur l'échographie, l'IRM et le TEP-scanner au
+      FDG dans la pseudo-polyarthrite rhizomélique (PPR), à partir d'une revue
+      systématique et d'un vote. Messages principaux : la PPR reste un
+      **diagnostic clinique** ; l'imagerie n'est nécessaire ni pour confirmer une
+      PPR très probable ni pour exclure une PPR peu probable ; elle est surtout
+      utile en cas de **probabilité intermédiaire** (présentation atypique,
+      diagnostic différentiel ou chevauchement suspecté). Aucune technique n'est
+      assez performante pour être recommandée en première intention : le choix
+      dépend de la présentation, des diagnostics à écarter, de l'accès et de
+      l'expertise locale. Une imagerie vasculaire est indiquée en cas de suspicion
+      d'artérite à cellules géantes associée, mais le dépistage systématique d'une
+      vascularite infraclinique n'est pas recommandé. L'imagerie n'est pas
+      recommandée pour le suivi ni pour prédire l'évolution.
+    message_cle: >-
+      Dans la PPR, l'imagerie se réserve aux cas douteux ou atypiques et à la
+      suspicion d'artérite à cellules géantes associée ; elle n'a pas sa place
+      pour confirmer une forme typique, pour dépister une vascularite
+      silencieuse ni pour surveiller l'évolution.
+    contexte:
+      - >-
+        L'échographie des épaules et des hanches et le TEP-scanner sont de plus en
+        plus prescrits dans la PPR, parfois de façon systématique. Ces
+        recommandations recentrent leur usage sur les situations où ils changent
+        la décision.
+      - >-
+        Point pratique pour l'interniste : devant une PPR avec signes généraux
+        marqués, réponse incomplète aux corticoïdes ou symptômes évocateurs
+        d'artérite, l'imagerie vasculaire reste indiquée pour rechercher une
+        artérite à cellules géantes des gros vaisseaux.
+
+  - type: essai
+    titre: "Sarcoïdose pulmonaire : l'efzofitimod échoue en phase 3, mais les corticoïdes ont pu être largement diminués dans tous les groupes"
+    source: "The Lancet Respiratory Medicine · essai de phase 3 randomisé en double aveugle (EFZO-FIT)"
+    impact_factor: 38
+    url: "https://pubmed.ncbi.nlm.nih.gov/42933455/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "essai financé par les laboratoires qui développent la molécule"
+    resume: >-
+      Essai de phase 3 randomisé en double aveugle contre placebo (EFZO-FIT,
+      NCT05415137), dans 85 centres de neuf pays dont la France, chez 268 adultes
+      atteints de sarcoïdose pulmonaire nécessitant un traitement. Les patients
+      recevaient chaque mois une perfusion d'efzofitimod 3 mg/kg, 5 mg/kg ou de
+      placebo pendant 48 semaines, avec une décroissance protocolisée des
+      corticoïdes oraux sur 12 semaines visant l'arrêt complet ; la dose pouvait
+      être remontée en cas d'aggravation. L'efzofitimod est une protéine de fusion
+      immunomodulatrice ciblant le récepteur neuropiline 2. Critère principal —
+      variation de la dose quotidienne moyenne de corticoïdes à la semaine 48 —
+      **non atteint** : différence avec le placebo de 0,02 mg/j sous 3 mg/kg (IC95
+      −1,49 à 1,52 ; p = 0,98) et de −0,73 mg/j sous 5 mg/kg (IC95 −2,21 à 0,75 ;
+      p = 0,33). Dans l'ensemble des 264 patients analysés, la dose moyenne de
+      corticoïdes est passée de **10,7 mg/j à l'inclusion à 2,9 mg/j à la semaine
+      48**. Événements indésirables graves comparables ; céphalées, sinusites,
+      sifflements et élévation des ASAT plus fréquents sous efzofitimod. Deux
+      décès dans le groupe 3 mg/kg, jugés sans lien avec le traitement.
+    message_cle: >-
+      L'efzofitimod n'épargne pas les corticoïdes dans la sarcoïdose pulmonaire ;
+      mais avec une décroissance structurée sur 12 semaines, les patients, y
+      compris sous placebo, sont passés en moyenne de 10,7 à 2,9 mg/j de
+      corticoïdes en un an.
+    contexte:
+      - >-
+        Les corticoïdes restent le traitement de première ligne de la sarcoïdose
+        pulmonaire, au prix d'une toxicité importante quand ils sont prolongés.
+        L'échec de cette nouvelle molécule s'ajoute à la difficulté de démontrer
+        un bénéfice face à un placebo qui, ici, fait très bien.
+      - >-
+        L'enseignement le plus utile est indirect : une décroissance planifiée et
+        rapide des corticoïdes est réalisable chez beaucoup de patients, ce qui
+        invite à ne pas maintenir des doses moyennes par habitude. Le méthotrexate
+        reste l'épargne cortisonique de référence quand elle est nécessaire.
+
+  - type: autre
+    titre: "Sclérodermie : après autogreffe de cellules souches, 60 % des patients restent sans progression à 10 ans"
+    source: "The Lancet Rheumatology · suivi à long terme d'une cohorte prospective européenne (NISSC1, EBMT)"
+    impact_factor: 42
+    url: "https://pubmed.ncbi.nlm.nih.gov/42956788/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "cohorte sans groupe contrôle, patients très sélectionnés (sclérodermie précoce, sévère et évolutive)"
+    resume: >-
+      Suivi à long terme (NISSC1-LTE) des 80 patients de l'étude prospective
+      européenne NISSC1 ayant reçu une première autogreffe de cellules souches
+      hématopoïétiques pour une sclérodermie systémique sévère et évolutive entre
+      2012 et 2016, dans 13 centres dont des centres français. Âge médian 43 ans,
+      71 % de femmes, suivi médian de 9,2 ans ; 12 patients perdus de vue. Survie
+      sans progression : **81 % à 2 ans, 72 % à 5 ans et 60 % à 10 ans** (IC95
+      47-71). Dix-huit décès : liés à la greffe chez 5 patients (6 %), à la
+      progression de la maladie chez 9 (11 %), à un cancer survenu après la greffe
+      chez 2 (3 %) et à une infection grave tardive chez 2 (3 %). **34 patients
+      (43 %) restent en rémission sans aucun traitement immunosuppresseur sur
+      10 ans.**
+    message_cle: >-
+      Dans la sclérodermie sévère et évolutive, l'autogreffe garde ses promesses
+      à 10 ans : 60 % des patients sans progression et 43 % en rémission sans
+      traitement, au prix d'une mortalité liée à la procédure de 6 %.
+    contexte:
+      - >-
+        L'autogreffe est une option établie pour la sclérodermie diffuse précoce et
+        sévère depuis les essais ASSIST, ASTIS et SCOT, mais les données au-delà de
+        5 ans en pratique courante manquaient. Ce suivi confirme un bénéfice
+        durable chez une partie importante des patients.
+      - >-
+        Ces chiffres serviront de référence face aux nouvelles thérapies
+        cellulaires (CAR-T anti-CD19 notamment). La sélection des patients et la
+        réalisation dans des centres experts restent déterminantes, compte tenu de
+        la mortalité liée à la procédure.
+
+  - type: meta
+    titre: "Hydroxychloroquine au premier trimestre : légère association avec les malformations, sans remise en cause de son usage dans le lupus"
+    source: "RMD Open · revue systématique et méta-analyse"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42933791/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "types de malformations et doses d'hydroxychloroquine non détaillés dans le résumé"
+    resume: >-
+      Revue systématique et méta-analyse de 20 études (18 cohortes, une
+      cas-témoins, un essai randomisé), soit 4 260 grossesses exposées à
+      l'hydroxychloroquine au premier trimestre et 361 802 non exposées. Risque de
+      biais grave dans 4 études et critique dans 15. Association significative
+      entre exposition et malformation congénitale majeure (OR 1,27 ; IC95
+      1,11-1,45 ; 19 études), retrouvée sur les estimations ajustées (OR ajusté
+      1,29 ; IC95 1,09-1,53 ; 8 études), sans hétérogénéité. Niveau de preuve
+      faible. Les auteurs concluent que, compte tenu des bénéfices maternels et
+      fœtaux bien établis de l'hydroxychloroquine dans le lupus, ces résultats ne
+      justifient pas de changer la pratique pendant la grossesse ; pour d'autres
+      indications où des alternatives existent, l'usage doit se discuter au cas
+      par cas.
+    message_cle: >-
+      L'hydroxychloroquine au premier trimestre est associée à un excès modeste
+      de malformations (environ +27 % en risque relatif), sur des données de
+      faible qualité : dans le lupus, son bénéfice impose de la poursuivre ; dans
+      les autres indications, la discussion est au cas par cas.
+    contexte:
+      - >-
+        L'arrêt de l'hydroxychloroquine pendant la grossesse expose à des
+        poussées lupiques et à des complications obstétricales ; elle est aussi
+        utilisée pour prévenir le bloc auriculo-ventriculaire congénital chez les
+        mères porteuses d'anticorps anti-SSA. Un risque relatif de 1,27 sur une
+        complication rare correspond à un faible excès en valeur absolue.
+      - >-
+        Les patientes lupiques ont par elles-mêmes un risque obstétrical accru, et
+        la maladie sous-jacente est un facteur de confusion probable que
+        l'ajustement corrige imparfaitement. Le message à transmettre reste celui
+        de la poursuite du traitement dans le lupus.
+
+aussi_parus:
+  - titre: "Lupus neuropsychiatrique : la mémantine améliore les performances cognitives en 12 semaines (essai de phase 2)"
+    source: "Annals of the Rheumatic Diseases · essai randomisé contre placebo (ClearMEMory)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42629232/"
+    resume: >-
+      Chez 56 patients lupiques avec atteinte neuropsychologique objective
+      (43 analysés), la mémantine (jusqu'à 40 mg/j) améliore davantage le score
+      cognitif RBANS que le placebo (gain médian +8 contre +5 ; p = 0,032), avec
+      un gain cliniquement significatif chez 66,7 % contre 36,0 % des patients
+      (nombre de sujets à traiter 3,3). Pas de différence significative sur
+      l'impression globale rapportée par les patients. Petit essai, à confirmer.
+
+  - titre: "Crise rénale sclérodermique : mortalité et dialyse toujours élevées, et un contrôle tensionnel en 5 à 10 jours associé à la meilleure survie"
+    source: "Seminars in Arthritis and Rheumatism · cohorte internationale d'incidence (enquête SRC II)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42966007/"
+    resume: >-
+      Chez 83 patients suivis un an après une crise rénale sclérodermique
+      (76 % de formes diffuses, 46 % d'anticorps anti-ARN polymérase III), les IEC
+      sont quasi constants (98 %) mais plus de la moitié des patients nécessitent
+      au moins trois antihypertenseurs ; 49 % sont dialysés et 25 % des survivants
+      le restent à un an. Le contrôle tensionnel obtenu en 5 à 10 jours est
+      associé à la meilleure survie, plutôt que dans les 72 heures recommandées
+      par les experts — un résultat observationnel à confirmer.
+
+  - titre: "PTI réfractaire : l'association agoniste du récepteur de la TPO et rituximab donne 83 % de réponses"
+    source: "Journal of Thrombosis and Haemostasis · cohorte rétrospective multicentrique (Chine)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42933655/"
+    resume: >-
+      Chez 161 patients atteints de PTI en rechute ou réfractaire, lourdement
+      prétraités, l'association donne 83 % de réponses (43 % complètes) et 30 % de
+      rémissions sans traitement après 22 mois de suivi médian. Le rituximab
+      restaure une réponse chez 29 % des patients primairement réfractaires à
+      leur agoniste du récepteur de la TPO. Étude rétrospective sans groupe
+      contrôle.
+
+  - titre: "SAPL : le rituximab fait baisser les anticorps antiphospholipides, mais l'effet ne dure pas"
+    source: "Rheumatology (Oxford) · cohorte rétrospective monocentrique"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42958956/"
+    resume: >-
+      Chez 54 patients, surtout atteints de SAPL associé au lupus, la positivité
+      des anticardiolipine IgG passe de 59,3 % à 24,1 % et des anti-β2GPI IgG de
+      42,6 % à 16,7 % six à douze mois après le rituximab, mais les titres ne
+      restent pas durablement abaissés. Cinq récidives thrombotiques, dont quatre
+      sans anticoagulation efficace. Le rituximab ne remplace pas
+      l'anticoagulation.
+
+  - titre: "Artérite à cellules géantes : un TEP-scanner souvent discordant avec l'activité clinique"
+    source: "Arthritis & Rheumatology · analyse d'imagerie d'un essai randomisé (guselkumab)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/41940456/"
+    resume: >-
+      Chez 51 patients d'un essai du guselkumab, le TEP-scanner est actif chez
+      55 % à l'inclusion, sans lien avec les symptômes, les marqueurs
+      inflammatoires ni le risque de rechute ; il reste actif chez 70 % des
+      patients en rémission clinique sans corticoïdes à la semaine 52. Une
+      fixation persistante isolée ne suffit pas à définir une maladie active.
+
+  - titre: "Morphée : le dupilumab freine la progression dans un essai de phase 2"
+    source: "Annals of the Rheumatic Diseases · essai randomisé contre placebo"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42957460/"
+    resume: >-
+      Dans la sclérodermie localisée (morphée), six mois de dupilumab (anti-récepteur
+      α de l'IL-4) améliorent significativement l'état clinique par rapport au
+      placebo et réduisent l'inflammation locale et la signature génique
+      IL-4/IL-13. Le résumé ne donne ni effectifs ni chiffres : essai de preuve de
+      concept, hors AMM.
