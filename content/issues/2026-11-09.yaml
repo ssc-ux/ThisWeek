@@ -1,0 +1,288 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 27
+semaine: "3 au 9 novembre 2026"
+date: 2026-11-09
+edito: >-
+  Semaine sans recommandation majeure, mais riche en données utiles au
+  quotidien. Dans le lupus quiescent, diminuer l'hydroxychloroquine des trois
+  quarts ou l'arrêter est associé à davantage de poussées, ce qui plaide pour
+  une décroissance prudente. En Angleterre, la mortalité des maladies
+  auto-immunes rares reste plus du double de celle de la population générale,
+  infections en tête. Côté thrombose, deux anticorps anti-facteur XI divisent
+  par deux les thromboses sur PICC line en phase 2. Complètent le numéro le
+  fibrinogène à un mois comme marqueur de rechute de l'artérite à cellules
+  géantes et un essai chinois positif de l'obinutuzumab β dans le lupus.
+
+items:
+  - type: autre
+    titre: "Lupus quiescent : arrêter l'hydroxychloroquine ou la réduire des trois quarts est associé à plus de poussées"
+    source: "Arthritis Care & Research · cohorte rétrospective"
+    impact_factor: 4
+    url: "https://pubmed.ncbi.nlm.nih.gov/42980469/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "pays et centre de la cohorte, doses initiales d'hydroxychloroquine non précisés dans le résumé"
+      - "seuil de 75 % exploratoire, à faible pouvoir discriminant (AUC 0,55)"
+    resume: >-
+      Cohorte rétrospective de 381 patients lupiques en rémission clinique
+      (SLEDAI-2K clinique à 0, prednisolone ≤ 5 mg/j, sous hydroxychloroquine).
+      Sur un suivi médian de 1,38 an, **52,5 % font une poussée** (hausse d'au moins
+      un point du SLEDAI clinique ou escalade thérapeutique). L'**arrêt** de
+      l'hydroxychloroquine est associé à un risque accru de poussée (HR ajusté
+      1,80 ; IC95 1,17-2,75 ; OR ajusté 5,60 ; IC95 2,47-12,71), de même qu'une
+      **réduction d'au moins 75 %** de la dose (HR ajusté 1,53 ; IC95 1,02-2,30 ;
+      OR ajusté 4,40 ; IC95 2,17-8,92). Les réductions plus modestes ne sont pas
+      associées à un sur-risque. Relation dose-effet en analyse logistique : chaque
+      baisse de 10 % de la dose augmente la probabilité de poussée (OR ajusté 1,13 ;
+      IC95 1,06-1,21). L'analyse ROC propose un seuil exploratoire de 74,7 % de
+      réduction, avec une discrimination faible (AUC 0,55).
+    message_cle: >-
+      Dans le lupus en rémission, une baisse modérée de l'hydroxychloroquine ne
+      semble pas augmenter le risque de poussée, mais l'arrêt ou une réduction des
+      trois quarts y est associé : réduire avec prudence, plutôt qu'arrêter.
+    contexte:
+      - >-
+        L'hydroxychloroquine est recommandée chez presque tous les patients
+        lupiques, à une dose limitée (5 mg/kg/j de poids réel au plus selon les
+        recommandations récentes) pour réduire le risque de rétinopathie au long
+        cours. La question de la décroissance chez les patients en rémission
+        prolongée se pose souvent ; ces données donnent un ordre de grandeur pour
+        en discuter avec le patient.
+      - >-
+        Étude observationnelle : les patients chez qui la dose a été fortement
+        réduite ou arrêtée l'ont peut-être été pour des raisons (effets
+        indésirables, mauvaise observance) elles-mêmes liées au risque de poussée.
+        Le dosage sanguin de l'hydroxychloroquine reste un outil utile pour vérifier
+        l'observance.
+
+  - type: autre
+    titre: "Maladies auto-immunes rares : une mortalité toujours plus de deux fois supérieure à celle de la population générale"
+    source: "Rheumatology (Oxford) · cohorte nationale sur l'ensemble de la population anglaise"
+    impact_factor: 5
+    url: "https://pubmed.ncbi.nlm.nih.gov/42979850/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "maladies identifiées à partir des diagnostics hospitaliers codés : erreurs de codage possibles"
+    resume: >-
+      Étude de cohorte rétrospective sur l'ensemble de la population anglaise :
+      toutes les personnes ayant un diagnostic hospitalier de maladie
+      rhumatologique auto-immune rare (vascularites, connectivites, myopathies
+      inflammatoires…) vivantes en 2013, suivies jusqu'en 2020 grâce au chaînage
+      avec les certificats de décès. 53 237 décès sont survenus ; la cohorte compte
+      69,9 % de femmes, d'âge médian 61,5 à 62,5 ans. La mortalité toutes causes
+      baisse entre 2013 et 2019 puis remonte en 2020 avec la COVID-19. Le rapport
+      de mortalité standardisé sur l'âge et le sexe par rapport à la population
+      générale passe de **2,6 (IC95 2,6-2,7) en 2013 à 2,3 (2,2-2,3) en 2020**.
+      Surmortalité marquée par **infection (rapport 4,10 ; IC95 3,81-4,39)**,
+      maladie respiratoire (2,90), COVID-19 (2,74) et maladie cardiovasculaire
+      (2,50). Mortalité la plus élevée dans la sclérodermie, les polymyosites et
+      dermatomyosites, la polyangéite microscopique et les artérites non
+      précisées. Les décès par infection opportuniste sont rares.
+    message_cle: >-
+      Les patients atteints de maladie auto-immune rare meurent encore plus de
+      deux fois plus que la population générale, d'abord d'infections banales,
+      puis de causes respiratoires et cardiovasculaires : prévention infectieuse
+      (vaccinations) et prise en charge du risque cardiovasculaire sont des
+      leviers prioritaires.
+    contexte:
+      - >-
+        Ces données exhaustives d'un pays entier confirment une amélioration
+        lente, mais un écart persistant. Le poids des infections non opportunistes
+        rappelle que la vaccination antigrippale, antipneumococcique et contre la
+        COVID-19 fait partie du traitement de ces patients.
+      - >-
+        La sclérodermie et les myopathies inflammatoires, avec leurs atteintes
+        pulmonaires, restent les maladies les plus graves. Les données anglaises
+        sont transposables avec prudence au système de soins français.
+
+  - type: essai
+    titre: "Thrombose sur PICC line : une perfusion unique d'anticorps anti-facteur XI divise par deux le risque (essai de phase 2 ROXI-CATH)"
+    source: "The Lancet Haematology · essai de phase 2 randomisé en double aveugle"
+    impact_factor: 15
+    url: "https://pubmed.ncbi.nlm.nih.gov/42998669/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "molécules expérimentales, sans autorisation"
+      - "critère principal incluant les thromboses asymptomatiques détectées par échographie systématique"
+      - "essai financé par le laboratoire qui développe les molécules"
+    resume: >-
+      Essai de phase 2 randomisé en double aveugle contre placebo (ROXI-CATH,
+      NCT06299111), dans 12 centres de six pays, chez 195 adultes devant garder un
+      cathéter central inséré par voie périphérique (PICC line) au moins 14 jours.
+      Les patients recevaient une perfusion unique d'amrécibart (300 mg, anticorps
+      anti-domaine A2 du facteur XI), de cenvacibart (250 mg, anti-domaine
+      catalytique du facteur XI) ou de placebo ; échographies systématiques à J7 et
+      J14. Critère principal — MTEV adjugée (thrombose profonde ou superficielle
+      liée au PICC, symptomatique ou non, ou embolie pulmonaire) à J14 : **20 % sous
+      amrécibart et 20 % sous cenvacibart contre 43 % sous placebo** (OR 0,37 et
+      0,36). **Aucun saignement majeur** à J14 ; saignements non majeurs
+      cliniquement pertinents chez 3 % des patients dans chaque groupe. Événements
+      indésirables graves comparables ; décès (1, 4 et 2 patients) jugés sans lien
+      avec le traitement.
+    message_cle: >-
+      Une seule perfusion d'anticorps anti-facteur XI réduit de moitié les
+      thromboses sur PICC line à deux semaines (20 % contre 43 %), sans saignement
+      majeur — un argument de plus pour cette nouvelle classe d'anticoagulants,
+      encore expérimentale.
+    contexte:
+      - >-
+        Aucun traitement n'est validé pour prévenir les thromboses sur PICC line,
+        fréquentes notamment chez les patients atteints de cancer. Les inhibiteurs
+        du facteur XI visent à prévenir la thrombose déclenchée par le contact avec
+        un corps étranger tout en épargnant l'hémostase, d'où l'intérêt de ce
+        modèle.
+      - >-
+        Il s'agit d'une phase 2 sur un critère dominé par des thromboses
+        asymptomatiques dépistées à l'échographie : l'impact clinique reste à
+        démontrer en phase 3. Ces résultats s'ajoutent aux autres essais
+        des anti-facteur XI (fibrillation atriale, MTEV associée au cancer).
+
+  - type: autre
+    titre: "Artérite à cellules géantes : un fibrinogène normalisé à un mois annonce moins de rechutes"
+    source: "Seminars in Arthritis and Rheumatism · cohorte rétrospective multicentrique"
+    impact_factor: 4
+    url: "https://pubmed.ncbi.nlm.nih.gov/42998502/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "seuil de 3,77 g/L exploratoire, sans validation externe"
+      - "pays des centres non précisé dans le résumé"
+    resume: >-
+      Cohorte rétrospective multicentrique de 465 patients atteints d'artérite à
+      cellules géantes (critères d'inclusion de l'essai GiACTA) diagnostiqués entre
+      2000 et 2023, dont 135 avec un suivi répété de la CRP et du fibrinogène
+      jusqu'à la rechute ou pendant 2 ans. **34,2 % des patients rechutent** au
+      moins une fois en 5 ans. Au diagnostic, céphalées, claudication de la
+      mâchoire et fixation aortique au TEP-scanner sont associées à un risque de
+      rechute plus élevé. Une **normalisation du fibrinogène à un mois** est
+      associée à un risque de rechute nettement plus faible sur 2 ans (HR 0,14 ;
+      IC95 0,07-0,28). Le fibrinogène à un mois discrimine bien les patients qui
+      rechuteront (AUC 0,82), avec un seuil exploratoire de 3,77 g/L (sensibilité
+      71,8 %, spécificité 90,0 %). Les trajectoires individuelles de CRP et de
+      fibrinogène sont hétérogènes et dessinent des profils de risque différents.
+    message_cle: >-
+      Dans l'artérite à cellules géantes, un fibrinogène encore élevé un mois
+      après le début des corticoïdes signale un risque de rechute accru : un
+      marqueur simple et peu coûteux, qui mérite une validation avant d'orienter
+      la décroissance.
+    contexte:
+      - >-
+        Sous corticoïdes et surtout sous tocilizumab, la CRP se normalise vite et
+        perd de sa valeur pour surveiller la maladie. Le fibrinogène, dosé en
+        routine en France, pourrait apporter une information complémentaire, sous
+        réserve de validation et en gardant à l'esprit qu'il est lui aussi abaissé
+        par le blocage de l'IL-6.
+      - >-
+        Les facteurs cliniques de rechute identifiés (atteinte crânienne, aortite
+        au TEP) rejoignent les données publiées et peuvent aider à repérer les
+        patients chez qui une épargne cortisonique précoce se discute.
+
+  - type: essai
+    titre: "Lupus actif : l'obinutuzumab β améliore la réponse SRI-4 à 12 semaines dans un essai chinois de phase 2"
+    source: "The Lancet Rheumatology · essai de phase 2 randomisé en double aveugle (Chine)"
+    impact_factor: 42
+    url: "https://pubmed.ncbi.nlm.nih.gov/43000040/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "dénomination « obinutuzumab β » : lien exact avec l'obinutuzumab commercialisé en France à vérifier ; sans autorisation dans le lupus"
+      - "population presque exclusivement d'origine chinoise (95 %) : transposabilité incertaine"
+      - "essai financé par le laboratoire qui développe la molécule"
+    resume: >-
+      Essai de phase 2 randomisé en double aveugle contre placebo (NCT05796206),
+      dans 30 hôpitaux chinois, chez 123 patients atteints de lupus systémique actif
+      (SLEDAI-2K ≥ 8, anticorps antinucléaires ou anti-ADN positifs), âge moyen
+      36 ans, 93 % de femmes. L'obinutuzumab β, anticorps anti-CD20 de type II
+      glyco-ingénié, était perfusé à 1 000 mg à J1, J15, J169, J183, J365 et J379,
+      en plus du traitement standard. Critère principal — réponse SRI-4 à la
+      semaine 12 — atteint : **52 % sous obinutuzumab β contre 34 % sous placebo**
+      (différence ajustée 19 points ; IC95 3-36 ; p = 0,022). Événements
+      indésirables graves sur 52 semaines : 20 % contre 23 % ; un décès par sepsis
+      dans le groupe placebo.
+    message_cle: >-
+      Un anti-CD20 de type II améliore la réponse du lupus actif dès 12 semaines
+      (52 % contre 34 %), sans excès d'effets indésirables graves sur un an — un
+      signal qui conforte la déplétion lymphocytaire B profonde dans le lupus.
+    contexte:
+      - >-
+        Les anti-CD20 de type II induisent une déplétion lymphocytaire B plus
+        profonde que le rituximab. L'obinutuzumab a déjà montré son intérêt dans la
+        néphrite lupique ; cet essai explore une molécule apparentée dans le lupus
+        systémique actif, sur un critère précoce et sur un effectif modeste.
+      - >-
+        La réponse à 12 semaines est un critère court pour une maladie chronique :
+        la durabilité du bénéfice et la tolérance infectieuse au long cours
+        restent à établir en phase 3, dans des populations plus diverses.
+
+aussi_parus:
+  - titre: "Amylose ATTR : à 4 ans, le vutrisiran débuté d'emblée réduit de 37 % la mortalité par rapport au vutrisiran différé"
+    source: "Circulation · extension ouverte de l'essai HELIOS-B"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42974684/"
+    resume: >-
+      Sur les 466 patients entrés dans l'extension ouverte de HELIOS-B, le
+      vutrisiran poursuivi depuis le début réduit, par rapport aux patients passés
+      du placebo au vutrisiran, le risque de premier événement cardiovasculaire ou
+      de décès (HR 0,63 ; IC95 0,51-0,79) et la mortalité toutes causes (HR 0,63 ;
+      IC95 0,46-0,84) à 48 mois, avec une meilleure qualité de vie et des
+      biomarqueurs cardiaques plus bas. Pas de nouveau signal de tolérance. Publié
+      en complément de l'analyse des hospitalisations présentée dans le numéro 23.
+
+  - titre: "Vascularites à ANCA : le groupe européen EUVAS propose des critères rénaux standardisés"
+    source: "Kidney International · rapport de position d'un groupe de travail de l'EUVAS"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42971428/"
+    resume: >-
+      Néphrologues, anatomopathologistes et rhumatologues de l'EUVAS ont recensé la
+      grande variabilité des définitions utilisées pour l'atteinte rénale des
+      vascularites à ANCA (maladie active, réponse, maladie réfractaire, rémission,
+      rechute, récupération, insuffisance rénale terminale) et proposent des
+      définitions d'experts, avant un futur consensus Delphi. Le résumé ne détaille
+      pas les définitions retenues.
+
+  - titre: "Artérite à cellules géantes des gros vaisseaux : l'imagerie à l'arrêt du traitement ne prédit pas la rechute"
+    source: "Rheumatology (Oxford) · cohorte monocentrique (BARK)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42980040/"
+    resume: >-
+      Chez 46 patients en rémission à l'arrêt du traitement, des anomalies
+      vasculaires persistent en imagerie chez 54 % d'entre eux, sans lien avec la
+      rechute (survenue chez 48 % en 4,7 mois médians). Seule une inflammation
+      périarticulaire marquée au TEP-scanner (6 patients, tous rechuteurs) pourrait
+      signaler un risque. L'imagerie vasculaire résiduelle ne doit pas, à elle
+      seule, faire prolonger le traitement.
+
+  - titre: "Embolie pulmonaire : 3,1 % de saignements majeurs à 30 jours, avec des facteurs de risque différents selon le délai"
+    source: "European Respiratory Journal · étude prospective multicentrique (COPE)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42988386/"
+    resume: >-
+      Sur 5 213 patients, 159 saignements majeurs à 30 jours (12,9 % sous
+      thrombolyse contre 2,5 % sans). Cancer actif, antécédent hémorragique et
+      anémie prédisent les saignements précoces et tardifs ; démence, syncope et
+      thrombolyse les saignements précoces. Une approche par profils de patients
+      fait aussi bien que les scores hémorragiques existants.
+
+  - titre: "Syphilis : des autoanticorps deux fois plus fréquents, et une maladie auto-immune chez 8,4 % des patients"
+    source: "Journal of Autoimmunity · étude cas-témoins appariée (Chine)"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42970842/"
+    resume: >-
+      Chez 1 042 patients atteints de syphilis comparés à 2 084 témoins, les
+      autoanticorps sont plus fréquents (38,5 % contre 23,7 % ; OR ajusté 2,02),
+      surtout anti-SSB, anti-SSA et anticorps antinucléaires. Au suivi, 8,4 % des
+      patients développent une maladie auto-immune, surtout un syndrome de Sjögren
+      ou une polyarthrite rhumatoïde. Étude monocentrique rétrospective.
+
+  - titre: "Lupus : moins d'une réponse clinique majeure sur quatre après escalade thérapeutique, et moins encore chez les patients noirs"
+    source: "The Lancet Rheumatology · cohorte du registre britannique BILAG-BR"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42971234/"
+    resume: >-
+      Chez 422 patients lupiques modérés à sévères ayant débuté rituximab,
+      bélimumab ou un immunosuppresseur, 23 % atteignent une réponse clinique
+      majeure à 12 mois. Les patients noirs, plus actifs et plus endommagés à
+      l'inclusion, répondent moins (10 % ; OR ajusté 0,13 ; IC95 0,02-0,88 par
+      rapport aux patients blancs). Petits effectifs dans certains groupes.
+
+  - titre: "Amylose : la Société internationale met à jour sa nomenclature (19 protéines dans les formes systémiques)"
+    source: "Amyloid · recommandations du comité de nomenclature de l'ISA"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42999947/"
+    resume: >-
+      Mise à jour 2026 de la nomenclature des amyloses par la Société
+      internationale d'amylose : principes inchangés, 19 protéines fibrillaires
+      humaines connues dans les amyloses systémiques, pour la plupart liées à des
+      variants génétiques très rares, et un chapitre élargi sur les agrégats
+      protéiques intracellulaires.
