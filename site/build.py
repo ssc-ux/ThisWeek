@@ -33,7 +33,7 @@ TYPE_LABELS = {
     "essai": "Essai clinique",
     "meta": "Méta-analyse",
     "alerte": "Alerte sécurité",
-    "autre": "Autre",
+    "autre": "Étude",
 }
 
 MOIS_FR = [
@@ -145,7 +145,7 @@ def build_search_index(issues: list[dict]) -> str:
                 "u": f"numeros/{issue['slug']}.html",
                 "n": issue["numero"],
                 "d": issue["date_fr"],
-                "y": TYPE_LABELS.get(item.get("type"), "Autre"),
+                "y": TYPE_LABELS.get(item.get("type"), "Étude"),
             })
         for ref in issue.get("aussi_parus", []) or []:
             rows.append({
@@ -206,6 +206,7 @@ def main() -> None:
     if DIST.exists():
         shutil.rmtree(DIST)
     (DIST / "numeros").mkdir(parents=True)
+    shutil.copytree(ROOT / "site" / "static" / "fonts", DIST / "fonts")
 
     issue_tpl = env.get_template("issue.html")
     for issue in issues:

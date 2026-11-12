@@ -791,6 +791,12 @@ a:focus-visible, button:focus-visible {
   .page { padding-left: 1.15rem; padding-right: 1.15rem; }
   .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
   .cover-foot .btn { width: 100%; text-align: center; }
+  /* Barre du haut sur deux lignes nettes : le titre, puis les liens sur une seule rangée */
+  .masthead nav { flex-wrap: nowrap; width: 100%; gap: .45rem; font-size: .78rem; overflow-x: auto; scrollbar-width: none; }
+  .masthead nav::-webkit-scrollbar { display: none; }
+  .masthead nav .nav-opt { display: none; }
+  .masthead nav #search-open { margin-left: auto; }
+  .icon-btn { width: 1.9rem; height: 1.9rem; }
   .search-overlay { padding-top: 4vh; }
 }
 

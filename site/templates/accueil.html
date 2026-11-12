@@ -14,7 +14,7 @@
 
   <div class="cover-grid">
     <article class="cover-lead">
-      <span class="cover-kick">{{ type_labels.get(lead.type, "Autre") }}</span>
+      <span class="cover-kick">{{ type_labels.get(lead.type, "Étude") }}</span>
       <h2><a href="{{ root }}numeros/{{ latest_slug }}.html#item-1">{{ lead.titre }}</a></h2>
       <p>{{ lead.message_cle }}</p>
       <span class="cover-src">{{ lead.source.split('·')[0] | trim }}</span>
@@ -24,7 +24,7 @@
     <ul class="cover-side">
       {% for item in items[1:] %}
       <li>
-        <span class="cover-kick">{{ type_labels.get(item.type, "Autre") }}</span>
+        <span class="cover-kick">{{ type_labels.get(item.type, "Étude") }}</span>
         <h3><a href="{{ root }}numeros/{{ latest_slug }}.html#item-{{ loop.index + 1 }}">{{ item.titre }}</a></h3>
         <span class="cover-src">{{ item.source.split('·')[0] | trim }}</span>
       </li>

@@ -20,9 +20,9 @@
 <link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="{{ root }}rss.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d7d70'/%3E%3Cpath d='M10 34h11l5-12 8 22 5-10h15' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#0d7d70">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <style>
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url({{ root }}fonts/plus-jakarta-sans.woff2) format("woff2"); }
 {{ css | safe }}
 </style>
 </head>
@@ -32,12 +32,12 @@
   <header class="masthead">
     <a class="brand" href="{{ root }}index.html">{% include "logo.svg" %}This<span class="week">Week</span> · Médecine interne</a>
     <nav aria-label="Navigation principale">
-      <a href="{{ root }}index.html"{% if active == 'accueil' %} aria-current="page"{% endif %}>Accueil</a>
+      <a class="nav-opt" href="{{ root }}index.html"{% if active == 'accueil' %} aria-current="page"{% endif %}>Accueil</a>
       <a href="{{ root }}numeros/{{ latest_slug }}.html"{% if active == 'dernier' %} aria-current="page"{% endif %}>Dernier numéro</a>
       <a href="{{ root }}archives.html"{% if active == 'archives' %} aria-current="page"{% endif %}>Archives</a>
       <a href="{{ root }}veille.html"{% if active == 'veille' %} aria-current="page"{% endif %}>Veille</a>
       <a href="{{ root }}methode.html"{% if active == 'methode' %} aria-current="page"{% endif %}>Méthode</a>
-      <a href="{{ root }}rss.xml">RSS</a>
+      <a class="nav-opt" href="{{ root }}rss.xml">RSS</a>
       <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
         <span aria-hidden="true">⌕</span>
       </button>
@@ -58,6 +58,7 @@
     <p><strong>Sélection et synthèses entièrement générées par une intelligence artificielle,
     sans relecture par un médecin.</strong> Vérifiez toujours l'information sur la source avant
     tout usage clinique. Voir la page <a href="{{ root }}methode.html">Méthode</a>.</p>
+    <p><a href="{{ root }}rss.xml">Flux RSS</a> · <a href="https://ssc-ux.github.io/MedInt-Tools/">Tous les outils MedInt Tools</a></p>
   </footer>
 </div>
 
