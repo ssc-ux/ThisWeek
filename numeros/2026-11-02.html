@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>
+// Exécuté avant le rendu : évite tout clignotement au chargement.
+// Thème CLAIR par défaut ; le mode sombre s'active uniquement si l'utilisateur
+// l'a choisi via le bouton (le réglage du système n'est pas suivi).
+(function () {
+  var r = document.documentElement;
+  r.className = r.className.replace('no-js', 'js');
+  var t = 'light';
+  try { if (localStorage.getItem('tw-theme') === 'dark') t = 'dark'; } catch (e) {}
+  r.setAttribute('data-theme', t);
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N° 26 — semaine du 27 octobre au 2 novembre 2026 · ThisWeek Médecine interne</title>
+<meta name="description" content="5 items sélectionnés pour les internistes — semaine du 27 octobre au 2 novembre 2026.">
+<link rel="alternate" type="application/rss+xml" title="ThisWeek · Médecine interne" href="../rss.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d7d70'/%3E%3Cpath d='M10 34h11l5-12 8 22 5-10h15' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0d7d70">
+<style>
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url(../fonts/plus-jakarta-sans.woff2) format("woff2"); }
+/* ThisWeek — feuille de style unique, inlinée au build.
+   Direction visuelle : sobriété « Apple » — sans-serif système, grande
+   typographie, beaucoup de blanc, coins arrondis, boutons pilule, hairlines. */
+
+:root {
+  --paper:      #ffffff;
+  --paper-alt:  #f5f5f7;
+  --surface:    #ffffff;
+  --ink:        #1d1d1f;
+  --ink-soft:   #6e6e73;
+  --rule:       #e5e5ea;
+  --accent:     #0d7d70;
+  --accent-strong: #0a655a;
+  --accent-soft:   #e7f3f1;
+  --accent-ink: #ffffff;
+  --key-bg:     #eef7f4;
+  --nav-bg:     rgba(255, 255, 255, .82);
+  --shadow:     0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+
+  --badge-reco-bg: #f3e3e6;    --badge-reco-ink: #82212f;
+  --badge-pnds-bg: #e4e7f5;    --badge-pnds-ink: #35447f;
+  --badge-essai-bg: #e2efe5;   --badge-essai-ink: #22603a;
+  --badge-meta-bg: #e6eef4;    --badge-meta-ink: #274b66;
+  --badge-alerte-bg: #f6ecda;  --badge-alerte-ink: #7d5310;
+  --badge-autre-bg: #e8ebea;   --badge-autre-ink: #4c5a58;
+
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --r-card: 18px;
+  --r-pill: 980px;
+}
+
+/* Le thème CLAIR est le thème par défaut : le site ne suit volontairement pas le
+   réglage sombre du système. Le passage en sombre se fait uniquement via le
+   bouton de la barre du haut, qui pose data-theme="dark" et mémorise le choix. */
+
+:root[data-theme="light"] {
+  --paper: #ffffff; --paper-alt: #f5f5f7; --surface: #ffffff;
+  --ink: #1d1d1f; --ink-soft: #6e6e73; --rule: #e5e5ea;
+  --accent: #0d7d70; --accent-strong: #0a655a; --accent-soft: #e7f3f1;
+  --accent-ink: #ffffff; --key-bg: #eef7f4; --accent-2: #1f5fbf; --nav-bg: rgba(255,255,255,.82);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.07);
+}
+
+:root[data-theme="dark"] {
+  --paper: #000000; --paper-alt: #0f0f11; --surface: #1c1c1e;
+  --ink: #f5f5f7; --ink-soft: #a1a1a6; --rule: #2a2a2d;
+  --accent: #57c3b3; --accent-strong: #6fd0c1; --accent-soft: #12302b;
+  --accent-ink: #06110f; --key-bg: #14201d; --accent-2: #7aa7ff; --nav-bg: rgba(0,0,0,.68);
+  --shadow: 0 12px 32px rgba(0,0,0,.5);
+  --badge-reco-bg: #3d222a;   --badge-reco-ink: #e2a3ad;
+  --badge-pnds-bg: #242b47;   --badge-pnds-ink: #aab4e8;
+  --badge-essai-bg: #1f3527;  --badge-essai-ink: #9ed3ac;
+  --badge-meta-bg: #1e2e3a;   --badge-meta-ink: #9cc2dd;
+  --badge-alerte-bg: #3a2f18; --badge-alerte-ink: #e0bc76;
+  --badge-autre-bg: #29322f;  --badge-autre-ink: #aebbb8;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .9rem;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Pages de numéro : plus larges à partir du seuil où le sommaire passe en
+   colonne latérale (voir .issue-layout). */
+@media (min-width: 1150px) { .page-article { max-width: 84rem; } }
+@media (min-width: 1700px) { .page-article { max-width: 92rem; } }
+
+/* ---- Masthead : barre fine translucide, collante ---- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: 0 -1.5rem 0;
+  padding: .65rem 1.5rem;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+}
+
+.masthead .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.masthead .brand .week { color: var(--accent); }
+.masthead .brand .logo-ico { width: 1.4rem; height: 1.4rem; border-radius: 5px; }
+
+.masthead nav {
+  font-size: .85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.15rem;
+  align-items: center;
+}
+.masthead nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; font-weight: 500; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { color: var(--accent); }
+
+/* ---- Boutons ronds de la barre (recherche, thème) ---- */
+
+.icon-btn {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+/* Le premier des deux boutons pousse la paire à droite quand la barre passe à
+   la ligne (mobile) ; le second suit normalement. */
+#search-open { margin-left: auto; }
+
+/* On montre l'icône de la destination : lune en clair, soleil en sombre. */
+#theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-moon { display: none; }
+:root[data-theme="dark"] #theme-toggle .ico-sun { display: inline; }
+/* Sans JavaScript, ni la recherche ni la bascule de thème ne fonctionnent. */
+.no-js .icon-btn { display: none; }
+
+/* ---- Recherche (overlay plein écran, style palette de commandes) ---- */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(20, 22, 22, .5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10vh 1.2rem 1.2rem;
+}
+/* `display:flex` ci-dessus prime sur la feuille par défaut du navigateur pour
+   [hidden] (même spécificité, mais les styles d'auteur gagnent) : sans cette
+   règle explicite, l'overlay resterait affiché — et cliquable — même masqué. */
+.search-overlay[hidden] { display: none; }
+.search-panel {
+  width: min(38rem, 100%);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.search-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1rem 1.15rem;
+  outline: none;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: .4rem;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.search-results li { border-radius: 10px; }
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+}
+.search-results a:hover, .search-results a:focus-visible { background: var(--paper-alt); }
+.search-type {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.search-title { font-weight: 600; font-size: .98rem; }
+.search-meta { font-size: .8rem; color: var(--ink-soft); }
+.search-empty { padding: 1.4rem 1rem; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+
+/* ---- En-tête de numéro ---- */
+
+.issue-head { padding: 1.7rem 0 .3rem; }
+
+.eyebrow, .issue-head .eyebrow {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 .7rem;
+}
+
+.issue-head h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.15rem);
+  line-height: 1.12;
+  margin: 0 0 .55rem;
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.issue-meta {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-banner {
+  margin: 1.4rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--badge-alerte-bg);
+  color: var(--badge-alerte-ink);
+  border-radius: 12px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.ia-banner {
+  margin: 1.1rem 0 0;
+  padding: .7rem 1rem;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+}
+.ia-badge {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: .14rem .48rem;
+  border-radius: 6px;
+}
+.ia-banner .ia-text { flex: 1 1 auto; min-width: 0; }
+
+.edito {
+  margin: 1.1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* ---- Durée de lecture ---- */
+
+.reading-bar { margin: 1.3rem 0 0; }
+.reading-est {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ---- L'essentiel (TL;DR pour le lecteur pressé) ---- */
+
+.tldr {
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--paper-alt);
+  border-radius: var(--r-card);
+}
+.tldr h2 {
+  margin: 0 0 .6rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.tldr h2 .tldr-sub { color: var(--ink-soft); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.tldr ol { margin: 0; padding-left: 1.2rem; }
+.tldr li { margin: .42rem 0; line-height: 1.45; }
+.tldr li a { font-weight: 600; text-decoration: none; }
+.tldr li a:hover { text-decoration: underline; }
+.tldr .tldr-msg { color: var(--ink-soft); }
+
+/* ---- Mise en page d'un numéro (colonne de lecture + sommaire latéral) ---- */
+
+/* Sous 1150 px : une seule colonne, le sommaire est masqué car « L'essentiel »
+   liste déjà tous les titres avec leurs liens. Au-delà, le sommaire devient une
+   colonne latérale collante : il occupe utilement la largeur disponible et sert
+   de navigation pendant la lecture. */
+.issue-aside { display: none; }
+.issue-main { min-width: 0; }
+
+@media (min-width: 1150px) {
+  .issue-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  .issue-aside {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  .issue-aside .toc { margin-top: 0; padding: 1rem 1.1rem; }
+  .issue-aside .toc li { margin: .55rem 0; font-size: .9rem; line-height: 1.35; }
+  .issue-aside .toc .toc-type { display: block; font-size: .72rem; margin-top: .1rem; }
+}
+
+/* ---- Sommaire ---- */
+
+.toc {
+  margin: 1.4rem 0 0;
+  padding: .95rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-card);
+}
+.toc h2 {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.toc ol { margin: 0; padding-left: 1.3rem; }
+.toc li { margin: .3rem 0; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+.toc .toc-type { font-size: .78rem; color: var(--ink-soft); }
+
+/* ---- Items ---- */
+
+.item {
+  margin-top: 2.1rem;
+  padding-top: 1.7rem;
+  border-top: 1px solid var(--rule);
+}
+
+.item-kicker {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+}
+
+/* Un seul badge coloré, réservé aux types qui méritent l'attention immédiate
+   (recommandation, PNDS, alerte) — tout le reste (essai, méta-analyse, autre)
+   reste en texte gris dans .item-source, sans couleur dédiée. */
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+:root[data-theme="dark"] .badge { color: var(--accent); }
+
+.item-source { color: var(--ink-soft); }
+
+.if-chip {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  padding: .08rem .5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.item h2 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: .5rem 0 .35rem;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.item h2 a { color: inherit; text-decoration: none; }
+.item h2 a:hover { color: var(--accent); }
+
+.base-note {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin: 0 0 .8rem;
+}
+
+/* Phrase-clé : ce qu'il faut retenir, en tête d'item, sans encadré de couleur —
+   remplace l'ancien duo « résumé + message à retenir » redondant. */
+.item-lead {
+  margin: .6rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.item p { margin: .35rem 0; }
+.item ul { margin: .4rem 0; padding-left: 1.3rem; }
+.item li { margin: .35rem 0; }
+
+/* Comparaisons / avant-après : texte simple dans le bloc « Détails », pas de
+   structure séparée à plusieurs niveaux. */
+.compare-caveat {
+  margin: .8rem 0 .2rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.compare-caveat strong { color: var(--ink); }
+
+.pnds-statut {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.pnds-statut.pnds-actualise { background: var(--badge-alerte-bg); color: var(--badge-alerte-ink); }
+
+.verif-note {
+  margin: 1.2rem 0 0;
+  padding: .7rem 1rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border-radius: 10px;
+}
+.verif-note strong { color: var(--ink); }
+
+/* ---- Contexte déroulable ---- */
+
+.contexte {
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+.contexte > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.contexte > summary::-webkit-details-marker { display: none; }
+.contexte > summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .15s ease;
+}
+.contexte[open] > summary::before { transform: rotate(90deg); }
+.contexte > summary:hover { color: var(--ink); }
+.contexte .contexte-body { margin-top: .7rem; }
+.contexte .contexte-body p { margin: .5rem 0; }
+
+/* ---- Aussi parus ---- */
+
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
+.also h2 {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 .3rem;
+}
+.also .also-note { font-size: .9rem; color: var(--ink-soft); margin: 0 0 1.2rem; }
+.also ul { margin: 0; padding-left: 1.3rem; }
+.also li { margin: .45rem 0; font-size: .95rem; }
+.also .also-source { font-size: .8rem; color: var(--ink-soft); }
+
+/* Liste « Aussi parus » avec résumé court */
+.also-list { list-style: none; padding-left: 0 !important; }
+.also-list li {
+  margin: 0;
+  padding: .85rem 0;
+  border-top: 1px solid var(--rule);
+}
+.also-list li:first-child { border-top: 0; padding-top: 0; }
+.also-head { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.also-head a { font-weight: 600; text-decoration: none; color: var(--ink); }
+.also-head a:hover { color: var(--accent); }
+.also-head .if-chip { vertical-align: middle; margin-left: .15rem; }
+.also-resume { margin: .5rem 0 0; font-size: .92rem; color: var(--ink-soft); line-height: 1.55; }
+
+/* ---- Archives ---- */
+
+.archive-list { list-style: none; margin: 2rem 0 0; padding: 0; }
+.archive-list li {
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.archive-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+.archive-list .num {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  min-width: 4.5rem;
+}
+.archive-list a { font-size: 1.15rem; text-decoration: none; color: var(--ink); font-weight: 600; letter-spacing: -0.01em; }
+.archive-list a:hover { color: var(--accent); }
+.archive-list .count { font-size: .8rem; color: var(--ink-soft); }
+.archive-preview { margin: .35rem 0 0; font-size: .85rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* =====================================================================
+   Page d'accueil
+   ===================================================================== */
+
+/* L'accueil est fait de cartes et de grilles : il peut occuper presque toute la
+   largeur sans nuire à la lecture. */
+.page-wide { max-width: 88rem; }
+@media (min-width: 1700px) { .page-wide { max-width: 100rem; } }
+@media (min-width: 2300px) { .page-wide { max-width: 118rem; } }
+
+.btn {
+  display: inline-block;
+  padding: .78rem 1.5rem;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
+.btn-secondary { background: var(--paper-alt); color: var(--ink); }
+.btn-secondary:hover { transform: translateY(-1px); color: var(--accent); }
+
+/* Accueil « couverture de revue » : le premier item fait la une, les autres en
+   colonne, l'édito en bandeau ; puis la méthode résumée en un schéma. */
+:root, :root[data-theme="light"] {
+  --cover-bg: #f7f6f2; --cover-ink: #1b1a17; --cover-soft: #5a564d;
+  --cover-rule: #d6d1c4; --cover-red: #a3311f;
+}
+:root[data-theme="dark"] {
+  --cover-bg: #16130f; --cover-ink: #f2efe7; --cover-soft: #b1aa9b;
+  --cover-rule: #3a342a; --cover-red: #e38a72;
+}
+.cover {
+  --serif: ui-serif, "New York", "Iowan Old Style", Charter, Georgia, serif;
+  margin-top: 1.6rem;
+  background: var(--cover-bg);
+  color: var(--cover-ink);
+  border-radius: var(--r-card);
+  padding: clamp(1.3rem, 3vw, 2.4rem);
+}
+.cover a { color: inherit; text-decoration: none; }
+.cover a:hover { color: var(--cover-red); }
+.cover-mast {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: .8rem;
+  border-bottom: 3px solid var(--cover-ink); padding-bottom: .7rem;
+}
+.cover-logo {
+  margin: 0; font: 900 clamp(2.4rem, 6vw, 4rem)/.9 var(--serif); letter-spacing: -0.03em;
+}
+.cover-logo em { font-style: italic; font-weight: 400; color: var(--cover-red); }
+.cover-issue {
+  margin: 0; text-align: right; font-size: .75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--cover-soft);
+  font-variant-numeric: tabular-nums;
+}
+.cover-grid {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: 1.6rem;
+}
+.cover-kick {
+  font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--cover-red);
+}
+.cover-lead h2 {
+  font: 700 clamp(1.7rem, 3.4vw, 2.6rem)/1.08 var(--serif);
+  letter-spacing: -0.015em; margin: .4rem 0 .8rem; text-wrap: balance;
+}
+.cover-lead p { margin: 0 0 .8rem; font-size: 1.05rem; line-height: 1.55; color: var(--cover-soft); max-width: 62ch; }
+.cover-src { display: block; font-size: .78rem; color: var(--cover-soft); font-style: italic; }
+.cover-side { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; align-content: start; }
+.cover-side li { border-top: 1px solid var(--cover-rule); padding-top: .75rem; }
+.cover-side h3 { font: 700 1.08rem/1.25 var(--serif); margin: .3rem 0 .25rem; text-wrap: balance; }
+.cover-edito {
+  margin: 1.8rem 0 0; padding: 1.1rem 1.3rem;
+  background: var(--cover-ink); color: var(--cover-bg);
+  font: italic 400 1.08rem/1.55 var(--serif);
+}
+.cover-foot {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem;
+  margin-top: 1.4rem; font-size: .85rem; color: var(--cover-soft);
+}
+.cover-foot .btn-primary { color: var(--accent-ink); }
+.cover-foot .btn-primary:hover { color: var(--accent-ink); }
+
+/* Méthode en un schéma : 6 étapes en ligne (en colonne sur mobile). */
+.method { margin-top: 2.4rem; }
+.method-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 2rem; }
+.method-head h2 { margin: 0; font-size: 1.3rem; letter-spacing: -0.015em; font-weight: 700; }
+.method-head p { margin: 0; font-size: .85rem; color: var(--ink-soft); max-width: 60ch; }
+.pipe {
+  list-style: none; margin: 1.2rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.6rem;
+  counter-reset: pipe;
+}
+.pipe li {
+  position: relative; counter-increment: pipe;
+  border: 1px solid var(--rule); border-radius: 14px; background: var(--surface);
+  padding: .9rem .95rem 1rem; display: flex; flex-direction: column; gap: .3rem;
+}
+.pipe li::before {
+  content: counter(pipe); flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: .8rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: .2rem;
+}
+.pipe li:not(:last-child)::after {
+  content: "→"; position: absolute; right: -1.25rem; top: 1.05rem;
+  color: var(--accent); font-weight: 700;
+}
+.pipe b { font-size: .95rem; }
+.pipe span { font-size: .82rem; color: var(--ink-soft); line-height: 1.4; }
+.pipe-check { border-color: var(--accent) !important; }
+.pipe-fail {
+  margin-top: auto; font-style: normal; font-size: .75rem; font-weight: 600;
+  background: var(--badge-alerte-bg); color: var(--badge-alerte-ink);
+  border-radius: 8px; padding: .3rem .5rem;
+}
+.method-more { margin: 1rem 0 0; font-size: .85rem; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+
+@media (max-width: 1100px) {
+  .pipe { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pipe li:nth-child(3)::after { content: none; }
+}
+@media (max-width: 760px) {
+  .cover-grid { grid-template-columns: 1fr; }
+  .cover-issue { text-align: left; }
+  .pipe { grid-template-columns: 1fr; gap: 1.3rem; }
+  .pipe li:not(:last-child)::after { content: "↓"; right: auto; left: 1.2rem; top: auto; bottom: -1.3rem; }
+}
+
+/* ---- Schéma de méthode (page Méthode) ---- */
+
+.flow { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0; }
+.flow-step { display: flex; gap: 1rem; align-items: flex-start; }
+.flow-badge {
+  flex: 0 0 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+.flow-body {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: .9rem 1.1rem;
+  background: var(--surface);
+  flex: 1;
+  margin-bottom: .3rem;
+}
+.flow-body h3 { margin: 0 0 .3rem; font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 600; }
+.flow-body p { margin: 0; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
+.flow-connector { flex: 0 0 2.2rem; display: flex; justify-content: center; height: 1.1rem; font-size: 1.1rem; line-height: 1; }
+.flow-connector::before { content: "↓"; color: var(--accent); }
+
+/* ---- Prose (page méthode) ---- */
+
+.prose h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; margin: 2.4rem 0 1rem; font-weight: 700; }
+.prose h2 { font-size: 1.35rem; margin: 2.2rem 0 .5rem; letter-spacing: -0.015em; font-weight: 700; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin: .35rem 0; }
+.prose blockquote { margin: 1rem 0; padding: .8rem 1.1rem; border-radius: 12px; background: var(--paper-alt); color: var(--ink-soft); }
+
+/* ---- Pied de page ---- */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.footer p { margin: .4rem 0; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 560px) {
+  .page { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .masthead { margin-left: -1.15rem; margin-right: -1.15rem; padding-left: 1.15rem; padding-right: 1.15rem; }
+  .cover-foot .btn { width: 100%; text-align: center; }
+  /* Barre du haut sur deux lignes nettes : le titre, puis les liens sur une seule rangée */
+  .masthead nav { flex-wrap: nowrap; width: 100%; gap: .45rem; font-size: .78rem; overflow-x: auto; scrollbar-width: none; }
+  .masthead nav::-webkit-scrollbar { display: none; }
+  .masthead nav .nav-opt { display: none; }
+  .masthead nav #search-open { margin-left: auto; }
+  .icon-btn { width: 1.9rem; height: 1.9rem; }
+  .search-overlay { padding-top: 4vh; }
+}
+
+@media (max-width: 480px) {
+  .item h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="page page-article">
+  <header class="masthead">
+    <a class="brand" href="../index.html"><svg class="logo-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0d7d70"/><path d="M10 34h11l5-12 8 22 5-10h15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>This<span class="week">Week</span> · Médecine interne</a>
+    <nav aria-label="Navigation principale">
+      <a class="nav-opt" href="../index.html">Accueil</a>
+      <a href="../numeros/2026-11-09.html" aria-current="page">Dernier numéro</a>
+      <a href="../archives.html">Archives</a>
+      <a href="../veille.html">Veille</a>
+      <a href="../methode.html">Méthode</a>
+      <a class="nav-opt" href="../rss.xml">RSS</a>
+      <button type="button" class="icon-btn" id="search-open" aria-label="Rechercher une pathologie" title="Rechercher (/)">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle"
+              aria-label="Passer en thème sombre" title="Thème clair / sombre">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenu">
+  
+<article>
+  <header class="issue-head">
+    <p class="eyebrow">Numéro 26</p>
+    <h1>La semaine du 27 octobre au 2 novembre 2026</h1>
+    <p class="issue-meta">
+      5 items sélectionnés
+      · publié le 2 novembre 2026
+    </p>
+
+    <p class="ia-banner"><span class="ia-badge">IA</span><span class="ia-text"><strong>Numéro
+    généré automatiquement par une intelligence artificielle, sans relecture par un médecin.</strong>
+    Les publications citées sont réelles ; la sélection et les synthèses sont produites par IA à
+    partir des sources. À vérifier sur la source avant tout usage clinique.</span></p>
+
+    
+
+    
+    <p class="edito">Deux recommandations attendues ouvrent ce numéro. L&#39;ASH met à jour ses recommandations sur le PTI de l&#39;adulte et propose d&#39;associer d&#39;emblée rituximab ou agoniste du récepteur de la thrombopoïétine aux corticoïdes. Un groupe international selon la méthode EULAR cadre l&#39;imagerie dans la pseudo-polyarthrite rhizomélique : utile surtout dans les cas douteux. Dans la sarcoïdose, l&#39;efzofitimod échoue en phase 3, mais l&#39;essai montre qu&#39;on peut décroître les corticoïdes bien plus vite qu&#39;on ne le fait souvent. Complètent le numéro dix ans de suivi de l&#39;autogreffe dans la sclérodermie et une méta-analyse rassurante, mais à nuancer, sur l&#39;hydroxychloroquine au premier trimestre de grossesse.</p>
+    
+
+    <p class="reading-bar reading-est"><span aria-hidden="true">⏱</span> Lecture ~9 min</p>
+  </header>
+
+  <div class="issue-layout">
+  <div class="issue-main">
+
+  
+  <section class="tldr" aria-label="L'essentiel à retenir">
+    <h2>L'essentiel</h2>
+    <ol>
+      
+      <li><a href="#item-1">PTI de l&#39;adulte : l&#39;ASH 2026 propose rituximab ou agoniste du récepteur de la TPO dès la première ligne, avec les corticoïdes</a><span class="tldr-msg"> — ASH 2026 : en première ligne du PTI de l&#39;adulte, associer aux corticoïdes du rituximab ou un agoniste du récepteur de la TPO ; en deuxième ligne, l&#39;agoniste du récepteur de la TPO est la seule recommandation forte ; anti-BTK, mycophénolate et anti-SYK viennent ensuite ; splénectomie pas avant un an.</span></li>
+      
+      <li><a href="#item-2">Pseudo-polyarthrite rhizomélique : premières recommandations internationales sur l&#39;imagerie, utile surtout dans les cas douteux</a><span class="tldr-msg"> — Dans la PPR, l&#39;imagerie se réserve aux cas douteux ou atypiques et à la suspicion d&#39;artérite à cellules géantes associée ; elle n&#39;a pas sa place pour confirmer une forme typique, pour dépister une vascularite silencieuse ni pour surveiller l&#39;évolution.</span></li>
+      
+      <li><a href="#item-3">Sarcoïdose pulmonaire : l&#39;efzofitimod échoue en phase 3, mais les corticoïdes ont pu être largement diminués dans tous les groupes</a><span class="tldr-msg"> — L&#39;efzofitimod n&#39;épargne pas les corticoïdes dans la sarcoïdose pulmonaire ; mais avec une décroissance structurée sur 12 semaines, les patients, y compris sous placebo, sont passés en moyenne de 10,7 à 2,9 mg/j de corticoïdes en un an.</span></li>
+      
+      <li><a href="#item-4">Sclérodermie : après autogreffe de cellules souches, 60 % des patients restent sans progression à 10 ans</a><span class="tldr-msg"> — Dans la sclérodermie sévère et évolutive, l&#39;autogreffe garde ses promesses à 10 ans : 60 % des patients sans progression et 43 % en rémission sans traitement, au prix d&#39;une mortalité liée à la procédure de 6 %.</span></li>
+      
+      <li><a href="#item-5">Hydroxychloroquine au premier trimestre : légère association avec les malformations, sans remise en cause de son usage dans le lupus</a><span class="tldr-msg"> — L&#39;hydroxychloroquine au premier trimestre est associée à un excès modeste de malformations (environ +27 % en risque relatif), sur des données de faible qualité : dans le lupus, son bénéfice impose de la poursuivre ; dans les autres indications, la discussion est au cas par cas.</span></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section class="item" id="item-1">
+    <p class="item-kicker">
+      <span class="badge badge-reco">Recommandation</span>
+      <span class="item-source">Blood Advances · recommandations de l&#39;American Society of Hematology (mise à jour ciblée de 2019) · IF ≈ 8
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42617047/">PTI de l&#39;adulte : l&#39;ASH 2026 propose rituximab ou agoniste du récepteur de la TPO dès la première ligne, avec les corticoïdes</a></h2>
+
+    <p class="item-lead">ASH 2026 : en première ligne du PTI de l&#39;adulte, associer aux corticoïdes du rituximab ou un agoniste du récepteur de la TPO ; en deuxième ligne, l&#39;agoniste du récepteur de la TPO est la seule recommandation forte ; anti-BTK, mycophénolate et anti-SYK viennent ensuite ; splénectomie pas avant un an.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> recommandations américaines : disponibilité et remboursement des molécules (anti-BTK, anti-SYK) différents en France · statut en France du rituximab et des agonistes du récepteur de la TPO en première ligne à vérifier (cadre d&#39;AMM et PNDS)</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+
+        <p>Mise à jour ciblée, selon la méthode GRADE, des recommandations ASH 2019 sur le traitement du purpura thrombopénique immunologique (PTI) primaire de l&#39;adulte, avec une revue de la littérature arrêtée en juillet 2025 et deux représentants de patients dans le panel. Lues sur le texte intégral : **en première ligne**, le panel suggère d&#39;associer aux corticoïdes (avec ou sans immunoglobulines IV) soit du rituximab, soit un agent thrombopoïétique, plutôt que les corticoïdes seuls ou associés au mycophénolate mofétil (recommandation conditionnelle, niveau de preuve faible) ; si ni le rituximab ni les agents thrombopoïétiques ne sont disponibles, il suggère les corticoïdes seuls plutôt qu&#39;associés au mycophénolate. **En deuxième ligne**, après échec des corticoïdes, le panel **recommande** un agent thrombopoïétique (recommandation forte, niveau de preuve modéré) ou suggère le rituximab (conditionnelle, faible). Chez les patients qui ne peuvent ou ne veulent recevoir ni l&#39;un ni l&#39;autre, il suggère un inhibiteur de BTK, le mycophénolate ou un inhibiteur de SYK (conditionnelle, très faible). Deux avis de bonne pratique : le changement d&#39;agent thrombopoïétique peut se discuter en cas de réponse insuffisante, d&#39;effets indésirables ou de préférence du patient, sans interruption de traitement ; la splénectomie doit être différée d&#39;au moins un an après le diagnostic quand c&#39;est possible, avec vaccinations au moins deux semaines avant et information sur les risques infectieux et thrombotiques à vie.</p>
+
+        
+
+        
+
+        <p>Le principal changement est l&#39;abandon de la corticothérapie seule en première ligne, au profit d&#39;une association visant à augmenter les rémissions durables. La recommandation reste conditionnelle et le panel reconnaît que beaucoup de cliniciens continueront de prescrire les corticoïdes seuls.</p><p>En France, le PNDS du PTI de l&#39;adulte reste la référence pour le parcours et les remboursements. L&#39;entrée du rilzabrutinib (anti-BTK) parmi les options de deuxième intention reflète les essais récents, dont l&#39;essai LUNA3 présenté dans un numéro précédent.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-2">
+    <p class="item-kicker">
+      <span class="badge badge-reco">Recommandation</span>
+      <span class="item-source">Annals of the Rheumatic Diseases · recommandations d&#39;un groupe de travail international (méthode EULAR) · IF ≈ 20
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42946585/">Pseudo-polyarthrite rhizomélique : premières recommandations internationales sur l&#39;imagerie, utile surtout dans les cas douteux</a></h2>
+
+    <p class="item-lead">Dans la PPR, l&#39;imagerie se réserve aux cas douteux ou atypiques et à la suspicion d&#39;artérite à cellules géantes associée ; elle n&#39;a pas sa place pour confirmer une forme typique, pour dépister une vascularite silencieuse ni pour surveiller l&#39;évolution.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> libellé exact des 7 recommandations et niveaux d&#39;accord non détaillés dans le résumé</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Un groupe de travail international et multidisciplinaire de 30 membres issus de 12 pays, suivant les procédures de l&#39;EULAR, a formulé 3 principes généraux et 7 recommandations sur l&#39;échographie, l&#39;IRM et le TEP-scanner au FDG dans la pseudo-polyarthrite rhizomélique (PPR), à partir d&#39;une revue systématique et d&#39;un vote. Messages principaux : la PPR reste un **diagnostic clinique** ; l&#39;imagerie n&#39;est nécessaire ni pour confirmer une PPR très probable ni pour exclure une PPR peu probable ; elle est surtout utile en cas de **probabilité intermédiaire** (présentation atypique, diagnostic différentiel ou chevauchement suspecté). Aucune technique n&#39;est assez performante pour être recommandée en première intention : le choix dépend de la présentation, des diagnostics à écarter, de l&#39;accès et de l&#39;expertise locale. Une imagerie vasculaire est indiquée en cas de suspicion d&#39;artérite à cellules géantes associée, mais le dépistage systématique d&#39;une vascularite infraclinique n&#39;est pas recommandé. L&#39;imagerie n&#39;est pas recommandée pour le suivi ni pour prédire l&#39;évolution.</p>
+
+        
+
+        
+
+        <p>L&#39;échographie des épaules et des hanches et le TEP-scanner sont de plus en plus prescrits dans la PPR, parfois de façon systématique. Ces recommandations recentrent leur usage sur les situations où ils changent la décision.</p><p>Point pratique pour l&#39;interniste : devant une PPR avec signes généraux marqués, réponse incomplète aux corticoïdes ou symptômes évocateurs d&#39;artérite, l&#39;imagerie vasculaire reste indiquée pour rechercher une artérite à cellules géantes des gros vaisseaux.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-3">
+    <p class="item-kicker">
+      
+      <span class="item-source">Essai clinique · The Lancet Respiratory Medicine · essai de phase 3 randomisé en double aveugle (EFZO-FIT) · IF ≈ 38
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42933455/">Sarcoïdose pulmonaire : l&#39;efzofitimod échoue en phase 3, mais les corticoïdes ont pu être largement diminués dans tous les groupes</a></h2>
+
+    <p class="item-lead">L&#39;efzofitimod n&#39;épargne pas les corticoïdes dans la sarcoïdose pulmonaire ; mais avec une décroissance structurée sur 12 semaines, les patients, y compris sous placebo, sont passés en moyenne de 10,7 à 2,9 mg/j de corticoïdes en un an.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> essai financé par les laboratoires qui développent la molécule</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Essai de phase 3 randomisé en double aveugle contre placebo (EFZO-FIT, NCT05415137), dans 85 centres de neuf pays dont la France, chez 268 adultes atteints de sarcoïdose pulmonaire nécessitant un traitement. Les patients recevaient chaque mois une perfusion d&#39;efzofitimod 3 mg/kg, 5 mg/kg ou de placebo pendant 48 semaines, avec une décroissance protocolisée des corticoïdes oraux sur 12 semaines visant l&#39;arrêt complet ; la dose pouvait être remontée en cas d&#39;aggravation. L&#39;efzofitimod est une protéine de fusion immunomodulatrice ciblant le récepteur neuropiline 2. Critère principal — variation de la dose quotidienne moyenne de corticoïdes à la semaine 48 — **non atteint** : différence avec le placebo de 0,02 mg/j sous 3 mg/kg (IC95 −1,49 à 1,52 ; p = 0,98) et de −0,73 mg/j sous 5 mg/kg (IC95 −2,21 à 0,75 ; p = 0,33). Dans l&#39;ensemble des 264 patients analysés, la dose moyenne de corticoïdes est passée de **10,7 mg/j à l&#39;inclusion à 2,9 mg/j à la semaine 48**. Événements indésirables graves comparables ; céphalées, sinusites, sifflements et élévation des ASAT plus fréquents sous efzofitimod. Deux décès dans le groupe 3 mg/kg, jugés sans lien avec le traitement.</p>
+
+        
+
+        
+
+        <p>Les corticoïdes restent le traitement de première ligne de la sarcoïdose pulmonaire, au prix d&#39;une toxicité importante quand ils sont prolongés. L&#39;échec de cette nouvelle molécule s&#39;ajoute à la difficulté de démontrer un bénéfice face à un placebo qui, ici, fait très bien.</p><p>L&#39;enseignement le plus utile est indirect : une décroissance planifiée et rapide des corticoïdes est réalisable chez beaucoup de patients, ce qui invite à ne pas maintenir des doses moyennes par habitude. Le méthotrexate reste l&#39;épargne cortisonique de référence quand elle est nécessaire.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-4">
+    <p class="item-kicker">
+      
+      <span class="item-source">Étude · The Lancet Rheumatology · suivi à long terme d&#39;une cohorte prospective européenne (NISSC1, EBMT) · IF ≈ 42
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42956788/">Sclérodermie : après autogreffe de cellules souches, 60 % des patients restent sans progression à 10 ans</a></h2>
+
+    <p class="item-lead">Dans la sclérodermie sévère et évolutive, l&#39;autogreffe garde ses promesses à 10 ans : 60 % des patients sans progression et 43 % en rémission sans traitement, au prix d&#39;une mortalité liée à la procédure de 6 %.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> cohorte sans groupe contrôle, patients très sélectionnés (sclérodermie précoce, sévère et évolutive)</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Suivi à long terme (NISSC1-LTE) des 80 patients de l&#39;étude prospective européenne NISSC1 ayant reçu une première autogreffe de cellules souches hématopoïétiques pour une sclérodermie systémique sévère et évolutive entre 2012 et 2016, dans 13 centres dont des centres français. Âge médian 43 ans, 71 % de femmes, suivi médian de 9,2 ans ; 12 patients perdus de vue. Survie sans progression : **81 % à 2 ans, 72 % à 5 ans et 60 % à 10 ans** (IC95 47-71). Dix-huit décès : liés à la greffe chez 5 patients (6 %), à la progression de la maladie chez 9 (11 %), à un cancer survenu après la greffe chez 2 (3 %) et à une infection grave tardive chez 2 (3 %). **34 patients (43 %) restent en rémission sans aucun traitement immunosuppresseur sur 10 ans.**</p>
+
+        
+
+        
+
+        <p>L&#39;autogreffe est une option établie pour la sclérodermie diffuse précoce et sévère depuis les essais ASSIST, ASTIS et SCOT, mais les données au-delà de 5 ans en pratique courante manquaient. Ce suivi confirme un bénéfice durable chez une partie importante des patients.</p><p>Ces chiffres serviront de référence face aux nouvelles thérapies cellulaires (CAR-T anti-CD19 notamment). La sélection des patients et la réalisation dans des centres experts restent déterminantes, compte tenu de la mortalité liée à la procédure.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+  <section class="item" id="item-5">
+    <p class="item-kicker">
+      
+      <span class="item-source">Méta-analyse · RMD Open · revue systématique et méta-analyse · IF ≈ 5
+      </span>
+    </p>
+    <h2><a href="https://pubmed.ncbi.nlm.nih.gov/42933791/">Hydroxychloroquine au premier trimestre : légère association avec les malformations, sans remise en cause de son usage dans le lupus</a></h2>
+
+    <p class="item-lead">L&#39;hydroxychloroquine au premier trimestre est associée à un excès modeste de malformations (environ +27 % en risque relatif), sur des données de faible qualité : dans le lupus, son bénéfice impose de la poursuivre ; dans les autres indications, la discussion est au cas par cas.</p>
+
+    
+    <p class="verif-note"><strong>À vérifier en priorité :</strong> types de malformations et doses d&#39;hydroxychloroquine non détaillés dans le résumé</p>
+    
+
+    
+    <details class="contexte">
+      <summary>Détails et sources</summary>
+      <div class="contexte-body">
+        
+        <p class="base-note">Synthèse fondée sur l'abstract — texte intégral non accessible librement.</p>
+        
+
+        <p>Revue systématique et méta-analyse de 20 études (18 cohortes, une cas-témoins, un essai randomisé), soit 4 260 grossesses exposées à l&#39;hydroxychloroquine au premier trimestre et 361 802 non exposées. Risque de biais grave dans 4 études et critique dans 15. Association significative entre exposition et malformation congénitale majeure (OR 1,27 ; IC95 1,11-1,45 ; 19 études), retrouvée sur les estimations ajustées (OR ajusté 1,29 ; IC95 1,09-1,53 ; 8 études), sans hétérogénéité. Niveau de preuve faible. Les auteurs concluent que, compte tenu des bénéfices maternels et fœtaux bien établis de l&#39;hydroxychloroquine dans le lupus, ces résultats ne justifient pas de changer la pratique pendant la grossesse ; pour d&#39;autres indications où des alternatives existent, l&#39;usage doit se discuter au cas par cas.</p>
+
+        
+
+        
+
+        <p>L&#39;arrêt de l&#39;hydroxychloroquine pendant la grossesse expose à des poussées lupiques et à des complications obstétricales ; elle est aussi utilisée pour prévenir le bloc auriculo-ventriculaire congénital chez les mères porteuses d&#39;anticorps anti-SSA. Un risque relatif de 1,27 sur une complication rare correspond à un faible excès en valeur absolue.</p><p>Les patientes lupiques ont par elles-mêmes un risque obstétrical accru, et la maladie sous-jacente est un facteur de confusion probable que l&#39;ajustement corrige imparfaitement. Le message à transmettre reste celui de la poursuite du traitement dans le lupus.</p>
+      </div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="also">
+    <h2>Aussi parus cette semaine</h2>
+    <p class="also-note">Publications pertinentes retenues avec un résumé court, sans synthèse détaillée.</p>
+    <ul class="also-list">
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42629232/">Lupus neuropsychiatrique : la mémantine améliore les performances cognitives en 12 semaines (essai de phase 2)</a>
+          <span class="also-source">— Annals of the Rheumatic Diseases · essai randomisé contre placebo (ClearMEMory)</span>
+          
+        </p>
+        <p class="also-resume">Chez 56 patients lupiques avec atteinte neuropsychologique objective (43 analysés), la mémantine (jusqu&#39;à 40 mg/j) améliore davantage le score cognitif RBANS que le placebo (gain médian +8 contre +5 ; p = 0,032), avec un gain cliniquement significatif chez 66,7 % contre 36,0 % des patients (nombre de sujets à traiter 3,3). Pas de différence significative sur l&#39;impression globale rapportée par les patients. Petit essai, à confirmer.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42966007/">Crise rénale sclérodermique : mortalité et dialyse toujours élevées, et un contrôle tensionnel en 5 à 10 jours associé à la meilleure survie</a>
+          <span class="also-source">— Seminars in Arthritis and Rheumatism · cohorte internationale d&#39;incidence (enquête SRC II)</span>
+          
+        </p>
+        <p class="also-resume">Chez 83 patients suivis un an après une crise rénale sclérodermique (76 % de formes diffuses, 46 % d&#39;anticorps anti-ARN polymérase III), les IEC sont quasi constants (98 %) mais plus de la moitié des patients nécessitent au moins trois antihypertenseurs ; 49 % sont dialysés et 25 % des survivants le restent à un an. Le contrôle tensionnel obtenu en 5 à 10 jours est associé à la meilleure survie, plutôt que dans les 72 heures recommandées par les experts — un résultat observationnel à confirmer.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42933655/">PTI réfractaire : l&#39;association agoniste du récepteur de la TPO et rituximab donne 83 % de réponses</a>
+          <span class="also-source">— Journal of Thrombosis and Haemostasis · cohorte rétrospective multicentrique (Chine)</span>
+          
+        </p>
+        <p class="also-resume">Chez 161 patients atteints de PTI en rechute ou réfractaire, lourdement prétraités, l&#39;association donne 83 % de réponses (43 % complètes) et 30 % de rémissions sans traitement après 22 mois de suivi médian. Le rituximab restaure une réponse chez 29 % des patients primairement réfractaires à leur agoniste du récepteur de la TPO. Étude rétrospective sans groupe contrôle.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42958956/">SAPL : le rituximab fait baisser les anticorps antiphospholipides, mais l&#39;effet ne dure pas</a>
+          <span class="also-source">— Rheumatology (Oxford) · cohorte rétrospective monocentrique</span>
+          
+        </p>
+        <p class="also-resume">Chez 54 patients, surtout atteints de SAPL associé au lupus, la positivité des anticardiolipine IgG passe de 59,3 % à 24,1 % et des anti-β2GPI IgG de 42,6 % à 16,7 % six à douze mois après le rituximab, mais les titres ne restent pas durablement abaissés. Cinq récidives thrombotiques, dont quatre sans anticoagulation efficace. Le rituximab ne remplace pas l&#39;anticoagulation.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41940456/">Artérite à cellules géantes : un TEP-scanner souvent discordant avec l&#39;activité clinique</a>
+          <span class="also-source">— Arthritis &amp; Rheumatology · analyse d&#39;imagerie d&#39;un essai randomisé (guselkumab)</span>
+          
+        </p>
+        <p class="also-resume">Chez 51 patients d&#39;un essai du guselkumab, le TEP-scanner est actif chez 55 % à l&#39;inclusion, sans lien avec les symptômes, les marqueurs inflammatoires ni le risque de rechute ; il reste actif chez 70 % des patients en rémission clinique sans corticoïdes à la semaine 52. Une fixation persistante isolée ne suffit pas à définir une maladie active.</p>
+      </li>
+      
+      <li>
+        <p class="also-head">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42957460/">Morphée : le dupilumab freine la progression dans un essai de phase 2</a>
+          <span class="also-source">— Annals of the Rheumatic Diseases · essai randomisé contre placebo</span>
+          
+        </p>
+        <p class="also-resume">Dans la sclérodermie localisée (morphée), six mois de dupilumab (anti-récepteur α de l&#39;IL-4) améliorent significativement l&#39;état clinique par rapport au placebo et réduisent l&#39;inflammation locale et la signature génique IL-4/IL-13. Le résumé ne donne ni effectifs ni chiffres : essai de preuve de concept, hors AMM.</p>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  </div><!-- /.issue-main -->
+
+  <aside class="issue-aside">
+    <nav class="toc" aria-label="Sommaire du numéro">
+      <h2>Au sommaire</h2>
+      <ol>
+        
+        <li><a href="#item-1">PTI de l&#39;adulte : l&#39;ASH 2026 propose rituximab ou agoniste du récepteur de la TPO dès la première ligne, avec les corticoïdes</a>
+            <span class="toc-type">— Recommandation</span></li>
+        
+        <li><a href="#item-2">Pseudo-polyarthrite rhizomélique : premières recommandations internationales sur l&#39;imagerie, utile surtout dans les cas douteux</a>
+            <span class="toc-type">— Recommandation</span></li>
+        
+        <li><a href="#item-3">Sarcoïdose pulmonaire : l&#39;efzofitimod échoue en phase 3, mais les corticoïdes ont pu être largement diminués dans tous les groupes</a>
+            <span class="toc-type">— Essai clinique</span></li>
+        
+        <li><a href="#item-4">Sclérodermie : après autogreffe de cellules souches, 60 % des patients restent sans progression à 10 ans</a>
+            <span class="toc-type">— Étude</span></li>
+        
+        <li><a href="#item-5">Hydroxychloroquine au premier trimestre : légère association avec les malformations, sans remise en cause de son usage dans le lupus</a>
+            <span class="toc-type">— Méta-analyse</span></li>
+        
+      </ol>
+    </nav>
+  </aside>
+  </div><!-- /.issue-layout -->
+</article>
+
+
+  </main>
+
+  <footer class="footer">
+    <p>Ce digest s'adresse exclusivement aux professionnels de santé. Il ne remplace ni la
+    lecture des documents sources ni le jugement clinique.</p>
+    <p><strong>Sélection et synthèses entièrement générées par une intelligence artificielle,
+    sans relecture par un médecin.</strong> Vérifiez toujours l'information sur la source avant
+    tout usage clinique. Voir la page <a href="../methode.html">Méthode</a>.</p>
+    <p><a href="../rss.xml">Flux RSS</a> · <a href="https://ssc-ux.github.io/MedInt-Tools/">Tous les outils MedInt Tools</a></p>
+  </footer>
+</div>
+
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
+    <input type="search" id="search-input" class="search-input"
+           placeholder="Chercher une pathologie, un traitement… (ex. vascularite, amylose)"
+           autocomplete="off" aria-label="Rechercher dans les numéros">
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function label() {
+    btn.setAttribute('aria-label',
+      root.getAttribute('data-theme') === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('tw-theme', next); } catch (e) {}
+    label();
+  });
+})();
+
+(function () {
+  var openBtn = document.getElementById('search-open');
+  var overlay = document.getElementById('search-overlay');
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (!openBtn || !overlay) return;
+  var root = "../";
+  var index = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function render(q, list) {
+    q = q.trim().toLowerCase();
+    if (!index) { list.innerHTML = '<li class="search-empty">Chargement…</li>'; return; }
+    if (!q) {
+      list.innerHTML = '<li class="search-empty">Tapez le nom d’une maladie ou d’un '
+        + 'traitement (ex. « lupus », « vascularite », « amylose »).</li>';
+      return;
+    }
+    var hits = index.filter(function (r) {
+      return (r.t + ' ' + r.m + ' ' + r.s).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 12);
+    if (!hits.length) {
+      list.innerHTML = '<li class="search-empty">Aucun résultat pour « ' + esc(q) + ' ».</li>';
+      return;
+    }
+    list.innerHTML = hits.map(function (r) {
+      return '<li><a href="' + root + esc(r.u) + '">'
+        + '<span class="search-type">' + esc(r.y) + '</span>'
+        + '<span class="search-title">' + esc(r.t) + '</span>'
+        + '<span class="search-meta">' + esc(r.s.split('·')[0].trim()) + ' · N° ' + r.n + '</span>'
+        + '</a></li>';
+    }).join('');
+  }
+
+  var waiting = [];
+  function load(then) {
+    if (index) return;
+    waiting.push(then);
+    if (waiting.length > 1) return;
+    var done = function (data) { index = data; waiting.forEach(function (f) { f(); }); };
+    fetch(root + 'search-index.json').then(function (r) { return r.json(); })
+      .then(done).catch(function () { done([]); });
+  }
+
+  function open() {
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    load(function () { render(input.value, results); });
+    render(input.value, results);
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  input.addEventListener('input', function () { render(input.value, results); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') { close(); return; }
+    if (overlay.hidden && e.key === '/' && document.activeElement.tagName !== 'INPUT'
+        && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); open();
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
