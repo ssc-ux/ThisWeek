@@ -1,0 +1,283 @@
+# Numéro rédigé à partir des abstracts PubMed, sans relecture humaine.
+numero: 28
+semaine: "10 au 16 novembre 2026"
+date: 2026-11-16
+edito: >-
+  Plusieurs essais randomisés cette semaine. Chez les patients traités par
+  rituximab pour une vascularite à ANCA, un schéma de vaccination
+  antipneumococcique renforcé élargit la réponse, sans la rendre suffisante.
+  Après prothèse de hanche ou de genou, le grand essai PEPPER du NEJM ne
+  démontre pas la non-infériorité de l'aspirine face au rivaroxaban et à la
+  warfarine. Le brépocitinib donne des résultats spectaculaires, sur un petit
+  effectif, dans la sarcoïdose cutanée. Dans la pneumopathie interstitielle de
+  la sclérodermie, ajouter des corticoïdes au traitement de fond n'apporte pas
+  de bénéfice respiratoire. Enfin, une grande base internationale décrit trois
+  visages du syndrome des antisynthétases.
+
+items:
+  - type: essai
+    titre: "Vascularites à ANCA sous rituximab : un schéma antipneumococcique renforcé élargit la réponse vaccinale (essai PNEUMOVAS)"
+    source: "Clinical Microbiology and Infection · essai randomisé multicentrique de phase 2"
+    impact_factor: 10
+    url: "https://pubmed.ncbi.nlm.nih.gov/43008934/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "critère immunologique uniquement, pas de critère clinique (pneumonies évitées)"
+      - "vaccins utilisés (VPC13 et VPP23) désormais remplacés par des vaccins conjugués plus larges dans les recommandations françaises"
+    resume: >-
+      Essai de phase 2 randomisé ouvert de supériorité (PNEUMOVAS, NCT03069703),
+      mené entre 2018 et 2020 chez 96 adultes atteints de granulomatose avec
+      polyangéite ou de polyangéite microscopique, nouvellement diagnostiquée ou
+      en rechute, devant recevoir une induction par rituximab. Trois schémas :
+      standard (une dose de vaccin conjugué 13-valent à J0, puis polysaccharidique
+      23-valent au 5e mois), renforcé 1 (deux doses de 13-valent à J0 et deux à
+      J7, puis 23-valent) ou renforcé 2 (quatre doses de 13-valent à J0, puis
+      23-valent). Critère principal : étendue de la réponse en anticorps à
+      6 mois, sur 12 sérotypes. Les réponses restent **globalement faibles** :
+      réponse à 7-9 sérotypes chez 3,3 %, 15,6 % et 6,1 % des patients des trois
+      bras, et aucun patient ne répond à 10-12 sérotypes. Le schéma renforcé 1
+      élargit significativement la réponse par rapport au schéma standard
+      (OR proportionnel 4,14 ; IC97,5 1,08-15,88 ; p = 0,018) ; le schéma
+      renforcé 2 montre une tendance non significative (OR 3,08 ; IC97,5
+      0,80-11,92). L'activité opsonophagocytaire est améliorée pour plusieurs
+      sérotypes. Les réponses déclinent avec le temps dans tous les groupes.
+      Bonne tolérance, sans effet indésirable grave lié au vaccin.
+    message_cle: >-
+      Sous rituximab, doubler les doses de vaccin conjugué à J0 et J7 élargit la
+      réponse antipneumococcique, mais celle-ci reste très insuffisante dans tous
+      les bras : il faut vacciner, idéalement avant le rituximab, sans compter sur
+      une protection complète.
+    contexte:
+      - >-
+        Les infections, au premier rang desquelles les pneumonies, sont une cause
+        majeure de décès au cours des vascularites à ANCA, surtout pendant
+        l'induction. Le rituximab abolit en grande partie la réponse vaccinale
+        humorale pendant plusieurs mois, d'où l'intérêt de tester des schémas
+        renforcés.
+      - >-
+        Le message pratique reste de vacciner le plus tôt possible, avant la
+        déplétion lymphocytaire B quand l'urgence le permet. Les schémas de cet
+        essai reposent sur des vaccins aujourd'hui remplacés en France par des
+        vaccins conjugués de valence plus large ; la logique du renforcement
+        reste à évaluer avec ces nouveaux vaccins.
+
+  - type: essai
+    titre: "Prothèse de hanche ou de genou : l'aspirine n'est pas non inférieure au rivaroxaban ou à la warfarine pour prévenir la MTEV (essai PEPPER)"
+    source: "The New England Journal of Medicine · essai randomisé pragmatique de non-infériorité"
+    impact_factor: 96
+    url: "https://pubmed.ncbi.nlm.nih.gov/43013818/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "posologies américaines (aspirine 81 mg deux fois par jour, rivaroxaban 10 mg) ; schémas français différents"
+    resume: >-
+      Essai randomisé pragmatique de non-infériorité (PEPPER, NCT02810704) chez
+      18 883 patients opérés d'une prothèse totale de hanche ou de genou, répartis
+      entre aspirine 81 mg deux fois par jour, warfarine (INR cible 2,0) ou
+      rivaroxaban 10 mg par jour pendant 30 jours. Critère principal d'efficacité
+      à 6 mois : décès ou MTEV symptomatique ; critère de tolérance : saignement,
+      reprise chirurgicale pour problème de cicatrice ou infarctus. En analyse per
+      protocole (15 317 patients), événements d'efficacité chez **1,26 % sous
+      aspirine, 1,23 % sous warfarine et 0,94 % sous rivaroxaban**. Différence
+      aspirine-rivaroxaban de 0,30 point (IC95 −0,20 à 0,81) et aspirine-warfarine
+      de 0,23 point (IC95 −0,34 à 0,81), au-delà de la marge de non-infériorité de
+      0,69 point : **l'aspirine n'est pas démontrée non inférieure**. Événements de
+      tolérance chez 2,91 % sous aspirine, 3,36 % sous warfarine et 3,48 % sous
+      rivaroxaban ; warfarine et rivaroxaban ne sont pas non inférieurs à
+      l'aspirine sur la tolérance. Résultats concordants en intention de traiter.
+    message_cle: >-
+      Après prothèse de hanche ou de genou, la MTEV symptomatique est rare quel
+      que soit le traitement (environ 1 %) ; l'aspirine ne prouve pas qu'elle
+      protège aussi bien que le rivaroxaban, qui lui-même ne prouve pas qu'il
+      saigne aussi peu : un arbitrage à faire selon le profil du patient.
+    contexte:
+      - >-
+        L'aspirine est de plus en plus utilisée en prophylaxie après arthroplastie
+        dans certains pays, sur la base d'essais aux conclusions divergentes. Avec
+        près de 19 000 patients, PEPPER apporte les données les plus solides à ce
+        jour : les différences absolues sont faibles dans les deux sens, et aucune
+        stratégie ne domine l'autre.
+      - >-
+        Pour l'interniste, souvent sollicité pour les patients à risque
+        (antécédent de MTEV, thrombophilie, maladie inflammatoire), ces résultats
+        invitent à individualiser : l'essai ne permet pas de conclure pour ces
+        patients à haut risque, qui doivent être discutés au cas par cas.
+
+  - type: essai
+    titre: "Sarcoïdose cutanée : le brépocitinib, inhibiteur de TYK2 et JAK1, efficace dès 16 semaines dans un essai de phase 2"
+    source: "JAMA Dermatology · analyse intermédiaire de la phase 2 d'un essai randomisé en double aveugle (BEACON)"
+    impact_factor: 11
+    url: "https://pubmed.ncbi.nlm.nih.gov/43008126/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "31 patients seulement : estimations imprécises"
+      - "molécule expérimentale, sans autorisation en France"
+    resume: >-
+      Partie de phase 2 (16 semaines) de l'essai randomisé en double aveugle contre
+      placebo BEACON (NCT06978725), chez 31 adultes atteints de sarcoïdose cutanée
+      active prouvée histologiquement, répartis entre brépocitinib 45 mg,
+      brépocitinib 15 mg et placebo une fois par jour ; arrêt protocolisé des
+      corticoïdes systémiques. Le brépocitinib est un inhibiteur oral sélectif de
+      TYK2 et JAK1. Critère principal — variation du score d'activité CSAMI-A à la
+      semaine 16 — **amélioration de 22,3 points sous 45 mg et 22,2 points sous
+      15 mg, contre 0,7 point sous placebo** (p < 0,001). Sous 45 mg par rapport au
+      placebo : peau blanchie ou presque 69,2 % contre 0 % (p = 0,01), réponse
+      CSAMI-A d'au moins 50 % 76,9 % contre 0 % (p = 0,003), score CSAMI-A < 5
+      61,5 % contre 0 % (p = 0,005). Bénéfice retrouvé dans les formes difficiles,
+      dont le lupus pernio, avec une nette amélioration de la qualité de vie
+      cutanée. Aucun décès ni effet indésirable grave.
+    message_cle: >-
+      Premier essai randomisé positif d'une thérapie ciblée dans la sarcoïdose
+      cutanée : en 16 semaines, le brépocitinib blanchit ou presque la peau chez
+      deux patients sur trois à 45 mg, y compris dans le lupus pernio, contre
+      aucun sous placebo.
+    contexte:
+      - >-
+        La sarcoïdose cutanée chronique, en particulier le lupus pernio, est
+        souvent résistante aux antipaludéens et au méthotrexate et défigurante.
+        Les inhibiteurs de JAK étaient déjà utilisés hors AMM sur la foi de séries
+        de cas ; c'est le premier essai contrôlé qui en confirme l'efficacité.
+      - >-
+        L'effectif est très petit et le suivi court. La phase 3 de BEACON est en
+        cours. Reste à savoir si l'effet s'étend aux atteintes viscérales de la
+        sarcoïdose.
+
+  - type: autre
+    titre: "PID de la sclérodermie : ajouter des corticoïdes au traitement de fond n'améliore pas la CVF à un an"
+    source: "Arthritis Care & Research · émulation d'essai cible sur la base EUSTAR"
+    impact_factor: 4
+    url: "https://pubmed.ncbi.nlm.nih.gov/43015978/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "traitements de fond inclus non détaillés dans le résumé"
+    resume: >-
+      Émulation d'essai cible dans la base européenne EUSTAR, chez 443 patients
+      atteints de pneumopathie interstitielle associée à la sclérodermie débutant
+      un traitement de fond de la PID, avec (185 patients, 41,8 %) ou sans
+      (258 patients) corticoïdes oraux associés (≤ 20 mg/j d'équivalent
+      prednisone). Pondération par score de propension et imputation multiple.
+      L'ajout des corticoïdes n'est **pas associé à une meilleure évolution de la
+      CVF** à 12 mois (différence ajustée −2,10 points ; IC95 −4,68 à 0,47 ;
+      p = 0,11). Pas de différence nette de fibrose pulmonaire progressive (RR
+      1,40 ; IC95 0,83-2,35) ni de baisse isolée de la DLCO d'au moins 15 % (RR
+      0,81 ; IC95 0,39-1,69). Résultats concordants en analyse de sensibilité.
+    message_cle: >-
+      Dans la PID de la sclérodermie, les corticoïdes ajoutés au traitement de fond
+      ne font pas mieux sur la fonction respiratoire à un an : ils n'ont pas de
+      bénéfice démontré et exposent à la crise rénale sclérodermique.
+    contexte:
+      - >-
+        Les corticoïdes sont souvent associés au mycophénolate, au cyclophosphamide
+        ou au rituximab dans la PID de la sclérodermie, par extrapolation à
+        d'autres pneumopathies. Leur intérêt n'a jamais été démontré, alors que les
+        doses moyennes à fortes sont un facteur de risque reconnu de crise rénale.
+      - >-
+        Méthode observationnelle rigoureuse, mais qui ne remplace pas un essai : les
+        patients mis sous corticoïdes avaient peut-être une maladie plus active. Le
+        message est néanmoins cohérent avec la pratique de limiter les corticoïdes
+        dans la sclérodermie.
+
+  - type: autre
+    titre: "Syndrome des antisynthétases : trois profils distincts, dont une forme à atteinte pulmonaire isolée fréquente"
+    source: "Arthritis & Rheumatology · analyse en clusters de la base internationale CLASS"
+    impact_factor: 11
+    url: "https://pubmed.ncbi.nlm.nih.gov/43016155/"
+    base_texte: abstract_seul
+    points_a_verifier:
+      - "proportions d'anticorps (anti-Jo-1, anti-PL-7, anti-PL-12…) par cluster non détaillées dans le résumé"
+    resume: >-
+      Analyse en clusters de la base du projet international de critères de
+      classification du syndrome des antisynthétases (CLASS), réunissant
+      2 035 patients et 2 140 témoins atteints de maladies mimant ce syndrome
+      (connectivites, pneumopathies interstitielles), issus de 103 centres. Sur
+      l'ensemble, trois groupes se dégagent : un groupe surtout constitué de
+      syndromes des antisynthétases, un groupe surtout constitué des témoins (avec
+      les dermatomyosites et polymyosites) et un groupe mixte (où dominent les
+      pneumopathies interstitielles avec signes auto-immuns et la sclérodermie).
+      Chez les seuls patients atteints, trois profils : une forme **complète** avec
+      anti-Jo-1, myosite, PID et arthrite (1 034 patients), une forme **à PID
+      prédominante** (581 patients) et une forme **sans PID** (248 patients).
+    message_cle: >-
+      Le syndrome des antisynthétases est bien une entité à part, mais
+      hétérogène : près d'un patient sur trois se présente avec une atteinte
+      pulmonaire prédominante, que les futurs critères de classification devront
+      savoir reconnaître.
+    contexte:
+      - >-
+        Le syndrome des antisynthétases est souvent découvert devant une
+        pneumopathie interstitielle isolée, sans myosite ni arthrite, ce qui
+        retarde le diagnostic et le rattache parfois à tort à une pneumopathie
+        idiopathique. Ce travail prépare les critères de classification ACR/EULAR
+        attendus.
+      - >-
+        En pratique : la recherche des anticorps antisynthétases (et pas seulement
+        anti-Jo-1) fait partie du bilan de toute pneumopathie interstitielle
+        inexpliquée.
+
+aussi_parus:
+  - titre: "Amylose ATTR : l'éplontersen freine la dégradation cardiaque à l'échographie, surtout sans stabilisateur associé"
+    source: "Circulation · analyse échographique de l'essai CARDIO-TTRansform"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43002247/"
+    resume: >-
+      L'essai CARDIO-TTRansform (1 432 patients) n'avait pas atteint son critère
+      principal. À la semaine 140, l'éplontersen atténue modestement
+      l'épaississement des parois et la dégradation des fonctions systolique,
+      diastolique et ventriculaire droite par rapport au placebo, presque
+      uniquement chez les patients ne recevant pas de stabilisateur (tafamidis) à
+      l'inclusion. Analyse secondaire.
+
+  - titre: "Drépanocytose et MTEV : les AOD aussi efficaces que les AVK, avec moins de saignements majeurs"
+    source: "Research and Practice in Thrombosis and Haemostasis · méta-analyse bayésienne"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43034677/"
+    resume: >-
+      Quatre études rétrospectives (271 patients drépanocytaires) : pas de
+      différence de récidive thromboembolique (OR 0,82 ; ICr95 0,38-1,75) et moins
+      de saignements majeurs sous AOD (OR 0,25 ; ICr95 0,07-0,80). Données
+      observationnelles et peu nombreuses, à confirmer par des essais.
+
+  - titre: "Prophylaxie de la pneumocystose dans les maladies auto-immunes rares : un seul essai randomisé disponible"
+    source: "Clinical and Experimental Rheumatology · revue systématique du réseau européen ERN ReCONNET"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43006904/"
+    resume: >-
+      Un seul essai randomisé, ouvert et arrêté prématurément pour effets
+      indésirables du cotrimoxazole (14,3 %), chez des patients lupiques peu
+      immunodéprimés. Les auteurs appellent à une prophylaxie ciblée sur les
+      périodes à haut risque (induction, corticoïdes ≥ 20-30 mg/j, PID préexistante)
+      plutôt qu'universelle.
+
+  - titre: "Transplantés pulmonaires et rénaux : le vaccin VRS adjuvanté immunogène, une deuxième dose apportant peu"
+    source: "Nature Communications · essai randomisé ouvert de phase 2b"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43026212/"
+    resume: >-
+      Chez 261 transplantés, une dose du vaccin VRS adjuvanté est immunogène, mais
+      avec une réponse plus lente et plus faible que chez des témoins non
+      immunodéprimés, surtout sous mycophénolate. Une deuxième dose augmente
+      modestement les titres neutralisants (×1,34 pour le VRS-A, ×1,26 pour le
+      VRS-B). Réponses maintenues au-dessus du niveau initial à 12 mois, bonne
+      tolérance.
+
+  - titre: "Vaccin recombinant contre le zona : plus de 90 % de réponse même sous cyclophosphamide IV"
+    source: "Vaccine · sous-analyse d'un essai randomisé contre placebo"
+    url: "https://pubmed.ncbi.nlm.nih.gov/42843284/"
+    resume: >-
+      Chez 41 patients atteints de maladie auto-immune traités par cyclophosphamide
+      IV, la séroconversion après deux doses (91,9 %) est identique à celle des
+      patients sans cyclophosphamide (91,5 %), un peu inférieure à celle des témoins
+      sains (99,4 %), sans plus de poussées. Un argument pour ne pas différer la
+      vaccination pendant un traitement par cyclophosphamide.
+
+  - titre: "Avacopan en vie réelle : corticoïdes divisés par plus de deux et moins d'hospitalisations à un an"
+    source: "Rheumatology (Oxford) · analyse rétrospective de bases de remboursement américaines"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43033240/"
+    resume: >-
+      Chez 94 patients restés sous avacopan, la dose moyenne de corticoïdes passe
+      de 12,6 à 5,1 mg/j à 12 mois, et la part des patients hospitalisés de 55,3 %
+      à 21,3 %. Analyse avant-après sans groupe contrôle, limitée aux patients ayant
+      poursuivi le traitement.
+
+  - titre: "Takayasu réfractaire : 64 % de rémission clinique sous inhibiteurs de JAK"
+    source: "Rheumatology (Oxford) · revue systématique et méta-analyse de proportions"
+    url: "https://pubmed.ncbi.nlm.nih.gov/43021640/"
+    resume: >-
+      Onze études observationnelles (185 patients) : rémission clinique 64 %
+      (IC95 55-72 %), épargne cortisonique 56 %, effets indésirables 10 %. Niveau
+      de preuve très faible ; hors AMM.
