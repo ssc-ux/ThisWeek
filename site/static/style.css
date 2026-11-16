@@ -134,7 +134,11 @@ a:focus-visible, button:focus-visible {
   gap: .4rem 1.5rem;
 }
 
+.masthead .mit { font-size: .8rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; white-space: nowrap; }
+.masthead .mit:hover { color: var(--accent); }
+
 .masthead .brand {
+  margin-right: auto;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
